@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Create specification</li>
+      </ol>
+    </div>
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+          Create additional calculation
+        </h1>
+      </legend>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Calculation name
+        </label>
+        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Value type
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="draft">Percentage</option>
+          <option value="draft">Number</option>
+          <option value="draft">Currency</option>
+        </select>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Calculation script
+        </label>
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+            aria-describedby="more-detail-hint">
+Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
+
+If A.HasValue = False Then
+
+Return 0
+
+Else
+Return A
+End If
+        </textarea>
+    </div>
+    <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+      Build calculation
+  </button>
+  <div class="govuk-inset-text">Your calculation’s build output must be successful before you can save it
+  </div>
+  <div class="govuk-form-group">
+      <label class="govuk-label" for="build-output">
+          Build output
+      </label>
+      <input class="govuk-input" id="build-output" name="build-output" type="text" value="Code complied successfully: true">
+  </div>
+
+    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+      Save and continue
+    </button>
+
+    <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Cancel
+    </a>
+  </div>
+</div>
+
+{% endblock %}

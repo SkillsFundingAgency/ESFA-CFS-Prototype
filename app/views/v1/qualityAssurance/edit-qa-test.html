@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="quality-assurance-tests.html">Quality assurance tests</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit quality assurance tests</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Edit quality assurance tests</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">Specification</span>
+        <h2 class="govuk-heading-m">Specification name</h2>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+                QA test name
+            </label>
+            <span id="event-name-hint" class="govuk-hint">
+                Use a descriptive unique name other users can understand
+            </span>
+            <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+        </div>
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+                QA test desciption
+            </label>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
+                aria-describedby="more-detail-hint"></textarea>
+        </div>
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+                QA test scenario
+            </label>
+            <span id="more-detail-hint" class="govuk-hint">
+                Start typing to see common functions, hints and tips
+            </span>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="10"
+                aria-describedby="more-detail-hint">
+  Given the result for type 'Template' fundingstream 'DSG' calculation 'S11 Calculation 1' is greater than '25'
+
+  Then the result for type 'Template' fundingstream 'DSG' calculation 'S11 Calculation 1' is greater than '100'
+                 
+  Given the result for type 'Additional' calculation 'S11 Calculation 1' is greater than '25'
+
+  Then the result for type 'Additional' calculation 'S11 Calculation 1' is greater than '100'
+            </textarea>
+        </div>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Validate QA test
+        </button>
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+                QA test validation output
+            </label>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
+                aria-describedby="more-detail-hint"></textarea>
+        </div>
+        <div class="govuk-inset-text">
+            You must have a valid test before you can save it.
+        </div>
+        <a href="quality-assurance-tests.html" class="govuk-button" data-module="govuk-button">
+            Save and continue
+        </a>
+
+    </div>
+
+    {% endblock %}

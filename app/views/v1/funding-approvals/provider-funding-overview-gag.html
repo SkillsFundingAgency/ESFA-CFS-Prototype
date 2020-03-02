@@ -1,0 +1,335 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="approvals.html">Funding approvals</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="view-funding.html">Select specification</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="funding-results.html">Funding approval results</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Provider funding overview
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">Provider name</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Barnet London Borough Council</h1>
+        <span class="govuk-caption-m">Specification</span>
+        <h1 class="govuk-heading-m">DSG specification 1</h1>
+        <span class="govuk-caption-m">Funding period</span>
+        <h1 class="govuk-heading-m">2019 to 2020</h1>
+        <span class="govuk-caption-m">Funding stream</span>
+        <h1 class="govuk-heading-m">GAG</h1>
+    </div>
+</div>
+
+<div class="funding-status">
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            <p class="govuk-body">Latest status: <strong>Approved</strong></p>
+        </div>
+        <div class="govuk-grid-column-one-half">
+            <p class="govuk-body">Funding total: <strong>£1,260,000</strong></p>
+        </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-5">
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+                Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#funding-stream-history">
+                        Funding stream history
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#released-calculations">
+                        Released calculations
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#profiling">
+                        Profiling
+                    </a>
+                </li>
+            </ul>
+            <section class="govuk-tabs__panel" id="funding-stream-history">
+                <h2 class="govuk-heading-l">Funding stream history</h2>
+                <table class="govuk-table">
+                    <caption class="govuk-table__caption">History of status changes</caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Status</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Author</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date/time of change
+                            </th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding stream
+                                value</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Approved</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">Mr Approver</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">9 June 2019 at 11:41am</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£284,821,882</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Updated</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">Mr Updater</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">16 May 2019 at 2:30pm</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£284,821,882</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Released</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">Mrs Released</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">12 May 2019 at 10:26am</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£264,821,882</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="released-calculations">
+                <h2 class="govuk-heading-l">Released calculations</h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header app-custom-class">Structure</th>
+                            <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+                            <th scope="col" class="govuk-table__header app-custom-class">Calculation type</th>
+                            <th scope="col" class="govuk-table__header app-custom-class govuk-table__header--numeric">Breakdown</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row govuk-!-margin-top-9">
+                            <th scope="row" class="govuk-table__header"><strong>Funding line</strong></th>
+                            <td class="govuk-table__cell"><strong>Schools block</strong></td>
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£4,140</strong></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Template calculation specification</td>
+                            <td class="govuk-table__cell">Primary pupil number</td>
+                            <td class="govuk-table__cell">Pupil number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£473.14</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Primary unit of funding</td>
+                            <td class="govuk-table__cell">Per pupil rate</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£600</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Secondary pupil number</td>
+                            <td class="govuk-table__cell">Pupil number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">7957</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Secondary unit of funding</td>
+                            <td class="govuk-table__cell">Per pupil rate</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£1,423</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Funding through premises and mobility factors</td>
+                            <td class="govuk-table__cell">Lump sum</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£2,111</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Growth</td>
+                            <td class="govuk-table__cell">Lump sum</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£1,161</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Total schools block</td>
+                            <td class="govuk-table__cell">Cash</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£473.14</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Recoupment</td>
+                            <td class="govuk-table__cell">Lump sum</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£267</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">School block after deductions</td>
+                            <td class="govuk-table__cell">Payment</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£3,019.81</td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body govuk-!-margin-top-5">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><strong>Funding line</strong></th>
+                            <td class="govuk-table__cell"><strong>Central school services block</strong></td>
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£4,140</strong></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Template calculation specification</td>
+                            <td class="govuk-table__cell">Primary pupil number</td>
+                            <td class="govuk-table__cell">Pupil number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£473.14</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Primary unit of funding</td>
+                            <td class="govuk-table__cell">Per pupil rate</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£600</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Secondary pupil number</td>
+                            <td class="govuk-table__cell">Pupil number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">7957</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Secondary unit of funding</td>
+                            <td class="govuk-table__cell">Per pupil rate</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£1,423</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </section>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="profiling">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <h2 class="govuk-heading-l">Profiling</h2>
+                        <span class="govuk-caption-m">Total allocation for 2019 to 2020</span>
+                        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">£1,260,000</h3>
+                        <table class="govuk-table govuk-!-margin-top-5">
+                            <caption class="govuk-table__caption">Profiling installments</caption>
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Installment</th>
+                                    <th scope="col" class="govuk-table__header">Installment number</th>
+                                    <th scope="col" class="govuk-table__header">Percentage</th>
+                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">September 2020
+                                        <strong class="govuk-tag">Paid</strong> 
+                                    </th>
+                                    <td class="govuk-table__cell">1</td>
+                                    <td class="govuk-table__cell"></td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">October 2020</th>
+                                    <td class="govuk-table__cell">2</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">November 2020</th>
+                                    <td class="govuk-table__cell">3</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">December 2020</th>
+                                    <td class="govuk-table__cell">4</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">January 2021</th>
+                                    <td class="govuk-table__cell">5</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">February 2021</th>
+                                    <td class="govuk-table__cell">6</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">March 2021</th>
+                                    <td class="govuk-table__cell">7</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">April 2021</th>
+                                    <td class="govuk-table__cell">8</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">May 2021</th>
+                                    <td class="govuk-table__cell">9</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">June 2021</th>
+                                    <td class="govuk-table__cell">10</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">July 2021</th>
+                                    <td class="govuk-table__cell">11</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">August 2021</th>
+                                    <td class="govuk-table__cell">12</td>
+                                    <td class="govuk-table__cell">8.3333333%</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span class="govuk-caption-m">Next academic year allocation to be reduced by</span>
+                        <h3 class="govuk-heading-m">£100,000</h3>
+                        <a href="edit-profile.html" class="govuk-button" data-module="govuk-button">Edit profile</a>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                        <h3 class="govuk-heading-m">Previous profiles</h3>
+                        <p class="govuk-body">History of previous <a class="govuk-link"
+                                href="profiling-archive-gag.html">profiles</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <a href="funding-results.html" class="govuk-back-link">Back</a>
+    </div>
+</div>
+
+{% endblock %}

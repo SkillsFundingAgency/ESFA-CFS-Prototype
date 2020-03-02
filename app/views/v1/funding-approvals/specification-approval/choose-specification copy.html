@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="approvals.html">Funding approvals</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="view-funding.html">Select specification</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Funding approval results
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">Funding stream</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">DSG specification 1</h1>
+        <span class="govuk-caption-m">Funding period</span>
+        <h1 class="govuk-heading-m">2019 to 2020</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <table class="govuk-table table-vertical-align">
+            <caption class="govuk-table__caption">Specification</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Choose</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Specification name</th>
+                    <th scope="col" class="govuk-table__header">Specification status</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Provider QA coverage</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">QA tests passed</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Calculations approved</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                type="checkbox" value="provider-name">
+                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                        </div>
+                    </th>
+                    <td class="govuk-table__cell">19+ Advanced learn loan</td>
+                    <td class="govuk-table__cell">Approved</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">71.4%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">3092 of 64638</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                type="checkbox" value="provider-name">
+                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                        </div>
+                    </th>
+                    <td class="govuk-table__cell">19+ Advanced learn loan</td>
+                    <td class="govuk-table__cell">Approved</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">71.4%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">3092 of 64638</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                type="checkbox" value="provider-name">
+                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                        </div>
+                    </th>
+                    <td class="govuk-table__cell">19+ Advanced learn loan</td>
+                    <td class="govuk-table__cell">Approved</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">71.4%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">3092 of 64638</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                type="checkbox" value="provider-name">
+                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                        </div>
+                    </th>
+                    <td class="govuk-table__cell">19+ Advanced learn loan</td>
+                    <td class="govuk-table__cell">Approved</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">71.4%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">3092 of 64638</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
+                </tr>
+            </tbody>
+        </table>
+        <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+            Select specification
+          </button>
+          <br>
+        <a href="#" class="govuk-back-link">Back</a>
+    </div>
+</div>
+
+{% endblock %}

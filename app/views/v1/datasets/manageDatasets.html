@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage data source files</li>
+      </ol>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Manage data</h1>
+    <span class="govuk-caption-xl">Manage data source files or map them to datasets for a specification</span>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group search-container">
+      <label class="govuk-label" for="event-name">
+        Search data source files
+      </label>
+      <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false" type="text">
+      <button class="govuk-button" type="submit" class="gem-c-search__submit">Search</button>
+      <label class="govuk-label" for="sort">
+        Filter by data schema
+      </label>
+      <select class="govuk-select govuk-!-margin-bottom-5" id="sort" name="sort">
+        <option value="published">PE and sport grant</option>
+        <option value="updated">Rates and baselines</option>
+      </select>
+      <label class="govuk-label" for="sort">
+        Filter by specification
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published">Specification 1</option>
+        <option value="updated">Specification 2</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="createDatasets" class="govuk-button govuk-button--primary button-createSpecification"
+      data-module="govuk-button">
+      Upload a new data source
+    </a>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <br>
+    <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption"></caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Data source</th>
+      <th scope="col" class="govuk-table__header">Last updated</th>
+      <th scope="col" class="govuk-table__header">Download</th>
+      <th scope="col" class="govuk-table__header">More</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><span><a href="updateDataset"><i
+              class="material-icons govuk-!-margin-right-1">create</i></a></span>DSG rates and
+        baselines SIT</th>
+      <td class="govuk-table__cell">11 November 2019 9:51am</td>
+      <td class="govuk-table__cell"><a href=""><i class="material-icons">cloud_download</i></a></td>
+      <td class="govuk-table__cell"><a href="#"><i class="material-icons">keyboard_arrow_down</i></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="govuk-grid-row govuk-!-margin-top-9">
+  <div class="govuk-grid-column-full">
+    <nav role="navigation" aria-label="Pagination">
+      <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+      <ul class="pagination">
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
+              aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+        <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
+            aria-label="Page 3, current page">3</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
+              aria-hidden="true" role="presentation">&raquo;</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+{% endblock %}

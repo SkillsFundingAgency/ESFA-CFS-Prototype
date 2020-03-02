@@ -1,0 +1,245 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="approvals.html">Funding approvals</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="view-funding.html">Select specification</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Funding approval results
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">Specification</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">DSG specification 1</h1>
+        <span class="govuk-caption-m">Funding period</span>
+        <h1 class="govuk-heading-m">2019 to 2020</h1>
+        <span class="govuk-caption-m">Funding stream</span>
+        <h1 class="govuk-heading-m">DSG</h1>
+    </div>
+</div>
+
+<!-- <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+            data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                        <p class="govuk-body">Error statement</p>
+                    </li>
+                    <li>
+                        <a href="#postcode-error">Error statement with link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                The payment release date for this specification is 1 August 2020. <a
+                    href="/v1/fundingLineStructure#release-timetable" class="govuk-link">Change
+                    the payment release date</a>
+            </strong>
+        </div>
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                You have not chosen a publish release date for this specification. <a
+                    href="/v1/fundingLineStructure#release-timetable" class="govuk-link">Change
+                    the publish release date</a>
+            </strong>
+        </div>
+    </div>
+</div> -->
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="local-autority">
+                Search by provider or UKPRN
+            </label>
+            <input class="govuk-input" id="local-autority" name="local-autority" type="text">
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+                Filter by provider type
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+                <option value="LA">Local authority</option>
+                <option value="all" selected>Show all</option>
+            </select>
+            </label>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+                Filter by status
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+                <option value="approved">Approved</option>
+                <option value="released">Released</option>
+                <option value="published">Published</option>
+                <option value="all" selected>Show all</option>
+            </select>
+            </label>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        <div class="right-align">
+            <span class="govuk-caption-m">Funding total</span>
+            <h3 class="govuk-heading-m">£466,362,175.74</h3>
+        </div>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+                Showing
+                <select class="govuk-select" id="sort" name="sort">
+                    <option value="25">25</option>
+                    <option value="50" selected>50</option>
+                    <option value="100">100</option>
+                    <option value="all">Show all</option>
+                </select>
+                of 246 providers.
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid">
+    <div class="govuk-grid-column-full">
+        <table class="govuk-table">
+            <caption class="govuk-table__caption">Providers</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header"><a id="select-all" href="">Select all</a></th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Provider name</th>
+                    <th scope="col" class="govuk-table__header">UKPRN</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding total</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body table-vertical-align">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                    type="checkbox" value="provider-name">
+                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                </label>
+                            </div>
+                    </td>
+                    <td class="govuk-table__cell"><a href="provider-funding-overview.html" class="govuk-link">Barking
+                            and Dagenham London Borough Council</a></td>
+                    <td class="govuk-table__cell">10000143</td>
+                    <td class="govuk-table__cell">Approved</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£284,821,882</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                    type="checkbox" value="provider-name">
+                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                </label>
+                            </div>
+                    </td>
+                    <td class="govuk-table__cell"><a href="provider-funding-overview-gag.html" class="govuk-link">Barnet London Borough Council</a></td>
+                    <td class="govuk-table__cell">10003986</td>
+                    <td class="govuk-table__cell">Released</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£346,757,869</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                    type="checkbox" value="provider-name">
+                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                </label>
+                            </div>
+                    </td>
+                    <td class="govuk-table__cell"><a href="provider-funding-overview-psg.html" class="govuk-link">Barnsley Metropolitan Borough
+                            Council</a></td>
+                    <td class="govuk-table__cell">10000538</td>
+                    <td class="govuk-table__cell">Released</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£196,520,871</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-full">
+        <nav role="navigation" aria-label="Pagination">
+            <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+            <ul class="pagination">
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
+                            aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+                <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
+                        aria-label="Page 3, current page">3</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
+                            aria-hidden="true" role="presentation">&raquo;</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-9">
+    <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+        Refresh funding
+    </button>
+    <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" onclick="window.location.href='funding-approval.html'">
+        Approve funding
+    </button>
+    <button data-prevent-double-click="true" class="govuk-button govuk-button--warning" data-module="govuk-button">
+        Publish funding
+    </button>
+    <p class="govuk-body-s">Last refresh on 16 December 2019 11:23am</p>
+</div>
+
+{% endblock %}

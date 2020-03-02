@@ -1,0 +1,311 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-navigation";
+@import "patterns/task-list";
+@import "patterns/related-items";
+
+// Components that aren't in Frontend
+@import "components/cookie-banner";
+@import "components/file-download";
+
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.subHeader {
+	background-color: $govuk-link-colour;
+}
+
+.subHeader-content {
+	h1 {
+		color: govuk-colour("white");
+		margin-top: 20px;
+	}
+
+	span {
+		color: govuk-colour("white");
+		margin-bottom: 20px;
+	}
+}
+
+.input-search {
+	max-width: 80%;
+	margin: auto;
+}
+
+.right-align {
+	float: right;
+}
+
+.center-align {
+	text-align: center;
+}
+
+.filterbyContainer {
+	border: solid 1px lightgrey;
+}
+
+.filterbyHeading {
+	background-color: lightgrey;
+	width: 100%;
+	padding: 6px;
+	margin-bottom: 0px;
+	cursor: pointer;
+
+	h4 {
+		margin-bottom: 0px;
+	}
+}
+
+.filterbyCheckbox {
+	margin-left: 10px;
+	overflow-y: scroll;
+	max-height: 168px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 10px;
+}
+
+.filterSearch {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+}
+
+.filterLabel {
+	font-size: 16px;
+	color: grey;
+	margin-top: 10px;
+}
+
+.filterSearchInput {
+	border-color: grey;
+}
+
+div.filter-content {
+	display: none;
+}
+
+i {
+	vertical-align: sub;
+}
+
+
+// CSS for playground items - to be tested - Dont use in live 
+
+.pagination .pagination_list-items {
+
+	li {
+		display: inline-block;
+
+		a {
+			color: #005EA5;
+			display: inline-block;
+			padding: 15px 5px 10px 5px;
+			margin-right: 15px;
+			text-decoration: none;
+
+			&:focus {
+				outline: 0;
+			}
+		}
+
+		&.active a,
+		&.active a:hover {
+			color: #005EA5;
+			-webkit-box-shadow: inset 0px -5px 0px 0px #005EA5;
+			-moz-box-shadow: inset 0px -5px 0px 0px #005EA5;
+			box-shadow: inset 0px -5px 0px 0px #005EA5;
+		}
+	}
+}
+
+.padding {
+	padding-left: 15px;
+}
+
+.pagination {
+	padding: 0;
+}
+
+.pagination__item {
+	display: inline-block;
+	list-style: none;
+}
+
+.pagination__link {
+	display: block;
+	padding: 5px 10px;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		background: #F8F8F8;
+		outline: 3px solid #FFBF47;
+	}
+
+	&.current {
+		color: #0B0C0C;
+		font-weight: 700;
+		border: none;
+		pointer-events: none;
+		cursor: default;
+
+		&:hover,
+		&:focus {
+			color: #0B0C0C;
+			background: none;
+		}
+	}
+}
+
+.pagination__summary {
+	font-family: 'Inter UI', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	padding: 8px 0;
+
+	@media (min-width: 642px) {
+		float: right;
+	}
+}
+
+.providerResults-details span {
+	margin-right: 10px;
+}
+
+// permissions banner
+.permissions-banner {
+	background-color: #f47738;
+	padding: 20px;
+
+	span {
+		margin-left: 20px;
+		border-color: #fff;
+		color: #f47738;
+		background-color: white;
+	}
+
+	strong {
+		margin-left: 20px;
+		color: white;
+	}
+}
+
+// Back to top
+
+.app-back-to-top a svg {
+	margin-right: 8px;
+}
+
+#backToTop {
+	cursor: pointer;
+
+	:hover {
+		background: #F8F8F8;
+		outline: 3px solid #FFBF47;
+	}
+}
+
+// Main wrapper width
+
+.govuk-width-container {
+	max-width: 1200px;
+	margin: 0 15px;
+}
+
+@media (min-width: 1260px) {
+	.govuk-width-container {
+		margin: 0 auto;
+	}
+}
+
+.table-vertical-align td {
+	vertical-align: inherit;
+}
+
+
+// Loading spinner
+
+@-webkit-keyframes "load8" {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes "load8" {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+.loader {
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+	margin: 60px auto;
+	font-size: 10px;
+	position: relative;
+	text-indent: -9999em;
+	border-top: 0.2em solid rgba(255, 255, 255, 0.2);
+	border-right: 0.2em solid rgba(255, 255, 255, 0.2);
+	border-bottom: 0.2em solid rgba(255, 255, 255, 0.2);
+	border-left: 0.2em solid #005EA5;
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-animation: load8 1.1s infinite linear;
+	animation: load8 1.1s infinite linear;
+	&:after {
+		border-radius: 50%;
+		width: 2em;
+		height: 2em;
+	}
+}
+.loader-full {
+	width: 10em;
+	height: 10em;
+	border-radius: 50%;
+}
+
+.loader-input {
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+	font-size: 10px;
+	text-indent: -9999em;
+	border-top: 0.2em solid rgba(255, 255, 255, 0.2);
+	border-right: 0.2em solid rgba(255, 255, 255, 0.2);
+	border-bottom: 0.2em solid rgba(255, 255, 255, 0.2);
+	border-left: 0.2em solid #005EA5;
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-animation: load8 1.1s infinite linear;
+	animation: load8 1.1s infinite linear;
+	margin-top: -32px;
+	float: right;
+	margin-right: 16px;
+	&:after {
+		border-radius: 50%;
+		width: 2em;
+		height: 2em;
+	}
+}
+

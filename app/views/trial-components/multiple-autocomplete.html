@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+.ui-widget.ui-widget-content {
+  border: 2px solid #0b0c0c;
+  border-radius: 0px;
+}
+
+.ui-widget-content {
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    color: #0b0c0c;
+    width: 33%;
+    word-break: break-all;
+}
+
+.ui-menu .ui-menu-item {
+    margin: 0;
+    cursor: pointer;
+    font-family: "GDS Transport", Arial, sans-serif;
+    color: #0b0c0c;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    box-sizing: border-box;
+    margin: 8px
+} 
+
+@media (min-width: 40.0625em) {
+.govuk-input {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+}
+} 
+
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
+#ui-id-1 {
+  position: absolute !important;
+} 
+
+.ui-menu-item:hover {
+  background: #1d70b8;
+  color: white;
+}
+
+.ui-menu-item:hover {
+  background: #1d70b8;
+  color: white;
+}
+
+.ui-menu .ui-menu-item-wrapper:hover, .ui-menu .ui-menu-item-wrapper.ui-state-active {
+    background: #1d70b8;
+    padding: 16px;
+    color: white;
+}
+
+
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-form-group">
+      <div class="ui-widget">
+      <label class="govuk-label" for="tags">
+        Local authority
+      </label>
+      <input class="govuk-input" id="tags" name="tags" type="text" size="50" >
+    </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

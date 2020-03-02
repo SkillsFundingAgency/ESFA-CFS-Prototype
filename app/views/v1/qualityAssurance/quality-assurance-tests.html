@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Quality assurance tests</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Quality assurance tests</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="create-qa-test" class="govuk-button govuk-button--primary button-createSpecification"
+      data-module="govuk-button">
+      Create QA test
+    </a>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-form-group filterbyContainer">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                <h4 class="govuk-heading-s"> Search</h4>
+            </legend>
+            <div class="govuk-form-group filterSearch">
+                <label class="govuk-label filterLabel" for="filter-by-type">
+                    Search test
+                </label>
+                <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch"
+                    autocomplete="off" name="search" type="text">
+            </div>
+        </fieldset>
+    </div>
+    <div class="govuk-form-group filterbyContainer">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                <h4 class="govuk-heading-s ">
+                    Filter by specification <span><i class="material-icons right-align">
+                            keyboard_arrow_down</i></span>
+                </h4>
+            </legend>
+            <div id="filter-content" class="filter-content">
+                <div class="govuk-form-group filterSearch">
+                    <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+                        Search
+                    </label>
+                    <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1"
+                        autocomplete="off" type="text">
+                </div>
+
+                <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                            type="checkbox" value="primary">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            Specification 1
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                            type="checkbox" value="academy">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            Specification 2
+                        </label>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </fieldset>
+    <div class="govuk-form-group filterbyContainer">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                <h4 class="govuk-heading-s">
+                    Filter by funding period <span><i class="material-icons right-align"> keyboard_arrow_down
+                        </i></span>
+                </h4>
+            </legend>
+            <div id="filter-content" class="filter-content">
+                <div class="govuk-form-group filterSearch">
+                    <label class="govuk-label filterLabel" for="filter-by-type">
+                        Search
+                    </label>
+                    <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search"
+                        type="text">
+                </div>
+                <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                    <ul id="myList">
+                        <li>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                    type="checkbox" value="hmrc">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                    Academic year 2018 - 2019
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
+                                    type="checkbox" value="employment-tribunal">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                    Financial year 2019 - 2020
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    </fieldset>
+    <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
+        Clear filters</a>
+</div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <div class="providerResults-details">
+      <h3 class="govuk-heading-m"><a href="edit-qa-test.html" govuk-link">QA test name</a></h3>
+      <p class="govuk-body-s">To test if a provider has an IoS boarding allowance less than 0</p>
+      <p class="govuk-body-s ">
+        <span>Last edited: <strong>9 Janaury 2019 11:49am</strong></span>
+        <span>Specification: <strong>Non formula funding activity</strong></span>
+      </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    </div>
+    <div class="providerResults-details">
+      <h3 class="govuk-heading-m"><a href="edit-qa-test.html" class="govuk-link">QA test name</a></h3>
+      <p class="govuk-body-s">To test if a provider has an IoS boarding allowance less than 0</p>
+      <p class="govuk-body-s ">
+        <span>Last edited: <strong>9 Janaury 2019 11:49am</strong></span>
+        <span>Specification: <strong>Non formula funding activity</strong></span>
+      </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    </div>
+    <div class="providerResults-detailss">
+      <h3 class="govuk-heading-m"><a href="edit-qa-test.html" class="govuk-link">QA test name</a></h3>
+      <p class="govuk-body-s">To test if a provider has an IoS boarding allowance less than 0</p>
+      <p class="govuk-body-s ">
+        <span>Last edited: <strong>9 Janaury 2019 11:49am</strong></span>
+        <span>Specification: <strong>Non formula funding activity</strong></span>
+      </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    </div>
+    <nav class="govuk-!-margin-top-9" role="navigation" aria-label="Pagination">
+      <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+      <ul class="pagination">
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
+              aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+        <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
+            aria-label="Page 3, current page">3</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
+              aria-hidden="true" role="presentation">&raquo;</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row govuk-!-margin-top-9">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">View results</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="select-specification.html">Select specification</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="view-specification">GFT PE and Sport Premium</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="calculation-providers.html">Pupil numbers</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">View calculation</li>
+    </ol>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">2019/2020</span>
+        <h1 class="govuk-heading-xl">View calculation</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="event-name">
+                    Calculation name
+                </label>
+                <span id="event-name-hint" class="govuk-hint">
+                    Use a descriptive unique name that other users can understand
+                </span>
+                <input class="govuk-input" id="event-name" name="event-name" type="text" value="Pupil number"
+                    aria-describedby="event-name-hint">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                    Value type
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                    <option value="percentage">Percentage</option>
+                </select>
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="more-detail">
+                    Calculation script
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+                    aria-describedby="more-detail-hint">
+Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
+
+If A.HasValue = False Then
+
+Return 0
+
+Else
+    Return A
+End If
+                </textarea>
+            </div>
+            <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+                Build calculation
+            </button>
+            <div class="govuk-inset-text">Your calculation’s build output must be successful before you can save it
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="build-output">
+                    Build output
+                </label>
+                <input class="govuk-input" id="build-output" name="build-output" type="text" value="Code complied successfully: true">
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+        </fieldset>
+    </div>
+</div>
+
+
+{% endblock %}

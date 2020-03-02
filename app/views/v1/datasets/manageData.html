@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage data</li>
+            </ol>
+        </div>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Manage data</h1>
+        <span class="govuk-caption-xl">Manage data source files or map them to datasets for a specification</span>
+    </div>
+</div>
+
+<!-- Top row start -->
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m"><a href="manageDatasets">Manage data source files</a></h3>
+        <p class="govuk-body">Load a new data source file or download an existing one.</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m"><a href="datasetRelationships">Map data source files to datasets for a
+                specification</a></h3>
+        <p class="govuk-body">Select the data source file a dataset uses.</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m"><a href="schemas">Download data schemas</a></h3>
+        <p class="govuk-body">Download the data schme for data source.</p>
+    </div>
+</div>
+<!-- Top row end -->
+
+<!--
+    <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                <h3 class="govuk-heading-m"><a href="">View results</a></h3>
+                <p class="govuk-body">View results for providers, calculations and quality assurance tests.</p>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <h3 class="govuk-heading-m"><a href="">govuk-heading-m</a></h3>
+                <p class="govuk-body">govuk-body</p>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <h3 class="govuk-heading-m"><a href="">govuk-heading-m</a></h3>
+                <p class="govuk-body">govuk-body</p>
+            </div>
+        </div>
+    
+-->
+
+{% endblock %}

@@ -1,0 +1,497 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">View results</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="select-specification.html">Select specification</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="view-specification">GFT PE and Sport Premium</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Pupil numbers</li>
+    </ol>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">2019/2020</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Pupil number</h1>
+        <h3 class="govuk-heading-m">PE and Sport Premium</h3>
+        <a href="view-calculation.html" class="govuk-button" type="submit" class="gem-c-search__submit">View calculation</a> <br>
+        <section class="govuk-!-margin-bottom-5">
+            <div class="attachment__thumbnail">
+              <a class="govuk-link" target="_self" tabindex="-1" aria-hidden="true"
+                href="">
+                <svg class="attachment__thumbnail-image thumbnail-image-small " version="1.1" viewBox="0 0 99 140" width="99" height="140"
+                  aria-hidden="true">
+                  <path d="M12 12h75v27H12zm0 47h18.75v63H12zm55 2v59H51V61h16m2-2H49v63h20V59z" stroke-width="0"></path>
+                  <path d="M49 61.05V120H32.8V61.05H49m2-2H30.75v63H51V59zm34 2V120H69.05V61.05H85m2-2H67v63h20V59z"
+                    stroke-width="0"></path>
+                  <path d="M30 68.5h56.5M30 77.34h56.5M30 112.7h56.5M30 95.02h56.5M30 86.18h56.5M30 103.86h56.5" fill="none"
+                    stroke-miterlimit="10" stroke-width="2"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="attachment__details">
+              <h4 class="govuk-heading-s">
+                <a class="govuk-link" target="_self"
+                  href="">Title</a></h4>
+              <p class="govuk-body-s"><span>CSV</span>, <span>19.5 KB</span>, Updated: <span>22 January 2020</span> </p>
+            </div>
+          </section>         
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                    <h4 class="govuk-heading-s"> Search</h4>
+                </legend>
+                <div class="govuk-form-group filterSearch">
+                    <label class="govuk-label filterLabel" for="filter-by-type">
+                        Search
+                    </label>
+                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch"
+                        autocomplete="off" name="search" type="text">
+                </div>
+            </fieldset>
+        </div>
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                    <h4 class="govuk-heading-s ">
+                        Filter by provider type <span><i class="material-icons right-align"> keyboard_arrow_down
+                            </i></span>
+                    </h4>
+                </legend>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1"
+                            autocomplete="off" type="text">
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="primary">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Primary
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="academy">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Academy
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="secondary">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Secondary
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="secondary">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                16 - 19
+                            </label>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </fieldset>
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                    <h4 class="govuk-heading-s">
+                        Filter by provider sub type <span><i class="material-icons right-align"> keyboard_arrow_down
+                            </i></span>
+                    </h4>
+                </legend>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label class="govuk-label filterLabel" for="filter-by-type">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search"
+                            type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                        <ul id="myList">
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                        type="checkbox" value="hmrc">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                        Sub type a
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
+                                        type="checkbox" value="employment-tribunal">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                        Sub type b
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
+                                        type="checkbox" value="employment-tribunal">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                        Sub type c
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
+                                        type="checkbox" value="employment-tribunal">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                        Sub type d
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
+                                        type="checkbox" value="employment-tribunal">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                        Sub type e
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        </fieldset>
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                    <h4 class="govuk-heading-s">
+                        Filter by results status <span><i class="material-icons right-align"> keyboard_arrow_down
+                            </i></span>
+                    </h4>
+                </legend>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                autocomplete="off" type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                autocomplete="off" type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                With exceptions
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                autocomplete="off" type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Without exceptions
+                            </label>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </fieldset>
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                    <h4 class="govuk-heading-s">
+                        Filter by local authority (LA) <span><i class="material-icons right-align"> keyboard_arrow_down
+                            </i></span>
+                    </h4>
+                </legend>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch govuk-!-margin-bottom-2">
+                        <label class="govuk-label filterLabel" for="filter-by-type">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="address-line-1" autocomplete="off"
+                            name="address-line-1" type="text">
+                    </div>
+                </div>
+        </div>
+        </fieldset>
+        <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
+            Clear filters</a>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default ">
+            <div class="govuk-accordion__section" id="">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                            ACE Schools Plymouth
+                        </span>
+                    </h2>
+                    <p>Total value: <strong>£3,467.89</strong></p>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+                    aria-labelledby="accordion-default-heading-1">
+                    <a class="govuk-link" href="view-specification-provider">View provider calculations</a>
+                    <dl class="govuk-summary-list govuk-!-margin-top-5">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Updated
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                25 August 2018
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                UKPRN
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10029085
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Provider type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Primary
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Local authority
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Oxfordshire
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Funding lines
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Schools Block and High Needs Block
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                            ARK John Archer Primary Academy
+                        </span>
+                    </h2>
+                    <p>Total value: <strong>£1,500</strong></p>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+                    aria-labelledby="accordion-default-heading-1">
+                    <a class="govuk-link" href="view-specification-provider">View provider calculations</a>
+                    <dl class="govuk-summary-list govuk-!-margin-top-5">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Updated
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                25 August 2018
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                UKPRN
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10029085
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Provider type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Secondary
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Local authority
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Oxfordshire
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Funding lines
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Schools Block and High Needs Block
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                            ASPIRE Centre, Kings Leadership Academy Liverpool
+                        </span>
+                    </h2>
+                    <p>Total value: <strong>£2,000</strong></p>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+                    aria-labelledby="accordion-default-heading-1">
+                    <a class="govuk-link" href="view-specification-provider">View provider calculations</a>
+                    <dl class="govuk-summary-list govuk-!-margin-top-5">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Updated
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                25 August 2018
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                UKPRN
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10029085
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Provider type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Acadmemy
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Local authority
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Oxfordshire
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Funding lines
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Schools Block and High Needs Block
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                            Abacus Belsize Primary School
+                        </span>
+                    </h2>
+                    <p>Total value: <strong>£1,245.86</strong></p>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+                    aria-labelledby="accordion-default-heading-1">
+                    <a class="govuk-link" href="view-specification-provider">View provider calculations</a>
+                    <dl class="govuk-summary-list govuk-!-margin-top-5">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Updated
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                25 August 2018
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                UKPRN
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10029085
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Provider type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Primary
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Local authority
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Oxfordshire
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Funding lines
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Schools Block and High Needs Block
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <nav class="govuk-!-margin-top-9" role="navigation" aria-label="Pagination">
+            <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+            <ul class="pagination">
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
+                            aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+                <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
+                        aria-label="Page 3, current page">3</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
+                            aria-hidden="true" role="presentation">&raquo;</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+
+
+    {% endblock %}

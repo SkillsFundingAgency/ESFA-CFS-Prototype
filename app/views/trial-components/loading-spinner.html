@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div id="loader-content" class="loader" role="alert" aria-live="assertive">Loading content, please wait.</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                    Loading spinner input
+                </label>
+                <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+                <div id="loader-content" class="loader-input" role="alert" aria-live="assertive">Loading content, please wait.</div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<script>
+    setTimeout(contentChange, 6000);
+
+    function contentChange() {
+        document.getElementById("loader-content").innerHTML = "Content has loaded.";
+    };
+</script>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Funding structure</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+    </tr>
+  </thead>
+</table>
+
+<ol class="app-step-nav__steps">
+
+  <li class="app-step-nav__step js-step" id="check-youre-allowed-to-drive">
+
+    <!-- accordion 1 start-->
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div class="js-toggle-panel" data-position="1">
+        <span class="app-step-nav__circle app-step-nav__circle--number">
+          <span class="app-step-nav__circle-inner">
+            <span class="app-step-nav__circle-background">
+              <span class="govuk-visually-hidden">Step</span>
+              1
+            </span>
+          </span>
+        </span>
+      </div>
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Funding line
+                </span>
+              </h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <p>Name</p>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <p>Status</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1">
+        </div>
+
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="js-toggle-panel" data-position="2">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden">Step</span>
+                  2
+                </span>
+              </span>
+            </span>
+          </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Funding line
+                  </span>
+                </h2>
+              </div>
+
+              <div class="govuk-grid-column-one-third">
+                <p>Name</p>
+              </div>
+
+              <div class="govuk-grid-column-one-third">
+                <p>Status</p>
+              </div>
+            </div>
+
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1">
+              <p class='govuk-body'>This is the content for Writing well for the web.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </li>
+  <!-- accordion 1 end-->
+</ol>
+</div>
+
+
+<!-- Javascript -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/auto-store-data.js"></script>
+<script src="/public/javascripts/step-by-step-navigation.js"></script>
+<script type="text/javascript">
+  var $element = $('#step-by-step-navigation')
+  var stepByStepNavigation = new GOVUK.Modules.StepByStepNavigation()
+  stepByStepNavigation.start($element)
+</script>
+
+{% endblock %}

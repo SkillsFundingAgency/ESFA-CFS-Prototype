@@ -1,0 +1,312 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">View results</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="/v1/view-results/view-provider-results/provider-results">View provider results</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="/v1/view-results/view-provider-results/results">Conisborough College</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Conisborough college archived profiling
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">Provider name</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Conisborough college</h1>
+        <span class="govuk-caption-m">Specification</span>
+        <h1 class="govuk-heading-m">DSG specification 1</h1>
+        <span class="govuk-caption-m">Funding period</span>
+        <h1 class="govuk-heading-m">2019 to 2020</h1>
+        <span class="govuk-caption-m">Funding stream</span>
+        <h1 class="govuk-heading-m">DSG</h1>
+    </div>
+</div>
+
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Profile change 22 August 2019
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-m">Total allocation for 2019 to 2020</span>
+                    <h3 class="govuk-heading-m govuk-!-margin-bottom-2">£28,500,000</h3>
+                    <span class="govuk-caption-m">Previous allocation value</span>
+                    <h3 class="govuk-heading-m">£26,000,000</h3>
+                    <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Reason for change
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            Allocation value increased by £2,500,000 following installment 5
+                        </div>
+                    </details>
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption">Profilling installments</caption>
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Installment</th>
+                                <th scope="col" class="govuk-table__header govuk-table__header--numeric">value</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">April</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">April</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">April</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">May</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">May</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">June</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                    Profile change 30 May 2019
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-2">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-m">Total allocation for 2019 to 2020</span>
+                    <h3 class="govuk-heading-m govuk-!-margin-bottom-2">£28,500,000</h3>
+                    <span class="govuk-caption-m">Previous allocation value</span>
+                    <h3 class="govuk-heading-m">£26,000,000</h3>
+                    <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Reason for change
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            Allocation value increased by £2,500,000 following installment 5
+                        </div>
+                    </details>
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption">Profilling installments</caption>
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Installment</th>
+                                <th scope="col" class="govuk-table__header govuk-table__header--numeric">value</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">April</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">April</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">April</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">May</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">May</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">June</th>
+                                <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                        Profile change 4 May 2019
+                    </span>
+                </h2>
+            </div>
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content"
+                aria-labelledby="accordion-default-heading-3">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <span class="govuk-caption-m">Total allocation for 2019 to 2020</span>
+                        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">£28,500,000</h3>
+                        <span class="govuk-caption-m">Previous allocation value</span>
+                        <h3 class="govuk-heading-m">£26,000,000</h3>
+                        <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Reason for change
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                Allocation value increased by £2,500,000 following installment 5
+                            </div>
+                        </details>
+                        <table class="govuk-table">
+                            <caption class="govuk-table__caption">Profilling installments</caption>
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Installment</th>
+                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">value</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">April</th>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">April</th>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">April</th>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">May</th>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">May</th>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">June</th>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                            Profile change 28 April 2019
+                        </span>
+                    </h2>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content"
+                    aria-labelledby="accordion-default-heading-4">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds">
+                            <span class="govuk-caption-m">Total allocation for 2019 to 2020</span>
+                            <h3 class="govuk-heading-m govuk-!-margin-bottom-2">£28,500,000</h3>
+                            <span class="govuk-caption-m">Previous allocation value</span>
+                            <h3 class="govuk-heading-m">£26,000,000</h3>
+                            <details class="govuk-details" data-module="govuk-details">
+                                <summary class="govuk-details__summary">
+                                    <span class="govuk-details__summary-text">
+                                        Reason for change
+                                    </span>
+                                </summary>
+                                <div class="govuk-details__text">
+                                    Allocation value increased by £2,500,000 following installment 5
+                                </div>
+                            </details>
+                            <table class="govuk-table">
+                                <caption class="govuk-table__caption">Profilling installments</caption>
+                                <thead class="govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header">Installment</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">value</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">April</th>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">April</th>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">April</th>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">May</th>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">May</th>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£95,000</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">June</th>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£100,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="/v1/view-results/view-provider-results/results" class="govuk-back-link">Back</a>
+
+{% endblock %}
