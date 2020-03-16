@@ -27,30 +27,6 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-        <div class="attachment__thumbnail">
-            <a class="govuk-link" target="_self" tabindex="-1" aria-hidden="true" href="">
-                <svg class="attachment__thumbnail-image thumbnail-image-small " version="1.1" viewBox="0 0 99 140"
-                    width="99" height="140" aria-hidden="true">
-                    <path d="M12 12h75v27H12zm0 47h18.75v63H12zm55 2v59H51V61h16m2-2H49v63h20V59z" stroke-width="0">
-                    </path>
-                    <path d="M49 61.05V120H32.8V61.05H49m2-2H30.75v63H51V59zm34 2V120H69.05V61.05H85m2-2H67v63h20V59z"
-                        stroke-width="0"></path>
-                    <path d="M30 68.5h56.5M30 77.34h56.5M30 112.7h56.5M30 95.02h56.5M30 86.18h56.5M30 103.86h56.5"
-                        fill="none" stroke-miterlimit="10" stroke-width="2"></path>
-                </svg>
-            </a>
-        </div>
-        <div class="attachment__details">
-            <h4 class="govuk-heading-s">
-                <a class="govuk-link" target="_self" href="">Title</a></h4>
-            <p class="govuk-body-s"><span>CSV</span>, <span>19.5 KB</span>, Updated: <span>22 January 2020</span> </p>
-        </div>
-    </div>
-</div>
-
-
 <div class="govuk-tabs" data-module="govuk-tabs">
     <h2 class="govuk-tabs__title">
         Contents
@@ -66,11 +42,11 @@ GOV.UK Prototype Kit
                 Additional calculations
             </a>
         </li>
-        <!-- <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#qa-test-results">
-                QA test results
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#downloadable-reports">
+                Downloadable reports
             </a>
-        </li> -->
+        </li>
     </ul>
 
     <section class="govuk-tabs__panel" id="template-calculations">
@@ -92,6 +68,7 @@ GOV.UK Prototype Kit
                         <option value="draft">All</option>
                         <option value="draft">Approved</option>
                         <option value="draft">Draft</option>
+                        <option value="draft">Updated</option>
                     </select>
                 </div>
             </div>
@@ -150,6 +127,19 @@ GOV.UK Prototype Kit
                     <button class="govuk-button" type="submit" class="gem-c-search__submit">Search</button>
                 </div>
             </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group calculation-status">
+                    <label class="govuk-label" for="sort">
+                        Filter by calculation status
+                    </label>
+                    <select class="govuk-select" id="sort" name="sort">
+                        <option value="draft">All</option>
+                        <option value="draft">Approved</option>
+                        <option value="draft">Draft</option>
+                        <option value="draft">Updated</option>
+                    </select>
+                </div>
+            </div>
         </div>
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
@@ -194,39 +184,50 @@ GOV.UK Prototype Kit
         </div>
     </section>
 
-    <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="qa-test-results">
-        <h2 class="govuk-heading-l">QA test results</h2>
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <div class="govuk-form-group search-container">
-                    <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false"
-                        type="text">
-                    <button class="govuk-button" type="submit" class="gem-c-search__submit">Search</button>
-                </div>
-            </div>
-        </div>
+    <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="downloadable-reports">
+        <h2 class="govuk-heading-l">Downloadable reports</h2>
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                <!-- <table class="govuk-table">
-                    <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header">QA Tests</th>
-                            <th scope="col" class="govuk-table__header">Updated</th>
-                            <th scope="col" class="govuk-table__header">Failures</th>
-                            <th scope="col" class="govuk-table__header">Passes</th>
-                            <th scope="col" class="govuk-table__header">Coverage</th>
-                        </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">Test name 1</td>
-                            <td class="govuk-table__cell">31 March 2019 5:57</td>
-                            <td class="govuk-table__cell">0</td>
-                            <td class="govuk-table__cell">0</td>
-                            <td class="govuk-table__cell">0</td>
-                        </tr>
-                    </tbody>
-                </table> -->
+                <h3 class="govuk-heading-m govuk-!-margin-top-5">Live reports</h2>
+                    <div class="attachment__thumbnail">
+                        <a class="govuk-link" target="_self" tabindex="-1" aria-hidden="true"
+                          href="">
+                          <svg class="attachment__thumbnail-image thumbnail-image-small " version="1.1" viewBox="0 0 99 140" width="99" height="140"
+                            aria-hidden="true">
+                            <path d="M12 12h75v27H12zm0 47h18.75v63H12zm55 2v59H51V61h16m2-2H49v63h20V59z" stroke-width="0"></path>
+                            <path d="M49 61.05V120H32.8V61.05H49m2-2H30.75v63H51V59zm34 2V120H69.05V61.05H85m2-2H67v63h20V59z"
+                              stroke-width="0"></path>
+                            <path d="M30 68.5h56.5M30 77.34h56.5M30 112.7h56.5M30 95.02h56.5M30 86.18h56.5M30 103.86h56.5" fill="none"
+                              stroke-miterlimit="10" stroke-width="2"></path>
+                          </svg>
+                        </a>
+                      </div>
+                      <div class="attachment__details">
+                        <h4 class="govuk-heading-s">
+                          <a class="govuk-link" target="_self"
+                            href="">Title</a></h4>
+                        <p class="govuk-body-s"><span>CSV</span>, <span>19.5 KB</span>, Updated: <span>22 January 2020</span> </p>
+                      </div>
+                <h3 class="govuk-heading-m govuk-!-margin-top-9">Published reports</h2>
+                    <div class="attachment__thumbnail">
+                        <a class="govuk-link" target="_self" tabindex="-1" aria-hidden="true"
+                          href="">
+                          <svg class="attachment__thumbnail-image thumbnail-image-small " version="1.1" viewBox="0 0 99 140" width="99" height="140"
+                            aria-hidden="true">
+                            <path d="M12 12h75v27H12zm0 47h18.75v63H12zm55 2v59H51V61h16m2-2H49v63h20V59z" stroke-width="0"></path>
+                            <path d="M49 61.05V120H32.8V61.05H49m2-2H30.75v63H51V59zm34 2V120H69.05V61.05H85m2-2H67v63h20V59z"
+                              stroke-width="0"></path>
+                            <path d="M30 68.5h56.5M30 77.34h56.5M30 112.7h56.5M30 95.02h56.5M30 86.18h56.5M30 103.86h56.5" fill="none"
+                              stroke-miterlimit="10" stroke-width="2"></path>
+                          </svg>
+                        </a>
+                      </div>
+                      <div class="attachment__details">
+                        <h4 class="govuk-heading-s">
+                          <a class="govuk-link" target="_self"
+                            href="">Title</a></h4>
+                        <p class="govuk-body-s"><span>CSV</span>, <span>19.5 KB</span>, Updated: <span>22 January 2020</span> </p>
+                      </div>
             </div>
         </div>
     </section>
