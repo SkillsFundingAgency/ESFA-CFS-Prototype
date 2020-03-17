@@ -169,3 +169,13 @@ $('#gag-repayment-no').change(function() {
     $('#repayment-details').hide();
   } 
 });
+
+
+// specification select
+
+  $(function(){
+    $('#specification').on('change', function(){
+        $('#specification-link').attr('href', $(this).val());
+    })
+});
+
