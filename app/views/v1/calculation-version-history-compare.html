@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+  
+      <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+        <ol class="govuk-breadcrumbs__list">
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="specifications.html">GFT Dedicated schools grant</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="specifications.html">Primary unit of funding</a>
+          </li>
+
+          <li class="govuk-breadcrumbs__list-item" aria-current="page">Calculation version history</li>
+        </ol>
+      </div>
+    
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <p class="govuk-body">Funding Period: <span>Financial year 2020 to 2021</span></p>
+        <h1 class="govuk-heading-xl">Primary unit of funding</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+                6 December 2020 10:33am <span class="right-align">Draft</span>
+              </label>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20" aria-describedby="more-detail-hint"></textarea>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="more-detail">
+                    10 December 2020 10:47am <span class="right-align">Draft</span>
+                  </label>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20" aria-describedby="more-detail-hint"></textarea>
+            </div>
+        </div>    
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <div class="govuk-checkboxes govuk-checkboxes--small">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            Inline code viewer
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="#" class="govuk-back-link">Back</a>
+    </div>
+</div>
+
+{% endblock %}

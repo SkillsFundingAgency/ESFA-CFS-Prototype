@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+  
+      <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+        <ol class="govuk-breadcrumbs__list">
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="specifications.html">GFT Dedicated schools grant</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="specifications.html">Primary unit of funding</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item" aria-current="page">Calculation version history</li>
+        </ol>
+      </div>
+    
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Primary unit of funding</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-inset-text">
+            Select two versions for comparison
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <table class="govuk-table table-vertical-align">
+            <caption class="govuk-table__caption">Specification</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Choose</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+                    <th scope="col" class="govuk-table__header">Version</th>
+                    <th scope="col" class="govuk-table__header">Updated</th>
+                    <th scope="col" class="govuk-table__header">Author</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                type="checkbox" value="provider-name">
+                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                        </div>
+                    </th>
+                    <td class="govuk-table__cell">Approved</td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">13 December 2019 12:18pm</td>
+                    <td class="govuk-table__cell">Rob Sparks</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                type="checkbox" value="provider-name">
+                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                        </div>
+                    </th>
+                    <td class="govuk-table__cell">Approved</td>
+                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell">13 December 2019 12:18pm</td>
+                    <td class="govuk-table__cell">Rob Sparks</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                type="checkbox" value="provider-name">
+                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                        </div>
+                    </th>
+                    <td class="govuk-table__cell">Approved</td>
+                    <td class="govuk-table__cell">3</td>
+                    <td class="govuk-table__cell">13 December 2019 12:18pm</td>
+                    <td class="govuk-table__cell">Rob Sparks</td>
+                </tr>
+            </tbody>
+        </table>
+        <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+            Compare calculations
+          </button>
+          <br>
+        <a href="#" class="govuk-back-link">Back</a>
+    </div>
+</div>
+
+
+{% endblock %}
