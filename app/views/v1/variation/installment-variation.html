@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/fundingLineStructure.html">DSG SIT</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit specification</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Variation occurence</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <table class="govuk-table">
+                <caption class="govuk-table__caption">Installment variation</caption>
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header app-custom-class">Funding line</th>
+                        <th scope="col" class="govuk-table__header app-custom-class">Current installment</th>
+                        <th scope="col" class="govuk-table__header app-custom-class">Future installment</th>
+                        <th scope="col" class="govuk-table__header app-custom-class">Installment number</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Funding line 1</th>
+                        <td class="govuk-table__cell">
+                            April 2020 <br>
+                            Installment 3
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-date-input" id="passport-issued">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="occurence-date">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="occurence-date-mm" name="variation-month-fl1" type="text"
+                                            pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                            id="occurence-date-yy" name="variation-year-fl1" type="text"
+                                            pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="in-month-occurence">
+                                    Installment
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                    id="in-month-occurence" name="variation-month-fl1" type="text"
+                                    pattern="[0-9]*" inputmode="numeric">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<a href="/v1/fundingLineStructure.html#release-timetable">
+    <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+    </button>
+</a>
+
+{% endblock %}
