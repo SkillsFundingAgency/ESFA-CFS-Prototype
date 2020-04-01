@@ -1,0 +1,330 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+    document.body.className = document.body.className ? document.body.className + " js-enabled" : "js-enabled"
+</script>
+
+
+<section class="govuk-tabs__panel" id="fundingline-structure">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Funding line structure</h2>
+        </div>
+        <div class="govuk-grid-column-one-third ">
+            <div><strong class="govuk-tag right-align">Draft</strong>
+                <div class="approve-button-container"><button class="govuk-button" type="button"
+                        aria-label="Approval Status"><span>Approve</span><span hidden="">Loading</span></button></div>
+            </div>
+        </div>
+    </div>
+    <ul class="collapsible-steps">
+        <li class="collapsible-step step-is-shown">
+            <ul>
+                <li class="collapsible-step step-is-shown">
+                    <div class="collapsible-step-header-container">
+                        <h2 class="govuk-heading-s first-step-title"><span
+                                class="collapsible-step-circle collapsible-step-circle-number"><span
+                                    class="collapsible-step-circle-inner"><span
+                                        class="collapsible-step-circle-background"><span
+                                            class="collapsible-step-circle-step-label visuallyhidden">Step</span> 1<span
+                                            class="collapsible-step-circle-step-colon visuallyhidden"
+                                            aria-hidden="true">:</span></span></span></span><span
+                                class="collapsible-step-header-title">Funding Line</span><span
+                                class="collapsible-step-header-description"><span>Total Allocation</span></span><span
+                                class="collapsible-step-header-status"></span><span
+                                class="collapsible-step-panel-button"><label
+                                    class="govuk-collapsiblepanel-heading-collapser"></label></span></h2>
+                    </div>
+                    <div class="collapsible-step-panel">
+                        <ul>
+                            <li class="collapsible-step step-is-shown">
+                                <div class="collapsible-step-header-container">
+                                    <h2 class="govuk-heading-s"><span
+                                            class="collapsible-step-circle collapsible-step-circle-number"><span
+                                                class="collapsible-step-circle-inner"><span
+                                                    class="collapsible-step-circle-background"><span
+                                                        class="collapsible-step-circle-step-label visuallyhidden">Step</span>
+                                                    2<span class="collapsible-step-circle-step-colon visuallyhidden"
+                                                        aria-hidden="true">:</span></span></span></span><span
+                                            class="collapsible-step-header-title">Calculation</span><span
+                                            class="collapsible-step-header-description"><a class="govuk-link"
+                                                href="/calcs/editTemplateCalculation/dfa66ea7-2c57-4ccc-bf22-ba7095def87d">Total
+                                                Allocation</a></span><span
+                                            class="collapsible-step-header-status">Draft</span><span
+                                            class="collapsible-step-panel-button" hidden=""><label
+                                                class="govuk-collapsiblepanel-heading-expander"></label></span></h2>
+                                </div>
+                                <div class="collapsible-step-panel collapsible-step-hidden-panel"></div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="collapsible-step step-is-shown">
+                                <div class="collapsible-step-header-container">
+                                    <h2 class="govuk-heading-s"><span
+                                            class="collapsible-step-circle collapsible-step-circle-number"
+                                            hidden=""><span class="collapsible-step-circle-inner"><span
+                                                    class="collapsible-step-circle-background"><span
+                                                        class="collapsible-step-circle-step-label visuallyhidden">Step</span>
+                                                    <span class="collapsible-step-circle-step-colon visuallyhidden"
+                                                        aria-hidden="true">:</span></span></span></span><span
+                                            class="collapsible-step-header-title"></span><span
+                                            class="collapsible-step-header-description"><a class="govuk-link"
+                                                href="/calcs/editTemplateCalculation/7ff8c163-cc57-4bae-a78f-d04f101abf78">Eligible
+                                                Pupils</a></span><span
+                                            class="collapsible-step-header-status">Draft</span><span
+                                            class="collapsible-step-panel-button" hidden=""><label
+                                                class="govuk-collapsiblepanel-heading-expander"></label></span></h2>
+                                </div>
+                                <div class="collapsible-step-panel collapsible-step-hidden-panel"></div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="collapsible-step step-is-shown">
+                                <div class="collapsible-step-header-container">
+                                    <h2 class="govuk-heading-s"><span
+                                            class="collapsible-step-circle collapsible-step-circle-number"
+                                            hidden=""><span class="collapsible-step-circle-inner"><span
+                                                    class="collapsible-step-circle-background"><span
+                                                        class="collapsible-step-circle-step-label visuallyhidden">Step</span>
+                                                    <span class="collapsible-step-circle-step-colon visuallyhidden"
+                                                        aria-hidden="true">:</span></span></span></span><span
+                                            class="collapsible-step-header-title"></span><span
+                                            class="collapsible-step-header-description"><a class="govuk-link"
+                                                href="/calcs/editTemplateCalculation/cb2eadba-bc31-4f5a-9560-39afa7fba954">Pupil
+                                                rate threshold</a></span><span
+                                            class="collapsible-step-header-status">Draft</span><span
+                                            class="collapsible-step-panel-button" hidden=""><label
+                                                class="govuk-collapsiblepanel-heading-expander"></label></span></h2>
+                                </div>
+                                <div class="collapsible-step-panel collapsible-step-hidden-panel"></div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="collapsible-step step-is-shown">
+                                <div class="collapsible-step-header-container">
+                                    <h2 class="govuk-heading-s"><span
+                                            class="collapsible-step-circle collapsible-step-circle-number"
+                                            hidden=""><span class="collapsible-step-circle-inner"><span
+                                                    class="collapsible-step-circle-background"><span
+                                                        class="collapsible-step-circle-step-label visuallyhidden">Step</span>
+                                                    <span class="collapsible-step-circle-step-colon visuallyhidden"
+                                                        aria-hidden="true">:</span></span></span></span><span
+                                            class="collapsible-step-header-title"></span><span
+                                            class="collapsible-step-header-description"><a class="govuk-link"
+                                                href="/calcs/editTemplateCalculation/4d2dfd26-f58e-4331-a1f9-8bcda2dd1c40">Rate</a></span><span
+                                            class="collapsible-step-header-status">Draft</span><span
+                                            class="collapsible-step-panel-button" hidden=""><label
+                                                class="govuk-collapsiblepanel-heading-expander"></label></span></h2>
+                                </div>
+                                <div class="collapsible-step-panel collapsible-step-hidden-panel"></div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="collapsible-step step-is-shown">
+                                <div class="collapsible-step-header-container">
+                                    <h2 class="govuk-heading-s"><span
+                                            class="collapsible-step-circle collapsible-step-circle-number"
+                                            hidden=""><span class="collapsible-step-circle-inner"><span
+                                                    class="collapsible-step-circle-background"><span
+                                                        class="collapsible-step-circle-step-label visuallyhidden">Step</span>
+                                                    <span class="collapsible-step-circle-step-colon visuallyhidden"
+                                                        aria-hidden="true">:</span></span></span></span><span
+                                            class="collapsible-step-header-title"></span><span
+                                            class="collapsible-step-header-description"><a class="govuk-link"
+                                                href="/calcs/editTemplateCalculation/b18cb2c5-39da-450f-a6c1-bbc04b1bacf0">Additional
+                                                Rate</a></span><span
+                                            class="collapsible-step-header-status">Draft</span><span
+                                            class="collapsible-step-panel-button" hidden=""><label
+                                                class="govuk-collapsiblepanel-heading-expander"></label></span></h2>
+                                </div>
+                                <div class="collapsible-step-panel collapsible-step-hidden-panel"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<script>
+    ! function (u) {
+        function e(e) {
+            for (var t, r, n = e[0], a = e[1], o = e[2], c = 0, f = []; c < n.length; c++) r = n[c], Object.prototype
+                .hasOwnProperty.call(d, r) && d[r] && f.push(d[r][0]), d[r] = 0;
+            for (t in a) Object.prototype.hasOwnProperty.call(a, t) && (u[t] = a[t]);
+            for (p && p(e); f.length;) f.shift()();
+            return b.push.apply(b, o || []), i()
+        }
+
+        function i() {
+            for (var e, t = 0; t < b.length; t++) {
+                for (var r = b[t], n = !0, a = 1; a < r.length; a++) {
+                    var o = r[a];
+                    0 !== d[o] && (n = !1)
+                }
+                n && (b.splice(t--, 1), e = l(l.s = r[0]))
+            }
+            return e
+        }
+        var r = {},
+            d = {
+                2: 0
+            },
+            b = [];
+
+        function l(e) {
+            if (r[e]) return r[e].exports;
+            var t = r[e] = {
+                i: e,
+                l: !1,
+                exports: {}
+            };
+            return u[e].call(t.exports, t, t.exports, l), t.l = !0, t.exports
+        }
+        l.e = function (a) {
+            var e = [],
+                r = d[a];
+            if (0 !== r)
+                if (r) e.push(r[2]);
+                else {
+                    var t = new Promise(function (e, t) {
+                        r = d[a] = [e, t]
+                    });
+                    e.push(r[2] = t);
+                    var n, o = document.createElement("script");
+                    o.charset = "utf-8", o.timeout = 120, l.nc && o.setAttribute("nonce", l.nc), o.src = l.p +
+                        "static/js/" + ({} [a] || a) + "." + {
+                            0: "e6b403cb",
+                            4: "0c0e388a",
+                            5: "1e8c04f6",
+                            6: "4b747fdc",
+                            7: "3f1625ae",
+                            8: "5aec37cd",
+                            9: "fddf7f54",
+                            10: "b62b7676",
+                            11: "290fadf7",
+                            12: "a6f119a9",
+                            13: "ea451d4a",
+                            14: "9ae45e89",
+                            15: "83ab6888",
+                            16: "ddafc20b",
+                            17: "a511e369",
+                            18: "cff87a90",
+                            19: "f8655f4d",
+                            20: "54b7274e",
+                            21: "ecb947a4",
+                            22: "c5b8ac90",
+                            23: "88b9391b",
+                            24: "3c95eacb",
+                            25: "7f2526d3",
+                            26: "1469ccf2",
+                            27: "db7b0155",
+                            28: "6469ef41",
+                            29: "2e350000",
+                            30: "dd7f2f4a",
+                            31: "cba82bd6",
+                            32: "fefb421e",
+                            33: "ba0dba67",
+                            34: "f4f828ee",
+                            35: "802e876e",
+                            36: "607af8ab",
+                            37: "c9a2e1ae",
+                            38: "d197375b",
+                            39: "7ac98dd7",
+                            40: "8f9b64fd",
+                            41: "ad04b922",
+                            42: "0ba6ea83",
+                            43: "4a087c77",
+                            44: "4538e435",
+                            45: "b700a0ff",
+                            46: "000d64a4",
+                            47: "ceec61b6",
+                            48: "59696e4c",
+                            49: "43ce9ac4",
+                            50: "5a2ee4e4",
+                            51: "47abc6e4",
+                            52: "88000dfd",
+                            53: "8d18788c",
+                            54: "4e4224a4",
+                            55: "5a110b43",
+                            56: "50d2ac0a",
+                            57: "72b34bf5",
+                            58: "524e3031",
+                            59: "9b22404e"
+                        } [a] + ".chunk.js";
+                    var c = new Error;
+                    n = function (e) {
+                        o.onerror = o.onload = null, clearTimeout(f);
+                        var t = d[a];
+                        if (0 !== t) {
+                            if (t) {
+                                var r = e && ("load" === e.type ? "missing" : e.type),
+                                    n = e && e.target && e.target.src;
+                                c.message = "Loading chunk " + a + " failed.\n(" + r + ": " + n + ")", c.name =
+                                    "ChunkLoadError", c.type = r, c.request = n, t[1](c)
+                            }
+                            d[a] = void 0
+                        }
+                    };
+                    var f = setTimeout(function () {
+                        n({
+                            type: "timeout",
+                            target: o
+                        })
+                    }, 12e4);
+                    o.onerror = o.onload = n, document.head.appendChild(o)
+                } return Promise.all(e)
+        }, l.m = u, l.c = r, l.d = function (e, t, r) {
+            l.o(e, t) || Object.defineProperty(e, t, {
+                enumerable: !0,
+                get: r
+            })
+        }, l.r = function (e) {
+            "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+                value: "Module"
+            }), Object.defineProperty(e, "__esModule", {
+                value: !0
+            })
+        }, l.t = function (t, e) {
+            if (1 & e && (t = l(t)), 8 & e) return t;
+            if (4 & e && "object" == typeof t && t && t.__esModule) return t;
+            var r = Object.create(null);
+            if (l.r(r), Object.defineProperty(r, "default", {
+                    enumerable: !0,
+                    value: t
+                }), 2 & e && "string" != typeof t)
+                for (var n in t) l.d(r, n, function (e) {
+                    return t[e]
+                }.bind(null, n));
+            return r
+        }, l.n = function (e) {
+            var t = e && e.__esModule ? function () {
+                return e.default
+            } : function () {
+                return e
+            };
+            return l.d(t, "a", t), t
+        }, l.o = function (e, t) {
+            return Object.prototype.hasOwnProperty.call(e, t)
+        }, l.p = "/app/", l.oe = function (e) {
+            throw console.error(e), e
+        };
+        var t = this["webpackJsonpcalculatefunding-web"] = this["webpackJsonpcalculatefunding-web"] || [],
+            n = t.push.bind(t);
+        t.push = e, t = t.slice();
+        for (var a = 0; a < t.length; a++) e(t[a]);
+        var p = n;
+        i()
+    }([])
+</script>
+
+
+{% endblock %}
+

@@ -41,7 +41,6 @@ GOV.UK Prototype Kit
                         <th scope="col" class="govuk-table__header app-custom-class">Funding line</th>
                         <th scope="col" class="govuk-table__header app-custom-class">Current installment</th>
                         <th scope="col" class="govuk-table__header app-custom-class">Future installment</th>
-                        <th scope="col" class="govuk-table__header app-custom-class">Installment number</th>
                     </tr>
                 </thead>
                 <tbody class="govuk-table__body">
@@ -52,38 +51,14 @@ GOV.UK Prototype Kit
                             Installment 3
                         </td>
                         <td class="govuk-table__cell">
-                            <div class="govuk-date-input" id="passport-issued">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="occurence-date">
-                                            Month
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                                            id="occurence-date-mm" name="variation-month-fl1" type="text"
-                                            pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                                            Year
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                                            id="occurence-date-yy" name="variation-year-fl1" type="text"
-                                            pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="in-month-occurence">
-                                    Installment
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                                    id="in-month-occurence" name="variation-month-fl1" type="text"
-                                    pattern="[0-9]*" inputmode="numeric">
-                            </div>
+                                <select class="govuk-select" id="sort" name="sort">
+                                  <option value="may2020-1">May 2020 installment 1</option>
+                                  <option value="may2020-2">May 2020 installment 2</option>
+                                  <option value="june2020-1">June 2020 installment 1</option>
+                                  <option value="june2020-2">June 2020 installment 2</option>
+                                </select>
+                              </div>
                         </td>
                     </tr>
                 </tbody>
