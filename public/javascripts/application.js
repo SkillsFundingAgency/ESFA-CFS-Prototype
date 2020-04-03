@@ -178,4 +178,3 @@ $('#gag-repayment-no').change(function() {
         $('#specification-link').attr('href', $(this).val());
     })
 });
-
