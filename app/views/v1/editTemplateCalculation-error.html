@@ -24,6 +24,32 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+        <p class="govuk-body govuk-!-margin-top-5">Calculations are not able to run due to the following problem</p>
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#calculation-script">One or more circular reference in your calculation script.</a>
+          </li>
+        </ul>
+        <p class="govuk-body govuk-!-margin-top-5">This problem is also affecting the following calculations</p>
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a class="govuk-link" href="#">Calculation name</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Calculation name</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Calculation name</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-5">
         <h1 class="govuk-fieldset__heading">
@@ -45,12 +71,15 @@ GOV.UK Prototype Kit
       </div>
     </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="more-detail">
+      <div class="govuk-form-group govuk-form-group--error">
+        <label class="govuk-label" for="calculation-script">
             Calculation script
         </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-            aria-describedby="more-detail-hint">
+        <span id="name-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> One or more circular reference in your calculation script
+        </span>
+        <textarea class="govuk-textarea text-area-error" id="calculation-script" name="calculation-script" rows="10" 
+            aria-describedby="calculation-script">
 Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
 
 If A.HasValue = False Then
