@@ -126,7 +126,7 @@ GOV.UK Prototype Kit
 </div>
 
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
+<!-- <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group">
             <label class="govuk-label" for="sort">
@@ -141,16 +141,18 @@ GOV.UK Prototype Kit
             </label>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="govuk-grid">
     <div class="govuk-grid-column-full">
         <table class="govuk-table">
-            <caption class="govuk-table__caption">Providers</caption>
+            <caption class="govuk-table__caption"></caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header"><a id="select-all" href="">Select all</a></th>
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Provider name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">
+                        Provider name<br>
+                        <a id="select-all" href="">Select all</a>
+                    </th>
                     <th scope="col" class="govuk-table__header">UKPRN</th>
                     <th scope="col" class="govuk-table__header">Status</th>
                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding total</th>
@@ -159,47 +161,50 @@ GOV.UK Prototype Kit
             <tbody class="govuk-table__body table-vertical-align">
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
                                     type="checkbox" value="provider-name">
                                 <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                    <a href="provider-funding-overview.html" class="govuk-link">Barking and Dagenham London Borough Council</a>
                                 </label>
                             </div>
+                        </div>
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-funding-overview.html" class="govuk-link">Barking
-                            and Dagenham London Borough Council</a></td>
                     <td class="govuk-table__cell">10000143</td>
                     <td class="govuk-table__cell">Approved</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">£284,821,882</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                    type="checkbox" value="provider-name">
-                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                </label>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
+                                        type="checkbox" value="provider-name">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                        <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet London Borough Council</a>
+                                    </label>
+                                </div>
                             </div>
+                        </td>
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-funding-overview-gag.html" class="govuk-link">Barnet London Borough Council</a></td>
                     <td class="govuk-table__cell">10003986</td>
                     <td class="govuk-table__cell">Released</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">£346,757,869</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
                                     type="checkbox" value="provider-name">
                                 <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                    <a href="provider-funding-overview.html" class="govuk-link">Barnsley Metropolitan Borough
+                                        Council</a>
                                 </label>
                             </div>
+                        </div>
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-funding-overview-psg.html" class="govuk-link">Barnsley Metropolitan Borough
-                            Council</a></td>
                     <td class="govuk-table__cell">10000538</td>
                     <td class="govuk-table__cell">Released</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">£196,520,871</td>
