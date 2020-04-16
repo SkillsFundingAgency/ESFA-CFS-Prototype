@@ -200,15 +200,21 @@ GOV.UK Prototype Kit
                         <tr class="govuk-table__row">
                             <th scope="col" class="govuk-table__header govuk-!-width-one-half">
                                 Provider name<br>
-                                <span class="govuk-!-margin-right-2"> 0 / 18,000 </span> <a id="select-all"
-                                    href="">Select
-                                    all</a>
+                                <span class="govuk-!-margin-right-2"> <span id="checkbox-checked"></span> / <span id="checkbox-count"></span>  </span> 
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="select-all" type="checkbox" value="select-all">
+                                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                            Select all
+                                          </label>
+                                    </div>
+                                </div>
                             </th>
                             <th scope="col" class="govuk-table__header">UKPRN</th>
                             <th scope="col" class="govuk-table__header">Status</th>
                             <th scope="col" class="govuk-table__header govuk-table__header--numeric">
                                 Funding total<br>
-                                £466,362,175.74 <br>
+                                <span id="total"></span> <br>
                                 <p class="govuk-body-s govuk-!-margin-bottom-0">of filtered providers</p>
                             </th>                        </tr>
                     </thead>
@@ -217,8 +223,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="provider-name">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="284821882">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Barking and
                                                 Dagenham
@@ -229,14 +235,14 @@ GOV.UK Prototype Kit
                             </td>
                             <td class="govuk-table__cell">10000143</td>
                             <td class="govuk-table__cell">Approved</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£284,821,882</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">284,821,882</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="provider-name">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="346757869">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet
                                                 London
@@ -248,14 +254,14 @@ GOV.UK Prototype Kit
                             </td>
                             <td class="govuk-table__cell">10003986</td>
                             <td class="govuk-table__cell">Released</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£346,757,869</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric gbp">346,757,869</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="provider-name">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="196520871">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Barnsley
                                                 Metropolitan
@@ -267,7 +273,7 @@ GOV.UK Prototype Kit
                             </td>
                             <td class="govuk-table__cell">10000538</td>
                             <td class="govuk-table__cell">Released</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£196,520,871</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric gbp">196,520,871</td>
                         </tr>
                     </tbody>
                 </table>

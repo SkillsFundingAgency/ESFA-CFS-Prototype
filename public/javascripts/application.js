@@ -178,3 +178,68 @@ $('#gag-repayment-no').change(function() {
         $('#specification-link').attr('href', $(this).val());
     })
 });
+
+
+// Checkbox count 
+
+var count;
+var checked;
+
+count = $("input[id='provider-approval']").length;
+document.getElementById("checkbox-count").innerHTML = count;
+
+$(".provider-checked").click(function(){
+  checked = $('.provider-checked:checked').length;
+  console.log(checked);
+  document.getElementById("checkbox-checked").innerHTML = checked;
+  $("#select-all").prop('checked', false)
+});
+
+$("#select-all").click(function(){
+  if(this.checked) {
+  $('.provider-checked:checkbox').not(this).prop('checked', this.checked);
+  document.getElementById("checkbox-checked").innerHTML = count;
+  } else {
+    document.getElementById("checkbox-checked").innerHTML = 0;
+  }
+});
+
+$('.provider-checked').change(function(){
+  var total = 0;
+  $('.provider-checked:checked').each(function(){
+       total += $(this).closest('.provider-value').text();
+       console.log (total)
+  });
+  $('#total').text(total);
+  console.log (total)
+});
+
+
+	// Attach a click handler
+	$('.provider-checked').click(tallyValues);
+	
+	// The function that tallies the checked values
+	function tallyValues(){
+		
+		// Set the amount to start at 0
+		var fundingTotal = 0;
+		
+		// Loop through each dom element
+		$('table .provider-value').each(function(i, val){
+			
+			// Find the previous sibling (td) and then find the input inside and see if it's checked
+			var checkbox_cell_is_checked = $(this).prev().find('input').is(':checked');
+			
+			// Is it checked?
+			if(checkbox_cell_is_checked){
+				fundingTotal += parseInt($(this).text())
+			}
+			
+		});
+		
+    // Output the amount
+    console.log (fundingTotal)
+
+    document.getElementById("total").innerHTML = fundingTotal;
+		
+	}
