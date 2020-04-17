@@ -182,8 +182,8 @@ $('#gag-repayment-no').change(function() {
 
 // Checkbox count 
 
-var count;
-var checked;
+var count
+var checked = 0
 
 count = $("input[id='provider-approval']").length;
 document.getElementById("checkbox-count").innerHTML = count;
@@ -238,8 +238,6 @@ $('.provider-checked').change(function(){
 		});
 		
     // Output the amount
-    console.log (fundingTotal)
-
     document.getElementById("total").innerHTML = fundingTotal;
 		
 	}
