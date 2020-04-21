@@ -336,3 +336,26 @@ i {
 .gbp:before {
 	content: "£";
   }
+
+
+// tag colors
+
+.govuk-tag--green {
+    color: #005a30;
+    background: #cce2d8;
+}
+
+.govuk-tag--blue {
+    color: #144e81;
+    background: #d2e2f1;
+}
+
+.govuk-tag--grey {
+    color: #454a4d;
+    background: #eff0f1;
+}
+
+.govuk-tag--turquoise {
+    color: #10403c;
+    background: #bfe3e0;
+}

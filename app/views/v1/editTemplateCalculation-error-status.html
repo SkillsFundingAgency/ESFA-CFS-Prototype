@@ -44,17 +44,14 @@ GOV.UK Prototype Kit
         </h1>
       </legend>
 
-      <div class="govuk-form-group govuk-form-group--error">
-        <label class="govuk-label" for="sort">
-          Calulation status
-        </label>
-        <span id="nationality-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Calculation can not be approved by calculation writer
-        </span>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="draft" >Draft</option>
-          <option value="approved" selected>Approved</option>
-        </select>
+      <div class="govuk-grid-row govuk-form-group--error govuk-!-margin-bottom-5">
+        <div class="govuk-grid-column-two-thirds">
+          <span id="nationality-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span>Calculation can not be approved by calculation writer
+          </span>
+          <span class="govuk-caption-m">Calculation status</span>
+          <strong id="calc-status" class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft </strong>
+        </div>
       </div>
 
       <div class="govuk-grid-row govuk-!-margin-bottom-5">
