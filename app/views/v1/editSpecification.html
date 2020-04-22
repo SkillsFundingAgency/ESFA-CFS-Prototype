@@ -1,87 +1,75 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
 
-  <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit specification</li>
-    </ol>
-  </div>
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit specification</li>
+      </ol>
+    </div>
 
-<fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">
-            Edit specification
-          </h1>
-        </legend>
-      
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-line-1">
-            Specification name
-          </label>
-          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
-        </div>
-      
-        <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
-                  Funding streams
-                </label>
-                <select class="govuk-select" id="sort" name="sort">
-                  <option value="draft">Dedicated schools grant</option>
-                  <option value="draft">PE and sport premium grant</option>
-                </select>
-              </div>
-      
-        <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
-                  Funding period
-                </label>
-                <select class="govuk-select" id="sort" name="sort">
-                  <option value="draft">Financial year 2020 to 2021</option>
-                </select>
-              </div>
-        
-        <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
-                  Core provider data
-                </label>
-                <select class="govuk-select" id="sort" name="sort">
-                  <option value="draft">Option 1</option>
-                </select>
-              </div>
-      
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+          Edit specification
+        </h1>
+      </legend>
+
       <div class="govuk-form-group">
-            <label class="govuk-label" for="more-detail">
-              Can you provide more detail?
-            </label>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8" aria-describedby="more-detail-hint"></textarea>
-          </div>
+        <label class="govuk-label" for="address-line-1">
+          Specification name
+        </label>
+        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+      </div>
+
+      <span class="govuk-caption-m">Funding stream</span>
+      <h3 class="govuk-heading-m">Dedicated schools grant</h3>
+
+      <span class="govuk-caption-m">Funding period</span>
+      <h3 class="govuk-heading-m">Financial year 2020 to 2021</h3>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Core provider data
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="draft">Option 1</option>
+        </select>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+          Can you provide more detail?
+        </label>
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+          aria-describedby="more-detail-hint"></textarea>
+      </div>
     </fieldset>
 
     <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-            Save and continue
-          </button>
-          
-          <a href="fundingLineStructure.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Cancel
-          </a>
-</div>
+      Save and continue
+    </button>
+
+    <a href="fundingLineStructure.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Cancel
+    </a>
+  </div>
 </div>
 
 {% endblock %}
