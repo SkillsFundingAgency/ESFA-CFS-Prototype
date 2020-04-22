@@ -46,6 +46,9 @@ GOV.UK Prototype Kit
           <li>
             <a class="govuk-link" href="#">Calculation name</a>
           </li>
+          <li>
+            <a class="govuk-link" href="additional-errors.html">Show more</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -57,15 +60,13 @@ GOV.UK Prototype Kit
         </h1>
       </legend>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Calulation status
-        </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="draft" selected>Draft</option>
-          <option value="Approved">Approved</option>
-        </select>
+      <div class="govuk-grid-row govuk-!-margin-bottom-5">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-caption-m">Calculation status</span>
+          <strong id="calc-status" class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft </strong>
+        </div>
       </div>
+
 
       <div class="govuk-grid-row govuk-!-margin-bottom-5">
         <div class="govuk-grid-column-two-thirds">

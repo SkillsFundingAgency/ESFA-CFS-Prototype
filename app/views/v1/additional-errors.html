@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="editTemplateCalculation-error.html" class="govuk-back-link govuk-!-margin-bottom-8">Back</a>
+
+<h1 class="govuk-heading-xl" id="error-summary-title">
+     Problems found with calculations
+</h1>
+    <p class="govuk-body govuk-!-margin-top-5">Calculations are not able to run due to the following problem</p>
+
+
+  <ul class="govuk-list govuk-error-summary__list">
+    <li>
+      <strong>One or more circular reference in your calculation script.</strong>
+    </li>
+  </ul>
+  <p class="govuk-body govuk-!-margin-top-5">This problem is affecting the following calculations</p>
+
+  <h4 class="govuk-heading-s">Template calculations</h4>
+    <ul class="govuk-list govuk-error-summary__list">
+        <li>
+        <a class="govuk-link" href="#">Calculation name</a>
+        </li>
+        <li>
+        <a class="govuk-link" href="#">Calculation name</a>
+        </li>
+        <li>
+        <a class="govuk-link" href="#">Calculation name</a>
+        </li>
+    </ul>
+    
+{% endblock %}
