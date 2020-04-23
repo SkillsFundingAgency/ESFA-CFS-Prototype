@@ -11,5 +11,3 @@ public
 node_modules/*
 .tmuxp.*
 package-lock.json
-node_modules
-public
