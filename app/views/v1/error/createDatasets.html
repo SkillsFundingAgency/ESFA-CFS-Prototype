@@ -59,15 +59,15 @@ GOV.UK Prototype Kit
           aria-describedby="more-detail-hint"></textarea>
       </div>
 
-      <div class="govuk-form-group">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="file-upload-1">
-            Upload data source file
-          </label>
-          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-        </div>
+      <div class="govuk-form-group govuk-form-group--error">
+        <label class="govuk-label" for="file-upload-1">
+          Upload a file
+        </label>
+        <span id="file-upload-1-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Validation check failed please see <a href="">error report</a>
+        </span>
+        <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-error">
       </div>
-    </fieldset>
 
     <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
       Create data source
