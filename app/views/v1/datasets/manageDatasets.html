@@ -19,36 +19,11 @@ GOV.UK Prototype Kit
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage data source files</li>
       </ol>
     </div>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Manage data</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Manage data source files</h1>
     <span class="govuk-caption-xl">Manage data source files or map them to datasets for a specification</span>
   </div>
 </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-form-group search-container">
-      <label class="govuk-label" for="event-name">
-        Search data source files
-      </label>
-      <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false" type="text">
-      <button class="govuk-button" type="submit" class="gem-c-search__submit">Search</button>
-      <label class="govuk-label" for="sort">
-        Filter by data schema
-      </label>
-      <select class="govuk-select govuk-!-margin-bottom-5" id="sort" name="sort">
-        <option value="published">PE and sport grant</option>
-        <option value="updated">Rates and baselines</option>
-      </select>
-      <label class="govuk-label" for="sort">
-        Filter by specification
-      </label>
-      <select class="govuk-select" id="sort" name="sort">
-        <option value="published">Specification 1</option>
-        <option value="updated">Specification 2</option>
-      </select>
-    </div>
-  </div>
-</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -59,51 +34,195 @@ GOV.UK Prototype Kit
   </div>
   <div class="govuk-grid-column-one-third">
     <br>
-    <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+    <div class="pagination__summary"></div>
   </div>
 </div>
 
-<table class="govuk-table">
-  <caption class="govuk-table__caption"></caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Data source</th>
-      <th scope="col" class="govuk-table__header">Last updated</th>
-      <th scope="col" class="govuk-table__header">Download</th>
-      <th scope="col" class="govuk-table__header">More</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"><span><a href="updateDataset"><i
-              class="material-icons govuk-!-margin-right-1">create</i></a></span>DSG rates and
-        baselines SIT</th>
-      <td class="govuk-table__cell">11 November 2019 9:51am</td>
-      <td class="govuk-table__cell"><a href=""><i class="material-icons">cloud_download</i></a></td>
-      <td class="govuk-table__cell"><a href="#"><i class="material-icons">keyboard_arrow_down</i></a></td>
-    </tr>
-  </tbody>
-</table>
 
-<div class="govuk-grid-row govuk-!-margin-top-9">
-  <div class="govuk-grid-column-full">
-    <nav role="navigation" aria-label="Pagination">
-      <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
-      <ul class="pagination">
-        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
-              aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
-        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a></li>
-        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
-        <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
-            aria-label="Page 3, current page">3</a></li>
-        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
-        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
-        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
-              aria-hidden="true" role="presentation">&raquo;</span></a></li>
-      </ul>
-    </nav>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+      <div class="govuk-form-group filterbyContainer">
+          <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                  <h4 class="govuk-heading-s"> Search</h4>
+              </legend>
+              <div class="govuk-form-group filterSearch">
+                  <label class="govuk-label filterLabel" for="filter-by-type">
+                      Search
+                  </label>
+                  <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch" autocomplete="off" name="search"
+                      type="text">
+              </div>
+          </fieldset>
+      </div>
+    <div class="govuk-form-group filterbyContainer">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+          <h4 class="govuk-heading-s ">
+            Filter by data schema <span><i class="material-icons right-align">keyboard_arrow_down</i></span>
+          </h4>
+        </legend>
+        <div id="filter-content" class="filter-content">
+          <div class="govuk-form-group filterSearch">
+            <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+              Search
+            </label>
+            <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1" autocomplete="off"
+              type="text">
+          </div>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-1 myInput" name="organisation" type="checkbox"
+                value="fy2021">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              PE and sport grant
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
+                value="ay2021">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+               Rates and baselines
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="govuk-form-group filterbyContainer">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+          <h4 class="govuk-heading-s filter-expand">
+            Filter by specification <span><i class="material-icons right-align"> keyboard_arrow_down </i></span>
+          </h4>
+        </legend>
+        <div id="filter-content" class="filter-content">
+          <div class="govuk-form-group filterSearch">
+            <label class="govuk-label filterLabel" for="filter-by-type">
+              Search
+            </label>
+            <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search" type="text">
+          </div>
+          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+            <ul id="myList">
+              <li>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="specification-2" name="specification" type="checkbox"
+                    value="dsg">
+                  <label class="govuk-label govuk-checkboxes__label" for="specification">
+                    Specification 1
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+   
+    <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
+      Clear filters</a>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-half">Data source</th>
+          <th scope="col" class="govuk-table__header">Last updated</th>
+          <th scope="col" class="govuk-table__header">Download</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body" id="mainContentResults">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">1920 Factors</a>
+
+                <div class="govuk-!-margin-top-4">  
+                  <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Data source details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p> <strong>Data schema:</strong> 16-19 Factors</p>
+                      <p><strong>Data schema description:</strong> Factors data for 1920 allocation year</p>
+                      <p><strong>Data source version:</strong> 3</p>
+                      <p><strong>Last updated by:</strong> Nathan Townsend</p>
+                      <p><strong>Change note for this version:</strong> New data</p>
+
+                    </div>
+                  </details>
+                </div>
+            </th>
+
+
+
+
+
+
+
+          
+
+          
+          <td class="govuk-table__cell">11 November 2019 10:54am</td>
+          <td class="govuk-table__cell">
+
+            
+            <div class="attachment__details">
+              <p class="govuk-body-s">
+                <a class="govuk-link" target="_self"
+                  href="">DSG SIT.xlsx </a></p> <p class="govuk-body-s">Version 3</p>
+
+            </div></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="fundingLineStructure">PE & Sport ABC</a></th>
+          <td class="govuk-table__cell">11 November 2019 10:54am</td>
+          <td class="govuk-table__cell">        </td>
+        </tr>
+      </tbody>
+    </table>
+
+  
+
+
+
+
+
+
+<div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+      width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
+
+<nav role="navigation" aria-label="Pagination">
+  <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+  <ul class="pagination">
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
+          aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+    <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
+        aria-label="Page 3, current page">3</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
+          aria-hidden="true" role="presentation">&raquo;</span></a></li>
+  </ul>
+</nav>
   </div>
 </div>
+
 
 
 {% endblock %}
