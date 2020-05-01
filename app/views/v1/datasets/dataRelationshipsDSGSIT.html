@@ -17,7 +17,7 @@ GOV.UK Prototype Kit
           <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page"><a class="govuk-breadcrumbs__link"
-            href="manageData">Manage data sources to datasets for a specification</a></li>
+            href="datasetRelationships.html">Manage data sources to datasets for a specification</a></li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">DSG SIT</li>
       </ol>
     </div>
@@ -27,88 +27,61 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Rates and baselines
-        </span>
-      </h2>
-      <p class="govuk-body">Dedicated schools grant rates and baselines SIT</p>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <div id="accordion-default-content-1" class="govuk-accordion__section-content"
-          aria-labelledby="accordion-default-heading-1">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Dataset
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Rates and baselines
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  <span class="govuk-visually-hidden"></span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Mapped data source file
-              </dt>
-              <dd class="govuk-summary-list__value">
-                DSG rates and baselines SIT
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date of birth</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Data schema
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Rates and baselines
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  <span class="govuk-visually-hidden"></span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Dataset description
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <p class="govuk-body">SIT rates and baselines data</p>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  <span class="govuk-visually-hidden"></span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Data source file version
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <p class="govuk-body">1</p>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  <span class="govuk-visually-hidden"></span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-        </div>
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Dataset</th>
+      <th scope="col" class="govuk-table__header">Mapped data source file</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        January census data <span class="govuk-body-s govuk-!-margin-left-1">(Provider data)</span>
+        <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Dataset description
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body"><strong>Data schema:</strong> PE and Sport premium</p>
+            <p class="govuk-body"><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Aliquam congue diam sit amet dui posuere, id rutrum sem feugiat. Phasellus condimentum hendrerit nunc, sed
+              lacinia risus efficitur hendrerit. Mauris sed.</p>
+          </div>
+        </details>
+      </th>
+      <td class="govuk-table__cell">PE and Sport data (version 3)</td>
+      <td class="govuk-table__cell"><a href="" class="govuk-link">Change</a></td>
+    </tr>
+  </tbody>
+</table>
 
+<div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+      width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
 
-        {% endblock %}
+<nav role="navigation" aria-label="Pagination">
+  <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+  <ul class="pagination">
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
+          aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+    <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
+        aria-label="Page 3, current page">3</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
+          aria-hidden="true" role="presentation">&raquo;</span></a></li>
+  </ul>
+</nav>
+
+{% endblock %}
