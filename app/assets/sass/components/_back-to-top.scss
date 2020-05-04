@@ -1,0 +1,14 @@
+// Back to top
+
+.app-back-to-top a svg {
+	margin-right: 8px;
+}
+
+#backToTop {
+	cursor: pointer;
+
+	:hover {
+		background: #F8F8F8;
+		outline: 3px solid #FFBF47;
+	}
+}
