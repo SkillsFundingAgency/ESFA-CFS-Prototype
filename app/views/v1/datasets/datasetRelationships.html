@@ -41,6 +41,42 @@ GOV.UK Prototype Kit
         </div>
       </fieldset>
     </div>
+
+    <div class="govuk-form-group filterbyContainer">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+          <h4 class="govuk-heading-s ">
+            Filter by funding stream <span><i class="material-icons right-align">keyboard_arrow_down</i></span>
+          </h4>
+        </legend>
+        <div id="filter-content" class="filter-content">
+          <div class="govuk-form-group filterSearch">
+            <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+              Search
+            </label>
+            <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1" autocomplete="off"
+              type="text">
+          </div>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-1 myInput" name="organisation" type="checkbox"
+                value="fy2021">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                PE and sports grant
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
+                value="ay2021">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                16-18 Traineeships
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
     <div class="govuk-form-group filterbyContainer">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
@@ -81,15 +117,37 @@ GOV.UK Prototype Kit
   </div>
 
 
-  <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-        <h3 class="govuk-heading-m"><a class="govuk-link" href="dataRelationshipsDSGSIT.html">DSG SIT</a></h3>
-        <p class="govuk-body">1 data source mapped to dataset</p>
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+    <div class="govuk-grid-column-two-thirds">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-half">Data source</th>
+            <th scope="col" class="govuk-table__header">Last updated</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body" id="mainContentResults">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a class="govuk-link" href="dataRelationshipsDSGSIT.html">DSG SIT</a>
+              <p></p>
+              <p class="govuk-body">2 datasets exist for specification</p>
+              <td class="govuk-table__cell">11 November 2019 10:54am</td>
+              </th>
+              <tbody class="govuk-table__body" id="mainContentResults">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a class="govuk-link" href="dataRelationshipsDSGSIT.html">1920 Factors</a>
+                    <p></p>
+                    <p class="govuk-body">3 datasets exist for specification</p>
+                    <td class="govuk-table__cell">10 November 2019 12:44pm</td>
+                    </th>
+        </table>
       </div>
-    </div>
+
+
+
+
 
 
     <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
