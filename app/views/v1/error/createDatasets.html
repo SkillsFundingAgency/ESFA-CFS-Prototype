@@ -41,15 +41,20 @@ GOV.UK Prototype Kit
         <input class="govuk-input" id="data-schema" name="data-schema" type="text">
       </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
+      <div class="govuk-form-group govuk-form-group--error">
+        <label class="govuk-label" for="event-name">
           Dataset source file name
         </label>
         <span id="event-name-hint" class="govuk-hint">
           Use a descriptive unique name other users can understand
         </span>
-        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+        <span id="event-name-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Enter a unique dataset source file name
+        </span>
+        <input class="govuk-input govuk-input--error" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint event-name-error">
       </div>
+
+
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="more-detail">
