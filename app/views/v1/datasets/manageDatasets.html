@@ -58,6 +58,47 @@ GOV.UK Prototype Kit
               </div>
           </fieldset>
       </div>
+
+      <div class="govuk-form-group filterbyContainer">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+            <h4 class="govuk-heading-s filter-expand">
+              Filter by funding stream<span><i class="material-icons right-align"> keyboard_arrow_down </i></span>
+            </h4>
+          </legend>
+          <div id="filter-content" class="filter-content">
+            <div class="govuk-form-group filterSearch">
+              <label class="govuk-label filterLabel" for="filter-by-type">
+                Search
+              </label>
+              <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search" type="text">
+            </div>
+            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+              <ul id="myList">
+                <li>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="funding stream-2" name="funding stream" type="checkbox"
+                      value="dsg">
+                    <label class="govuk-label govuk-checkboxes__label" for="funding stream">
+                      PE and sports grant
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="funding stream-2" name="funding stream" type="checkbox"
+                      value="dsg">
+                    <label class="govuk-label govuk-checkboxes__label" for="funding stream">
+                      16-18 traineeships
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      
     <div class="govuk-form-group filterbyContainer">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
@@ -93,72 +134,7 @@ GOV.UK Prototype Kit
         </div>
       </fieldset>
     </div>
-    <div class="govuk-form-group filterbyContainer">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-          <h4 class="govuk-heading-s filter-expand">
-            Filter by specification <span><i class="material-icons right-align"> keyboard_arrow_down </i></span>
-          </h4>
-        </legend>
-        <div id="filter-content" class="filter-content">
-          <div class="govuk-form-group filterSearch">
-            <label class="govuk-label filterLabel" for="filter-by-type">
-              Search
-            </label>
-            <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search" type="text">
-          </div>
-          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
-            <ul id="myList">
-              <li>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="specification-2" name="specification" type="checkbox"
-                    value="dsg">
-                  <label class="govuk-label govuk-checkboxes__label" for="specification">
-                    Specification 1
-                  </label>
-                </div>
-              </li>
-              <li>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="specification-2" name="specification" type="checkbox"
-                    value="dsg">
-                  <label class="govuk-label govuk-checkboxes__label" for="specification">
-                    Specification 2
-                  </label>
-                </div>
-              </li>
-              <li>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="specification-2" name="specification" type="checkbox"
-                    value="dsg">
-                  <label class="govuk-label govuk-checkboxes__label" for="specification">
-                    Specification 3
-                  </label>
-                </div>
-              </li>
-              <li>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="specification-2" name="specification" type="checkbox"
-                    value="dsg">
-                  <label class="govuk-label govuk-checkboxes__label" for="specification">
-                    Specification 4
-                  </label>
-                </div>
-              </li>
-              <li>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="specification-2" name="specification" type="checkbox"
-                    value="dsg">
-                  <label class="govuk-label govuk-checkboxes__label" for="specification">
-                    Specification 5
-                  </label>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </fieldset>
-    </div>
+   
    
     <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
       Clear filters</a>
