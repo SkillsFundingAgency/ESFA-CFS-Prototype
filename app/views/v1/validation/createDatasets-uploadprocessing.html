@@ -20,86 +20,31 @@ GOV.UK Prototype Kit
         <li class="govuk-breadcrumbs__list-item">
           <a class="govuk-breadcrumbs__link" href="manageDatasets">Managa data source files</a>
         </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Load new data source file</li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="createDatasets">Load new data source file</a>
+        </li>
+
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Processing upload</li>
       </ol>
     </div>
   </div>
 </div>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Upload new data source</h1>
-
-    <p class="govuk-body">Load a new data source file to create a dataset to use in
-      calculations.</p>
-
-
-      <div class="govuk-form-group govuk-!-margin-top-6">
-        <label class="govuk-label" for="sort">
-          Funding stream
-        </label>
-        <input class="govuk-input" id="data-schema" name="data-schema" type="text">
-      </div>
-
-      <div class="govuk-form-group govuk-!-margin-top-6">
-        <label class="govuk-label" for="sort">
-          Data schema
-        </label>
-        <input class="govuk-input" id="data-schema" name="data-schema" type="text">
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
-          Dataset source file name
-        </label>
-        <span id="event-name-hint" class="govuk-hint">
-          Use a descriptive unique name other users can understand
-        </span>
-        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="more-detail">
-          Description
-        </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-          aria-describedby="more-detail-hint"></textarea>
-      </div>
-
-
-      <div class="govuk-form-group">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="file-upload-1">
-            Upload data source file
-          </label>
-          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file"><br><br>
-
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-            <strong class="govuk-tag govuk-tag--grey left-align ">
-              Processing upload
-            </strong>
-          </div>
-          </div>
-        </div>
-      </div>
-
-        </div>
-      </div>
-
-
-
-    </fieldset>
-
-    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-      Create data source
-    </button>
-
-    <a href="fundingLineStructure" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Cancel
-    </a>
+  <div class="govuk-grid-column-full govuk-!-margin-top-9">
+      <h2 class="govuk-heading-l center-align" id="fullLoader-content">Validating data source</h2>
+      <h3 class="govuk-heading-m center-align">Please wait, this could take several minutes</h3>
+      <div id="loader-content" class="loader loader-full" role="alert" aria-live="assertive"></div>
+      <p class="govuk-body center-align">Please do not refresh the page, you will be redirected automatically</p>
   </div>
 </div>
+
+<script>
+  setTimeout(contentChange, 6000);
+
+  function contentChange() {
+      document.getElementById("fullLoader-content").innerHTML = "Queued for processing";
+  };
+</script>
 
 {% endblock %}
