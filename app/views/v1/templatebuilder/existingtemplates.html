@@ -1,0 +1,103 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+endblock %} {% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html"
+            >Calculate funding</a
+          >
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="templates.html">Templates</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          Existing templates
+        </li>
+      </ol>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Existing templates</h1>
+    <span class="govuk-caption-xl"
+      >Browse and choose from existing templates</span
+    >
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-form-group filterbyContainer">
+      <fieldset class="govuk-fieldset">
+        <legend
+          class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading"
+        >
+          <h4 class="govuk-heading-s">Search</h4>
+        </legend>
+        <div class="govuk-form-group filterSearch">
+          <label class="govuk-label filterLabel" for="filter-by-type"> </label>
+          <input
+            class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+            id="mainContentSearch"
+            autocomplete="off"
+            name="search"
+            type="text"
+          />
+        </div>
+      </fieldset>
+    </div>
+    <div class="govuk-form-group filterbyContainer">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                <h4 class="govuk-heading-s ">
+                    Filter by funding stream <span><i class="material-icons right-align"> keyboard_arrow_down
+                        </i></span>
+                </h4>
+            </legend>
+            <div id="filter-content" class="filter-content">
+                <div class="govuk-form-group filterSearch">
+                    <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+                        Search
+                    </label>
+                    <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1"
+                        autocomplete="off" type="text">
+                </div>
+
+                <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                            type="checkbox" value="primary">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            XXX
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                            type="checkbox" value="academy">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            XXX
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                            type="checkbox" value="secondary">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            XXX
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                            type="checkbox" value="secondary">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            XXX
+                        </label>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </fieldset>
+  </div>
+</div>
+
+
+{% endblock %}
