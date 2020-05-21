@@ -46,6 +46,42 @@ endblock %} {% block content %}
         </div>
       </fieldset>
     </div>
+
+    <div class="govuk-form-group filterbyContainer">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+            <h4 class="govuk-heading-s ">
+              Filter by funding period <span><i class="material-icons right-align">keyboard_arrow_down</i></span>
+            </h4>
+          </legend>
+          <div id="filter-content" class="filter-content">
+            <div class="govuk-form-group filterSearch">
+              <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+                Search
+              </label>
+              <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1" autocomplete="off"
+                type="text">
+            </div>
+  
+            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-1 myInput" name="organisation" type="checkbox"
+                  value="fy2021">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  Financial year 2020 to 2021
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
+                  value="ay2021">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  Academic year 2019 to 2020
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
     <div class="govuk-form-group filterbyContainer">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
