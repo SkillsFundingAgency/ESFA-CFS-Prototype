@@ -1,37 +1,47 @@
-{% extends "layout.html" %}
-
-{% block pageTitle %}
-GOV.UK Prototype Kit
-{% endblock %}
-
-{% block content %}
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+endblock %} {% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
     <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
       <ol class="govuk-breadcrumbs__list">
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+          <a class="govuk-breadcrumbs__link" href="/start.html"
+            >Calculate funding</a
+          >
         </li>
         <li class="govuk-breadcrumbs__list-item">
           <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
         </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page"><a class="govuk-breadcrumbs__link"
-            href="manageData">Manage data sources to datasets for a specification</a></li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">DSG SIT</li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          <a class="govuk-breadcrumbs__link" href="manageData"
+            >Map data sources to datasets for a specification</a
+          >
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          DSG SIT
+        </li>
       </ol>
     </div>
-    <h1 class="govuk-heading-xl">Dedicated schools grant SIT
+    <h1 class="govuk-heading-xl">
+      Dedicated schools grant SIT
       <span class="govuk-caption-xl">Financial year 2020 to 2021</span>
     </h1>
   </div>
 </div>
 
-<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-  <div class="govuk-accordion__section ">
+<div
+  class="govuk-accordion"
+  data-module="govuk-accordion"
+  id="accordion-default"
+>
+  <div class="govuk-accordion__section">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+        <span
+          class="govuk-accordion__section-button"
+          id="accordion-default-heading-1"
+        >
           Rates and baselines
         </span>
       </h2>
@@ -39,8 +49,11 @@ GOV.UK Prototype Kit
     </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <div id="accordion-default-content-1" class="govuk-accordion__section-content"
-          aria-labelledby="accordion-default-heading-1">
+        <div
+          id="accordion-default-content-1"
+          class="govuk-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1"
+        >
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -64,7 +77,9 @@ GOV.UK Prototype Kit
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                  Change<span class="govuk-visually-hidden">
+                    date of birth</span
+                  >
                 </a>
               </dd>
             </div>
@@ -110,5 +125,8 @@ GOV.UK Prototype Kit
           </dl>
         </div>
 
-
         {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
