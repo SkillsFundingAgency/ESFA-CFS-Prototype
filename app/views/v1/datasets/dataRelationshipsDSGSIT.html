@@ -15,7 +15,7 @@ endblock %} {% block content %}
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">
           <a class="govuk-breadcrumbs__link" href="datasetRelationships.html"
-            >Manage data sources to datasets for a specification</a
+            >Map data sources to datasets for a specification</a
           >
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">
@@ -97,17 +97,19 @@ endblock %} {% block content %}
           </div>
         </details>
       </th>
-      <td class="govuk-table__cell">No data source files avaliable.<br>
-        <a href="createDatasets.html">Create new dataset</a> </td>
       <td class="govuk-table__cell">
+        No data source files available.<br />
+        <a href="createDatasets.html">Create new dataset</a>
       </td>
+      <td class="govuk-table__cell"></td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
         January census data
         <details
           class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2"
-          data-module="govuk-details">
+          data-module="govuk-details"
+        >
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
               Dataset description
@@ -126,7 +128,8 @@ endblock %} {% block content %}
           </div>
         </details>
       </th>
-      <td class="govuk-table__cell">PE and Sport data (version 3) <br>
+      <td class="govuk-table__cell">
+        PE and Sport data (version 3) <br />
         <strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2">
           New versions available
         </strong>
