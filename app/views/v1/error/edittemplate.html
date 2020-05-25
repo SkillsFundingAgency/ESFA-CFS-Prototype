@@ -1,0 +1,139 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+    endblock %} {% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting.html">Templates</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    DSG FY-20-21
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+            data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                        <a href="">Template content could not be loaded</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">DSG FY-20-21</h1>
+
+        <span class="govuk-caption-m">Funding period</span>
+        <h3 class="govuk-heading-m">Financial year 2020 - 2021</h3>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Funding stream</span>
+        <h3 class="govuk-heading-m">Dedicated schools grant</h3>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Version</span>
+        <h3 class="govuk-heading-m">1.9</h3>
+    </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <details class="govuk-details govuk-!-margin-bottom-9" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Version details
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <strong>Last updated:</strong> 19 May 2020 9:14am
+            </div>
+            <div class="govuk-details__text">
+                <strong>Last updated by:</strong> Nathan Townsend
+            </div>
+            <div class="govuk-details__text">
+                <strong>Change notes:</strong> New data
+            </div>
+        </details>
+    </div>
+</div>
+
+<div class="govuk-radios govuk-radios--inline govuk-!-margin-bottom-7">
+    <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="edit">
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+            Edit
+        </label>
+    </div>
+    <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="View">
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+            View
+        </label>
+    </div>
+</div>
+
+
+<button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+    Add new funding line
+</button>
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Undo
+</button>
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Redo
+</button>
+<button class="govuk-button govuk-button--secondary right" data-module="govuk-button">
+    Save as draft
+</button>
+</br>
+
+
+
+<div class="govuk-form-group govuk-form-group--error">
+
+    <span id="event-name-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Template content could not be loaded
+    </span>
+    <label class="govuk-label" for="event-name">
+
+        <body>
+            <svg width="1350" height="500">
+                <rect width="1150" height="500" stroke-width="8" fill="gray" />
+            </svg>
+        </body>
+    </label>
+</div>
+
+</br>
+<button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+    Save and continue
+</button>
+
+
+{% endblock %}
