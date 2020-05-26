@@ -1,235 +1,207 @@
 {% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-endblock %} {% block content %}
+  endblock %} {% block content %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-9">
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
     <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
       <ol class="govuk-breadcrumbs__list">
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html"
-            >Calculate funding</a
-          >
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="templates.html">Templates</a>
+          <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting.html">Templates</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="existingtemplates.html"
-            >Existing templates</a
-          >
+          <a class="govuk-breadcrumbs__link" href="../templatebuilder/edittemplate.html">DSG FY-20-21</a>
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          View all versions
+          Template versions
         </li>
       </ol>
     </div>
-
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
-        Band 3 Student Funding Template
-      </h1>
-
-
-      <div class="govuk-grid-row govuk-!-margin-top-8">
-        <div class="govuk-grid-column-two-thirds">
-          <span class="govuk-caption-m">Funding stream</span>
-          <h2 class="govuk-heading-m">PE and Sports Grant</h2>
-        </div>
-      </div>
-
-    <div class="govuk-grid-row govuk-!-margin-bottom-5">
-      <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Description</span>
-        <p class="govuk-body-m">
-          Band 3 Student Funding with PE and Sports Grant stream. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie quis risus ac porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis id eros eget tortor semper pulvinar. Donec ullamcorper, eros at mollis interdum, nisl urna eleifend dui, nec elementum erat erat eu quam. 
-        </p>
-      </div>
-    </div>
-
-    <div class="govuk-grid-row govuk-!-margin-top-6">
-      <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-form-group search-container">
-          <label class="govuk-label" for="event-name">
-            Search template versions
-          </label>
-          <input
-            class="govuk-input input-search"
-            id="event-name"
-            name="event-name"
-            spellcheck="false"
-            type="text"
-          />
-          <button
-            class="govuk-button"
-            type="submit"
-            class="gem-c-search__submit"
-          >
-            Search
-          </button>
-        </div>
-      </div>
-    </div>
-
-
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">
-            Template version
-          </th>
-          <th scope="col" class="govuk-table__header">Last updated</th>
-          <th scope="col" class="govuk-table__header"></th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><a href="vieweditTemplate">Version 14</a>
-            <div class="govuk-!-margin-top-4">
-              <details
-                class="govuk-details govuk-!-margin-bottom-0"
-                data-module="govuk-details"
-              >
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Version notes
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <p><strong>Updated by:</strong> Nathan Townsend</p>
-                  <p><strong>Change notes:</strong> New data for Band 3 Student Funding with PE and Sports Grant stream
-                  </p>
-                </div>
-              </details>
-            </div>
-          </th>
-          <td class="govuk-table__cell">19 November 2019 9:14am</td>
-        </tr>
-
-        <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><a href="">Version 13</a>
-
-            <div class="govuk-!-margin-top-4">
-              <details
-                class="govuk-details govuk-!-margin-bottom-0"
-                data-module="govuk-details"
-              >
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Version notes
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <p><strong>Updated by:</strong> Nathan Townsend</p>
-                  <p>
-                    <strong>Change notes:</strong> New calculations
-                  </p>
-                </div>
-              </details>
-            </div>
-          </th>
-          <td class="govuk-table__cell">23 October 2019 8:54am</td>
-        </tr>
-
-        <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><a href="">Version 12</a>
-
-            <div class="govuk-!-margin-top-4">
-              <details
-                class="govuk-details govuk-!-margin-bottom-0"
-                data-module="govuk-details"
-              >
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Version notes
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <p><strong>Updated by:</strong> Nathan Townsend</p>
-                  <p><strong>Change notes:</strong> Revised 1920 data added</p>
-                </div>
-              </details>
-            </div>
-          </th>
-          <td class="govuk-table__cell">1 August 2019 10:28am</td>
-        </tr>
-
-        <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><a href="">Version 11</a>
-
-            <div class="govuk-!-margin-top-4">
-              <details
-                class="govuk-details govuk-!-margin-bottom-0"
-                data-module="govuk-details"
-              >
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Version notes
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <p><strong>Updated by:</strong> Nathan Townsend</p>
-                  <p><strong>Change notes:</strong> Revised 1920 data added</p>
-                </div>
-              </details>
-            </div>
-          </th>
-          <td class="govuk-table__cell">1 August 2019 10:28am</td>
-        </tr>
-
-        <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><a href="">Version 10</a>
-
-            <div class="govuk-!-margin-top-4">
-              <details
-                class="govuk-details govuk-!-margin-bottom-0"
-                data-module="govuk-details"
-              >
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Version notes
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <p><strong>Updated by:</strong> Nathan Townsend</p>
-                  <p><strong>Change notes:</strong> Revised 1920 data added</p>
-                </div>
-              </details>
-            </div>
-          </th>
-          <td class="govuk-table__cell">1 August 2019 10:28am</td>
-        </tr>
-
-
-      </tbody>
-    </table>
-
-
-
-
-    <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
-        <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
-          <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
-            width="13" height="17" viewBox="0 0 13 17">
-            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
-          </svg>Back to top
-        </a>
-      </div>
-      
-      <nav role="navigation" aria-label="Pagination">
-        <div class="pagination__summary">Showing 1 - 10 of 14 results</div>
-        <ul class="pagination">
-          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
-                aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
-                <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
-                    aria-label="Page 1, current page">1</a></li>
-          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
-          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
-                aria-hidden="true" role="presentation">&raquo;</span></a></li>
-        </ul>
-      </nav>
-        </div>
-      </div>
-    </div>
-
-    {% endblock %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">DSG FY-20-21</h1>
   </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-m">Funding period</span>
+    <h3 class="govuk-heading-m">Financial year 2020 - 2021</h3>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-m">Funding stream</span>
+    <h3 class="govuk-heading-m">Dedicated schools grant</h3>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-m">Version</span>
+    <h3 class="govuk-heading-m">1.9</h3>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group search-container">
+      <label class="govuk-label" for="event-name">
+        Search template versions
+      </label>
+      <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false" type="text" />
+      <button class="govuk-button" type="submit" class="gem-c-search__submit">
+        Search
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">
+        Template version
+      </th>
+      <th scope="col" class="govuk-table__header">Last updated</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="vieweditTemplate">Version 14</a>
+        <div class="govuk-!-margin-top-4">
+          <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Version notes
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p><strong>Updated by:</strong> Nathan Townsend</p>
+              <p><strong>Change notes:</strong> New data for Band 3 Student Funding with PE and Sports Grant stream
+              </p>
+            </div>
+          </details>
+        </div>
+      </th>
+      <td class="govuk-table__cell">19 November 2019 9:14am</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="">Version 13</a>
+
+        <div class="govuk-!-margin-top-4">
+          <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Version notes
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p><strong>Updated by:</strong> Nathan Townsend</p>
+              <p>
+                <strong>Change notes:</strong> New calculations
+              </p>
+            </div>
+          </details>
+        </div>
+      </th>
+      <td class="govuk-table__cell">23 October 2019 8:54am</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="">Version 12</a>
+
+        <div class="govuk-!-margin-top-4">
+          <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Version notes
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p><strong>Updated by:</strong> Nathan Townsend</p>
+              <p><strong>Change notes:</strong> Revised 1920 data added</p>
+            </div>
+          </details>
+        </div>
+      </th>
+      <td class="govuk-table__cell">1 August 2019 10:28am</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="">Version 11</a>
+
+        <div class="govuk-!-margin-top-4">
+          <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Version notes
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p><strong>Updated by:</strong> Nathan Townsend</p>
+              <p><strong>Change notes:</strong> Revised 1920 data added</p>
+            </div>
+          </details>
+        </div>
+      </th>
+      <td class="govuk-table__cell">1 August 2019 10:28am</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="">Version 10</a>
+
+        <div class="govuk-!-margin-top-4">
+          <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Version notes
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p><strong>Updated by:</strong> Nathan Townsend</p>
+              <p><strong>Change notes:</strong> Revised 1920 data added</p>
+            </div>
+          </details>
+        </div>
+      </th>
+      <td class="govuk-table__cell">1 August 2019 10:28am</td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+
+
+
+<div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+      width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
+
+<nav role="navigation" aria-label="Pagination">
+  <div class="pagination__summary">Showing 1 - 10 of 14 results</div>
+  <ul class="pagination">
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
+          aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
+    <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
+        aria-label="Page 1, current page">1</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+    <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
+          aria-hidden="true" role="presentation">&raquo;</span></a></li>
+  </ul>
+</nav>
+</div>
+</div>
+</div>
+
+{% endblock %}
+</div>
 </div>
