@@ -82,33 +82,34 @@
 
 <div class="govuk-radios govuk-radios--inline govuk-!-margin-bottom-7">
     <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="edit">
+        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="edit" onclick="showEdit();">
         <label class="govuk-label govuk-radios__label" for="changed-name">
             Edit
         </label>
     </div>
     <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="View">
+        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="View" onclick="hideEdit();">
         <label class="govuk-label govuk-radios__label" for="changed-name-2">
             View
         </label>
     </div>
 </div>
 
-
-<button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-    Add new funding line
-</button>
-<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Undo
-</button>
-<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Redo
-</button>
-<button class="govuk-button govuk-button--secondary right" data-module="govuk-button">
-    Save as draft
-</button>
-</br>
+<div id="viewEdit" class="hideEdit">
+    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Add new funding line
+    </button>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Undo
+    </button>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Redo
+    </button>
+    <button class="govuk-button govuk-button--secondary right" data-module="govuk-button">
+        Save as draft
+    </button>
+    </br>
+</div>
 
 <body>
     <svg width="1350" height="500">
