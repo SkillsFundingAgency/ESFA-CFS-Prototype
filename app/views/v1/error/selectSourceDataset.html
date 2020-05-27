@@ -42,13 +42,13 @@ endblock %} {% block content %}
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <p>Data source version for a data source file must be selected </p>
+        <a href="" >Data source version for a data source file must be selected </a>
       </li>
     </ul>
   </div>
 </div>
 
-<div class="govuk-form-group">
+<div class="govuk-form-group govuk-form-group--error"">
   <fieldset
     class="govuk-fieldset"
     aria-describedby="how-contacted-conditional-hint"
@@ -95,6 +95,9 @@ endblock %} {% block content %}
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h4 class="govuk-heading-s">Select data source version</h4>
             </legend>
+            <span id="passport-issued-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Data source version for a data source file must be selected
+            </span>
             <div class="govuk-radios govuk-radios--small">
               <div class="govuk-radios__item">
                 <input
