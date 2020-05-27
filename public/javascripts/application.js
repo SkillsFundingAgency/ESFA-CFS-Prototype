@@ -240,4 +240,15 @@ $('.provider-checked').change(function(){
     // Output the amount
     document.getElementById("total").innerHTML = fundingTotal;
 		
-	}
+  }
+  
+
+  // show and hide template edit controls 
+
+  function hideEdit() {
+    document.getElementById('viewEdit').style.display = 'none'; 
+}
+
+function showEdit(){
+    document.getElementById('viewEdit').style.display = 'block';
+}
