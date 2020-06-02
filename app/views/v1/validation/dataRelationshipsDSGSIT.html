@@ -1,0 +1,206 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+endblock %} {% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          <a class="govuk-breadcrumbs__link" href="datasetRelationships.html">Map data sources to datasets for a
+            specification</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          DSG SIT
+        </li>
+      </ol>
+    </div>
+
+    <div class="govuk-error-summary govuk-error-summary-orange " aria-labelledby="error-summary-title" role="alert"
+      tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        Mapping in progress
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <p class="govuk-body">Mapping initiated by Mr Calculation on 17 October 2019, 11:50am, for January census data</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-xl">
+      Dedicated schools grant SIT
+      <span class="govuk-caption-xl">Financial year 2020 to 2021</span>
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="createDatasets" class="govuk-button govuk-button--primary button-createSpecification"
+      data-module="govuk-button">
+      Add new dataset
+    </a>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <br />
+    <div class="pagination__summary"></div>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-half">
+        Dataset
+      </th>
+      <th scope="col" class="govuk-table__header">Mapped data source file</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        January census data
+        <span class="govuk-body-s govuk-!-margin-left-1">(Provider data)</span>
+        <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Dataset details
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">
+              <strong>Data schema:</strong> PE and Sport premium
+            </p>
+            <p class="govuk-body">
+              <strong>Description:</strong> Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Aliquam congue diam sit amet dui
+              posuere, id rutrum sem feugiat.
+            </p>
+            <p class="govuk-body">
+              <strong>Last updated:</strong> 13th November 2019 10:54am
+            </p>
+            <p class="govuk-body">
+              <strong>Last updated by:</strong> Nathan Townsend
+            </p>
+          </div>
+        </details>
+      </th>
+      <td class="govuk-table__cell">PE and Sport data (version 3)</td>
+      <td class="govuk-table__cell">
+        <a href="selectSourceDataset" class="govuk-link">Change</a>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        April census data
+        <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Dataset details
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">
+              <strong>Data schema:</strong> PE and Sport premium
+            </p>
+            <p class="govuk-body">
+              <strong>Description:</strong> Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Aliquam congue diam sit amet dui
+              posuere, id rutrum sem feugiat.
+            </p>
+          </div>
+        </details>
+      </th>
+      <td class="govuk-table__cell">No data source file mapped<br /></td>
+      <td class="govuk-table__cell">
+        <a href="selectSourceDataset" class="govuk-link">Map</a>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        January census data
+        <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Dataset details
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">
+              <strong>Data schema:</strong> PE and Sport premium
+            </p>
+            <p class="govuk-body">
+              <strong>Description:</strong> Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Aliquam congue diam sit amet dui
+              posuere, id rutrum sem feugiat.
+            </p>
+            <p class="govuk-body">
+              <strong>Last updated:</strong> 13th November 2019 10:54am
+            </p>
+            <p class="govuk-body">
+              <strong>Last updated by:</strong> Nathan Townsend
+            </p>
+          </div>
+        </details>
+      </th>
+      <td class="govuk-table__cell">
+        PE and Sport data (version 3) <br />
+        <strong class="govuk-tag govuk-tag--orange govuk-!-margin-top-2">
+          Mapping in progress
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        <!-- <a href="selectSourceDataset" class="govuk-link">Change</a> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+      width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
+
+<nav role="navigation" aria-label="Pagination">
+  <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+  <ul class="pagination">
+    <li class="pagination__item">
+      <a class="pagination__link" href="#0" aria-label="Previous page"><span aria-hidden="true"
+          role="presentation">&laquo;</span> Previous</a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link" href="#0" aria-label="Page 1">1</a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link" href="#0" aria-label="Page 2">2</a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 3, current page">3</a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link" href="#0" aria-label="Page 4">4</a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link" href="#0" aria-label="Page 5">5</a>
+    </li>
+    <li class="pagination__item">
+      <a class="pagination__link" href="#0" aria-label="Next page">Next <span aria-hidden="true"
+          role="presentation">&raquo;</span></a>
+    </li>
+  </ul>
+</nav>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary govuk-error-summary-green" aria-labelledby="error-summary-title" role="alert"
+    tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        Mapping completed
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <p class="govuk-body">Mapping initiated by Mr Calculation on 17 October 2019, 11:50am</p>
+            </li>
+            <li>
+                <p class="govuk-body-s"><strong>Completed:</strong> 17 October 2019, 11:54am</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="govuk-error-summary govuk-error-summary-orange " aria-labelledby="error-summary-title" role="alert"
+    tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        Mapping in progress
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <p class="govuk-body">Mapping initiated by Mr Calculation on 17 October 2019, 11:50am, for January
+                    census data</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+    data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        Calculation failed
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#passport-issued-error">Calculation error summary</a>
+            </li>
+            <li>
+                <p class="govuk-body govuk-!-margin-top-4">Calculation initiated by Mr Calculation on 17 October 2019,
+                    11:50am</p>
+            </li>
+            <li>
+                <p class="govuk-body-s"><strong>Results updated:</strong> 17 October 2019, 11:54am</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}
