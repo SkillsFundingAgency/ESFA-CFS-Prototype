@@ -1,0 +1,327 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Profiling</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="xx">xx</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">xx</li>
+            </ol>
+        </div>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">XX</h1>
+        <span class="govuk-caption-xl">XX</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="createDatasets" class="govuk-button govuk-button--primary button-createSpecification"
+            data-module="govuk-button">
+            Create new profile pattern
+        </a>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <br>
+        <div class="pagination__summary"></div>
+    </div>
+</div>
+
+
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                    <h4 class="govuk-heading-s"> Search</h4>
+                </legend>
+                <div class="govuk-form-group filterSearch">
+                    <label class="govuk-label filterLabel" for="filter-by-type">
+                        Search
+                    </label>
+                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch"
+                        autocomplete="off" name="search" type="text">
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                    <h4 class="govuk-heading-s filter-expand">
+                        Filter by funding stream<span><i class="material-icons right-align"> keyboard_arrow_down
+                            </i></span>
+                    </h4>
+                </legend>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label class="govuk-label filterLabel" for="filter-by-type">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search"
+                            type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                        <ul id="myList">
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="funding stream-2" name="funding stream"
+                                        type="checkbox" value="dsg">
+                                    <label class="govuk-label govuk-checkboxes__label" for="funding stream">
+                                        PE and sports grant
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="funding stream-2" name="funding stream"
+                                        type="checkbox" value="dsg">
+                                    <label class="govuk-label govuk-checkboxes__label" for="funding stream">
+                                        16-18 traineeships
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                    <h4 class="govuk-heading-s ">
+                        Filter by funding period<span><i
+                                class="material-icons right-align">keyboard_arrow_down</i></span>
+                    </h4>
+                </legend>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1"
+                            autocomplete="off" type="text">
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1 myInput" name="organisation"
+                                type="checkbox" value="fy2021">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Financial Year 2020
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="ay2021">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Academic Year 2020-2021
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+        <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
+            Clear filters</a>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Data source</th>
+                    <th scope="col" class="govuk-table__header">Last updated</th>
+                </tr>
+            </thead>
+
+            <tbody class="govuk-table__body" id="mainContentResults">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><a href="">Profile pattern 1</a>
+
+                        <div class="govuk-!-margin-top-4">
+                            <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                                <summary class="govuk-details__summary">
+                                    <span class="govuk-details__summary-text">
+                                        Data source details
+                                    </span>
+                                </summary>
+                                <div class="govuk-details__text">
+                                    <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
+                                    <p class="govuk-body-s"><strong>Data schema description:</strong> Factors data for
+                                        1920 allocation year</p>
+                                    <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
+                                    <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan Townsend</p>
+                                    <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                                    <p class="govuk-body-s"><a class="govuk-link" href="datasethistory">View all
+                                            versions</a></p>
+                                </div>
+                            </details>
+                        </div>
+                    </th>
+
+                    <td class="govuk-table__cell">11 November 2019 <br> 10:54am</td>
+
+                </tr>
+
+                <th scope="row" class="govuk-table__header"><a href="updateDataset">Profile pattern 2</a>
+
+                    <div class="govuk-!-margin-top-4">
+                        <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Data source details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
+                                <p class="govuk-body-s"><strong>Data schema description:</strong> Student data for 2019
+                                    2020 allocation year</p>
+                                <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
+                                <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan Townsend</p>
+                                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                                <p class="govuk-body-s"><a class="govuk-link" href="datasethistory">View all
+                                        versions</a></p>
+                            </div>
+                        </details>
+                    </div>
+                </th>
+
+                <td class="govuk-table__cell">10 November 2019 <br> 9:14am</td>
+
+                </tr>
+
+
+                <th scope="row" class="govuk-table__header"><a href="updateDataset">Profile pattern 3</a>
+
+                    <div class="govuk-!-margin-top-4">
+                        <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Data source details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
+                                <p class="govuk-body-s"><strong>Data schema description:</strong> Factors data for 1920
+                                    allocation year</p>
+                                <p class="govuk-body-s"><strong>Data source version:</strong> 4</p>
+                                <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan Townsend</p>
+                                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                                <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
+                            </div>
+                        </details>
+                    </div>
+                </th>
+
+                <td class="govuk-table__cell">8 November 2019 <br> 8:59am</td>
+
+                </tr>
+
+                <th scope="row" class="govuk-table__header"><a href="updateDataset">Profile pattern 4</a>
+
+                    <div class="govuk-!-margin-top-4">
+                        <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Data source details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <p class="govuk-body-s"> <strong>Data schema:</strong> Rates and baselines</p>
+                                <p class="govuk-body-s"><strong>Data schema description:</strong> Phase 1 QA data for
+                                    the allocation year</p>
+                                <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
+                                <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan Townsend</p>
+                                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                                <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
+                            </div>
+                        </details>
+                    </div>
+                </th>
+
+                <td class="govuk-table__cell">4 November 2019 <br> 11:06am</td>
+                </tr>
+
+                <th scope="row" class="govuk-table__header"><a href="updateDataset">Profile pattern 5</a>
+
+                    <div class="govuk-!-margin-top-4">
+                        <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Data source details
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Funding</p>
+                                <p class="govuk-body-s"><strong>Data schema description:</strong> FPF Historic Data for
+                                    the allocation year</p>
+                                <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
+                                <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan Townsend</p>
+                                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                                <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
+                            </div>
+                        </details>
+                    </div>
+                </th>
+
+                <td class="govuk-table__cell">1 November 2019 <br> 3:44pm</td>
+
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+        <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
+            <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+                <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+                    xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                    <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                </svg>Back to top
+            </a>
+        </div>
+
+        <nav role="navigation" aria-label="Pagination">
+            <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+            <ul class="pagination">
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
+                            aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+                <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
+                        aria-label="Page 3, current page">3</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
+                            aria-hidden="true" role="presentation">&raquo;</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+
+{% endblock %}
