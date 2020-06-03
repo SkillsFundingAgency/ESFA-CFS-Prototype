@@ -20,50 +20,42 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link"
                         href="/v1/view-results/view-provider-results/provider-results">View provider results</a>
                 </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                <li class="govuk-breadcrumbs__list-item govuk-!-margin-bottom-7" aria-current="page">
                     Conisborough college
                 </li>
             </ol>
         </div>
-        <div class="govuk-warning-text permissions-banner">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                Results shown are not reflective of those in View Your Funding
-            </strong>
-        </div>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Conisborough college</h1>
-        <p class="govuk-body-s">Local authority:<span
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Conisborough college</h1>
+        <p class="govuk-body">Local authority:<span
                 class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Lewisham</span></p>
-        <p class="govuk-body-s">Provider type:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Local
+        <p class="govuk-body">Provider type:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Local
                 authority maintained schools</span></p>
-        <p class="govuk-body-s">Provider subtype:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Community
+        <p class="govuk-body">Provider subtype:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Community
                 school</span></p>
-        <p class="govuk-body-s">Date opened:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Unknown</span>
+        <p class="govuk-body govuk-!-margin-bottom-9">Date opened:<span
+                class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Unknown</span>
         </p>
     </div>
 </div>
 
 <div class="govuk-grid-row govuk-!-margin-bottom-6">
-    <div class="govuk-grid-column-one-third">
+    <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group">
-            <label class="govuk-label" for="sort">
-                Funding period
-            </label>
+            <h3 class="govuk-heading-m">Specification</h3>
             <select class="govuk-select" id="sort" name="sort">
-                <option value="published">Academies academic year 2018 to 2019</option>
+                <option value="published">DSG SIT
+                </option>
+                <option value="published">PE & Sport ABC
+                </option>
             </select>
         </div>
-    </div>
-    <div class="govuk-grid-column-one-third">
-        <div class="govuk-form-group">
-            <label class="govuk-label" for="sort">
-                Specification
-            </label>
-            <select class="govuk-select" id="sort" name="sort">
-                <option value="published">Specification name</option>
-            </select>
-        </div>
+        <p class="govuk-body">Funding stream:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Dedicated
+                schools grant</span>
+        </p>
+        <p class="govuk-body">Funding period:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Financial year
+                2020 - 2021</span>
+        </p>
     </div>
 </div>
 
@@ -76,7 +68,7 @@ GOV.UK Prototype Kit
             <ul class="govuk-tabs__list">
                 <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                     <a class="govuk-tabs__tab" href="#template-calculations">
-                        Template calculations
+                        Funding line structure
                     </a>
                 </li>
                 <li class="govuk-tabs__list-item">
@@ -89,19 +81,10 @@ GOV.UK Prototype Kit
                         Provider data
                     </a>
                 </li>
-                <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#live-data">
-                        Live data
-                    </a>
-                </li>
-                <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#profiling">
-                        Profiling
-                    </a>
-                </li>
+
             </ul>
             <section class="govuk-tabs__panel" id="template-calculations">
-                <h2 class="govuk-heading-l">Template calculations</h2>
+                <h2 class="govuk-heading-l">Funding line structure</h2>
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-two-thirds">
                         <div class="govuk-form-group search-container">
@@ -125,7 +108,7 @@ GOV.UK Prototype Kit
                             <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
                                     <td class="govuk-table__cell"><a class="govuk-link"
-                                            href="calculation-providers">Pupil
+                                            href="../view-specification-results/calculation-providers">Pupil
                                             number</a></td>
                                     <td class="govuk-table__cell">Draft</td>
                                     <td class="govuk-table__cell">31 July 2019 5:57pm</td>
@@ -224,14 +207,7 @@ GOV.UK Prototype Kit
             </section>
 
 
-            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="live-data">
-                <h2 class="govuk-heading-l">Live data</h2>
-                <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-full">
-                        <p>Live data section</p>
-                    </div>
-                </div>
-            </section>
+
             <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="provider-data">
                 <h2 class="govuk-heading-l">Provider data</h2>
                 <h4 class="govuk-heading-m">Establishment details</h4>
@@ -469,112 +445,17 @@ GOV.UK Prototype Kit
                     </div>
                 </dl>
             </section>
-            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="profiling">
-                <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-two-thirds">
-                        <h2 class="govuk-heading-l">Profiling</h2>
-                        <span class="govuk-caption-m">Total allocation for 2019 to 2020</span>
-                        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">£28,500,000</h3>
-                        <span class="govuk-caption-m">Previous allocation value</span>
-                        <h3 class="govuk-heading-m">£26,000,000</h3>
-                        <table class="govuk-table">
-                            <caption class="govuk-table__caption">Profilling installments</caption>
-                            <thead class="govuk-table__head">
-                                <tr class="govuk-table__row">
-                                    <th scope="col" class="govuk-table__header">Installment month</th>
-                                    <th scope="col" class="govuk-table__header">Installment number</th>
-                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">value</th>
-                                </tr>
-                            </thead>
-                            <tbody class="govuk-table__body">
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">April 2020
-                                        <strong class="govuk-tag">Paid</strong>
-                                    </th>
-                                    <td class="govuk-table__cell">1</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£950,000</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">April 2020
-                                        <strong class="govuk-tag">Paid</strong>
-                                    </th>
-                                    <td class="govuk-table__cell">2</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£950,000</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">April 2020
-                                        <strong class="govuk-tag">Paid</strong>
-                                    </th>
-                                    <td class="govuk-table__cell">3</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£950,000</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">May 2020
-                                        <strong class="govuk-tag">Paid</strong>
-                                    </th>
-                                    <td class="govuk-table__cell">4</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£950,000</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">May 2020
-                                        <strong class="govuk-tag">Paid</strong>
-                                    </th>
-                                    <td class="govuk-table__cell">5</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£950,000</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">June 2020</th>
-                                    <td class="govuk-table__cell">6</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£1,500,000</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">June 2020</th>
-                                    <td class="govuk-table__cell">7</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£1,500,000</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">July 2020</th>
-                                    <td class="govuk-table__cell">8</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£1,500,000</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">
-                                        July 2020
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0">Inclusive of Early Years
-                                            Adjustment for 2018 to 2019</p>
-                                    </th>
-                                    <td class="govuk-table__cell">9</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£1,620,000</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">
-                                        Total
-                                    </th>
-                                    <td class="govuk-table__cell"></td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£28,500,000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <span class="govuk-caption-m">Next academic year allocation to be reduced by</span>
-                        <h3 class="govuk-heading-m">£100,000</h3>
-                        <h3 class="govuk-heading-m">Previous  profiles</h3>
-                        <p class="govuk-body">History of previous <a class="govuk-link"
-                                href="profiling-archive.html"> profiles</a></p>
-                    </div>
-                    </dl>
-                </div>
+
         </div>
-        </section>
     </div>
-</div>
-<div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
-    <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
-        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
-            width="13" height="17" viewBox="0 0 13 17">
-            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
-        </svg>Back to top
-    </a>
-</div>
+    <div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+        <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+            <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+                width="13" height="17" viewBox="0 0 13 17">
+                <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+            </svg>Back to top
+        </a>
+    </div>
 </div>
 </div>
 
