@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+endblock %}  
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">View results</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          Select funding stream
+        </li>
+      </ol>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Select funding stream</h1>
+    <span class="govuk-caption-xl">Select the funding you wish to view providers for.</span>
+  </div>
+</div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+    Funding stream
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="blank">General annual grant</option>
+    <option value="blank">Dedicated schools grant</option>
+    <option value="blank">PE and Sport grant</option>
+  </select>
+</div>
+
+<a
+  href="provider-results.html"
+  id="specification-link"
+  class="govuk-button"
+  data-module="govuk-button"
+>
+  Continue
+</a>
+
+{% endblock %}
