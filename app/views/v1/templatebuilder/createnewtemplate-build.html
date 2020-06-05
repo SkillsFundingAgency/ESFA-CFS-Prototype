@@ -1,0 +1,93 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+    endblock %} {% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting.html">Templates</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="createnewtemplate.html">Create a new
+                        template</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Edit template
+                </li>
+            </ol>
+        </div>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">GAG AC-20-21</h1>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Funding stream</span>
+        <h3 class="govuk-heading-m">General annual grant</h3>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Funding period</span>
+        <h3 class="govuk-heading-m">Academic year 2020 - 2021</h3>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Description</span>
+        <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. <a href="#" class="govuk-link-s"><small>Edit</small></a> </p>
+    </div>
+</div>
+
+<div class="govuk-grid-row ">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Version</span>
+        <h3 class="govuk-heading-m">1.1.1</h3>
+    </div>
+</div>
+<p class="govuk-body govuk-!-margin-bottom-8"><a class="govuk-link" href="">View all versions</a></p>
+
+
+<button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+    Add new funding line
+</button>
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Undo
+</button>
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Redo
+</button>
+</br>
+
+<body>
+    <svg width="1350" height="500">
+        <rect width="1150" height="500" stroke-width="8" fill="gray" />
+    </svg>
+</body>
+
+</br>
+</br>
+
+
+
+
+
+
+<a href="publishtemplate" class="govuk-button govuk-button" data-module="govuk-button">
+    Save and continue
+</a>
+<a href="createnewtemplate.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Back
+</a>
+
+
+
+{% endblock %}
