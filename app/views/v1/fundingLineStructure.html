@@ -290,17 +290,46 @@ GOV.UK Prototype Kit
                 </div>
               </div>
             </div>
-            <div class="govuk-form-group govuk-!-margin-top-5">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            <fieldset class="govuk-fieldset govuk-!-margin-top-5" role="group" aria-describedby="passport-issued-hint">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                 Time
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
-                name="passport-issued-year" type="number" pattern="[0-9]*">
-            </div>
-          </fieldset>
+              <span id="statementRelease-time" class="govuk-hint">
+                For example, 10:00AM
+              </span>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Hour
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Minute
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      AM/PM
+                    </label>
+                    <select class="govuk-select" id="sort" name="sort">
+                      <option value="AM">AM</option>
+                      <option value="PM" selected>PM</option>
+                    </select>                    
+                  </div>
+                </div>
+              </div>
+            </fieldset>
         </div>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-!-margin-top-9">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h3 class="govuk-heading-m">
@@ -311,7 +340,7 @@ GOV.UK Prototype Kit
               Set the date and time that the statement will be published externall for this funding stream. <br>For
               example, 12 11 2019
             </span>
-            <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input" id="statement-releasedate">
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="event-name">
@@ -321,12 +350,44 @@ GOV.UK Prototype Kit
                 </div>
               </div>
             </div>
+
             <div class="govuk-form-group govuk-!-margin-top-5">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                Time
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
-                name="passport-issued-year" type="number" pattern="[0-9]*">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Time
+                </label>
+                <span id="statementRelease-time" class="govuk-hint">
+                  For example, 10:00AM
+                </span>
+                <div class="govuk-date-input" id="passport-issued">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        Hour
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                        Minute
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                        AM/PM
+                      </label>
+                      <select class="govuk-select" id="sort" name="sort">
+                        <option value="AM">AM</option>
+                        <option value="PM" selected>PM</option>
+                      </select>                    
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
             </div>
           </fieldset>
         </div>
