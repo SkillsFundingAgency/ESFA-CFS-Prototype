@@ -42,7 +42,7 @@
         <span class="govuk-caption-m">Description</span>
         <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
             ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. <a href="#" class="govuk-link-s"><small>Edit</small></a></p>
+            aliquip ex ea commodo consequat. <a onclick="document.getElementById('editDescription').style.display='block'" href="#" class="govuk-link-s">Edit</a></p>
 
 
 
@@ -132,64 +132,12 @@
             Back
         </a>
     </div>
+
 </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<body>
-
-    <div class="w3-container">
-        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Edit</button>
-
-        <div id="id01" class="w3-modal">
-            <div class="w3-modal-content w3-card-4">
-                <header class="w3-container w3-teal">
-                    <span onclick="document.getElementById('id01').style.display='none'"
-                        class="w3-button w3-display-topright">&times;</span>
-                    <h2>Modal Header</h2>
-                </header>
-                <div class="w3-container">
-                    <p>You have two options to close this modal:</p>
-                    <p>Click on the "x" or click anywhere outside of the modal!</p>
-                </div>
-                <footer class="w3-container w3-teal">
-                    <p>Modal Footer</p>
-                </footer>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-
-</body>
-
-
-
-<div class="govuk-modal-dialogue govuk-modal-dialogue--open" data-module="govuk-modal-dialogue">
+<div class="govuk-modal-dialogue" id="editDescription" data-module="govuk-modal-dialogue">
     <div class="govuk-modal-dialogue__wrapper">
         <dialog id="timeout" class="govuk-modal-dialogue__box" aria-labelledby="timeout-title"
             aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
@@ -202,7 +150,7 @@
                     <image src="/assets/images/govuk-logotype-crown.png" xlink:href=""
                         class="govuk-header__logotype-crown-fallback-image" width="36" height="32"></image>
                 </svg>
-                <button type="button" class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button"
+                <button type="button" onclick="document.getElementById('editDescription').style.display='none'" class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button"
                     aria-label="Close modal dialogue">
                     ×
                 </button>
@@ -216,7 +164,7 @@
                         aria-describedby="more-detail-hint"></textarea>
                 </div>
 
-                <button type="button" class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+                <button type="button" onclick="document.getElementById('editDescription').style.display='none'" class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
                     data-module="govuk-button">
                     Save </button>
                 <!-- <a href="" class="govuk-modal-dialogue__cancel govuk-body govuk-link--no-visited-state">Start again</a> -->
@@ -229,7 +177,17 @@
 
 
 
-
+<script>
+    // Get the modal
+    var modal = document.getElementById('editDescription');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
 
 
 {% endblock %}
