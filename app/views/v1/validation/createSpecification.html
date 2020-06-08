@@ -17,17 +17,14 @@ GOV.UK Prototype Kit
         <li class="govuk-breadcrumbs__list-item">
           <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
         </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit specification</li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Create specification</li>
       </ol>
     </div>
 
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
         <h1 class="govuk-fieldset__heading">
-          Edit specification
+          Create specification
         </h1>
       </legend>
 
@@ -35,14 +32,27 @@ GOV.UK Prototype Kit
         <label class="govuk-label" for="address-line-1">
           Specification name
         </label>
-        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+        <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
       </div>
 
-      <span class="govuk-caption-m">Funding stream</span>
-      <h3 class="govuk-heading-m">Dedicated schools grant</h3>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Funding streams
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="draft">Dedicated schools grant</option>
+          <option value="draft">PE and sport premium grant</option>
+        </select>
+      </div>
 
-      <span class="govuk-caption-m">Funding period</span>
-      <h3 class="govuk-heading-m">Financial year 2020 to 2021</h3>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Funding period
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="draft">Financial year 2020 to 2021</option>
+        </select>
+      </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="sort">
@@ -61,7 +71,8 @@ GOV.UK Prototype Kit
         <span id="account-number-hint" class="govuk-hint">
           Select a funding stream before choosing a template version
         </span>
-        <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
+        <input class="govuk-input govuk-!-width-two-thirds govuk-!-margin-bottom-2" id="two-thirds" name="two-thirds" type="text" value="GAG-AY-21-22, General annual grant, Version 2">
+        <p class="govuk-body"><a href="../templatebuilder/edittemplategag.html" class="govuk-link ">View template version</a></p>
       </div>
 
       <div class="govuk-form-group">
@@ -77,7 +88,7 @@ GOV.UK Prototype Kit
       Save and continue
     </button>
 
-    <a href="fundingLineStructure.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Cancel
     </a>
   </div>
