@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Home</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="select-provider.html">Select provider</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="profile-patterns.html">Profile pattern</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="profile-patterns.html">Profile pattern name</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Edit profile pattern
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Edit profile</h1>
+        <span class="govuk-caption-m">Provider name</span>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Barnet London Borough Council</h3>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Total allocation for 2020 to 2021</span>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-5">£1,260,000</h3>
+
+        <span class="govuk-caption-m">Amount remaining to be paid</span>
+        <h3 class="govuk-heading-m">£840,000</h3>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table govuk-!-margin-top-7">
+            <caption class="govuk-table__caption">Profilling installments</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header ">Installment</th>
+                    <th scope="col" class="govuk-table__header">Installment number</th>
+                    <th scope="col" class="govuk-table__header ">Percentage</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">April 2021</th>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input govuk-input--width-3" id="width-2" name="width-2" value="20%" type="text">
+                          </div>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">April 2021</th>
+                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell ">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input govuk-input--width-3" id="width-10" name="width-10" value="20%" type="text">
+                          </div>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">April 2021</th>
+                    <td class="govuk-table__cell">3</td>
+                    <td class="govuk-table__cell">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input govuk-input--width-3" id="width-10" name="width-10" value="20%" type="text">
+                          </div>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">May 2021</th>
+                    <td class="govuk-table__cell">4</td>
+                    <td class="govuk-table__cell">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input govuk-input--width-3" id="width-10" name="width-10" value="20%" type="text">
+                          </div>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">May 2021</th>
+                    <td class="govuk-table__cell">5</td>
+                    <td class="govuk-table__cell">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input govuk-input--width-3" id="width-10" name="width-10" value="20%" type="text">
+                          </div>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Total</th>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">100%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+        <a class="govuk-button govuk-!-margin-right-1" href=".html">
+            Save and continue
+        </a>
+          
+          <a class="govuk-button govuk-button--secondary" href="profile-pattern-rule-based.html">
+            Cancel
+          </a>
+
+    </div>
+</div>
+
+{% endblock %}
