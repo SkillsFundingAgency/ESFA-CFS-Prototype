@@ -1,5 +1,5 @@
 {% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-endblock %}  
+endblock %}
 
 {% block content %}
 
@@ -18,30 +18,57 @@ endblock %}
         </li>
       </ol>
     </div>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Select funding stream</h1>
-    <span class="govuk-caption-xl">Select the funding you wish to view providers for.</span>
   </div>
 </div>
 
 
 <div class="govuk-form-group">
-  <label class="govuk-label" for="sort">
-    Funding stream
-  </label>
-  <select class="govuk-select" id="sort" name="sort">
-    <option value="blank">General annual grant</option>
-    <option value="blank">Dedicated schools grant</option>
-    <option value="blank">PE and Sport grant</option>
-  </select>
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Select funding stream
+      </h1>
+      <span class="govuk-caption-m">Select the funding you wish to view providers for.</span>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          General annual grant
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio"
+          value="scotland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+          Dedicated schools grant
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+          PE and sports grant
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio"
+          value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+          16 to 19
+        </label>
+      </div>
+    </div>
+  </fieldset>
 </div>
 
-<a
-  href="provider-results.html"
-  id="specification-link"
-  class="govuk-button"
-  data-module="govuk-button"
->
+<a href="provider-results.html" id="specification-link" class="govuk-button" data-module="govuk-button">
   Continue
 </a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="profile-patterns.html" class="govuk-back-link">Back</a>
+  </div>
+</div>
 
 {% endblock %}
