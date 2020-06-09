@@ -63,110 +63,14 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">1</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
                 </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">October 2020 
-                        <strong class="govuk-tag">Paid</strong>
-                    </th>
-                    <td class="govuk-table__cell">2</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">November 2020                        
-                        <strong class="govuk-tag">Paid</strong>
-                    </th>
-                    <td class="govuk-table__cell">3</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">December 2020                        
-                        <strong class="govuk-tag">Paid</strong>
-                    </th>
-                    <td class="govuk-table__cell">4</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">January 2021</th>
-                    <td class="govuk-table__cell">5</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" value="£140,000" type="text">
-                          </div>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">February 2021</th>
-                    <td class="govuk-table__cell">6</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" value="£95,000" type="text">
-                          </div>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">March 2021</th>
-                    <td class="govuk-table__cell">7</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" value="£100,000" type="text">
-                          </div>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">April 2021</th>
-                    <td class="govuk-table__cell">8</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" value="£100,000" type="text">
-                          </div>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">May 2021</th>
-                    <td class="govuk-table__cell">9</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" value="£100,000" type="text">
-                          </div>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">June 2021</th>
-                    <td class="govuk-table__cell">10</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" value="£100,000" type="text">
-                          </div>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">July 2021</th>
-                    <td class="govuk-table__cell">11</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" value="£100,000" type="text">
-                          </div>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">August 2021</th>
-                    <td class="govuk-table__cell">12</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" value="£100,000" type="text">
-                          </div>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Total allocation</th>
-                    <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell">£1,260,000</td>
-                </tr>
             </tbody>
         </table>
     </div>
 </div>
 
 <button class="govuk-button" data-module="govuk-button" id="addInstallment"> Add installment </button>
+
+<button class="govuk-button" data-module="govuk-button" id="deleteInstallment"> Delete installment </button>
 
         <a class="govuk-button govuk-!-margin-right-1" href="">
             Save and continue
@@ -180,15 +84,24 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
-    //Profiling insert installment
+
+//Profiling insert installment
 
 document.getElementById("addInstallment").onclick = function() {addInstallment()};
-
 function addInstallment() {
-  var newRow=document.getElementById('profile').insertRow();
-  
-  newRow.innerHTML = "<th scope='row' class='govuk-table__header'>Total allocation</th><td class='govuk-table__cell'></td><td class='govuk-table__cell'>£1,260,000</td>";
+  var newRow=document.getElementById('profile').insertRow();  
+  newRow.innerHTML = "<th scope='row' class='govuk-table__header'>August 2021</th><td class='govuk-table__cell'>12</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input class='govuk-input govuk-input--width-10' id='width-10' name='width-10' value='£100,000' type='text'></div></td>";
 }
+
+//Delete last row
+
+document.getElementById("deleteInstallment").onclick = function() {deleteInstallment()};
+function deleteInstallment() {
+    var table = document.getElementById(profile);
+    var rowCount = table.rows.length;
+    table.deleteRow(rowCount -1);
+}
+
 </script>
 
 {% endblock %}
