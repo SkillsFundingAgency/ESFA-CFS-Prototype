@@ -39,21 +39,21 @@ GOV.UK Prototype Kit
         </legend>
         <div class="govuk-radios">
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio"
+                <input class="govuk-radios__input" id="where-do-you-live" name="pattern-type" type="radio"
                     value="england">
                 <label class="govuk-label govuk-radios__label" for="where-do-you-live">
                     Rule based
                 </label>
             </div>
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio"
+                <input class="govuk-radios__input" id="where-do-you-live-2" name="pattern-type" type="radio"
                     value="scotland">
                 <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
                     Custom pattern
                 </label>
             </div>
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio"
+                <input class="govuk-radios__input" id="where-do-you-live-2" name="pattern-type" type="radio"
                     value="scotland">
                 <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
                     National pattern
@@ -66,7 +66,7 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <a href="" id="specification-link" class="govuk-button" data-module="govuk-button">
+        <a href="" onclick="patternChoice()" id="patternLink" class="govuk-button" data-module="govuk-button">
             Continue
         </a>
     </div>
@@ -77,5 +77,13 @@ GOV.UK Prototype Kit
         <a href="profile-patterns.html" class="govuk-back-link">Back</a>
     </div>
 </div>
+
+<script>
+
+    function patternChoice () {
+    var patternType = document.querySelector('input[name="pattern-type"]:checked').value;
+    document.getElementById('patternLink').href=patternType
+    }
+    </script>
 
 {% endblock %}
