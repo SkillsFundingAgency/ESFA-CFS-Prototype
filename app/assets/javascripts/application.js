@@ -252,4 +252,3 @@ $('.provider-checked').change(function(){
 function showEdit(){
     document.getElementById('viewEdit').style.display = 'block';
 }
-
