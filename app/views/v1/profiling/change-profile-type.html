@@ -40,21 +40,21 @@ GOV.UK Prototype Kit
         <div class="govuk-radios">
             <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="where-do-you-live" name="pattern-type" type="radio"
-                    value="england">
+                    value="change-to-rule-based.html">
                 <label class="govuk-label govuk-radios__label" for="where-do-you-live">
                     Rule based
                 </label>
             </div>
             <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="where-do-you-live-2" name="pattern-type" type="radio"
-                    value="scotland">
+                    value="change-to-custom.html">
                 <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
                     Custom pattern
                 </label>
             </div>
             <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="where-do-you-live-2" name="pattern-type" type="radio"
-                    value="scotland">
+                    value="change-to-national.html">
                 <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
                     National pattern
                 </label>
@@ -80,10 +80,10 @@ GOV.UK Prototype Kit
 
 <script>
 
-    function patternChoice () {
-    var patternType = document.querySelector('input[name="pattern-type"]:checked').value;
-    document.getElementById('patternLink').href=patternType
+    function patternChoice() {
+        var patternType = document.querySelector('input[name="pattern-type"]:checked').value;
+        document.getElementById('patternLink').href = patternType
     }
-    </script>
+</script>
 
 {% endblock %}
