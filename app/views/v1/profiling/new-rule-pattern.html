@@ -23,7 +23,7 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link" href="profile-patterns.html">Create profile pattern</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Custom profile pattern
+                    Rule based profile pattern
                 </li>
             </ol>
         </div>
@@ -53,7 +53,7 @@ GOV.UK Prototype Kit
                 <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header ">Installment</th>
                     <th scope="col" class="govuk-table__header">Installment number</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">value</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage</th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
@@ -62,7 +62,7 @@ GOV.UK Prototype Kit
                         <strong class="govuk-tag">Paid</strong>
                     </th>
                     <td class="govuk-table__cell">1</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">20%</td>
                 </tr>
             </tbody>
         </table>
@@ -78,7 +78,7 @@ GOV.UK Prototype Kit
     Save and continue
 </a>
 
-<a class="govuk-button govuk-button--secondary" href="profile-pattern-custom.html">
+<a class="govuk-button govuk-button--secondary" href="create-profile.html">
     Cancel
 </a>
 
@@ -92,7 +92,7 @@ GOV.UK Prototype Kit
     document.getElementById("addInstallment").onclick = function () { addInstallment() };
     function addInstallment() {
         var newRow = document.getElementById('profile').insertRow();
-        newRow.innerHTML = "<th scope='row' class='govuk-table__header'>August 2021</th><td class='govuk-table__cell'>12</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input class='govuk-input govuk-input--width-10' id='width-10' name='width-10' value='£100,000' type='text'></div></td>";
+        newRow.innerHTML = "<th scope='row' class='govuk-table__header'>August 2021</th><td class='govuk-table__cell'>12</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input class='govuk-input govuk-input--width-10' id='width-10' name='width-10' value='20%' type='text'></div></td>";
     }
 
     //Delete last row
