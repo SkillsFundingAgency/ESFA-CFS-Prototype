@@ -30,6 +30,20 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
+
+<div class="govuk-error-summary hideError" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#profile">Profile value cannot be greated than funding line value</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Create profile</h1>
@@ -60,7 +74,7 @@ GOV.UK Prototype Kit
 
             </tbody>
         </table>
-        <p class="govuk-body">Total profile value <span id="profileTotal"></span></p>
+        <h4 class="govuk-heading-s right-align">Total profile value: £<span id="profileTotal"></span></h4>
     </div>
 </div>
 
@@ -68,11 +82,11 @@ GOV.UK Prototype Kit
 
 <button class="govuk-button" data-module="govuk-button" id="deleteInstallment" onclick="deleteInstallment(); sumTotal()"> Delete installment </button>
 
-        <a class="govuk-button govuk-!-margin-right-1" href="">
+        <button class="govuk-button govuk-!-margin-right-1" onclick="totalError()" href="">
             Save and continue
-        </a>
+        </button>
           
-          <a class="govuk-button govuk-button--secondary" href="profile-pattern-custom.html">
+          <a class="govuk-button govuk-button--secondary" href="profile-patterns.html">
             Cancel
           </a>
 
@@ -85,10 +99,10 @@ GOV.UK Prototype Kit
 
 function addInstallment() {
   var newRow=document.getElementById('profile').insertRow();  
-  newRow.innerHTML = "<th scope='row' class='govuk-table__header'>August 2021</th><td class='govuk-table__cell'>12</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-10 ' id='width-10' name='installmentValue' type='number'></div></td>";
+  newRow.innerHTML = "<th scope='row' class='govuk-table__header'>August 2021</th><td class='govuk-table__cell'>12</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-10 ' id='installmentValue' name='installmentValue' type='number'></div></td>";
 }
 
-//Delete last row
+//Delete last installment
 
 function deleteInstallment() {
   document.getElementById("profile").deleteRow(-1);
@@ -103,12 +117,18 @@ function sumTotal() {
         if(parseInt(arr[i].value))
             total += parseInt(arr[i].value);
             console.log(total)
+            // Show total value in 'total profile value'
             document.getElementById("profileTotal").innerHTML = total
     }
 }
 
-// Show total value
-
+function totalError() {
+    var profilingTotal = document.getElementById('profileTotal').innerText;
+    if (profilingTotal == "1260000");
+    {
+        document.querySelector('.govuk-error-summary').style.display = 'block';
+    }
+}
 
 </script>
 
