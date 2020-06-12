@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Home</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="select-provider.html">Select provider</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="profile-patterns.html">Profile pattern</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="profile-patterns.html">Create profile pattern</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Custom profile pattern
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Create profile</h1>
+        <span class="govuk-caption-m">Provider name</span>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Barnet London Borough Council</h3>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Funding line value</span>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-5">£1,260,000</h3>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <table class="govuk-table govuk-!-margin-top-7" id="profile">
+            <caption class="govuk-table__caption">Profilling installments</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header ">Installment</th>
+                    <th scope="col" class="govuk-table__header">Installment number</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">value</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">September 2020
+                        <strong class="govuk-tag">Paid</strong>
+                    </th>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<button class="govuk-button" data-module="govuk-button" id="addInstallment"> Add installment </button>
+
+<button class="govuk-button" data-module="govuk-button" id="deleteInstallment"> Delete installment </button>
+
+<a class="govuk-button govuk-!-margin-right-1" href="">
+    Save and continue
+</a>
+
+<a class="govuk-button govuk-button--secondary" href="profile-pattern-custom.html">
+    Cancel
+</a>
+
+</div>
+</div>
+
+<script>
+
+    //Profiling insert installment
+
+    document.getElementById("addInstallment").onclick = function () { addInstallment() };
+    function addInstallment() {
+        var newRow = document.getElementById('profile').insertRow();
+        newRow.innerHTML = "<th scope='row' class='govuk-table__header'>August 2021</th><td class='govuk-table__cell'>12</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input class='govuk-input govuk-input--width-10' id='width-10' name='width-10' value='£100,000' type='text'></div></td>";
+    }
+
+    //Delete last row
+
+    document.getElementById("deleteInstallment").onclick = function () { deleteInstallment() };
+    function deleteInstallment() {
+        var table = document.getElementById(profile);
+        var rowCount = table.rows.length;
+        table.deleteRow(rowCount - 1);
+    }
+
+</script>
+
+{% endblock %}
