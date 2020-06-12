@@ -57,22 +57,16 @@ GOV.UK Prototype Kit
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">September 2020 
-                        <strong class="govuk-tag">Paid</strong>
-                    </th>
-                    <td class="govuk-table__cell">1</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
-                </tr>
+
             </tbody>
         </table>
-        
+        <p class="govuk-body">Total profile value <span id="profileTotal"></span></p>
     </div>
 </div>
 
-<button class="govuk-button" data-module="govuk-button" id="addInstallment"> Add installment </button>
+<button class="govuk-button" data-module="govuk-button" id="addInstallment" onclick="addInstallment()"> Add installment </button>
 
-<button class="govuk-button" data-module="govuk-button" id="deleteInstallment"> Delete installment </button>
+<button class="govuk-button" data-module="govuk-button" id="deleteInstallment" onclick="deleteInstallment(); sumTotal()"> Delete installment </button>
 
         <a class="govuk-button govuk-!-margin-right-1" href="">
             Save and continue
@@ -89,22 +83,33 @@ GOV.UK Prototype Kit
 
 //Profiling insert installment
 
-document.getElementById("addInstallment").onclick = function() {addInstallment()};
 function addInstallment() {
   var newRow=document.getElementById('profile').insertRow();  
-  newRow.innerHTML = "<th scope='row' class='govuk-table__header'>August 2021</th><td class='govuk-table__cell'>12</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input class='govuk-input govuk-input--width-10' id='width-10' name='width-10' value='£100,000' type='text'></div></td>";
+  newRow.innerHTML = "<th scope='row' class='govuk-table__header'>August 2021</th><td class='govuk-table__cell'>12</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-10 ' id='width-10' name='installmentValue' type='number'></div></td>";
 }
 
 //Delete last row
 
-document.getElementById("deleteInstallment").onclick = function() {deleteInstallment()};
 function deleteInstallment() {
-    var table = document.getElementById(profile);
-    var rowCount = table.rows.length;
-    table.deleteRow(rowCount -1);
+  document.getElementById("profile").deleteRow(-1);
 }
+
+// Check value is correct 
+
+function sumTotal() {
+    var arr = document.getElementsByName('installmentValue');
+    var total= 0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            total += parseInt(arr[i].value);
+            console.log(total)
+            document.getElementById("profileTotal").innerHTML = total
+    }
+}
+
+// Show total value
+
 
 </script>
 
 {% endblock %}
-
