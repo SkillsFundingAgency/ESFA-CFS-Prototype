@@ -1,0 +1,230 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+    endblock %} {% block content %}
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="../templatebuilder/templatelisting-basic.html">Templates</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/edittemplate.html">View template</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Enum editor </li>
+            </ol>
+        </div>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Enum editor</h1>
+    </div>
+</div>
+
+
+
+<div class="govuk-error-summary hideError" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+    data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#profile">Profile value cannot be greated than funding line value</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Calculation</span>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-5">Provider type</h3>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <table class="govuk-table govuk-!-margin-top-7" id="profile">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header ">Select</th>
+                    <th scope="col" class="govuk-table__header ">Enum value</th>
+                    <th scope="col" class="govuk-table__header">String value</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="Academy" name="Academy" type="checkbox"
+                                    value="Academy">
+                                <label class="govuk-label govuk-checkboxes__label" for="Academy">
+
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </th>
+                    <th scope="row" class="govuk-table__header">
+                        1
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10"
+                                value="Academy" type="text">
+                        </div>
+                    </td>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="Maintained School" name="Maintained School"
+                                    type="checkbox" value="Maintained School">
+                                <label class="govuk-label govuk-checkboxes__label" for="Maintained School">
+
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </th>
+                    <th scope="row" class="govuk-table__header">
+                        1
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10"
+                                value="Maintained School" type="text">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="Local Authority" name="Local Authority"
+                                    type="checkbox" value="Local Authority">
+                                <label class="govuk-label govuk-checkboxes__label" for="Local Authority">
+
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </th>
+                    <th scope="row" class="govuk-table__header">
+                        1
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10"
+                                value="Local Authority" type="text">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="Academy Trust" name="Academy Trust"
+                                    type="checkbox" value="Academy Trust">
+                                <label class="govuk-label govuk-checkboxes__label" for="Academy Trust">
+
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </th>
+                    <th scope="row" class="govuk-table__header">
+                        1
+                    </th>
+                    <td class="govuk-table__cell govuk-table__cell">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10"
+                                value="Academy Trust" type="text">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<button class="govuk-button" data-module="govuk-button"> Edit
+</button>
+
+<button class="govuk-button" data-module="govuk-button" id="addInstallment" onclick="addInstallment()"> Add line
+</button>
+
+<button class="govuk-button" data-module="govuk-button" id="deleteInstallment"
+    onclick="deleteInstallment(); sumTotal()"> Delete line </button>
+
+<button class="govuk-button govuk-!-margin-right-1" onclick="totalError()" href="">
+    Save
+</button>
+
+<a class="govuk-button govuk-button--secondary" href="profile-patterns.html">
+    Cancel
+</a>
+
+</div>
+</div>
+
+<script>
+
+    //Profiling insert installment
+
+    function addInstallment() {
+        var newRow = document.getElementById('profile').insertRow();
+        newRow.innerHTML = "<th scope='row' class='govuk-table__header'>1</th><td class='govuk-table__cell govuk-table__cell'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-10' id='installmentValue' name='installmentValue' type='number'></div></td>";
+    }
+
+    //Delete last installment
+
+    function deleteInstallment() {
+        document.getElementById("profile").deleteRow(-1);
+    }
+
+    // Check value is correct 
+
+    function sumTotal() {
+        var arr = document.getElementsByName('installmentValue');
+        var total = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (parseInt(arr[i].value))
+                total += parseInt(arr[i].value);
+            console.log(total)
+            // Show total value in 'total profile value'
+            document.getElementById("profileTotal").innerHTML = total
+        }
+    }
+
+    function totalError() {
+        var profilingTotal = document.getElementById('profileTotal').innerText;
+        if (profilingTotal == "1260000");
+        {
+            document.querySelector('.govuk-error-summary').style.display = 'block';
+        }
+    }
+
+</script>
+
+{% endblock %}
