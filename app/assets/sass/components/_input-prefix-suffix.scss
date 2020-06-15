@@ -1,0 +1,19 @@
+span.prefix {
+    position: absolute;
+    padding: 8px;
+    margin-left: 2px;
+  }
+  
+  span.suffix {
+    position: absolute;
+    margin-left: -32px;
+    padding: 8px;
+  }
+  
+  .input-prefix {
+    padding-left: 30px;
+  }
+  
+  .input-suffix {
+    padding-right: 30px;
+  }
