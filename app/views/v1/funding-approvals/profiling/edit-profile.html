@@ -38,16 +38,16 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Edit profile</h1>
         <span class="govuk-caption-m">Total allocation for funding line name</span>
-        <h2 class="govuk-heading-l govuk-!-margin-bottom-2">£1,260,000</h2>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-2">£2,600,000</h2>
     </div>
 </div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-m">Value of installments paid</span>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£420,000</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£1,000,000</h2>
         <span class="govuk-caption-m">Balance available for profiling</span>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£840,000</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£1,600,000</h2>
     </div>
 </div>
 
@@ -70,9 +70,8 @@ GOV.UK Prototype Kit
                         <strong class="govuk-tag">Paid</strong>
                     </th>
                     <td class="govuk-table__cell">1</td>
-
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£250,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">October 2020 
@@ -80,7 +79,7 @@ GOV.UK Prototype Kit
                     </th>
                     <td class="govuk-table__cell">2</td>
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£250,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">November 2020                        
@@ -88,7 +87,7 @@ GOV.UK Prototype Kit
                     </th>
                     <td class="govuk-table__cell">3</td>
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£250,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">December 2020                        
@@ -96,20 +95,20 @@ GOV.UK Prototype Kit
                     </th>
                     <td class="govuk-table__cell">4</td>
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">£250,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">January 2021</th>
                     <td class="govuk-table__cell">5</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
-                            <input class="input-suffix govuk-input govuk-input--width-10" id="input-4" name="input-4" type="text" aria-describedby="percent">
+                            <input class="input-suffix govuk-input govuk-input--width-10"  id="input-4" name="input-4" type="text" aria-describedby="percent">
                             <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>                          </div>
                     </td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">
                         <div class="govuk-form-group">
                             <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
+                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency">
                           </div>
                     </td>
                 </tr>
@@ -124,7 +123,7 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell govuk-table__cell--numeric">
                         <div class="govuk-form-group">
                             <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
+                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency">
                           </div>
                     </td>
                 </tr>
@@ -139,7 +138,7 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell govuk-table__cell--numeric">
                         <div class="govuk-form-group">
                             <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
+                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency">
                           </div>
                     </td>
                 </tr>
@@ -154,7 +153,7 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell govuk-table__cell--numeric">
                         <div class="govuk-form-group">
                             <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
+                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency">
                           </div>
                     </td>
                 </tr>
@@ -169,7 +168,7 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell govuk-table__cell--numeric">
                         <div class="govuk-form-group">
                             <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
+                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency">
                           </div>
                     </td>
                 </tr>
@@ -184,7 +183,7 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell govuk-table__cell--numeric">
                         <div class="govuk-form-group">
                             <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
+                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency">
                           </div>
                     </td>
                 </tr>
@@ -199,7 +198,7 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell govuk-table__cell--numeric">
                         <div class="govuk-form-group">
                             <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
+                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency">
                           </div>
                     </td>
                 </tr>
@@ -214,30 +213,46 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell govuk-table__cell--numeric">
                         <div class="govuk-form-group">
                             <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
+                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency">
                           </div>
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">Total allocation</th>
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell">100%</td>
-                    <td class="govuk-table__cell">£1,260,000</td>
+                    <td class="govuk-table__cell">%</td>
+                    <td class="govuk-table__cell">£ <span class="" id="profileTotal">0</span></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
 
-        <a class="govuk-button govuk-!-margin-right-1" href="provider-funding-overview-gag.html">
+        <a class="govuk-button govuk-!-margin-right-1" href="javascript:history.back()">
             Apply profile
         </a>
           
-          <a class="govuk-button govuk-button--secondary" href="funding-line-profile.html">
+          <a class="govuk-button govuk-button--secondary" href="javascript:history.back()">
             Cancel
           </a>
 
     </div>
 </div>
+
+<script>
+// Check value is correct 
+
+function sumTotal() {
+    var arr = document.getElementsByName('installmentValue');
+    var total= 0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            total += parseInt(arr[i].value);
+            console.log(total)
+            // Show total value in 'total profile value'
+            document.getElementById("profileTotal").innerHTML = total
+    }
+}
+</script>
 
 {% endblock %}
