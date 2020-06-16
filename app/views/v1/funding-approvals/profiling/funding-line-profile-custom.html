@@ -6,16 +6,55 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<h2 class="govuk-heading-l">Profiling</h2>
-<span class="govuk-caption-m">Total allocation for 2019 to 2020</span>
-<h3 class="govuk-heading-m govuk-!-margin-bottom-2">£1,260,000</h3>
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="approvals.html">Funding approvals</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="view-funding.html">Select specification</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="funding-results.html">Funding approval results</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Provider funding overview
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Profile</h1>
+        <span class="govuk-caption-m">Total allocation for funding line name</span>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-2">£1,260,000</h2>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Value of installments paid</span>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£420,000</h2>
+        <span class="govuk-caption-m">Balance available for profiling</span>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£840,000</h2>
+    </div>
+</div>
+
 <table class="govuk-table govuk-!-margin-top-5">
     <caption class="govuk-table__caption">Profiling installments</caption>
     <thead class="govuk-table__head">
         <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Installment</th>
             <th scope="col" class="govuk-table__header">Installment number</th>
-            <th scope="col" class="govuk-table__header">Percentage</th>
+            <th scope="col" class="govuk-table__header">Per cent</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Value</th>
         </tr>
     </thead>
@@ -98,9 +137,15 @@ GOV.UK Prototype Kit
 </table>
 
 <a href="edit-profile.html" class="govuk-button" data-module="govuk-button">Edit profile</a>
-<a href="" class="govuk-button" data-module="govuk-button">Change rule based profile</a>
+<a href="rule-based-selection.html" class="govuk-button" data-module="govuk-button">Change rule based profile</a>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <h3 class="govuk-heading-m">Previous profiles</h3>
 <p class="govuk-body">History of previous <a class="govuk-link" href="profiling-archive-gag.html">profiles</a></p>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <a href="" class="govuk-back-link">Back</a>
+    </div>
+</div>
 
 {% endblock %}

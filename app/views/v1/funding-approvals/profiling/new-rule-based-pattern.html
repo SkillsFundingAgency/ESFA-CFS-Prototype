@@ -6,48 +6,9 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="approvals.html">Funding approvals</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="view-funding.html">Select specification</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="funding-results.html">Funding approval results</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="provider-funding-overview-gag.html">Provider funding
-                        overview</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Edit funding
-                </li>
-            </ol>
-        </div>
-    </div>
-</div>
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Edit profile</h1>
-        <span class="govuk-caption-m">Total allocation for funding line name</span>
-        <h2 class="govuk-heading-l govuk-!-margin-bottom-2">£1,260,000</h2>
-    </div>
-</div>
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Value of installments paid</span>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£420,000</h2>
-        <span class="govuk-caption-m">Balance available for profiling</span>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£840,000</h2>
+        <h1 class="govuk-heading-xl">New rule based pattern</h1>
     </div>
 </div>
 
@@ -59,44 +20,32 @@ GOV.UK Prototype Kit
                 <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header govuk-!-width-one-third">Installment</th>
                     <th scope="col" class="govuk-table__header">Installment number</th>
-                    <th scope="col" class="govuk-table__header">Percentage
-                    </th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">value</th>
-                </tr>
+                    <th scope="col" class="govuk-table__header">Percentage</th>               
+                 </tr>
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">September 2020 
-                        <strong class="govuk-tag">Paid</strong>
                     </th>
                     <td class="govuk-table__cell">1</td>
-
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">October 2020 
-                        <strong class="govuk-tag">Paid</strong>
                     </th>
                     <td class="govuk-table__cell">2</td>
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">November 2020                        
-                        <strong class="govuk-tag">Paid</strong>
                     </th>
                     <td class="govuk-table__cell">3</td>
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">December 2020                        
-                        <strong class="govuk-tag">Paid</strong>
-                    </th>
+                    <th scope="row" class="govuk-table__header">December 2020</th>
                     <td class="govuk-table__cell">4</td>
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£105,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">January 2021</th>
@@ -105,12 +54,6 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <input class="input-suffix govuk-input govuk-input--width-10" id="input-4" name="input-4" type="text" aria-describedby="percent">
                             <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>                          </div>
-                    </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
-                          </div>
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -121,12 +64,6 @@ GOV.UK Prototype Kit
                             <input class="input-suffix govuk-input govuk-input--width-10" id="input-4" name="input-4" type="text" aria-describedby="percent">
                             <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>                          </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
-                          </div>
-                    </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">March 2021</th>
@@ -135,12 +72,6 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <input class="input-suffix govuk-input govuk-input--width-10" id="input-4" name="input-4" type="text" aria-describedby="percent">
                             <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>                          </div>
-                    </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
-                          </div>
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -151,12 +82,6 @@ GOV.UK Prototype Kit
                             <input class="input-suffix govuk-input govuk-input--width-10" id="input-4" name="input-4" type="text" aria-describedby="percent">
                             <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>                          </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
-                          </div>
-                    </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">May 2021</th>
@@ -165,12 +90,6 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <input class="input-suffix govuk-input govuk-input--width-10" id="input-4" name="input-4" type="text" aria-describedby="percent">
                             <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>                          </div>
-                    </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
-                          </div>
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -181,12 +100,6 @@ GOV.UK Prototype Kit
                             <input class="input-suffix govuk-input govuk-input--width-10" id="input-4" name="input-4" type="text" aria-describedby="percent">
                             <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>                          </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
-                          </div>
-                    </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">July 2021</th>
@@ -195,12 +108,6 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <input class="input-suffix govuk-input govuk-input--width-10" id="input-4" name="input-4" type="text" aria-describedby="percent">
                             <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>                          </div>
-                    </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
-                          </div>
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -211,25 +118,18 @@ GOV.UK Prototype Kit
                             <input class="input-suffix govuk-input govuk-input--width-10" id="input-4" name="input-4" type="text" aria-describedby="percent">
                             <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>                          </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input class="input-prefix govuk-input govuk-input--width-10" id="input-3" name="input-3" type="text" aria-describedby="currency">
-                          </div>
-                    </td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Total allocation</th>
+                    <th scope="row" class="govuk-table__header">Total percentage</th>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">100%</td>
-                    <td class="govuk-table__cell">£1,260,000</td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
 
-        <a class="govuk-button govuk-!-margin-right-1" href="provider-funding-overview-gag.html">
+        <a class="govuk-button govuk-!-margin-right-1" href="../provider-funding-overview-gag#profiling">
             Apply profile
         </a>
           
