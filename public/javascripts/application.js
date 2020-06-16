@@ -252,16 +252,3 @@ $('.provider-checked').change(function(){
 function showEdit(){
     document.getElementById('viewEdit').style.display = 'block';
 }
-
-
-$(document).ready(function(){
-  $('#deleteInstallment').click(function(){
-          $("#profile input:checkbox").each(function(){
-              if (this.checked) {
-                   $(this).parent().parent().remove();
-              }
-              return false;  
-
-          })
-  });
-  });
