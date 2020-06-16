@@ -136,14 +136,11 @@
                                 </label>
                             </div>
                         </div>
-
-
                     </th>
                     <th scope="row" class="govuk-table__header">
                         1
                     </th>
                     <td class="govuk-table__cell govuk-table__cell">Academy Trust</td>
-
                 </tr>
             </tbody>
         </table>
@@ -178,7 +175,7 @@
 
     function addInstallment() {
         var newRow = document.getElementById('profile').insertRow();
-        newRow.innerHTML = "<th scope='row' class='govuk-table__header'>1</th><td class='govuk-table__cell govuk-table__cell'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-3' id='installmentValue' name='installmentValue' type='numeric'></div></td><td class='govuk-table__cell govuk-table__cell'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-10' id='installmentValue' name='installmentValue' type='text'></div></td>";
+        newRow.innerHTML = "<th scope='row' class='govuk-table__header'><div class='govuk-checkboxes--small'><div class='govuk-checkboxes__item'><input class='govuk-checkboxes__input' id='Academy Trust' name='Academy Trust' type='checkbox' value='Academy Trust'><label class='govuk-label govuk-checkboxes__label' for='Academy Trust'></label></div></div></th><td class='govuk-table__cell govuk-table__cell'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-3' id='installmentValue' name='installmentValue' type='numeric'></div></td><td class='govuk-table__cell govuk-table__cell'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-10' id='installmentValue' name='installmentValue' type='text'></div></td>";
     }
 
     //Delete last installment
