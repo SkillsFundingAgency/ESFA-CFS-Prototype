@@ -10,7 +10,7 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">
+    <h1 class="govuk-heading-xl" aria-label="Change profile type">
       Change profile type
     </h1>
   </div>
@@ -38,60 +38,6 @@ GOV.UK Prototype Kit
         </label>
       </div>
 
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-        id="national-pattern">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h4 class="govuk-heading-s">Select data source version</h4>
-            </legend>
-            <div class="govuk-radios govuk-radios--small">
-              <div class="govuk-radios__item govuk-!-margin-bottom-2">
-                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" />
-                <label class="govuk-label govuk-radios__label" for="changed-name">
-                  National pattern 1
-                </label> <br>
-                <a class="govuk-link" href="#" onclick="document.getElementById('profilePreview').style.display='block'">Preview profile</a>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" />
-                <label class="govuk-label govuk-radios__label" for="changed-name">
-                  National pattern 2
-                </label> <br>
-                <a class="govuk-link" href="#" onclick="document.getElementById('profilePreview').style.display='block'">Preview profile</a>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" />
-                <label class="govuk-label govuk-radios__label" for="changed-name">
-                  National pattern 3
-                </label> <br>
-                <a class="govuk-link" href="previewProfile.html">Preview profile</a>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year" />
-                <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                  National pattern 4
-                </label> <br>
-                <a class="govuk-link" href="previewProfile.html">Preview profile</a>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year" />
-                <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                  National pattern 5
-                </label> <br>
-                <a class="govuk-link" href="previewProfile.html">Preview profile</a>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-  </fieldset>
-</div>
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
@@ -158,10 +104,6 @@ GOV.UK Prototype Kit
 
         <p class="govuk-body govuk-!-margin-top-5">
           <a href="rule-based-selection-expanded.html" class="govuk-link">View 5 more patterns</a> <br>
-        </p>
-
-        <p class="govuk-body govuk-!-margin-top-5">
-          <a href="new-rule-based-pattern.html" class="govuk-link">Create new pattern</a>
         </p>
 
       </div>
