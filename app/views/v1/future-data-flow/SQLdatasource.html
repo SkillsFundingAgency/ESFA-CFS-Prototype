@@ -19,7 +19,7 @@
             </ol>
         </div>
         <h1 class="govuk-heading-xl">
-            Select a data set
+            Select and preview a data set
         </h1>
     </div>
 </div>
@@ -27,7 +27,7 @@
 <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h4 class="govuk-heading-s">Select a data set and version</h4>
+            <h3 class="govuk-heading-m">Select a data set and version</h3>
         </legend>
 
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -206,20 +206,90 @@
                     </fieldset>
                 </div>
                 <p class="govuk-body govuk-!-margin-top-5">
-                    <a href="selectSourceDatasetexpanded.html" class="govuk-link">View 5 more versions</a>
+                    <a href="SQLdatasourceversions.html" class="govuk-link">View 5 more versions</a>
                 </p>
             </div>
         </div>
     </fieldset>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <button class="govuk-button" data-module="govuk-button">
-        Save
-    </button>
-    <a href="dataRelationshipsDSGSIT.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Cancel
-    </a>
-</div>
+
+
+
+
+<dl class="govuk-summary-list">
+    <h3 class="govuk-heading-m govuk-!-margin-top-7">Summary for selected data set version</h3>
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Display Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+            APT Adjusted Factors Phase 1 QA (version 10)
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Creation date </dt>
+        <dd class="govuk-summary-list__value">
+            <p class="govuk-body">13th November 2019 10:54am</p>
+
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Description
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue diam sit amet dui posuere.
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Number of rows
+        </dt>
+        <dd class="govuk-summary-list__value">
+            56
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Number of columns
+        </dt>
+        <dd class="govuk-summary-list__value">
+            318
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Grouping level </dt>
+        <dd class="govuk-summary-list__value">
+            ?
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Table name
+        </dt>
+        <dd class="govuk-summary-list__value">
+            ?
+        </dd>
+    </div>
+
+</dl>
+
+<button class="govuk-button govuk-button--secondary " data-module="govuk-button">
+    Download full table
+</button>
+
+</br>
+</br>
+<a href="datasetsummary.html" button class="govuk-button" data-module="govuk-button">
+    Save and continue</a>
+</button>
+<a href="createnewdataset.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Cancel
+</a>
+
 
 {% endblock %}
