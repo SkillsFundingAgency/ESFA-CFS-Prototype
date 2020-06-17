@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../specifications.html">DSG SIT</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Create new data set relationship</li>
+            </ol>
+        </div>
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <span class="govuk-caption-xl">DSG SIT</span>
+                <h1 class="govuk-heading-xl">Create new data set relationship</h1>
+            </legend>
+
+
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                    Data set relationship name </label>
+                <span id="event-name-hint" class="govuk-hint">
+                    Use a descriptive unique name other users can understand
+                </span>
+                <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="more-detail">
+                    Description
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+                    aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h3 class="govuk-heading-m">
+                            Choose a data source type
+                        </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="SQLdatasource" name="pattern-type" type="radio"
+                                value="SQLdatasource.html">
+                            <label class="govuk-label govuk-radios__label" for="SQLdatasource">
+                                SQL
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="exceldatasource" name="pattern-type" type="radio"
+                                value="exceldatasource.html">
+                            <label class="govuk-label govuk-radios__label" for="exceldatasource">
+                                Excel
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </fieldset>
+
+
+        </a>
+        <a href="" onclick="patternChoice()" id="patternLink" class="govuk-button govuk-!-margin-right-1"
+            data-module="govuk-button">
+            Save and continue
+        </a>
+
+        <a href="fundingLineStructure" class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Cancel
+        </a>
+    </div>
+</div>
+
+
+<script>
+
+    function patternChoice() {
+        var patternType = document.querySelector('input[name="pattern-type"]:checked').value;
+        document.getElementById('patternLink').href = patternType
+    }
+</script>
+
+{% endblock %}
