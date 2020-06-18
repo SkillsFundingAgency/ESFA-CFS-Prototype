@@ -19,7 +19,7 @@
             </ol>
         </div>
         <h1 class="govuk-heading-xl">
-            Select and preview a data set
+            Create relationship from SQL
         </h1>
     </div>
 </div>
@@ -249,7 +249,7 @@
             Number of rows
         </dt>
         <dd class="govuk-summary-list__value">
-            56
+            112
         </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -257,7 +257,7 @@
             Number of columns
         </dt>
         <dd class="govuk-summary-list__value">
-            318
+            87
         </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -278,13 +278,42 @@
 
 </dl>
 
-<button class="govuk-button govuk-button--secondary " data-module="govuk-button">
+<button class="govuk-button govuk-button" data-module="govuk-button">
     Download full table
 </button>
 
 </br>
 </br>
-<a href="datasetsummary.html" button class="govuk-button" data-module="govuk-button">
+
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h3 class="govuk-heading-m govuk-!-margin-top-5">
+                Is the provider within scope?
+            </h3>
+        </legend>
+        <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="changed-name">
+                    Yes
+                </label>
+            </div>
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    No
+                </label>
+            </div>
+        </div>
+    </fieldset>
+</div>
+</fieldset>
+
+
+
+<a href="" button class="govuk-button" data-module="govuk-button">
     Save and continue</a>
 </button>
 <a href="createnewdataset.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
