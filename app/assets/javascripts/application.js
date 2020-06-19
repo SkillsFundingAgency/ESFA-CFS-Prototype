@@ -254,13 +254,11 @@ function showEdit() {
 
 // show and hide version controls 
 
-function hideVersion() {
-  document.getElementById("viewVersion").addEventListener("click", function () {
-    document.getElementById('hideVersion').style.display = 'none';
-  });
-}
+//document.getElementById("viewVersion").addEventListener("click", 
 
-function showVersion() {
-  document.getElementById('viewVersion').style.display = 'block';
-}
+function viewVersion () {
+    document.getElementById('hideVersion').style.display = 'none';
+    document.getElementById('viewVersion').style.display = 'block';
+  };
+
 
