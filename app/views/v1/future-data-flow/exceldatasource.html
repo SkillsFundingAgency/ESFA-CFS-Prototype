@@ -7,83 +7,84 @@ GOV.UK Prototype Kit
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../specifications.html">Specifications</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../fundingLineStructure.html">DSG SIT</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../future-data-flow/createnewdataset.html">Create new data
-                        set relationship</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">Create relationship from Excel</a>
-                </li>
-            </ol>
+
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+        <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../specifications.html">Specifications</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../fundingLineStructure.html">DSG SIT</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../future-data-flow/createnewdataset.html">Create new data
+                    set relationship</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">Create relationship from Excel</a>
+            </li>
+        </ol>
+    </div>
+
+    <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-heading-xl">Create relationship from Excel</h1>
+        </legend>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+                Select data schema
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+                <option value="draft"></option>
+                <option value="draft">Early years AP census year 1</option>
+                <option value="draft">Early years AP census year 2</option>
+            </select>
         </div>
 
-        <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-heading-xl">Create relationship from Excel</h1>
-            </legend>
-
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
-                    Select data schema
-                </label>
-                <select class="govuk-select" id="sort" name="sort">
-                    <option value="draft">Early years AP census year 1</option>
-                    <option value="draft">Early years AP census year 2</option>
-                </select>
-            </div>
 
 
 
 
-
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                        <h3 class="govuk-heading-m govuk-!-margin-top-5">
-                            Is the provider within scope?
-                        </h3>
-                    </legend>
-                    <div class="govuk-radios govuk-radios--inline">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
-                                value="yes">
-                            <label class="govuk-label govuk-radios__label" for="changed-name">
-                                Yes
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
-                                value="no">
-                            <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                                No
-                            </label>
-                        </div>
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h3 class="govuk-heading-m govuk-!-margin-top-5">
+                        Is the provider within scope?
+                    </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                            value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+                            Yes
+                        </label>
                     </div>
-                </fieldset>
-            </div>
-        </fieldset>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
+                            value="no">
+                        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </fieldset>
 
-        <a href="" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-            Save and continue
-        </a>
+    <a href="" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Save and continue
+    </a>
 
 
-        <a href="" class="govuk-button govuk-button--warning" data-module="govuk-button">
-            Cancel
-        </a>
-    </div>
+    <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+    </a>
+</div>
 </div>
 
 {% endblock %}
