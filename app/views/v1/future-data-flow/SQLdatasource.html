@@ -12,9 +12,13 @@
                     <a class="govuk-breadcrumbs__link" href="../specifications.html">Specifications</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../specifications.html">DSG SIT</a>
+                    <a class="govuk-breadcrumbs__link" href="../fundingLineStructure.html">DSG SIT</a>
                 </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">Create new data set relationship</li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="createnewdataset.html">Create new data set relationship</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Create relationship from SQL
+                </li>
             </ol>
             </ol>
         </div>
@@ -54,8 +58,8 @@
                         <div class="govuk-radios govuk-radios--small">
 
                             <div class="govuk-radios__item ">
-                                <input class="govuk-radios__input" id="viewVersion changed-name" name="changed-name" type="radio"
-                                    value="version" onclick=" viewVersion()" />
+                                <input class="govuk-radios__input" id="viewVersion changed-name" name="changed-name"
+                                    type="radio" value="version" onclick=" viewVersion()" />
                                 <label class=" govuk-label govuk-radios__label" for="changed-name">
                                     APT Adjusted Factors Phase 1 QA (version 10)
                                 </label>
@@ -109,7 +113,8 @@
 
 
 
-<h3 class="govuk-heading-m govuk-!-margin-top-7">Summary for selected data set version</h3>
+<h3 class="govuk-heading-m govuk-!-margin-top-7">Summary for selected data set version
+    <span class="govuk-caption-m">Select a data set version to view a summary table</span></h3>
 <div id="viewVersion" class="hideVersion">
     <dl class="govuk-summary-list">
 
@@ -157,7 +162,7 @@
             <dt class="govuk-summary-list__key">
                 Grouping level </dt>
             <dd class="govuk-summary-list__value">
-                3
+                Provider
             </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -165,12 +170,10 @@
                 Table name
             </dt>
             <dd class="govuk-summary-list__value">
-                DSG SIT data
-            </dd>
+                dbo.GAG_FY-2122_APTAdjustedFactors_v10 </dd>
         </div>
-        <button class="govuk-button govuk-button govuk-!-margin-top-5" data-module="govuk-button">
-            Download full table
-        </button>
+        <button class="govuk-button govuk-button--secondary govuk-!-margin-top-5" data-module="govuk-button">
+            Preview data </button>
 
     </dl>
 </div>
@@ -180,7 +183,7 @@
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
         <span class="govuk-warning-text__assistive">Warning</span>
-        You need to select a data set version
+        No data set version selected
     </strong>
 </div>
 
@@ -192,8 +195,7 @@
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h3 class="govuk-heading-m govuk-!-margin-top-5">
-                Is the provider within scope?
-            </h3>
+                Should this data set indicate which providers you would like to fund? </h3>
         </legend>
         <div class="govuk-radios govuk-radios--inline">
             <div class="govuk-radios__item">
