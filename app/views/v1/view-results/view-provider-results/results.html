@@ -26,7 +26,8 @@ GOV.UK Prototype Kit
             </ol>
         </div>
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Conisborough college</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Conisborough college</h1>
+        <span class="govuk-caption-m govuk-!-margin-bottom-8">UKPRN: <strong>10015211</strong></span>
 
     </div>
 </div>
@@ -41,6 +42,8 @@ GOV.UK Prototype Kit
 
 
             <select class="govuk-select" id="sort" name="sort">
+                <option value="published">
+                </option>
                 <option value="published">DSG SIT (Financial year 2020 to 2021)
                 </option>
                 <option value="published">PE & Sport ABC (Academic year 2020 to 2021)
@@ -85,18 +88,9 @@ GOV.UK Prototype Kit
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-two-thirds">
 
-                        <div class="govuk-form-group search-container">
-                            <label class="govuk-label" for="event-name">
-                                Search by calculation
-                            </label>
-                            <input class="govuk-input" id="event-name" name="event-name" type="text">
-                        </div>
+
                     </div>
-                    <div class="govuk-grid-column-one-third ">
-                        <strong class="govuk-tag right-align ">
-                            Approved
-                        </strong>
-                    </div>
+
                 </div>
 
                 <table class="govuk-table">
@@ -105,11 +99,27 @@ GOV.UK Prototype Kit
                             <th scope="col" class="govuk-table__header">Structure</th>
                             <th scope="col" class="govuk-table__header">Name</th>
                             <th scope="col" class="govuk-table__header">Calculation type</th>
+                            <th scope="col" class="govuk-table__header">Value</th>
                             <th scope="col" class="govuk-table__header">Status</th>
                         </tr>
                     </thead>
                     <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
 
+                            <td class="govuk-table__cell">Funding line 1</td>
+                            <td class="govuk-table__cell">Total allocation</td>
+                            <td class="govuk-table__cell">Currency</td>
+                            <td class="govuk-table__cell">Excluded</td>
+                            <td class="govuk-table__cell">Open</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                            <td class="govuk-table__cell">Funding line 2</td>
+                            <td class="govuk-table__cell">Total allocation</td>
+                            <td class="govuk-table__cell">Currency</td>
+                            <td class="govuk-table__cell">Excluded</td>
+                            <td class="govuk-table__cell">Open</td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -184,10 +194,10 @@ GOV.UK Prototype Kit
                 <div class="govuk-warning-text">
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                     <strong class="govuk-warning-text__text">
-                      <span class="govuk-warning-text__assistive">Warning</span>
-                      Provider data version message (Update message from v1)
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        Provider data version message (Update message from v1)
                     </strong>
-                  </div>
+                </div>
                 <h4 class="govuk-heading-m">Establishment details</h4>
                 <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
                     <div class="govuk-summary-list__row">
