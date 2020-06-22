@@ -34,10 +34,13 @@
             <h3 class="govuk-heading-m">Select a data set and version</h3>
         </legend>
 
+
+
+
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio"
-                    value="email" data-aria-controls="conditional-how-contacted-conditional" />
+                <input class="govuk-radios__input" id="how-contacted-conditional" name="how" type="radio" value="email"
+                    data-aria-controls="conditional-how-contacted-conditional" />
                 <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                     APT Adjusted Factors Phase 1 QA
                     <span class="govuk-hint">
@@ -61,7 +64,7 @@
                                 <input class="govuk-radios__input" id="viewVersion changed-name" name="changed-name"
                                     type="radio" value="version" onclick=" viewVersion()" />
                                 <label class=" govuk-label govuk-radios__label" for="changed-name">
-                                    APT Adjusted Factors Phase 1 QA (version 10)
+                                    APT Adjusted Factors Phase 1 QA FINAL (version 10)
                                 </label>
                             </div>
 
@@ -69,7 +72,7 @@
                                 <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
                                     value="month" />
                                 <label class="govuk-label govuk-radios__label" for="changed-name">
-                                    APT Adjusted Factors Phase 1 QA (version 9)
+                                    APT Adjusted Factors Phase 1 QA released (version 9)
 
                                 </label>
                             </div>
@@ -78,7 +81,7 @@
                                 <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
                                     value="month" />
                                 <label class="govuk-label govuk-radios__label" for="changed-name">
-                                    APT Adjusted Factors Phase 1 QA (version 8)
+                                    APT Adjusted Factors Phase 1 QA_with edits (version 8)
 
                                 </label>
                             </div>
@@ -106,7 +109,79 @@
                     <a href="SQLdatasourceversions.html" class="govuk-link">View 5 more versions</a>
                 </p>
             </div>
+
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted" name="how" type="radio" value="email"
+                    data-aria-controls="conditional-how-contacted" />
+                <label class="govuk-label govuk-radios__label" for="how-contacted">
+                    January census data
+                    <span class="govuk-hint">
+                        <strong>Description:</strong> Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Aliquam congue diam sit amet dui
+                        posuere
+                    </span>
+                </label>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Select data source version</h4>
+                        </legend>
+                        <div class="govuk-radios govuk-radios--small">
+
+                            <div class="govuk-radios__item ">
+                                <input class="govuk-radios__input" id="viewVersion changed-name" name="changed-name"
+                                    type="radio" value="version">
+                                <label class=" govuk-label govuk-radios__label" for="changed-name">
+                                    January census data FINAL (version 10)
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item govuk-!-margin-top-2">
+                                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                                    value="month" />
+                                <label class="govuk-label govuk-radios__label" for="changed-name">
+                                    January census data released (version 9)
+
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item govuk-!-margin-top-2">
+                                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                                    value="month" />
+                                <label class="govuk-label govuk-radios__label" for="changed-name">
+                                    January census data_with edits (version 8)
+
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item govuk-!-margin-top-2">
+                                <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
+                                    value="year" />
+                                <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                    January census data (version 7)
+
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item govuk-!-margin-top-2">
+                                <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
+                                    value="year" />
+                                <label class="govuk-label govuk-radios__label " for="changed-name-2">
+                                    January census data (version 6)
+
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <p class="govuk-body govuk-!-margin-top-5">
+                    <a href="" class="govuk-link">View 5 more versions</a>
+                </p>
+            </div>
         </div>
+
     </fieldset>
 </div>
 
@@ -123,7 +198,7 @@
                 Display Name
             </dt>
             <dd class="govuk-summary-list__value">
-                APT Adjusted Factors Phase 1 QA (version 10)
+                APT Adjusted Factors Phase 1 QA FINAL (version 10)
             </dd>
         </div>
         <div class="govuk-summary-list__row">
