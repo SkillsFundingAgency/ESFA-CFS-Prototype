@@ -18,6 +18,10 @@ GOV.UK Prototype Kit
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
                     <a class="govuk-breadcrumbs__link"
+                        href="/v1/view-results/view-provider-results/funding-stream">Funding stream</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
                         href="/v1/view-results/view-provider-results/provider-results">View provider results</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item govuk-!-margin-bottom-7" aria-current="page">
@@ -87,6 +91,15 @@ GOV.UK Prototype Kit
                 <h2 class="govuk-heading-l">Funding line structure</h2>
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-two-thirds">
+                        <div class="govuk-form-group search-container">
+                            <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false"
+                                type="text">
+                            <button class="govuk-button" type="submit" class="gem-c-search__submit">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
 
 
                     </div>
@@ -96,11 +109,11 @@ GOV.UK Prototype Kit
                 <table class="govuk-table">
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header">Structure</th>
-                            <th scope="col" class="govuk-table__header">Name</th>
+                            <th scope="col" class="govuk-table__header">Level of hierarchy</th>
+                            <th scope="col" class="govuk-table__header">Funding line or calculation</th>
+                            <th scope="col" class="govuk-table__header">Calculation name</th>
                             <th scope="col" class="govuk-table__header">Calculation type</th>
                             <th scope="col" class="govuk-table__header">Value</th>
-                            <th scope="col" class="govuk-table__header">Status</th>
                         </tr>
                     </thead>
                     <tbody class="govuk-table__body">
@@ -108,17 +121,23 @@ GOV.UK Prototype Kit
 
                             <td class="govuk-table__cell">Funding line 1</td>
                             <td class="govuk-table__cell">Total allocation</td>
+                            <td class="govuk-table__cell"> <a
+                                    href="../view-specification-results/calculation-providers.html"
+                                    class="govuk-link">Pupil number
+                                </a></td>
                             <td class="govuk-table__cell">Currency</td>
-                            <td class="govuk-table__cell">Excluded</td>
-                            <td class="govuk-table__cell">Open</td>
+                            <td class="govuk-table__cell">£12482</td>
                         </tr>
                         <tr class="govuk-table__row">
 
                             <td class="govuk-table__cell">Funding line 2</td>
                             <td class="govuk-table__cell">Total allocation</td>
+                            <td class="govuk-table__cell"><a
+                                    href="../view-specification-results/calculation-providers.html"
+                                    class="govuk-link">Calc
+                                    2</a></td>
                             <td class="govuk-table__cell">Currency</td>
-                            <td class="govuk-table__cell">Excluded</td>
-                            <td class="govuk-table__cell">Open</td>
+                            <td class="govuk-table__cell">£14419</td>
                         </tr>
                     </tbody>
                 </table>
