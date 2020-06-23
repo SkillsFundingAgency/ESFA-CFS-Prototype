@@ -128,49 +128,67 @@ GOV.UK Prototype Kit
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-                    <h4 class="govuk-heading-s ">
+                    <h4 class="govuk-heading-s">
                         Filter by provider sub type <span><i class="material-icons right-align"> keyboard_arrow_down
                             </i></span>
                     </h4>
                 </legend>
                 <div id="filter-content" class="filter-content">
                     <div class="govuk-form-group filterSearch">
-                        <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+                        <label class="govuk-label filterLabel" for="filter-by-type">
                             Search
                         </label>
-                        <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1"
-                            autocomplete="off" type="text">
+                        <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search"
+                            type="text">
                     </div>
-
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="primary">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Primary
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="academy">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Academy
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="secondary">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Secondary
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="secondary">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                16 - 19
-                            </label>
-                        </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                        <ul id="myList">
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                        type="checkbox" value="hmrc">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                        Sub type a
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
+                                        type="checkbox" value="employment-tribunal">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                        Sub type b
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
+                                        type="checkbox" value="employment-tribunal">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                        Sub type c
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
+                                        type="checkbox" value="employment-tribunal">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                        Sub type d
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
+                                        type="checkbox" value="employment-tribunal">
+                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                        Sub type e
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
         </div>
