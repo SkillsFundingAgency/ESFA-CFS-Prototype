@@ -128,6 +128,56 @@ GOV.UK Prototype Kit
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                    <h4 class="govuk-heading-s ">
+                        Filter by provider sub type <span><i class="material-icons right-align"> keyboard_arrow_down
+                            </i></span>
+                    </h4>
+                </legend>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1"
+                            autocomplete="off" type="text">
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="primary">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Primary
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="academy">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Academy
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="secondary">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Secondary
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="secondary">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                16 - 19
+                            </label>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </fieldset>
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
                     <h4 class="govuk-heading-s">
                         Filter by status <span><i class="material-icons right-align"> keyboard_arrow_down
                             </i></span>
