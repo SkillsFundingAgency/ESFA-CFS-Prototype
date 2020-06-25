@@ -47,11 +47,6 @@ endblock %} {% block content %}
                   Mapping initiated by Mr Calculation on 17 October 2019, 11:50am, for January census data.
                 </p>
             </li>
-            <li>
-              <p class="govuk-body">
-                Mapping of new dataset is disabled until current mapping has completed.
-              </p>
-          </li>
         </ul>
     </div>
 </div>
@@ -329,6 +324,13 @@ endblock %} {% block content %}
   >
     Cancel
   </a>
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      Mapping of a new dataset is disabled until current mapping has completed.
+    </strong>
+  </div>
 </div>
 
 {% endblock %}
