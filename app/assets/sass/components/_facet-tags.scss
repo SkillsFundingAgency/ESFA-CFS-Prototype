@@ -1,0 +1,128 @@
+.js-enabled .facet-tag {
+    padding: 8px 7px 7px 23px;
+}
+
+.js-enabled .facet-tag2 {
+    padding: 8px 7px 7px 23px;
+}
+
+.js-enabled .facet-tag__text {
+    margin-left: 5px;
+}
+
+.js-enabled .facet-tag__remove {
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+.facet-tags {
+    padding-bottom: 5px;
+}
+
+.js-enabled .facet-tag__text {
+    margin-left: 5px;
+}
+
+.facet-tag__text {
+    display: inline-block;
+    margin-left: 0;
+}
+
+.facet-tag {
+    display: table-cell;
+    position: relative;
+    padding: 5px;
+    border: 1px solid #626a6e;
+    border-radius: 5px;
+	background-color: #f3f2f1;	
+}
+
+.facet-tags__wrapper:first-of-type .facet-tags__preposition:first-of-type {
+    font-weight: bold;
+}
+
+.facet-tags__group {
+    padding: 5px;
+}
+
+.facet-tags__container {
+    display: block;
+}
+
+.facet-tags__wrapper {
+    vertical-align: middle;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.facet-tags__preposition {
+    display: table-cell;
+    padding: 0 5px 0 2px;
+    vertical-align: middle;
+    text-transform: lowercase;
+}
+
+.facet-tag2 {
+font-family: "GDS Transport", Arial, sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+font-weight: 400;
+font-size: 14px;
+font-size: 0.875rem;
+line-height: 1.14286;
+background-color: #ffffff;
+border: 1px solid #0b0c0c;
+color: #0b0c0c;
+display: inline-block;
+margin-top: 5px;
+padding: 5px;
+text-decoration: none; 
+}
+
+.facet-tag__remove {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    text-align: left;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    background: none;
+    border: 0;
+}
+
+.facet-button {
+        -webkit-appearance: button;
+        text-rendering: auto;
+        color: -internal-light-dark-color(buttontext, rgb(170, 170, 170)) !important;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: center;
+        align-items: flex-start;
+        cursor: default;
+        background-color: -internal-light-dark-color(rgb(239, 239, 239), rgb(74, 74, 74)) !important;
+        box-sizing: border-box;
+        margin: 0em;
+        font: 400 13.3333px Arial;
+        padding: 1px 6px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195)) !important;
+        border-image: initial;
+}

@@ -365,37 +365,3 @@ i {
 	display: none;
 }
 
-.js-enabled .facet-tag {
-    padding: 8px 7px 7px 23px;
-}
-
-.js-enabled .facet-tag2 {
-    padding: 8px 7px 7px 23px;
-}
-
-.facet-tag {
-    display: table-cell;
-    position: relative;
-    padding: 5px;
-    border: 1px solid #626a6e;
-    border-radius: 5px;
-	background-color: #f3f2f1;
-	
-}
-
-.facet-tag2 {
-font-family: "GDS Transport", Arial, sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-font-weight: 400;
-font-size: 14px;
-font-size: 0.875rem;
-line-height: 1.14286;
-background-color: #ffffff;
-border: 1px solid #0b0c0c;
-color: #0b0c0c;
-display: inline-block;
-margin-top: 5px;
-padding: 5px;
-text-decoration: none; 
-}
