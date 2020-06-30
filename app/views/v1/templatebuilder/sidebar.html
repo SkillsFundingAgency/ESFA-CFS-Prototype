@@ -5,6 +5,13 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
+<div class="facet-tag2">
+    <p class="facet-tag2__text">Met</p> <button type="button" class="facet-tag2__remove" aria-label="Remove filter Met"
+        data-module="remove-filter-link" data-track-label="Met" data-facet="result" data-value="met"
+        data-name="">✕</button>
+</div>
+
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
         <div class="sidebar-content">
@@ -23,6 +30,14 @@ GOV.UK Prototype Kit
                         <option value="Boolean">Boolean</option>
                         <option value="Enum">Enum</option>
                     </select></div>
+                <div class="govuk-form-group "><label class="govuk-label" for="calc-name">Allowed enum
+                        values</label><input class="govuk-input govuk-!-width-two-thirds" id="calc-name"
+                        name="calc-name" type="text" value="Option 1"></div>
+                <div class="facet-tag">
+                    <p class="facet-tag__text">Met</p> <button type="button" class="facet-tag__remove"
+                        aria-label="Remove filter Met" data-module="remove-filter-link" data-track-label="Met"
+                        data-facet="result" data-value="met" data-name="">test x</button>
+                </div>
                 <div class="govuk-form-group"><label class="govuk-label" for="calc-formula-text">Formula
                         Text</label><input class="govuk-input govuk-!-width-two-thirds" id="calc-formula-text"
                         name="calc-formula-text" type="text" value="Enter formula text"></div>
