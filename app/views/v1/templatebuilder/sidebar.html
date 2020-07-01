@@ -5,13 +5,23 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="facet-tag2">
-    <p class="facet-tag2__text">Test</p> 
-    <button type="button" class="facet-tag2__remove facet-button" aria-label="Remove filter Met"
-        data-module="remove-filter-link" data-track-label="Met" data-facet="result" data-value="met"
-         data-name="">
-         Test ✕</button>
+
+<button type="button" class="enumTag" aria-label="Remove filter Met" data-module="remove-filter-link"
+    data-track-label="Met" data-facet="result" data-value="met" data-name="">
+    Option 1 ✕</button>
+</br>
+</br>
+
+
+<div class="facet-button">
+    <button type="button" class="facet-button" aria-label="Remove filter Met" data-module="remove-filter-link"
+        data-track-label="Met" data-facet="result" data-value="met" data-name="">
+        <p style="font-family:GDS Transport,Arial,sans-serif;font-size:14px;">
+            Test ✕
+    </button> </p>
 </div>
+
+
 
 
 <div class="govuk-grid-row">
@@ -36,12 +46,6 @@ GOV.UK Prototype Kit
                         values</label><input class="govuk-input govuk-!-width-two-thirds" id="calc-name"
                         name="calc-name" type="text" value="Option 1"></div>
 
-
-                <div class="facet-tag">
-                    <p class="facet-tag__text">Met</p> <button type="button" class="facet-tag__remove"
-                        aria-label="Remove filter Met" data-module="remove-filter-link" data-track-label="Met"
-                        data-facet="result" data-value="met" data-name="">test x</button>
-                </div>
 
 
                 <div class="govuk-form-group"><label class="govuk-label" for="calc-formula-text">Formula
