@@ -2,9 +2,6 @@
     padding: 8px 7px 7px 23px;
 }
 
-.js-enabled .facet-tag2 {
-    padding: 8px 7px 7px 23px;
-}
 
 .js-enabled .facet-tag__text {
     margin-left: 5px;
@@ -15,7 +12,7 @@
     border: 1px solid transparent;
 }
 
-.facet-tags {
+.facet-tag {
     padding-bottom: 5px;
 }
 
@@ -31,17 +28,17 @@
 .facet-tag {
     display: table-cell;
     position: relative;
-    padding: 5px;
+    padding: 50px;
     border: 1px solid #626a6e;
     border-radius: 5px;
 	background-color: #f3f2f1;	
 }
 
-.facet-tags__wrapper:first-of-type .facet-tags__preposition:first-of-type {
+.facet-tag__wrapper:first-of-type .facet-tags__preposition:first-of-type {
     font-weight: bold;
 }
 
-.facet-tags__group {
+.facet-tag__group {
     padding: 5px;
 }
 
@@ -49,20 +46,20 @@
     display: block;
 }
 
-.facet-tags__wrapper {
+.facet-tag__wrapper {
     vertical-align: middle;
     margin: 5px 0;
     display: inline-block;
 }
 
-.facet-tags__preposition {
+.facet-tag__preposition {
     display: table-cell;
     padding: 0 5px 0 2px;
     vertical-align: middle;
     text-transform: lowercase;
 }
 
-.facet-tag2 {
+.facet-tag {
 font-family: "GDS Transport", Arial, sans-serif;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
@@ -126,3 +123,27 @@ text-decoration: none;
         border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195)) !important;
         border-image: initial;
 }
+
+
+
+.enumTag {
+    display: none;
+    outline: 2px solid #b1b4b6;
+    outline-offset: -2px;
+    color: #ffffff;
+	background-color: transparent;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-family: "GDS Transport", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+}
+
