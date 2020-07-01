@@ -5,12 +5,6 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="facet-tag2 govuk-!-margin-bottom-5">
-    <p class="facet-tag2__text">Test</p>
-    <button type="button" class="facet-tag2__remove facet-button" aria-label="Remove filter Met"
-        data-module="remove-filter-link" data-track-label="Met" data-facet="result" data-value="met" data-name="">
-        Test ✕</button>
-</div>
 
 
 
@@ -36,48 +30,51 @@ GOV.UK Prototype Kit
 
 
                 <div class="govuk-form-group ">
-                    <div class="govuk-grid-row">
-                        <label class="govuk-label" for="calc-name">Allowed enumvalues</label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="calc-name" name="calc-name" type="text"
-                            value="Option 1">
-                    </div>
-                    <div class="govuk-grid-row govuk-!-margin-top-5">
-                        <strong class="govuk-tag govuk-tag--grey lowercase govuk-!-margin-bottom-2">
+
+                    <label class="govuk-label" for="calc-name"> Allowed enum values</label>
+                    <div class="govuk-!-margin-top-2">
+                        <strong class="govuk-tag govuk-tag--grey lowercase govuk-!-margin-bottom-1">
                             &#10005; Academy
+                        </strong> <strong class="govuk-tag govuk-tag--grey lowercase govuk-!-margin-bottom-1">
+                            &#10005; Maintained school
+                        </strong> </br>
+                        <strong class="govuk-tag govuk-tag--grey lowercase govuk-!-margin-bottom-3">
+                            &#10005; Local authority
                         </strong>
                     </div>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="calc-name" name="calc-name" type="text"
+                        value="Option 1">
                 </div>
-
-
-
-                <div class="govuk-form-group"><label class="govuk-label" for="calc-formula-text">Formula
-                        Text</label><input class="govuk-input govuk-!-width-two-thirds" id="calc-formula-text"
-                        name="calc-formula-text" type="text" value="Enter formula text"></div>
-                <div class="govuk-form-group"><label class="govuk-label" for="calc-value-format">Value
-                        Format</label><span id="calculation-name-hint" class="govuk-hint">The way the value should
-                        show</span><select class="govuk-select" id="calc-value-format" name="calc-value-format">
-                        <option value="Currency">Currency</option>
-                    </select></div>
-                <div class="govuk-form-group"><label class="govuk-label" for="calc-aggregation-type">Aggregation
-                        Type</label><select class="govuk-select" id="calc-aggregation-type"
-                        name="calc-aggregation-type">
-                        <option value="None">None</option>
-                        <option value="Average">Average</option>
-                        <option value="Sum">Sum</option>
-                        <option value="GroupRate">GroupRate</option>
-                        <option value="PercentageChangeBetweenAandB">PercentageChangeBetweenAandB</option>
-                    </select></div><button class="govuk-button" id="save-button" data-module="govuk-button">Save and
-                    continue</button>
-                <div class="govuk-warning-text"><span class="govuk-warning-text__icon"
-                        aria-hidden="true">!</span><strong class="govuk-warning-text__text"><span
-                            class="govuk-warning-text__assistive">Warning</span>Be careful.
-                        This will delete all child nodes.</strong></div>
-                <div class="govuk-form-group"><button class="govuk-button govuk-button--warning">Delete
-                        calculation</button>
-                </div>
-            </fieldset>
         </div>
+
+
+
+        <div class="govuk-form-group"><label class="govuk-label" for="calc-formula-text">Formula
+                Text</label><input class="govuk-input govuk-!-width-two-thirds" id="calc-formula-text"
+                name="calc-formula-text" type="text" value="Enter formula text"></div>
+        <div class="govuk-form-group"><label class="govuk-label" for="calc-value-format">Value
+                Format</label><span id="calculation-name-hint" class="govuk-hint">The way the value should
+                show</span><select class="govuk-select" id="calc-value-format" name="calc-value-format">
+                <option value="Currency">Currency</option>
+            </select></div>
+        <div class="govuk-form-group"><label class="govuk-label" for="calc-aggregation-type">Aggregation
+                Type</label><select class="govuk-select" id="calc-aggregation-type" name="calc-aggregation-type">
+                <option value="None">None</option>
+                <option value="Average">Average</option>
+                <option value="Sum">Sum</option>
+                <option value="GroupRate">GroupRate</option>
+                <option value="PercentageChangeBetweenAandB">PercentageChangeBetweenAandB</option>
+            </select></div><button class="govuk-button" id="save-button" data-module="govuk-button">Save and
+            continue</button>
+        <div class="govuk-warning-text"><span class="govuk-warning-text__icon" aria-hidden="true">!</span><strong
+                class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>Be careful.
+                This will delete all child nodes.</strong></div>
+        <div class="govuk-form-group"><button class="govuk-button govuk-button--warning">Delete
+                calculation</button>
+        </div>
+        </fieldset>
     </div>
+</div>
 </div>
 
 {% endblock %}
