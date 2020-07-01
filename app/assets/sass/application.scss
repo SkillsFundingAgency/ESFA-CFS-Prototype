@@ -19,6 +19,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/error-summary";
 @import "components/back-to-top";
 @import "components/input-prefix-suffix";
+@import "components/facet-tags";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .subHeader {
@@ -365,3 +366,36 @@ i {
 	display: none;
 }
 
+ 
+.tags {
+	background: none repeat scroll 0 0 #fff;
+	border: 1px solid #ccc;
+	display: table;
+	padding: 0.5em;
+	width: 100%;
+  }
+  
+  .tags li.tagAdd,
+  .tags li.addedTag {
+	float: left;
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+  }
+  
+  .tags li.addedTag {
+	background: none repeat scroll 0 0 #1ABC9C;
+	border-radius: 5px;
+	color: #fff;
+	padding: .5em;
+  }
+  
+  .tags input,
+  li.addedTag {
+	border: 1px solid transparent;
+	border-radius: 5px;
+	box-shadow: none;
+	display: block;
+	padding: 0.5em;
+  }
+  
+  .tags input:hover { border: 1px solid #000; }
