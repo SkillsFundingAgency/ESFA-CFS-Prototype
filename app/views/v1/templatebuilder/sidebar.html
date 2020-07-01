@@ -5,13 +5,14 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="facet-tag2">
+<div class="facet-tag2 govuk-!-margin-bottom-5">
     <p class="facet-tag2__text">Test</p> 
     <button type="button" class="facet-tag2__remove facet-button" aria-label="Remove filter Met"
         data-module="remove-filter-link" data-track-label="Met" data-facet="result" data-value="met"
          data-name="">
          Test ✕</button>
 </div>
+
 
 
 <div class="govuk-grid-row">
@@ -32,9 +33,21 @@ GOV.UK Prototype Kit
                         <option value="Boolean">Boolean</option>
                         <option value="Enum">Enum</option>
                     </select></div>
-                <div class="govuk-form-group "><label class="govuk-label" for="calc-name">Allowed enum
-                        values</label><input class="govuk-input govuk-!-width-two-thirds" id="calc-name"
-                        name="calc-name" type="text" value="Option 1"></div>
+
+
+
+                <div class="govuk-form-group ">
+                    <div class="govuk-grid-row">
+                    <label class="govuk-label" for="calc-name">Allowed enumvalues</label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="calc-name"
+                        name="calc-name" type="text" value="Option 1">
+                    </div>
+                    <div class="govuk-grid-row govuk-!-margin-top-5">
+                        <strong class="govuk-tag govuk-tag--grey lowercase govuk-!-margin-bottom-2">
+                            &#10005; Academy
+                          </strong>
+                        </div>                        
+                </div>
 
 
                 <div class="facet-tag">
