@@ -233,14 +233,11 @@ function tallyValues() {
     if (checkbox_cell_is_checked) {
       fundingTotal += parseInt($(this).text())
     }
-
   });
 
   // Output the amount
   document.getElementById("total").innerHTML = fundingTotal;
-
 }
-
 
 // show and hide template edit controls 
 
