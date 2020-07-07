@@ -1,8 +1,8 @@
 {% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
     endblock %} {% block content %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
         <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
             <ol class="govuk-breadcrumbs__list">
                 <li class="govuk-breadcrumbs__list-item">
@@ -20,37 +20,26 @@
                 </li>
             </ol>
         </div>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">DSG FY-20-21</h1>
-    </div>
-</div>
-
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Funding stream</span>
-        <h3 class="govuk-heading-m">Dedicated schools grant</h3>
-    </div>
-</div>
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Funding period</span>
-        <h3 class="govuk-heading-m">Financial year 2020 to 2021</h3>
-    </div>
-</div>
-
-
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Description</span>
-        <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. <a
-                onclick="document.getElementById('editDescription').style.display='block'" href="#"
-                class="govuk-link">Edit</a></p>
-
-
-
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">DSG FY-20-21</h1>
+        <span class="govuk-caption-l govuk-!-margin-bottom-2">Dedicated
+            schools grant for financial year
+            2020 to 2021</span>
+        <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    What is DSG FY-20-21?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt
+                    ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi
+                    ut aliquip ex ea commodo consequat. <a
+                        onclick="document.getElementById('editDescription').style.display='block'" href="#"
+                        class="govuk-link">Edit</a></p>
+            </div>
+        </details>
     </div>
 </div>
 
@@ -58,86 +47,52 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-m">Version</span>
-        <h3 class="govuk-heading-m">1.5<strong class="govuk-tag govuk-tag govuk-!-margin-left-2">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">1.5<strong
+                class="govuk-tag govuk-tag govuk-!-margin-left-2">
                 In progress
-            </strong></h3>
+            </strong> </h3>
+        <p class="govuk-body-s"><a class="govuk-link" href="templateversions.html">View all
+                versions</a></p>
     </div>
 </div>
 
 
+
+
+
+</br>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
-        <details class="govuk-details govuk-!-margin-bottom-9" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                    Version details
-                </span>
-            </summary>
-            <div class="govuk-details__text">
-                <strong>Last updated:</strong> 22 May 2020 9:14am
+        <div class="govuk-grid-column-two-thirds govuk-!-padding-left-0">
+            <label class="govuk-label" for="textarea">
+                Search </label>
+            <div class="search-container">
+                <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false"
+                    type="text">
             </div>
-            <div class="govuk-details__text">
-                <strong>Last updated by:</strong> Nathan Townsend
-            </div>
-            <div class="govuk-details__text"><a class="govuk-link" href="templateversions.html">View all versions</a>
-            </div>
-        </details>
-
+        </div>
+        <div class="govuk-grid-column-one-third govuk-!-padding-left-0">
+            <p class="govuk-body" aria-label="Template actions" style="visibility:hidden">Template actions</p>
+            <ul class="govuk-list inline-block-list">
+                <li><a href="#" class="govuk-link-m"><span>&#43;</span> Add a new funding line</a></li>
+                <li><a href="#" class="govuk-link-m"><span>&#8617;</span> Undo</a></li>
+                <li><a href="#" class="govuk-link-m"><span>&#8618;</span> Redo</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
-
-
-<div class="govuk-radios govuk-radios--inline govuk-!-margin-bottom-7">
-    <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="edit"
-            onclick="showEdit();">
-        <label class="govuk-label govuk-radios__label" for="changed-name">
-            Edit
-        </label>
-    </div>
-    <div class="govuk-radios__item">
-        <input checked="checked" class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
-            value="View" onclick="hideEdit();">
-        <label class="govuk-label govuk-radios__label" for="changed-name-2">
-            View
-        </label>
-    </div>
-</div>
-
-<div id="viewEdit" class="hideEdit">
-    <button class="govuk-button" data-module="govuk-button">
-        Add new funding line
-    </button>
-    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Undo
-    </button>
-    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Redo
-    </button>
-    </br>
-</div>
-
-<body>
-    <svg width="1350" height="500">
-        <rect width="1150" height="500" stroke-width="8" fill="gray" />
+<div class="govuk-!-margin-bottom-0">
+    <svg class="" width="1350" height="500">
+        <rect width="1200" height="500" stroke-width="8" fill="gray" />
     </svg>
-</body>
+</div>
+
 
 </br>
-
-</br>
-<a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Export template
-</a>
-
-</br>
-
-</br>
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row ">
+    <div class="govuk-grid-column-full ">
 
         <button class="govuk-button" data-module="govuk-button">
             Save</button>
@@ -145,12 +100,25 @@
             data-module="govuk-button">
             Continue to publish
             </button> </a>
-        <a href="templateversions.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Back
+        <a href="clonetemplate.html" class="govuk-button govuk-button--secondary right-align govuk-!-margin-left-1"
+            data-module="govuk-button">
+            Clone template
         </a>
+        <a href="" class="govuk-button govuk-button--secondary right-align" data-module="govuk-button">
+            Export template
+        </a>
+        <!-- <a href="templateversions.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Back
+        </a>-->
+        <p class="govuk-body-s">
+            <strong>Last updated:</strong> 28 May 2020 9:14am by Nathan Townsend
+        </p>
+        </br>
+        <a href="#" class="govuk-back-link">Back</a>
     </div>
-
 </div>
+
+</br>
 
 
 
@@ -208,8 +176,6 @@
         }
     }
 </script>
-
-
 
 
 
