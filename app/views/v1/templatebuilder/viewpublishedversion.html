@@ -1,8 +1,7 @@
 {% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
     endblock %} {% block content %}
-
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
         <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
             <ol class="govuk-breadcrumbs__list">
                 <li class="govuk-breadcrumbs__list-item">
@@ -20,71 +19,43 @@
                 </li>
             </ol>
         </div>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">DSG FY-20-21</h1>
-    </div>
-</div>
-
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Funding stream</span>
-        <h3 class="govuk-heading-m">Dedicated schools grant</h3>
-    </div>
-</div>
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Funding period</span>
-        <h3 class="govuk-heading-m">Financial year 2020 to 2021</h3>
-    </div>
-</div>
-
-
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Description</span>
-        <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. </p>
-    </div>
-</div>
-
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Version</span>
-        <h3 class="govuk-heading-m">1.0 <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">
-                Published
-            </strong></h3>
-    </div>
-</div>
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
-        <details class="govuk-details govuk-!-margin-bottom-9" data-module="govuk-details">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">DSG FY-20-21</h1>
+        <span class="govuk-caption-l govuk-!-margin-bottom-2">Dedicated
+            schools grant for financial year
+            2020 to 2021</span>
+        <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
             <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                    Version details
+                    What is DSG FY-20-21?
                 </span>
             </summary>
             <div class="govuk-details__text">
-                <strong>Publish note:</strong> New data
-            </div>
-            <div class="govuk-details__text">
-                <strong>Last updated:</strong> 17 April 2020 11:23am
-            </div>
-            <div class="govuk-details__text">
-                <strong>Last updated by:</strong> Nathan Townsend
-            </div>
-            <div class="govuk-details__text"><a class="govuk-link" href="templateversions.html">View all versions</a>
+                <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt
+                    ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi
+                    ut aliquip ex ea commodo consequat. <a
+                        onclick="document.getElementById('editDescription').style.display='block'" href="#"
+                        class="govuk-link">Edit</a></p>
             </div>
         </details>
-
     </div>
 </div>
 
 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-4">
+        <span class="govuk-caption-m">Version</span>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">1.0<strong
+                class="govuk-tag govuk-tag--green govuk-!-margin-left-2">
+                Published
+            </strong> </h3>
+        <p class="govuk-body-s"><a class="govuk-link" href="templateversions.html">View all
+                versions</a></p>
+        <span class="govuk-caption-m">Publish notes</span>
+        <p class="govuk-body govuk-!-margin-bottom-1">Updated with the new data</p>
+    </div>
+</div>
 
 
 
@@ -105,9 +76,8 @@
 </br>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-
-        <a href="restoretemplate-confirmation.html" class="govuk-button govuk-button" data-module="govuk-button">
+        <a href="restoretemplate-confirmation.html" class="govuk-button govuk-button govuk-!-margin-bottom-1"
+            data-module="govuk-button">
             Restore as current version
         </a>
         <a href="templateversions.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -116,6 +86,9 @@
     </div>
 
 </div>
+<p class="govuk-body-s">
+    <strong>Last updated:</strong> 6 May 2020 1:14pm by Nathan Townsend
+</p>
 
 
 
