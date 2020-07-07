@@ -377,10 +377,17 @@ i {
 .lowercase {
 	text-transform: lowercase;
 }
-
  
 
   .error-message {
 	  color: #d4351c;
 	  font-weight: 700;
   }
+
+  .govuk-link-m {
+font-size: 19px;
+padding-left: 5px;
+padding-right: 5px;
+transform: translateY(15px);
+  }
+
