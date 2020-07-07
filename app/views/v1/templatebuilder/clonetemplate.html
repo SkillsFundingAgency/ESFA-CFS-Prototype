@@ -1,0 +1,84 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+    endblock %} {% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="../templatebuilder/templatelisting-basic.html">Templates</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/templateversions.html">DSG FY-20-21</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/edittemplate.html">Version 1.4</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Clone template </li>
+            </ol>
+        </div>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Clone a template</h1>
+        <span class="govuk-caption-xl govuk-!-margin-bottom-7">Clone a template of DSG 2020 to
+            2021 Version 1.4</span>
+    </div>
+</div>
+
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+        Select a funding stream
+    </label>
+    <select class="govuk-select" id="sort" name="sort">
+
+        <option value="draft">Dedicated schools grant</option>
+        <option value="draft">General annual grant</option>
+        <option value="draft">PE and sport premium grant</option>
+    </select>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+        Select a funding period
+    </label>
+    <span id="event-name-hint" class="govuk-hint">
+        You will not be able to select a funding period if a template for this funding stream and period already exists.
+    </span>
+    <select class="govuk-select" id="sort" name="sort">
+        <option value="draft">Financial year 2020 to 2021</option>
+        <option value="draft">Academic year 2020 to 2021</option>
+    </select>
+</div>
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="more-detail">
+        Template description
+    </label>
+    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+        aria-describedby="more-detail-hint">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea>
+</div>
+</fieldset>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="" class="govuk-button govuk-button--primary button-createSpecification" data-module="govuk-button">
+            Clone template
+        </a>
+        <a href="edittemplate.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Back
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
