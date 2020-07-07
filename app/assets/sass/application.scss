@@ -391,3 +391,9 @@ padding-right: 5px;
 transform: translateY(15px);
   }
 
+  .inline-block-list {
+	margin-bottom: 0px;
+  li {
+	  display: inline-block;
+  }
+  }
