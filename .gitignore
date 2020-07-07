@@ -8,6 +8,7 @@ lib/extensions/_extensions.scss
 .start.pid
 .port.tmp
 public
+test.html
 node_modules/*
 .tmuxp.*
 package-lock.json
