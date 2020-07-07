@@ -65,22 +65,25 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="govuk-grid-column-one-third govuk-!-padding-left-0">
-            <p class="govuk-body"  aria-label="Temaplte actions" style="visibility:hidden">Template actions</p>
-            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-                Add new funding line
-            </button>
-           <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <p class="govuk-body" aria-label="Template actions" style="visibility:hidden">Template actions</p>
+
+            <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                 Undo
             </button> -->
-            <a href="#" class="govuk-link"><span>&#8634;</span> Undo</a>
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Redo
-            </button>
+            <div class="govuk-grid-column-one-quarter">
+                <a href="#" class="govuk-link-m"><span>&#43;</span> Add a new funding line</a></div>
+            <div class="govuk-grid-column-one-quarter">
+                <a href="#" class="govuk-link-m"><span>&#8617;</span> Undo</a></div>
+            <div class="govuk-grid-column-one-quarter">
+                <a href="#" class="govuk-link-m"><span>&#8618;</span> Redo</a></div>
+
         </div>
         <div class="govuk-grid-column-one-third">
-            <p>Search</p>
+            <label class="govuk-label" for="textarea">
+                Search </label>
             <div class="govuk-form-group search-container">
-                <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false" type="text">
+                <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false"
+                    type="text">
             </div>
         </div>
     </div>
@@ -99,6 +102,9 @@
 
 </br>
 <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Clone template
+</a>
+<a href="" class="govuk-button govuk-button--secondary right-align" data-module="govuk-button">
     Export template
 </a>
 
@@ -114,7 +120,7 @@
             data-module="govuk-button">
             Continue to publish
             </button> </a>
-       <!-- <a href="templateversions.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        <!-- <a href="templateversions.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Back
         </a>-->
         <p class="govuk-body-s ">
