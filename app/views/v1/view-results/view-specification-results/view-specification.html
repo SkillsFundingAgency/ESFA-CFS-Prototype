@@ -58,13 +58,19 @@ GOV.UK Prototype Kit
           <button class="govuk-button" type="submit" class="gem-c-search__submit">Search</button>
         </div>
       </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Sort by
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">Recently published</option>
+            <option value="updated" selected>Recently updated</option>
+            <option value="views">Most views</option>
+            <option value="comments">Most comments</option>
+          </select>
+        </div>
     </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-
-      </div>
-
     </div>
 
     <table class="govuk-table">
@@ -74,6 +80,7 @@ GOV.UK Prototype Kit
           <th scope="col" class="govuk-table__header">Funding line or calculation</th>
           <th scope="col" class="govuk-table__header">Calculation name</th>
           <th scope="col" class="govuk-table__header">Calculation type</th>
+          <th scope="col" class="govuk-table__header">Status</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -85,6 +92,7 @@ GOV.UK Prototype Kit
               class="govuk-link">Pupil number
             </a></td>
           <td class="govuk-table__cell">Currency</td>
+          <td class="govuk-table__cell">Approved</td>
         </tr>
         <tr class="govuk-table__row">
 
@@ -94,6 +102,7 @@ GOV.UK Prototype Kit
               class="govuk-link">Calc
               2</a></td>
           <td class="govuk-table__cell">Currency</td>
+          <td class="govuk-table__cell">Approved</td>
         </tr>
       </tbody>
     </table>
