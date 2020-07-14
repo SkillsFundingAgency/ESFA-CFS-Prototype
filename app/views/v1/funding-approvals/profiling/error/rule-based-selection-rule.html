@@ -23,21 +23,21 @@ GOV.UK Prototype Kit
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#patternTypes">No pattern type selected</a>
+        <a href="#patternTypes">A rule based pattern must be selected</a>
       </li>
     </ul>
   </div>
 </div>
 
-<div class="govuk-form-group ">
-  <div class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h4 class="govuk-heading-s">Select pattern type</h4>
     </legend>
     <span id="how-contacted-conditional-hint" class="govuk-hint">
       Select one option.
     </span>
-    <div class="govuk-radios govuk-radios--conditional" id="patterTypes" data-module="govuk-radios">
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio"
           value="email" data-aria-controls="national-pattern" />
@@ -48,6 +48,7 @@ GOV.UK Prototype Kit
             consectetur adipiscing elit. Aliquam congue diam sit amet dui
             posuere
           </span>
+          <a class="govuk-link" href="#" onclick="document.getElementById('profilePreview').style.display='block'">Preview profile</a> <br>
         </label>
       </div>
 
@@ -57,7 +58,7 @@ GOV.UK Prototype Kit
     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio"
-          value="email" data-aria-controls="rule-based-pattern" />
+          value="email" data-aria-controls="rule-based-pattern" checked />
         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
           Rule based
           <span class="govuk-hint">
@@ -70,11 +71,14 @@ GOV.UK Prototype Kit
 
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
         id="rule-based-pattern">
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h4 class="govuk-heading-s">Select data source version</h4>
+              <h4 class="govuk-heading-s">Select rule based pattern</h4>
             </legend>
+            <span id="passport-issued-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> A rule based pattern must be selected
+            </span>
             <div class="govuk-radios govuk-radios--small">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" />
@@ -131,9 +135,6 @@ GOV.UK Prototype Kit
     </div>
   </fieldset>
 </div>
-    </div>
-  </div>
-</div>
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <a href="javascript:history.back()" class="govuk-button" data-module="govuk-button">
@@ -172,70 +173,83 @@ GOV.UK Prototype Kit
               <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
                       <th scope="col" class="govuk-table__header">Installment</th>
+                      <th scope="col" class="govuk-table__header">Payment status</th>
                       <th scope="col" class="govuk-table__header">Installment number</th>
                       <th scope="col" class="govuk-table__header">Per cent</th>
                   </tr>
               </thead>
               <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">September 2020</th>
+                      <th scope="row" class="govuk-table__header">8 September 2020</th>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">Paid</strong></td>
                       <td class="govuk-table__cell">1</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell"></td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">October 2020</th>
+                      <th scope="row" class="govuk-table__header">8 October 2020</th>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">Paid</strong></td>
                       <td class="govuk-table__cell">2</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell"></td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">November 2020</th>
+                      <th scope="row" class="govuk-table__header">8 November 2020</th>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">Paid</strong></td>
                       <td class="govuk-table__cell">3</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell"></td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">December 2020</th>
+                      <th scope="row" class="govuk-table__header">9 December 2020</th>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">Paid</strong></td>
                       <td class="govuk-table__cell">4</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell"></td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">January 2021</th>
+                      <th scope="row" class="govuk-table__header">12 January 2021</th>
+                      <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell">5</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell">20%</td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">February 2021</th>
+                      <th scope="row" class="govuk-table__header">11 February 2021</th>
+                      <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell">6</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell">20%</td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">March 2021</th>
+                      <th scope="row" class="govuk-table__header">6 March 2021</th>
+                      <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell">7</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell">15%</td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">April 2021</th>
+                      <th scope="row" class="govuk-table__header">8 April 2021</th>
+                      <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell">8</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell">10%</td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">May 2021</th>
+                      <th scope="row" class="govuk-table__header">8 May 2021</th>
+                      <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell">9</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell">10%</td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">June 2021</th>
+                      <th scope="row" class="govuk-table__header">8 June 2021</th>
+                      <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell">10</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell">10%</td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">July 2021</th>
+                      <th scope="row" class="govuk-table__header">8 July 2021</th>
+                      <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell">11</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell">10%</td>
                   </tr>
                   <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">August 2021</th>
+                      <th scope="row" class="govuk-table__header">8 August 2021</th>
+                      <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell">12</td>
-                      <td class="govuk-table__cell">8.3333333%</td>
+                      <td class="govuk-table__cell">5%</td>
                   </tr>
               </tbody>
           </table>
