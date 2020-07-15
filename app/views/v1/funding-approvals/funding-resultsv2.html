@@ -41,19 +41,62 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
+            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-                    <h4 class="govuk-heading-s"> Search</h4>
+                    <h4 class="govuk-heading-s">Search</h4>
                 </legend>
-                <div class="govuk-form-group filterSearch">
-                    <label class="govuk-label filterLabel" for="filter-by-type">
-                        Search by provider name, UKPRN, UPIN or URN
-                    </label>
-                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch"
-                        autocomplete="off" name="search" type="text">
+                <span id="how-contacted-conditional-hint" class="govuk-hint sidebar-search-span">
+                    Select one option.
+                </span>
+                <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted"
+                            type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                            Provider
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-how-contacted-conditional">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-email"
+                                name="contact-by-email" type="email" spellcheck="false">
+                        </div>
+
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted"
+                            type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                            UKPRN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-how-contacted-conditional-2">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-phone"
+                                name="contact-by-phone" type="tel">
+                        </div>
+
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted"
+                            type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                            UPIN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-how-contacted-conditional-3">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-text"
+                                name="contact-by-text" type="tel">
+                        </div>
+                    </div>
                 </div>
             </fieldset>
         </div>
+
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
@@ -295,7 +338,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 284,821,882</td>
                         </tr>
-                        
+
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
@@ -343,7 +386,8 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="196520871">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Basildon Borough Council</a>
+                                            <a href="provider-funding-overview.html" class="govuk-link">Basildon Borough
+                                                Council</a>
                                         </label>
                                     </div>
                                 </div>
@@ -360,7 +404,8 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="196520871">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Basingstoke and Deane Borough Council</a>
+                                            <a href="provider-funding-overview.html" class="govuk-link">Basingstoke and
+                                                Deane Borough Council</a>
                                         </label>
                                     </div>
                                 </div>
@@ -377,7 +422,8 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="196520871">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Bath and North East Somerset Council</a>
+                                            <a href="provider-funding-overview.html" class="govuk-link">Bath and North
+                                                East Somerset Council</a>
                                         </label>
                                     </div>
                                 </div>
@@ -394,7 +440,8 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="196520871">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Birmingham City Council</a>
+                                            <a href="provider-funding-overview.html" class="govuk-link">Birmingham City
+                                                Council</a>
                                         </label>
                                     </div>
                                 </div>
@@ -411,7 +458,8 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="196520871">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Blackburn with Darwen Borough Council</a>
+                                            <a href="provider-funding-overview.html" class="govuk-link">Blackburn with
+                                                Darwen Borough Council</a>
                                         </label>
                                     </div>
                                 </div>
@@ -428,7 +476,8 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="196520871">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Blackpool Borough Council</a>
+                                            <a href="provider-funding-overview.html" class="govuk-link">Blackpool
+                                                Borough Council</a>
                                         </label>
                                     </div>
                                 </div>
@@ -445,7 +494,8 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="196520871">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Bolton Metropolitan Borough Council</a>
+                                            <a href="provider-funding-overview.html" class="govuk-link">Bolton
+                                                Metropolitan Borough Council</a>
                                         </label>
                                     </div>
                                 </div>
@@ -459,7 +509,8 @@ GOV.UK Prototype Kit
 
                 <div class="govuk-grid-row ">
                     <div class="govuk-grid-column-two-thirds">
-                        <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-5" data-module="app-back-to-top">
+                        <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-5"
+                            data-module="app-back-to-top">
                             <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
                                 <svg role="presentation" focusable="false" class="app-back-to-top__icon"
                                     xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
