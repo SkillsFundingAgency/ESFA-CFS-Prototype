@@ -34,7 +34,7 @@ GOV.UK Prototype Kit
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#template-calculations">
-        Template calculations
+        Funding line structure
       </a>
     </li>
     <li class="govuk-tabs__list-item">
@@ -54,6 +54,9 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group search-container">
+          <label class="govuk-label" for="sort">
+            Search
+          </label>
           <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false" type="text">
           <button class="govuk-button" type="submit" class="gem-c-search__submit">Search</button>
         </div>
@@ -64,10 +67,9 @@ GOV.UK Prototype Kit
             Sort by
           </label>
           <select class="govuk-select" id="sort" name="sort">
-            <option value="published">Recently published</option>
-            <option value="updated" selected>Recently updated</option>
-            <option value="views">Most views</option>
-            <option value="comments">Most comments</option>
+            <option selected></option>
+            <option value="updated">Updated</option>
+            <option value="approved">Approved</option>
           </select>
         </div>
     </div>
