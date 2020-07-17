@@ -11,52 +11,42 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
         <div class="sidebar-content">
-            <h2 class="govuk-heading-l">Edit Calculation</h2>
+            <h2 class="govuk-heading-l">View calculation</h2>
             <fieldset class="govuk-fieldset">
-                <div class="govuk-form-group "><label class="govuk-label" for="calc-name">Name</label>
-                    <span id="calculation-name-hint" class="govuk-hint">The name of the calculation</span>
-                    <input class="govuk-input" id="calc-name" name="calc-name" type="text" value="Primary Funding">
+                <div class="govuk-form-group govuk-!-margin-bottom-6"><label class="govuk-label"
+                        for="calc-name">Name</label>
+                    <span id="calculation-name-hint" class="govuk-hint">Primary funding</span>
                 </div>
                 <label class="govuk-label" for="calc-name">Primary Funding</label>
-                <div class="govuk-form-group "><label class="govuk-label" for="calc-name">Calculation ID</label>
-                    <input class="govuk-input" id="calc-name" name="calc-name" type="text" value="Calc187684"></div>
-                <div class="govuk-form-group"><label class="govuk-label" for="calc-type">Type</label><select
-                        class="govuk-select" id="calc-type" name="calc-type">
-                        <option value="Cash">Cash</option>
-                        <option value="Enum">Enum</option>
-                        <option value="Rate">Rate</option>
-                        <option value="PupilNumber">Pupil Number</option>
-                        <option value="Number">Number</option>
-                        <option value="Weighting">Weighting</option>
-                        <option value="Boolean">Boolean</option>
-                    </select></div>
+                <div class="govuk-form-group govuk-!-margin-bottom-6">
+                    <span id="calculation-name-hint" class="govuk-hint">Calc187684</span>
+                </div>
+                <div class="govuk-form-group govuk-!-margin-bottom-6">
+                    <label class="govuk-label" for="calc-type">Type</label>
+                    <span id="calculation-name-hint " class="govuk-hint ">Cash</span>
+                </div>
         </div>
 
-
-
-        <div class="govuk-form-group"><label class="govuk-label" for="calc-formula-text">Formula
-                Text</label><input class="govuk-input govuk-!-width-two-thirds" id="calc-formula-text"
-                name="calc-formula-text" type="text" value="Enter formula text"></div>
-        <div class="govuk-form-group"><label class="govuk-label" for="calc-value-format">Value
-                Format</label><span id="calculation-name-hint" class="govuk-hint">The way the value should
-                show</span><select class="govuk-select" id="calc-value-format" name="calc-value-format">
-                <option value="Currency">Currency</option>
-            </select></div>
-        <div class="govuk-form-group"><label class="govuk-label" for="calc-aggregation-type">Aggregation
-                Type</label><select class="govuk-select" id="calc-aggregation-type" name="calc-aggregation-type">
-                <option value="None">None</option>
-                <option value="Average">Average</option>
-                <option value="Sum">Sum</option>
-                <option value="GroupRate">GroupRate</option>
-                <option value="PercentageChangeBetweenAandB">PercentageChangeBetweenAandB</option>
-            </select></div><button class="govuk-button" id="save-button" data-module="govuk-button">Save and
-            continue</button>
-        <div class="govuk-warning-text"><span class="govuk-warning-text__icon" aria-hidden="true">!</span><strong
-                class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>Be careful.
-                This will delete all child nodes.</strong></div>
-        <div class="govuk-form-group"><button class="govuk-button govuk-button--warning">Delete
-                calculation</button>
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
+            <label class="govuk-label" for="calc-formula-text">Formula
+                Text</label>
+            <span id="calculation-name-hint" class="govuk-hint">Example formula text</span>
         </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
+            <label class="govuk-label" for="calc-value-format">Value
+                Format</label>
+            <span id="calculation-name-hint" class="govuk-hint">Currency</span>
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-8"><label class="govuk-label"
+                for="calc-aggregation-type">Aggregation
+                Type</label>
+            <span id="calculation-name-hint" class="govuk-hint">None</span>
+        </div>
+
+        <button class="govuk-button" id="save-button" data-module="govuk-button">Close</button>
+
         </fieldset>
     </div>
 </div>
