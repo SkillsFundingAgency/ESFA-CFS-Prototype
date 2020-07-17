@@ -13,11 +13,17 @@ GOV.UK Prototype Kit
         <div class="sidebar-content">
             <h2 class="govuk-heading-l">Edit calculation</h2>
             <fieldset class="govuk-fieldset">
-                <div class="govuk-form-group "><label class="govuk-label" for="calc-name">Name</label><span
-                        id="calculation-name-hint" class="govuk-hint">The name of the calculation</span><input
-                        class="govuk-input" id="calc-name" name="calc-name" type="text" value="Primary Funding"></div>
-                <div class="govuk-form-group "><label class="govuk-label" for="calc-name">Calculation ID</label><input
-                        class="govuk-input" id="calc-name" name="calc-name" type="text" value="Calc187684"></div>
+                <div class="govuk-form-group govuk-form-group--error">
+                    <div class="govuk-form-group "><label class="govuk-label" for="calc-name">Name</label>
+                        <span id="event-name-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden ">Error:</span>This calculation name is already in
+                            use.<input class="govuk-input govuk-!-margin-top-2" id="calc-name" name="calc-name"
+                                type="text" value="Primary Funding"></div>
+
+                </div>
+                <div class="govuk-form-group "><label class="govuk-label" for="calc-name">Calculation
+                        ID</label>
+                    <input class="govuk-input" id="calc-name" name="calc-name" type="text" value="Calc187684"></div>
                 <div class="govuk-form-group"><label class="govuk-label" for="calc-type">Type</label><select
                         class="govuk-select" id="calc-type" name="calc-type">
                         <option value="Cash">Cash</option>
