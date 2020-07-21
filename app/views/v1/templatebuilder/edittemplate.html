@@ -90,13 +90,11 @@
 </div>
 
 <div class="">
-    <a class="fitscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-left-0 govuk-!-margin-right-0">
-        <span>&#11138;</span> </a>
-    <a class="fullscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-left-2"><span class="">&#11108;</span>
-    </a>
-    <a class="maths-icon govuk-!-font-size-36 right-align govuk-!-margin-left-0"><span>&#xff0d; &nbsp;&nbsp;&nbsp;
-        </span></a>
+    <a class="fitscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-left-0 govuk-!-margin-right-0"><span>&#11138;</span> </a>
+    <a class="fullscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-left-2"><span class="">&#11108;</span></a>
+    <a class="maths-icon govuk-!-font-size-36 right-align govuk-!-margin-left-0"><span>&#xff0d; &nbsp;&nbsp;&nbsp;</span></a>
     <a class="maths-icon govuk-!-font-size-36 right-align"><span>&#xff0b;</a>
+    <button onclick="openFullscreen()">Full screen</button>
 </div>
 
 </br>
@@ -132,7 +130,7 @@
     <div class="govuk-modal-dialogue__wrapper">
         <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
             aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
-            <div class="govuk-modal-dialogue__header">
+            <div class="govuk-modal-dialogue__header" id="fullScreen">
                 <svg role="presentation" focusable="false" class="govuk-modal-dialogue__crown"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 97" height="30" width="36">
                     <path fill="currentColor" fill-rule="evenodd"
@@ -182,20 +180,16 @@
     }
 
 
-
-    document.addEventListener("keypress", function(e) {
-  if (e.keyCode === 13) {
-    toggleFullScreen();
-  }
-}, false);
-
-function toggleFullScreen() {
-  if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen(); 
-    }
+var elem = document.getElementById("fullScreen");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
   }
 }
 
