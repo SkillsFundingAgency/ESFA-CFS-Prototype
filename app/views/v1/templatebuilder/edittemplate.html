@@ -90,11 +90,13 @@
 </div>
 
 <div class="">
-    <a class="fitscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-left-0 govuk-!-margin-right-0"><span>&#11138;</span> </a>
-    <a class="fullscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-left-2"><span class="">&#11108;</span></a>
-    <a class="maths-icon govuk-!-font-size-36 right-align govuk-!-margin-left-0"><span>&#xff0d; &nbsp;&nbsp;&nbsp;</span></a>
+    <a class="fitscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-left-0 govuk-!-margin-right-0"><span>&#11138;</span>
+    </a>
+    <a class="fullscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-left-2"><span>&#11108;</span></a>
+    <a class="maths-icon govuk-!-font-size-36 right-align govuk-!-margin-left-0"><span>&#xff0d;
+            &nbsp;&nbsp;&nbsp;</span></a>
     <a class="maths-icon govuk-!-font-size-36 right-align"><span>&#xff0b;</a>
-    <button onclick="openFullscreen()">Full screen</button>
+    <!-- <button onclick="openFullscreen()">Full screen</button> -->
 </div>
 
 </br>
@@ -180,18 +182,18 @@
     }
 
 
-var elem = document.getElementById("fullScreen");
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.mozRequestFullScreen) { /* Firefox */
-    elem.mozRequestFullScreen();
-  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE/Edge */
-    elem.msRequestFullscreen();
-  }
-}
+    var elem = document.getElementById("fullScreen");
+    function openFullscreen() {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+        }
+    }
 
 </script>
 
