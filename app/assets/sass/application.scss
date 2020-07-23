@@ -413,7 +413,7 @@ transform: translateY(15px);
 }
 
 .fullscreen-icon {
-	transform: rotate(-45deg) translateY(-53px) translateX(3px);
+	transform: rotate(-45deg) translateY(-52px) translateX(4px);
 
 }
 
@@ -422,4 +422,7 @@ transform: translateY(-40px) translateX(-27px);
 
 }
 
-
+.hide-me { 
+    position: absolute;
+    left: -9999px;
+}
