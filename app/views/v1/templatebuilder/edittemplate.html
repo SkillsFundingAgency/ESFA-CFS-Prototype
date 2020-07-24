@@ -89,50 +89,41 @@
     </svg>
 </div>
 
-<div class="right-align">
-    <div class="fitscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-bottom-1">
+<div class="right-align fitscreen-icon">
         <a href="#">
             <span class="fit to screen" aria-hidden="true">&#11138;</span>
             <span class="hide-me">fit to screen</span>
         </a>
-    </div>
-
-    <div class="fullscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-bottom-1 govuk-!-margin-right-1">
-        <a href="#">
-            <span class="full screen" aria-hidden="true">&#11108;</span>
+        <a href="#" id="openFullScreen">
+            <span class="full screen" aria-hidden="true"><img src="/public/images/expand.png" ></span>
             <span class="hide-me">full screen</span>
         </a>
-    </div>&nbsp;
-    <div class="maths-icon govuk-!-font-size-27 right-align govuk-!-margin-right-7">
         <a href="#">
             <span class="zoom out" aria-hidden="true">&#xff0d;</span>
             <span class="hide-me">zoom out</span>
         </a>
-    </div>
-    <div class="maths-icon govuk-!-font-size-27 right-align govuk-!-margin-right-1">
         <a href="#">
             <span class="zoom in" aria-hidden="true">&#xff0b;</span>
             <span class="hide-me">zoom in</span>
         </a>
-    </div>
 </div>
 
 
-
-<div class="govuk-!-margin-bottom-1">
-    <div aria-labelledby="fit to screen">
-        <a class="fitscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-left-0 govuk-!-margin-right-0"><span>&#11138;</span>
-        </a></div>
-    <div aria-labelledby="full screen">
-        <a class="fullscreen-icon govuk-!-font-size-27 right-align govuk-!-margin-left-2"><span>&#11108;</span></a>
-    </div>
-    <div aria-labelledby="zoom out"> <a
-            class="maths-icon govuk-!-font-size-36 right-align govuk-!-margin-left-0"><span>&#xff0d;
-                &nbsp;&nbsp;&nbsp;</span></a></div>
-    <div aria-labelledby="zoom in"> <a class="maths-icon govuk-!-font-size-36 right-align"><span>&#xff0b;</a>
-        <!-- <button onclick="openFullscreen()">Full screen</button> -->
-    </div>
-</div>
+<!--
+<div class="govuk-!-margin-bottom-1 right-align fitscreen-icon">
+    <span aria-labelledby="fit to screen">
+        <a class="govuk-!-font-size-27  govuk-!-margin-left-0 govuk-!-margin-right-0"><span>&#11138;</span></a>
+    </span>
+    <span aria-labelledby="full screen">
+        <a class="fullscreen-icon govuk-!-font-size-27  govuk-!-margin-left-2"><span><img src="/public/images/expand.png" ></span></a>
+    </span>
+    <span aria-labelledby="zoom out"> 
+        <a class="maths-icon govuk-!-font-size-36  govuk-!-margin-left-0"><span>&#xff0d;</span></a>
+    </span>
+    <span aria-labelledby="zoom in"> <a class="maths-icon govuk-!-font-size-36"><span>&#xff0b;</a>
+     <button onclick="openFullscreen()">Full screen</button>
+    </span>
+</div> -->
 </br>
 <div class="govuk-grid-row ">
     <div class="govuk-grid-column-full ">
@@ -181,21 +172,10 @@
     </div>
 </div>
 
-
-
-
 <a href="#">
     <span class="fit to screen" aria-hidden="true">&#11108;</span>
     <span class="hide-me">fit to screen</span>
 </a>
-
-
-
-
-
-
-
-
 
 
 <div class="govuk-modal-dialogue" id="editDescription" data-module="govuk-modal-dialogue">
@@ -251,7 +231,9 @@
         }
     }
 
+// Full screen
 
+    document.getElementById("openFullScreen").onclick = openFullscreen;
     var elem = document.getElementById("fullScreen");
     function openFullscreen() {
         if (elem.requestFullscreen) {
