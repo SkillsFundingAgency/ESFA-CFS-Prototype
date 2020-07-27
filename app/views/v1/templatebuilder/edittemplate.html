@@ -105,7 +105,7 @@
         </a></div>
     <div class="tooltip">
         <span class="tooltiptext">Full screen</span>
-        <a href="#" id="openFullScreen" style="text-decoration: none;">
+        <a title="Full Screen" href="#" id="openFullScreen" style="text-decoration: none;">
             <span class="full screen govuk-!-margin-right-1" aria-hidden="true"><img
                     src="/public/images/expand.png"></span>
             <span class="hide-me">full screen</span>
@@ -238,6 +238,17 @@
     }
 
 </script>
+
+<style>
+
+a:focus:after  { content:attr(title);
+                 position: relative; top: -3em;
+                 padding: .1em .2em;
+                 background: #ffffd6; color: #000;
+                 border: 2px solid black;
+                 }
+
+</style>
 
 
 
