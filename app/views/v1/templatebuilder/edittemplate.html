@@ -92,10 +92,11 @@
 <div class="right-align maths-icon govuk-!-margin-right-3 ">
     <div class="tooltip">
         <span class="tooltiptext">Zoom in</span>
-        <a title="Zoom in" a href="#" id="zoomIn" style="text-decoration: none;">
+        <a title="Zoom in" href="#" id="zoomIn" style="text-decoration: none;">
             <span class="zoom in govuk-!-margin-right-1" aria-hidden="true"><img src="/public/images/plus.png"></span>
             <span class="hide-me">zoom in</span>
-        </a> </div>
+        </a>
+    </div>
     <div class="tooltip">
         <span class="tooltiptext">Zoom out</span>
         <a title="Zoom out" href="#" id="zoomOut" style="text-decoration: none;">
@@ -116,7 +117,8 @@
             <span class="fit to screen govuk-!-margin-right-1" aria-hidden="true"><img
                     src="/public/images/switch (1).png"></span>
             <span class="hide-me">fit to screen</span>
-        </a></div>
+        </a>
+    </div>
 </div>
 
 
@@ -208,8 +210,6 @@
 </div>
 
 
-
-
 <script>
     // Get the modal
     var modal = document.getElementById('editDescription');
@@ -225,34 +225,22 @@
 
     document.getElementById("openFullScreen").onclick = openFullscreen;
     var elem = document.getElementById("fullScreen");
+
     function openFullscreen() {
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) { /* Firefox */
+        } else if (elem.mozRequestFullScreen) {
+            /* Firefox */
             elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        } else if (elem.webkitRequestFullscreen) {
+            /* Chrome, Safari & Opera */
             elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        } else if (elem.msRequestFullscreen) {
+            /* IE/Edge */
             elem.msRequestFullscreen();
         }
     }
-
 </script>
-
-<style>
-    a:focus:after {
-        target: "zoomIn", "zoomOut", "fitToScreen", "openFullScreen";
-        content: attr(title);
-        position: relative;
-        top: -3em;
-        padding: .2em .3em;
-        font-family: "GDS Transport", Arial, sans-serif;
-        font-size: small;
-        background-color: #ffdd00;
-        color: #0b0c0c;
-
-    }
-</style>
 
 
 

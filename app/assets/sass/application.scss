@@ -21,6 +21,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/input-prefix-suffix";
 @import "components/facet-tags";
 @import "components/radio-button-search.scss";
+@import "components/tooltip.scss";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .subHeader {

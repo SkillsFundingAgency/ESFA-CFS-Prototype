@@ -1,0 +1,11 @@
+.tooltip a:focus:after {
+    content: attr(title);
+    position: relative;
+    top: -3em;
+    padding: .2em .3em;
+    font-family: "GDS Transport", Arial, sans-serif;
+    font-size: small;
+    background-color: #ffdd00;
+    color: #0b0c0c;
+
+}
