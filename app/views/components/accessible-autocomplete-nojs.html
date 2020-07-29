@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <form action="form-single.html" method="get">
+            <label class="govuk-label" for="last-location">Select SQL file</label>
+            <div class="autocomplete-wrapper">
+                <select id="multilineSelect" name="last-location" class="govuk-select" id="last-location">
+                    <option value=""></option>
+                    <option>Option 1</option>
+                    <option disabled><p class="govuk-body" style="color: white;">Option 1 further details</p></option>
+                    <option>Option 2</option>
+                    <option disabled><p class="govuk-body">Option 2 further details</p></option>
+                    <option value="territory:AE-AZ">Option 3</option>
+                    <option disabled><p class="govuk-body">Option 3 further details</p></option>
+                </select>
+            </div>
+        </form>
+        </main>
+    </div>
+</div>
+
+<style>
+    option:disabled {
+    color: white!important;
+}
+</style>
+{% endblock %}

@@ -260,5 +260,3 @@ function viewVersion () {
     document.getElementById('hideVersion').style.display = 'none';
     document.getElementById('viewVersion').style.display = 'block';
   };
-
-
