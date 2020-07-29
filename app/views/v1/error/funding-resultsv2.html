@@ -35,7 +35,13 @@ GOV.UK Prototype Kit
     <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
             <li>
-                <a href="#passport-issued-error">* Funding line * profile doesn't match allocation value.</a>
+                <a href="#passport-issued-error">Funding line profile doesn't match allocation value.</a>
+            </li>
+            <li>
+                <a href="#passport-issued-error">Payment group provider ID changed without managed variation</a>
+            </li>
+            <li>
+                <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-margin-top-2">Please filter by error status to identify affected providers</p>
             </li>
         </ul>
     </div>
@@ -58,14 +64,70 @@ GOV.UK Prototype Kit
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-                    <h4 class="govuk-heading-s"> Search</h4>
+                    <h4 class="govuk-heading-s">Search</h4>
                 </legend>
-                <div class="govuk-form-group filterSearch">
-                    <label class="govuk-label filterLabel" for="filter-by-type">
-                        Search by provider name, UKPRN, UPIN or URN
-                    </label>
-                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch"
-                        autocomplete="off" name="search" type="text">
+                <span id="how-contacted-conditional-hint" class="govuk-hint sidebar-search-span">
+                    Select one option.
+                </span>
+                <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted"
+                            type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                            Provider name
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-how-contacted-conditional">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-email"
+                                name="contact-by-email" type="email" spellcheck="false">
+                        </div>
+
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted"
+                            type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                            UKPRN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-how-contacted-conditional-2">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-phone"
+                                name="contact-by-phone" type="tel">
+                        </div>
+
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted"
+                            type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                            UPIN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                    id="conditional-how-contacted-conditional-3">
+                    <div class="govuk-form-group">
+                        <input class="govuk-input sidebar-search-input" id="contact-by-text"
+                            name="contact-by-text" type="tel">
+                    </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-4" name="how-contacted"
+                            type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-4">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
+                            URN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-how-contacted-conditional-4">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-text"
+                                name="contact-by-text" type="tel">
+                        </div>
+                    </div>
                 </div>
             </fieldset>
         </div>
@@ -228,6 +290,35 @@ GOV.UK Prototype Kit
                     </div>
                 </div>
         </div>
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                    <h4 class="govuk-heading-s">
+                        Filter by error status <span><i class="material-icons right-align"> keyboard_arrow_down
+                            </i></span>
+                    </h4>
+                </legend>
+
+                
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                autocomplete="off" type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                With errors
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                autocomplete="off" type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Without errors
+                            </label>
+                        </div>
+                    </div>
+                </div>
+        </div>
         </fieldset>
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
@@ -297,7 +388,7 @@ GOV.UK Prototype Kit
                                             for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Barking and Dagenham London Borough Council</a>
                                             <span id="passport-issued-error" class="govuk-error-message govuk-!-margin-top-2">
-                                                <span class="govuk-visually-hidden">Error:</span>* Funding line * profile doesn't match allocation value.
+                                                <span class="govuk-visually-hidden">Error:</span>A funding line profile doesn't match allocation value.
                                             </span>
                                         </label>
                                     </div>
@@ -311,21 +402,20 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="346757869">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                        <label class="govuk-label govuk-checkboxes__label govuk-form-group--error for="provider-approval">
                                             <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet
                                                 London
                                                 Borough Council</a>
+                                                <span id="passport-issued-error" class="govuk-error-message govuk-!-margin-top-2">
+                                                    <span class="govuk-visually-hidden">Error:</span>Payment group provider ID changed without managed variation
+                                                </span>
                                         </label>
                                     </div>
                                 </div>
                             </td>
                             </td>
                             <td class="govuk-table__cell">10003986</td>
-                            <td class="govuk-table__cell">Updated</td>
+                            <td class="govuk-table__cell ">Error</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">346,757,869</td>
                         </tr>
 
