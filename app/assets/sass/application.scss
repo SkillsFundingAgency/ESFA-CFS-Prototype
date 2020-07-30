@@ -477,4 +477,15 @@ transform: translateY(-40px) translateX(-27px);
 	visibility: visible;
 	opacity: 1;
   }
-  
+
+
+  .govuk-caption-s {
+    font-family: "GDS Transport", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    line-height: 1.11111;
+    display: inline;
+    margin-bottom: 5px;
+    color: #6f777b;
+}
