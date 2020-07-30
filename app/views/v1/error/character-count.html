@@ -32,11 +32,16 @@ GOV.UK Prototype Kit
       </legend>
 
     <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-form-group--error">
         <label class="govuk-label" for="address-line-1">
           Calculation name
         </label>
-        <input class="govuk-input govuk-js-character-count" id="address-line-1" name="address-line-1" type="text">
+        <span id="exceeding-characters-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Calculation name must be 200 characters or fewer
+        </span>
+        <input class="govuk-input govuk-js-character-count" id="address-line-1" name="address-line-1" type="text"
+        value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id pharetra purus. Pellentesque ut consequat ante, ac vehicula mi. Fusce est diam, condimentum nec venenatis eu, euismod ut dui. Nullam eu metus quis lectus condimentum eleifend."
+        >
       </div>
     </div>
 
