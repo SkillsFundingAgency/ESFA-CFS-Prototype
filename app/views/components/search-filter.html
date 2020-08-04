@@ -355,10 +355,13 @@ GOV.UK Prototype Kit
                             <dt class="js-when-on">
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" type="checkbox">
-                                    <label class="govuk-label govuk-checkboxes__label">Academies</label>
+                                    <div>
+                                    <label class="govuk-label govuk-checkboxes__label">Academies</label> <span class="hiddenCheckboxes"><i id="filterExpanded" class="material-icons checkboxExpand right-align" onclick="hiddenCheckboxes()">  keyboard_arrow_down
+                                    </i></span>
+                                </div>
                                 </div>
                             </dt>
-                            <dd class="filter-group hidden">
+                            <dd class="filter-group hidden" id="conditionalCheckboxes">
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" type="checkbox">
                                     <label class="govuk-label govuk-checkboxes__label">
@@ -377,6 +380,52 @@ GOV.UK Prototype Kit
         Clear filters</a>
 </div>
 </div>
+
+<script>
+
+ hiddenCheckboxes = () => {
+   let hidden = document.getElementById('conditionalCheckboxes');
+   if (hidden.style.display === "block") {
+    hidden.style.display = "none";
+  } else {
+    hidden.style.display = "block";
+  }
+  document.getElementById('filterExpanded').classList.add('checkboxExpanded')
+}
+
+</script>
+
+<style>
+    
+    .hidden {
+        display: none;
+    }
+    
+    .hiddenCheckboxes {
+        cursor: pointer;
+    }
+
+    .hiddenCheckboxes:hover{
+        background: #F8F8F8;
+        outline: 3px solid #FFBF47;
+    }
+    .hiddenCheckboxes:focus {
+        background: #F8F8F8;
+        outline: 3px solid #FFBF47;
+    }
+
+    .checkboxExpand {
+        margin-top: 10px; 
+    }
+
+    .checkboxExpanded {
+        -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    }
+
+</style>
 
 
 
