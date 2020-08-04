@@ -109,7 +109,7 @@ GOV.UK Prototype Kit
                             <dt class="js-when-on">
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" type="checkbox">
-                                    <label class="govuk-label govuk-checkboxes__label">Academies</label> 
+                                    <label class="govuk-label govuk-checkboxes__label">Academies (6)</label> 
                                     <a class="hiddenCheckboxes govuk-link" tabindex="0" onclick="hiddenCheckboxes()" onkeyup="inputKeyUp(event)"><i id="filterExpanded" class="material-icons checkboxExpand right-align" >  keyboard_arrow_down</i></a>
                                 </div>
                             </dt>
@@ -117,7 +117,13 @@ GOV.UK Prototype Kit
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" type="checkbox">
                                     <label class="govuk-label govuk-checkboxes__label">
-                                        Academy 16 to 19 sponsor led
+                                        Academy 16 to 19 sponsor led (6)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" type="checkbox" disabled>
+                                    <label class="govuk-label govuk-checkboxes__label">
+                                        Academy 16 to 19 (0)
                                     </label>
                                 </div>
                             </dd>
@@ -305,6 +311,7 @@ function inputKeyUp(e) {
         background: #F8F8F8;
         outline: 3px solid #FFBF47;
     }
+
     .hiddenCheckboxes:focus {
         background: #F8F8F8;
         outline: 3px solid #FFBF47;
@@ -332,6 +339,16 @@ function inputKeyUp(e) {
         text-align: left ;
         border-color: #fd0;
     }
+
+    .filterbyHeading:active {
+        background-color: #dbdad9;
+        text-align: left ;
+        border-color: #fd0;
+    }
+
+    dd {
+    margin-inline-start: 10px;
+}
 
 </style>
 
