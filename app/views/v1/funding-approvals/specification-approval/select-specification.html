@@ -36,84 +36,210 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <table class="govuk-table table-vertical-align">
-            <caption class="govuk-table__caption">Specification</caption>
-            <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Choose</th>
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Specification name</th>
-                    <th scope="col" class="govuk-table__header">Specification status</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Provider QA coverage</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">QA tests passed</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Calculations approved</th>
-                </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                type="checkbox" value="provider-name">
-                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                        </div>
-                    </th>
-                    <td class="govuk-table__cell">19+ Advanced learn loan</td>
-                    <td class="govuk-table__cell">Approved</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">71.4%</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">3092 of 64638</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                type="checkbox" value="provider-name">
-                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                        </div>
-                    </th>
-                    <td class="govuk-table__cell">19+ Advanced learn loan</td>
-                    <td class="govuk-table__cell">Approved</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">71.4%</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">3092 of 64638</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                type="checkbox" value="provider-name">
-                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                        </div>
-                    </th>
-                    <td class="govuk-table__cell">19+ Advanced learn loan</td>
-                    <td class="govuk-table__cell">Approved</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">71.4%</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">3092 of 64638</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                            <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                type="checkbox" value="provider-name">
-                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                        </div>
-                    </th>
-                    <td class="govuk-table__cell">19+ Advanced learn loan</td>
-                    <td class="govuk-table__cell">Approved</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">71.4%</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">3092 of 64638</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
-                </tr>
-            </tbody>
-        </table>
-        <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
-            Select specification
-          </button>
-          <br>
-        <a href="#" class="govuk-back-link">Back</a>
-    </div>
-</div>
+    <div class="govuk-grid-column-one-third">
 
-{% endblock %}
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                    <h4 class="govuk-heading-s">
+                        Filter by provider type <i class="material-icons right-align"> keyboard_arrow_down</i>
+                    </h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+                </button>
+
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label class="govuk-label filterLabel" for="filter-by-type">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search"
+                            type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" type="checkbox">
+                            <label class="govuk-label govuk-checkboxes__label">
+                                All
+                            </label>
+                        </div>
+                        <dl class="nested-items">
+                            <dt class="js-when-on">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" type="checkbox">
+                                    <label class="govuk-label govuk-checkboxes__label">Academies (6)</label>
+                                    <a class="hiddenCheckboxes govuk-link" tabindex="0" onclick="hiddenCheckboxes()"
+                                        onkeyup="inputKeyUp(event)"><i id="filterExpanded"
+                                            class="material-icons checkboxExpand right-align">
+                                            keyboard_arrow_down</i></a>
+                                </div>
+                            </dt>
+                            <dd class="filter-group hidden" id="conditionalCheckboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" type="checkbox">
+                                    <label class="govuk-label govuk-checkboxes__label">
+                                        Academy 16 to 19 sponsor led (6)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" type="checkbox" disabled>
+                                    <label class="govuk-label govuk-checkboxes__label">
+                                        Academy 16 to 19 (0)
+                                    </label>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <table class="govuk-table table-vertical-align">
+                    <caption class="govuk-table__caption">Specification</caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Choose</th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-half">Specification name</th>
+                            <th scope="col" class="govuk-table__header">Specification status</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Calculations
+                                approved</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                                    <input class="govuk-checkboxes__input" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="provider-name">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                                </div>
+                            </th>
+                            <td class="govuk-table__cell"><a class="govuk-link" href="http://localhost:3000/v1/fundingLineStructure">DSG SIT</a></td>
+                            <td class="govuk-table__cell">Approved</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                                    <input class="govuk-checkboxes__input" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="provider-name">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                                </div>
+                            </th>
+                            <td class="govuk-table__cell"><a class="govuk-link" href="">19+ Advanced learn loan</a></td>
+                            <td class="govuk-table__cell">Approved</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                                    <input class="govuk-checkboxes__input" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="provider-name">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                                </div>
+                            </th>
+                            <td class="govuk-table__cell"><a class="govuk-link" href="">19+ Advanced learn loan</a></td>
+                            <td class="govuk-table__cell">Approved</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <div class="govuk-checkboxes__item govuk-checkboxes--small">
+                                    <input class="govuk-checkboxes__input" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="provider-name">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
+                                </div>
+                            </th>
+                            <td class="govuk-table__cell"><a class="govuk-link" href="">19+ Advanced learn loan</a></td>
+                            <td class="govuk-table__cell">Approved</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">8 of 9</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+                    Select specification
+                </button>
+                <br>
+                <a href="#" class="govuk-back-link">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        hiddenCheckboxes = () => {
+          let hidden = document.getElementById('filter-by-provider-type-conditional');
+          if (hidden.style.display === "block") {
+           hidden.style.display = "none";
+         } else {
+           hidden.style.display = "block";
+         }
+       }
+       
+       function inputKeyUp(e) {
+           e.which = e.which || e.keyCode;
+           if (e.which == 13) {
+               hiddenCheckboxes();
+           }
+       }
+       </script>
+       
+       
+       <style>
+           
+           .hidden {
+               display: none;
+           }
+           
+           .hiddenCheckboxes {
+               cursor: pointer;
+           }
+       
+           .hiddenCheckboxes:hover{
+               background: #F8F8F8;
+               outline: 3px solid #FFBF47;
+           }
+       
+           .hiddenCheckboxes:focus {
+               background: #F8F8F8;
+               outline: 3px solid #FFBF47;
+           }
+       
+           .checkboxExpand {
+               margin-top: 10px; 
+           }
+       
+           .checkboxExpanded {
+               -ms-transform: rotate(180deg);
+           -moz-transform: rotate(180deg);
+           -webkit-transform: rotate(180deg);
+           transform: rotate(180deg);
+           }
+       
+           .filterbyHeading {
+               text-align: left;
+               border: none;
+               box-shadow: none;
+           }
+       
+           .filterbyHeading:hover {
+               background-color: #dbdad9;
+               text-align: left ;
+               border-color: #fd0;
+           }
+       
+           .filterbyHeading:active {
+               background-color: #dbdad9;
+               text-align: left ;
+               border-color: #fd0;
+           }
+       
+           dd {
+           margin-inline-start: 10px;
+       }
+       
+       </style>
+
+    {% endblock %}
