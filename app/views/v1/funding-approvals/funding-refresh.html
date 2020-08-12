@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="approvals.html">Funding approvals</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="view-funding.html">Select specification</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="funding-resultsv2.html">Funding approval results</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Confirm refresh funding
+                </li>
+            </ol>
+        </div>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm refresh funding</h1>
+        <span class="govuk-caption-xl govuk-!-margin-bottom-6">Check the information below carefully before
+            refreshing the funding</span>
+    </div>
+</div>
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-1">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Refreshing funding will change the variation pointers. Review the information below to check this is
+                what you
+                intended to do.
+            </strong>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table govuk-!-margin-bottom-9">
+            <caption class="govuk-table__caption">Preview of changes to variation pointers</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Funding line</th>
+                    <th scope="col" class="govuk-table__header">Occurrence</th>
+                    <th scope="col" class="govuk-table__header">Date</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Funding line 1</th>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell"> March 2020
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Funding line 2</th>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell"> March 2020</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Funding line 3</th>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">March 2020</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">On refresh:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>What refresh will do</li>
+            <li>What refresh will do</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <button data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+            Confirm refresh
+        </button>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+        </button>
+    </div>
+</div>
+
+{% endblock %}
