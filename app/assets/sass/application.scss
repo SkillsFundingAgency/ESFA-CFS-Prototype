@@ -23,6 +23,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/radio-button-search.scss";
 @import "components/tooltip.scss";
 @import "components/loading-spinners.scss";
+@import "components/search-filters";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .subHeader {
@@ -54,51 +55,10 @@ $govuk-assets-path: '/govuk/assets/';
 	text-align: center;
 }
 
-.filterbyContainer {
-	border: solid 1px lightgrey;
-}
-
-.filterbyHeading {
-	background-color: lightgrey;
-	width: 100%;
-	padding: 6px;
-	margin-bottom: 0px;
-	cursor: pointer;
-
-	h4 {
-		margin-bottom: 0px;
-	}
-}
-
-.filterbyCheckbox {
-	padding-left: 20px;
-	overflow-y: scroll;
-	max-height: 200px;
-}
 
 ul {
 	list-style-type: none;
 	padding-left: 10px;
-}
-
-.filterSearch {
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 10px;
-}
-
-.filterLabel {
-	font-size: 16px;
-	color: grey;
-	margin-top: 10px;
-}
-
-.filterSearchInput {
-	border-color: grey;
-}
-
-div.filter-content {
-	display: none;
 }
 
 i {

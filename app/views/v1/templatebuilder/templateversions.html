@@ -46,31 +46,31 @@
 
     <div class="govuk-form-group filterbyContainer">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-          <h4 class="govuk-heading-s ">
-            Filter by status <span><i class="material-icons right-align">keyboard_arrow_down</i></span>
-          </h4>
-        </legend>
-        <div id="filter-content" class="filter-content">
-
-
-          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-1 myInput" name="organisation" type="checkbox"
-                value="fy2021">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                Published </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
-                value="ay2021">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                Draft </label>
-            </div>
+          <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+              <h4 class="govuk-heading-s">Filter by status <span><i class="material-icons right-align"> keyboard_arrow_down</i></span>
+              </h4>
+              <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+          </button>
+          <div id="filter-content" class="filter-content">
+              <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                  <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-by-published" name="filter-by-published"
+                          autocomplete="off" type="checkbox" value="published">
+                      <label class="govuk-label govuk-checkboxes__label" for="published">
+                          Published <span>(1)</span>
+                      </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="filter-by-draft" name="filter-by-draft"
+                          autocomplete="off" type="checkbox" value="draft">
+                      <label class="govuk-label govuk-checkboxes__label" for="draft">
+                          Draft <span>(4)</span>
+                      </label>
+                  </div>
+              </div>
           </div>
-        </div>
       </fieldset>
-    </div>
+  </div>
 
     </fieldset>
   </div>

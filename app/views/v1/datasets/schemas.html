@@ -34,7 +34,7 @@ GOV.UK Prototype Kit
         </legend>
         <div class="govuk-form-group filterSearch">
           <label class="govuk-label filterLabel" for="filter-by-type">
-            Search data schema templates
+            Search
           </label>
           <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch" autocomplete="off"
             name="search" type="text">
@@ -44,11 +44,12 @@ GOV.UK Prototype Kit
 
     <div class="govuk-form-group filterbyContainer">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-          <h4 class="govuk-heading-s filter-expand">
-            Filter by funding stream<span><i class="material-icons right-align"> keyboard_arrow_down </i></span>
+        <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+          <h4 class="govuk-heading-s">Filter by funding stream <span><i class="material-icons right-align">
+                keyboard_arrow_down</i></span>
           </h4>
-        </legend>
+          <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+        </button>
         <div id="filter-content" class="filter-content">
           <div class="govuk-form-group filterSearch">
             <label class="govuk-label filterLabel" for="filter-by-type">
@@ -57,35 +58,24 @@ GOV.UK Prototype Kit
             <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search" type="text">
           </div>
           <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
-            <ul id="myList">
-              <li>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="funding stream-2" name="funding stream" type="checkbox"
-                    value="dsg">
-                  <label class="govuk-label govuk-checkboxes__label" for="funding stream">
-                    PE and Sports Grant
-                  </label>
-                </div>
-              </li>
-              <li>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="funding stream-2" name="funding stream" type="checkbox"
-                    value="dsg">
-                  <label class="govuk-label govuk-checkboxes__label" for="funding stream">
-                    16-18 Traineeships
-                  </label>
-                </div>
-              </li>
-            </ul>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
+                value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                PE and sports grant <span>(1)</span>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
+                value="employment-tribunal" disabled>
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                Genera annual grant <span>(0)</span>
+              </label>
+            </div>
           </div>
         </div>
       </fieldset>
     </div>
-
-
-
-
-
     <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
       Clear filters</a>
   </div>

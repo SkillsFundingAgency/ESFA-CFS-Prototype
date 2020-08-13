@@ -44,74 +44,74 @@ GOV.UK Prototype Kit
 
     <div class="govuk-form-group filterbyContainer">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-          <h4 class="govuk-heading-s ">
-            Filter by funding stream <span><i class="material-icons right-align">keyboard_arrow_down</i></span>
+        <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+          <h4 class="govuk-heading-s">Filter by funding stream <span><i class="material-icons right-align">
+                keyboard_arrow_down</i></span>
           </h4>
-        </legend>
+          <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+        </button>
         <div id="filter-content" class="filter-content">
           <div class="govuk-form-group filterSearch">
-            <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+            <label class="govuk-label filterLabel" for="filter-by-type">
               Search
             </label>
-            <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1" autocomplete="off"
-              type="text">
+            <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search" type="text">
           </div>
-
-          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-1 myInput" name="organisation" type="checkbox"
-                value="fy2021">
+              <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
+                value="hmrc">
               <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                PE and Sports Grant
+                PE and sports grant <span>(1)</span>
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
-                value="ay2021">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                16-18 Traineeships
+              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
+                value="employment-tribunal" disabled>
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                Genera annual grant <span>(0)</span>
               </label>
             </div>
           </div>
         </div>
       </fieldset>
     </div>
+
     <div class="govuk-form-group filterbyContainer">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-          <h4 class="govuk-heading-s ">
-            Filter by funding period <span><i class="material-icons right-align">keyboard_arrow_down</i></span>
+        <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+          <h4 class="govuk-heading-s">Filter by funding period<span><i class="material-icons right-align">
+                keyboard_arrow_down</i></span>
           </h4>
-        </legend>
+          <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+        </button>
         <div id="filter-content" class="filter-content">
           <div class="govuk-form-group filterSearch">
-            <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+            <label class="govuk-label filterLabel" for="filter-by-type">
               Search
             </label>
-            <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1" autocomplete="off"
-              type="text">
+            <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search" type="text">
           </div>
-
-          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-1 myInput" name="organisation" type="checkbox"
-                value="fy2021">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                Financial year 2020 to 2021
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
-                value="ay2021">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                Academic year 2019 to 2020
-              </label>
-            </div>
+          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
+                    value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                    Financial year 2020 to 2021 <span>(1)</span>
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
+                    value="employment-tribunal" disabled>
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                    Academic year 2019 to 2020 <span>(0)</span>
+                  </label>
+                </div>
           </div>
         </div>
       </fieldset>
     </div>
+
     <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
       Clear filters</a>
   </div>
@@ -140,13 +140,14 @@ GOV.UK Prototype Kit
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a class="govuk-link" href="dataRelationshipsDSGSIT.html">1920
               Factors</a>
-              <p class="govuk-body govuk-!-margin-top-2">0 of 2 data sets mapped for specification</p>
-              <p class="govuk-body">Last mapped 17 June 2020 11:07am</p>
+            <p class="govuk-body govuk-!-margin-top-2">0 of 2 data sets mapped for specification</p>
+            <p class="govuk-body">Last mapped 17 June 2020 11:07am</p>
           <td class="govuk-table__cell"></td>
           </th>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><p class="govuk-body">GAG </p>
+          <th scope="row" class="govuk-table__header">
+            <p class="govuk-body">GAG </p>
             <p class="govuk-body govuk-!-margin-top-2">No data sets exist for specification </p>
             <p class="govuk-body-s"><a href="createDatasets.html" class="govuk-link">Create new data set</a></p>
           <td class="govuk-table__cell"></td>
