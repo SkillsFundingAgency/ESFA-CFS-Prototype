@@ -24,10 +24,13 @@ GOV.UK Prototype Kit
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#passport-issued-error">The date your passport was issued must be in the past</a>
+        <a href="#permissions-error">You do not have permissions to choose this specification for funding</a>
       </li>
       <li>
-        <a href="#postcode-error">Enter a postcode, like AA1 1AA</a>
+        <a href="#specification-approval-error">Specification must be approved before the specification can be choosen for funding.</a>
+      </li>
+      <li>
+        <a href="#calculation-approval-error">Template calculations must be approved before the specification can be choosen for funding.</a>
       </li>
     </ul>
   </div>
@@ -485,10 +488,10 @@ GOV.UK Prototype Kit
           </div>
         </div>
       </section>
-
-
     </div>
   </div>
 </div>
+
+
 
 {% endblock%}
