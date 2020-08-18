@@ -50,7 +50,7 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Edit profile for Funding line name</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Edit profile for funding line name</h1>
         <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Barnet London Borough Council</h3>
         <p class="govuk-body-s"><span>UKPRN: </span>123456</p>
     </div>
@@ -64,6 +64,8 @@ GOV.UK Prototype Kit
         <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£1,000,000</h2>
         <span class="govuk-caption-m">Balance available for profiling</span>
         <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£1,600,000</h2>
+        <span class="govuk-caption-m">Balance to be carried forward</span>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£7,000</h2>
     </div>
 </div>
 
@@ -305,6 +307,34 @@ GOV.UK Prototype Kit
 
                 </tr>
                 <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Rounded amount<p
+                            class="govuk-body-s govuk-!-margin-bottom-0">Any remaining rounded amounts will be
+                            added
+                            to the last instalment unless changed</br>
+                        </p>
+                    </th>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">
+                        <div class="govuk-form-group">
+                            <input aria-label="Enter the total percetage for August. Enter 0 if this does not apply"
+                                class="input-suffix govuk-input govuk-input--width-10" id="input-4"
+                                onblur="sumPercentage()" name="installmentPercentage" type="text"
+                                aria-describedby="percent" value="0.005">
+                            <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">
+                        <div class="govuk-form-group">
+                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
+                            <input aria-label="Enter the total amount for July. Enter 0 if this does not apply"
+                                class="input-prefix govuk-input " id="input-3" onblur="sumTotal()"
+                                name="installmentValue" type="text" aria-describedby="currency" autocomplete="off"
+                                value="660">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">Total allocation</th>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
@@ -312,14 +342,30 @@ GOV.UK Prototype Kit
                         <span id="event-name-error" class="govuk-error-message" id="totalPercentage">
                             <span class="govuk-visually-hidden">Error:</span>Total must be equal to 100%
                         </span>
-                        <span class="govuk-!-margin-right-2 govuk-form-group--error"id="profilePercentage"></span><strong>120%</strong>
-                        </td>
+                        <span class="govuk-!-margin-right-2 govuk-form-group--error"
+                            id="profilePercentage"></span><strong>120%</strong>
+                    </td>
                     <td class="govuk-table__cell govuk-table__cell--numeric" id="totalAllocation">
                         <span id="event-name-error" class="govuk-error-message">
-                            <span class="govuk-visually-hidden">Error:</span>Total allocation greater than balance available
+                            <span class="govuk-visually-hidden">Error:</span>Total allocation greater than balance
+                            available
                         </span>
-                        <strong>£1,700,000</strong><span
-                            class="govuk-!-margin-left-2" id="profileTotal"></span></td>
+                        <strong>£1,700,000</strong><span class="govuk-!-margin-left-2" id="profileTotal"></span></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">To be carried forward</th>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">
+                        <div class="govuk-form-group">
+                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
+                            <input aria-label="Enter the total amount for August. Enter 0 if this does not apply"
+                                class="input-prefix govuk-input " id="carryover" onblur="sumTotal()" name="carryover"
+                                type="text" aria-describedby="currency" autocomplete="off" value="7,000">
+                        </div>
+                    </td>
+
                 </tr>
             </tbody>
         </table>
