@@ -26,6 +26,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/search-filters";
 @import "components/pagination";
 @import "components/tooltips";
+@import "components/govuk-tags";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -174,8 +175,3 @@ transform: translateY(-40px) translateX(-27px);
     left: -9999px;
 }
 
-
-.govuk-tag--green {
-    color: #005a30;
-    background: #cce2d8;
-}
