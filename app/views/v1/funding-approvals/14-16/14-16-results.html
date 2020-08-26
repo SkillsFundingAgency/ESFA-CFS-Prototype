@@ -27,11 +27,11 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-xl">Specification</span>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">DSG specification 1</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">16 to 19 specification 1</h1>
         <span class="govuk-caption-m">Funding period</span>
         <h1 class="govuk-heading-m">2019 to 2020</h1>
         <span class="govuk-caption-m">Funding stream</span>
-        <h1 class="govuk-heading-m">DSG</h1>
+        <h1 class="govuk-heading-m">16 to 19</h1>
     </div>
 </div>
 
@@ -48,7 +48,7 @@ GOV.UK Prototype Kit
                 <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible"
                     data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input"  id="how-contacted-conditional" name="search"
+                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted"
                             type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                             Provider name
@@ -57,12 +57,12 @@ GOV.UK Prototype Kit
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                         id="conditional-how-contacted-conditional">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" onkeyup="myFunction()" id="providerNameSearch"
-                                name="search-by-provider" type="text" spellcheck="false">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-email"
+                                name="contact-by-email" type="email" spellcheck="false">
                         </div>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="search"
+                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted"
                             type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                             UKPRN
@@ -76,7 +76,7 @@ GOV.UK Prototype Kit
                         </div>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="search"
+                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted"
                             type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
                             UPIN
@@ -90,7 +90,7 @@ GOV.UK Prototype Kit
                         </div>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-4" name="search"
+                        <input class="govuk-radios__input" id="how-contacted-conditional-4" name="how-contacted"
                             type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-4">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
                             URN
@@ -130,7 +130,7 @@ GOV.UK Prototype Kit
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input"  id="filter-by-provider-type-3" name="filter-by-provider-type"
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-3" name="filter-by-provider-type"
                                 type="checkbox" value="academy">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Academy <span>(1)</span>
@@ -356,7 +356,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                <table class="govuk-table" id="fundingApprovalsProviders">
+                <table class="govuk-table">
                     <caption class="govuk-table__caption"></caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
@@ -378,7 +378,7 @@ GOV.UK Prototype Kit
                             <th scope="col" class="govuk-table__header">Status</th>
                             <th scope="col" class="govuk-table__header govuk-table__header--numeric">
                                 Funding total<br>
-                                <span id="fundingTotal"></span> <br>
+                                <span>£997,362,175</span> <br>
                                 <p class="govuk-body-s govuk-!-margin-bottom-0">of filtered providers</p>
                             </th>
                         </tr>
@@ -625,35 +625,4 @@ GOV.UK Prototype Kit
         </div>
     </div>
 </div>
-
-<script>
-
-function myFunction() {
-  // Declare variables
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("providerNameSearch");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("fundingApprovalsProviders");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "count-me";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-
-
-</script>
-
-
-
-
 {% endblock %}
