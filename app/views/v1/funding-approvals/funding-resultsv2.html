@@ -137,7 +137,7 @@ GOV.UK Prototype Kit
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-4" name="filter-by-provider-type"
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-secondary" name="filter-by-provider-type"
                                 type="checkbox" value="secondary">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Secondary <span>(3)</span>
@@ -660,6 +660,28 @@ function myFunction() {
 }
 
 document.getElementById('filter-by-provider').onclick = function () {
+      // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("providerNameSearch");
+  filter = this.value;
+  table = document.getElementById("fundingApprovalsProviders");
+  tr = table.getElementsByTagName("tr");  
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue === filter) {
+        tr[i].style.display = " ";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+document.getElementById('filter-by-provider-secondary').onclick = function () {
       // Declare variables
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("providerNameSearch");
