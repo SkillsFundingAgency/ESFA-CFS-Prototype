@@ -23,54 +23,51 @@
 </div>
 
 
+<form action="/v1/templatebuilder/createnewtemplate-build" method="post" class="form">
+    <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+                Select a funding stream
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+                <option value="draft"></option>
+                <option value="draft">16-19</option>
+                <option value="draft">14-16</option>
+                <option value="draft">General annual grant</option>
+            </select>
+        </div>
 
-<div class="govuk-form-group">
-    <label class="govuk-label" for="sort">
-        Select a funding stream
-    </label>
-    <select class="govuk-select" id="sort" name="sort">
-        <option value="draft"></option>
-        <option value="draft">16-19</option>
-        <option value="draft">14-16</option>
-        <option value="draft">General annual grant</option>
-    </select>
-</div>
-
-<div class="govuk-form-group">
-    <label class="govuk-label" for="sort">
-        Select a funding period
-    </label>
-    <span id="event-name-hint" class="govuk-hint">
-        You will not be able to select a funding period if a template for this funding stream and period already exists.
-    </span>
-    <select class="govuk-select" id="sort" name="sort">
-        <option value="draft"></option>
-        <option value="draft">Academies and Schools Year 2019 to 2020</option>
-        <option value="draft">Academic Year 2019 to 2020</option>
-    </select>
-</div>
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+                Select a funding period
+            </label>
+            <span id="event-name-hint" class="govuk-hint">
+                You will not be able to select a funding period if a template for this funding stream and period already
+                exists.
+            </span>
+            <select class="govuk-select" id="sort" name="sort">
+                <option value="draft"></option>
+                <option value="draft">Academies and Schools Year 2019 to 2020</option>
+                <option value="draft">Academic Year 2019 to 2020</option>
+            </select>
+        </div>
 
 
-<div class="govuk-form-group">
-    <label class="govuk-label" for="more-detail">
-        Template description
-    </label>
-    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-        aria-describedby="more-detail-hint"></textarea>
-</div>
-</fieldset>
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+                Template description
+            </label>
+            <textarea class="govuk-textarea" id="more-detail" name="template-description" rows="8"
+                aria-describedby="more-detail-hint"></textarea>
+        </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <a href="createnewtemplate-build" class="govuk-button govuk-button--primary button-createSpecification"
-            data-module="govuk-button">
-            Create template
-        </a>
-        </br>
-        <a href="templatelisting-basic.html" class="govuk-back-link">Back</a>
-    </div>
-</div>
 
+    </fieldset>
+    <button class="govuk-button" data-module="govuk-button">Create template</button>
+    </br>
+    <a href="templatelisting-basic.html" class="govuk-back-link">Back</a>
+
+</form>
 
 
 
