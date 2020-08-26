@@ -21,75 +21,90 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-        <h1 class="govuk-fieldset__heading">
-          Create specification
-        </h1>
-      </legend>
+    <form action="/v1/specifications" method="post" class="form">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Create specification
+          </h1>
+        </legend>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
-          Specification name
-        </label>
-        <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Specification name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="spec-name" type="text">
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Funding streams
-        </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="draft">Dedicated schools grant</option>
-          <option value="draft">PE and sport premium grant</option>
-        </select>
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Funding streams
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft"></option>
+            <option value="draft">16-19</option>
+            <option value="draft">14-16</option>
+            <option value="draft">General annual grant</option>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Funding period
-        </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="draft">Financial year 2020 to 2021</option>
-        </select>
-      </div>
+          </select>
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Core provider data
-        </label>
-        <span id="account-number-hint" class="govuk-hint">
-          Select a funding stream and funding period before choosing the provider data
-        </span>
-        <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Funding period
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft"></option>
+            <option value="draft">Academies and Schools Year 2019 to 2020</option>
+            <option value="draft">Schools Academic Year 2019 to 2020</option>
+          </select>
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Template version
-        </label>
-        <span id="account-number-hint" class="govuk-hint">
-          Select a funding stream and funding period before choosing a template version
-        </span>
-        <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Core provider data
+          </label>
+          <span id="account-number-hint" class="govuk-hint">
+            Select a funding stream and funding period before choosing the provider data
+          </span>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft"></option>
+            <option value="draft">1619-2019-08-21-Initial Providers</option>
+          </select>
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="more-detail">
-          Can you provide more detail?
-        </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-          aria-describedby="more-detail-hint"></textarea>
-      </div>
-    </fieldset>
-    <a href="createSpecification-successful.html" class="govuk-button govuk-!-margin-right-1"
-      data-module="govuk-button">
-      Save and continue
-    </a>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Template version
+          </label>
+          <span id="account-number-hint" class="govuk-hint">
+            Select a funding stream and funding period before choosing a template version
+          </span>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft"></option>
+            <option value="draft">1.0</option>
+            <option value="draft">1.1</option>
+            <option value="draft">1.2</option>
+          </select>
+        </div>
 
-    <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Cancel
-    </a>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Can you provide more detail?
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+            aria-describedby="more-detail-hint"></textarea>
+        </div>
+      </fieldset>
+      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
+
+
+
+
   </div>
 </div>
 
