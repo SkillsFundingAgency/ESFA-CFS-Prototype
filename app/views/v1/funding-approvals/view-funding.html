@@ -25,9 +25,11 @@
   <label class="govuk-label" for="sort">
     Funding stream
   </label>
-  <select class="govuk-select" id="sort" name="sort">
-    <option value="blank">option 1</option>
-    <option value="blank">option 2</option>
+  <select class="govuk-select" id="fundingStream">
+    <option></option>
+    <option value="16-19/16-19-results">16 to 19</option>
+    <option value="14 to 16">14 to 16</option>
+    <option value="gag/gag-results">General annual grant</option>
   </select>
 </div>
 
@@ -35,9 +37,10 @@
   <label class="govuk-label" for="sort">
     Funding period
   </label>
-  <select class="govuk-select" id="sort" name="sort">
-    <option value="blank">2019 to 2020</option>
-    <option value="blank">2018 to 2019</option>
+  <select class="govuk-select" id="fundingPeriod" name="sort" onchange="getFundingStream()">
+    <option> </option>
+    <option value="2019 to 2020">2019 to 2020</option>
+    <option value="2018 to 2019">2018 to 2019</option>
   </select>
 </div>
 
@@ -45,10 +48,28 @@
   <label class="govuk-label" for="sort">
     Specification
   </label>
-  <p class="govuk-body">PE and Sport Premium</p>
+  <p id="specification" class="govuk-body"></p>
 
-  <a href="funding-resultsv2.html" class="govuk-button" data-module="govuk-button">
+  <a href="" id="viewFundingLink" class="govuk-button" data-module="govuk-button">
     View funding
   </a>
 
+
+  <script>
+  
+    function getFundingStream() {
+      var fundingStream = document.getElementById("fundingStream");
+      var fundingStreamText = fundingStream.options[fundingStream.selectedIndex].text;
+      var fundingPeriod = document.getElementById("fundingPeriod").value;
+      document.getElementById("specification").innerHTML = fundingStreamText + ' ' + fundingPeriod;
+      var fundingStreamLink = document.getElementById("fundingStream").value;
+      document.getElementById("viewFundingLink").href=fundingStreamLink
+
+    }
+
+
+    
+</script>
+
   {% endblock %}
+  
