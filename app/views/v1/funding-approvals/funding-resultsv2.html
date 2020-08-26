@@ -123,7 +123,7 @@ GOV.UK Prototype Kit
                     </div>
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2" name="filter-by-provider-type"
+                            <input class="govuk-checkboxes__input provider" id="filter-by-provider" name="filter-by-provider-type"
                                 type="checkbox" value="primary">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Primary <span>(6)</span>
@@ -137,7 +137,7 @@ GOV.UK Prototype Kit
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-4" name="filter-by-provider-type"
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-secondary" name="filter-by-provider-type"
                                 type="checkbox" value="secondary">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Secondary <span>(3)</span>
@@ -381,6 +381,7 @@ GOV.UK Prototype Kit
                                 <span id="fundingTotal"></span> <br>
                                 <p class="govuk-body-s govuk-!-margin-bottom-0">of filtered providers</p>
                             </th>
+                            <th scope="col" style=" display:none">Provider type</th>
                         </tr>
                     </thead>
                     <tbody class="govuk-table__body table-vertical-align">
@@ -391,17 +392,15 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="346757869">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet
-                                                London
-                                                Borough Council</a>
+                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet London Borough Council</a>
                                         </label>
                                     </div>
                                 </div>
                             </td>
-                            </td>
                             <td class="govuk-table__cell">10003986</td>
                             <td class="govuk-table__cell">Updated</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">346,757,869</td>
+                            <td style="display: none">primary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -422,6 +421,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 284,821,882</td>
+                                <td style="display: none">secondary</td>
+
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -442,6 +443,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10000538</td>
                             <td class="govuk-table__cell">Updated</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">196,520,871</td>
+                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -460,6 +462,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10000416</td>
                             <td class="govuk-table__cell">Released</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">171,530,631</td>
+                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -478,6 +481,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10001272</td>
                             <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">224,512,540</td>
+                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -496,6 +500,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10000893</td>
                             <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">320,383,491</td>
+                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -514,6 +519,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10007340</td>
                             <td class="govuk-table__cell">Released</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">398,893,164</td>
+                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -532,6 +538,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10004821</td>
                             <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">138,295,188</td>
+                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -550,6 +557,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10000725</td>
                             <td class="govuk-table__cell">Updated</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">184,352,672</td>
+                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -568,6 +576,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10000398</td>
                             <td class="govuk-table__cell">Updated</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">265,414,946</td>
+                            <td style="display: none">secondary</td>
                         </tr>
                     </tbody>
                 </table>
@@ -642,7 +651,7 @@ function myFunction() {
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "count-me";
+        tr[i].style.display = " ";
       } else {
         tr[i].style.display = "none";
       }
@@ -650,6 +659,49 @@ function myFunction() {
   }
 }
 
+document.getElementById('filter-by-provider').onclick = function () {
+      // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("providerNameSearch");
+  filter = this.value;
+  table = document.getElementById("fundingApprovalsProviders");
+  tr = table.getElementsByTagName("tr");  
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue === filter) {
+        tr[i].style.display = " ";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+document.getElementById('filter-by-provider-secondary').onclick = function () {
+      // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("providerNameSearch");
+  filter = this.value;
+  table = document.getElementById("fundingApprovalsProviders");
+  tr = table.getElementsByTagName("tr");  
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue === filter) {
+        tr[i].style.display = " ";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
 
 </script>
 
