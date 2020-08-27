@@ -24,63 +24,86 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-        <h1 class="govuk-fieldset__heading">
-          Edit specification
-        </h1>
-      </legend>
+    <form action="/v1/fundingLineStructure-chosen" method="post" class="form">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Edit specification
+          </h1>
+        </legend>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
-          Specification name
-        </label>
-        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Specification name
+          </label>
+          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+        </div>
 
-      <span class="govuk-caption-m">Funding stream</span>
-      <h3 class="govuk-heading-m">Dedicated schools grant</h3>
+        <span class="govuk-caption-m">Funding stream</span>
+        <h3 class="govuk-heading-m">Dedicated schools grant</h3>
 
-      <span class="govuk-caption-m">Funding period</span>
-      <h3 class="govuk-heading-m">Financial year 2020 to 2021</h3>
+        <span class="govuk-caption-m">Funding period</span>
+        <h3 class="govuk-heading-m">Financial year 2020 to 2021</h3>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Core provider data
-        </label>
-        <span id="account-number-hint" class="govuk-hint">
-          Select a funding stream and funding period before choosing the provider data
-        </span>
-        <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Core provider data
+          </label>
+          <span id="account-number-hint" class="govuk-hint">
+            Select a funding stream and funding period before choosing the provider data
+          </span>
+          <select class="govuk-select" id="coreProviderData" name="sort" onchange="getProviderData()">
+            <option></option>
+            <option name="core-provider-data" value="284,821,882">1619-2019-08-21-Initial Providers</option>
+            <option name="core-provider-data" id="providerDataChange" value="0.00">Providers</option>
+          </select>
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Template version
-        </label>
-        <span id="account-number-hint" class="govuk-hint">
-          Select a funding stream and funding period before choosing a template version
-        </span>
-        <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Template version
+          </label>
+          <span id="account-number-hint" class="govuk-hint">
+            Select a funding stream and funding period before choosing a template version
+          </span>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft"></option>
+            <option value="draft">1.0</option>
+            <option value="draft">1.1</option>
+            <option value="draft">1.2</option>
+          </select>
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="more-detail">
-          Can you provide more detail?
-        </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-          aria-describedby="more-detail-hint"></textarea>
-      </div>
-    </fieldset>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Can you provide more detail?
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+            aria-describedby="more-detail-hint"></textarea>
+        </div>
+      </fieldset>
 
-    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-      Save and continue
-    </button>
+      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
 
     <a href="fundingLineStructure.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Cancel
     </a>
   </div>
 </div>
+
+<script>
+
+  function getProviderData() {
+      var coreProviderData = document.getElementById("coreProviderData").value;
+      console.log(coreProviderData)
+      sessionStorage.setItem('provider data changed', coreProviderData);
+
+    }
+
+</script>
 
 {% endblock %}

@@ -399,7 +399,7 @@ GOV.UK Prototype Kit
                             </td>
                             <td class="govuk-table__cell">10003986</td>
                             <td class="govuk-table__cell">Updated</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric gbp">346,757,869</td>
+                            <td id="providerValue" class="govuk-table__cell govuk-table__cell--numeric gbp">346,757,869</td>
                             <td style="display: none">primary</td>
                         </tr>
 
@@ -701,6 +701,11 @@ document.getElementById('filter-by-provider-secondary').onclick = function () {
       }
     }
   }
+}
+
+window.onload = function () {
+    document.getElementById("providerValue").innerHTML = sessionStorage.getItem("provider data changed");
+
 }
 
 </script>
