@@ -67,9 +67,10 @@ GOV.UK Prototype Kit
           <span id="account-number-hint" class="govuk-hint">
             Select a funding stream and funding period before choosing the provider data
           </span>
-          <select class="govuk-select" id="sort" name="sort">
-            <option value="draft"></option>
-            <option value="draft">1619-2019-08-21-Initial Providers</option>
+          <select class="govuk-select" id="coreProviderData" name="sort" onchange="getProviderData()">
+            <option></option>
+            <option name="core-provider-data" value="284,821,882">1619-2019-08-21-Initial Providers</option>
+            <option name="core-provider-data" id="providerDataChange" value="0.00">Providers</option>
           </select>
         </div>
 
@@ -102,10 +103,18 @@ GOV.UK Prototype Kit
       </a>
     </form>
 
-
-
-
   </div>
 </div>
+
+<script>
+
+  function getProviderData() {
+      var coreProviderData = document.getElementById("coreProviderData").value;
+      console.log(coreProviderData)
+      sessionStorage.setItem('provider data changed', coreProviderData);
+
+    }
+
+</script>
 
 {% endblock %}
