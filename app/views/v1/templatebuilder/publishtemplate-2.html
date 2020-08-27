@@ -47,23 +47,23 @@
 </div>
 
 
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <span class="govuk-caption-m">Description</span>
-                <p class="govuk-body">{{ data['template-description'] }} </p>
-            </div>
-        </div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Description</span>
+        <p class="govuk-body">{{ data['template-description'] }} </p>
+    </div>
+</div>
 
-        <div class="govuk-grid-row govuk-!-margin-bottom-1">
-            <div class="govuk-grid-column-two-thirds">
-                <span class="govuk-caption-m">Version</span>
-                <h3 class="govuk-heading-m">1.0</h3>
-            </div>
-        </div>
+<div class="govuk-grid-row govuk-!-margin-bottom-1">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">Version</span>
+        <h3 class="govuk-heading-m">1.0</h3>
+    </div>
+</div>
 
 <form action="publishtemplate-2-successful" method="post" class="form">
     <fieldset class="govuk-fieldset">
-        <div class="govuk-form-group govuk-!-margin-bottom-9">
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
             <label class="govuk-label" for="sort">
                 Add publish note
             </label>
@@ -72,11 +72,7 @@
 
 
 
-        <body>
-            <svg width="1350" height="500">
-                <rect width="1200" height="500" stroke-width="8" fill="gray" />
-            </svg>
-        </body>
+        <img src="/public/images/Template.jpg" width="1200" height="750" alt="">
 
         </br>
         </br>
@@ -84,16 +80,15 @@
 
 
 
-    <button class="govuk-button govuk-button--warning"
-        data-module="govuk-button">
-        Publish
+        <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Publish
         </button>
-    </br>
+        </br>
 
-</fieldset>
+    </fieldset>
 </form>
 
-    <a href="edittemplate.html" class="govuk-back-link">Back</a>
+<a href="edittemplate.html" class="govuk-back-link">Back</a>
 
 
 {% endblock %}
