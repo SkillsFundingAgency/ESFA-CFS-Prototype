@@ -78,7 +78,7 @@ GOV.UK Prototype Kit
       </div>
     </fieldset>
 
-    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" onclick="newDataSource()">
       Create data source
     </button>
 
@@ -89,5 +89,13 @@ GOV.UK Prototype Kit
     </a>
   </div>
 </div>
+
+<script>
+
+function newDataSource() {
+  sessionStorage.setItem('new data source file', 'true');
+}
+
+</script>
 
 {% endblock %}

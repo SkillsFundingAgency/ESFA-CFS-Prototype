@@ -142,7 +142,7 @@ GOV.UK Prototype Kit
 
       <tbody class="govuk-table__body" id="mainContentResults">
 
-        <tr class="govuk-table__row">
+        <tr class="govuk-table__row" id="newDataSource">
           <th scope="row" class="govuk-table__header"><a href="updateDataset">{{ data['data-source-file-name'] }}</a>
             <div class="govuk-!-margin-top-4">
               <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
@@ -330,13 +330,6 @@ GOV.UK Prototype Kit
       </tbody>
     </table>
 
-
-
-
-
-
-
-
     <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
       <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
         <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
@@ -364,6 +357,20 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
+<script>
+
+window.onload = function () {
+  let newDataSource = sessionStorage.getItem('new data source file')
+  let tr = document.getElementById('newDataSource')
+  console.log(newDataSource)
+  if (newDataSource === 'true') {
+    tr.style.display = " ";
+      } else {
+        tr.style.display = "none";
+      }
+  }
+
+</script>
 
 
 {% endblock %}
