@@ -29,72 +29,72 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
         <span class="govuk-caption-m">Template name</span>
-        <h3 class="govuk-heading-m">DSG FY-20-21</h3>
+        <h3 class="govuk-heading-m">16-19 SA19-20</h3>
     </div>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-m">Funding stream</span>
-        <h3 class="govuk-heading-m">Dedicated schools grant</h3>
+        <h3 class="govuk-heading-m">16-19</h3>
     </div>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-m">Funding period</span>
-        <h3 class="govuk-heading-m">Financial year 2020 to 2021</h3>
+        <h3 class="govuk-heading-m">Schools Academic Year 2019 to 2020
+        </h3>
     </div>
 </div>
 
+<form action="publishtemplate-2-successful.html" method="post" class="form">
+    <fieldset class="govuk-fieldset">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-m">Description</span>
+                <p class="govuk-body">{{ data['template-description'] }} </p>
+            </div>
+        </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Description</span>
-        <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. </p>
-    </div>
-</div>
-
-<div class="govuk-grid-row govuk-!-margin-bottom-1">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Version</span>
-        <h3 class="govuk-heading-m">1.4</h3>
-    </div>
-</div>
-
-
-<div class="govuk-form-group govuk-!-margin-bottom-9">
-    <label class="govuk-label" for="sort">
-        Add publish note
-    </label>
-    <input class="govuk-input" id="data-schema" name="data-schema" type="text">
-</div>
+        <div class="govuk-grid-row govuk-!-margin-bottom-1">
+            <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-m">Version</span>
+                <h3 class="govuk-heading-m">1.0</h3>
+            </div>
+        </div>
 
 
-
-
-
-<body>
-    <svg width="1350" height="500">
-        <rect width="1200" height="500" stroke-width="8" fill="gray" />
-    </svg>
-</body>
-
-</br>
-</br>
+        <div class="govuk-form-group govuk-!-margin-bottom-9">
+            <label class="govuk-label" for="sort">
+                Add publish note
+            </label>
+            <input class="govuk-input" id="data-schema" name="publish-note" type="text">
+        </div>
 
 
 
 
 
-<a href="../validation/publishtemplate-2-successful.html" button class="govuk-button govuk-button--warning"
-    data-module="govuk-button">
-    Publish
-    </button> </a>
-</br>
+        <body>
+            <svg width="1350" height="500">
+                <rect width="1200" height="500" stroke-width="8" fill="gray" />
+            </svg>
+        </body>
 
-<a href="edittemplate.html" class="govuk-back-link">Back</a>
+        </br>
+        </br>
 
+
+
+
+    </fieldset>
+    <a href="publishtemplate-2-successful.html" button class="govuk-button govuk-button--warning"
+        data-module="govuk-button">
+        Publish
+        </button> </a>
+    </br>
+
+    <a href="edittemplate.html" class="govuk-back-link">Back</a>
+</form>
 
 
 {% endblock %}
