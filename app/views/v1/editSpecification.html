@@ -18,7 +18,7 @@ GOV.UK Prototype Kit
           <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a>
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit specification</li>
       </ol>
@@ -36,7 +36,8 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="address-line-1">
             Specification name
           </label>
-          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"
+            value="{{ data['spec-name'] }}">
         </div>
 
         <span class="govuk-caption-m">Funding stream</span>
@@ -98,11 +99,11 @@ GOV.UK Prototype Kit
 <script>
 
   function getProviderData() {
-      var coreProviderData = document.getElementById("coreProviderData").value;
-      console.log(coreProviderData)
-      sessionStorage.setItem('provider data changed', coreProviderData);
+    var coreProviderData = document.getElementById("coreProviderData").value;
+    console.log(coreProviderData)
+    sessionStorage.setItem('provider data changed', coreProviderData);
 
-    }
+  }
 
 </script>
 
