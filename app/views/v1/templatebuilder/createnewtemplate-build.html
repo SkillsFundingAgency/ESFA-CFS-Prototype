@@ -22,7 +22,8 @@
             </ol>
         </div>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16-19 SA19-20</h1>
-        <span class="govuk-caption-l govuk-!-margin-bottom-2">16-19 for Schools Academic Year 2019 to 2020</span>
+        <span class="govuk-caption-l govuk-!-margin-bottom-2">16 to 19 funding for Schools Academic Year 2019 to
+            2020</span>
         <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
             <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
@@ -71,15 +72,14 @@
         </div>
     </div>
 </div>
+<img src="/public/images/Template.jpg" width="1200" height="750" alt="">
 
-<div class="govuk-!-margin-bottom-0">
-    <svg class="" width="1350" height="500">
-        <rect width="1200" height="500" stroke-width="8" fill="gray" />
-    </svg>
-</div>
+
+
+
 
 </br>
-<div class="govuk-grid-row ">
+<div class="govuk-grid-row govuk-!-margin-top-1">
     <div class="govuk-grid-column-full ">
 
         <button class="govuk-button" data-module="govuk-button">
@@ -135,7 +135,7 @@
                         Edit description
                     </label>
                     <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
-                        aria-describedby="more-detail-hint"> </textarea>
+                        aria-describedby="more-detail-hint">{{ data['template-description'] }} </textarea>
                 </div>
 
                 <button type="button" onclick="document.getElementById('editDescription').style.display='none'"

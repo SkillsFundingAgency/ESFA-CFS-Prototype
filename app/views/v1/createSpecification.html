@@ -42,8 +42,8 @@ GOV.UK Prototype Kit
           </label>
           <select class="govuk-select" id="sort" name="sort">
             <option value="draft"></option>
-            <option value="draft">16-19</option>
-            <option value="draft">14-16</option>
+            <option value="draft">16 to 19</option>
+            <option value="draft">14 to 16</option>
             <option value="draft">General annual grant</option>
 
           </select>
@@ -93,7 +93,7 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="more-detail">
             Can you provide more detail?
           </label>
-          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+          <textarea class="govuk-textarea" id="more-detail" name="spec-detail" rows="8"
             aria-describedby="more-detail-hint"></textarea>
         </div>
       </fieldset>
@@ -109,11 +109,11 @@ GOV.UK Prototype Kit
 <script>
 
   function getProviderData() {
-      var coreProviderData = document.getElementById("coreProviderData").value;
-      console.log(coreProviderData)
-      sessionStorage.setItem('provider data changed', coreProviderData);
+    var coreProviderData = document.getElementById("coreProviderData").value;
+    console.log(coreProviderData)
+    sessionStorage.setItem('provider data changed', coreProviderData);
 
-    }
+  }
 
 </script>
 
