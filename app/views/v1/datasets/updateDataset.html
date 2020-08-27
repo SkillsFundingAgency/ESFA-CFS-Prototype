@@ -23,7 +23,8 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+<form action="/v1/datasets/manageDatasets" method="post" class="form">
+    <fieldset class="govuk-fieldset">      
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update data source</h1>
         <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
@@ -50,7 +51,7 @@ GOV.UK Prototype Kit
             </span>
             <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
                 aria-describedby="more-detail-hint">
-Description inputted at point of creation to be shown here.
+{{ data['data-more-detail'] }}
             </textarea>
         </div>
         <div class="govuk-form-group">
@@ -59,12 +60,14 @@ Description inputted at point of creation to be shown here.
             </label>
             <span id="more-detail-hint" class="govuk-hint">
             </span>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
+            <textarea class="govuk-textarea" id="more-detail" name="change-note-data" rows="5"
                 aria-describedby="more-detail-hint"></textarea>
         </div>
         <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
             Save
-        </button>      
+        </button> 
+    </fieldset>
+</form>    
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Cancel
         </button>

@@ -38,10 +38,6 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-
-
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <div class="govuk-form-group filterbyContainer">
@@ -145,9 +141,39 @@ GOV.UK Prototype Kit
       </thead>
 
       <tbody class="govuk-table__body" id="mainContentResults">
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">{{ data['data-source-file-name'] }}</a>
+            <div class="govuk-!-margin-top-4">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> {{ data['data-schema'] }}</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> {{ data['data-more-detail'] }}</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan Townsend</p>
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> {{ data['change-note-data'] }}</p>
+                  <p class="govuk-body-s"><a class="govuk-link" href="datasethistory">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
+
+          <td class="govuk-table__cell">11 November 2019 <br> 10:54am</td>
+          <td class="govuk-table__cell">
+            <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">{{ data['data-source-file-name'] }}.xlsx </a></p>
+            </div>
+          </td>
+        </tr>
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="updateDataset">1920 Factors</a>
-
             <div class="govuk-!-margin-top-4">
               <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
                 <summary class="govuk-details__summary">
