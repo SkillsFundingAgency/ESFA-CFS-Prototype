@@ -34,12 +34,13 @@ GOV.UK Prototype Kit
     <p class="govuk-body">Load a new data source file to create a dataset to use in
       calculations.</p>
 
-
-      <div class="govuk-form-group govuk-!-margin-top-6">
+<form action="/v1/datasets/manageDatasets" method="post" class="form">
+  <fieldset class="govuk-fieldset">      
+    <div class="govuk-form-group govuk-!-margin-top-6">
         <label class="govuk-label" for="sort">
           Funding stream
         </label>
-        <input class="govuk-input" id="data-schema" name="data-schema" type="text">
+        <input class="govuk-input" id="data-schema" name="funding-stream" type="text">
       </div>
 
       <div class="govuk-form-group govuk-!-margin-top-6">
@@ -56,14 +57,14 @@ GOV.UK Prototype Kit
         <span id="event-name-hint" class="govuk-hint">
           Use a descriptive unique name other users can understand
         </span>
-        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+        <input class="govuk-input" id="address-line-1" name="data-source-file-name" type="text">
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="more-detail">
           Description
         </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+        <textarea class="govuk-textarea" id="more-detail" name="data-more-detail" rows="8"
           aria-describedby="more-detail-hint"></textarea>
       </div>
 
@@ -80,6 +81,8 @@ GOV.UK Prototype Kit
     <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
       Create data source
     </button>
+
+  </form>
 
     <a href="fundingLineStructure" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Cancel
