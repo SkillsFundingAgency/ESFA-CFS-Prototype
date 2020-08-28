@@ -218,7 +218,7 @@ GOV.UK Prototype Kit
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
+            <tr class="govuk-table__row" id="newDataset">
               <th scope="row" class="govuk-table__header">
                 <p>{{ data['dataset-name'] }}</p>
                 <div class="govuk-!-margin-top-2">
@@ -235,7 +235,7 @@ GOV.UK Prototype Kit
                 </div>
               </th>
               <td class="govuk-table__cell">APT 1718 funding floor baseline data set</td>
-
+              </tr>
           </tbody>
         </table>
       </section>
@@ -492,5 +492,18 @@ GOV.UK Prototype Kit
   </div>
   <div class="govuk-modal-dialogue__backdrop"></div>
 </div>
+
+<script>
+          window.onload = function () {
+            let newDataSource = sessionStorage.getItem('new data')
+            let tr = document.getElementById('newDataset')
+            console.log(newDataSource)
+            if (newDataSource === 'true') {
+                tr.style.display = " ";
+            } else {
+                tr.style.display = "none";
+            }
+        }
+</script>
 
 {% endblock%}

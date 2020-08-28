@@ -193,14 +193,14 @@ GOV.UK Prototype Kit
                     <th scope="row" class="govuk-table__header"><a href="fundingLineStructure-chosen.html">GFT PE and
                             Sport Premium</a><strong class="govuk-tag govuk-!-margin-top-2">Chosen for funding</strong>
                     </th>
-                    <td class="govuk-table__cell">11 November 2019 10:54am</td>
+                    <td class="govuk-table__cell">28 July 2020 10:54am</td>
                     <td class="govuk-table__cell">Approved</td>
                 </tr>
                 <tr class="govuk-table__row" id="newSpecSource">
                     <th scope="row" class="govuk-table__header"><a
                             href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a></th>
-                    <td class="govuk-table__cell">11 November 2019 10:54am</td>
-                    <td class="govuk-table__cell">Approved</td>
+                    <td class="govuk-table__cell">8 September 2020 10:54am</td>
+                    <td class="govuk-table__cell">Draft</td>
                 </tr>
             </tbody>
         </table>
@@ -222,19 +222,18 @@ GOV.UK Prototype Kit
     </div>
 
 
-<script>
-
-    window.onload = function () {
-        let newDataSource = sessionStorage.getItem('new spec')
-        let tr = document.getElementById('newSpecSource')
-        console.log(newDataSource)
-          if (newDataSource === 'true') {
-            tr.style.display = " ";
-              } else {
+    <script>
+        window.onload = function () {
+            let newDataSource = sessionStorage.getItem('new spec')
+            let tr = document.getElementById('newSpecSource')
+            console.log(newDataSource)
+            if (newDataSource === 'true') {
+                tr.style.display = " ";
+            } else {
                 tr.style.display = "none";
-              }
-          }
-        
-</script>
+            }
+        }
+
+    </script>
 
     {% endblock %}

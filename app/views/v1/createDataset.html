@@ -59,7 +59,6 @@ GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h3 class="govuk-heading-m">
                 Set as provider data
@@ -79,10 +78,11 @@ GOV.UK Prototype Kit
                 </label>
               </div>
             </div>
-          </fieldset>
         </div>
       </fieldset>
-      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      <button class="govuk-button" data-module="govuk-button" onclick="newDataset()">Save and continue</button>
+
       <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Save and add another
       </a>
@@ -92,14 +92,15 @@ GOV.UK Prototype Kit
       </a>
     </form>
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-
-      </div>
-    </div>
-
   </div>
 </div>
+
+<script>
+
+function newDataset() {
+  sessionStorage.setItem('new data', 'true');
+}
+
+</script>
 
 {% endblock %}
