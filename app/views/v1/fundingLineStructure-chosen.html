@@ -45,8 +45,8 @@ GOV.UK Prototype Kit
         <a class="govuk-link govuk-link--no-visited-state" href="createDataset">Create data set</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state"
-          href="view-results/view-specification-results/view-specification">View funding</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="#"
+          onclick="document.getElementById('fundingConfirmation').style.display='block'">Choose for funding</a>
       </li>
     </ul>
   </div>
@@ -110,9 +110,7 @@ GOV.UK Prototype Kit
             </div>
           </div>
 
-          <div class="govuk-grid-column-one-third ">
-            <strong class="govuk-tag right-align ">Approved</strong>
-          </div>
+
 
         </div>
         <table class="govuk-table">
@@ -245,11 +243,7 @@ GOV.UK Prototype Kit
           <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-l">Release timetable</h2>
           </div>
-          <div class="govuk-grid-column-one-third ">
-            <strong class="govuk-tag right-align ">
-              Approved
-            </strong>
-          </div>
+
         </div>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -459,6 +453,23 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
+
+
+<script>
+  window.onload = function () {
+    let newDataSource = sessionStorage.getItem('new data')
+    let tr = document.getElementById('newDataset')
+    console.log(newDataSource)
+    if (newDataSource === 'true') {
+      tr.style.display = " ";
+    } else {
+      tr.style.display = "none";
+    }
+  }
+</script>
+
+
+
 <div class="govuk-modal-dialogue" id="fundingConfirmation" data-module="govuk-modal-dialogue">
   <div class="govuk-modal-dialogue__wrapper">
     <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
@@ -478,9 +489,14 @@ GOV.UK Prototype Kit
         </button>
       </div>
       <div class="govuk-modal-dialogue__content">
-        <p>You are about to select DSG SIT as the specification for this funding.</p>
-
-        <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        <p class="govuk-body">You are choosing specification [specification name] for funding purposes.</p>
+        <p class="govuk-body">This specification will be applied as the funding model for the [funding stream name]
+          funding stream for [funding period name].</p>
+        <p class="govuk-body">Once confirmed this action cannot be reversed no other specification can be chosen for
+          funding.</p>
+        <p class="govuk-body">Please ensure this is the specification you wish to choose for funding before confirming.
+        </p>
+        <button class="govuk-button govuk-!-margin-right-1 govuk-button--warning" data-module="govuk-button">
           Confirm selection
         </button>
         <button type="button" onclick="document.getElementById('fundingConfirmation').style.display='none'"
@@ -492,18 +508,5 @@ GOV.UK Prototype Kit
   </div>
   <div class="govuk-modal-dialogue__backdrop"></div>
 </div>
-
-<script>
-  window.onload = function () {
-    let newDataSource = sessionStorage.getItem('new data')
-    let tr = document.getElementById('newDataset')
-    console.log(newDataSource)
-    if (newDataSource === 'true') {
-      tr.style.display = " ";
-    } else {
-      tr.style.display = "none";
-    }
-  }
-</script>
 
 {% endblock%}
