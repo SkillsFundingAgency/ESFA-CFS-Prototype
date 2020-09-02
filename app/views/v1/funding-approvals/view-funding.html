@@ -29,8 +29,8 @@
     <option></option>
     <option value="16-19/16-19-results">16 to 19</option>
     <option value="14-16/14-16-results">14 to 16</option>
-    <option value="gag/gag-results">General annual grant</option>
-    <option value="pna/pna-results">Academy Pupil Number Adjustment (PNA)</option>
+    <option value="gag/gag-results">General Annual Grant</option>
+    <option value="pna/pna-results">Academy Pupil Number Adjustment</option>
   </select>
 </div>
 
@@ -55,18 +55,17 @@
   </a>
 
 
-<script>
-  
+  <script>
+
     function getFundingStream() {
       var fundingStream = document.getElementById("fundingStream");
       var fundingStreamText = fundingStream.options[fundingStream.selectedIndex].text;
       var fundingPeriod = document.getElementById("fundingPeriod").value;
       document.getElementById("specification").innerHTML = fundingStreamText + ' ' + fundingPeriod;
       var fundingStreamLink = document.getElementById("fundingStream").value;
-      document.getElementById("viewFundingLink").href=fundingStreamLink
+      document.getElementById("viewFundingLink").href = fundingStreamLink
     }
 
-</script>
+  </script>
 
   {% endblock %}
-  
