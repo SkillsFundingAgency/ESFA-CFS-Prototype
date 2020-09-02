@@ -128,30 +128,23 @@ GOV.UK Prototype Kit
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input provider" id="filter-by-provider"
-                                name="filter-by-provider-type" type="checkbox" value="primary">
+                                name="filter-by-provider-type" type="checkbox" value="Academies">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Primary <span>(6)</span>
+                                Academies <span>(6)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-provider-type-3"
                                 name="filter-by-provider-type" type="checkbox" value="academy">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Academy <span>(1)</span>
+                                Colleges <span>(1)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-provider-secondary"
                                 name="filter-by-provider-type" type="checkbox" value="secondary">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Secondary <span>(3)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-5"
-                                name="filter-by-provider-type" type="checkbox" value="secondary" disabled>
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                16 - 19 <span>(0)</span>
+                                Free Schools <span>(3)</span>
                             </label>
                         </div>
                     </div>
@@ -636,8 +629,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="284821882">
+                                        <input class="govuk-checkboxes__input provider-checked" id="filter-by-provider"
+                                            name="provider-approval" type="checkbox" value="Colleges">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Bedford
                                                 College</a>
@@ -956,7 +949,7 @@ GOV.UK Prototype Kit
     document.getElementById('filter-by-provider').onclick = function () {
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("providerNameSearch");
+        input = document.getElementById("filter-by-provider");
         filter = this.value;
         table = document.getElementById("fundingApprovalsProviders");
         tr = table.getElementsByTagName("tr");
