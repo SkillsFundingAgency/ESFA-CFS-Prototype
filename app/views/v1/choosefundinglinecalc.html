@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Select funding lines and calculations</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-heading-xl">Select funding lines and calculations</h1>
+            </legend>
+    </div>
+</div>
+
+<form action="/v1/fundingLineStructure-chosen" method="post" class="form">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header"></th>
+                        <th scope="col" class="govuk-table__header">Structure</th>
+                        <th scope="col" class="govuk-table__header">Name</th>
+                        <th scope="col" class="govuk-table__header">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small ">
+                            <div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+                                <input class="govuk-checkboxes__input" id="" name="" type="checkbox" value="">
+                                <label class="govuk-label govuk-checkboxes__label" for="">
+
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">Total allocation</td>
+                    <td class="govuk-table__cell">Draft</td>
+
+                </tbody>
+                <tbody class="govuk-table__body">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small ">
+                            <div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+                                <input class="govuk-checkboxes__input" id="" name="" type="checkbox" value="">
+                                <label class="govuk-label govuk-checkboxes__label" for="">
+
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell">Eligible pupils</td>
+                    <td class="govuk-table__cell">Draft</td>
+
+                </tbody>
+                <tbody class="govuk-table__body">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small ">
+                            <div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+                                <input class="govuk-checkboxes__input" id="" name="" type="checkbox" value="">
+                                <label class="govuk-label govuk-checkboxes__label" for="">
+
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell">Rate</td>
+                    <td class="govuk-table__cell">Draft</td>
+
+                </tbody>
+                <tbody class="govuk-table__body">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small ">
+                            <div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+                                <input class="govuk-checkboxes__input" id="" name="" type="checkbox" value="">
+                                <label class="govuk-label govuk-checkboxes__label" for="">
+
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell">Additional rate</td>
+                    <td class="govuk-table__cell">Draft</td>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            </br></br></br>
+
+
+            <button class="govuk-button" data-module="govuk-button" onclick="checkboxChoice()">Save and
+                continue</button>
+
+
+
+            <a href="fundingLineStructure" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Cancel
+            </a>
+</form>
+
+</div>
+</div>
+</form>
+
+<script>
+
+    function checkboxChoice() {
+        sessionStorage.setItem('CFS data', 'true');
+    }
+
+</script>
+
+
+
+
+
+{% endblock %}
