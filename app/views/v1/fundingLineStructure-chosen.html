@@ -14,6 +14,8 @@ GOV.UK Prototype Kit
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
     </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['spec-name'] }}</li>
+
   </ol>
 </div>
 
@@ -42,7 +44,7 @@ GOV.UK Prototype Kit
           calculation</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="createDataset">Create data set</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="choosespectype.html">Create data set</a>
       </li>
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="#"
@@ -233,6 +235,26 @@ GOV.UK Prototype Kit
                 </div>
               </th>
               <td class="govuk-table__cell">16-19 Students</td>
+            </tr>
+
+
+            <tr class="govuk-table__row" id="cfsData">
+              <th scope="row" class="govuk-table__header">
+                <p>14 to 16 2019 to 2020 specification</p>
+                <div class="govuk-!-margin-top-2">
+                  <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Data set description
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      {{ data['description'] }}
+                    </div>
+                  </details>
+                </div>
+              </th>
+              <td class="govuk-table__cell">CFS data</td>
             </tr>
           </tbody>
         </table>
@@ -459,6 +481,17 @@ GOV.UK Prototype Kit
   window.onload = function () {
     let newDataSource = sessionStorage.getItem('new data')
     let tr = document.getElementById('newDataset')
+    console.log(newDataSource)
+    if (newDataSource === 'true') {
+      tr.style.display = " ";
+    } else {
+      tr.style.display = "none";
+    }
+  }
+
+  window.onload = function () {
+    let newDataSource = sessionStorage.getItem('CFS data')
+    let tr = document.getElementById('cfsData')
     console.log(newDataSource)
     if (newDataSource === 'true') {
       tr.style.display = " ";
