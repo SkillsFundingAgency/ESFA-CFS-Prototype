@@ -77,6 +77,11 @@ GOV.UK Prototype Kit
                         Profiling
                     </a>
                 </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#providerFunding">
+                        Provider funding
+                    </a>
+                </li>
             </ul>
             <section class="govuk-tabs__panel" id="funding-stream-history">
                 <h2 class="govuk-heading-l">Funding stream history</h2>
@@ -95,7 +100,7 @@ GOV.UK Prototype Kit
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Updated</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">Mr Updater</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">Robert SPARKS</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric">16 May 2019 at 2:30pm</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric">£466,088</td>
                         </tr>
@@ -275,6 +280,51 @@ GOV.UK Prototype Kit
                             </div>
                         </dl>
                         <p><a href="#" class="govuk-link" data-module="govuk-button">Export to CSV</a></p>
+                    </div>
+                </div>
+            </section>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="providerFunding">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <h2 class="govuk-heading-l">
+                            Provider Funding
+                        </h2>
+                        <p class="govuk-body">
+                            Total funding South and City College Birmingham receives from all eligible funding streams.
+                        </p>
+                        <table class="govuk-table">
+                            <caption class="govuk-table__caption">Funding streams and amounts</caption>
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Funding streams</th>
+                                    <th scope="col" class="govuk-table__header">Specification </th>
+                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amounts
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">14 to 16
+                                    </th>
+                                    <td class="govuk-table__cell">{{ data['spec-name'] }}</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£466,088</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header"> <a
+                                            href="/v1/funding-approvals/14-16/provider-funding-overview.html">16 to
+                                            19</a></th>
+                                    <td class="govuk-table__cell">{{ data['spec-name'] }}</td>
+
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£26,707,629</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Total funding</th>
+                                    <td class="govuk-table__cell"></td>
+
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£27,173,717</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
