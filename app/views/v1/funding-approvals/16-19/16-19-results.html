@@ -130,21 +130,21 @@ GOV.UK Prototype Kit
                             <input class="govuk-checkboxes__input provider" id="filter-by-provider"
                                 name="filter-by-provider-type" type="checkbox" value="Academies">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Academies <span>(6)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-secondary"
-                                name="filter-by-provider-type" type="checkbox" value="Colleges">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Colleges <span>(1)</span>
+                                Academies <span>(3)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-provider"
-                                name="filter-by-provider-type" type="checkbox" value="secondary">
+                                name="filter-by-provider-type" type="checkbox" value="Colleges">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Free Schools <span>(3)</span>
+                                Colleges <span>(20)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider"
+                                name="filter-by-provider-type" type="checkbox" value="Free-schools">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                Free Schools <span>(1)</span>
                             </label>
                         </div>
                     </div>
@@ -169,44 +169,45 @@ GOV.UK Prototype Kit
                         <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search"
                             type="text">
                     </div>
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                        id="filter-by-provider-subtype">
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="hmrc">
+                                type="checkbox" value="Further-education">
                             <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Sub type a <span>(1)</span>
+                                Further education <span>(20)</span>
                             </label>
                         </div>
 
-                        <div class="govuk-checkboxes__item">
+                        <!-- <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
                                 type="checkbox" value="employment-tribunal" disabled>
                             <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                Sub type b <span>(0)</span>
+                                Free schools 16 to 19<span>(0)</span>
+                            </label>
+                        </div>-->
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-subtype" name="organisation"
+                                type="checkbox" value="Free-schools-16-to-19">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                Free schools 16 to 19 <span>(1)</span>
                             </label>
                         </div>
 
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                type="checkbox" value="employment-tribunal">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-subtype2" name="organisation"
+                                type="checkbox" value="Academy-converter">
                             <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                Sub type c <span>(1)</span>
+                                Academy converter <span>(2)</span>
                             </label>
                         </div>
 
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                type="checkbox" value="employment-tribunal">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-subtype" name="organisation"
+                                type="checkbox" value="Academy-sponsor-led">
                             <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                Sub type d <span>(4)</span>
-                            </label>
-                        </div>
-
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                type="checkbox" value="employment-tribunal">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                Sub type e <span>(5)</span>
+                                Academy sponsor led <span>(1)</span>
                             </label>
                         </div>
 
@@ -406,6 +407,8 @@ GOV.UK Prototype Kit
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                             1,699,145</td>
                         <td style="display: none">Free Schools</td>
+                        <td style="display: none">Free schools 16 to 19</td>
+                        <td style="display: none">Suffolk</td>
                     </tr>
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
@@ -426,6 +429,8 @@ GOV.UK Prototype Kit
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                             479,370</td>
                         <td style="display: none">Academies</td>
+                        <td style="display: none">Academy converter</td>
+                        <td style="display: none">Cambridgeshire</td>
                     </tr>
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
@@ -445,6 +450,8 @@ GOV.UK Prototype Kit
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                             1,645,999</td>
                         <td style="display: none">Academies</td>
+                        <td style="display: none">Academy converter</td>
+                        <td style="display: none">Leeds</td>
                     </tr>
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
@@ -464,6 +471,10 @@ GOV.UK Prototype Kit
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                             387,217</td>
                         <td style="display: none">Academies</td>
+                        <td style="display: none">Academy sponsor led</td>
+                        <td style="display: none">South Gloucestershire</td>
+
+
                     </tr>
                     <tbody class="govuk-table__body table-vertical-align">
                         <tr class="govuk-table__row">
@@ -484,6 +495,10 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 9,996,753</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Oxfordshire</td>
+
+
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -504,6 +519,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 45,444,792</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Oxfordshire</td>
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -524,6 +541,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 878,681</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Haringey</td>
+
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -544,6 +564,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 17,309,515</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Barking and Dagenham</td>
+
 
                         </tr>
 
@@ -565,6 +588,10 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">Draft</td>
                             <td id="providerValue" class="govuk-table__cell govuk-table__cell--numeric gbp"></td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Barnet</td>
+
+
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
@@ -603,6 +630,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 6,147,399</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Hampshire</td>
+
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -622,6 +652,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 9,922,656</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Bath and North East Somerset</td>
+
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -642,6 +675,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 28,769,457</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Bedford</td>
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -662,6 +697,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 24,653,156</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Birmingham</td>
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -682,6 +719,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 3,539,243</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">County Durham</td>
+
                         </tr>
 
 
@@ -703,6 +743,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 14,830,027</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Blackburn with Darwen</td>
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -723,6 +765,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 £8,838,468</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">County Durham</td>
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -743,6 +787,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 11,631,543</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Sefton</td>
+
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -762,6 +809,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 9,481,287</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Kingston upon Hull, City of</td>
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -782,6 +831,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 7,071,822</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">North Lincolnshire</td>
+
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -802,6 +854,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 3,701,430</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">West Berkshire</td>
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -824,6 +878,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 26,707,629</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Birmingham</td>
+
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -844,6 +901,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 11,673,504</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Torbay</td>
+
 
                         </tr>
                         <tr class="govuk-table__row">
@@ -864,6 +924,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 12,224,175</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">South Tyneside</td>
 
                         </tr>
 
@@ -968,11 +1030,11 @@ GOV.UK Prototype Kit
         }
     }
 
-    document.getElementById('filter-by-provider-secondary').onclick = function () {
+    document.getElementById('filter-by-provider-subtype').onclick = function () {
         console.log("Filter applied")
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("filter-by-provider-secondary");
+        input = document.getElementById("filter-by-provider-subtype");
         filter = input.value;
         console.log(filter)
         table = document.getElementById("fundingApprovalsProviders");
