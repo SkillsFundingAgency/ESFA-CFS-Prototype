@@ -77,6 +77,11 @@ GOV.UK Prototype Kit
                         Profiling
                     </a>
                 </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#providerFunding">
+                        Provider funding
+                    </a>
+                </li>
             </ul>
             <section class="govuk-tabs__panel" id="funding-stream-history">
                 <h2 class="govuk-heading-l">Funding stream history</h2>
@@ -329,6 +334,53 @@ GOV.UK Prototype Kit
                             </dl>
                         </dl>
                         <p><a href="#" class="govuk-link" data-module="govuk-button">Export to CSV</a></p>
+                    </div>
+                </div>
+            </section>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="providerFunding">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <h2 class="govuk-heading-l">
+                            Provider Funding
+                        </h2>
+                        <p class="govuk-body">
+                            Total funding Laurus Cheadle Hulme
+                            receives from all eligible funding streams.
+                        </p>
+                        <table class="govuk-table">
+                            <caption class="govuk-table__caption">Funding streams and amounts</caption>
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Funding streams</th>
+                                    <th scope="col" class="govuk-table__header">Specification </th>
+                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amounts
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">General Annual Grant
+
+                                    </th>
+                                    <td class="govuk-table__cell">{{ data['spec-name'] }}</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£2,197,357.56</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header"> <a
+                                            href="/v1/funding-approvals/pna/provider-funding-overview-laurus.html">Academy
+                                            Pupil Number Adjustment</a></th>
+                                    <td class="govuk-table__cell">{{ data['spec-name'] }}</td>
+
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£35,978.24</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Total funding</th>
+                                    <td class="govuk-table__cell"></td>
+
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£2,233,335.80</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
