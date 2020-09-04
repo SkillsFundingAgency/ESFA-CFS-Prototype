@@ -362,7 +362,7 @@ GOV.UK Prototype Kit
                         <p class="govuk-body">
                             Total funding South and City College Birmingham receives from all eligible funding streams.
                         </p>
-                        <dl class="govuk-summary-list">
+                        <!--<dl class="govuk-summary-list">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     Programme Funding
@@ -374,30 +374,39 @@ GOV.UK Prototype Kit
                                     £466,088
                                 </dd>
                             </div>
-                        </dl>
+                        </dl> -->
                         <table class="govuk-table">
                             <caption class="govuk-table__caption">Funding streams and amounts</caption>
                             <thead class="govuk-table__head">
-                              <tr class="govuk-table__row">
-                                <th scope="col" class="govuk-table__header">Funding streams</th>
-                                <th scope="col" class="govuk-table__header">Specification </th>
-                                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amounts</th>
-                              </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Funding streams</th>
+                                    <th scope="col" class="govuk-table__header">Specification </th>
+                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amounts
+                                    </th>
+                                </tr>
                             </thead>
                             <tbody class="govuk-table__body">
-                              <tr class="govuk-table__row">
-                                <th scope="row" class="govuk-table__header">14 to 16</th>
-                                <td class="govuk-table__cell">Lorizzle $$$</td>
-                                <td class="govuk-table__cell govuk-table__cell--numeric">£466,088</td>
-                              </tr>
-                              <tr class="govuk-table__row">
-                                <th scope="row" class="govuk-table__header">16 to 19</th>
-                                <td class="govuk-table__cell">Lorizzle $$$</td>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header"><a
+                                            href="/v1/funding-approvals/14-16/provider-funding-overview.html">14 to 16
+                                        </a></th>
+                                    <td class="govuk-table__cell">{{ data['spec-name'] }}</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£466,088</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">16 to 19</th>
+                                    <td class="govuk-table__cell">{{ data['spec-name'] }}</td>
 
-                                <td class="govuk-table__cell govuk-table__cell--numeric">£26,707,629</td>
-                              </tr>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£26,707,629</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Total funding</th>
+                                    <td class="govuk-table__cell"></td>
+
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£27,173,717</td>
+                                </tr>
                             </tbody>
-                          </table>
+                        </table>
                     </div>
                 </div>
             </section>
