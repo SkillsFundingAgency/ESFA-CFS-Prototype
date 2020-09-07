@@ -394,7 +394,7 @@ GOV.UK Prototype Kit
                             <div class="govuk-checkboxes govuk-checkboxes--small">
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="346757869">
+                                        name="provider-approval" type="checkbox" value="Free Schools">
                                     <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                         <a href="provider-funding-overview-gag.html" class="govuk-link">Abbeygate Sixth
                                             Form College</a>
@@ -611,6 +611,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 26,000,320</td>
                             <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Barnet</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
@@ -1042,7 +1044,7 @@ GOV.UK Prototype Kit
 
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[4];
+            td = tr[i].getElementsByTagName("td")[6];
             if (td) {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue === filter) {
