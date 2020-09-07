@@ -128,32 +128,26 @@ GOV.UK Prototype Kit
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
-                                name="filter-by-provider-type" type="checkbox" value="primary">
+                                name="filter-by-provider-type" type="checkbox" value="Free schools">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Primary <span>(6)</span>
+                                Free schools <span>(6)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-provider-type-3"
-                                name="filter-by-provider-type" type="checkbox" value="academy">
+                                name="filter-by-provider-type" type="checkbox" value="academies">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Academy <span>(1)</span>
+                                Academies <span>(12)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-provider-type-4"
-                                name="filter-by-provider-type" type="checkbox" value="secondary">
+                                name="filter-by-provider-type" type="checkbox" value="Independent School">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Secondary <span>(3)</span>
+                                Independent School <span>(1)</span>
                             </label>
                         </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-5"
-                                name="filter-by-provider-type" type="checkbox" value="secondary" disabled>
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                16 - 19 <span>(0)</span>
-                            </label>
-                        </div>
+
                     </div>
                 </div>
             </fieldset>
@@ -367,7 +361,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                <table class="govuk-table">
+                <table class="govuk-table" id="fundingApprovalsProviders">
                     <caption class="govuk-table__caption"></caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
@@ -413,6 +407,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10003986</td>
                             <td class="govuk-table__cell">Updated</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">346,757,869</td>
+                            <td style="display: none"></td>
+                            <td style="display: none"></td>
+                            <td style="display: none"></td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -420,7 +417,7 @@ GOV.UK Prototype Kit
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="284821882">
+                                            name="provider-approval" type="checkbox" value="Free schools">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Akaal Primary
                                                 School</a>
@@ -432,6 +429,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 876,041.26</td>
+                            <td style="display: none">Free schools</td>
+                            <td style="display: none">Free Schools</td>
+                            <td style="display: none">Derby</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -439,7 +439,7 @@ GOV.UK Prototype Kit
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Ashcroft
                                                 Technology Academy</a>
@@ -450,6 +450,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10021078</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">6,794,601.39</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Wandsworth</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -457,7 +460,7 @@ GOV.UK Prototype Kit
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Independent School">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">BRIT School for
                                                 Performing Arts and Technology</a>
@@ -468,6 +471,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10008122</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">2,333,505.70</td>
+                            <td style="display: none">Independent School</td>
+                            <td style="display: none">City technology college</td>
+                            <td style="display: none">Croydon</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -475,7 +481,7 @@ GOV.UK Prototype Kit
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">David Nieper
                                                 Academy</a>
@@ -486,6 +492,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10054162</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">2,879,418.76</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Derbyshire</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -493,7 +502,7 @@ GOV.UK Prototype Kit
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Free schools">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Earl's Court
                                                 Free School Primary</a>
@@ -504,6 +513,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10046718</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">931,260.25</td>
+                            <td style="display: none">Free schools</td>
+                            <td style="display: none">Free Schools</td>
+                            <td style="display: none">Hammersmith and Fulham</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -511,7 +523,7 @@ GOV.UK Prototype Kit
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Haberdashers'
                                                 Abraham Darby</a>
@@ -522,6 +534,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10024131</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">4,713,904.75</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Telford and Wrekin</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -529,7 +544,7 @@ GOV.UK Prototype Kit
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Harris Academy
                                                 Merton</a>
@@ -540,6 +555,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10015599</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">5,885,310.55</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Merton</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -547,7 +565,7 @@ GOV.UK Prototype Kit
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Harris City
                                                 Academy Crystal Palace</a>
@@ -558,6 +576,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10021077</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">5,043,235.94</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Croydon</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -565,7 +586,7 @@ GOV.UK Prototype Kit
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Ipswich
                                                 Academy</a>
@@ -576,13 +597,16 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10032966</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">4,512,021.37</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Suffolk</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Free schools">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview-laurus.html" class="govuk-link">Laurus
                                                 Cheadle
@@ -594,13 +618,16 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10068126</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">2,197,357.56</td>
+                            <td style="display: none">Free schools</td>
+                            <td style="display: none">Free schools</td>
+                            <td style="display: none">Stockport</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">London
                                                 Academy</a>
@@ -611,13 +638,16 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10016231</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">7,203,342.27</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Barnet</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Merchants'
                                                 Academy</a>
@@ -628,13 +658,16 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10024135</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">5,702,380.15</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Bristol, City of</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Free schools">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">New Islington
                                                 Free School</a>
@@ -645,13 +678,16 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10041679</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">1,378,356.70</td>
+                            <td style="display: none">Free schools</td>
+                            <td style="display: none">Free schools</td>
+                            <td style="display: none">Manchester</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Free schools">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Nottingham
                                                 University Academy of Science and Technology</a>
@@ -662,13 +698,16 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10047253</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">2,914,565.39</td>
+                            <td style="display: none">Free schools</td>
+                            <td style="display: none">Free schools</td>
+                            <td style="display: none">Nottingham</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Paddington
                                                 Academy</a>
@@ -679,13 +718,16 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10016903</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">6,321,515.64</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Westminster</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Shireland
                                                 Collegiate Academy</a>
@@ -696,13 +738,16 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10021074</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">6,938,482.72</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Sandwell</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">The Bishop of
                                                 Winchester Academy</a>
@@ -713,13 +758,16 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10030436</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">5,110,818.79</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Bournemouth, Christchurch and Poole</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Walthamstow
                                                 Academy</a>
@@ -730,13 +778,16 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10015821</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">5,482,150.81</td>
+                            <td style="display: none">Academies</td>
+                            <td style="display: none">Academy sponsor led</td>
+                            <td style="display: none">Waltham Forest</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
+                                            name="provider-approval" type="checkbox" value="Free schools">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Wootton Park
                                                 School</a>
@@ -747,6 +798,9 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10056995</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">3,318,477.03</td>
+                            <td style="display: none">Free schools</td>
+                            <td style="display: none">Free Schools</td>
+                            <td style="display: none">Northamptonshire</td>
                         </tr>
                     </tbody>
                 </table>
@@ -799,4 +853,35 @@ GOV.UK Prototype Kit
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+<script>
+    document.getElementById('filter-by-provider').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
 {% endblock %}
