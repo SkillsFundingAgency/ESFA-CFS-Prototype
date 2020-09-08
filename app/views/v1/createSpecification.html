@@ -40,12 +40,12 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="sort">
             Funding stream
           </label>
-          <select class="govuk-select" id="sort" name="sort">
+          <select class="govuk-select" id="fundingStreamSpecification">
             <option value="draft"></option>
-            <option value="draft">16 to 19</option>
-            <option value="draft">14 to 16</option>
-            <option value="draft">General Annual Grant</option>
-            <option>Academy Pupil Number Adjustment</option>
+            <option value="fundingLineStructure-chosen">16 to 19</option>
+            <option value="fundingLineStructure-chosen">14 to 16</option>
+            <option value="fundingLineStructure-gag">General Annual Grant</option>
+            <option value="fundingLineStructure-gag">Academy Pupil Number Adjustment</option>
 
           </select>
         </div>
@@ -70,8 +70,8 @@ GOV.UK Prototype Kit
           </span>
           <select class="govuk-select" id="coreProviderData" name="sort" onchange="getProviderData()">
             <option></option>
-            <option name="core-provider-data" value="284,821,882">16 to 19 21 August 2019 - Initial providers</option>
-            <option name="core-provider-data" id="providerDataChange" value="0.00">16 to 19 1 September 2019 - Amended
+            <option name="core-provider-data" value="284,821,882">21 August 2019 - Initial providers</option>
+            <option name="core-provider-data" id="providerDataChange" value="0.00">1 September 2019 - Amended
               providers</option>
           </select>
         </div>
@@ -120,6 +120,16 @@ GOV.UK Prototype Kit
   function newDataSource() {
     sessionStorage.setItem('new spec', 'true');
   }
+
+
+  function getfundingStreamSpecficiation() {
+    var fundingStreamSpecficiation = document.getElementById("fundingStreamSpecification");
+    var fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex].text;
+    document.getElementById("specification").innerHTML = fundingStreamText + ' ';
+    var fundingStreamSpecficiationLink = document.getElementById("fundingStreamSpecification").value;
+    document.getElementById("viewFundingLink").href = fundingStreamSpecficiationLink
+  }
+
 
 </script>
 
