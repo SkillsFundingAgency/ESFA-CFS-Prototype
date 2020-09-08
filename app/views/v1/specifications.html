@@ -200,8 +200,8 @@ GOV.UK Prototype Kit
             </thead>
             <tbody class="govuk-table__body" id="mainContentResults">
                 <tr class="govuk-table__row" id="newSpecSource">
-                    <th scope="row" class="govuk-table__header"><a
-                            href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a></th>
+                    <th scope="row" class="govuk-table__header">
+                        <a id="fundingStreamLink" href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a></th>
                     <td class="govuk-table__cell">8 September 2020 10:54am</td>
                     <td class="govuk-table__cell">Draft</td>
                 </tr>
@@ -247,6 +247,8 @@ GOV.UK Prototype Kit
             } else {
                 tr.style.display = "none";
             }
+            let fundingStream = sessionStorage.getItem('funding stream')
+            document.getElementById('fundingStreamLink').href = fundingStream
         }
 
     </script>

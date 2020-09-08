@@ -122,14 +122,12 @@ GOV.UK Prototype Kit
   }
 
 
-  function getfundingStreamSpecficiation() {
+  document.getElementById('fundingStreamSpecification').onchange = function getfundingStreamSpecficiation() {
     var fundingStreamSpecficiation = document.getElementById("fundingStreamSpecification");
-    var fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex].text;
-    document.getElementById("specification").innerHTML = fundingStreamText + ' ';
-    var fundingStreamSpecficiationLink = document.getElementById("fundingStreamSpecification").value;
-    document.getElementById("viewFundingLink").href = fundingStreamSpecficiationLink
+    var fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex].value;
+    console.log(fundingStreamSpecficiationText)
+    sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
   }
-
 
 </script>
 

@@ -599,33 +599,6 @@ GOV.UK Prototype Kit
 </div>
 
 
-
-<script>
-  window.onload = function () {
-    let newDataSource = sessionStorage.getItem('new data')
-    let tr = document.getElementById('newDataset')
-    console.log(newDataSource)
-    if (newDataSource === 'true') {
-      tr.style.display = " ";
-    } else {
-      tr.style.display = "none";
-    }
-  }
-
-  window.onload = function () {
-    let newDataSource = sessionStorage.getItem('CFS data')
-    let tr = document.getElementById('cfsData')
-    console.log(newDataSource)
-    if (newDataSource === 'true') {
-      tr.style.display = " ";
-    } else {
-      tr.style.display = "none";
-    }
-  }
-</script>
-
-
-
 <div class="govuk-modal-dialogue" id="fundingConfirmation" data-module="govuk-modal-dialogue">
   <div class="govuk-modal-dialogue__wrapper">
     <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
@@ -664,5 +637,31 @@ GOV.UK Prototype Kit
   </div>
   <div class="govuk-modal-dialogue__backdrop"></div>
 </div>
+
+
+<script>
+  window.onload = function () {
+    let newDataSource = sessionStorage.getItem('new data')
+    let tr = document.getElementById('newDataset')
+    console.log(newDataSource)
+    if (newDataSource === 'true') {
+      tr.style.display = " ";
+    } else {
+      tr.style.display = "none";
+    }
+    CFSdata ()
+  }
+
+  function CFSdata () {
+    let newDataSource = sessionStorage.getItem('CFS data')
+    let tr = document.getElementById('cfsData')
+    console.log(newDataSource)
+    if (newDataSource === 'true') {
+      tr.style.display = " ";
+    } else {
+      tr.style.display = "none";
+    }
+  }
+</script>
 
 {% endblock%}

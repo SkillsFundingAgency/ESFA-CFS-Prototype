@@ -37,7 +37,7 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
+    <div class="govuk-grid-column-one-third" id="filters">
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
@@ -127,21 +127,21 @@ GOV.UK Prototype Kit
                     </div>
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-1"
                                 name="filter-by-provider-type" type="checkbox" value="Free schools">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Free schools <span>(6)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-3"
-                                name="filter-by-provider-type" type="checkbox" value="academies">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-2"
+                                name="filter-by-provider-type" type="checkbox" value="Academies">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Academies <span>(12)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-4"
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-3"
                                 name="filter-by-provider-type" type="checkbox" value="Independent School">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Independent School <span>(1)</span>
@@ -355,8 +355,9 @@ GOV.UK Prototype Kit
                 </div>
             </fieldset>
         </div>
-        <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
-            Clear filters</a>
+        <button id="clearFilters" class="govuk-button right-align" onclick="clearFilters()">
+            Clear filters
+        </button>
     </div>
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
@@ -861,11 +862,34 @@ GOV.UK Prototype Kit
 
 
 <script>
-    document.getElementById('filter-by-provider').onclick = function () {
+
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("providerNameSearch");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById('filter-by-provider-3').onclick = function () {
         console.log("Filter applied")
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("filter-by-provider");
+        input = document.getElementById("filter-by-provider-3");
         filter = input.value;
         table = document.getElementById("fundingApprovalsProviders");
         tr = table.getElementsByTagName("tr");
@@ -883,5 +907,91 @@ GOV.UK Prototype Kit
             }
         }
     }
+
+
+    document.getElementById('filter-by-provider-2').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-2");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById('filter-by-provider-1').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-1");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById('filter-by-provider-subtype').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-subtype");
+        filter = input.value;
+        console.log(filter)
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[5];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function clearFilters () {
+        let filterContainer = document.getElementById("filters");
+        let filtersChecked = filterContainer.getElementsByTagName("input")
+        for (var i = 0; i < filtersChecked.length; ++i) 
+        { 
+            filtersChecked[i].checked = false;
+        }
+    }
+
+    window.onload = function () {
+        document.getElementById("providerValue").innerHTML = sessionStorage.getItem("provider data changed");
+    }
+
 </script>
+
 {% endblock %}
