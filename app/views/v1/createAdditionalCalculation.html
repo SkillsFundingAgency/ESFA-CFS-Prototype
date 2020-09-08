@@ -18,7 +18,7 @@ GOV.UK Prototype Kit
           <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a>
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Create additional calculation</li>
       </ol>
@@ -31,14 +31,14 @@ GOV.UK Prototype Kit
         </h1>
       </legend>
 
-    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
-          Calculation name
-        </label>
-        <input class="govuk-input govuk-js-character-count" id="address-line-1" name="address-line-1" type="text">
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Calculation name
+          </label>
+          <input class="govuk-input govuk-js-character-count" id="address-line-1" name="address-line-1" type="text">
+        </div>
       </div>
-    </div>
 
       <div class="govuk-form-group govuk-!-margin-top-5">
         <label class="govuk-label" for="sort">
@@ -53,10 +53,10 @@ GOV.UK Prototype Kit
 
       <div class="govuk-form-group ">
         <label class="govuk-label" for="more-detail">
-            Calculation script
+          Calculation script
         </label>
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-            aria-describedby="more-detail-hint">
+          aria-describedby="more-detail-hint">
 Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
 
 If A.HasValue = False Then
@@ -67,26 +67,27 @@ Else
 Return A
 End If
         </textarea>
-    </div>
-    <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
-      Build calculation
-  </button>
-  <div class="govuk-inset-text">Your calculation’s build output must be successful before you can save it
-  </div>
-  <div class="govuk-form-group">
-      <label class="govuk-label" for="build-output">
+      </div>
+      <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+        Build calculation
+      </button>
+      <div class="govuk-inset-text">Your calculation’s build output must be successful before you can save it
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="build-output">
           Build output
-      </label>
-      <input class="govuk-input" id="build-output" name="build-output" type="text" value="Code complied successfully: true">
-  </div>
+        </label>
+        <input class="govuk-input" id="build-output" name="build-output" type="text"
+          value="Code complied successfully: true">
+      </div>
 
-    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-      Save and continue
-    </button>
+      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Save and continue
+      </button>
 
-    <a href="fundingLineStructure.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Cancel
-    </a>
+      <a href="specifications.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
   </div>
 </div>
 
