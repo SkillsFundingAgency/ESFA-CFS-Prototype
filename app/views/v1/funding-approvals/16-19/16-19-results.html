@@ -36,18 +36,17 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
+<div class="govuk-grid-row" >
+    <div class="govuk-grid-column-one-third" id="filters">
         <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint" >
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
                     <h4 class="govuk-heading-s">Search</h4>
                 </legend>
                 <span id="how-contacted-conditional-hint" class="govuk-hint sidebar-search-span">
                     Select one option.
                 </span>
-                <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible"
-                    data-module="govuk-radios">
+                <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible" data-module="govuk-radios">
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="how-contacted-conditional" name="search" type="radio"
                             value="email" data-aria-controls="conditional-how-contacted-conditional">
@@ -127,22 +126,22 @@ GOV.UK Prototype Kit
                     </div>
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider" id="filter-by-provider"
+                            <input class="govuk-checkboxes__input provider" id="filter-by-provider-2"
                                 name="filter-by-provider-type" type="checkbox" value="Academies">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Academies <span>(3)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider"
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-3"
                                 name="filter-by-provider-type" type="checkbox" value="Colleges">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Colleges <span>(20)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider"
-                                name="filter-by-provider-type" type="checkbox" value="Free-schools">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-1"
+                                name="filter-by-provider-type" type="checkbox" value="Free Schools">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Free Schools <span>(1)</span>
                             </label>
@@ -172,20 +171,12 @@ GOV.UK Prototype Kit
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
                         id="filter-by-provider-subtype">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-subtype" name="organisation"
                                 type="checkbox" value="Further-education">
                             <label class="govuk-label govuk-checkboxes__label" for="organisation">
                                 Further education <span>(20)</span>
                             </label>
                         </div>
-
-                        <!-- <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                type="checkbox" value="employment-tribunal" disabled>
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                Free schools 16 to 19<span>(0)</span>
-                            </label>
-                        </div>-->
 
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-provider-subtype" name="organisation"
@@ -355,8 +346,10 @@ GOV.UK Prototype Kit
                 </div>
             </fieldset>
         </div>
-        <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
-            Clear filters</a>
+        <button id="clearFilters" class="govuk-button right-align" onclick="clearFilters()">
+            Clear filters
+        </button>
+
     </div>
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
@@ -892,8 +885,9 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="Colleges">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">South Devon
-                                                College</a>
+                                            <a href="provider-funding-overview.html" class="govuk-link">
+                                                South Devon College
+                                            </a>
                                         </label>
                                     </div>
                                 </div>
@@ -905,8 +899,6 @@ GOV.UK Prototype Kit
                             <td style="display: none">Colleges</td>
                             <td style="display: none">Further education</td>
                             <td style="display: none">Torbay</td>
-
-
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
@@ -1009,11 +1001,58 @@ GOV.UK Prototype Kit
         }
     }
 
-    document.getElementById('filter-by-provider').onclick = function () {
+    document.getElementById('filter-by-provider-3').onclick = function () {
         console.log("Filter applied")
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("filter-by-provider");
+        input = document.getElementById("filter-by-provider-3");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+
+    document.getElementById('filter-by-provider-2').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-2");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById('filter-by-provider-1').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-1");
         filter = input.value;
         table = document.getElementById("fundingApprovalsProviders");
         tr = table.getElementsByTagName("tr");
@@ -1035,7 +1074,7 @@ GOV.UK Prototype Kit
     document.getElementById('filter-by-provider-subtype').onclick = function () {
         console.log("Filter applied")
         // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
+        let input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("filter-by-provider-subtype");
         filter = input.value;
         console.log(filter)
@@ -1044,7 +1083,7 @@ GOV.UK Prototype Kit
 
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[6];
+            td = tr[i].getElementsByTagName("td")[5];
             if (td) {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue === filter) {
@@ -1056,9 +1095,17 @@ GOV.UK Prototype Kit
         }
     }
 
+    function clearFilters () {
+        let filterContainer = document.getElementById("filters");
+        let filtersChecked = filterContainer.getElementsByTagName("input")
+        for (var i = 0; i < filtersChecked.length; ++i) 
+        { 
+            filtersChecked[i].checked = false;
+        }
+    }
+
     window.onload = function () {
         document.getElementById("providerValue").innerHTML = sessionStorage.getItem("provider data changed");
-
     }
 
 </script>
