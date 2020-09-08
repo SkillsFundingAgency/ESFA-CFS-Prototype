@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit specification</li>
+      </ol>
+    </div>
+
+    <form action="/v1/fundingLineStructure-chosen" method="post" class="form">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Edit specification
+          </h1>
+        </legend>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Specification name
+          </label>
+          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"
+            value="{{ data['spec-name'] }}">
+        </div>
+
+        <span class="govuk-caption-m">Funding stream</span>
+        <h3 class="govuk-heading-m">General Annual Grant</h3>
+
+        <span class="govuk-caption-m">Funding period</span>
+        <h3 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020</h3>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Core provider data
+          </label>
+          <span id="account-number-hint" class="govuk-hint">
+            Select a funding stream and funding period before choosing the provider data
+          </span>
+          <select class="govuk-select" id="coreProviderData" name="sort" onchange="getProviderData()">
+            <option></option>
+            <option name="core-provider-data" value="284,821,882">16 to 19 21 August 2019 - Initial providers</option>
+            <option name="core-provider-data" id="providerDataChange" value="0">16 to 19 1 September 2019 - Amended
+            </option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Template version
+          </label>
+          <span id="account-number-hint" class="govuk-hint">
+            Select a funding stream and funding period before choosing a template version
+          </span>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft"></option>
+            <option value="draft">0.1</option>
+            <option value="draft">0.2</option>
+            <option value="draft">0.3</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Can you provide more detail?
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+            aria-describedby="more-detail-hint"></textarea>
+        </div>
+      </fieldset>
+
+      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <a href="fundingLineStructure-gag.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
+
+  </div>
+</div>
+
+<script>
+
+  function getProviderData() {
+    var coreProviderData = document.getElementById("coreProviderData").value;
+    console.log(coreProviderData)
+    sessionStorage.setItem('provider data changed', coreProviderData);
+
+  }
+
+</script>
+
+{% endblock %}
