@@ -16,7 +16,7 @@ endblock %} {% block content %}
             specification</a>
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          DSG SIT
+          {{ data['spec-name'] }}
         </li>
       </ol>
     </div>
@@ -84,7 +84,7 @@ endblock %} {% block content %}
 
       </td>
       <td class="govuk-table__cell">
-        <a href="selectSourceDataset" class="govuk-link">Map</a>
+        <a href="/v1/choosefundinglinecalc" class="govuk-link">Map</a>
       </td>
     </tr>
   </tbody>
