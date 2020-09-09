@@ -172,8 +172,8 @@ GOV.UK Prototype Kit
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
                         id="filter-by-provider-subtype">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-subtype" name="organisation"
-                                type="checkbox" value="Further-education">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-subtype-1" name="organisation"
+                                type="checkbox" value="Further education">
                             <label class="govuk-label govuk-checkboxes__label" for="organisation">
                                 Further education <span>(20)</span>
                             </label>
@@ -1195,11 +1195,11 @@ GOV.UK Prototype Kit
         }
     }
 
-    document.getElementById('filter-by-provider-subtype').onclick = function () {
+    document.getElementById('filter-by-provider-subtype-1').onclick = function () {
         console.log("Filter applied")
         // Declare variables
         let input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("filter-by-provider-subtype");
+        input = document.getElementById("filter-by-provider-subtype-1");
         filter = input.value;
         console.log(filter)
         table = document.getElementById("fundingApprovalsProviders");
@@ -1232,12 +1232,7 @@ GOV.UK Prototype Kit
     }
 
 
-
-
-
 </script>
-
-
 
 
 {% endblock %}
