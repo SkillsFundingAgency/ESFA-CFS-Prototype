@@ -43,10 +43,11 @@ endblock %} {% block content %}
 <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-one-half">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-third">
         Data set
       </th>
       <th scope="col" class="govuk-table__header">Mapped data source file</th>
+      <th scope="col" class="govuk-table__header">Type</th>
       <th scope="col" class="govuk-table__header"></th>
     </tr>
   </thead>
@@ -78,6 +79,10 @@ endblock %} {% block content %}
         </details>
       </th>
       <td class="govuk-table__cell">No data source file mapped</td>
+      <td class="govuk-table__cell">
+        Published specifications
+
+      </td>
       <td class="govuk-table__cell">
         <a href="selectSourceDataset" class="govuk-link">Map</a>
       </td>
