@@ -963,7 +963,7 @@ GOV.UK Prototype Kit
                 <div class="right-align">
 
 
-                    <a href="funding-approval.html" class="govuk-button govuk-button--primary"
+                    <a id="approveFunding" href="" class="govuk-button govuk-button--primary"
                         data-module="govuk-button">
                         Approve funding
                     </a>
@@ -1009,6 +1009,7 @@ GOV.UK Prototype Kit
         filter = input.value;
         table = document.getElementById("fundingApprovalsProviders");
         tr = table.getElementsByTagName("tr");
+       
 
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
@@ -1017,6 +1018,7 @@ GOV.UK Prototype Kit
                 txtValue = td.textContent || td.innerText;
                 if (txtValue === filter) {
                     tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-'+filter
                 } else {
                     tr[i].style.display = "none";
                 }
@@ -1041,6 +1043,7 @@ GOV.UK Prototype Kit
                 txtValue = td.textContent || td.innerText;
                 if (txtValue === filter) {
                     tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-'+filter
                 } else {
                     tr[i].style.display = "none";
                 }
@@ -1064,6 +1067,7 @@ GOV.UK Prototype Kit
                 txtValue = td.textContent || td.innerText;
                 if (txtValue === filter) {
                     tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-'+filter
                 } else {
                     tr[i].style.display = "none";
                 }
@@ -1107,6 +1111,10 @@ GOV.UK Prototype Kit
     window.onload = function () {
         document.getElementById("providerValue").innerHTML = sessionStorage.getItem("provider data changed");
     }
+
+    
+
+
 
 </script>
 

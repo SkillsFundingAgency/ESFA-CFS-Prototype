@@ -841,7 +841,7 @@ GOV.UK Prototype Kit
                     </ul>
                 </nav>
                 <div class="right-align">
-                    <a href="funding-approval.html" class="govuk-button govuk-button--primary"
+                    <a id="approveFunding" href="" class="govuk-button govuk-button--primary"
                         data-module="govuk-button">
                         Approve funding
                     </a>
@@ -901,6 +901,7 @@ GOV.UK Prototype Kit
                 txtValue = td.textContent || td.innerText;
                 if (txtValue === filter) {
                     tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-'+filter
                 } else {
                     tr[i].style.display = "none";
                 }
@@ -925,6 +926,7 @@ GOV.UK Prototype Kit
                 txtValue = td.textContent || td.innerText;
                 if (txtValue === filter) {
                     tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-'+filter
                 } else {
                     tr[i].style.display = "none";
                 }
@@ -948,6 +950,7 @@ GOV.UK Prototype Kit
                 txtValue = td.textContent || td.innerText;
                 if (txtValue === filter) {
                     tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-'+filter
                 } else {
                     tr[i].style.display = "none";
                 }
@@ -972,6 +975,7 @@ GOV.UK Prototype Kit
                 txtValue = td.textContent || td.innerText;
                 if (txtValue === filter) {
                     tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-'+filter
                 } else {
                     tr[i].style.display = "none";
                 }
