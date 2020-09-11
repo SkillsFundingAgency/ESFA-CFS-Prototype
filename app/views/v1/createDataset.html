@@ -18,13 +18,13 @@ GOV.UK Prototype Kit
           <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="specifications.html">{{ data['spec-name'] }}</a>
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-gag.html">{{ data['spec-name'] }}</a>
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Create data set</li>
       </ol>
     </div>
 
-    <form action="/v1/fundingLineStructure-chosen" method="post" class="form">
+    <form action="/v1/fundingLineStructure-gag" method="post" class="form">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-heading-xl">Create data set</h1>
@@ -35,13 +35,12 @@ GOV.UK Prototype Kit
             Select data schema
           </label>
           <select class="govuk-select" id="sort" name="sort">
-            <option value="draft">16-19 Students</option>
-            <option value="draft">16-19 Reconciliation</option>
-            <option value="draft">16-19 Non Formula Funding</option>
-            <option value="draft">16-19 Formula Funding</option>
-            <option value="draft">16-19 Formula Adjustments</option>
-            <option value="draft">16-19 Factors</option>
-            <option value="draft">16-19 Business Case</option>
+            <option value="draft">APT Adjusted Factors</option>
+            <option value="draft">APT Final Baselines</option>
+            <option value="draft">APT Inputs and Adjustments</option>
+            <option value="draft">APT Local Factors</option>
+            <option value="draft">APT New ISB</option>
+            <option value="draft">APT Proforma</option>
           </select>
         </div>
 
@@ -92,7 +91,7 @@ GOV.UK Prototype Kit
         Save and add another
       </a>
 
-      <a href="fundingLineStructure" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      <a href="fundingLineStructure-gag.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Cancel
       </a>
     </form>
