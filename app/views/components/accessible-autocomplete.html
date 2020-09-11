@@ -10,26 +10,36 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
-        <form action="form-single.html" method="get">
-            <label class="govuk-label" for="last-location">What was the last location you visited?</label>
+        <form action="" method="get">
+            <label class="govuk-label" for="fundingStream">Select funding stream</label>
             <div class="autocomplete-wrapper">
-                <select name="last-location" class="govuk-select" id="last-location">
+                <select name="fundingStream" class="govuk-select" id="funding-stream">
                     <option value="">Select a country</option>
-                    <option value="territory:AE-AZ">General annual grant</option>
-                    <option value="country:AF">Dedicated schools grant</option>
-                    <option value="territory:AE-AJ">PE and sport premium</option>
-                    <option value="territory:XQZ">Pupil number adjustment</option>
+                    <option value="fundingStream: GAG">General annual grant</option>
+                    <option value="fundingStream: DSG">Dedicated schools grant</option>
+                    <option value="fundingStream: PES">PE and sport premium</option>
+                    <option value="fundingStream: PNA">Pupil number adjustment</option>
                 </select>
             </div>
         </form>
-        </main>
     </div>
 </div>
 
-
+<div class="govuk-grid-row govuk-!-margin-top-9">
+    <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">DEMO ONLY</p>
+        <p class="govuk-body">Funding streams available</p>
+        <ul class="govuk-list">
+            <li>General annual grant</li>
+            <li>Dedicated shools grant</li>
+            <li>PE and sport premium</li>
+            <li>Pupil number adjustment</li>
+        </ul>
+    </div>
+</div>
 
 <script type="text/javascript">
-    var selectEl = document.querySelector('#last-location')
+    var selectEl = document.querySelector('#funding-stream')
     accessibleAutocomplete.enhanceSelectElement({
         autoselect: true,
         confirmOnBlur: true,
@@ -44,7 +54,7 @@ GOV.UK Prototype Kit
         var submittedEl = document.querySelector('.submitted')
         submittedEl.classList.remove('submitted--hidden')
         var params = new URLSearchParams(document.location.search.split('?')[1])
-        document.querySelector('.submitted__last-location').innerHTML = params.get('last-location')
+        document.querySelector('.submitted__last-location').innerHTML = params.get('funding-stream')
     }
 </script>
 
