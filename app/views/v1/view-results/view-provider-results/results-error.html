@@ -1,0 +1,512 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-2">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs ">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">View results</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="/v1/view-results/view-provider-results/funding-stream">Funding stream</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="/v1/view-results/view-provider-results/provider-results">View provider results</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item govuk-!-margin-bottom-7" aria-current="page">
+                    Conisborough college
+                </li>
+            </ol>
+        </div>
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+            data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+
+                    <li>
+                        <a href="">You have navigated from GAG but there are no GAG specifications.
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Conisborough college</h1>
+        <span class="govuk-caption-m govuk-!-margin-bottom-8">UKPRN: <strong>10015211</strong></span>
+
+    </div>
+</div>
+<div class="govuk-form-group govuk-form-group--error">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Specification</h3>
+            <span class="govuk-caption-m">Select a specification for the provider</span>
+
+            <span id="passport-issued-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> You have navigated from GAG but there are no GAG
+                specifications.
+            </span>
+        </div>
+
+
+
+        <select class="govuk-select" id="sort" name="sort">
+            <option value="published">DSG SIT (Financial year 2020 to 2021)
+            </option>
+            <option value="published">PE & Sport ABC (Academic year 2020 to 2021)
+            </option>
+        </select>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <p class="govuk-body">Funding stream:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Dedicated
+            schools grant</span>
+    </p>
+    <p class="govuk-body">Funding period:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Financial year
+            2020 to 2021</span>
+    </p>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+                Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#template-calculations">
+                        Funding line structure
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#additional-calculations">
+                        Additional calculations
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#provider-data">
+                        Provider data
+                    </a>
+                </li>
+
+            </ul>
+            <section class="govuk-tabs__panel" id="template-calculations">
+                <h2 class="govuk-heading-l">Funding line structure</h2>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <div class="govuk-form-group search-container">
+                            <label class="govuk-label" for="sort">
+                                Search
+                            </label>
+                            <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false"
+                                type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+
+
+                    </div>
+
+                </div>
+
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Level of hierarchy</th>
+                            <th scope="col" class="govuk-table__header">Funding line or calculation</th>
+                            <th scope="col" class="govuk-table__header">Calculation name</th>
+                            <th scope="col" class="govuk-table__header">Calculation type</th>
+                            <th scope="col" class="govuk-table__header">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+
+                            <td class="govuk-table__cell">1</td>
+                            <td class="govuk-table__cell">Funding line</td>
+                            <td class="govuk-table__cell"> <a
+                                    href="../view-specification-results/calculation-providers.html"
+                                    class="govuk-link">Pupil number
+                                </a></td>
+                            <td class="govuk-table__cell">Currency</td>
+                            <td class="govuk-table__cell">£12,482</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                            <td class="govuk-table__cell">2</td>
+                            <td class="govuk-table__cell">Calculation</td>
+                            <td class="govuk-table__cell"><a
+                                    href="../view-specification-results/calculation-providers.html"
+                                    class="govuk-link">Calc
+                                    2</a></td>
+                            <td class="govuk-table__cell">Currency</td>
+                            <td class="govuk-table__cell">£14,419</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </section>
+
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="additional-calculations">
+                <h2 class="govuk-heading-l">Additional calculations</h2>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <div class="govuk-form-group search-container">
+                            <label class="govuk-label" for="sort">
+                                Search
+                            </label>
+                            <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false"
+                                type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                        <table class="govuk-table">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Name</th>
+                                    <th scope="col" class="govuk-table__header">Type</th>
+                                    <th scope="col" class="govuk-table__header">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">
+                                        <a href="additional-calculations.html" class="govuk-link">Total allocation</a>
+                                    </td>
+                                    <td class="govuk-table__cell">Currency</td>
+                                    <td class="govuk-table__cell">Excluded</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav class="govuk-!-margin-top-9" role="navigation" aria-label="Pagination">
+                            <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+                            <ul class="pagination">
+                                <li class="pagination__item"><a class="pagination__link" href="#0"
+                                        aria-label="Previous page"><span aria-hidden="true"
+                                            role="presentation">&laquo;</span>
+                                        Previous</a></li>
+                                <li class="pagination__item"><a class="pagination__link" href="#0"
+                                        aria-label="Page 1">1</a>
+                                </li>
+                                <li class="pagination__item"><a class="pagination__link" href="#0"
+                                        aria-label="Page 2">2</a>
+                                </li>
+                                <li class="pagination__item"><a class="pagination__link current" href="#0"
+                                        aria-current="true" aria-label="Page 3, current page">3</a></li>
+                                <li class="pagination__item"><a class="pagination__link" href="#0"
+                                        aria-label="Page 4">4</a>
+                                </li>
+                                <li class="pagination__item"><a class="pagination__link" href="#0"
+                                        aria-label="Page 5">5</a>
+                                </li>
+                                <li class="pagination__item"><a class="pagination__link" href="#0"
+                                        aria-label="Next page">Next
+                                        <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="provider-data">
+                <h2 class="govuk-heading-l">Provider data</h2>
+                <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        You are using Conisborough college from the master version.
+                    </strong>
+                </div>
+                <h4 class="govuk-heading-m">Establishment details</h4>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Conisborough college
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            4249
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            UKPRN
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            10015211
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            UPIN
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            0
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            URN
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            100742
+                        </dd>
+                    </div>
+                </dl>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <h4 class="govuk-heading-m">Provider details</h4>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Type
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Local authority maintained school
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Sub type
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Community school
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Phase of education
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            4
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Provider profile type
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+
+                        </dd>
+                    </div>
+                </dl>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <h4 class="govuk-heading-m">Location details</h4>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Local authority
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Lewisham
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Local authority code
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            209
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Town
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            London
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Postcode
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            SE6 2SE
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Region
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            London
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Region code
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            LO
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Local government group type
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Metropolitan
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Postcode
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            M
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Country
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            England
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Country code
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            E92000001
+                        </dd>
+                    </div>
+                </dl>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <h4 class="govuk-heading-m">Status details</h4>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Status
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Open
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Date opened
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Unknown
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Date closed
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Unknown
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Reason establishment opened
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Not applicable
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Reason establishment closed
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Not applicable
+                        </dd>
+                    </div>
+                </dl>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <h4 class="govuk-heading-m">Trust details</h4>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Status
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Not applicable
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Code
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                        </dd>
+                    </div>
+                </dl>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <h4 class="govuk-heading-m">Payment organisation details</h4>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Not applicable
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Identifier
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Unknown
+                        </dd>
+                    </div>
+                </dl>
+            </section>
+
+        </div>
+    </div>
+    <div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+        <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+            <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+                width="13" height="17" viewBox="0 0 13 17">
+                <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+            </svg>Back to top
+        </a>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}
