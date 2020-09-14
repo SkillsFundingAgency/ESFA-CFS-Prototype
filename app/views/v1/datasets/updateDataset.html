@@ -23,54 +23,54 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<form action="/v1/datasets/manageDatasets" method="post" class="form">
-    <fieldset class="govuk-fieldset">      
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update data source</h1>
-        <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                    Lump sum for 2020 to 2021 (version 1)
-                </span>
-            </summary>
-            <div class="govuk-details__text">
-                Joe Young <span class="govuk-!-margin-left-2">21 November 12:24pm</span>
-            </div>
-        </details>
+        <form action="/v1/datasets/manageDatasets" method="post" class="form">
+            <fieldset class="govuk-fieldset">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update data source</h1>
+                <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Lump sum for 2020 to 2021 (version 1)
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Joe Young <span class="govuk-!-margin-left-2">21 November 12:24pm</span>
+                    </div>
+                </details>
 
-        <div class="govuk-form-group">
-            <label class="govuk-label" for="file-upload-1">
-                Select data source file
-            </label>
-            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-        </div>
-        <div class="govuk-form-group">
-            <label class="govuk-label" for="more-detail">
-                Description
-            </label>
-            <span id="more-detail-hint" class="govuk-hint">
-            </span>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
-                aria-describedby="more-detail-hint">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="file-upload-1">
+                        Select data source file
+                    </label>
+                    <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="more-detail">
+                        Description
+                    </label>
+                    <span id="more-detail-hint" class="govuk-hint">
+                    </span>
+                    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
+                        aria-describedby="more-detail-hint">
 {{ data['data-more-detail'] }}
             </textarea>
-        </div>
-        <div class="govuk-form-group">
-            <label class="govuk-label" for="more-detail">
-                Change note
-            </label>
-            <span id="more-detail-hint" class="govuk-hint">
-            </span>
-            <textarea class="govuk-textarea" id="more-detail" name="change-note-data" rows="5"
-                aria-describedby="more-detail-hint"></textarea>
-        </div>
-        <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-            Save
-        </button> 
-    </fieldset>
-</form>    
-        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Cancel
-        </button>
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="more-detail">
+                        Change note
+                    </label>
+                    <span id="more-detail-hint" class="govuk-hint">
+                    </span>
+                    <textarea class="govuk-textarea" id="more-detail" name="change-note-data" rows="5"
+                        aria-describedby="more-detail-hint"></textarea>
+                </div>
+                <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                    Save
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                </button>
+            </fieldset>
+        </form>
     </div>
 </div>
 
