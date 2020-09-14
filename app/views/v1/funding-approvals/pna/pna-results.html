@@ -128,8 +128,8 @@ GOV.UK Prototype Kit
 
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
-                                name="filter-by-provider-type" type="checkbox" value="primary">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-1"
+                                name="filter-by-provider-type" type="checkbox" value="Free schools">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Free schools <span>(5)</span>
                             </label>
@@ -138,14 +138,13 @@ GOV.UK Prototype Kit
 
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
-                                name="filter-by-provider-type" type="checkbox" value="primary">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-2"
+                                name="filter-by-provider-type" type="checkbox" value="academies">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Academies <span>(3)</span>
                             </label>
                         </div>
                     </div>
-
                 </div>
             </fieldset>
         </div>
@@ -361,7 +360,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                <table class="govuk-table">
+                <table class="govuk-table" id="fundingApprovalsProviders">
                     <caption class="govuk-table__caption"></caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
@@ -402,10 +401,10 @@ GOV.UK Prototype Kit
                                     </div>
                                 </div>
                             </td>
-                            </td>
                             <td class="govuk-table__cell">10053815</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">-165,121.18</td>
+                            <td style="display: none">academies</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -424,8 +423,8 @@ GOV.UK Prototype Kit
                             </td>
                             <td class="govuk-table__cell">10041679</td>
                             <td class="govuk-table__cell">Draft</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
-                                -15,734.49</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">-15,734.49</td>
+                            <td style="display: none">Free schools</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -444,6 +443,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10054162</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">-58,696.74</td>
+                            <td style="display: none">academies</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -462,6 +462,8 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10046718</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">-8,615.67</td>
+                            <td style="display: none">Free schools</td>
+
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -480,6 +482,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10030436</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">-180,613.89</td>
+                            <td style="display: none">academies</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -498,6 +501,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10068126</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">35,978.24</td>
+                            <td style="display: none">academies</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -516,6 +520,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10056995</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">34430.90</td>
+                            <td style="display: none">Free schools</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -534,6 +539,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10032966</td>
                             <td class="govuk-table__cell">Draft</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">4,512,021.37</td>
+                            <td style="display: none">academies</td>
                         </tr>
                     </tbody>
                 </table>
@@ -588,6 +594,8 @@ GOV.UK Prototype Kit
         </div>
     </div>
 </div>
+
+
 <script>
 
     function myFunction() {
@@ -620,7 +628,6 @@ GOV.UK Prototype Kit
         filter = input.value;
         table = document.getElementById("fundingApprovalsProviders");
         tr = table.getElementsByTagName("tr");
-
 
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
