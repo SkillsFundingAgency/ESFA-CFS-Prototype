@@ -54,8 +54,10 @@ $(document).ready(function () {
 $('.filter-expand').click(function () {
   if ($("[id^=filter-content]").hasClass('filter-content')) {
     $("[id^=filter-content]").removeClass('filter-content');
+    $("[id^=arrowRotate]").addClass('arrowChange');
   }
   else {
+    $("[id^=arrowRotate]").removeClass('arrowChange');
     $("[id^=filter-content]").addClass('filter-content');
   }
 });

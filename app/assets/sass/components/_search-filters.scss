@@ -2,6 +2,12 @@
     display: none;
 }
 
+
+.arrowChange {
+	transform: rotateX(180deg);
+}
+
+
 .hiddenCheckboxes {
     cursor: pointer;
 }
