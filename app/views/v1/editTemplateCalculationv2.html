@@ -27,9 +27,9 @@ GOV.UK Prototype Kit
 
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-5">
-        <h1 class="govuk-fieldset__heading">
-          Provisional Schools Block Funding Excluding Growth
-        </h1>
+        <span class="govuk-caption-l">Calculation name</span>
+        <h2 class="govuk-heading-l">Provisional Schools Block Funding </br>Excluding Growth</h2>
+
       </legend>
 
       <div class="govuk-grid-row govuk-!-margin-bottom-5">
@@ -41,17 +41,11 @@ GOV.UK Prototype Kit
                 Calculation status
               </dt>
               <dd class="govuk-summary-list__value">
-                <strong id="calc-status" class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft </strong>
+                <strong id="calc-status" class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                </strong>
               </dd>
             </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Specification name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                DSG SIT 
-              </dd>
-            </div>
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Value type
@@ -85,11 +79,12 @@ End If
       <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
         Build calculation
       </button>
-      
+
       <div class="govuk-inset-text" id="buildResult" style="display: none;">
         <h4 class="govuk-heading-s">Build output</h4>
         <p class="govuk-body">Code complied successfully: <strong>True</strong></p>
-        <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation results</a></p>
+        <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
+            results</a></p>
       </div>
 
 
@@ -116,9 +111,9 @@ End If
 
 <script>
 
-function buildOuput() {
-  document.getElementById('buildResult').style.display = "block"
-}
+  function buildOuput() {
+    document.getElementById('buildResult').style.display = "block"
+  }
 
 </script>
 
