@@ -9,42 +9,46 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<div class="facet-tags" data-module="track-click">
-    <div class="facet-tags__group">
-        <div class="facet-tags__wrapper">
-            <span class="facet-tags__preposition govuk-body-s">Provider type</span>
-            <span class="facet-tag"> <span class="facet-tag__text">Academies</span>
-                <button type="button" class="facet-tag__remove" aria-label="Remove filter Academies"
-                    data-module="remove-filter-link" data-track-label="Academies" data-facet="result"
-                    data-value="academies" data-name="">✕</button>
-            </span>
+        <div class="facet-tags" data-module="track-click">
+            <div class="facet-tags__group">
+                <div class="facet-tags__wrapper">
+                    <span class="facet-tags__preposition govuk-body-s">Provider type</span>
+                    <span class="facet-tag"> <span class="facet-tag__text">Academies</span>
+                        <button type="button" class="facet-tag__remove" aria-label="Remove filter Academies"
+                            data-module="remove-filter-link" data-track-label="Academies" data-facet="result"
+                            data-value="academies" data-name="">✕</button>
+                    </span>
+                </div>
+            </div>
+            <div class="facet-tags__group">
+                <div class="facet-tags__wrapper"> <span class="facet-tags__preposition govuk-body-s">Provider sub
+                        type</span> <span class="facet-tag"> <span class="facet-tag__text">A</span> <button
+                            type="button" class="facet-tag__remove" aria-label="Remove filter A"
+                            data-module="remove-filter-link" data-track-label="A" data-facet="stage" data-value="A"
+                            data-name="">✕</button> </span>
+                </div>
+                <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"> or </span> <span
+                        class="facet-tag">
+                        <span class="facet-tag__text">B</span> <button type="button" class="facet-tag__remove"
+                            aria-label="Remove filter Beta" data-module="remove-filter-link" data-track-label="Beta"
+                            data-facet="stage" data-value="B" data-name="">✕</button> </span> </div>
+            </div>
+            <div class="facet-tags__group">
+                <div class="facet-tags__wrapper"> <span class="facet-tags__preposition govuk-body-s">Provider sub
+                        type</span> <span class="facet-tag"> <span class="facet-tag__text">A</span> <button
+                            type="button" class="facet-tag__remove" aria-label="Remove filter A"
+                            data-module="remove-filter-link" data-track-label="A" data-facet="stage" data-value="A"
+                            data-name="">✕</button> </span>
+                </div>
+                <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"> or </span> <span
+                        class="facet-tag">
+                        <span class="facet-tag__text">B</span> <button type="button" class="facet-tag__remove"
+                            aria-label="Remove filter Beta" data-module="remove-filter-link" data-track-label="Beta"
+                            data-facet="stage" data-value="B" data-name="">✕</button> </span> </div>
+            </div>
+
         </div>
     </div>
-    <div class="facet-tags__group">
-        <div class="facet-tags__wrapper"> <span class="facet-tags__preposition govuk-body-s">Provider sub type</span> <span
-                class="facet-tag"> <span class="facet-tag__text">A</span> <button type="button"
-                    class="facet-tag__remove" aria-label="Remove filter A" data-module="remove-filter-link"
-                    data-track-label="A" data-facet="stage" data-value="A" data-name="">✕</button> </span>
-        </div>
-        <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"> or </span> <span class="facet-tag">
-                <span class="facet-tag__text">B</span> <button type="button" class="facet-tag__remove"
-                    aria-label="Remove filter Beta" data-module="remove-filter-link" data-track-label="Beta"
-                    data-facet="stage" data-value="B" data-name="">✕</button> </span> </div>             
-    </div>
-    <div class="facet-tags__group">
-        <div class="facet-tags__wrapper"> <span class="facet-tags__preposition govuk-body-s">Provider sub type</span> <span
-                class="facet-tag"> <span class="facet-tag__text">A</span> <button type="button"
-                    class="facet-tag__remove" aria-label="Remove filter A" data-module="remove-filter-link"
-                    data-track-label="A" data-facet="stage" data-value="A" data-name="">✕</button> </span>
-        </div>
-        <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"> or </span> <span class="facet-tag">
-                <span class="facet-tag__text">B</span> <button type="button" class="facet-tag__remove"
-                    aria-label="Remove filter Beta" data-module="remove-filter-link" data-track-label="Beta"
-                    data-facet="stage" data-value="B" data-name="">✕</button> </span> </div>             
-    </div>
-    
-</div>
-</div>
 </div>
 
 
@@ -77,7 +81,6 @@ GOV.UK Prototype Kit
         display: table-cell;
         padding: 0 5px 0 2px;
         vertical-align: middle;
-        text-transform: lowercase;
     }
 
     .js-enabled .facet-tag {
