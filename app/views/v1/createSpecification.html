@@ -21,7 +21,7 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
-    <form action="/v1/specifications" method="post" class="form">
+    <form action="/v1/specifications" method="post" name="createSpecForm" onsubmit="return validateForm()" class="form">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
@@ -29,11 +29,14 @@ GOV.UK Prototype Kit
           </h1>
         </legend>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group" id="specificationName">
           <label class="govuk-label" for="address-line-1">
             Specification name
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="spec-name" type="text">
+          <span id="specification-name-error" class="govuk-error-message hideError">
+            <span class="govuk-visually-hidden">Error:</span> Enter a specificaion name
+          </span>
+          <input class="govuk-input govuk-!-width-two-thirds" id="spec-name" name="spec-name" type="text">
         </div>
 
         <div class="govuk-form-group">
@@ -109,6 +112,8 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
+  
+ 
 
   function getProviderData() {
     var coreProviderData = document.getElementById("coreProviderData").value;
@@ -119,6 +124,15 @@ GOV.UK Prototype Kit
 
   function newDataSource() {
     sessionStorage.setItem('new spec', 'true');
+  }
+
+  function validateForm(){
+    var specName = document.forms["createSpecForm"]["spec-name"].value
+    if (specName == "") {
+      document.getElementById('specificationName').classList.add("govuk-form-group--error");
+      document.getElementById('specification-name-error').classList.remove("hideError")
+      return false;
+    }
   }
 
 
