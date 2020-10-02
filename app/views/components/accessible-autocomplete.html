@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <form action="" method="get">
+            <label class="govuk-label" for="fundingStream">Select funding stream
+            <div class="autocomplete-wrapper">
+                <select name="fundingStream" class="govuk-select" id="funding-stream">
+                    <option value="">Select a funding stream</option>
+                    <option value="fundingStream: GAG">General annual grant</option>
+                    <option value="fundingStream: DSG">Dedicated schools grant</option>
+                    <option value="fundingStream: PES">PE and sports premium</option>
+                    <option value="fundingStream: PNA">Pupil number adjustment</option>
+                </select>
+            </div>
+        </label>
+        </form>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-9">
+    <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">DEMO ONLY</p>
+        <p class="govuk-body">Funding streams available</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>General annual grant</li>
+            <li>Dedicated schools grant</li>
+            <li>PE and sports premium</li>
+            <li>Pupil number adjustment</li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var selectEl = document.querySelector('#funding-stream')
+    accessibleAutocomplete.enhanceSelectElement({
+        autoselect: true,
+        confirmOnBlur: true,
+        defaultValue: "",
+        minLength: 3,
+        selectElement: selectEl
+    })
+
+    var queryStringParameters = window.location.search
+    var previouslySubmitted = queryStringParameters.length > 0
+    if (previouslySubmitted) {
+        var submittedEl = document.querySelector('.submitted')
+        submittedEl.classList.remove('submitted--hidden')
+        var params = new URLSearchParams(document.location.search.split('?')[1])
+        document.querySelector('.submitted__last-location').innerHTML = params.get('funding-stream')
+    }
+</script>
+
+{% endblock %}

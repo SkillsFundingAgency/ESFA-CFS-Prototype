@@ -1,17 +1,15 @@
-// permissions banner
+
+// old permissions banner
+
 .permissions-banner {
-	background-color: #f47738;
-	padding: 20px;
-
-	span {
-		margin-left: 20px;
-		border-color: #fff;
-		color: #f47738;
-		background-color: white;
-	}
-
-	strong {
-		margin-left: 20px;
-		color: white;
-	}
+font-family: "nta", Arial, sans-serif;
+font-weight: 400;
+text-transform: none;
+font-size: 18px;
+line-height: 1.2;
+padding: 20px;
+margin-top: 15px;
+border-width: 5px;
+border-style: solid;
+color: #005ea5;
 }

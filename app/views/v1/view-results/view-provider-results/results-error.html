@@ -29,68 +29,56 @@ GOV.UK Prototype Kit
                 </li>
             </ol>
         </div>
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+            data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Conisborough college</h1>
-        <span class="govuk-caption-m govuk-!-margin-bottom-4">UKPRN: <strong>10015211</strong></span>
-
-    </div>
-</div>
-<div class="govuk-warning-text govuk-!-margin-bottom-7">
-    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-    <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Warning</span>
-        There are no specifications for General Annual Grant
-    </strong>
-</div>
-
-<div class="govuk-grid-row govuk-!-margin-bottom-6">
-    <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-form-group">
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Select a specification</h3>
-            <span class="govuk-caption-m">Available specifications for all funding streams will be displayed here.
-            </span>
-            <p></p>
-
-
-
-            <select class="govuk-select" id="sort" name="sort">
-                <option value="published">DSG SIT (Financial year 2020 to 2021)
-                </option>
-                <option value="published">PE & Sport ABC (Academic year 2020 to 2021)
-                </option>
-            </select>
-        </div>
-
-
-
-        <div class="govuk-grid-row govuk-!-margin-bottom-5">
-            <div class="govuk-grid-column-full">
-
-                <dl class="govuk-summary-list govuk-summary-list--no-border">
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Funding stream </dt>
-                        <dd class="govuk-summary-list__value">
-                            Dedicated schools grant
-                        </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Funding period
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            Financial year
-                            2020 to 2021
-                        </dd>
-                    </div>
-
-                </dl>
-
+                    <li>
+                        <a href="">You have navigated from GAG but there are no GAG specifications.
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
 
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Conisborough college</h1>
+        <span class="govuk-caption-m govuk-!-margin-bottom-8">UKPRN: <strong>10015211</strong></span>
 
     </div>
+</div>
+<div class="govuk-form-group govuk-form-group--error">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Specification</h3>
+            <span class="govuk-caption-m">Select a specification for the provider</span>
+
+            <span id="passport-issued-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> You have navigated from GAG but there are no GAG
+                specifications.
+            </span>
+        </div>
+
+
+
+        <select class="govuk-select" id="sort" name="sort">
+            <option value="published">DSG SIT (Financial year 2020 to 2021)
+            </option>
+            <option value="published">PE & Sport ABC (Academic year 2020 to 2021)
+            </option>
+        </select>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <p class="govuk-body">Funding stream:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Dedicated
+            schools grant</span>
+    </p>
+    <p class="govuk-body">Funding period:<span class="govuk-!-margin-left-2 govuk-!-font-weight-bold">Financial year
+            2020 to 2021</span>
+    </p>
 </div>
 
 <div class="govuk-grid-row">

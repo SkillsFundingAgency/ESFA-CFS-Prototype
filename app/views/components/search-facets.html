@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="facet-tags" data-module="track-click">
+            <div class="facet-tags__group">
+                <div class="facet-tags__wrapper">
+                    <span class="facet-tags__preposition govuk-body-s">Provider type</span>
+                    <span class="facet-tag"> <span class="facet-tag__text">Academies</span>
+                        <button type="button" class="facet-tag__remove" aria-label="Remove filter Academies"
+                            data-module="remove-filter-link" data-track-label="Academies" data-facet="result"
+                            data-value="academies" data-name="">✕</button>
+                    </span>
+                </div>
+            </div>
+            <div class="facet-tags__group">
+                <div class="facet-tags__wrapper"> <span class="facet-tags__preposition govuk-body-s">Provider sub
+                        type</span> <span class="facet-tag"> <span class="facet-tag__text">A</span> <button
+                            type="button" class="facet-tag__remove" aria-label="Remove filter A"
+                            data-module="remove-filter-link" data-track-label="A" data-facet="stage" data-value="A"
+                            data-name="">✕</button> </span>
+                </div>
+                <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"> or </span> <span
+                        class="facet-tag">
+                        <span class="facet-tag__text">B</span> <button type="button" class="facet-tag__remove"
+                            aria-label="Remove filter Beta" data-module="remove-filter-link" data-track-label="Beta"
+                            data-facet="stage" data-value="B" data-name="">✕</button> </span> </div>
+            </div>
+            <div class="facet-tags__group">
+                <div class="facet-tags__wrapper"> <span class="facet-tags__preposition govuk-body-s">Provider sub
+                        type</span> <span class="facet-tag"> <span class="facet-tag__text">A</span> <button
+                            type="button" class="facet-tag__remove" aria-label="Remove filter A"
+                            data-module="remove-filter-link" data-track-label="A" data-facet="stage" data-value="A"
+                            data-name="">✕</button> </span>
+                </div>
+                <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"> or </span> <span
+                        class="facet-tag">
+                        <span class="facet-tag__text">B</span> <button type="button" class="facet-tag__remove"
+                            aria-label="Remove filter Beta" data-module="remove-filter-link" data-track-label="Beta"
+                            data-facet="stage" data-value="B" data-name="">✕</button> </span> </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<Style>
+    .facet-tags {
+        padding-bottom: 5px;
+    }
+
+    @media (min-width: 40.0625em) {
+        .facet-tags__group:nth-child(odd) {
+            background-color: #f3f2f1;
+        }
+    }
+
+    .facet-tags__group {
+        padding: 5px;
+    }
+
+    .facet-tags__wrapper {
+        vertical-align: middle;
+        margin: 5px 0;
+        display: inline-block;
+    }
+
+    .facet-tags__wrapper:first-of-type .facet-tags__preposition:first-of-type {
+        font-weight: bold;
+    }
+
+    .facet-tags__preposition {
+        display: table-cell;
+        padding: 0 5px 0 2px;
+        vertical-align: middle;
+    }
+
+    .js-enabled .facet-tag {
+        padding: 8px 7px 7px 23px;
+    }
+
+    .facet-tag {
+        display: table-cell;
+        position: relative;
+        padding: 5px;
+        border: 1px solid #505a5f;
+        border-radius: 5px;
+        background-color: #f3f2f1;
+    }
+
+    .facet-tag__text {
+        display: inline-block;
+        margin-left: 0;
+    }
+
+    .js-enabled .facet-tag__text {
+        margin-left: 5px;
+    }
+
+    .facet-tag__remove {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-family: "nta", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.1428571429;
+        text-align: left;
+        cursor: pointer;
+        color: #000;
+        text-decoration: none;
+        background: none;
+        border: 0;
+    }
+</Style>
+
+{% endblock %}

@@ -27,11 +27,11 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-xl">Specification</span>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">DSG specification 1</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">GAG specification 1</h1>
         <span class="govuk-caption-m">Funding period</span>
         <h1 class="govuk-heading-m">2019 to 2020</h1>
         <span class="govuk-caption-m">Funding stream</span>
-        <h1 class="govuk-heading-m">DSG</h1>
+        <h1 class="govuk-heading-m">General annual grant</h1>
     </div>
 </div>
 
@@ -48,7 +48,7 @@ GOV.UK Prototype Kit
                 <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible"
                     data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input"  id="how-contacted-conditional" name="search"
+                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted"
                             type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                             Provider name
@@ -57,12 +57,12 @@ GOV.UK Prototype Kit
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                         id="conditional-how-contacted-conditional">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" onkeyup="myFunction()" id="providerNameSearch"
-                                name="search-by-provider" type="text" spellcheck="false">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-email"
+                                name="contact-by-email" type="email" spellcheck="false">
                         </div>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="search"
+                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted"
                             type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                             UKPRN
@@ -76,7 +76,7 @@ GOV.UK Prototype Kit
                         </div>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="search"
+                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted"
                             type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
                             UPIN
@@ -90,7 +90,7 @@ GOV.UK Prototype Kit
                         </div>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-4" name="search"
+                        <input class="govuk-radios__input" id="how-contacted-conditional-4" name="how-contacted"
                             type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-4">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
                             URN
@@ -111,7 +111,8 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset">
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-                    <h4 class="govuk-heading-s">Filter by provider type <span><i id="arrowRotate" class="material-icons right-align">
+                    <h4 class="govuk-heading-s">Filter by provider type <span><i id="arrowRotate"
+                                class="material-icons right-align">
                                 keyboard_arrow_down</i></span></h4>
                     <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
                 </button>
@@ -126,28 +127,22 @@ GOV.UK Prototype Kit
                     </div>
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
-
-                            <input class="govuk-checkboxes__input provider" id="filter-by-provider" name="filter-by-provider-type"
-                                type="checkbox" value="primary">
-
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
+                                name="filter-by-provider-type" type="checkbox" value="primary">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Primary <span>(6)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-
-                            <input class="govuk-checkboxes__input"  id="filter-by-provider-type-3" name="filter-by-provider-type"
-                                type="checkbox" value="academy">
-
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-3"
+                                name="filter-by-provider-type" type="checkbox" value="academy">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Academy <span>(1)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-secondary" name="filter-by-provider-type"
-                                type="checkbox" value="secondary">
-
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-4"
+                                name="filter-by-provider-type" type="checkbox" value="secondary">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
                                 Secondary <span>(3)</span>
                             </label>
@@ -168,7 +163,8 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset">
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-                    <h4 class="govuk-heading-s">Filter by provider sub type <span><i id="arrowRotate" class="material-icons right-align">
+                    <h4 class="govuk-heading-s">Filter by provider sub type <span><i id="arrowRotate"
+                                class="material-icons right-align">
                                 keyboard_arrow_down</i></span>
                     </h4>
                     <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
@@ -231,7 +227,8 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset">
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-                    <h4 class="govuk-heading-s">Filter by status <span><i id="arrowRotate" class="material-icons right-align">
+                    <h4 class="govuk-heading-s">Filter by status <span><i id="arrowRotate"
+                                class="material-icons right-align">
                                 keyboard_arrow_down</i></span>
                     </h4>
                     <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
@@ -276,7 +273,8 @@ GOV.UK Prototype Kit
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
                     <h4 class="govuk-heading-s">
-                        Filter by error status <span><i id="arrowRotate" class="material-icons right-align"> keyboard_arrow_down
+                        Filter by error status <span><i id="arrowRotate" class="material-icons right-align">
+                                keyboard_arrow_down
                             </i></span>
                     </h4>
                     <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
@@ -309,7 +307,8 @@ GOV.UK Prototype Kit
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
                     <h4 class="govuk-heading-s">
-                        Filter by local authority <span><i id="arrowRotate" class="material-icons right-align"> keyboard_arrow_down
+                        Filter by local authority <span><i id="arrowRotate" class="material-icons right-align">
+                                keyboard_arrow_down
                             </i></span>
                     </h4>
                     <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
@@ -327,7 +326,7 @@ GOV.UK Prototype Kit
                             <input class="govuk-checkboxes__input" id="local-authority-1" name="local-authority"
                                 type="checkbox" value="hmrc">
                             <label class="govuk-label govuk-checkboxes__label" for="local-authority">
-                                Local authority <span>(1)</span>
+                                Barnet<span>(1)</span>
                             </label>
                         </div>
 
@@ -335,7 +334,7 @@ GOV.UK Prototype Kit
                             <input class="govuk-checkboxes__input" id="local-authority-2" name="local-authority"
                                 type="checkbox" value="employment-tribunal" disabled>
                             <label class="govuk-label govuk-checkboxes__label" for="local-authority-2">
-                                Local authority <span>(0)</span>
+                                Bedford <span>(0)</span>
                             </label>
                         </div>
 
@@ -343,7 +342,7 @@ GOV.UK Prototype Kit
                             <input class="govuk-checkboxes__input" id="local-authority-3" name="local-authority"
                                 type="checkbox" value="employment-tribunal">
                             <label class="govuk-label govuk-checkboxes__label" for="local-authority-3">
-                                Local authority <span>(1)</span>
+                                Hampshire <span>(1)</span>
                             </label>
                         </div>
 
@@ -351,7 +350,7 @@ GOV.UK Prototype Kit
                             <input class="govuk-checkboxes__input" id="local-authority-4" name="local-authority"
                                 type="checkbox" value="employment-tribunal">
                             <label class="govuk-label govuk-checkboxes__label" for="local-authority-4">
-                                Local authority<span>(4)</span>
+                                Blackburn with Darwen<span>(1)</span>
                             </label>
                         </div>
 
@@ -359,7 +358,7 @@ GOV.UK Prototype Kit
                             <input class="govuk-checkboxes__input" id="local-authority-5" name="local-authority"
                                 type="checkbox" value="employment-tribunal">
                             <label class="govuk-label govuk-checkboxes__label" for="local-authority-5">
-                                Local authority <span>(5)</span>
+                                Sefton<span>(1)</span>
                             </label>
                         </div>
                     </div>
@@ -372,8 +371,9 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                <table class="govuk-table" id="fundingApprovalsProviders">
+                <table class="govuk-table">
                     <caption class="govuk-table__caption"></caption>
+
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
                             <th scope="col" class="govuk-table__header govuk-!-width-one-half">
@@ -394,12 +394,105 @@ GOV.UK Prototype Kit
                             <th scope="col" class="govuk-table__header">Status</th>
                             <th scope="col" class="govuk-table__header govuk-table__header--numeric">
                                 Funding total<br>
-                                <span id="fundingTotal"></span> <br>
+                                <span>£997,362,175</span> <br>
                                 <p class="govuk-body-s govuk-!-margin-bottom-0">of filtered providers</p>
                             </th>
-                            <th scope="col" style=" display:none">Provider type</th>
                         </tr>
                     </thead>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full">
+                            <div class="facet-tags" data-module="track-click">
+                                <div class="facet-tags__group">
+                                    <div class="facet-tags__wrapper">
+                                        <span class="facet-tags__preposition govuk-body-s">Provider type</span>
+                                        <span class="facet-tag"> <span class="facet-tag__text">Academy</span>
+                                            <button type="button" class="facet-tag__remove"
+                                                aria-label="Remove filter Academies" data-module="remove-filter-link"
+                                                data-track-label="Academies" data-facet="result" data-value="academies"
+                                                data-name="">&#10005;</button>
+                                        </span>
+                                    </div>
+                                    <div class="facet-tags__wrapper">
+                                        <span class="facet-tag"> <span class="facet-tag__text">Free schools</span>
+                                            <button type="button" class="facet-tag__remove"
+                                                aria-label="Remove filter Academies" data-module="remove-filter-link"
+                                                data-track-label="Academies" data-facet="result" data-value="academies"
+                                                data-name="">&#10005;</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="facet-tags__group">
+                                    <div class="facet-tags__wrapper"> <span
+                                            class="facet-tags__preposition govuk-body-s">Provider sub type
+                                        </span> <span class="facet-tag"> <span class="facet-tag__text">Academy sponsor
+                                                led</span> <button type="button" class="facet-tag__remove"
+                                                aria-label="Remove filter A" data-module="remove-filter-link"
+                                                data-track-label="A" data-facet="stage" data-value="A"
+                                                data-name="">&#10005;</button> </span>
+                                    </div>
+                                    <div class="facet-tags__wrapper">
+                                        <span class="facet-tag"> <span class="facet-tag__text">Free schools</span>
+                                            <button type="button" class="facet-tag__remove"
+                                                aria-label="Remove filter Academies" data-module="remove-filter-link"
+                                                data-track-label="Academies" data-facet="result" data-value="academies"
+                                                data-name="">&#10005;</button>
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="facet-tags__group">
+                                    <div class="facet-tags__wrapper"> <span
+                                            class="facet-tags__preposition govuk-body-s">Status</span> <span
+                                            class="facet-tag">
+                                            <span class="facet-tag__text"></span>Approved <button type="button"
+                                                class="facet-tag__remove" aria-label="Remove filter A"
+                                                data-module="remove-filter-link" data-track-label="A" data-facet="stage"
+                                                data-value="A" data-name="">&#10005;</button> </span>
+                                    </div>
+                                    <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"> </span>
+                                        <span class="facet-tag">
+                                            <span class="facet-tag__text">Released</span> <button type="button"
+                                                class="facet-tag__remove" aria-label="Remove filter Beta"
+                                                data-module="remove-filter-link" data-track-label="Beta"
+                                                data-facet="stage" data-value="B" data-name="">&#10005;</button> </span>
+                                    </div>
+                                    <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"> </span>
+                                        <span class="facet-tag">
+                                            <span class="facet-tag__text">Updated</span> <button type="button"
+                                                class="facet-tag__remove" aria-label="Remove filter Beta"
+                                                data-module="remove-filter-link" data-track-label="Beta"
+                                                data-facet="stage" data-value="B" data-name="">&#10005;</button> </span>
+                                    </div>
+                                </div>
+                                <div class="facet-tags__group">
+                                    <div class="facet-tags__wrapper"> <span
+                                            class="facet-tags__preposition govuk-body-s">Local authority</span> <span
+                                            class="facet-tag">
+                                            <span class="facet-tag__text"></span>Barnet <button type="button"
+                                                class="facet-tag__remove" aria-label="Remove filter A"
+                                                data-module="remove-filter-link" data-track-label="A" data-facet="stage"
+                                                data-value="A" data-name="">&#10005;</button> </span>
+                                    </div>
+                                    <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"> </span>
+                                        <span class="facet-tag">
+                                            <span class="facet-tag__text">Sefton</span> <button type="button"
+                                                class="facet-tag__remove" aria-label="Remove filter Beta"
+                                                data-module="remove-filter-link" data-track-label="Beta"
+                                                data-facet="stage" data-value="B" data-name="">&#10005;</button> </span>
+                                    </div>
+                                    <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"> </span>
+                                        <span class="facet-tag">
+                                            <span class="facet-tag__text">Hampshire</span> <button type="button"
+                                                class="facet-tag__remove" aria-label="Remove filter Beta"
+                                                data-module="remove-filter-link" data-track-label="Beta"
+                                                data-facet="stage" data-value="B" data-name="">&#10005;</button> </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
                     <tbody class="govuk-table__body table-vertical-align">
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
@@ -408,15 +501,17 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="346757869">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet London Borough Council</a>
+                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet
+                                                London
+                                                Borough Council</a>
                                         </label>
                                     </div>
                                 </div>
                             </td>
+                            </td>
                             <td class="govuk-table__cell">10003986</td>
                             <td class="govuk-table__cell">Updated</td>
-                            <td id="providerValue" class="govuk-table__cell govuk-table__cell--numeric gbp">346,757,869</td>
-                            <td style="display: none">primary</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric gbp">346,757,869</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -437,8 +532,6 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 284,821,882</td>
-                                <td style="display: none">secondary</td>
-
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -459,7 +552,6 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10000538</td>
                             <td class="govuk-table__cell">Updated</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">196,520,871</td>
-                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -478,7 +570,6 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10000416</td>
                             <td class="govuk-table__cell">Released</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">171,530,631</td>
-                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -497,7 +588,6 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10001272</td>
                             <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">224,512,540</td>
-                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -516,7 +606,6 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10000893</td>
                             <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">320,383,491</td>
-                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -535,7 +624,6 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10007340</td>
                             <td class="govuk-table__cell">Released</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">398,893,164</td>
-                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -554,7 +642,6 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10004821</td>
                             <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">138,295,188</td>
-                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -573,7 +660,6 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10000725</td>
                             <td class="govuk-table__cell">Updated</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">184,352,672</td>
-                            <td style="display: none">secondary</td>
                         </tr>
 
                         <tr class="govuk-table__row">
@@ -592,7 +678,6 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">10000398</td>
                             <td class="govuk-table__cell">Updated</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric gbp">265,414,946</td>
-                            <td style="display: none">secondary</td>
                         </tr>
                     </tbody>
                 </table>
@@ -652,82 +737,83 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<script>
 
-function myFunction() {
-  // Declare variables
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("providerNameSearch");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("fundingApprovalsProviders");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = " ";
-      } else {
-        tr[i].style.display = "none";
-      }
+<Style>
+    .facet-tags {
+        padding-bottom: 5px;
     }
-  }
-}
 
-document.getElementById('filter-by-provider').onclick = function () {
-      // Declare variables
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("providerNameSearch");
-  filter = this.value;
-  table = document.getElementById("fundingApprovalsProviders");
-  tr = table.getElementsByTagName("tr");  
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[4];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue === filter) {
-        tr[i].style.display = " ";
-      } else {
-        tr[i].style.display = "none";
-      }
+    @media (min-width: 40.0625em) {
+        .facet-tags__group:nth-child(odd) {
+            background-color: #f3f2f1;
+        }
     }
-  }
-}
 
-document.getElementById('filter-by-provider-secondary').onclick = function () {
-// Declare variables
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("providerNameSearch");
-  filter = this.value;
-  table = document.getElementById("fundingApprovalsProviders");
-  tr = table.getElementsByTagName("tr");  
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[4];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue === filter) {
-        tr[i].style.display = " ";
-      } else {
-        tr[i].style.display = "none";
-      }
+    .facet-tags__group {
+        padding: 5px;
     }
-  }
-}
 
-window.onload = function () {
-    document.getElementById("providerValue").innerHTML = sessionStorage.getItem("provider data changed");
+    .facet-tags__wrapper {
+        vertical-align: middle;
+        margin: 5px 0;
+        display: inline-block;
+    }
 
-}
+    .facet-tags__wrapper:first-of-type .facet-tags__preposition:first-of-type {
+        font-weight: bold;
+    }
 
-</script>
+    .facet-tags__preposition {
+        display: table-cell;
+        padding: 0 5px 0 2px;
+        vertical-align: middle;
+    }
 
+    .js-enabled .facet-tag {
+        padding: 8px 7px 7px 23px;
+    }
 
+    .facet-tag {
+        display: table-cell;
+        position: relative;
+        padding: 5px;
+        border: 1px solid #505a5f;
+        border-radius: 5px;
+        background-color: #f3f2f1;
+    }
 
+    .facet-tag__text {
+        display: inline-block;
+        margin-left: 0;
 
+    }
+
+    .js-enabled .facet-tag__text {
+        margin-left: 5px;
+    }
+
+    .facet-tag__remove {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-family: "nta", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.1428571429;
+        text-align: left;
+        cursor: pointer;
+        color: #000;
+        text-decoration: none;
+        background: none;
+        border: 0;
+    }
+</Style>
 {% endblock %}

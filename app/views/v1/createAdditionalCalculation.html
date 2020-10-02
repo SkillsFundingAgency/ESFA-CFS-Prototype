@@ -23,7 +23,7 @@ GOV.UK Prototype Kit
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Create additional calculation</li>
       </ol>
     </div>
-
+    <form action="/v1/fundingLineStructure" method="post" class="form">
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
         <h1 class="govuk-fieldset__heading">
@@ -31,23 +31,24 @@ GOV.UK Prototype Kit
         </h1>
       </legend>
 
-      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-line-1">
-            Calculation name
-          </label>
-          <input class="govuk-input govuk-js-character-count" id="address-line-1" name="address-line-1" type="text">
-        </div>
+
+    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Calculation name
+        </label>
+        <input class="govuk-input govuk-js-character-count" id="address-line-1" name="additionalCalc-name" type="text">
       </div>
 
       <div class="govuk-form-group govuk-!-margin-top-5">
         <label class="govuk-label" for="sort">
           Value type
         </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="draft">Percentage</option>
-          <option value="draft">Number</option>
-          <option value="draft">Currency</option>
+        <select class="govuk-select" id="value-type" name="value-type">
+          <option></option>
+          <option value="Percentage">Percentage</option>
+          <option value="Number">Number</option>
+          <option value="Currency">Currency</option>
         </select>
       </div>
 
@@ -55,40 +56,65 @@ GOV.UK Prototype Kit
         <label class="govuk-label" for="more-detail">
           Calculation script
         </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-          aria-describedby="more-detail-hint">
-Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
-
-If A.HasValue = False Then
-
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
+            aria-describedby="more-detail-hint">
 Return 0
-
-Else
-Return A
-End If
         </textarea>
-      </div>
-      <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
-        Build calculation
-      </button>
-      <div class="govuk-inset-text">Your calculation’s build output must be successful before you can save it
-      </div>
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="build-output">
-          Build output
-        </label>
-        <input class="govuk-input" id="build-output" name="build-output" type="text"
-          value="Code complied successfully: true">
-      </div>
+    </div>
 
-      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-        Save and continue
-      </button>
+    <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
+      Build calculation
+    </button>
+    <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
+      results</a></p>
 
-      <a href="specifications.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Cancel
+    <div class="govuk-inset-text" id="buildResult" style="display: none;">
+      <h4 class="govuk-heading-s">Build output</h4>
+      <p class="govuk-body">Code complied successfully: <strong>True</strong></p>
+    </div>
+
+    <div class="govuk-grid-row govuk-!-margin-top-9">
+        <div class="govuk-grid-column-two-thirds">
+          <button class="govuk-button govuk-!-margin-right-1" onclick="createCalc()" data-module="govuk-button">
+            Save and continue
+          </button>
+          <button class="govuk-button govuk-!-margin-right-1 btn-approve" id="btn-approve" data-module="govuk-button">
+            Approve
+          </button>
+          <a href="fundingLineStructure.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </a>
+        </div>
+      </div>
+  </fieldset>
+</form>
+
+      <p class="govuk-body">Last saved 25 March 2020 2:57pm</p>
+      <a href="calculation-version-history.html">
+        <p class="govuk-body">View calculation history</p>
       </a>
   </div>
 </div>
+
+<script>
+
+  function buildOuput() {
+    document.getElementById('buildResult').style.display = "block"
+  }
+
+function createCalc () {
+  var Timeoptions =  { hour: '2-digit', minute: '2-digit' };
+  var time = new Date().toLocaleTimeString('en-US', Timeoptions)
+
+  var date = new Date()
+  var dateOptions = {year: 'numeric', month: 'long', day: 'numeric' }
+  var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+
+  sessionStorage.setItem('calcCreated', 'true')
+  sessionStorage.setItem('status', 'Draft')
+  sessionStorage.setItem('date', dateFormat + ' ' + time )
+}
+
+</script>
 
 {% endblock %}
