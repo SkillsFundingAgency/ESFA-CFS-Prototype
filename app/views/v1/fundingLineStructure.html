@@ -170,6 +170,12 @@ GOV.UK Prototype Kit
             </tr>
           </thead>
           <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="edit-additional-calculation"> {{ data['additionalCalc-name'] }}</a></th>
+              <td class="govuk-table__cell" id="status"></td>
+              <td class="govuk-table__cell">{{ data['value-type'] }}</td>
+              <td class="govuk-table__cell" id="editedDate"> </td>
+            </tr>
 
           </tbody>
         </table>
@@ -516,5 +522,15 @@ GOV.UK Prototype Kit
   </div>
   <div class="govuk-modal-dialogue__backdrop"></div>
 </div>
+
+<script>
+   
+    window.onload = function additionalCalc () {
+    var status = sessionStorage.getItem("status");
+    var dateTime = sessionStorage.getItem("date");
+    document.getElementById('status').innerHTML = status;
+    document.getElementById('editedDate').innerHTML = dateTime;
+  }
+</script>
 
 {% endblock%}

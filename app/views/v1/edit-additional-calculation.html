@@ -28,7 +28,7 @@ GOV.UK Prototype Kit
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
         <span class="govuk-caption-l">Calculation name</span>
-        <h2 class="govuk-heading-l">Provisional Schools Block Funding </br>Excluding Growth</h2>
+        <h2 class="govuk-heading-l">{{ data['additionalCalc-name'] }}</h2>
       </legend>
 
       <div class="govuk-grid-row govuk-!-margin-bottom-2">
@@ -50,7 +50,7 @@ GOV.UK Prototype Kit
                 Value type
               </dt>
               <dd class="govuk-summary-list__value">
-                Percentage
+                {{ data['value-type'] }}
               </dd>
             </div>
           </dl>
@@ -64,15 +64,9 @@ GOV.UK Prototype Kit
         </h4>
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
           aria-describedby="more-detail-hint">
-Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
-
-If A.HasValue = False Then
 
 Return 0
 
-Else
-Return A
-End If
         </textarea>
       </div>
       <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
@@ -113,6 +107,7 @@ End If
   function buildOuput() {
     document.getElementById('buildResult').style.display = "block"
   }
+
 
 </script>
 
