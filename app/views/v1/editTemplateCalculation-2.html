@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-gag.html">{{ data['spec-name'] }}</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit template calculation specification</li>
+      </ol>
+    </div>
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-5">
+        <h1 class="govuk-fieldset__heading">
+          Edit template calculation
+        </h1>
+      </legend>
+
+      <div class="govuk-grid-row govuk-!-margin-bottom-5">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-caption-m">Calculation status</span>
+          <strong id="calc-status" class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft </strong>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row govuk-!-margin-bottom-5">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-caption-m">Name</span>
+          <h3 class="govuk-heading-m">{{ data['spec-name'] }}</h3>
+
+          <span class="govuk-caption-m">Value type</span>
+          <h3 class="govuk-heading-m">Number</h3>
+
+          <span class="govuk-caption-m">Funding line</span>
+          <h3 class="govuk-heading-m">School Allocation Block</h3>
+
+          <span class="govuk-caption-m">Last saved</span>
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-2">27 August 2020 2:57pm</h3>
+          <a href="calculation-version-history.html">
+            <p class="govuk-body-s">View calculation history</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+          Calculation script
+        </label>
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+          aria-describedby="more-detail-hint">
+          Return Datasets._GAGPublishedData.FundingLines.SchoolAllocationBlock
+        </textarea>
+      </div>
+      <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+        Build calculation
+      </button>
+
+      <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
+          results</a></p>
+
+      <div class="govuk-inset-text">Your calculation’s build output must be successful before you can save it
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="build-output">
+          Build output
+        </label>
+        <p class="govuk-body">Code complied successfully: <strong>True</strong></p>
+      </div>
+
+      <a href="fundingLineStructure-gag.html" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Save and continue
+      </a>
+
+      <button class="govuk-button govuk-!-margin-right-1 btn-approve" id="btn-approve" data-module="govuk-button">
+        Approve
+      </button>
+
+      <a href="fundingLineStructure-gag.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+  </div>
+</div>
+
+{% endblock %}

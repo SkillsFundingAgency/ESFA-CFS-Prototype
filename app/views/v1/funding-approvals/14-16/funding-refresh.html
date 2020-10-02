@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="view-funding.html">Select specification</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="funding-resultsv2.html">Funding approval results</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Confirm refresh funding
+                </li>
+            </ol>
+        </div>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm refresh funding</h1>
+        <span class="govuk-caption-xl govuk-!-margin-bottom-6">Check the information below carefully before refreshing
+            the
+            funding
+        </span>
+    </div>
+</div>
+
+
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-3">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Refreshing funding will change the allocation values according to the variation pointer settings. Review
+                the information below to check this is
+                what you
+                intended to do.
+            </strong>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">On refresh:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+            <li>Refreshing funding will update allocation values, profile values, provider values and publishable
+                calculation values for
+                all eligible providers in the specification based on the latest calculation results.</li>
+            <p></p>
+            <li>Variation strategies will be executed according to the settings of the funding stream using the dates
+                corresponding to the periods set in variation pointers.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table govuk-!-margin-bottom-9">
+            <caption class="govuk-table__caption">Preview of changes to variation pointers</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Funding line</th>
+                    <th scope="col" class="govuk-table__header">Occurrence</th>
+                    <th scope="col" class="govuk-table__header">Date</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Funding line 1</th>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell"> March 2020
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Funding line 2</th>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell"> March 2020</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Funding line 3</th>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">March 2020</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <button data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+            Confirm refresh
+        </button>
+
+        <a href="funding-resultsv2.html" button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+        </a>
+    </div>
+</div>
+
+{% endblock %}

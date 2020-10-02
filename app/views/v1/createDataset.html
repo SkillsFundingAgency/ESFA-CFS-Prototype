@@ -18,48 +18,51 @@ GOV.UK Prototype Kit
           <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="specifications.html">DSG SIT</a>
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-gag.html">{{ data['spec-name'] }}</a>
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Create data set</li>
       </ol>
     </div>
 
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-        <span class="govuk-caption-xl">DSG SIT</span>
-        <h1 class="govuk-heading-xl">Create data set</h1>
-      </legend>
+    <form action="/v1/fundingLineStructure-gag" method="post" class="form">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-heading-xl">Create data set</h1>
+        </legend>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Select data schema
-        </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="draft">Early years AP census year 1</option>
-          <option value="draft">Early years AP census year 2</option>
-        </select>
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Select data schema
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft">APT Adjusted Factors</option>
+            <option value="draft">APT Final Baselines</option>
+            <option value="draft">APT Inputs and Adjustments</option>
+            <option value="draft">APT Local Factors</option>
+            <option value="draft">APT New ISB</option>
+            <option value="draft">APT Proforma</option>
+          </select>
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
-          Data set name
-        </label>
-        <span id="event-name-hint" class="govuk-hint">
-          Use a descriptive unique name other users can understand
-        </span>
-        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Data set name
+          </label>
+          <span id="event-name-hint" class="govuk-hint">
+            Use a descriptive unique name other users can understand
+          </span>
+          <input class="govuk-input" id="address-line-1" name="dataset-name" type="text">
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="more-detail">
-          Description
-        </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-          aria-describedby="more-detail-hint"></textarea>
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Description
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="description" rows="8"
+            aria-describedby="more-detail-hint"></textarea>
+        </div>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <div class="govuk-form-group">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h3 class="govuk-heading-m">
               Set as provider data
@@ -79,27 +82,29 @@ GOV.UK Prototype Kit
               </label>
             </div>
           </div>
-        </fieldset>
-      </div>
-    </fieldset>
+        </div>
+      </fieldset>
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <a href="createDataset-successful.html" class="govuk-button" data-module="govuk-button">
-          Save and continue
-        </a>
+      <button class="govuk-button" data-module="govuk-button" onclick="newDataset()">Save and continue</button>
 
-        <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Save and add another
-        </a>
+      <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save and add another
+      </a>
 
-        <a href="fundingLineStructure" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Cancel
-        </a>
-      </div>
-    </div>
+      <a href="fundingLineStructure-gag.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
 
   </div>
 </div>
+
+<script>
+
+  function newDataset() {
+    sessionStorage.setItem('new data', 'true');
+  }
+
+</script>
 
 {% endblock %}

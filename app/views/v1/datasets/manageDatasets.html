@@ -38,10 +38,6 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-
-
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <div class="govuk-form-group filterbyContainer">
@@ -75,20 +71,34 @@ GOV.UK Prototype Kit
             <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search" type="text">
           </div>
           <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
-                    value="hmrc">
-                  <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                    PE and sports grant <span>(1)</span>
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
-                    value="employment-tribunal" disabled>
-                  <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                    Genera annual grant <span>(0)</span>
-                  </label>
-                </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
+                value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                General annual grant <span>(1)</span>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
+                value="employment-tribunal">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                Academy Pupil Number Adjustment<span>(1)</span>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
+                value="employment-tribunal">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                16 to 19<span>(1)</span>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
+                value="employment-tribunal">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                14 to 16<span>(1)</span>
+              </label>
+            </div>
           </div>
         </div>
       </fieldset>
@@ -145,9 +155,40 @@ GOV.UK Prototype Kit
       </thead>
 
       <tbody class="govuk-table__body" id="mainContentResults">
+
+        <tr class="govuk-table__row" id="newDataSource">
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">{{ data['data-source-file-name'] }}</a>
+            <div class="govuk-!-margin-top-4">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> {{ data['data-schema'] }}</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> {{ data['data-more-detail'] }}</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan Townsend</p>
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> {{ data['change-note-data'] }}
+                  </p>
+                  <p class="govuk-body-s"><a class="govuk-link" href="datasethistory">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
+
+          <td class="govuk-table__cell">11 November 2019 <br> 10:54am</td>
+          <td class="govuk-table__cell">
+            <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">{{ data['data-source-file-name'] }}.xlsx </a></p>
+            </div>
+          </td>
+        </tr>
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="updateDataset">1920 Factors</a>
-
             <div class="govuk-!-margin-top-4">
               <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
                 <summary class="govuk-details__summary">
@@ -304,13 +345,6 @@ GOV.UK Prototype Kit
       </tbody>
     </table>
 
-
-
-
-
-
-
-
     <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
       <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
         <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
@@ -338,6 +372,20 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
+<script>
+
+  window.onload = function () {
+    let newDataSource = sessionStorage.getItem('new data source file')
+    let tr = document.getElementById('newDataSource')
+    console.log(newDataSource)
+    if (newDataSource === 'true') {
+      tr.style.display = " ";
+    } else {
+      tr.style.display = "none";
+    }
+  }
+
+</script>
 
 
 {% endblock %}

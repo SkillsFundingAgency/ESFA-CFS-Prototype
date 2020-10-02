@@ -18,9 +18,9 @@ GOV.UK Prototype Kit
           <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-gag.html">{{ data['spec-name'] }}</a>
         </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit template caluclation specification</li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit template calculation specification</li>
       </ol>
     </div>
 
@@ -41,16 +41,16 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-row govuk-!-margin-bottom-5">
         <div class="govuk-grid-column-two-thirds">
           <span class="govuk-caption-m">Name</span>
-          <h3 class="govuk-heading-m">DSG SIT</h3>
+          <h3 class="govuk-heading-m">{{ data['spec-name'] }}</h3>
 
           <span class="govuk-caption-m">Value type</span>
-          <h3 class="govuk-heading-m">Percentage</h3>
+          <h3 class="govuk-heading-m">Number</h3>
 
           <span class="govuk-caption-m">Funding line</span>
-          <h3 class="govuk-heading-m">Provisional Schools Block Funding Excluding Growth</h3>
+          <h3 class="govuk-heading-m">School Allocation Block Notional SEN</h3>
 
           <span class="govuk-caption-m">Last saved</span>
-          <h3 class="govuk-heading-m govuk-!-margin-bottom-2">25 March 2020 2:57pm</h3>
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-2">27 August 2020 2:57pm</h3>
           <a href="calculation-version-history.html">
             <p class="govuk-body-s">View calculation history</p>
           </a>
@@ -63,22 +63,15 @@ GOV.UK Prototype Kit
         </label>
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
           aria-describedby="more-detail-hint">
-Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
-
-If A.HasValue = False Then
-
-Return 0
-
-Else
-Return A
-End If
+          Return Datasets._GAGPublishedData.FundingLines.SchoolAllocationBlockNotionalSEN
         </textarea>
       </div>
       <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
         Build calculation
       </button>
-      
-      <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation results</a></p>
+
+      <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
+          results</a></p>
 
       <div class="govuk-inset-text">Your calculation’s build output must be successful before you can save it
       </div>
@@ -89,15 +82,17 @@ End If
         <p class="govuk-body">Code complied successfully: <strong>True</strong></p>
       </div>
 
-      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-        Save and continue
+
       </button>
+      <a href="fundingLineStructure-gag.html" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Save and continue
+      </a>
 
       <button class="govuk-button govuk-!-margin-right-1 btn-approve" id="btn-approve" data-module="govuk-button">
         Approve
       </button>
 
-      <a href="fundingLineStructure.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      <a href="fundingLineStructure-gag.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Cancel
       </a>
   </div>

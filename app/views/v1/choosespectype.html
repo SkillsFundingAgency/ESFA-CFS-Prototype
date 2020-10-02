@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a>
+                </li>
+
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Select data source</li>
+            </ol>
+        </div>
+
+        <form action="/v1/fundingLineStructure-chosen" method="post" class="form">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-heading-xl">Select data source</h1>
+                </legend>
+
+
+
+
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h3 class="govuk-heading-m">
+                            Choose a data source type
+                        </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="CFSdataset" name="data-type" type="radio"
+                                value="choosefundingstream.html">
+                            <label class="govuk-label govuk-radios__label" for="CFSdataset">
+                                Published specifications
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="publishedspecification" name="data-type" type="radio"
+                                value="createDataset.html">
+                            <label class="govuk-label govuk-radios__label" for="publishedspecification">
+                                Data sources</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                </br></br></br>
+
+                <a href="" onclick="patternChoice()" id="patternLink" class="govuk-button govuk-!-margin-right-1"
+                    data-module="govuk-button">
+                    Save and continue
+                </a>
+
+
+
+
+                <a href="fundingLineStructure-chosen.html" class="govuk-button govuk-button--secondary"
+                    data-module="govuk-button">
+                    Cancel
+                </a>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+    function patternChoice() {
+        console.log("buttonclicked")
+        var patternType = document.querySelector('input[name="data-type"]:checked').value;
+        console.log(patternType)
+        document.getElementById('patternLink').href = patternType
+    }
+</script>
+
+{% endblock %}

@@ -21,76 +21,114 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-        <h1 class="govuk-fieldset__heading">
-          Create specification
-        </h1>
-      </legend>
+    <form action="/v1/specifications" method="post" class="form">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Create specification
+          </h1>
+        </legend>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
-          Specification name
-        </label>
-        <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Specification name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="spec-name" type="text">
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Funding streams
-        </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="draft">Dedicated schools grant</option>
-          <option value="draft">PE and sport premium grant</option>
-        </select>
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Funding stream
+          </label>
+          <select class="govuk-select" id="fundingStreamSpecification">
+            <option value="draft"></option>
+            <option value="fundingLineStructure-chosen">16 to 19</option>
+            <option value="fundingLineStructure-1416">14 to 16</option>
+            <option value="fundingLineStructure-gag">General Annual Grant</option>
+            <option value="fundingLineStructure-pna">Academy Pupil Number Adjustment</option>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Funding period
-        </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="draft">Financial year 2020 to 2021</option>
-        </select>
-      </div>
+          </select>
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Core provider data
-        </label>
-        <span id="account-number-hint" class="govuk-hint">
-          Select a funding stream and funding period before choosing the provider data
-        </span>
-        <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Funding period
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft"></option>
+            <option value="draft">Academies and Schools Academic Year 2019 to 2020</option>
+            <option>Academic year 2019 to 2020</option>
+          </select>
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Template version
-        </label>
-        <span id="account-number-hint" class="govuk-hint">
-          Select a funding stream and funding period before choosing a template version
-        </span>
-        <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Core provider data
+          </label>
+          <span id="account-number-hint" class="govuk-hint">
+            Select a funding stream and funding period before choosing the provider data
+          </span>
+          <select class="govuk-select" id="coreProviderData" name="sort" onchange="getProviderData()">
+            <option></option>
+            <option name="core-provider-data" value="284,821,882">21 August 2019 - Initial providers</option>
+            <option name="core-provider-data" id="providerDataChange" value="0.00">1 September 2019 - Amended
+              providers</option>
+          </select>
+        </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="more-detail">
-          Can you provide more detail?
-        </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-          aria-describedby="more-detail-hint"></textarea>
-      </div>
-    </fieldset>
-    <a href="createSpecification-successful.html" class="govuk-button govuk-!-margin-right-1"
-      data-module="govuk-button">
-      Save and continue
-    </a>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Template version
+          </label>
+          <span id="account-number-hint" class="govuk-hint">
+            Select a funding stream and funding period before choosing a template version
+          </span>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft"></option>
+            <option value="draft">0.1</option>
+            <option value="draft">0.2</option>
+            <option value="draft">0.3</option>
+          </select>
+        </div>
 
-    <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Cancel
-    </a>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Can you provide more detail?
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="spec-detail" rows="8"
+            aria-describedby="more-detail-hint"></textarea>
+        </div>
+      </fieldset>
+      <button class="govuk-button" onclick="newDataSource()" data-module="govuk-button">Save and continue</button>
+      <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
+
   </div>
 </div>
+
+<script>
+
+  function getProviderData() {
+    var coreProviderData = document.getElementById("coreProviderData").value;
+    console.log(coreProviderData)
+    sessionStorage.setItem('provider data changed', coreProviderData);
+
+  }
+
+  function newDataSource() {
+    sessionStorage.setItem('new spec', 'true');
+  }
+
+
+  document.getElementById('fundingStreamSpecification').onchange = function getfundingStreamSpecficiation() {
+    var fundingStreamSpecficiation = document.getElementById("fundingStreamSpecification");
+    var fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex].value;
+    console.log(fundingStreamSpecficiationText)
+    sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
+  }
+
+</script>
 
 {% endblock %}

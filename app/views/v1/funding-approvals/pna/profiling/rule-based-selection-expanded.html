@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl" aria-label="Change profile type">
+      Select rule based pattern
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <span id="how-contacted-conditional-hint" class="govuk-hint">
+      Select one option.
+    </span>
+    <div class="govuk-radios govuk-radios--small">
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" />
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Rule based pattern 1
+          <span class="govuk-hint">Rule based pattern description</span>
+          <a class="govuk-link" href="#"
+            onclick="document.getElementById('profilePreview').style.display='block'">Preview profile</a>
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" />
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Rule based pattern 2
+          <span class="govuk-hint">Rule based pattern description</span>
+          <a class="govuk-link" href="#"
+            onclick="document.getElementById('profilePreview').style.display='block'">Preview profile</a>
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" />
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Rule based pattern 3
+          <span class="govuk-hint">Rule based pattern description</span>
+          <a class="govuk-link" href="#"
+            onclick="document.getElementById('profilePreview').style.display='block'">Preview profile</a>
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" />
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Rule based pattern 4
+          <span class="govuk-hint">Rule based pattern description</span>
+          <a class="govuk-link" href="#"
+            onclick="document.getElementById('profilePreview').style.display='block'">Preview profile</a>
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" />
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Rule based pattern 5
+          <span class="govuk-hint">Rule based pattern description</span>
+          <a class="govuk-link" href="#"
+            onclick="document.getElementById('profilePreview').style.display='block'">Preview profile</a>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-two-thirds">
+    <a class="govuk-button" data-module="govuk-button" href="javascript:history.back()">
+      Apply
+    </a>
+    <a href="javascript:history.back()" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Cancel
+    </a>
+  </div>
+</div>
+
+
+<div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+      width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
+
+</div>
+</div>
+
+{% endblock %}

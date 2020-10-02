@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="specifications.html">{{ data['spec-name'] }}</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Create data set</li>
+      </ol>
+    </div>
+
+    <form action="/v1/fundingLineStructure-pna" method="post" class="form">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-heading-xl">Create data set</h1>
+        </legend>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Select data schema
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft">APT Adjusted Factors</option>
+            <option value="draft">APT Final Baselines</option>
+            <option value="draft">APT Inputs and Adjustments</option>
+            <option value="draft">APT Local Factors</option>
+            <option value="draft">APT New ISB</option>
+            <option value="draft">APT Proforma</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Data set name
+          </label>
+          <span id="event-name-hint" class="govuk-hint">
+            Use a descriptive unique name other users can understand
+          </span>
+          <input class="govuk-input" id="address-line-1" name="dataset-name" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Description
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="description" rows="8"
+            aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h3 class="govuk-heading-m">
+              Set as provider data
+            </h3>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changed-name">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <button class="govuk-button" data-module="govuk-button" onclick="newDataset()">Save and continue</button>
+
+      <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save and add another
+      </a>
+
+      <a href="fundingLineStructure-pna" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
+
+  </div>
+</div>
+
+<script>
+
+  function newDataset() {
+    sessionStorage.setItem('new data', 'true');
+  }
+
+</script>
+
+{% endblock %}

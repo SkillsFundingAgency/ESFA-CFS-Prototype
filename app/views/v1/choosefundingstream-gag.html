@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="fundingLineStructure-gag.html">{{ data['spec-name'] }}</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="choosespectype-gag.html">Select data source</a>
+                </li>
+
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Select the funding stream</li>
+            </ol>
+        </div>
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-heading-xl">Select the funding stream</h1>
+        </legend>
+
+
+
+
+
+        <h3 class="govuk-heading-m">
+            Choose a funding stream for the data set
+        </h3>
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+                Funding streams
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+                <option value="draft"></option>
+                <option value="draft">16 to 19</option>
+                <option value="draft">14 to 16</option>
+                <option value="draft">General Annual Grant</option>
+                <option>Academy Pupil Number Adjustment</option>
+
+            </select>
+        </div>
+
+
+
+        </br> </br>
+
+        <a href="choosefundinglinecalc-gag.html" class="govuk-button govuk-!-margin-right-1">
+            Save and continue
+        </a>
+
+
+
+
+        <a href="fundingLineStructure-gag.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+        </a>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+    function patternChoice() {
+        console.log("buttonclicked")
+        var patternType = document.querySelector('input[name="data-type"]:checked').value;
+        console.log(patternType)
+        document.getElementById('patternLink').href = patternType
+    }
+</script>
+
+{% endblock %}

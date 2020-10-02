@@ -34,57 +34,82 @@ GOV.UK Prototype Kit
     <p class="govuk-body">Load a new data source file to create a dataset to use in
       calculations.</p>
 
-
-      <div class="govuk-form-group govuk-!-margin-top-6">
-        <label class="govuk-label" for="sort">
-          Funding stream
-        </label>
-        <input class="govuk-input" id="data-schema" name="data-schema" type="text">
-      </div>
-
-      <div class="govuk-form-group govuk-!-margin-top-6">
-        <label class="govuk-label" for="sort">
-          Data schema
-        </label>
-        <input class="govuk-input" id="data-schema" name="data-schema" type="text">
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
-          Dataset source file name
-        </label>
-        <span id="event-name-hint" class="govuk-hint">
-          Use a descriptive unique name other users can understand
-        </span>
-        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="more-detail">
-          Description
-        </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-          aria-describedby="more-detail-hint"></textarea>
-      </div>
-
-      <div class="govuk-form-group">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="file-upload-1">
-            Upload data source file
+    <form action="/v1/datasets/manageDatasets" method="post" class="form">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group govuk-!-margin-top-6">
+          <label class="govuk-label" for="sort">
+            Funding stream
           </label>
-          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft"></option>
+            <option value="draft">16 to 19</option>
+            <option value="draft">14 to 16</option>
+            <option value="draft">General Annual Grant</option>
+            <option>Academy Pupil Number Adjustment</option>
+
+          </select>
         </div>
-      </div>
-    </fieldset>
 
-    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-      Create data source
-    </button>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Select data schema
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft">APT Adjusted Factors</option>
+            <option value="draft">APT Final Baselines</option>
+            <option value="draft">APT Inputs and Adjustments</option>
+            <option value="draft">APT Local Factors</option>
+            <option value="draft">APT New ISB</option>
+            <option value="draft">APT Proforma</option>
+          </select>
+        </div>
 
-    <a href="fundingLineStructure" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Cancel
-    </a>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Data set source file name
+          </label>
+          <span id="event-name-hint" class="govuk-hint">
+            Use a descriptive unique name other users can understand
+          </span>
+          <input class="govuk-input" id="address-line-1" name="data-source-file-name" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Description
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="data-more-detail" rows="8"
+            aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+              Upload data source file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+          </div>
+        </div>
+      </fieldset>
+
+      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" onclick="newDataSource()">
+        Create data source
+      </button>
+
+      <a href="manageDatasets.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
+
   </div>
 </div>
+
+<script>
+
+  function newDataSource() {
+    sessionStorage.setItem('new data source file', 'true');
+  }
+
+</script>
 
 {% endblock %}

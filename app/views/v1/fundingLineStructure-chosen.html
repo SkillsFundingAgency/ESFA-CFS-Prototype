@@ -14,22 +14,25 @@ GOV.UK Prototype Kit
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
     </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['spec-name'] }}</li>
+
   </ol>
 </div>
+
+<p> {{ data['core-provider-data'] }}</p>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Specification name</span>
-    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">GFT PE and Sport Premium</h2>
-    <strong class="govuk-tag govuk-!-margin-bottom-5">Chosen for funding</strong>
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">{{ data['spec-name'] }}</h2>
     <span class="govuk-caption-m">Funding period</span>
-    <h3 class="govuk-heading-m">Financial year 2020 - 2021</h3>
+    <h3 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020</h3>
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-m">Funding streams</span>
-    <h3 class="govuk-heading-m">PE and Sport Premium</h3>
+    <h3 class="govuk-heading-m">16 to 19</h3>
   </div>
   <div class="govuk-grid-column-one-third">
     <ul class="govuk-list">
@@ -41,11 +44,11 @@ GOV.UK Prototype Kit
           calculation</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="createDataset">Create data set</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="choosespectype.html">Create data set</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state"
-          href="view-results/view-specification-results/view-specification">View funding</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="#"
+          onclick="document.getElementById('fundingConfirmation').style.display='block'">Choose for funding</a>
       </li>
     </ul>
   </div>
@@ -57,11 +60,11 @@ GOV.UK Prototype Kit
     <details class="govuk-details govuk-!-margin-bottom-5" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          What is GFT PE and Sport Premium?
+          What is {{ data['spec-name'] }}
         </span>
       </summary>
       <div class="govuk-details__text">
-        Section to contain details.
+        {{ data['spec-detail'] }}
       </div>
     </details>
 
@@ -90,11 +93,12 @@ GOV.UK Prototype Kit
             Release timetable
           </a>
         </li>
+        <!--
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#variation-management">
             Variation management
           </a>
-        </li>
+        </li>-->
       </ul>
       <section class="govuk-tabs__panel" id="past-day">
         <div class="govuk-grid-row">
@@ -108,22 +112,54 @@ GOV.UK Prototype Kit
             </div>
           </div>
 
-          <div class="govuk-grid-column-one-third ">
-            <strong class="govuk-tag right-align ">Approved</strong>
-          </div>
+
 
         </div>
-        <table class="govuk-table">
+        <table class="govuk-table govuk-!-width-three-quarters">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Structure</th>
-              <th scope="col" class="govuk-table__header">Name</th>
-              <th scope="col" class="govuk-table__header">Calculation type</th>
-              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Structure</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">1</th>
+              <td class="govuk-table__cell"><a class="govuk-link" href="editTemplateCalculation.html">Total Funding
+                  Allocation</a></td>
+              <td class="govuk-table__cell">Draft</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">2</th>
+              <td class="govuk-table__cell"><a class="govuk-link" href="editTemplateCalculation-2.html">Programme
+                  Funding
+                </a></td>
+              <td class="govuk-table__cell">Draft</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"></th>
+              <td class="govuk-table__cell"><a class="govuk-link" href="editTemplateCalculation-3.html">Student
+                  Financial Support Funding
+                </a></td>
+              <td class="govuk-table__cell">Draft</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"></th>
+              <td class="govuk-table__cell"><a class="govuk-link" href="">High Needs Element 2 Student Funding</a></td>
+              <td class="govuk-table__cell">Draft</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"></th>
+              <td class="govuk-table__cell"><a class="govuk-link" href="">Industry Placements Funding</a></td>
+              <td class="govuk-table__cell">Draft</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">3</th>
+              <td class="govuk-table__cell"><a class="govuk-link" href="">Industry Placements Capacity and Delivery
+                  Funding</a></td>
+              <td class="govuk-table__cell">Draft</td>
+            </tr>
           </tbody>
         </table>
         <nav class="govuk-!-margin-top-9" role="navigation" aria-label="Pagination">
@@ -203,7 +239,7 @@ GOV.UK Prototype Kit
             <h2 class="govuk-heading-l">Data sets</h2>
           </div>
           <div class="govuk-grid-column-one-third">
-            <a class="govuk-link govuk-button" data-module="govuk-button" href="datasets/dataRelationshipsDSGSIT">Map
+            <a class="govuk-link govuk-button" data-module="govuk-button" href="datasets/dataRelationships-1619">Map
               data source file to data set</a> </a>
           </div>
         </div>
@@ -211,14 +247,16 @@ GOV.UK Prototype Kit
           <caption class="govuk-table__caption">Data sets and schemas</caption>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-!-width-one-half">Data set</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-half">Data schema</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-third">Data set</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-third">Data schema</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-third">Type</th>
+
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
+            <tr class="govuk-table__row" id="newDataset">
               <th scope="row" class="govuk-table__header">
-                <p>APT Funding floor baseline data set</p>
+                <p>{{ data['dataset-name'] }}</p>
                 <div class="govuk-!-margin-top-2">
                   <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                     <summary class="govuk-details__summary">
@@ -227,17 +265,20 @@ GOV.UK Prototype Kit
                       </span>
                     </summary>
                     <div class="govuk-details__text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue diam sit amet dui posuere,
-                      id rutrum sem feugiat. Phasellus condimentum hendrerit nunc, sed lacinia risus efficitur
-                      hendrerit. Mauris sed.
+                      {{ data['description'] }}
                     </div>
                   </details>
                 </div>
               </th>
-              <td class="govuk-table__cell">APT 1718 funding floor baseline data set</td>
-            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">16-19 Students</td>
+              <td class="govuk-table__cell">Data sources</td>
+
+            </tr>
+
+
+            <tr class="govuk-table__row" id="cfsData">
               <th scope="row" class="govuk-table__header">
-                <p>APT adjusted factors</p>
+                <p>14 to 16 2019 to 2020 specification</p>
                 <div class="govuk-!-margin-top-2">
                   <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                     <summary class="govuk-details__summary">
@@ -246,14 +287,14 @@ GOV.UK Prototype Kit
                       </span>
                     </summary>
                     <div class="govuk-details__text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue diam sit amet dui posuere,
-                      id rutrum sem feugiat. Phasellus condimentum hendrerit nunc, sed lacinia risus efficitur
-                      hendrerit. Mauris sed.
+                      {{ data['description'] }}
                     </div>
                   </details>
                 </div>
               </th>
-              <td class="govuk-table__cell">APT adjusted factors</td>
+              <td class="govuk-table__cell">16-19 Reconciliation</td>
+              <td class="govuk-table__cell">Published specifications</td>
+
             </tr>
           </tbody>
         </table>
@@ -264,17 +305,13 @@ GOV.UK Prototype Kit
           <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-l">Release timetable</h2>
           </div>
-          <div class="govuk-grid-column-one-third ">
-            <strong class="govuk-tag right-align ">
-              Approved
-            </strong>
-          </div>
+
         </div>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h3 class="govuk-heading-m">
-                Release date of funding to Business Central?
+                Release date for payments?
               </h3>
             </legend>
             <span id="passport-issued-hint" class="govuk-hint">
@@ -335,6 +372,8 @@ GOV.UK Prototype Kit
               </div>
             </fieldset>
         </div>
+
+
 
         <div class="govuk-form-group govuk-!-margin-top-9">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -478,6 +517,34 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
+
+
+<script>
+  window.onload = function () {
+    let newDataSource = sessionStorage.getItem('new data')
+    let tr = document.getElementById('newDataset')
+    console.log(newDataSource)
+    if (newDataSource === 'true') {
+      tr.style.display = " ";
+    } else {
+      tr.style.display = "none";
+    }
+  }
+
+  window.onload = function () {
+    let newDataSource = sessionStorage.getItem('CFS data')
+    let tr = document.getElementById('cfsData')
+    console.log(newDataSource)
+    if (newDataSource === 'true') {
+      tr.style.display = " ";
+    } else {
+      tr.style.display = "none";
+    }
+  }
+</script>
+
+
+
 <div class="govuk-modal-dialogue" id="fundingConfirmation" data-module="govuk-modal-dialogue">
   <div class="govuk-modal-dialogue__wrapper">
     <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
@@ -497,9 +564,14 @@ GOV.UK Prototype Kit
         </button>
       </div>
       <div class="govuk-modal-dialogue__content">
-        <p>You are about to select DSG SIT as the specification for this funding.</p>
-
-        <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        <p class="govuk-body">You are choosing specification [specification name] for funding purposes.</p>
+        <p class="govuk-body">This specification will be applied as the funding model for the [funding stream name]
+          funding stream for [funding period name].</p>
+        <p class="govuk-body">Once confirmed this action cannot be reversed no other specification can be chosen for
+          funding.</p>
+        <p class="govuk-body">Please ensure this is the specification you wish to choose for funding before confirming.
+        </p>
+        <button class="govuk-button govuk-!-margin-right-1 govuk-button--warning" data-module="govuk-button">
           Confirm selection
         </button>
         <button type="button" onclick="document.getElementById('fundingConfirmation').style.display='none'"

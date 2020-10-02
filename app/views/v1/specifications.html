@@ -78,12 +78,20 @@ GOV.UK Prototype Kit
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                type="checkbox" value="employment-tribunal" disabled>
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                Genera annual grant <span>(0)</span>
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                16 to 19 <span>(1)</span>
                             </label>
                         </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
+                                type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Genera annual grant<span>(1)</span>
+                            </label>
+                        </div>
+
                     </div>
                 </div>
             </fieldset>
@@ -119,6 +127,13 @@ GOV.UK Prototype Kit
                                 type="checkbox" value="employment-tribunal" disabled>
                             <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
                                 Academic year 2019 to 2020 <span>(0)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
+                                type="checkbox" value="employment-tribunal">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                Academies and Schools Academic Year 2019 to 2020 <span>(1)</span>
                             </label>
                         </div>
                     </div>
@@ -184,14 +199,22 @@ GOV.UK Prototype Kit
                 </tr>
             </thead>
             <tbody class="govuk-table__body" id="mainContentResults">
+                <tr class="govuk-table__row" id="newSpecSource">
+                    <th scope="row" class="govuk-table__header">
+                        <a id="fundingStreamLink" href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a></th>
+                    <td class="govuk-table__cell">8 September 2020 10:54am</td>
+                    <td class="govuk-table__cell">Draft</td>
+                </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header"><a href="fundingLineStructure">DSG SIT</a></th>
                     <td class="govuk-table__cell">11 November 2019 10:54am</td>
                     <td class="govuk-table__cell">Draft</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header"><a href="fundingLineStructure-chosen.html">GFT PE and Sport Premium</a><strong class="govuk-tag govuk-!-margin-top-2">Chosen for funding</strong></th>
-                    <td class="govuk-table__cell">11 November 2019 10:54am</td>
+                    <th scope="row" class="govuk-table__header"><a href="fundingLineStructure-chosen.html">GFT PE and
+                            Sport Premium</a><strong class="govuk-tag govuk-!-margin-top-2">Chosen for funding</strong>
+                    </th>
+                    <td class="govuk-table__cell">28 July 2020 10:54am</td>
                     <td class="govuk-table__cell">Approved</td>
                 </tr>
             </tbody>
@@ -213,5 +236,21 @@ GOV.UK Prototype Kit
         </nav>
     </div>
 
+
+    <script>
+        window.onload = function () {
+            let newDataSource = sessionStorage.getItem('new spec')
+            let tr = document.getElementById('newSpecSource')
+            console.log(newDataSource)
+            if (newDataSource === 'true') {
+                tr.style.display = " ";
+            } else {
+                tr.style.display = "none";
+            }
+            let fundingStream = sessionStorage.getItem('funding stream')
+            document.getElementById('fundingStreamLink').href = fundingStream
+        }
+
+    </script>
 
     {% endblock %}
