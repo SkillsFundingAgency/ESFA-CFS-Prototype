@@ -103,11 +103,12 @@ Return 0
   }
 
 function createCalc () {
+  var Timeoptions =  { hour: '2-digit', minute: '2-digit' };
+  var time = new Date().toLocaleTimeString('en-US', Timeoptions)
 
-  var time = new Date().toLocaleTimeString()
   var date = new Date()
-  var options = {year: 'numeric', month: 'long', day: 'numeric' }
-  var dateFormat = date.toLocaleDateString('en-GB', options)
+  var dateOptions = {year: 'numeric', month: 'long', day: 'numeric' }
+  var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
 
   sessionStorage.setItem('calcCreated', 'true')
   sessionStorage.setItem('status', 'Draft')
