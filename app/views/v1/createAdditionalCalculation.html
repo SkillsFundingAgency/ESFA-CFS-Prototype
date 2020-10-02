@@ -23,9 +23,8 @@ GOV.UK Prototype Kit
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Create additional calculation</li>
       </ol>
     </div>
-
+    <form action="/v1/fundingLineStructure" method="post" class="form">
     <fieldset class="govuk-fieldset">
-      <form action="/v1/fundingLineStructure" method="post" class="form">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
         <h1 class="govuk-fieldset__heading">
           Create additional calculation
@@ -104,11 +103,15 @@ Return 0
   }
 
 function createCalc () {
-  var time = new Date().toLocaleTimeString();
-  var date = new Date().toLocaleDateString();
+
+  var time = new Date().toLocaleTimeString()
+  var date = new Date()
+  var options = {year: 'numeric', month: 'long', day: 'numeric' }
+  var dateFormat = date.toLocaleDateString('en-GB', options)
+
   sessionStorage.setItem('calcCreated', 'true')
   sessionStorage.setItem('status', 'Draft')
-  sessionStorage.setItem('date', time + ' ' + date )
+  sessionStorage.setItem('date', dateFormat + ' ' + time )
 }
 
 </script>
