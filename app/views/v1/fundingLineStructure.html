@@ -532,7 +532,7 @@ GOV.UK Prototype Kit
     document.getElementById('status').innerHTML = status;
     document.getElementById('editedDate').innerHTML = dateTime;
     var calcCreated =  sessionStorage.getItem("calcCreated")
-    if (calcCreated = "true") {
+    if (calcCreated === "true") {
       document.getElementById("noCalcs").style.display = "none"
     } else {
       document.getElementById("noCalcs").style.display = "block"
