@@ -40,7 +40,7 @@ GOV.UK Prototype Kit
                 Calculation status
               </dt>
               <dd class="govuk-summary-list__value">
-                <strong id="calc-status" class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                <strong id="calc-status" class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">
                 </strong>
               </dd>
             </div>
@@ -64,7 +64,6 @@ GOV.UK Prototype Kit
         </h4>
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
           aria-describedby="more-detail-hint">
-
 Return 0
 
         </textarea>
@@ -95,7 +94,7 @@ Return 0
         </div>
       </div>
 
-      <p class="govuk-body">Last saved 25 March 2020 2:57pm</p>
+      <p class="govuk-body" id="editedDate">Last saved 25 March 2020 2:57pm</p>
       <a href="calculation-version-history.html">
         <p class="govuk-body">View calculation history</p>
       </a>
@@ -106,6 +105,13 @@ Return 0
 
   function buildOuput() {
     document.getElementById('buildResult').style.display = "block"
+  }
+
+  window.onload = function additionalCalc () {
+    var status = sessionStorage.getItem("status");
+    var dateTime = sessionStorage.getItem("date");
+    document.getElementById('calc-status').innerHTML = status;
+    document.getElementById('editedDate').innerHTML = "Last saved " + dateTime;
   }
 
 
