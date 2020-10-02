@@ -105,8 +105,8 @@ Return 0
 
 function createCalc () {
   var time = new Date().toLocaleTimeString();
-  var date = new Date().toLocaleDateString(); // 11/16/2015
-
+  var date = new Date().toLocaleDateString();
+  sessionStorage.setItem('calcCreated', 'true')
   sessionStorage.setItem('status', 'Draft')
   sessionStorage.setItem('date', time + ' ' + date )
 }
