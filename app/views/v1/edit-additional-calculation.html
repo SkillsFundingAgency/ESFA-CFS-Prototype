@@ -20,43 +20,50 @@ GOV.UK Prototype Kit
         <li class="govuk-breadcrumbs__list-item">
           <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
         </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Create additional calculation</li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Provisional Schools Block Funding Excluding Growth
+        </li>
       </ol>
     </div>
 
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-        <h1 class="govuk-fieldset__heading">
-          Create additional calculation
-        </h1>
+        <span class="govuk-caption-l">Calculation name</span>
+        <h2 class="govuk-heading-l">Provisional Schools Block Funding </br>Excluding Growth</h2>
       </legend>
 
-    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+      <div class="govuk-grid-row govuk-!-margin-bottom-2">
+        <div class="govuk-grid-column-full">
+
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Calculation status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <strong id="calc-status" class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                </strong>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Value type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Percentage
+              </dd>
+            </div>
+          </dl>
+
+        </div>
+      </div>
+
       <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
-          Calculation name
-        </label>
-        <input class="govuk-input govuk-js-character-count" id="address-line-1" name="address-line-1" type="text">
-      </div>
-    </div>
-
-      <div class="govuk-form-group govuk-!-margin-top-5">
-        <label class="govuk-label" for="sort">
-          Value type
-        </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="draft">Percentage</option>
-          <option value="draft">Number</option>
-          <option value="draft">Currency</option>
-        </select>
-      </div>
-
-      <div class="govuk-form-group ">
-        <label class="govuk-label" for="more-detail">
-            Calculation script
-        </label>
+        <h4 class="govuk-heading-s" for="more-detail">
+          Calculation script
+        </h4>
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
-            aria-describedby="more-detail-hint">
+          aria-describedby="more-detail-hint">
 Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
 
 If A.HasValue = False Then
@@ -67,20 +74,20 @@ Else
 Return A
 End If
         </textarea>
-    </div>
+      </div>
+      <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
+        Build calculation
+      </button>
+      <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
+        results</a></p>
 
-    <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
-      Build calculation
-    </button>
-    <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
-      results</a></p>
+      <div class="govuk-inset-text" id="buildResult" style="display: none;">
+        <h4 class="govuk-heading-s">Build output</h4>
+        <p class="govuk-body">Code complied successfully: <strong>True</strong></p>
+      </div>
 
-    <div class="govuk-inset-text" id="buildResult" style="display: none;">
-      <h4 class="govuk-heading-s">Build output</h4>
-      <p class="govuk-body">Code complied successfully: <strong>True</strong></p>
-    </div>
 
-    <div class="govuk-grid-row govuk-!-margin-top-9">
+      <div class="govuk-grid-row govuk-!-margin-top-9">
         <div class="govuk-grid-column-two-thirds">
           <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
             Save and continue
