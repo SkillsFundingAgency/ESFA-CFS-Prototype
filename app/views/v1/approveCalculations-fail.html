@@ -1,0 +1,232 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Provisional Schools Block Funding Excluding
+                    Growth
+                </li>
+            </ol>
+        </div>
+
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+            data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                        <a href="">The calculation you selected could not be approved</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                    Approve calculations
+                </h1>
+                <span class="govuk-caption-l govuk-!-margin-bottom-6">View and approve calculations</span>
+            </legend>
+
+
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+        <label class="govuk-label" for="textarea">
+            Search </label>
+        <div class="search-container">
+            <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false" type="text">
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Calculation name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Value type</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Update</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body" id="mainContentResults">
+                <tr class="govuk-table__row">
+
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-form-group govuk-form-group--error">
+                            <span id="nationality-error" class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> The calculation you selected could not
+                                be
+                                approved
+
+
+                            </span>
+
+                            <a href="editTemplateCalculationv2.html">Provisional
+                                Schools Block Funding</br>
+                                Excluding Growth</a>
+                    </th>
+                    <td class="govuk-table__cell">Percentage</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                            Approve<span class="govuk-visually-hidden"> name</span>
+                        </a></td>
+    </div>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Programme
+                Funding</a></th>
+        <td class="govuk-table__cell">Currency</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Total Funding
+                Allocation
+            </a></th>
+        <td class="govuk-table__cell">Currency</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1 Funding
+                Payment</a></th>
+        <td class="govuk-table__cell">Cash</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1
+                Factor</a></th>
+        <td class="govuk-table__cell">Number</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Provisional
+                Schools Block Funding</br>
+                Excluding Growth</a>
+        </th>
+        <td class="govuk-table__cell">Percentage</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Programme
+                Funding</a></th>
+        <td class="govuk-table__cell">Currency</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Total Funding
+                Allocation
+            </a></th>
+        <td class="govuk-table__cell">Currency</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1 Funding
+                Payment</a></th>
+        <td class="govuk-table__cell">Cash</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1
+                Factor</a></th>
+        <td class="govuk-table__cell">Number</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Provisional
+                Schools Block Funding</br>
+                Excluding Growth</a>
+        </th>
+        <td class="govuk-table__cell">Percentage</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Programme
+                Funding</a></th>
+        <td class="govuk-table__cell">Currency</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Total Funding
+                Allocation
+            </a></th>
+        <td class="govuk-table__cell">Currency</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1 Funding
+                Payment</a></th>
+        <td class="govuk-table__cell">Cash</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1
+                Factor</a></th>
+        <td class="govuk-table__cell">Number</td>
+        <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                Approve<span class="govuk-visually-hidden"> name</span>
+            </a></td>
+    </tr>
+    </tbody>
+
+    </table>
+    <div class="left-align govuk-!-margin-bottom-5">
+        <a href="" class="govuk-button govuk-!-margin-right-9" data-module="govuk-button">
+            Approve all
+        </a>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
