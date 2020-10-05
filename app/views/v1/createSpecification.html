@@ -34,7 +34,7 @@ GOV.UK Prototype Kit
             Specification name
           </label>
           <span id="specification-name-error" class="govuk-error-message hideError">
-            <span class="govuk-visually-hidden">Error:</span> Enter a specificaion name
+            <span class="govuk-visually-hidden">Error:</span> Enter a specification name
           </span>
           <input class="govuk-input govuk-!-width-two-thirds" id="spec-name" name="spec-name" type="text">
         </div>
@@ -112,9 +112,6 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
-  
- 
-
   function getProviderData() {
     var coreProviderData = document.getElementById("coreProviderData").value;
     console.log(coreProviderData)
@@ -126,23 +123,26 @@ GOV.UK Prototype Kit
     sessionStorage.setItem('new spec', 'true');
   }
 
-  function validateForm(){
+  function validateForm() {
+
     var specName = document.forms["createSpecForm"]["spec-name"].value
     if (specName == "") {
       document.getElementById('specificationName').classList.add("govuk-form-group--error");
       document.getElementById('specification-name-error').classList.remove("hideError")
       return false;
     }
-  }
 
+    
+
+  }
 
   document.getElementById('fundingStreamSpecification').onchange = function getfundingStreamSpecficiation() {
     var fundingStreamSpecficiation = document.getElementById("fundingStreamSpecification");
-    var fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex].value;
+    var fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex]
+      .value;
     console.log(fundingStreamSpecficiationText)
     sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
   }
-
 </script>
 
 {% endblock %}
