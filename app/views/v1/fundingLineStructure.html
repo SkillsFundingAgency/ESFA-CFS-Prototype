@@ -40,12 +40,16 @@ GOV.UK Prototype Kit
           calculation</a>
       </li>
       <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="approveCalculations.html">Approve calculations</a>
+      </li>
+      <li>
         <a class="govuk-link govuk-link--no-visited-state" href="createDataset">Create data set</a>
       </li>
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="#"
           onclick="document.getElementById('fundingConfirmation').style.display='block'">Choose for funding</a>
       </li>
+
     </ul>
   </div>
 </div>
@@ -126,7 +130,8 @@ GOV.UK Prototype Kit
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">1</th>
-              <td class="govuk-table__cell"><a class="govuk-link" href="editTemplateCalculationv2.html">Calc name</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="editTemplateCalculationv2.html">Calc name</a>
+              </td>
               <td class="govuk-table__cell">Calc type</td>
               <td class="govuk-table__cell">Draft</td>
             </tr>
@@ -176,7 +181,8 @@ GOV.UK Prototype Kit
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><a href="edit-additional-calculation"> {{ data['additionalCalc-name'] }}</a></th>
+              <th scope="row" class="govuk-table__header"><a href="edit-additional-calculation">
+                  {{ data['additionalCalc-name'] }}</a></th>
               <td class="govuk-table__cell" id="status"></td>
               <td class="govuk-table__cell">{{ data['value-type'] }}</td>
               <td class="govuk-table__cell" id="editedDate"> </td>
@@ -530,13 +536,13 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
-   
-    window.onload = function additionalCalc () {
+
+  window.onload = function additionalCalc() {
     var status = sessionStorage.getItem("status");
     var dateTime = sessionStorage.getItem("date");
     document.getElementById('status').innerHTML = status;
     document.getElementById('editedDate').innerHTML = dateTime;
-    var calcCreated =  sessionStorage.getItem("calcCreated")
+    var calcCreated = sessionStorage.getItem("calcCreated")
     if (calcCreated === "true") {
       document.getElementById("noCalcs").style.display = "none"
     } else {
