@@ -20,8 +20,7 @@ GOV.UK Prototype Kit
                 <li class="govuk-breadcrumbs__list-item">
                     <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
                 </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">Provisional Schools Block Funding Excluding
-                    Growth
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Approve calculations
                 </li>
             </ol>
         </div>
@@ -50,26 +49,48 @@ GOV.UK Prototype Kit
 
 
     </div>
-    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
-        <label class="govuk-label" for="textarea">
-            Search </label>
-        <div class="search-container">
-            <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false" type="text">
-        </div>
-    </div>
+</div>
 
-    <div class="govuk-grid-column-three-quarters">
+<div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+        Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#template">
+                Template calculations
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#additional">
+                Additional calculations
+            </a>
+        </li>
+
+    </ul>
+    <div class="govuk-tabs__panel" id="template">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-l">Template calculations</h2>
+                <div class="govuk-form-group search-container ">
+                    <label class="govuk-label" for="event-name">
+                        Search for calculation
+                    </label>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </div>
+            </div>
+        </div>
         <table class="govuk-table">
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Calculation name</th>
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Value type</th>
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Update</th>
+                    <th scope="col" class="govuk-table__header">Calculation name</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">Last edited date</th>
+                    <th scope="col" class="govuk-table__header">Update</th>
                 </tr>
             </thead>
-            <tbody class="govuk-table__body" id="mainContentResults">
+            <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-
                     <th scope="row" class="govuk-table__header">
                         <div class="govuk-form-group govuk-form-group--error">
                             <span id="nationality-error" class="govuk-error-message">
@@ -84,143 +105,180 @@ GOV.UK Prototype Kit
                                 Schools Block Funding</br>
                                 Excluding Growth</a>
                     </th>
-                    <td class="govuk-table__cell">Percentage</td>
-                    <td class="govuk-table__cell"><a class="govuk-link" href="#">
+                    <td class="govuk-table__cell"><strong id="calc-status"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                        </strong></a>
+                    </td>
+                    <td class="govuk-table__cell">25 March 2020 2:57pm</br>by Nathan TOWNSEND</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="approveCalculations-partapproved.html">
                             Approve<span class="govuk-visually-hidden"> name</span>
                         </a></td>
-    </div>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Programme
-                Funding</a></th>
-        <td class="govuk-table__cell">Currency</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Total Funding
-                Allocation
-            </a></th>
-        <td class="govuk-table__cell">Currency</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1 Funding
-                Payment</a></th>
-        <td class="govuk-table__cell">Cash</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1
-                Factor</a></th>
-        <td class="govuk-table__cell">Number</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Provisional
-                Schools Block Funding</br>
-                Excluding Growth</a>
-        </th>
-        <td class="govuk-table__cell">Percentage</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Programme
-                Funding</a></th>
-        <td class="govuk-table__cell">Currency</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Total Funding
-                Allocation
-            </a></th>
-        <td class="govuk-table__cell">Currency</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1 Funding
-                Payment</a></th>
-        <td class="govuk-table__cell">Cash</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1
-                Factor</a></th>
-        <td class="govuk-table__cell">Number</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Provisional
-                Schools Block Funding</br>
-                Excluding Growth</a>
-        </th>
-        <td class="govuk-table__cell">Percentage</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Programme
-                Funding</a></th>
-        <td class="govuk-table__cell">Currency</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Total Funding
-                Allocation
-            </a></th>
-        <td class="govuk-table__cell">Currency</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1 Funding
-                Payment</a></th>
-        <td class="govuk-table__cell">Cash</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1
-                Factor</a></th>
-        <td class="govuk-table__cell">Number</td>
-        <td class="govuk-table__cell"><a class="govuk-link" href="#">
-                Approve<span class="govuk-visually-hidden"> name</span>
-            </a></td>
-    </tr>
-    </tbody>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Programme
+                            Funding</a>
+                    </th>
+                    <td class="govuk-table__cell"><strong id="calc-status"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                        </strong></a>
+                    </td>
+                    <td class="govuk-table__cell">24 March 2020 3:17pm</br>by Nathan TOWNSEND</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="approveCalculations-partapproved.html">
+                            Approve<span class="govuk-visually-hidden"> name</span>
+                        </a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Total Funding
+                            Allocation</a>
+                    </th>
+                    <td class="govuk-table__cell"><strong id="calc-status"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                        </strong></a>
+                    </td>
+                    <td class="govuk-table__cell">22 March 2020 12:52pm</br>by Nathan TOWNSEND</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="approveCalculations-partapproved.html">
+                            Approve<span class="govuk-visually-hidden"> name</span>
+                        </a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1
+                            Factor</a>
+                    </th>
+                    <td class="govuk-table__cell"><strong id="calc-status"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                        </strong></a>
+                    </td>
+                    <td class="govuk-table__cell">20 March 2020 8:22am</br>by Nathan TOWNSEND</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="approveCalculations-partapproved.html">
+                            Approve<span class="govuk-visually-hidden"> name</span>
+                        </a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1 Funding
+                            Payment</a>
+                    </th>
+                    <td class="govuk-table__cell"><strong id="calc-status"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                        </strong></a>
+                    </td>
+                    <td class="govuk-table__cell">16 March 2020 9:59am</br>by Nathan TOWNSEND</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="approveCalculations-partapproved.html">
+                            Approve<span class="govuk-visually-hidden"> name</span>
+                        </a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="left-align">
+            <a href="approveCalculations-success.html" class="govuk-button govuk-!-margin-right-9"
+                data-module="govuk-button">
+                Approve all
+            </a>
 
-    </table>
-    <div class="left-align govuk-!-margin-bottom-5">
-        <a href="" class="govuk-button govuk-!-margin-right-9" data-module="govuk-button">
-            Approve all
-        </a>
+        </div>
 
     </div>
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="additional">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-l">Additional calculations</h2>
+                <div class="govuk-form-group search-container ">
+                    <label class="govuk-label" for="event-name">
+                        Search for calculation
+                    </label>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </div>
+            </div>
+        </div>
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Calculation name</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">Last edited date</th>
+                    <th scope="col" class="govuk-table__header">Update</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Provisional
+                            Schools Block Funding</br>
+                            Excluding Growth</a>
+                    </th>
+                    <td class="govuk-table__cell"><strong id="calc-status"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                        </strong></a>
+                    </td>
+                    <td class="govuk-table__cell">25 March 2020 2:57pm</br>by Nathan TOWNSEND</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="approveCalculations-partapproved.html">
+                            Approve<span class="govuk-visually-hidden"> name</span>
+                        </a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Programme
+                            Funding</a>
+                    </th>
+                    <td class="govuk-table__cell"><strong id="calc-status"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                        </strong></a>
+                    </td>
+                    <td class="govuk-table__cell">24 March 2020 3:17pm</br>by Nathan TOWNSEND</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="approveCalculations-partapproved.html">
+                            Approve<span class="govuk-visually-hidden"> name</span>
+                        </a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Total Funding
+                            Allocation</a>
+                    </th>
+                    <td class="govuk-table__cell"><strong id="calc-status"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                        </strong></a>
+                    </td>
+                    <td class="govuk-table__cell">22 March 2020 12:52pm</br>by Nathan TOWNSEND</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="approveCalculations-partapproved.html">
+                            Approve<span class="govuk-visually-hidden"> name</span>
+                        </a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1
+                            Factor</a>
+                    </th>
+                    <td class="govuk-table__cell"><strong id="calc-status"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                        </strong></a>
+                    </td>
+                    <td class="govuk-table__cell">20 March 2020 8:22am</br>by Nathan TOWNSEND</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="approveCalculations-partapproved.html">
+                            Approve<span class="govuk-visually-hidden"> name</span>
+                        </a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><a href="editTemplateCalculationv2.html">Block 1 Funding
+                            Payment</a>
+                    </th>
+                    <td class="govuk-table__cell"><strong id="calc-status"
+                            class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                        </strong></a>
+                    </td>
+                    <td class="govuk-table__cell">16 March 2020 9:59am</br>by Nathan TOWNSEND</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="approveCalculations-partapproved.html">
+                            Approve<span class="govuk-visually-hidden"> name</span>
+                        </a></td>
+                </tr>
 
+            </tbody>
+        </table>
+        <div class="left-align">
+            <a href="approveCalculations-success.html" class="govuk-button govuk-!-margin-right-9"
+                data-module="govuk-button">
+                Approve all
+            </a>
+
+        </div>
+    </div>
 </div>
 
+</div>
 
 
 
