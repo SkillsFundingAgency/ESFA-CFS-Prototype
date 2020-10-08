@@ -202,7 +202,7 @@ GOV.UK Prototype Kit
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-error" name="filter-by-error"
-                                autocomplete="off" type="checkbox" value="error" >
+                                autocomplete="off" type="checkbox" value="error">
                             <label class="govuk-label govuk-checkboxes__label" for="error">
                                 Error <span>(6)</span>
                             </label>
@@ -274,7 +274,7 @@ GOV.UK Prototype Kit
 
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="local-authority-2" name="local-authority"
-                                type="checkbox" value="employment-tribunal" >
+                                type="checkbox" value="employment-tribunal">
                             <label class="govuk-label govuk-checkboxes__label" for="local-authority-2">
                                 West Berkshire <span>(1)</span>
                             </label>
@@ -594,8 +594,8 @@ GOV.UK Prototype Kit
                 <div class="right-align">
 
 
-                    <button id="" onclick="document.getElementById('refreshFundingModal').style.display='block'" class="govuk-button govuk-button--primary"
-                        data-module="govuk-button">
+                    <button id="" onclick="document.getElementById('refreshFundingModal').style.display='block'"
+                        class="govuk-button govuk-button--primary" data-module="govuk-button">
                         Refresh funding
                     </button>
                     <a id="approveFunding" href="../funding-approval.html" class="govuk-button govuk-button--primary"
@@ -634,11 +634,23 @@ GOV.UK Prototype Kit
                 </button>
             </div>
             <div class="govuk-modal-dialogue__content">
-                <p>Content</p>
+                
+                <h1 class="govuk-heading-l">Confirm funding refresh</h1>
+                <p class="govuk-body">A refresh of funding will update the following data:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Allocation values</li>
+                    <li>Profile values</li>
+                </ul>
+                <p class="govuk-body">This update will affect providers in specification 14 to 16 for the funding stream 14 to 16 2019 to 2020. </p>
+
+                <button data-prevent-double-click="true" type="button" class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+                    data-module="govuk-button">Continue 
+                </button>
 
                 <button type="button" onclick="document.getElementById('refreshFundingModal').style.display='none'"
-                    class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
-                    data-module="govuk-button">Close </button>
+                    class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+                    data-module="govuk-button">Cancel 
+                </button>
             </div>
         </dialog>
     </div>
