@@ -30,6 +30,7 @@ GOV.UK Prototype Kit
         <span class="govuk-caption-xl">2019/2020</span>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Pupil number</h1>
         <h3 class="govuk-heading-m">PE and Sport Premium</h3>
+        <!--
         <section class="govuk-!-margin-bottom-5">
             <div class="attachment__thumbnail">
                 <a class="govuk-link" target="_self" tabindex="-1" aria-hidden="true" href="">
@@ -45,13 +46,14 @@ GOV.UK Prototype Kit
                     </svg>
                 </a>
             </div>
+            
             <div class="attachment__details">
                 <h4 class="govuk-heading-s">
                     <a class="govuk-link" target="_self" href="">Title</a></h4>
                 <p class="govuk-body-s"><span>CSV</span>, <span>19.5 KB</span>, Updated: <span>22 January 2020</span>
                 </p>
             </div>
-        </section>
+        </section>-->
     </div>
 </div>
 
@@ -61,22 +63,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-one-third">
 
 
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-                    <h4 class="govuk-heading-s">Sort by</h4>
-                </legend>
-                <div class="govuk-form-group sort-by-selector govuk-!-margin-bottom-2">
-                    <select class="govuk-select" id="sort" name="sort">
-                        <option value="valueascending">Value ascending
-                        </option>
-                        <option value="valuedescending">Value descending</option>
-                        <option value="AZ">Alphabetical A-Z</option>
-                        <option value="ZA">Alphabetical Z-A</option>
-                    </select>
-                </div>
-            </fieldset>
-        </div>
+
 
 
         <div class="govuk-form-group filterbyContainer">
@@ -145,6 +132,31 @@ GOV.UK Prototype Kit
                                 type="tel">
                         </div>
                     </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Sort by <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span></h4>
+                </button>
+
+                <div class="govuk-form-group sort-by-selector govuk-!-margin-bottom-2">
+                    <select class="govuk-select" id="sort" name="sort">
+                        <option value="AZ"></option>
+                        <option value="AZ">Alphabetical A-Z
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+                        </option>
+                        <option value="ZA">Alphabetical Z-A</option>
+                        <option value="valueascending">Value ascending
+                        </option>
+                        <option value="valuedescending">Value descending</option>
+                    </select>
                 </div>
             </fieldset>
         </div>
