@@ -1,0 +1,84 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+    endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="refresh-sql">Refresh SQL</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+              Refresh successful
+            </li>
+      </ol>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Refresh successful</h1>
+  </div>
+</div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Funding stream
+          </dt>
+          <dd class="govuk-summary-list__value" id="fundingStreamSQL">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Funding period
+          </dt>
+          <dd class="govuk-summary-list__value" id="fundingPeriodSQL">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Specification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Specification name
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last SQL update
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Thursday 8 October 2020 10:13am
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last funding data change
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Thursday 8 October 2020 10:00am
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+
+  <script>
+
+window.onload = function () {
+  document.getElementById('fundingStreamSQL').innerHTML = sessionStorage.getItem('funding stream sql')
+  document.getElementById('fundingPeriodSQL').innerHTML = sessionStorage.getItem('funding period sql')
+
+}
+
+  </script>
+
+  {% endblock %}

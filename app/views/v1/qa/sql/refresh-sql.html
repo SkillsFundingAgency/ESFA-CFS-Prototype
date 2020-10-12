@@ -33,7 +33,7 @@
   <span id="funding-stream-error" class="govuk-error-message hideError">
     <span class="govuk-visually-hidden">Error:</span> Select funding stream
   </span>
-  <select class="govuk-select" id="fundingStream funding-stream-error" name="funding-stream">
+  <select class="govuk-select" id="fundingStream" name="funding-stream">
     <option></option>
     <option value="16-19/16-19-results">16 to 19</option>
     <option value="14-16/14-16-results">14 to 16</option>
@@ -59,51 +59,59 @@
   </select>
 </div>
 
-<div id="specificationDetails" class="govuk-grid-row govuk-visually-hidden">
-  <div class="govuk-grid-column-two-thirds">
+<div id="specificationDetails" class="govuk-visually-hidden">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Specification
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Specification name
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Last SQL update
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Thursday 8 October 2020 10:13am
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Last funding data change
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Thursday 8 October 2020 10:00am
-        </dd>
-      </div>
-    </dl>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Specification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Specification name
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last SQL update
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Thursday 8 October 2020 10:13am
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last funding data change
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Thursday 11 October 2020 10:00am
+          </dd>
+        </div>
+      </dl>
+    </div>
   </div>
-</div>
-
   <button data-prevent-double-click id="viewFundingLink" class="govuk-button" data-module="govuk-button">
     Push data
   </button>
+</div>
+
+
 
 </fieldset>
 </form>
 
   <script>
 
-
     function getFundingStream() {
-      document.getElementById('specificationDetails').classList.remove("govuk-visually-hidden")
-
+      document.getElementById('specificationDetails').classList.remove("govuk-visually-hidden");
+      var fundingStream = document.getElementById("fundingStream");
+      var fundingStreamText = fundingStream.options[fundingStream.selectedIndex].text;
+      var fundingPeriod = document.getElementById("fundingPeriod").value;
+      console.log(fundingPeriod)
+      console.log(fundingStreamText)
+      sessionStorage.setItem("funding stream sql", fundingStreamText)
+      sessionStorage.setItem("funding period sql", fundingPeriod)
     }
 
     function validateForm() {
@@ -129,6 +137,7 @@
             }
 
     }
+
   </script>
 
   {% endblock %}

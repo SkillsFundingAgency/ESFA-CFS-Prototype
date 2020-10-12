@@ -16,11 +16,18 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
-    setTimeout(contentChange, 6000);
+    setTimeout(contentChange, 3000);
+    
 
     function contentChange() {
         document.getElementById("fullLoader-content").innerHTML = "Data push in progress";
+        setTimeout(redirectSQL, 3000);
     };
+
+    function redirectSQL() {
+        window.location.replace("refresh-sql-success-v2")
+    }
+
 </script>
 
 {% endblock %}
