@@ -145,18 +145,18 @@ GOV.UK Prototype Kit
                     <h4 class="govuk-heading-s">Sort by <span><i class="material-icons right-align">
                                 keyboard_arrow_down</i></span></h4>
                 </button>
-
-                <div class="govuk-form-group sort-by-selector govuk-!-margin-bottom-2">
-                    <select class="govuk-select" id="sort" name="sort">
-                        <option value="AZ"></option>
-                        <option value="AZ">Alphabetical A-Z
-                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
-                        </option>
-                        <option value="ZA">Alphabetical Z-A</option>
-                        <option value="valueascending">Value ascending
-                        </option>
-                        <option value="valuedescending">Value descending</option>
-                    </select>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group govuk-!-margin-bottom-2">
+                        <select class="govuk-select sort-by-selector" id="sort" name="sort">
+                            <option value="AZ"></option>
+                            <option value="AZ">Alphabetical A-Z
+                            </option>
+                            <option value="ZA">Alphabetical Z-A</option>
+                            <option value="valueascending">Value ascending
+                            </option>
+                            <option value="valuedescending">Value descending</option>
+                        </select>
+                    </div>
                 </div>
             </fieldset>
         </div>
