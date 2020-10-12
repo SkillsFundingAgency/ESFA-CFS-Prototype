@@ -206,3 +206,35 @@ transform: translateY(-40px) translateX(-27px);
 	margin-top: 12px;
 }
 
+// old permissions banner
+
+.new-permissions-banner {
+	font-family: "GDS Transport", Arial, sans-serif;
+	font-weight: 800;
+	text-transform: none;
+	font-size: 24px;
+	line-height: 1.2;
+	padding: 20px;
+	margin-top: 15px;
+	border-width: 5px;
+	border-style: solid;
+	color: #b10e1e;
+	}
+
+
+.old-permissions-banner {
+	background-color: #f47738;
+	padding: 20px;
+	
+	span {
+		margin-left: 20px;
+		border-color: #fff;
+		color: #f47738;
+		background-color: white;
+	}
+	
+	strong {
+	margin-left: 20px;
+	color: white;
+	}
+	}
