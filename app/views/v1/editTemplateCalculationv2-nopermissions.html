@@ -25,6 +25,10 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
+    <p class="new-permissions-banner">
+
+      You do not have permissions to build calculations </p>
+
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
         <span class="govuk-caption-l">Calculation name</span>
@@ -62,12 +66,10 @@ GOV.UK Prototype Kit
         <h4 class="govuk-heading-s" for="more-detail">
           Calculation script
         </h4>
-        <span id="event-name-hint" class="govuk-hint">
-          If you don't have edit calculation permissions, you can still build the calculation to preview it.
-        </span>
+
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
           aria-describedby="more-detail-hint">
-Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
+Dim A as Decimal? A = Datasets.Test1619BCData.BCProportionsB1
 
 If A.HasValue = False Then
 
@@ -78,8 +80,9 @@ Return A
 End If
         </textarea>
       </div>
-      <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
-        Build calculation preview
+      <button disabled="disabled" data-prevent-double-click="true" onclick="buildOuput()"
+        class="govuk-button govuk-button--disabled" data-module="govuk-button">
+        Build calculation
       </button>
 
 
