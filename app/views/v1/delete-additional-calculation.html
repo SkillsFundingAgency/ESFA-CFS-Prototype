@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Are you sure you want to delete {{ data['additionalCalc-name'] }}?
+        </h1>
+      </legend>
+      <div id="changed-name-hint" class="govuk-hint">
+        This calculation was last used on <span id="editedDate"> </span>
+      </div>
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="changed-name">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+            No
+          </label>
+        </div>
+      </div>
+      <button class="govuk-button govuk-!-margin-top-5" onclick="sessionStorage.setItem('calcCreated', 'false'); goBack2()" data-module="govuk-button">
+        Continue
+      </button>
+      <button onclick="goBack ()" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" data-module="govuk-button">
+        Cancel
+      </button>
+    </fieldset>
+  </div>
+
+<script>
+
+    window.onload = function additionalCalc () {
+        var dateTime = sessionStorage.getItem("date");
+        document.getElementById('editedDate').innerHTML = dateTime;
+    }
+
+</script>
+
+{% endblock %}

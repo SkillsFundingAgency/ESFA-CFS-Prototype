@@ -258,4 +258,10 @@ function goBack() {
   window.history.back();
 }
 
+// Go back 2 pages (onclick="goBack()")
+
+function goBack2() {
+  window.history.go(-2);
+}
+
 
