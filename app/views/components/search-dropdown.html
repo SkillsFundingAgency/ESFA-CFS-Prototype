@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<form action="" method="get">
+    <label class="govuk-label" for="fundingStream">Select data schema</label>
+    <input list="dataschema" class="govuk-select" name="browser" id="browser">
+    <datalist id="dataschema">
+        <option value="APT Adjusted Factors">
+        <option value="APT Final Baselines">
+        <option value="APT Inputs and Adjustments">
+        <option value="APT Local Factors">
+        <option value="APT New ISB">
+        <option value="APT Proforma">
+
+    </datalist>
+</form>
+
+
+
+
+
+
+{% endblock %}

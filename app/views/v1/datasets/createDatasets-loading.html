@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="manageData.html">Manage data</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="manageDatasets">Manage data source files</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Load new data source file</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Upload new data source</h1>
+
+    <p class="govuk-body">Load a new data source file to create a dataset to use in
+      calculations.</p>
+
+    <form action="/v1/datasets/manageDatasets" method="post" class="form">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group govuk-!-margin-top-6">
+          <label class="govuk-label" for="sort">
+            Funding stream
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="draft"></option>
+            <option value="draft">16 to 19</option>
+            <option value="draft">14 to 16</option>
+            <option value="draft">General Annual Grant</option>
+            <option>Academy Pupil Number Adjustment</option>
+
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Select data schema
+          </label>
+          <div class="govuk-!-margin-top-1 govuk-!-margin-bottom-2">
+            <span id="loader-content" class="inline-loader" role="alert" aria-live="assertive"></span>
+            <span class="govuk-body">
+              Loading data schemas
+            </span>
+          </div>
+
+        </div>
+
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Data set source file name
+          </label>
+          <span id="event-name-hint" class="govuk-hint">
+            Use a descriptive unique name other users can understand
+          </span>
+          <input class="govuk-input" id="address-line-1" name="data-source-file-name" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Description
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="data-more-detail" rows="8"
+            aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+              Upload data source file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+          </div>
+        </div>
+      </fieldset>
+
+      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" onclick="newDataSource()">
+        Create data source
+      </button>
+
+      <a href="manageDatasets.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
+
+  </div>
+</div>
+
+<script>
+
+  function newDataSource() {
+    sessionStorage.setItem('new data source file', 'true');
+  }
+
+</script>
+
+{% endblock %}
