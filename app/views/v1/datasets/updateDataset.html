@@ -21,6 +21,9 @@ GOV.UK Prototype Kit
     </ol>
 </div>
 
+
+
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="/v1/datasets/manageDatasets" method="post" class="form">
@@ -36,7 +39,25 @@ GOV.UK Prototype Kit
                         Joe Young <span class="govuk-!-margin-left-2">21 November 12:24pm</span>
                     </div>
                 </details>
-
+                <div class="govuk-radios govuk-radios--inline">
+                    <label class="govuk-label" for="file-upload-1">
+                        Select update type
+                    </label>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                            value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+                            Merge
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item govuk-!-margin-bottom-7">
+                        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
+                            value="no">
+                        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            Replace
+                        </label>
+                    </div>
+                </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="file-upload-1">
                         Select data source file
