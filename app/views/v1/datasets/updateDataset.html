@@ -21,12 +21,9 @@ GOV.UK Prototype Kit
     </ol>
 </div>
 
-
-
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="/v1/datasets/manageDatasets" method="post" class="form">
+        <form action=" " method="post" class="form" id="updateDataset">
             <fieldset class="govuk-fieldset">
                 <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update data source</h1>
                 <details class="govuk-details" data-module="govuk-details">
@@ -44,15 +41,15 @@ GOV.UK Prototype Kit
                         Select update type
                     </label>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
-                            value="yes">
+                        <input class="govuk-radios__input" id="updateTypeMerge" name="updateType"
+                            onclick="updateTypeCheck()" type="radio" value="merge/merge-successful">
                         <label class="govuk-label govuk-radios__label" for="changed-name">
                             Merge
                         </label>
                     </div>
                     <div class="govuk-radios__item govuk-!-margin-bottom-7">
-                        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
-                            value="no">
+                        <input class="govuk-radios__input" id="updateTypeReplace" onclick="updateTypeCheck()" name="updateType" type="radio"
+                            value="/v1/datasets/manageDatasets">
                         <label class="govuk-label govuk-radios__label" for="changed-name-2">
                             Replace
                         </label>
@@ -94,6 +91,23 @@ GOV.UK Prototype Kit
         </form>
     </div>
 </div>
+
+<script>
+
+    function updateTypeCheck() {
+        console.log("updateTypeCheck ran")
+        var updateType = document.getElementsByName('updateType');
+        for (var i = 0, length = updateType.length; i < length; i++) {
+            if (updateType[i].checked) {
+                // do whatever you want with the checked radio
+                document.getElementById('updateDataset').action = updateType[i].value;
+                // only one radio can be logically checked, don't check the rest
+                break;
+            }
+        }
+    }
+
+</script>
 
 
 {% endblock %}
