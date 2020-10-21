@@ -17,6 +17,21 @@ GOV.UK Prototype Kit
   </ol>
 </div>
 
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+  data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#">All calculations have already been approved</a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Specification name</span>
@@ -39,10 +54,15 @@ GOV.UK Prototype Kit
         <a class="govuk-link govuk-link--no-visited-state" href="createAdditionalCalculation">Create additional
           calculation</a>
       </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
-      </li>
+      <div class="govuk-form-group govuk-form-group--error">
+        <span id="name-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> All calculations have already been approved
+        </span>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="#"
+            onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
+        </li>
+      </div>
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="createDataset">Create data set</a>
       </li>
@@ -79,6 +99,7 @@ GOV.UK Prototype Kit
             Funding line structure
           </a>
         </li>
+
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#past-week">
             Additional calculations
