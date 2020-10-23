@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="edit-additional-calculation.html">{{ data['additionalCalc-name'] }}</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Preview {{ data['additionalCalc-name'] }}
+                    Growth
+                </li>
+            </ol>
+        </div>
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h2 class="govuk-heading-l"> Preview {{ data['additionalCalc-name'] }}</h2>
+            </legend>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="width-10">
+                    <strong>UKPRN</strong>
+                </label>
+                <span id="event-name-hint" class="govuk-hint">
+                    Enter a UKPRN to preview results for this provider
+                </span>
+                <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
+            </div>
+
+
+            <div class="govuk-form-group">
+                <h4 class="govuk-heading-s" for="more-detail">
+                    Calculation script
+                </h4>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
+                    aria-describedby="more-detail-hint">Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
+
+If A.HasValue = False Then
+                    
+Return 0
+                    
+Else
+Return A
+End If
+
+        </textarea>
+
+                <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View
+                        calculation
+                        results</a></p>
+
+
+
+                <div class="govuk-grid-row govuk-!-margin-top-9">
+                    <div class="govuk-grid-column-full">
+
+                        <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                            Save and continue
+                        </button>
+                        <button class="govuk-button govuk-!-margin-right-1 btn-approve" id="btn-approve"
+                            data-module="govuk-button">
+                            Approve
+                        </button>
+                        <a href="fundingLineStructure.html"
+                            class="govuk-button govuk-!-margin-right-1 govuk-button--secondary"
+                            data-module="govuk-button">
+                            Cancel
+                        </a>
+
+                    </div>
+                </div>
+
+                <p class="govuk-body" id="editedDate">Last saved 25 March 2020 2:57pm</p>
+                <a href="calculation-version-history.html">
+                    <p class="govuk-body">View calculation history</p>
+                </a>
+            </div>
+    </div>
+
+    <script>
+
+        function buildOuput() {
+            document.getElementById('buildResult').style.display = "block"
+        }
+
+        window.onload = function additionalCalc() {
+            var status = sessionStorage.getItem("status");
+            var dateTime = sessionStorage.getItem("date");
+            document.getElementById('calc-status').innerHTML = status;
+            document.getElementById('editedDate').innerHTML = "Last saved " + dateTime;
+        }
+
+
+    </script>
+
+    {% endblock %}
