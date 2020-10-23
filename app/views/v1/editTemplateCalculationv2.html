@@ -74,16 +74,26 @@ Else
 Return A
 End If
         </textarea>
+        <h4 class="govuk-heading-s" for="more-detail">
+          UKPRN
+
+          <span id="event-name-hint" class="govuk-hint">
+            Enter a UKPRN to view calculation results for this provider
+          </span></h4>
+        <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
+
       </div>
       <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
         Build calculation
       </button>
       <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
-        results</a></p>
+          results</a></p>
 
       <div class="govuk-inset-text" id="buildResult" style="display: none;">
         <h4 class="govuk-heading-s">Build output</h4>
         <p class="govuk-body">Code complied successfully: <strong>True</strong></p>
+        <p class="govuk-body">Provider result: <strong>8.2%</strong></p>
+
       </div>
 
 

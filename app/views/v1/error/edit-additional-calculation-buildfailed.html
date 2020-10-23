@@ -32,8 +32,7 @@ GOV.UK Prototype Kit
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#">This calculation is referenced by 1 or more other calculations and therefore can't be
-              deleted.</a>
+            <a href="#">The calculation build has failed.</a>
           </li>
 
         </ul>
@@ -77,11 +76,8 @@ GOV.UK Prototype Kit
         <h4 class="govuk-heading-s" for="more-detail">
           Calculation script
         </h4>
-        <span id="name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> This calculation is referenced by 1 or more other
-          calculations and therefore can't be deleted.
-        </span>
-        <textarea class="govuk-textarea text-area-error" id="calculation-script" name="calculation-script" rows="10"
+
+        <textarea class="govuk-textarea" id="calculation-script" name="calculation-script" rows="10"
           aria-describedby="calculation-script">
 Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
 
@@ -112,8 +108,8 @@ End If
 
       <div class="govuk-inset-text" id="buildResult" style="display: none;">
         <h4 class="govuk-heading-s">Build output</h4>
-        <p class="govuk-body">Code complied successfully: <strong>True</strong></p>
-        <p class="govuk-body">Provider result: <strong>£10,836</strong></p>
+        <p class="govuk-body">Code complied successfully: <strong>False</strong></p>
+
 
       </div>
 

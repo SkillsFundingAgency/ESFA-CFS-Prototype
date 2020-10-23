@@ -20,10 +20,11 @@ GOV.UK Prototype Kit
         <li class="govuk-breadcrumbs__list-item">
           <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
         </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['additionalCalc-name'] }}
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Provisional Schools Block Funding Excluding Growth
         </li>
       </ol>
     </div>
+
     <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
       data-module="govuk-error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">
@@ -77,32 +78,11 @@ GOV.UK Prototype Kit
         <h4 class="govuk-heading-s" for="more-detail">
           Calculation script
         </h4>
-        <span id="name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> This calculation is referenced by 1 or more other
-          calculations and therefore can't be deleted.
-        </span>
-        <textarea class="govuk-textarea text-area-error" id="calculation-script" name="calculation-script" rows="10"
-          aria-describedby="calculation-script">
-Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
-
-If A.HasValue = False Then
-
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
+          aria-describedby="more-detail-hint">
 Return 0
 
-Else
-Return A
-End If
         </textarea>
-
-
-        <h4 class="govuk-heading-s" for="more-detail">
-          UKPRN
-
-          <span id="event-name-hint" class="govuk-hint">
-            Enter a UKPRN to view calculation results for this provider
-          </span></h4>
-        <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
-
       </div>
       <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
         Build calculation
@@ -113,14 +93,11 @@ End If
       <div class="govuk-inset-text" id="buildResult" style="display: none;">
         <h4 class="govuk-heading-s">Build output</h4>
         <p class="govuk-body">Code complied successfully: <strong>True</strong></p>
-        <p class="govuk-body">Provider result: <strong>£10,836</strong></p>
-
       </div>
 
 
       <div class="govuk-grid-row govuk-!-margin-top-9">
         <div class="govuk-grid-column-full">
-
           <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
             Save and continue
           </button>
