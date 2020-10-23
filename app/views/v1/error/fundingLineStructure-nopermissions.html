@@ -25,7 +25,7 @@ GOV.UK Prototype Kit
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#">All calculations have already been approved</a>
+        <a href="#">You don't have permission to approve calculations</a>
       </li>
 
     </ul>
@@ -54,15 +54,12 @@ GOV.UK Prototype Kit
         <a class="govuk-link govuk-link--no-visited-state" href="createAdditionalCalculation">Create additional
           calculation</a>
       </li>
-      <div class="govuk-form-group govuk-form-group--error">
-        <span id="name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> All calculations have already been approved
-        </span>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="#"
-            onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
-        </li>
-      </div>
+
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="#"
+          onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
+      </li>
+
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="createDataset">Create data set</a>
       </li>
