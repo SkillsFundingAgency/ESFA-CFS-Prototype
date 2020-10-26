@@ -520,14 +520,19 @@ GOV.UK Prototype Kit
         <p class="govuk-body">Are you sure you want to approve all template and additional calculations for DSG SIT?
         </p>
         </br>
+        <form action="approve-calculations" method="post" novalidate>
 
-        <button class="govuk-button govuk-!-margin-right-1 govuk-button--warning" data-module="govuk-button">
-          Confirm approve
-        </button>
-        <button type="button" onclick="document.getElementById('approveConfirmation').style.display='none'"
-          class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
-          data-module="govuk-button">Cancel
-        </button>
+
+          <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" data-module="govuk-button">
+            Confirm approve
+          </button>
+
+          <button type="button" onclick="document.getElementById('approveConfirmation').style.display='none'"
+            class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+            data-module="govuk-button">Cancel
+          </button>
+        </form>
+
       </div>
     </dialog>
   </div>
