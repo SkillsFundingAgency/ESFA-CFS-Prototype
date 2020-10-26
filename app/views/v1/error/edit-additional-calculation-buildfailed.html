@@ -32,7 +32,7 @@ GOV.UK Prototype Kit
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#">The calculation build has failed.</a>
+            <a href="#">The calculation build has failed</a>
           </li>
 
         </ul>
@@ -72,12 +72,14 @@ GOV.UK Prototype Kit
         </div>
       </div>
 
-      <div class="govuk-form-group">
-        <h4 class="govuk-heading-s" for="more-detail">
-          Calculation script
-        </h4>
-
-        <textarea class="govuk-textarea" id="calculation-script" name="calculation-script" rows="10"
+      <div class="govuk-form-group govuk-form-group--error">
+        <label class="govuk-label" for="calculation-script"><strong>
+            Calculation script</strong>
+        </label>
+        <span id="name-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> The calculation build has failed
+        </span>
+        <textarea class="govuk-textarea text-area-error" id="calculation-script" name="calculation-script" rows="10"
           aria-describedby="calculation-script">
 Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
 
@@ -89,55 +91,57 @@ Else
 Return A
 End If
         </textarea>
-
-
-        <h4 class="govuk-heading-s" for="more-detail">
-          UKPRN
-
-          <span id="event-name-hint" class="govuk-hint">
-            Enter a UKPRN to view calculation results for this provider
-          </span></h4>
-        <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
-
       </div>
-      <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
-        Build calculation
-      </button>
-      <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
-          results</a></p>
-
-      <div class="govuk-inset-text" id="buildResult" style="display: none;">
-        <h4 class="govuk-heading-s">Build output</h4>
-        <p class="govuk-body">Code complied successfully: <strong>False</strong></p>
-
-
-      </div>
-
-
-      <div class="govuk-grid-row govuk-!-margin-top-9">
-        <div class="govuk-grid-column-full">
-
-          <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-            Save and continue
-          </button>
-          <button class="govuk-button govuk-!-margin-right-1 btn-approve" id="btn-approve" data-module="govuk-button">
-            Approve
-          </button>
-          <a href="fundingLineStructure.html" class="govuk-button govuk-!-margin-right-1 govuk-button--secondary"
-            data-module="govuk-button">
-            Cancel
-          </a>
-          <a class="govuk-button govuk-button--warning" href="delete-additional-calculation" data-module="govuk-button">
-            Delete calculation
-          </a>
-        </div>
-      </div>
-
-      <p class="govuk-body" id="editedDate">Last saved 25 March 2020 2:57pm</p>
-      <a href="calculation-version-history.html">
-        <p class="govuk-body">View calculation history</p>
-      </a>
   </div>
+
+</div>
+<h4 class="govuk-heading-s" for="more-detail">
+  UKPRN
+
+  <span id="event-name-hint" class="govuk-hint">
+    Enter a UKPRN to view calculation results for this provider
+  </span></h4>
+<input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
+
+
+<button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
+  Build calculation
+</button>
+<p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
+    results</a></p>
+
+<div class="govuk-inset-text" id="buildResult">
+  <h4 class="govuk-heading-s">Build output</h4>
+  <p class="govuk-body">Code complied unsuccessfully</p>
+
+
+</div>
+
+
+<div class="govuk-grid-row govuk-!-margin-top-9">
+  <div class="govuk-grid-column-full">
+
+    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+      Save and continue
+    </button>
+    <button class="govuk-button govuk-!-margin-right-1 btn-approve" id="btn-approve" data-module="govuk-button">
+      Approve
+    </button>
+    <a href="fundingLineStructure.html" class="govuk-button govuk-!-margin-right-1 govuk-button--secondary"
+      data-module="govuk-button">
+      Cancel
+    </a>
+    <a class="govuk-button govuk-button--warning" href="delete-additional-calculation" data-module="govuk-button">
+      Delete calculation
+    </a>
+  </div>
+</div>
+
+<p class="govuk-body" id="editedDate">Last saved 25 March 2020 2:57pm</p>
+<a href="calculation-version-history.html">
+  <p class="govuk-body">View calculation history</p>
+</a>
+</div>
 </div>
 
 <script>
