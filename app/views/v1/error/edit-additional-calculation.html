@@ -32,8 +32,7 @@ GOV.UK Prototype Kit
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#">This calculation is referenced by 1 or more other calculations and therefore can't be
-              deleted.</a>
+            <a href="#">Calculation can not be deleted as it is referenced by one or more calculations</a>
           </li>
 
         </ul>
@@ -78,9 +77,7 @@ GOV.UK Prototype Kit
           Calculation script
         </h4>
         <span id="name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> This calculation is referenced by 1 or more other
-          calculations and therefore can't be deleted.
-        </span>
+          <span class="govuk-visually-hidden">Error:</span>Calculation can not be deleted as it is referenced by one or more calculations
         <textarea class="govuk-textarea text-area-error" id="calculation-script" name="calculation-script" rows="10"
           aria-describedby="calculation-script">
 Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
