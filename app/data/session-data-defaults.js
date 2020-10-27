@@ -19,6 +19,6 @@ Example usage:
 
 module.exports = {
 
-  // Insert values here
+  "spec-name": "GFT PE and Sport Premium"
 
 }
