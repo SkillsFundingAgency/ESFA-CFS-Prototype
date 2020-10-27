@@ -19,6 +19,9 @@ Example usage:
 
 module.exports = {
 
-  "spec-name": "GFT PE and Sport Premium"
+  "spec-name": "GFT PE and Sport Premium",
+  "value-type": "Currency",
+  "additionalCalc-name": "Block 1"
 
 }
+
