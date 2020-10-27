@@ -21,6 +21,19 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#file-upload-1-error">The selected file must be a [list of file types]</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="batch-in-progress" method="post" novalidate>
@@ -35,8 +48,15 @@ GOV.UK Prototype Kit
                         <label class="govuk-label" for="file-upload-1">
                             Upload a file. File must be a ?
                         </label>
-                        <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-                    </div>
+                        <div class="govuk-form-group govuk-form-group--error">
+                            <label class="govuk-label" for="file-upload-1">
+                              Upload a file
+                            </label>
+                            <span id="file-upload-1-error" class="govuk-error-message">
+                              <span class="govuk-visually-hidden">Error:</span> The selected file must be a [list of file types]
+                            </span>
+                            <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-error">
+                          </div>                    </div>
                 </fieldset>
             </div>
 
