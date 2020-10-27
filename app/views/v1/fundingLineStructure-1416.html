@@ -19,40 +19,45 @@ GOV.UK Prototype Kit
   </ol>
 </div>
 
-<p> {{ data['core-provider-data'] }}</p>
+
+
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">Specification name</span>
-    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">{{ data['spec-name'] }}</h2>
-    <span class="govuk-caption-m">Funding period</span>
-    <h3 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020</h3>
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-m">Funding streams</span>
-    <h3 class="govuk-heading-m">14 to 16</h3>
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">{{ data['spec-name'] }}</h1>
+    <span class="govuk-caption-l">14 to 16 for Academies and schools academic year 2019 to 2020</span>
   </div>
   <div class="govuk-grid-column-one-third">
     <ul class="govuk-list">
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="editSpecification-1416.html">Edit specification</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="editSpecification">Edit specification</a>
       </li>
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="createAdditionalCalculation">Create additional
           calculation</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="choosespectype-1416.html">Create data set</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="#"
+          onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="createDataset">Create data set</a>
       </li>
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="#"
           onclick="document.getElementById('fundingConfirmation').style.display='block'">Choose for funding</a>
       </li>
+
     </ul>
   </div>
 </div>
+
+
+
+
+
+
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
