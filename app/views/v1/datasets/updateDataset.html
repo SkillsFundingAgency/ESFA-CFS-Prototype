@@ -36,7 +36,7 @@ GOV.UK Prototype Kit
                         Joe Young <span class="govuk-!-margin-left-2">21 November 12:24pm</span>
                     </div>
                 </details>
-                <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios">
                     <label class="govuk-label" for="file-upload-1">
                         Select update type
                     </label>
@@ -44,15 +44,21 @@ GOV.UK Prototype Kit
                         <input class="govuk-radios__input" id="updateTypeMerge" name="updateType"
                             onclick="updateTypeCheck()" type="radio" value="merge/merge-in-progress">
                         <label class="govuk-label govuk-radios__label" for="changed-name">
-                            Merge
+                            Merge existing version
                         </label>
+                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                            Combine a new data source with the existing file
+                        </div>
                     </div>
                     <div class="govuk-radios__item govuk-!-margin-bottom-7">
-                        <input class="govuk-radios__input" id="updateTypeReplace" onclick="updateTypeCheck()" name="updateType" type="radio"
-                            value="/v1/datasets/manageDatasets">
+                        <input class="govuk-radios__input" id="updateTypeReplace" onclick="updateTypeCheck()"
+                            name="updateType" type="radio" value="/v1/datasets/manageDatasets">
                         <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                            Replace
+                            Create new version
                         </label>
+                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                            Replace the existing data source with a new file
+                        </div>
                     </div>
                 </div>
                 <div class="govuk-form-group">
