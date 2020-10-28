@@ -33,18 +33,21 @@ GOV.UK Prototype Kit
                     </legend>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="file-upload-1">
-                            Upload a file. File must be in xslx format.
+                            Upload a file. File must be in xslx format
                         </label>
                         <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
                     </div>
                 </fieldset>
             </div>
+            <a class="govuk-button govuk-!-margin-right-1" href="batch-approve.html" data-module="govuk-button">
+                Approve funding
+            </a>
+            <a class="govuk-button govuk-button--warning" href="batch-release.html" data-module="govuk-button">
+                Release funding
+            </a>
 
-            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-                Upload
-            </button>
 
-            <a class="govuk-button govuk-button--secondary" href="../view-funding.html" data-module="govuk-button">
+            <a class="govuk-button govuk-button--secondary" href="upload-batch.html" data-module="govuk-button">
                 Cancel
             </a>
         </form>
