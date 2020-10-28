@@ -50,21 +50,21 @@
 
 <div class="govuk-radios govuk-radios--inline">
   <label class="govuk-label govuk-!-margin-bottom-2" for="file-upload-1">
-      Select yes if you wish to process a preselected batch of providers
+    Select yes if you wish to process a preselected batch of providers
   </label>
   <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="batchYes" name="batch"
-          onclick="batchProcess(), showspec()"  type="radio" value="batch/upload-batch">
-      <label class="govuk-label govuk-radios__label" for="changed-name">
-          Yes
-      </label>
+    <input class="govuk-radios__input" id="batchYes" name="batch" onclick="batchProcess(), showspec()" type="radio"
+      value="batch/upload-batch-approve-release">
+    <label class="govuk-label govuk-radios__label" for="changed-name">
+      Yes
+    </label>
   </div>
   <div class="govuk-radios__item govuk-!-margin-bottom-7">
-      <input class="govuk-radios__input" id="updateTypeReplace" onclick="showspec()" name="batch" type="radio"
-          value="/v1/datasets/manageDatasets">
-      <label class="govuk-label govuk-radios__label" for="changed-name-2">
-          No
-      </label>
+    <input class="govuk-radios__input" id="updateTypeReplace" onclick="showspec()" name="batch" type="radio"
+      value="/v1/datasets/manageDatasets">
+    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+      No
+    </label>
   </div>
 </div>
 
@@ -75,40 +75,40 @@
   <p id="specification" class="govuk-body"></p>
 
   <a href="" id="viewFundingLink" class="govuk-button" data-module="govuk-button">
-    
+
   </a>
 </div>
 
 
-  <script>
+<script>
 
-var batch = document.getElementById('batchYes').value
+  var batch = document.getElementById('batchYes').value
 
 
-    function showspec() {
-      document.getElementById('specificationDetails').classList.remove("govuk-visually-hidden");
-      if (batch = 'yes'){
-        document.getElementById('viewFundingLink').innerHTML = "Continue"
-      } else {
-        document.getElementById('viewFundingLink').innerHTML = "View funding"
-      }
+  function showspec() {
+    document.getElementById('specificationDetails').classList.remove("govuk-visually-hidden");
+    if (batch = 'yes') {
+      document.getElementById('viewFundingLink').innerHTML = "Continue"
+    } else {
+      document.getElementById('viewFundingLink').innerHTML = "View funding"
     }
+  }
 
-    function batchProcess() { 
-      console.log(batch)
-      document.getElementById('viewFundingLink').href = batch
-    }
+  function batchProcess() {
+    console.log(batch)
+    document.getElementById('viewFundingLink').href = batch
+  }
 
 
-    function getFundingStream() {
-      var fundingStream = document.getElementById("fundingStream");
-      var fundingStreamText = fundingStream.options[fundingStream.selectedIndex].text;
-      var fundingPeriod = document.getElementById("fundingPeriod").value;
-      document.getElementById("specification").innerHTML = fundingStreamText + ' ' + fundingPeriod;
-      var fundingStreamLink = document.getElementById("fundingStream").value;
-      document.getElementById("viewFundingLink").href = fundingStreamLink
-    }
+  function getFundingStream() {
+    var fundingStream = document.getElementById("fundingStream");
+    var fundingStreamText = fundingStream.options[fundingStream.selectedIndex].text;
+    var fundingPeriod = document.getElementById("fundingPeriod").value;
+    document.getElementById("specification").innerHTML = fundingStreamText + ' ' + fundingPeriod;
+    var fundingStreamLink = document.getElementById("fundingStream").value;
+    document.getElementById("viewFundingLink").href = fundingStreamLink
+  }
 
-  </script>
+</script>
 
-  {% endblock %}
+{% endblock %}
