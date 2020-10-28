@@ -11,11 +11,11 @@
           <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="../manageData">Manage data</a>
-          </li>
-          <li class="govuk-breadcrumbs__list-item">
-              Merge data source
-            </li>
+          <a class="govuk-breadcrumbs__link" href="../manageData">Manage data</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          Merge data source
+        </li>
       </ol>
     </div>
   </div>
@@ -30,48 +30,55 @@
   </div>
 </div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Data source
-          </dt>
-          <dd class="govuk-summary-list__value" id="fundingStreamSQL">
-            1920 Funding factors
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Data schema
-          </dt>
-          <dd class="govuk-summary-list__value" id="fundingPeriodSQL">
-            16 to 19 factors
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Additional rows created
-          </dt>
-          <dd class="govuk-summary-list__value">
-            0
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Existing rows amended
-          </dt>
-          <dd class="govuk-summary-list__value" id="dateTimeSQL">
-            0
-          </dd>
-        </div>
-      </dl>
-    </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Data source
+        </dt>
+        <dd class="govuk-summary-list__value" id="fundingStreamSQL">
+          1920 Funding factors
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Data source version
+        </dt>
+        <dd class="govuk-summary-list__value" id="fundingStreamSQL">
+          4 </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Data schema
+        </dt>
+        <dd class="govuk-summary-list__value" id="fundingPeriodSQL">
+          16 to 19 factors
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Additional rows created
+        </dt>
+        <dd class="govuk-summary-list__value">
+          0
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Existing rows amended
+        </dt>
+        <dd class="govuk-summary-list__value" id="dateTimeSQL">
+          0
+        </dd>
+      </div>
+    </dl>
   </div>
+</div>
 
-  <a href="/v1/datasets/manageDatasets" class="govuk-button" data-module="govuk-button">
-    Continue
-  </a>
+<a href="/v1/datasets/manageDatasets" class="govuk-button" data-module="govuk-button">
+  Continue
+</a>
 
 
-  {% endblock %}
+{% endblock %}
