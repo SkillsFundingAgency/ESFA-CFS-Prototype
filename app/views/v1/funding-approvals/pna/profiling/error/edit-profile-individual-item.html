@@ -65,8 +65,6 @@ GOV.UK Prototype Kit
         <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£1,000,000</h2>
         <span class="govuk-caption-m">Balance available for profiling</span>
         <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£1,600,000</h2>
-        <span class="govuk-caption-m">Balance to be carried forward</span>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£7,000</h2>
     </div>
 </div>
 
@@ -314,6 +312,21 @@ GOV.UK Prototype Kit
                     </td>
 
                 </tr>
+            </tr>
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">To be carried forward</th>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                    <div class="govuk-form-group">
+                        <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
+                        <input aria-label="Enter the total amount for August. Enter 0 if this does not apply"
+                            class="input-prefix govuk-input " id="carryover" onblur="sumTotal()" name="carryover"
+                            type="text" aria-describedby="currency" autocomplete="off" value="7,000">
+                    </div>
+                </td>
+            </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">Total allocation</th>
                     <td class="govuk-table__cell"></td>
@@ -323,22 +336,7 @@ GOV.UK Prototype Kit
                     </td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">
                         <strong>£1,700,000</strong><span class="govuk-!-margin-left-2" id="profileTotal"></span></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">To be carried forward</th>
-                    <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input aria-label="Enter the total amount for August. Enter 0 if this does not apply"
-                                class="input-prefix govuk-input " id="carryover" onblur="sumTotal()" name="carryover"
-                                type="text" aria-describedby="currency" autocomplete="off" value="7,000">
-                        </div>
-                    </td>
 
-                </tr>
             </tbody>
         </table>
     </div>
