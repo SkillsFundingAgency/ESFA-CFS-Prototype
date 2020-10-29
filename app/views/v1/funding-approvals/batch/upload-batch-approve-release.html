@@ -22,7 +22,8 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
+        <form action="" method="post" id="batchProviders" novalidate>
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -43,14 +44,11 @@ GOV.UK Prototype Kit
 
 
 <div class="govuk-grid-row ">
-    <div class="govuk-grid-column-two-thirds">
-        <form action="batch-approve-in-progress" method="post" novalidate>
-            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+    <div class="govuk-grid-column-full">
+            <button class="govuk-button govuk-!-margin-right-1" onclick="approve()" data-module="govuk-button">
                 Approve funding
             </button>
-        </form>
-        <form action="batch-release-in-progress" method="post" novalidate>
-            <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" data-module="govuk-button">
+            <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" onclick="release()" data-module="govuk-button">
                 Release funding
             </button>
             <a class="govuk-button govuk-button--secondary" href="upload-batch.html" data-module="govuk-button">
@@ -60,6 +58,20 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
+
+<script>
+
+function approve() {
+    document.getElementById('batchProviders').action = 'batch-approve-in-progress'
+
+}
+
+function release() {
+    document.getElementById('batchProviders').action = 'batch-release-in-progress'
+
+}
+
+</script>
 
 
 
