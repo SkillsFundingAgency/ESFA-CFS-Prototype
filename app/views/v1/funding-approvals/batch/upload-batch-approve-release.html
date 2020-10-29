@@ -22,7 +22,7 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-one-half">
         <form action="" method="post" id="batchProviders" novalidate>
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
@@ -31,9 +31,15 @@ GOV.UK Prototype Kit
                             Upload batch file
                         </h1>
                     </legend>
+                    <p class="govuk-body">
+                    </p>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="file-upload-1">
-                            Upload a file. File must be in xslx format
+                        <label class="govuk-label" for="file-upload-1"><strong>
+                                Upload a xslx file.</strong>
+                            </br>
+                            <span class="govuk-caption-m">Any providers which have previously been
+                                approved or released will be excluded from provider count summaries.</span>
+
                         </label>
                         <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
                     </div>

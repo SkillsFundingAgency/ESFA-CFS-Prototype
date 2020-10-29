@@ -6,7 +6,7 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+<div class="govuk-grid-row  govuk-!-margin-bottom-4">
   <div class="govuk-grid-column-full">
     <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
       <ol class="govuk-breadcrumbs__list">
@@ -19,31 +19,20 @@ GOV.UK Prototype Kit
         <li class="govuk-breadcrumbs__list-item">
           <a class="govuk-breadcrumbs__link" href="funding-resultsv2.html">Funding approval results</a>
         </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="batch-release.html">Confirm approval</a>
+        </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          Confirm approval
+          Funding released
         </li>
       </ol>
     </div>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm funding approval</h1>
-    <span class="govuk-caption-xl govuk-!-margin-bottom-8">Check the information below carefully before approving the
-      funding
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Funding released</h1>
+    <span class="govuk-caption-xl govuk-!-margin-bottom-8">View a summary of the successfully released funding
     </span>
   </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-3">
-  <div class="govuk-grid-column-three-quarters">
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Warning</span>
-        Approved funding values can change when data or calculations are altered. If the funding values change, their
-        status will become ‘updated’ and they will need to be approved again.
-
-      </strong>
-    </div>
-  </div>
-</div>
 
 
 
@@ -82,7 +71,7 @@ GOV.UK Prototype Kit
 </div>
 -->
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
   <div class="govuk-grid-column-three-quarters">
     <table class="govuk-table govuk-!-margin-bottom-0">
       <thead class="govuk-table__head">
@@ -135,31 +124,19 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-9">
-  <div class="govuk-grid-column-three-quarters">
-    <a class="govuk-link-m right-align" href="upload-batch-approve-release.html">
-      Change batch<span class="govuk-visually-hidden"> name</span>
-    </a>
-  </div>
-</div>
+
 
 
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="confirm-approve-in-progress" method="post" novalidate>
 
-      <button data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-        Confirm approval
-      </button>
-
-      <a href="upload-batch-approve-release.html" button class="govuk-button govuk-button--secondary"
-        data-module="govuk-button">
-        Cancel
-      </a>
-    </form>
+    <a href="/start.html" button class="govuk-button " data-module="govuk-button">
+      Continue
+    </a>
   </div>
 </div>
+
 
 {% endblock %}
