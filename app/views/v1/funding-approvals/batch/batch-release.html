@@ -136,7 +136,7 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
   <div class="govuk-grid-column-three-quarters">
-    <a class="govuk-link-m right-align" href="upload-batch.html">
+    <a class="govuk-link-m right-align" href="upload-batch-approve-release.html">
       Change batch<span class="govuk-visually-hidden"> name</span>
     </a>
   </div>
@@ -147,14 +147,17 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <button data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-      Confirm release
-    </button>
+    <form action="confirm-release-in-progress" method="post" novalidate>
 
-    <a href="upload-batch-approve-release.html" button class="govuk-button govuk-button--secondary"
-      data-module="govuk-button">
-      Cancel
-    </a>
+      <button data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Confirm release
+      </button>
+
+      <a href="upload-batch-approve-release.html" button class="govuk-button govuk-button--secondary"
+        data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
   </div>
 </div>
 
