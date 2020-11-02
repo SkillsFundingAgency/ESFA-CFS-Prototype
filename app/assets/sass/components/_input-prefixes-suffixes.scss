@@ -1,0 +1,99 @@
+// input prefix and suffix
+
+.govuk-input__prefix,.govuk-input__suffix {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 40px;
+    min-width: 2.5rem;
+    height: 40px;
+    height: 2.5rem;
+    padding: 5px;
+    border: 2px solid #0b0c0c;
+    background-color: #f3f2f1;
+    text-align: center;
+    white-space: nowrap;
+    cursor: default;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto
+}
+
+@media (min-width: 20em) {
+.govuk-input__suffix {
+    border-left: 0;
+}
+}
+
+@media (min-width: 40.0625em) {
+.govuk-input__prefix, .govuk-input__suffix {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+}
+}
+
+@media print {
+    .govuk-input__prefix,.govuk-input__suffix {
+        font-family: sans-serif
+    }
+}
+
+
+@media print {
+    .govuk-input__prefix,.govuk-input__suffix {
+        font-size: 14pt;
+        line-height: 1.15
+    }
+}
+
+@media (max-width: 40.0525em) {
+    .govuk-input__prefix,.govuk-input__suffix {
+        line-height:1.6
+    }
+}
+
+@media (max-width: 19.99em) {
+    .govuk-input__prefix,.govuk-input__suffix {
+        display:block;
+        height: 100%;
+        white-space: normal
+    }
+}
+
+@media (max-width: 19.99em) {
+    .govuk-input__suffix {
+        border-top:0
+    }
+}
+
+@media (min-width: 20em) {
+    .govuk-input__suffix {
+        border-left:0
+    }
+}
+
+@media (max-width: 19.99em) {
+    .govuk-input__prefix {
+        border-bottom:0
+    }
+}
+
+@media (min-width: 20em) {
+    .govuk-input__prefix {
+        border-right:0
+    }
+}
+
+.govuk-input__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}

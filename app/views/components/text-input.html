@@ -6,6 +6,12 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">Suffix and Prefixes</h1>
+    </div>
+</div>
+
 <div class="govuk-form-group">
     <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="weight">
         What is the weight in kilograms?
@@ -13,6 +19,17 @@ GOV.UK Prototype Kit
     </h1>
     <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
       <div class="govuk-input__suffix" aria-hidden="true">kg</div>
+    </div>
+  </div>
+
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="cost">
+        What is the cost in pounds?
+      </label>
+    </h1>
+    <div class="govuk-input__wrapper">
+      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+      <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
     </div>
   </div>
 
