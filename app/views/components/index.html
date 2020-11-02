@@ -1,0 +1,77 @@
+{% extends "component-nav.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Component library</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="components/accessible-autocomplete">Accessible autocomplete</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="components/file-download">File download</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="components/funding-line-structure">Funding line structure</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="components/loading-spinner-full">Loading spinner full page</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/loading-spinner-inpage">Loading spinner on page </a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/loading-spinner-inpage-example">Loading spinner on page example</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/loading-spinner">Loading spinners small and input</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/modal">Modal</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/multiple-autocomplete">Multiple autocomplete</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/no-results">No search results</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/no-results-example">No search results example page</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/permissions-banner">Permission banner</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/rounded-amount-profile">Rounded amount profile</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/search-dropdown">Search dropdown</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/search-facets">Search facets</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="components/search-filter">Search filter</a>
+            </li>
+          </ul>
+    </div>
+</div>
+
+<script>
+var elm = document.getElementsByTagName('li')
+var length = elm.length;
+for (var i = 0; i < length; i++) {
+  elm[i].className = elm[i].className + " govuk-!-margin-bottom-2";
+}</script>
+
+{% endblock %}
