@@ -8,6 +8,15 @@ GOV.UK Prototype Kit
 
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Autocomplete
+        </h1>        
+    </div>
+</div>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
         <form action="" method="get">
@@ -15,10 +24,12 @@ GOV.UK Prototype Kit
             <div class="autocomplete-wrapper">
                 <select name="fundingStream" class="govuk-select" id="funding-stream">
                     <option value="">Select a funding stream</option>
-                    <option value="fundingStream: GAG">General annual grant</option>
-                    <option value="fundingStream: DSG">Dedicated schools grant</option>
+                    <option value="fundingStream: GAG">General annual grant (GAG)</option>
+                    <option value="fundingStream: DSG">Dedicated schools grant (DSG)</option>
                     <option value="fundingStream: PES">PE and sports premium</option>
-                    <option value="fundingStream: PNA">Pupil number adjustment</option>
+                    <option value="fundingStream: PNA">Pupil number adjustment (PNA)</option>
+                    <option value="fundingStream: PNA">16 to 19</option>
+                    <option value="fundingStream: PNA">14 to 16</option>
                 </select>
             </div>
         </label>
@@ -26,16 +37,30 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-top-9">
+<div class="govuk-grid-row govuk-!-margin-top-6">
     <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body">DEMO ONLY</p>
+        <h1 class="govuk-heading-m">
+            Demo only
+        </h1>        
         <p class="govuk-body">Funding streams available</p>
         <ul class="govuk-list govuk-list--bullet">
-            <li>General annual grant</li>
-            <li>Dedicated schools grant</li>
+            <li>General annual grant (GAG)</li>
+            <li>Dedicated schools grant (DSG)</li>
             <li>PE and sports premium</li>
-            <li>Pupil number adjustment</li>
+            <li>Pupil number adjustment (PNA)</li>
+            <li>16 to 19</li>
+            <li>14 to 16</li>
         </ul>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-6">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-m">
+            Component notes
+        </h1>
+        <p class="govuk-body">Autocomplete reverts to a select if JavaScript is disabled in the users browser</p>
+
     </div>
 </div>
 
@@ -45,7 +70,7 @@ GOV.UK Prototype Kit
         autoselect: true,
         confirmOnBlur: true,
         defaultValue: "",
-        minLength: 3,
+        minLength: 2,
         selectElement: selectEl
     })
 
