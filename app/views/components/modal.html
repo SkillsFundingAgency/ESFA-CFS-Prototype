@@ -6,6 +6,20 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Modal
+        </h1>        
+    </div>
+</div>
+
+<button type="button" onclick="document.getElementById('profilePreview').style.display='block'"
+class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+data-module="govuk-button">View modal </button>
+
+
+
 <div class="govuk-modal-dialogue" id="profilePreview" data-module="govuk-modal-dialogue">
     <div class="govuk-modal-dialogue__wrapper">
         <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
