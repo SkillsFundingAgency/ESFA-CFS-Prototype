@@ -6,6 +6,9 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
+
+
 <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
@@ -96,12 +99,21 @@ GOV.UK Prototype Kit
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-l">Funding line structure</h2>
-            <div class="govuk-form-group search-container">
-              <label class="govuk-label" for="event-name">
-                Search by calculation
-              </label>
-              <input class="govuk-input" id="event-name" name="event-name" type="text">
-            </div>
+            <form action="" method="get">
+              <label class="govuk-label" for="template-calcs">Select template calculations
+              <div class="autocomplete-wrapper govuk-!-margin-bottom-5">
+                  <select name="template-calcs" class="govuk-select" id="template-calcs">
+                      <option value="">Select template calculations </option>
+                      <option value="fundingStream: GAG">General annual grant (GAG)</option>
+                      <option value="fundingStream: DSG">Dedicated schools grant (DSG)</option>
+                      <option value="fundingStream: PES">PE and sports premium</option>
+                      <option value="fundingStream: PNA">Pupil number adjustment (PNA)</option>
+                      <option value="fundingStream: PNA">16 to 19</option>
+                      <option value="fundingStream: PNA">14 to 16</option>
+                  </select>
+              </div>
+          </label>
+          </form>
           </div>
 
 
@@ -155,10 +167,21 @@ GOV.UK Prototype Kit
         </div>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <div class="govuk-form-group search-container">
-              <input class="govuk-input input-search" id="event-name" name="event-name" spellcheck="false" type="text">
-              <button class="govuk-button" type="submit" class="gem-c-search__submit">Search</button>
-            </div>
+            <form action="" method="get">
+              <label class="govuk-label" for="additional-calcs">Search additional calculations
+              <div class="autocomplete-wrapper govuk-!-margin-bottom-5">
+                  <select name="additional-calcs" class="govuk-select" id="additional-calcs">
+                      <option value="">Select additional calculations </option>
+                      <option value="fundingStream: GAG">General annual grant (GAG)</option>
+                      <option value="fundingStream: DSG">Dedicated schools grant (DSG)</option>
+                      <option value="fundingStream: PES">PE and sports premium</option>
+                      <option value="fundingStream: PNA">Pupil number adjustment (PNA)</option>
+                      <option value="fundingStream: PNA">16 to 19</option>
+                      <option value="fundingStream: PNA">14 to 16</option>
+                  </select>
+              </div>
+          </label>
+          </form>
           </div>
           <div class="govuk-grid-column-one-third">
           </div>
@@ -586,6 +609,43 @@ GOV.UK Prototype Kit
 
     }
   }
+
+    var selectEl = document.querySelector('#template-calcs')
+    accessibleAutocomplete.enhanceSelectElement({
+        autoselect: true,
+        confirmOnBlur: true,
+        defaultValue: "",
+        minLength: 2,
+        selectElement: selectEl
+    })
+
+    var queryStringParameters = window.location.search
+    var previouslySubmitted = queryStringParameters.length > 0
+    if (previouslySubmitted) {
+        var submittedEl = document.querySelector('.submitted')
+        submittedEl.classList.remove('submitted--hidden')
+        var params = new URLSearchParams(document.location.search.split('?')[1])
+        document.querySelector('.submitted__last-location').innerHTML = params.get('template-calcs')
+    }
+
+    var selectEl = document.querySelector('#additional-calcs')
+    accessibleAutocomplete.enhanceSelectElement({
+        autoselect: true,
+        confirmOnBlur: true,
+        defaultValue: "",
+        minLength: 2,
+        selectElement: selectEl
+    })
+
+    var queryStringParameters = window.location.search
+    var previouslySubmitted = queryStringParameters.length > 0
+    if (previouslySubmitted) {
+        var submittedEl = document.querySelector('.submitted')
+        submittedEl.classList.remove('submitted--hidden')
+        var params = new URLSearchParams(document.location.search.split('?')[1])
+        document.querySelector('.submitted__last-location').innerHTML = params.get('additional-calcs')
+    }
+
 </script>
 
 {% endblock%}
