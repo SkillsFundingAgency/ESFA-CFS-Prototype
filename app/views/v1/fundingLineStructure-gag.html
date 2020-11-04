@@ -19,32 +19,23 @@ GOV.UK Prototype Kit
   </ol>
 </div>
 
-<p> {{ data['core-provider-data'] }}</p>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">Specification name</span>
-    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">{{ data['spec-name'] }}</h2>
-    <span class="govuk-caption-m">Funding period</span>
-    <h3 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020</h3>
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-m">Funding streams</span>
-    <h3 class="govuk-heading-m">General annual grant</h3>
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">{{ data['spec-name'] }}</h1>
+    <span class="govuk-caption-l">General annual grant for academies and schools academic </br>year 2019 to 2020</span>
   </div>
   <div class="govuk-grid-column-one-third">
     <ul class="govuk-list">
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="editSpecification-gag.html">Edit specification</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="editSpecification">Edit specification</a>
       </li>
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="createAdditionalCalculation">Create additional
           calculation</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="choosespectype-gag.html">Create data set</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="choosespectype.html">Create data set</a>
       </li>
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="#"
@@ -54,7 +45,7 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-top-3">
   <div class="govuk-grid-column-full">
 
     <details class="govuk-details govuk-!-margin-bottom-5" data-module="govuk-details">
@@ -93,12 +84,12 @@ GOV.UK Prototype Kit
             Release timetable
           </a>
         </li>
-        <!--
+
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#variation-management">
             Variation management
           </a>
-        </li>-->
+        </li>
       </ul>
       <section class="govuk-tabs__panel" id="past-day">
         <div class="govuk-grid-row">
@@ -115,68 +106,56 @@ GOV.UK Prototype Kit
 
 
         </div>
-        <table class="govuk-table govuk-!-width-three-quarters">
+        <table class="govuk-table govuk-!-width-full">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Structure</th>
               <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-half">Calculation type</th>
               <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">1</th>
-              <td class="govuk-table__cell"><a class="govuk-link" href="">School Allocation
-                  Block Notional SEN</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="editTemplateCalculationv2.html">Total Funding
+                  Allocation</a></td>
+              <td class="govuk-table__cell">Currency</td>
               <td class="govuk-table__cell">Draft</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">2</th>
-              <td class="govuk-table__cell"><a class="govuk-link" href="">School
-                  Allocation Block
+              <td class="govuk-table__cell"><a class="govuk-link" href="editTemplateCalculationv2.html">Programme
+                  Funding
                 </a></td>
+              <td class="govuk-table__cell">Currency</td>
+              <td class="govuk-table__cell">Draft</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"></th>
+              <td class="govuk-table__cell"><a class="govuk-link" href="editTemplateCalculationv2.html">Student
+                  Financial Support Funding
+                </a></td>
+              <td class="govuk-table__cell">Currency</td>
+              <td class="govuk-table__cell">Draft</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"></th>
+              <td class="govuk-table__cell"><a class="govuk-link" href="">High Needs Element 2 Student Funding</a></td>
+              <td class="govuk-table__cell">Currency</td>
+              <td class="govuk-table__cell">Draft</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"></th>
+              <td class="govuk-table__cell"><a class="govuk-link" href="">Industry Placements Funding</a></td>
+              <td class="govuk-table__cell">Currency</td>
               <td class="govuk-table__cell">Draft</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">3</th>
-              <td class="govuk-table__cell"><a class="govuk-link" href="">SBS Budget Share
-                </a></td>
-              <td class="govuk-table__cell">Draft</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"></th>
-              <td class="govuk-table__cell"><a class="govuk-link" href="editTemplateCalculationv2.html">Minimum Funding
-                  Guarantee</a></td>
-              <td class="govuk-table__cell">Draft</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"></th>
-              <td class="govuk-table__cell"><a class="govuk-link" href="">Total Post Opening Grant (Start Up Grant)
-                  Allocation</a></td>
-              <td class="govuk-table__cell">Draft</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"></th>
-              <td class="govuk-table__cell"><a class="govuk-link" href="">Total High Needs Allocation
-                </a></td>
-              <td class="govuk-table__cell">Draft</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"></th>
-              <td class="govuk-table__cell"><a class="govuk-link" href="">Allocation Protection
-                </a></td>
-              <td class="govuk-table__cell">Draft</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"></th>
-              <td class="govuk-table__cell"><a class="govuk-link" href="">Maths Top Up Funding
-                </a></td>
-              <td class="govuk-table__cell">Draft</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"></th>
-              <td class="govuk-table__cell"><a class="govuk-link" href="">Notional SEN Funding
-                </a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="">Industry Placements Capacity and Delivery
+                  Funding</a></td>
+              <td class="govuk-table__cell">Currency</td>
               <td class="govuk-table__cell">Draft</td>
             </tr>
           </tbody>
