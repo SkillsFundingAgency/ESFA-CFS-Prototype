@@ -37,7 +37,7 @@ GOV.UK Prototype Kit
             <label class="govuk-label" for="address-line-1">
               Calculation name
             </label>
-            <input class="govuk-input govuk-js-character-count" id="address-line-1" name="additionalCalc-name"
+            <input class="govuk-input govuk-js-character-count" id="calculation-name" name="additionalCalc-name"
               type="text">
           </div>
 
@@ -116,7 +116,12 @@ Return 0
     var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
     var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
 
+    var valueType = document.getElementById('value-type').value
+    var calcName = document.getElementById('calculation-name').value
+
     sessionStorage.setItem('calcCreated', 'true')
+    sessionStorage.setItem('calcName', calcName  )
+    sessionStorage.setItem('valueType', valueType )
     sessionStorage.setItem('status', 'Draft')
     sessionStorage.setItem('date', dateFormat + ' ' + time)
   }

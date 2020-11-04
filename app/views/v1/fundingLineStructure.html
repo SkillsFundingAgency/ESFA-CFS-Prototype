@@ -186,7 +186,7 @@ GOV.UK Prototype Kit
           <div class="govuk-grid-column-one-third">
           </div>
         </div>
-        <table class="govuk-table">
+        <table class="govuk-table" id="table-additional-calculations">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">Additional calculation name</th>
@@ -198,9 +198,9 @@ GOV.UK Prototype Kit
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"><a href="edit-additional-calculation">
-                  {{ data['additionalCalc-name'] }}</a></th>
+                  Block 1</a></th>
               <td class="govuk-table__cell" id="status"></td>
-              <td class="govuk-table__cell">{{ data['value-type'] }}</td>
+              <td class="govuk-table__cell">Percentage</td>
               <td class="govuk-table__cell" id="editedDate"> </td>
             </tr>
 
@@ -453,8 +453,6 @@ GOV.UK Prototype Kit
           </div>
         </div>
 
-
-
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-half">
             <dl class="govuk-summary-list">
@@ -597,18 +595,49 @@ GOV.UK Prototype Kit
 <script>
 
   window.onload = function additionalCalc() {
-    var status = sessionStorage.getItem("status");
-    var dateTime = sessionStorage.getItem("date");
-    document.getElementById('status').innerHTML = status;
-    document.getElementById('editedDate').innerHTML = dateTime;
     var calcCreated = sessionStorage.getItem("calcCreated")
     if (calcCreated === "true") {
       document.getElementById("noCalcs").style.display = "none"
     } else {
       document.getElementById("noCalcs").style.display = "block"
-
     }
   }
+
+  window.onload = function additionalCalc() {
+    var table = document.getElementById("table-additional-calculations");
+    var calcName = sessionStorage.getItem("calcName")
+    var status = sessionStorage.getItem("status")
+    var valueType = sessionStorage.getItem("valueType")
+    var dateTime = sessionStorage.getItem("date")
+    // Create an empty <tr> element and add it to the 1st position of the table:
+    var row = table.insertRow(1);
+    row.className = "govuk-table__row";
+    // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+    // Add some text to the new cells:
+
+    var i=0;
+    var newcell = row.insertCell(i);
+    newcell.innerHTML ='<a class="govuk-link" href="">' + calcName + '</a>';
+    newcell.className = "govuk-table__header";  
+
+    i++;
+    newcell = row.insertCell(i);
+    newcell.innerHTML = status;
+    newcell.className = "govuk-table__cell";
+
+    i++;
+    newcell = row.insertCell(i);
+    newcell.innerHTML = valueType;
+    newcell.className = "govuk-table__cell";
+
+    i++;
+    newcell = row.insertCell(i);
+    newcell.innerHTML = dateTime;
+    newcell.className = "govuk-table__cell";
+
+
+  }
+
 
     var selectEl = document.querySelector('#template-calcs')
     accessibleAutocomplete.enhanceSelectElement({
