@@ -1,0 +1,111 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+    endblock %} {% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="../templatebuilder/templatelisting-basic.html">Templates</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="edittemplate.html">Edit template</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Publish template
+                </li>
+            </ol>
+        </div>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Publish GAG SA19-20</h1>
+        <span class="govuk-caption-xl">Check the information below carefully before publishing</span>
+
+    </div>
+</div>
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-half">
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Template name
+                </dd>
+                <dt class="govuk-summary-list__key">
+                    GAG SA19-20
+                </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Funding stream
+                </dd>
+                <dt class="govuk-summary-list__key">
+                    General annual grant
+
+                </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Funding period</dd>
+                <dt class="govuk-summary-list__key">
+                    Academies and Schools Academic Year 2019 to 2020
+                </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Description </dd>
+                <dt class="govuk-summary-list__key">
+                    {{ data['template-description'] }}
+                </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Version </dd>
+                <dt class="govuk-summary-list__key">
+                    0.1
+                </dt>
+            </div>
+
+        </dl>
+
+    </div>
+
+</div>
+
+<div class="govuk-grid-row">
+    <form action="publishtemplate-2-successful" method="post" class="form">
+        <fieldset class="govuk-fieldset">
+            <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-form-group govuk-!-margin-bottom-2">
+                    <label class="govuk-label" for="sort">
+                        Add publish note
+                    </label>
+                    <input class="govuk-input" id="data-schema" name="publish-note" type="text">
+                </div>
+
+
+
+                <img src="/public/images/template-gag.jpg" width="1200" height="800" alt="">
+
+                </br>
+                </br>
+
+
+
+
+                <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+                    Publish
+                </button>
+                </br>
+            </div>
+        </fieldset>
+    </form>
+
+    <a href="edittemplate.html" class="govuk-back-link">Back</a>
+</div>
+
+{% endblock %}
