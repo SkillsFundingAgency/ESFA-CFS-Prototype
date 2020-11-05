@@ -50,7 +50,16 @@ GOV.UK Prototype Kit
                 Value type
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['value-type'] }}
+
+                <div class="govuk-form-group">
+                  <select class="govuk-select" id="sort" name="sort">
+                    <option value="published">{{ data['value-type'] }}</option>
+                    <option value="updated" selected>Percentage</option>
+                    <option value="views">Number</option>
+
+                  </select>
+                </div>
+
               </dd>
             </div>
           </dl>
