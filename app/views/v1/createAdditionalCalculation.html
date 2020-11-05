@@ -108,13 +108,14 @@ Return 0
     document.getElementById('buildResult').style.display = "block"
   }
 
-  function createCalc() {
+  function createCalc(dt) {
     var Timeoptions = { hour: '2-digit', minute: '2-digit' };
-    var time = new Date().toLocaleTimeString('en-US', Timeoptions)
-
+    var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
+    var ampm = time >= 12 ? 'pm' : 'am';
     var date = new Date()
     var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
     var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+
 
     var valueType = document.getElementById('value-type').value
     var calcName = document.getElementById('calculation-name').value
@@ -123,7 +124,7 @@ Return 0
     sessionStorage.setItem('calcName', calcName  )
     sessionStorage.setItem('valueType', valueType )
     sessionStorage.setItem('status', 'Draft')
-    sessionStorage.setItem('date', dateFormat + ' ' + time)
+    sessionStorage.setItem('date', dateFormat + ' ' + time + ampm)
   }
 
 </script>

@@ -88,11 +88,12 @@
     document.getElementById('fundingStreamSQL').innerHTML = sessionStorage.getItem('funding stream sql')
     document.getElementById('fundingPeriodSQL').innerHTML = sessionStorage.getItem('funding period sql')
     var Timeoptions = { hour: '2-digit', minute: '2-digit' };
-    var time = new Date().toLocaleTimeString('en-US', Timeoptions)
+    var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
+    var ampm = time >= 12 ? 'pm' : 'am';
     var date = new Date()
     var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
     var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
-    document.getElementById('dateTimeSQL').innerHTML = dateFormat + ' ' + time
+    document.getElementById('dateTimeSQL').innerHTML = dateFormat + ' ' + time + ampm
   }
 
 </script>
