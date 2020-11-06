@@ -20,75 +20,85 @@
                 </li>
             </ol>
         </div>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Publish template</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Publish GAG SA19-20</h1>
         <span class="govuk-caption-xl">Check the information below carefully before publishing</span>
 
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
-        <span class="govuk-caption-m">Template name</span>
-        <h3 class="govuk-heading-m">GAG SA19-20</h3>
-    </div>
-</div>
-<div class="govuk-grid-row">
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Funding stream</span>
-        <h3 class="govuk-heading-m">General annual grant</h3>
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Funding stream
+                </dd>
+                <dt class="govuk-summary-list__key">
+                    General annual grant
+
+                </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Funding period</dd>
+                <dt class="govuk-summary-list__key">
+                    Academies and Schools Academic Year 2019 to 2020
+                </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Description </dd>
+                <dt class="govuk-summary-list__key">
+                    {{ data['template-description'] }}
+                </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Version </dd>
+                <dt class="govuk-summary-list__key">
+                    0.1
+                </dt>
+            </div>
+        </dl>
     </div>
 </div>
+
+
+
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Funding period</span>
-        <h3 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020
-        </h3>
-    </div>
+    <form action="publishtemplate-2-successful" method="post" class="form">
+        <fieldset class="govuk-fieldset">
+            <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-form-group govuk-!-margin-bottom-2">
+                    <label class="govuk-label" for="sort">
+                        Add publish note
+                    </label>
+                    <input class="govuk-input" id="data-schema" name="publish-note" type="text">
+                </div>
+
+
+
+                <img src="/public/images/template-gag.jpg" width="1200" height="800" alt="">
+
+                </br>
+                </br>
+
+
+
+
+                <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+                    Publish
+                </button>
+                </br>
+            </div>
+        </fieldset>
+    </form>
+
+    <a href="edittemplate.html" class="govuk-back-link">Back</a>
 </div>
-
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Description</span>
-        <p class="govuk-body">{{ data['template-description'] }} </p>
-    </div>
-</div>
-
-<div class="govuk-grid-row govuk-!-margin-bottom-1">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Version</span>
-        <h3 class="govuk-heading-m">0.1</h3>
-    </div>
-</div>
-
-<form action="publishtemplate-2-successful" method="post" class="form">
-    <fieldset class="govuk-fieldset">
-        <div class="govuk-form-group govuk-!-margin-bottom-2">
-            <label class="govuk-label" for="sort">
-                Add publish note
-            </label>
-            <input class="govuk-input" id="data-schema" name="publish-note" type="text">
-        </div>
-
-
-
-        <img src="/public/images/template-gag.jpg" width="1200" height="800" alt="">
-
-        </br>
-        </br>
-
-
-
-
-        <button class="govuk-button govuk-button--warning" data-module="govuk-button">
-            Publish
-        </button>
-        </br>
-
-    </fieldset>
-</form>
-
-<a href="edittemplate.html" class="govuk-back-link">Back</a>
 
 
 {% endblock %}
