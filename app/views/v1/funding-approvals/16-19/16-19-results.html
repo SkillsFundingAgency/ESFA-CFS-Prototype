@@ -1078,8 +1078,8 @@ GOV.UK Prototype Kit
                     </ul>
                 </nav>
                 <div class="right-align">
-                    <button id="" onclick="document.getElementById('refreshFundingModal').style.display='block'" class="govuk-button govuk-button--primary"
-                        data-module="govuk-button">
+                    <button id="" onclick="document.getElementById('refreshFundingModal').style.display='block'"
+                        class="govuk-button govuk-button--primary" data-module="govuk-button">
                         Refresh funding
                     </button>
                     <a id="approveFunding" href="../funding-approval.html" class="govuk-button govuk-button--primary"
@@ -1117,17 +1117,24 @@ GOV.UK Prototype Kit
                 </button>
             </div>
             <div class="govuk-modal-dialogue__content">
+
                 <h1 class="govuk-heading-l">Confirm funding refresh</h1>
                 <p class="govuk-body">A refresh of funding will update the following data:</p>
                 <ul class="govuk-list govuk-list--bullet">
                     <li>Allocation values</li>
                     <li>Profile values</li>
                 </ul>
-                <p class="govuk-body">This update will affect providers in specification 16 to 19 for the funding stream 16 to 19 2019 to 2020. </p>
+                <p class="govuk-body">This update will affect providers in specification 16 to 19 for the funding
+                    stream
+                    16 to 19 2019 to 2020. </p>
 
+
+                <a href="" class="govuk-button" data-module="govuk-button">
+                    Confirm
+                </a>
                 <button type="button" onclick="document.getElementById('refreshFundingModal').style.display='none'"
-                    class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
-                    data-module="govuk-button">Close </button>
+                    class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+                    data-module="govuk-button">Cancel </button>
             </div>
         </dialog>
     </div>
