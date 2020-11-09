@@ -25,7 +25,7 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
         <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
             data-module="govuk-error-summary">
             <h2 class="govuk-error-summary__title" id="error-summary-title">
@@ -34,8 +34,10 @@ GOV.UK Prototype Kit
             <div class="govuk-error-summary__body">
                 <ul class="govuk-list govuk-error-summary__list">
                     <li>
-                        <a href="#calculation-error">Calculation error</a>
+                        <a href="#link to calc code">Calculation run completed with one or more exceptions detected in the calculation code</a>
                     </li>
+                        <p class="govuk-body govuk-!-margin-top-5">Job initiated by Nathan Townsend, 27 October 2020 8:29am</p>
+                        <p class="govuk-body">Results last updated 27 October 2020 8:34am</p>
                 </ul>
             </div>
         </div>
@@ -47,85 +49,137 @@ GOV.UK Prototype Kit
         <span class="govuk-caption-xl">2019/2020</span>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Pupil number</h1>
         <h3 class="govuk-heading-m">PE and Sport Premium</h3>
-        <a href="view-calculation.html" class="govuk-button" type="submit" class="gem-c-search__submit">View
-            calculation</a>
+        <button class="govuk-button">View calculation</button>
+
     </div>
 </div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
+            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-                    <h4 class="govuk-heading-s"> Search</h4>
+                    <h4 class="govuk-heading-s">Search</h4>
                 </legend>
-                <div class="govuk-form-group filterSearch">
-                    <label class="govuk-label filterLabel" for="filter-by-type">
-                        Search
-                    </label>
-                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch"
-                        autocomplete="off" name="search" type="text">
+                <span id="how-contacted-conditional-hint" class="govuk-hint sidebar-search-span">
+                    Select one option.
+                </span>
+                <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible"
+                    data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted"
+                            type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                            Provider name
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-how-contacted-conditional">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-email"
+                                name="contact-by-email" type="email" spellcheck="false">
+                        </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted"
+                            type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                            UKPRN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-how-contacted-conditional-2">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-phone"
+                                name="contact-by-phone" type="tel">
+                        </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted"
+                            type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                            UPIN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-how-contacted-conditional-3">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-text" name="contact-by-text"
+                                type="tel">
+                        </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="how-contacted-conditional-4" name="how-contacted"
+                            type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-4">
+                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
+                            URN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-how-contacted-conditional-4">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="contact-by-text" name="contact-by-text"
+                                type="tel">
+                        </div>
+                    </div>
                 </div>
             </fieldset>
         </div>
+
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-                    <h4 class="govuk-heading-s ">
-                        Filter by provider type <span><i class="material-icons right-align"> keyboard_arrow_down
-                            </i></span>
-                    </h4>
-                </legend>
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by provider type <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span></h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+                </button>
                 <div id="filter-content" class="filter-content">
                     <div class="govuk-form-group filterSearch">
-                        <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
+                        <label id="filter-by-provider-type" class="govuk-label filterLabel"
+                            for="filter-by-provider-type">
                             Search
                         </label>
-                        <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1"
-                            autocomplete="off" type="text">
+                        <input class="govuk-input filterSearchInput" id="filter-by-provider-type-1"
+                            name="filter-by-provider-type-1" autocomplete="off" type="text">
                     </div>
-
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="primary">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Primary
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
+                                name="filter-by-provider-type" type="checkbox" value="primary">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                Primary <span>(6)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="academy">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Academy
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-3"
+                                name="filter-by-provider-type" type="checkbox" value="academy">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                Academy <span>(1)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="secondary">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Secondary
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-4"
+                                name="filter-by-provider-type" type="checkbox" value="secondary">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                Secondary <span>(3)</span>
                             </label>
                         </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="secondary">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                16 - 19
-                            </label>
-                        </div>
+
                     </div>
                 </div>
+            </fieldset>
         </div>
-        </fieldset>
+
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-                    <h4 class="govuk-heading-s">
-                        Filter by provider sub type <span><i class="material-icons right-align"> keyboard_arrow_down
-                            </i></span>
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by provider sub type <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span>
                     </h4>
-                </legend>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+                </button>
                 <div id="filter-content" class="filter-content">
                     <div class="govuk-form-group filterSearch">
                         <label class="govuk-label filterLabel" for="filter-by-type">
@@ -134,129 +188,148 @@ GOV.UK Prototype Kit
                         <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search"
                             type="text">
                     </div>
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
-                        <ul id="myList">
-                            <li>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                        type="checkbox" value="hmrc">
-                                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                        Sub type a
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                        type="checkbox" value="employment-tribunal">
-                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                        Sub type b
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                        type="checkbox" value="employment-tribunal">
-                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                        Sub type c
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                        type="checkbox" value="employment-tribunal">
-                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                        Sub type d
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                        type="checkbox" value="employment-tribunal">
-                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                        Sub type e
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                        id="filter-by-provider-subtype">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-subtype-1" name="organisation"
+                                type="checkbox" value="Further education">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Further education <span>(1)</span>
+                            </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-subtype" name="organisation"
+                                type="checkbox" value="Free-schools-16-to-19">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                Free schools 16 to 19 <span>(1)</span>
+                            </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-subtype2" name="organisation"
+                                type="checkbox" value="Academy-converter">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                Academy converter <span>(1)</span>
+                            </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-subtype" name="organisation"
+                                type="checkbox" value="Academy-sponsor-led">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                Academy sponsor led <span>(1)</span>
+                            </label>
+                        </div>
+
                     </div>
                 </div>
+            </fieldset>
         </div>
-        </fieldset>
+
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-                    <h4 class="govuk-heading-s">
-                        Filter by results status <span><i class="material-icons right-align"> keyboard_arrow_down
-                            </i></span>
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by results status <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span>
                     </h4>
-                </legend>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+                </button>
                 <div id="filter-content" class="filter-content">
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                autocomplete="off" type="checkbox" value="hmrc">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                All
+                            <input class="govuk-checkboxes__input" id="filter-by-approved" name="filter-by-approved"
+                                autocomplete="off" type="checkbox" value="approved">
+                            <label class="govuk-label govuk-checkboxes__label" for="approved">
+                                With exceptions <span>(4)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                autocomplete="off" type="checkbox" value="hmrc">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                With exceptions
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                autocomplete="off" type="checkbox" value="hmrc">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Without exceptions
+                            <input class="govuk-checkboxes__input" id="filter-by-released" name="filter-by-released"
+                                autocomplete="off" type="checkbox" value="released">
+                            <label class="govuk-label govuk-checkboxes__label" for="released">
+                                Without exceptions <span>(2)</span>
                             </label>
                         </div>
                     </div>
                 </div>
+            </fieldset>
         </div>
-        </fieldset>
+
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
                     <h4 class="govuk-heading-s">
-                        Filter by local authority (LA) <span><i class="material-icons right-align"> keyboard_arrow_down
+                        Filter by local authority <span><i class="material-icons right-align"> keyboard_arrow_down
                             </i></span>
                     </h4>
-                </legend>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+                </button>
                 <div id="filter-content" class="filter-content">
-                    <div class="govuk-form-group filterSearch govuk-!-margin-bottom-2">
-                        <label class="govuk-label filterLabel" for="filter-by-type">
+                    <div class="govuk-form-group filterSearch">
+                        <label class="govuk-label filterLabel" for="filter-by-local-authority">
                             Search
                         </label>
-                        <input class="govuk-input filterSearchInput" id="address-line-1" autocomplete="off"
-                            name="address-line-1" type="text">
+                        <input class="govuk-input filterSearchInput" id="filter-by-local-authority-search"
+                            autocomplete="off" name="search" type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="local-authority-1" name="local-authority"
+                                type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="local-authority">
+                                Oxfordshire <span>(1)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="local-authority-5" name="local-authority"
+                                type="checkbox" value="employment-tribunal">
+                            <label class="govuk-label govuk-checkboxes__label" for="local-authority-5">
+                                Torbay<span>(1)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="local-authority-5" name="local-authority"
+                                type="checkbox" value="employment-tribunal">
+                            <label class="govuk-label govuk-checkboxes__label" for="local-authority-5">
+                                South Tyneside<span>(1)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="local-authority-5" name="local-authority"
+                                type="checkbox" value="employment-tribunal">
+                            <label class="govuk-label govuk-checkboxes__label" for="local-authority-5">
+                                Barnsley<span>(1)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="local-authority-5" name="local-authority"
+                                type="checkbox" value="employment-tribunal">
+                            <label class="govuk-label govuk-checkboxes__label" for="local-authority-5">
+                                Suffolk<span>(1)</span>
+                            </label>
+                        </div>
+
                     </div>
                 </div>
+            </fieldset>
         </div>
-        </fieldset>
         <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
             Clear filters</a>
     </div>
 
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default ">
-            <div class="govuk-accordion__section govuk-form-group--error" id="">
+            <div class="govuk-accordion__section" id="">
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
                             ACE Schools Plymouth
                         </span>
                     </h2>
-                    <p>Total value: <strong>£3,467.89</strong></p>
-                    <span id="calculation-error" class="govuk-error-message">
-                        <span class="govuk-visually-hidden">Error:</span> Calculation error
-                    </span>
+                    <p>Value: <strong>£3,467.89</strong></p>
                 </div>
                 <div id="accordion-default-content-1" class="govuk-accordion__section-content"
                     aria-labelledby="accordion-default-heading-1">
@@ -312,7 +385,7 @@ GOV.UK Prototype Kit
                             ARK John Archer Primary Academy
                         </span>
                     </h2>
-                    <p>Total value: <strong>£1,500</strong></p>
+                    <p>Value: <strong>£1,500</strong></p>
                 </div>
                 <div id="accordion-default-content-1" class="govuk-accordion__section-content"
                     aria-labelledby="accordion-default-heading-1">
@@ -368,7 +441,7 @@ GOV.UK Prototype Kit
                             ASPIRE Centre, Kings Leadership Academy Liverpool
                         </span>
                     </h2>
-                    <p>Total value: <strong>£2,000</strong></p>
+                    <p>Value: <strong>£2,000</strong></p>
                 </div>
                 <div id="accordion-default-content-1" class="govuk-accordion__section-content"
                     aria-labelledby="accordion-default-heading-1">
@@ -424,7 +497,7 @@ GOV.UK Prototype Kit
                             Abacus Belsize Primary School
                         </span>
                     </h2>
-                    <p>Total value: <strong>£1,245.86</strong></p>
+                    <p>Value: <strong>£1,245.86</strong></p>
                 </div>
                 <div id="accordion-default-content-1" class="govuk-accordion__section-content"
                     aria-labelledby="accordion-default-heading-1">
