@@ -29,23 +29,26 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Upload new data source</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Upload new data source</h1>
+    <span class="govuk-caption-xl govuk-!-margin-bottom-5">Load a new data source file to create a data set to use in
+      calculations</span>
 
-    <p class="govuk-body">Load a new data source file to create a dataset to use in
-      calculations.</p>
+
 
     <form action="/v1/datasets/manageDatasets" method="post" class="form">
       <fieldset class="govuk-fieldset">
-        <div class="govuk-form-group govuk-!-margin-top-6">
+        <div class="govuk-form-group govuk-!-margin-top-3">
           <label class="govuk-label" for="sort">
             Funding stream
           </label>
+          <span id="event-name-hint" class="govuk-hint">
+            Select a funding stream you have permissions for</span>
           <select class="govuk-select" id="sort" name="sort">
             <option value="draft"></option>
             <option value="draft">16 to 19</option>
             <option value="draft">14 to 16</option>
             <option value="draft">General Annual Grant</option>
-            <option>Academy Pupil Number Adjustment</option>
+            <option>Academy Pupil Number Adjustment </option>
 
           </select>
         </div>
