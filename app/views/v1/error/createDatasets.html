@@ -28,7 +28,8 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+      data-module="govuk-error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">
         There is a problem
       </h2>
@@ -49,50 +50,78 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Upload new data source</h1>
-
-    <p class="govuk-body">Load a new data source file to create a dataset to use in
-      calculations.</p>
-
-      <div class="govuk-form-group govuk-!-margin-top-6">
-        <label class="govuk-label" for="sort">
-          Data schema
-        </label>
-        <input class="govuk-input" id="data-schema" name="data-schema" type="text">
-      </div>
-
-      <div class="govuk-form-group govuk-form-group--error">
-        <label class="govuk-label" for="event-name">
-          Dataset source file name
-        </label>
-        <span id="event-name-hint" class="govuk-hint">
-          Use a descriptive unique name other users can understand
-        </span>
-        <span id="event-name-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Enter a unique dataset source file name
-        </span>
-        <input class="govuk-input govuk-input--error" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint event-name-error">
-      </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Upload new data source</h1>
+    <span class="govuk-caption-xl govuk-!-margin-bottom-8">Load a new data source file to create a data set to use in
+      calculations</span>
 
 
+    <div class="govuk-form-group govuk-!-margin-top-6">
+      <label class="govuk-label" for="sort">
+        Funding stream
+      </label>
+      <span id="event-name-hint" class="govuk-hint">
+        Select a funding stream you have permissions for</span>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="draft"></option>
+        <option value="draft">16 to 19</option>
+        <option value="draft">14 to 16</option>
+        <option value="draft">General Annual Grant</option>
+        <option>Academy Pupil Number Adjustment</option>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="more-detail">
-          Description
-        </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-          aria-describedby="more-detail-hint"></textarea>
-      </div>
+      </select>
+    </div>
 
-      <div class="govuk-form-group govuk-form-group--error">
-        <label class="govuk-label" for="file-upload-1">
-          Upload a file
-        </label>
-        <span id="file-upload-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Validation check failed please see <a href="">error report</a>
-        </span>
-        <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-error">
-      </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Select data schema
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="draft"></option>
+        <option value="draft">APT Adjusted Factors</option>
+        <option value="draft">APT Final Baselines</option>
+        <option value="draft">APT Input and Adjustments</option>
+        <option value="draft">APT Local Factors</option>
+        <option value="draft">APT New ISB</option>
+        <option value="draft">APT Proforma</option>
+        <option value="draft">Census Number Counts</option>
+      </select>
+    </div>
+
+    <div class="govuk-form-group govuk-form-group--error">
+      <label class="govuk-label" for="event-name">
+        Dataset source file name
+      </label>
+      <span id="event-name-hint" class="govuk-hint">
+        Use a descriptive unique name other users can understand
+      </span>
+      <span id="event-name-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Enter a unique dataset source file name
+      </span>
+      <input class="govuk-input govuk-input--error" id="event-name" name="event-name" type="text"
+        aria-describedby="event-name-hint event-name-error">
+    </div>
+
+
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="more-detail">
+        Description
+      </label>
+      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+        aria-describedby="more-detail-hint"></textarea>
+    </div>
+
+    <div class="govuk-form-group govuk-form-group--error">
+      <label class="govuk-label" for="file-upload-1">
+        Upload a file
+      </label>
+      <span id="file-upload-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Validation check failed please see <a href="">error report</a>
+      </span>
+      <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1" type="file"
+        aria-describedby="file-upload-1-error">
+    </div>
 
     <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
       Create data source
