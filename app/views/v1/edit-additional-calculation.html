@@ -54,7 +54,7 @@ GOV.UK Prototype Kit
               <dd class="govuk-summary-list__value">
 
                 <div class="govuk-form-group">
-                  <select class="govuk-select" id="sort" name="sort">
+                  <select class="govuk-select" id="sort" name="sort" aria-label="value type">
                     <option value="published">{{ data['value-type'] }}</option>
                     <option value="updated" selected>Percentage</option>
                     <option value="views">Number</option>
@@ -73,8 +73,7 @@ GOV.UK Prototype Kit
         <h4 class="govuk-heading-s" for="more-detail">
           Calculation script
         </h4>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
-          aria-describedby="more-detail-hint">
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20" aria-label="calculation script">
 Return 0
 
         </textarea>
@@ -85,7 +84,8 @@ Return 0
           <span id="event-name-hint" class="govuk-hint">
             Optional: Enter a UKPRN to view calculation results for this provider
           </span></h4>
-        <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
+        <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text"
+          aria-label="enter UKPRN">
 
       </div>
       <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
