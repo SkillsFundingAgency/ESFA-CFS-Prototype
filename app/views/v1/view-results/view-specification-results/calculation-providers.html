@@ -36,8 +36,8 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+        <div class="govuk-form-group filterbyContainer-1">
+            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
                     <h4 class="govuk-heading-s">Search</h4>
                 </legend>
@@ -48,7 +48,7 @@ GOV.UK Prototype Kit
                     data-module="govuk-radios">
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted"
-                            type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                            type="radio" value="email" data-aria-radio="conditional-how-contacted-conditional">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                             Provider name
                         </label>
@@ -62,7 +62,7 @@ GOV.UK Prototype Kit
                     </div>
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted"
-                            type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                            type="radio" value="phone" data-aria-radio="conditional-how-contacted-conditional-2">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                             UKPRN
                         </label>
@@ -70,13 +70,12 @@ GOV.UK Prototype Kit
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                         id="conditional-how-contacted-conditional-2">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="contact-by-phone"
-                                name="contact-by-phone" type="tel">
+                            <input class="govuk-input sidebar-search-input" id="UKPRN" name="UKPRN" type="UKPRN">
                         </div>
                     </div>
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted"
-                            type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                            type="radio" value="text" data-aria-radio="conditional-how-contacted-conditional-3">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
                             UPIN
                         </label>
@@ -84,13 +83,12 @@ GOV.UK Prototype Kit
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                         id="conditional-how-contacted-conditional-3">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="contact-by-text" name="contact-by-text"
-                                type="tel">
+                            <input class="govuk-input sidebar-search-input" id="UPIN" name="UPIN" type="tel">
                         </div>
                     </div>
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="how-contacted-conditional-4" name="how-contacted"
-                            type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-4">
+                            type="radio" value="text" data-aria-radio="conditional-how-contacted-conditional-4">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
                             URN
                         </label>
@@ -98,15 +96,14 @@ GOV.UK Prototype Kit
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                         id="conditional-how-contacted-conditional-4">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="contact-by-text" name="contact-by-text"
-                                type="tel">
+                            <input class="govuk-input sidebar-search-input" id="URN" name="URN" type="URN">
                         </div>
                     </div>
                 </div>
             </fieldset>
         </div>
 
-        <div class="govuk-form-group filterbyContainer">
+        <div class="govuk-form-group filterbyContainer-2">
             <fieldset class="govuk-fieldset">
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
@@ -151,7 +148,7 @@ GOV.UK Prototype Kit
             </fieldset>
         </div>
 
-        <div class="govuk-form-group filterbyContainer">
+        <div class="govuk-form-group filterbyContainer-3">
             <fieldset class="govuk-fieldset">
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
@@ -207,7 +204,7 @@ GOV.UK Prototype Kit
             </fieldset>
         </div>
 
-        <div class="govuk-form-group filterbyContainer">
+        <div class="govuk-form-group filterbyContainer-4">
             <fieldset class="govuk-fieldset">
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
@@ -237,7 +234,7 @@ GOV.UK Prototype Kit
             </fieldset>
         </div>
 
-        <div class="govuk-form-group filterbyContainer">
+        <div class="govuk-form-group filterbyContainer-5">
             <fieldset class="govuk-fieldset">
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
@@ -264,21 +261,21 @@ GOV.UK Prototype Kit
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="local-authority-5" name="local-authority"
+                            <input class="govuk-checkboxes__input" id="local-authority-2" name="local-authority"
                                 type="checkbox" value="employment-tribunal">
                             <label class="govuk-label govuk-checkboxes__label" for="local-authority-5">
                                 Torbay<span>(1)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="local-authority-5" name="local-authority"
+                            <input class="govuk-checkboxes__input" id="local-authority-3" name="local-authority"
                                 type="checkbox" value="employment-tribunal">
                             <label class="govuk-label govuk-checkboxes__label" for="local-authority-5">
                                 South Tyneside<span>(1)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="local-authority-5" name="local-authority"
+                            <input class="govuk-checkboxes__input" id="local-authority-4" name="local-authority"
                                 type="checkbox" value="employment-tribunal">
                             <label class="govuk-label govuk-checkboxes__label" for="local-authority-5">
                                 Barnsley<span>(1)</span>
@@ -361,14 +358,14 @@ GOV.UK Prototype Kit
             <div class="govuk-accordion__section ">
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
-                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
                             ARK John Archer Primary Academy
                         </span>
                     </h2>
                     <p>Value: <strong>£1,500</strong></p>
                 </div>
                 <div id="accordion-default-content-1" class="govuk-accordion__section-content"
-                    aria-labelledby="accordion-default-heading-1">
+                    aria-labelledby="accordion-default-heading-2">
                     <a class="govuk-link" href="view-specification-provider">View provider calculations</a>
                     <dl class="govuk-summary-list govuk-!-margin-top-5">
                         <div class="govuk-summary-list__row">
@@ -417,14 +414,14 @@ GOV.UK Prototype Kit
             <div class="govuk-accordion__section ">
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
-                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
                             ASPIRE Centre, Kings Leadership Academy Liverpool
                         </span>
                     </h2>
                     <p>Value: <strong>£2,000</strong></p>
                 </div>
                 <div id="accordion-default-content-1" class="govuk-accordion__section-content"
-                    aria-labelledby="accordion-default-heading-1">
+                    aria-labelledby="accordion-default-heading-3">
                     <a class="govuk-link" href="view-specification-provider">View provider calculations</a>
                     <dl class="govuk-summary-list govuk-!-margin-top-5">
                         <div class="govuk-summary-list__row">
@@ -473,14 +470,14 @@ GOV.UK Prototype Kit
             <div class="govuk-accordion__section ">
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
-                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
                             Abacus Belsize Primary School
                         </span>
                     </h2>
                     <p>Value: <strong>£1,245.86</strong></p>
                 </div>
                 <div id="accordion-default-content-1" class="govuk-accordion__section-content"
-                    aria-labelledby="accordion-default-heading-1">
+                    aria-labelledby="accordion-default-heading-4">
                     <a class="govuk-link" href="view-specification-provider">View provider calculations</a>
                     <dl class="govuk-summary-list govuk-!-margin-top-5">
                         <div class="govuk-summary-list__row">
