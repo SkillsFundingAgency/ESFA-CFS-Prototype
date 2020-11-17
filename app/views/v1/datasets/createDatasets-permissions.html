@@ -33,15 +33,17 @@ GOV.UK Prototype Kit
     <span class="govuk-caption-xl govuk-!-margin-bottom-5">Load a new data source file to create a data set to use in
       calculations</span>
 
+
+
     <form action="/v1/datasets/manageDatasets" method="post" class="form">
       <fieldset class="govuk-fieldset">
         <div class="govuk-form-group govuk-!-margin-top-3">
-          <label class="govuk-label" for="funding-stream">
+          <label class="govuk-label" for="sort">
             Funding stream
           </label>
           <span id="event-name-hint" class="govuk-hint">
             Select a funding stream you have permissions for</span>
-          <select class="govuk-select" id="funding-stream" name="sort">
+          <select class="govuk-select" id="sort" name="sort">
             <option value="draft"></option>
             <option value="draft">16 to 19</option>
             <option value="draft">14 to 16</option>
@@ -52,10 +54,10 @@ GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="data-schema">
+          <label class="govuk-label" for="sort">
             Select data schema
           </label>
-          <select class="govuk-select" id="data-schema" name="sort">
+          <select class="govuk-select" id="sort" name="sort">
             <option value="draft"></option>
             <option value="draft">APT Adjusted Factors</option>
             <option value="draft">APT Final Baselines</option>
@@ -98,7 +100,7 @@ GOV.UK Prototype Kit
         Create data source
       </button>
 
-      <a href="fundingLineStructure" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      <a href="manageDatasets.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Cancel
       </a>
     </form>
