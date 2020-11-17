@@ -25,6 +25,17 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
+    <div class="govuk-grid-row govuk-!-margin-bottom-5" id="saveMessage" style="display: none;">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Calculation saved
+        </h1>
+        <div class="govuk-panel__body" id="saveTime">
+          </strong>
+        </div>
+      </div>
+    </div>
+
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
         <span class="govuk-caption-l">Calculation name</span>
@@ -101,8 +112,8 @@ End If
 
       <div class="govuk-grid-row govuk-!-margin-top-9">
         <div class="govuk-grid-column-two-thirds">
-          <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-            Save and continue
+          <button class="govuk-button govuk-!-margin-right-1" onclick="saveCalc()" data-module="govuk-button">
+            Save
           </button>
           <button class="govuk-button govuk-!-margin-right-1 btn-approve" id="btn-approve" data-module="govuk-button">
             Approve
@@ -113,7 +124,7 @@ End If
         </div>
       </div>
 
-      <p class="govuk-body">Last saved 25 March 2020 2:57pm</p>
+      <p class="govuk-body" id="lastSaved">Last saved 25 March 2020 2:57pm</p>
       <a href="calculation-version-history.html">
         <p class="govuk-body">View calculation history</p>
       </a>
@@ -124,6 +135,20 @@ End If
 
   function buildOuput() {
     document.getElementById('buildResult').style.display = "block"
+  }
+
+  function saveCalc () {
+    document.getElementById('saveMessage').style.display = 'block'; 
+    window.scrollTo(0, 0);
+    var Timeoptions = { hour: '2-digit', minute: '2-digit' };
+    var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
+    var ampm = time >= 12 ? 'pm' : 'am';
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('saveTime').innerHTML = dateFormat + ' ' + time + ampm
+    document.getElementById('lastSaved').innerHTML = 'Last saved ' + dateFormat + ' ' + time + ampm
+
   }
 
 </script>
