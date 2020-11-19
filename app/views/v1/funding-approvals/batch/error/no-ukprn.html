@@ -29,7 +29,7 @@ GOV.UK Prototype Kit
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#file-upload-1-error">The selected file must include a UKPRN column</a>
+        <a href="#file-upload-1-error">The selected file must contain one UKPRN column</a>
       </li>
     </ul>
   </div>
@@ -37,41 +37,50 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="" method="post" novalidate>
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
+          <form action="" method="post" id="batchProviders" novalidate>
+          <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
-              Upload batch file
-            </h1>
+              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
+                  Upload batch file
+              </h1>
           </legend>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="file-upload-1">
-              Upload a file. File must be a xlsx
-            </label>
-            <div class="govuk-form-group govuk-form-group--error">
 
+          <ul class="govuk-list govuk-list--bullet">
+              <li>The file is in xlsx format</li>
+              <li>The file contains one UKPRN column</li>
+              <li>Providers already approved or released will not be shown in the provider count summaries.</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label" for="file-upload-1">
+                Upload a xlsx file
+              </label>
               <span id="file-upload-1-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> The selected file must include a UKPRN column
+                <span class="govuk-visually-hidden">Error:</span>The selected file must contain one UKPRN column
               </span>
               <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1"
                 type="file" aria-describedby="file-upload-1-error">
             </div>
-          </div>
-        </fieldset>
-      </div>
-
-      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-        Approve funding
-      </button>
-      <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" data-module="govuk-button">
-        Release funding
-      </button>
-      <a class="govuk-button govuk-button--secondary" href="../view-funding.html" data-module="govuk-button">
-        Cancel
-      </a>
-    </form>
+              <button class="govuk-button govuk-!-margin-right-1" onclick="approve()" data-module="govuk-button">
+                  Approve funding
+              </button>
+              <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" onclick="release()"
+                  data-module="govuk-button">
+                  Release funding
+              </button>
+              <a class="govuk-button govuk-button--secondary" href="../view-funding.html" data-module="govuk-button">
+                  Cancel
+              </a>
+          </fieldset>
+      </form>
   </div>
 </div>
+
 
 {% endblock %}
