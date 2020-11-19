@@ -25,52 +25,50 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
-        <form action="" method="post" id="batchProviders" novalidate>
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
-                            Upload batch file
-                        </h1>
-                    </legend>
-                    <p class="govuk-body">
-                    </p>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="file-upload-1"><strong>
-                                Upload a xlsx file</strong>
-                            </br>
-                            <span class="govuk-caption-m">Providers which have previously been
-                                approved or released will be excluded from provider count summaries.</span>
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <form action="" method="post" id="batchProviders" novalidate>
+            <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
+                    Upload batch file
+                </h1>
+            </legend>
 
-                        </label>
-                        <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-                    </div>
-                </fieldset>
-            </div>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>The file is in xlsx format</li>
+                <li>The file contains one UKPRN column</li>
+                <li>Providers already approved or released will not be shown in the provider count summaries.</li>
+            </ul>
+        </div>
     </div>
 </div>
 
-
-<div class="govuk-grid-row ">
-    <div class="govuk-grid-column-full">
-        <button class="govuk-button govuk-!-margin-right-1" onclick="approve()" data-module="govuk-button">
-            Approve funding
-        </button>
-        <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" onclick="release()"
-            data-module="govuk-button">
-            Release funding
-        </button>
-        <a class="govuk-button govuk-button--secondary" href="../view-funding.html" data-module="govuk-button">
-            Cancel
-        </a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="file-upload"><strong>
+                            Upload xlsx file</strong>
+                    </label>
+                    <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
+                </div>
+                <button class="govuk-button govuk-!-margin-right-1" onclick="approve()" data-module="govuk-button">
+                    Approve funding
+                </button>
+                <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" onclick="release()"
+                    data-module="govuk-button">
+                    Release funding
+                </button>
+                <a class="govuk-button govuk-button--secondary" href="../view-funding.html" data-module="govuk-button">
+                    Cancel
+                </a>
+            </fieldset>
         </form>
     </div>
 </div>
 
 
 <script>
-
     function approve() {
         document.getElementById('batchProviders').action = 'batch-approve-in-progress'
 
@@ -80,7 +78,6 @@ GOV.UK Prototype Kit
         document.getElementById('batchProviders').action = 'batch-release-in-progress'
 
     }
-
 </script>
 
 
