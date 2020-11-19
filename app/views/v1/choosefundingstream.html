@@ -7,8 +7,7 @@ GOV.UK Prototype Kit
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
+    <div class="govuk-grid-column-full">
         <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
             <ol class="govuk-breadcrumbs__list">
                 <li class="govuk-breadcrumbs__list-item">
@@ -24,22 +23,18 @@ GOV.UK Prototype Kit
                 <li class="govuk-breadcrumbs__list-item">
                     <a class="govuk-breadcrumbs__link" href="choosespectype.html">Select data source</a>
                 </li>
-
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">Select the funding stream</li>
             </ol>
         </div>
+    </div>
+</div>
 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-heading-xl">Select the funding stream</h1>
+            <h1 class="govuk-heading-xl">Select funding stream and period</h1>
         </legend>
 
-
-
-
-
-        <h3 class="govuk-heading-m">
-            Choose a funding stream for the data set
-        </h3>
         <div class="govuk-form-group">
             <label class="govuk-label" for="sort">
                 Funding streams
@@ -54,16 +49,24 @@ GOV.UK Prototype Kit
             </select>
         </div>
 
-
-
-        </br> </br>
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+                Funding period
+            </label>
+            <select class="govuk-select" id="fundingPeriod" name="sort" onchange="getFundingStream()">
+                <option></option>
+                <option value="2019 to 2020">2019 to 2020</option>
+                <option value="2020 to 2021">2020 to 2021</option>
+                <option value="Academies and Schools Academic Year 2019 to 2020">Academies and Schools Academic Year
+                    2019 to 2020
+                </option>
+                <option value="Academic year 2019 to 2020">Academic year 2019 to 2020</option>
+            </select>
+        </div>
 
         <a href="choosefundinglinecalc.html" class="govuk-button govuk-!-margin-right-1">
             Save and continue
         </a>
-
-
-
 
         <a href="fundingLineStructure-chosen.html" class="govuk-button govuk-button--secondary"
             data-module="govuk-button">
@@ -74,12 +77,7 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-
-
-
-
 <script>
-
     function patternChoice() {
         console.log("buttonclicked")
         var patternType = document.querySelector('input[name="data-type"]:checked').value;
