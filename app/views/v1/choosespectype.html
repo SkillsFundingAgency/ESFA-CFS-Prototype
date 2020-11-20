@@ -26,19 +26,36 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
+<div class="govuk-error-summary govuk-visually-hidden" id="error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="data-source-type-error">One option must be selected</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action=" " onsubmit="return patternChoice();" method="post" name="dataSourceTypeForm" class="form">
             <div id="chooseDataSourceForm" class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                <fieldset class="govuk-fieldset" aria-describedby="data-source-type-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
                             Choose data source type
                         </h1>
                     </legend>
-                    <div id="sign-in-hint" class="govuk-hint">
+                    <div id="data-source-type-hint" class="govuk-hint">
                         Choose the type of data source you wish to create.
                     </div>
+                    <span id="data-source-type-error"  class="govuk-error-message govuk-visually-hidden">
+                        <span class="govuk-visually-hidden">Error:</span> One option must be selected
+                      </span>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="CFSdataset" name="data-source-type" type="radio"
@@ -87,15 +104,22 @@ GOV.UK Prototype Kit
     function patternChoice() {
         
         if (document.querySelectorAll('input[type="radio"]:checked').length === 0) {
-            var element = document.getElementById('chooseDataSourceForm');
-            element.classList.add("govuk-form-group--error");
-            return false;
+            formError();
+            return false
 
         } else {
             patternType = document.querySelector('input[name="data-source-type"]:checked').value
             document.dataSourceTypeForm.action = patternType
             return true
         }
+    }
+
+    function formError() {
+        var element = document.getElementById('chooseDataSourceForm')
+        element.classList.add("govuk-form-group--error")
+        document.getElementById('data-source-type-error').classList.remove('govuk-visually-hidden')
+        document.getElementById('error-summary').classList.remove('govuk-visually-hidden')
+
     }
 
 </script>
