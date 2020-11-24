@@ -24,7 +24,7 @@ Permissions management
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-            <label class="govuk-label" for="user-select">Select the user you wish to assign or change permissions for
+            <label class="govuk-label" for="user-select">Select the user you wish to view, assign, or change permissions for
             <div class="autocomplete-wrapper" onchange="permissionLevel()">
                 <select name="user-select" class="govuk-select" id="user-select">
                     <option value="">Select a user</option>
@@ -39,26 +39,32 @@ Permissions management
 
 <div class="govuk-grid-row govuk-!-margin-top-5">
     <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body govuk-visually-hidden" id="permissionLevel"><strong>Current permission level: <span id="currentPermission"> </span></strong></p>
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-visually-hidden" id="permissionLevel">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Current permissions level
+              </dt>
+              <dd class="govuk-summary-list__value" id="currentPermission"></dd>
+            </div>
+        </dl>
     </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-top-5">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Permission level
+                  Permission levels
                 </h1>
               </legend>
               <div id="sign-in-hint" class="govuk-hint">
-                Set the permission you wish this user to have.
+                Set the permission level you wish this user to have.
               </div>
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="permissions-administrator-hint">
+                  <input class="govuk-radios__input" id="permissions-administrator" name="sign-in" type="radio" value="government-gateway" aria-describedby="permissions-administrator-hint">
                   <label class="govuk-label govuk-radios__label" for="sign-in">
                     Administrator
                   </label>
@@ -72,7 +78,7 @@ Permissions management
                 </div>
 
                 <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="permissions-administrator-hint">
+                    <input class="govuk-radios__input" id="permissions-funding-approver" name="sign-in" type="radio" value="government-gateway" aria-describedby="permissions-administrator-hint">
                     <label class="govuk-label govuk-radios__label" for="sign-in">
                       Funding approver
                     </label>
@@ -94,11 +100,9 @@ Permissions management
 <div class="govuk-grid-row govuk-!-margin-top-5">
     <div class="govuk-grid-column-two-thirds">
         <button class="govuk-button govuk-!-margin-right-1">Change permissions</button>
-        <button class="govuk-button govuk-button--secondary">Cancel</button>
+        <button class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</button>
     </div>
 </div>
-
-
 
 
 <script type="text/javascript">
@@ -127,12 +131,16 @@ Permissions management
         if (user === "Alan Nichols") {
             document.getElementById('currentPermission').innerHTML = "Administrator";
             document.getElementById('permissionLevel').classList.remove("govuk-visually-hidden")
+            document.getElementById('permissions-administrator').checked = true
         } else if (user === "Robert Sparks") {
             document.getElementById('currentPermission').innerHTML = "Administrator";
             document.getElementById('permissionLevel').classList.remove("govuk-visually-hidden")
+            document.getElementById('permissions-administrator').checked = true
         } else if (user === "Bethan Phillimore") {
             document.getElementById('currentPermission').innerHTML = "Funding approver";
             document.getElementById('permissionLevel').classList.remove("govuk-visually-hidden")
+            document.getElementById('permissions-funding-approver').checked = true
+
         }
     }
 
