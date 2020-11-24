@@ -39,7 +39,7 @@ Permissions management
 
 <div class="govuk-grid-row govuk-!-margin-top-5">
     <div class="govuk-grid-column-two-thirds">
-        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-visually-hidden" id="permissionLevel">
+        <dl class="govuk-summary-list govuk-visually-hidden govuk-summary-list--no-border" id="permissionLevel">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Current permissions level
@@ -125,9 +125,7 @@ Permissions management
     }
 
     function permissionLevel() {
-        console.log('permission level function ran')
         var user = document.getElementById('user-select__option--0').textContent
-        console.log(user)
         if (user === "Alan Nichols") {
             document.getElementById('currentPermission').innerHTML = "Administrator";
             document.getElementById('permissionLevel').classList.remove("govuk-visually-hidden")
@@ -140,9 +138,8 @@ Permissions management
             document.getElementById('currentPermission').innerHTML = "Funding approver";
             document.getElementById('permissionLevel').classList.remove("govuk-visually-hidden")
             document.getElementById('permissions-funding-approver').checked = true
-
         }
-    }
+      }
 
 
 
