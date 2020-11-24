@@ -17,14 +17,16 @@ Permissions management
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Set user permissions</h1>
-        <p class="govuk-body">Assign permissions to users of Calculate funding service (<abbr title="Manage your education and skills funding">CFS</abbr>).</p>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Set and view user permissions</h1>
+        <p class="govuk-body">Assign and view permissions for users of Calculate funding service (<abbr title="Manage your education and skills funding">CFS</abbr>).</p>
     </div>
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-top-5">
     <div class="govuk-grid-column-two-thirds">
-            <label class="govuk-label" for="user-select">Select the user you wish to view, assign, or change permissions for
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--s" for="user-select">Select the user you wish to view, assign, or change permissions for</label>
+      </h1>
             <div class="autocomplete-wrapper" oninput="permissionLevel()">
                 <select name="user-select" class="govuk-select" id="user-select">
                     <option value="">Select a user</option>
@@ -33,7 +35,7 @@ Permissions management
                     <option value="Bethan Phillimore">Bethan Phillimore</option>
                 </select>
             </div>
-        </label>
+        
     </div>
 </div>
 
@@ -53,19 +55,19 @@ Permissions management
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+            <fieldset class="govuk-fieldset" aria-describedby="permissions-level-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
                   Permission levels
                 </h1>
               </legend>
-              <div id="sign-in-hint" class="govuk-hint">
+              <div id="permissions-level-hint" class="govuk-hint">
                 Set the permission level you wish this user to have.
               </div>
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="permissions-administrator" name="sign-in" type="radio" value="government-gateway" aria-describedby="permissions-administrator-hint">
-                  <label class="govuk-label govuk-radios__label" for="sign-in">
+                  <input class="govuk-radios__input" id="permissions-administrator" name="permissions-administrator" type="radio" value="government-gateway" aria-describedby="permissions-administrator-hint">
+                  <label class="govuk-label govuk-radios__label" for="permissions-administrator">
                     Administrator
                   </label>
                   <div id="permissions-administrator-hint" class="govuk-hint govuk-radios__hint">
@@ -78,11 +80,11 @@ Permissions management
                 </div>
 
                 <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="permissions-funding-approver" name="sign-in" type="radio" value="government-gateway" aria-describedby="permissions-administrator-hint">
-                    <label class="govuk-label govuk-radios__label" for="sign-in">
+                    <input class="govuk-radios__input" id="permissions-funding-approver" name="permissions-funding-approver" type="radio" value="government-gateway" aria-describedby="permissions-funding-approver-hint">
+                    <label class="govuk-label govuk-radios__label" for="permissions-funding-approver">
                       Funding approver
                     </label>
-                    <div id="permissions-administrator-hint" class="govuk-hint govuk-radios__hint">
+                    <div id="permissions-funding-approver-hint" class="govuk-hint govuk-radios__hint">
                       <ul class="govuk-list govuk-list--bullet">
                           <li>Profiling</li>
                           <li>Funding approvals</li>
