@@ -81,9 +81,9 @@ GOV.UK Prototype Kit
       </div>
 
       <div class="govuk-form-group">
-        <h4 class="govuk-heading-s" for="more-detail">
+        <h3 class="govuk-heading-s" for="more-detail">
           Calculation script
-        </h4>
+        </h3>
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20" aria-label="calculation script">
 Return 0
 
@@ -106,7 +106,7 @@ Return 0
           results</a></p>
 
       <div class="govuk-inset-text" id="buildResult" style="display: none;">
-        <h4 class="govuk-heading-s">Build output</h4>
+        <h5 class="govuk-heading-s">Build output</h5>
         <p class="govuk-body">Code compiled successfully </p>
         <p class="govuk-body">Provider: <strong>Abbeygate Sixth Form College
           </strong></p>
@@ -152,8 +152,8 @@ Return 0
     document.getElementById('editedDate').innerHTML = "Last saved " + dateTime;
   }
 
-  function saveCalc () {
-    document.getElementById('saveMessage').style.display = 'block'; 
+  function saveCalc() {
+    document.getElementById('saveMessage').style.display = 'block';
     window.scrollTo(0, 0);
     var Timeoptions = { hour: '2-digit', minute: '2-digit' };
     var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
