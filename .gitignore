@@ -12,3 +12,4 @@ test.html
 node_modules/*
 .tmuxp.*
 package-lock.json
+.DS_Store
