@@ -47,6 +47,37 @@ GOV.UK Prototype Kit
         <h3 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020</h3>
 
         <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+          <label class="govuk-label" for="sort">
+            Track latest provider data?
+          </label>
+            <div id="sign-in-hint" class="govuk-hint">
+              Select yes if you wish to always use the latest available provider data.
+            </div>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint" onClick="document.getElementById('coreProviderData').classList.add('govuk-visually-hidden')" >
+                <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Yes
+                </label>
+                <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                  This specification will always use the latest available provider data
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in-2" name="sign-in" onClick="document.getElementById('coreProviderData').classList.remove('govuk-visually-hidden')" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                  No
+                </label>
+                <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                  I will select  which provider data to use
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group govuk-visually-hidden" id="coreProviderData">
           <label class="govuk-label" for="sort">
             Core provider data
           </label>

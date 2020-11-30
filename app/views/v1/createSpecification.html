@@ -28,11 +28,14 @@ GOV.UK Prototype Kit
       </h2>
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
-          <li>
+          <li id="specification-name-errorSummary" class="govuk-visually-hidden">
             <a href="#spec-name">Enter a specification name</a>
           </li>
-          <li>
-            <a href="#postcode-error">Enter a postcode, like AA1 1AA</a>
+          <li id="funding-stream-errorSummary" class="govuk-visually-hidden">
+            <a href="#funding-stream-error">Select a funding stream</a>
+          </li>
+          <li id="funding-period-errorSummary" class="govuk-visually-hidden">
+            <a href="#funding-period-error">Select a funding period</a>
           </li>
         </ul>
       </div>
@@ -57,12 +60,12 @@ GOV.UK Prototype Kit
           <input class="govuk-input govuk-!-width-two-thirds" id="spec-name" name="spec-name" type="text">
         </div>
 
-        <div class="govuk-form-group fundingStreamSpecification-error">
+        <div class="govuk-form-group" id="fundingStreamSpecification-error">
           <label class="govuk-label" for="sort">
             Funding stream
           </label>
           <span id="funding-stream-error" class="govuk-error-message govuk-visually-hidden">
-            <span class="govuk-visually-hidden">Error:</span> Enter a specification name
+            <span class="govuk-visually-hidden">Error:</span> Select a funding stream
           </span>
           <select class="govuk-select" id="fundingStreamSpecification" name="fundingStreamSpecification">
             <option value=""></option>
@@ -74,14 +77,17 @@ GOV.UK Prototype Kit
           </select>
         </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="sort">
+        <div class="govuk-form-group" id="fundingPeriod-error-group">
+          <label class="govuk-label" for="fundingPeriod">
             Funding period
           </label>
-          <select class="govuk-select" id="sort" name="sort">
-            <option value="draft"></option>
-            <option value="draft">Academies and Schools Academic Year 2019 to 2020</option>
-            <option>Academic year 2019 to 2020</option>
+          <span id="funding-period-error" class="govuk-error-message govuk-visually-hidden">
+            <span class="govuk-visually-hidden">Error:</span> Select a funding period
+          </span>
+          <select class="govuk-select" id="fundingPeriod" name="fundingPeriod">
+            <option value=""></option>
+            <option value="A-SAY2019-2020">Academies and Schools Academic Year 2019 to 2020</option>
+            <option value="AC-2019-2020">Academic year 2019 to 2020</option>
           </select>
         </div>
 
@@ -95,7 +101,7 @@ GOV.UK Prototype Kit
             </div>
             <div class="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint" onClick="document.getElementById('coreProviderData').classList.add('govuk-visually-hidden')" >
+                <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="yes" aria-describedby="sign-in-item-hint" onClick="document.getElementById('coreProviderData').classList.add('govuk-visually-hidden')" >
                 <label class="govuk-label govuk-radios__label" for="sign-in">
                   Yes
                 </label>
@@ -104,7 +110,7 @@ GOV.UK Prototype Kit
                 </div>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="sign-in-2" name="sign-in" onClick="document.getElementById('coreProviderData').classList.remove('govuk-visually-hidden')" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                <input class="govuk-radios__input" id="sign-in-2" name="sign-in" onClick="document.getElementById('coreProviderData').classList.remove('govuk-visually-hidden')" type="radio" value="no" aria-describedby="sign-in-2-item-hint">
                 <label class="govuk-label govuk-radios__label" for="sign-in-2">
                   No
                 </label>
@@ -179,6 +185,8 @@ GOV.UK Prototype Kit
     console.log(fundingStreamSpecficiationText)
     sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
   }
+
+
 </script>
 
 {% endblock %}
