@@ -21,7 +21,25 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
-    <form action="/v1/specifications" method="post" name="createSpecForm" onsubmit="return validateForm()" class="form">
+    <div id="error-summary" class="govuk-error-summary govuk-visually-hidden" aria-labelledby="error-summary-title"
+      role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#spec-name">Enter a specification name</a>
+          </li>
+          <li>
+            <a href="#postcode-error">Enter a postcode, like AA1 1AA</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <form action="/v1/specifications" id="createSpec" method="post" name="createSpecForm" class="form">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
@@ -30,21 +48,24 @@ GOV.UK Prototype Kit
         </legend>
 
         <div class="govuk-form-group" id="specificationName">
-          <label class="govuk-label" for="address-line-1">
+          <label class="govuk-label" for="spec-name">
             Specification name
           </label>
-          <span id="specification-name-error" class="govuk-error-message hideError">
+          <span id="specification-name-error" class="govuk-error-message govuk-visually-hidden">
             <span class="govuk-visually-hidden">Error:</span> Enter a specification name
           </span>
           <input class="govuk-input govuk-!-width-two-thirds" id="spec-name" name="spec-name" type="text">
         </div>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group fundingStreamSpecification-error">
           <label class="govuk-label" for="sort">
             Funding stream
           </label>
-          <select class="govuk-select" id="fundingStreamSpecification">
-            <option value="draft"></option>
+          <span id="funding-stream-error" class="govuk-error-message govuk-visually-hidden">
+            <span class="govuk-visually-hidden">Error:</span> Enter a specification name
+          </span>
+          <select class="govuk-select" id="fundingStreamSpecification" name="fundingStreamSpecification">
+            <option value=""></option>
             <option value="fundingLineStructure-chosen">16 to 19</option>
             <option value="fundingLineStructure-1416">14 to 16</option>
             <option value="fundingLineStructure-gag">General Annual Grant</option>
@@ -65,6 +86,37 @@ GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+          <label class="govuk-label" for="sort">
+            Track latest provider data?
+          </label>
+            <div id="sign-in-hint" class="govuk-hint">
+              Select yes if you wish to always use the latest available provider data.
+            </div>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint" onClick="document.getElementById('coreProviderData').classList.add('govuk-visually-hidden')" >
+                <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Yes
+                </label>
+                <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                  This specification will always use the latest available provider data
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in-2" name="sign-in" onClick="document.getElementById('coreProviderData').classList.remove('govuk-visually-hidden')" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                  No
+                </label>
+                <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                  I will select  which provider data to use
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group govuk-visually-hidden" id="coreProviderData">
           <label class="govuk-label" for="sort">
             Core provider data
           </label>
@@ -102,7 +154,8 @@ GOV.UK Prototype Kit
             aria-describedby="more-detail-hint"></textarea>
         </div>
       </fieldset>
-      <button class="govuk-button" onclick="newDataSource()" data-module="govuk-button">Save and continue</button>
+      <button class="govuk-button" data-module="govuk-button">Save and
+        continue</button>
       <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Cancel
       </a>
@@ -111,26 +164,12 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<script>
+<script src="/public/javascripts/form-validation/create-spec.js">
+
   function getProviderData() {
     var coreProviderData = document.getElementById("coreProviderData").value;
     console.log(coreProviderData)
     sessionStorage.setItem('provider data changed', coreProviderData);
-
-  }
-
-  function newDataSource() {
-    sessionStorage.setItem('new spec', 'true');
-  }
-
-  function validateForm() {
-
-    var specName = document.forms["createSpecForm"]["spec-name"].value
-    if (specName == "") {
-      document.getElementById('specificationName').classList.add("govuk-form-group--error");
-      document.getElementById('specification-name-error').classList.remove("hideError")
-      return false;
-    }
   }
 
   document.getElementById('fundingStreamSpecification').onchange = function getfundingStreamSpecficiation() {
