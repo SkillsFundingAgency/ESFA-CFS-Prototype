@@ -160,7 +160,7 @@ GOV.UK Prototype Kit
             aria-describedby="more-detail-hint"></textarea>
         </div>
       </fieldset>
-      <button class="govuk-button" data-module="govuk-button">Save and
+      <button class="govuk-button" type="submit" data-module="govuk-button">Save and
         continue</button>
       <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Cancel
@@ -170,23 +170,6 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<script src="/public/javascripts/form-validation/create-spec.js">
-
-  function getProviderData() {
-    var coreProviderData = document.getElementById("coreProviderData").value;
-    console.log(coreProviderData)
-    sessionStorage.setItem('provider data changed', coreProviderData);
-  }
-
-  document.getElementById('fundingStreamSpecification').onchange = function getfundingStreamSpecficiation() {
-    var fundingStreamSpecficiation = document.getElementById("fundingStreamSpecification");
-    var fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex]
-      .value;
-    console.log(fundingStreamSpecficiationText)
-    sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
-  }
-
-
-</script>
+<script src="/public/javascripts/form-validation/create-spec.js"> </script>
 
 {% endblock %}

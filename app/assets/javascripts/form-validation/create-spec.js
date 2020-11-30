@@ -17,7 +17,7 @@ form.addEventListener('submit', function (e) {
 
     // submit to the server if the form is valid
     if (isFormValid) {
-        window.location.href="specifications.html";
+        sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
 
     }
 });
@@ -74,3 +74,17 @@ function validateFundingPeriod() {
     }
     return valid
 }
+
+
+function getProviderData() {
+    var coreProviderData = document.getElementById("coreProviderData").value;
+    console.log(coreProviderData)
+    sessionStorage.setItem('provider data changed', coreProviderData);
+  }
+
+  document.getElementById('fundingStreamSpecification').onchange = function getfundingStreamSpecficiation() {
+    var fundingStreamSpecficiation = document.getElementById("fundingStreamSpecification");
+    var fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex].value;
+    console.log(fundingStreamSpecficiationText)
+    sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
+  }
