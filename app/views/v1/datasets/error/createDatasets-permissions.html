@@ -23,52 +23,39 @@ GOV.UK Prototype Kit
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Load new data source file</li>
       </ol>
     </div>
+  </div>
+</div>
 
-
-    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
-      data-module="govuk-error-summary">
-      <h2 class="govuk-error-summary__title" id="error-summary-title">
-        There is a problem
-      </h2>
-      <div class="govuk-error-summary__body">
-        <ul class="govuk-list govuk-error-summary__list">
-          <li>
-            <a href="#">You don't have permission to create a data source file for the 16 to 19 funding stream</a>
-          </li>
-
-        </ul>
-      </div>
-    </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="new-permissions-banner">
+      You do not have permissions to create a data source file for 16 to 19</p>
   </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Upload new data source</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2 govuk-!-margin-top-5">Upload new data source</h1>
     <span class="govuk-caption-xl govuk-!-margin-bottom-5">Load a new data source file to create a data set to use in
       calculations</span>
 
     <form action="/v1/datasets/manageDatasets" method="post" class="form">
       <fieldset class="govuk-fieldset">
-        <div class="govuk-form-group govuk-form-group--error">
-          <div class="govuk-form-group govuk-!-margin-top-6">
-            <label class="govuk-label" for="funding-stream">
-              Funding stream
-            </label>
-            <span id="passport-issued-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> You don't have permission to create a data source file
-              for the 16 to 19 funding stream
-            </span>
-            <select class="govuk-select" id="funding-stream" name="sort">
-              <option value="draft"></option>
-              <option value="draft">16 to 19</option>
-              <option value="draft">14 to 16</option>
-              <option value="draft">General Annual Grant</option>
-              <option>Academy Pupil Number Adjustment</option>
+        <div class="govuk-form-group govuk-!-margin-top-6">
+          <label class="govuk-label" for="funding-stream">
+            Funding stream
+          </label>
+          <span id="event-name-hint" class="govuk-hint">
+            Select a funding stream you have permissions for</span>
+          <select class="govuk-select" id="funding-stream" name="sort">
+            <option value="draft"></option>
+            <option value="draft">16 to 19</option>
+            <option value="draft">14 to 16</option>
+            <option value="draft">General Annual Grant</option>
+            <option>Academy Pupil Number Adjustment</option>
 
-            </select>
-          </div>
+          </select>
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="data-schema">
@@ -113,7 +100,8 @@ GOV.UK Prototype Kit
         </div>
       </fieldset>
 
-      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" onclick="newDataSource()">
+      <button class="govuk-button govuk-button--disabled govuk-!-margin-right-1" data-module="govuk-button"
+        onclick="newDataSource()">
         Create data source
       </button>
 
