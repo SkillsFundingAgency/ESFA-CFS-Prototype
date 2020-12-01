@@ -56,7 +56,7 @@ GOV.UK Prototype Kit
             </div>
             <div class="govuk-radios">
               <div class="govuk-radios__item">
-                <input checked class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint" onClick="document.getElementById('coreProviderData-group').classList.add('govuk-visually-hidden')" >
+                <input disabled class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint" onClick="document.getElementById('coreProviderData-group').classList.add('govuk-visually-hidden')" >
                 <label class="govuk-label govuk-radios__label" for="sign-in">
                   Yes
                 </label>
@@ -65,7 +65,7 @@ GOV.UK Prototype Kit
                 </div>
               </div>
               <div class="govuk-radios__item">
-                <input  disabled class="govuk-radios__input" id="sign-in-2" name="sign-in" onClick="document.getElementById('coreProviderData-group').classList.remove('govuk-visually-hidden')" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                <input  checked class="govuk-radios__input" id="sign-in-2" name="sign-in" onClick="document.getElementById('coreProviderData-group').classList.remove('govuk-visually-hidden')" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
                 <label class="govuk-label govuk-radios__label" for="sign-in-2">
                   No
                 </label>
@@ -77,7 +77,7 @@ GOV.UK Prototype Kit
           </fieldset>
         </div>
 
-        <div class="govuk-form-group govuk-visually-hidden" id="coreProviderData-group">
+        <div class="govuk-form-group" id="coreProviderData-group">
           <label class="govuk-label" for="coreProviderData">
             Core provider data
           </label>
@@ -86,7 +86,7 @@ GOV.UK Prototype Kit
           </span>
           <select class="govuk-select" id="coreProviderData" name="funding-stream-hint" onchange="getProviderData()">
             <option></option>
-            <option name="core-provider-data" value="284,821,882">16 to 19 21 August 2019 - Initial providers</option>
+            <option selected name="core-provider-data" value="284,821,882">16 to 19 21 August 2019 - Initial providers</option>
             <option name="core-provider-data" id="providerDataChange" value="0">16 to 19 1 September 2019 - Amended
             </option>
           </select>

@@ -2,6 +2,9 @@ const form = document.querySelector('#createSpec');
 const specName = document.querySelector('#spec-name');
 const fundingStream = document.querySelector('#fundingStreamSpecification');
 const fundingPeriod = document.querySelector('#fundingPeriod');
+const providerDataYes = document.querySelector('#provider-data-yes')
+const providerDataNo = document.querySelector('#provider-data-no')
+const templateVersion = document.querySelector('#templateVersion')
 
 
 form.addEventListener('submit', function (e) {
@@ -11,14 +14,14 @@ form.addEventListener('submit', function (e) {
     // validate forms
     let isSpecNameValid = validateSpecName() 
     isFundingStreamValid = validateFundingStream()
-    isFundingPeriodValid = validateFundingPeriod();
+    isFundingPeriodValid = validateFundingPeriod()
+    isProviderDataValid = validateProviderData()
+    isTemplateVersion = validateTemplateVersion();
 
-    let isFormValid = isSpecNameValid && isFundingStreamValid && isFundingPeriodValid;
+    let isFormValid = isSpecNameValid && isFundingStreamValid && isFundingPeriodValid && isProviderDataValid && isTemplateVersion;
 
     // submit to the server if the form is valid
     if (isFormValid) {
-        sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
-
     }
 });
 
@@ -75,16 +78,52 @@ function validateFundingPeriod() {
     return valid
 }
 
+function validateProviderData() {
+    let valid = false;
+    if (providerDataYes.checked == false || providerDataNo.checked == false) {
+        document.getElementById('error-summary').classList.remove("govuk-visually-hidden")
+        document.getElementById('providerData-error-group').classList.add("govuk-form-group--error")
+        document.getElementById('providerData-errorSummary').classList.remove("govuk-visually-hidden")
+        document.getElementById('providerData-error').classList.remove("govuk-visually-hidden")
+    }
+    else {
+        valid = true;
+        document.getElementById('error-summary').classList.add("govuk-visually-hidden")
+        document.getElementById('providerData-error-group').classList.remove("govuk-form-group--error")
+        document.getElementById('providerData-errorSummary').classList.add("govuk-visually-hidden")
+        document.getElementById('providerData-error').classList.add("govuk-visually-hidden")
+    } 
+    return valid
+}
+
+function validateTemplateVersion() {
+    let valid = false;
+    if (templateVersion.value == "") {
+        document.getElementById('error-summary').classList.remove("govuk-visually-hidden")
+        document.getElementById('template-version-error-group').classList.add("govuk-form-group--error")
+        document.getElementById('template-version-errorSummary').classList.remove("govuk-visually-hidden")
+        document.getElementById('template-version-error').classList.remove("govuk-visually-hidden")
+    } else {
+        valid = true;
+        document.getElementById('error-summary').classList.add("govuk-visually-hidden")
+        document.getElementById('template-version-error-group').classList.remove("govuk-form-group--error")
+        document.getElementById('template-version-errorSummary').classList.add("govuk-visually-hidden")
+        document.getElementById('template-version-error').classList.add("govuk-visually-hidden")
+
+    }
+    return valid
+}
+
 
 function getProviderData() {
-    var coreProviderData = document.getElementById("coreProviderData").value;
+    let coreProviderData = document.getElementById("coreProviderData");
     console.log(coreProviderData)
-    sessionStorage.setItem('provider data changed', coreProviderData);
+    sessionStorage.setItem('provider data changed', coreProviderData.value);
   }
 
   document.getElementById('fundingStreamSpecification').onchange = function getfundingStreamSpecficiation() {
-    var fundingStreamSpecficiation = document.getElementById("fundingStreamSpecification");
-    var fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex].value;
+    let fundingStreamSpecficiation = document.getElementById("fundingStreamSpecification");
+    let fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex].value;
     console.log(fundingStreamSpecficiationText)
     sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
   }
