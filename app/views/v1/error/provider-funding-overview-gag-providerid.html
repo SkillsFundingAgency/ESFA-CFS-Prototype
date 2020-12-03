@@ -45,31 +45,58 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-xl">Provider name</span>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Barnet London Borough Council</h1>
-        <span class="govuk-caption-m">Specification</span>
-        <h1 class="govuk-heading-m">GAG specification 1</h1>
-        <span class="govuk-caption-m">Funding period</span>
-        <h1 class="govuk-heading-m">2019 to 2020</h1>
-        <span class="govuk-caption-m">Funding stream</span>
-        <h1 class="govuk-heading-m">General Annual Grant</h1>
-    </div>
+<div class="govuk-grid-row govuk-grid-column-full govuk-!-margin-bottom-7">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">Barnet London Borough Council</h1>
+    <span class="govuk-caption-l">General annual grant for academies and schools academic year 2019 to 2020
+
+    </span>
 </div>
 
-<div class="funding-status">
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half">
-            <p class="govuk-body">Latest status: <strong>Approved</strong></p>
-        </div>
-        <div class="govuk-grid-column-one-half">
-            <p class="govuk-body">Funding total: <strong>£1,260,000</strong></p>
-        </div>
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-half">
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    UKPRN
+                </dd>
+                <dt class="govuk-summary-list__key">
+                    10034529 </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Specification
+                </dd>
+                <dt class="govuk-summary-list__key">
+                    {{ data['spec-name'] }}
+                </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Latest status </dd>
+                <dt class="govuk-summary-list__key">
+                    Draft </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                    Funding total
+                </dd>
+                <dt class="govuk-summary-list__key">
+                    £1,479,370
+                </dt>
+            </div>
+
+        </dl>
+
     </div>
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-5">
+
 </div>
+
+
+
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -250,12 +277,17 @@ GOV.UK Prototype Kit
                             View and makes changes to profile patterns by funding line.
                         </p>
                         <dl class="govuk-summary-list">
-                            <div class="govuk-summary-list__row govuk-form-group--error">
+                            <div class="govuk-summary-list__row">
+
                                 <dt class="govuk-summary-list__key">
-                                    Funding line 1
-                                    <span id="profile-error" class="govuk-error-message">
-                                        <span class="govuk-visually-hidden">Error:</span>Profile doesn't match allocation value.
-                                      </span>
+                                    <div class="govuk-form-group--error">
+
+                                        Funding line 1
+                                        <span id="profile-error" class="govuk-error-message">
+                                            <span class="govuk-visually-hidden">Error:</span>Profile doesn't match
+                                            allocation value.
+                                        </span>
+                                    </div>
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                     Custom pattern
