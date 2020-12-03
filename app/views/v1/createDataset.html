@@ -36,8 +36,8 @@ GOV.UK Prototype Kit
           </label>
           <select class="govuk-select" id="providerdataYes" name="providerdata" onchange="showproviderdata()">
             <option value="draft"></option>
-            <option value="draft">APT Adjusted Factors</option>
-            <option value="draft">FDZ Example Specification</option>
+            <option value="APT Adjusted Factors">APT Adjusted Factors</option>
+            <option value="FDZ Example Specification">FDZ Example Specification</option>
             <option value="draft">APT Final Baselines</option>
             <option value="draft">APT Inputs and Adjustments</option>
             <option value="draft">APT Local Factors</option>
@@ -64,7 +64,7 @@ GOV.UK Prototype Kit
             aria-describedby="more-detail-hint"></textarea>
         </div>
 
-        <div class="govuk-form-group" id="providerdata">
+        <div class="govuk-form-group govuk-visually-hidden" id="providerdata">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h3 class="govuk-heading-m">
               Set as provider data
@@ -107,12 +107,11 @@ GOV.UK Prototype Kit
     sessionStorage.setItem('new data', 'true');
   }
 
-
-
   function showproviderdata() {
     var str = document.getElementById("providerdataYes").value;
     var n = str.includes("FDZ");
-    if (n = false) {
+    console.log(n)
+    if (n === false) {
       document.getElementById("providerdata").classList.remove("govuk-visually-hidden")
     }
     else {
