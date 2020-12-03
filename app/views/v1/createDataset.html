@@ -64,7 +64,7 @@ GOV.UK Prototype Kit
             aria-describedby="more-detail-hint"></textarea>
         </div>
 
-        <div class="govuk-form-group" id="providerdata">
+        <div class="govuk-form-group govuk-visually-hidden" id="providerdata">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h3 class="govuk-heading-m">
               Set as provider data
@@ -112,6 +112,8 @@ GOV.UK Prototype Kit
   function showproviderdata() {
     var str = document.getElementById("providerdataYes").value;
     var n = str.includes("FDZ");
+    console.log(n)
+    //if contains FDZ then hide set as core provider data section
     if (n = false) {
       document.getElementById("providerdata").classList.remove("govuk-visually-hidden")
     }
