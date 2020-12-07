@@ -43,76 +43,81 @@ GOV.UK Prototype Kit
         <span class="govuk-caption-m">Funding stream</span>
         <h2 class="govuk-heading-m">16 to 19</h3>
 
-        <span class="govuk-caption-m">Funding period</span>
-        <h3 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020</h3>
+          <span class="govuk-caption-m">Funding period</span>
+          <h3 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020</h3>
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
-          <label class="govuk-label" for="sort">
-            Track latest core provider data?
-          </label>
-            <div id="sign-in-hint" class="govuk-hint">
-              Select yes if you wish to use the latest available provider data.
-            </div>
-            <div class="govuk-radios">
-              <div class="govuk-radios__item">
-                <input disabled class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint" onClick="document.getElementById('coreProviderData-group').classList.add('govuk-visually-hidden')" >
-                <label class="govuk-label govuk-radios__label" for="sign-in">
-                  Yes
-                </label>
-                <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                  This specification will use the latest available provider data
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+              <label class="govuk-label" for="sort">
+                Track latest core provider data
+              </label>
+              <div id="sign-in-hint" class="govuk-hint">
+                Select yes if you wish to use the latest available provider data.
+              </div>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input disabled class="govuk-radios__input" id="sign-in" name="sign-in" type="radio"
+                    value="government-gateway" aria-describedby="sign-in-item-hint"
+                    onClick="document.getElementById('coreProviderData-group').classList.add('govuk-visually-hidden')">
+                  <label class="govuk-label govuk-radios__label" for="sign-in">
+                    Yes
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    This specification will use the latest available provider data
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input checked class="govuk-radios__input" id="sign-in-2" name="sign-in"
+                    onClick="document.getElementById('coreProviderData-group').classList.remove('govuk-visually-hidden')"
+                    type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                    No
+                  </label>
+                  <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                    I will select which provider data to use
+                  </div>
                 </div>
               </div>
-              <div class="govuk-radios__item">
-                <input  checked class="govuk-radios__input" id="sign-in-2" name="sign-in" onClick="document.getElementById('coreProviderData-group').classList.remove('govuk-visually-hidden')" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
-                <label class="govuk-label govuk-radios__label" for="sign-in-2">
-                  No
-                </label>
-                <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
-                  I will select which provider data to use
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+            </fieldset>
+          </div>
 
-        <div class="govuk-form-group" id="coreProviderData-group">
-          <label class="govuk-label" for="coreProviderData">
-            Core provider data
-          </label>
-          <span id="funding-stream-hint" class="govuk-hint">
-            Select a funding stream and funding period before choosing the provider data
-          </span>
-          <select class="govuk-select" id="coreProviderData" name="funding-stream-hint" onchange="getProviderData()">
-            <option></option>
-            <option selected name="core-provider-data" value="284,821,882">16 to 19 21 August 2019 - Initial providers</option>
-            <option name="core-provider-data" id="providerDataChange" value="0">16 to 19 1 September 2019 - Amended
-            </option>
-          </select>
-        </div>
+          <div class="govuk-form-group" id="coreProviderData-group">
+            <label class="govuk-label" for="coreProviderData">
+              Core provider data
+            </label>
+            <span id="funding-stream-hint" class="govuk-hint">
+              Select a funding stream and funding period before choosing the provider data
+            </span>
+            <select class="govuk-select" id="coreProviderData" name="funding-stream-hint" onchange="getProviderData()">
+              <option></option>
+              <option selected name="core-provider-data" value="284,821,882">16 to 19 21 August 2019 - Initial providers
+              </option>
+              <option name="core-provider-data" id="providerDataChange" value="0">16 to 19 1 September 2019 - Amended
+              </option>
+            </select>
+          </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="template-version">
-            Template version
-          </label>
-          <span id="account-number-hint" class="govuk-hint">
-            Select a funding stream and funding period before choosing a template version
-          </span>
-          <select class="govuk-select" id="template-version" name="sort">
-            <option value=""></option>
-            <option value="0.1">0.1</option>
-            <option value="0.2">0.2</option>
-            <option value="0.3">0.3</option>
-          </select>
-        </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="template-version">
+              Template version
+            </label>
+            <span id="account-number-hint" class="govuk-hint">
+              Select a funding stream and funding period before choosing a template version
+            </span>
+            <select class="govuk-select" id="template-version" name="sort">
+              <option value=""></option>
+              <option value="0.1">0.1</option>
+              <option value="0.2">0.2</option>
+              <option value="0.3">0.3</option>
+            </select>
+          </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="more-detail">
-            Can you provide more detail?
-          </label>
-          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"></textarea>
-        </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+              Can you provide more detail?
+            </label>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"></textarea>
+          </div>
       </fieldset>
 
       <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">

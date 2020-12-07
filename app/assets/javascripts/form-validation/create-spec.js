@@ -12,13 +12,14 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     // validate forms
-    let isSpecNameValid = validateSpecName() 
+    let isSpecNameValid = validateSpecName()
     isFundingStreamValid = validateFundingStream()
     isFundingPeriodValid = validateFundingPeriod()
     isProviderDataValid = validateProviderData()
-    isTemplateVersion = validateTemplateVersion();
+    isTemplateVersion = validateTemplateVersion()
+    isLatest = trackLatest();
 
-    let isFormValid = isSpecNameValid && isFundingStreamValid && isFundingPeriodValid && isProviderDataValid && isTemplateVersion;
+    let isFormValid = isSpecNameValid && isFundingStreamValid && isFundingPeriodValid && isProviderDataValid && isTemplateVersion && isLatest;
 
     // submit to the server if the form is valid
     if (isFormValid) {
@@ -92,7 +93,7 @@ function validateProviderData() {
         document.getElementById('providerData-error-group').classList.remove("govuk-form-group--error")
         document.getElementById('providerData-errorSummary').classList.add("govuk-visually-hidden")
         document.getElementById('providerData-error').classList.add("govuk-visually-hidden")
-    } 
+    }
     return valid
 }
 
@@ -119,11 +120,25 @@ function getProviderData() {
     let coreProviderData = document.getElementById("coreProviderData");
     console.log(coreProviderData)
     sessionStorage.setItem('provider data changed', coreProviderData.value);
-  }
+}
 
-  document.getElementById('fundingStreamSpecification').onchange = function getfundingStreamSpecficiation() {
+document.getElementById('fundingStreamSpecification').onchange = function getfundingStreamSpecficiation() {
     let fundingStreamSpecficiation = document.getElementById("fundingStreamSpecification");
     let fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex].value;
     console.log(fundingStreamSpecficiationText)
     sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
-  }
+}
+
+function trackLatest() {
+    let valid = false;
+    console.log("hello")
+    var str = document.getElementById("fundingStreamSpecification").value;
+    var n = str.includes("FDZ");
+    console.log(n)
+    if (n) {
+        document.getElementById("providerData-error-group").classList.remove("govuk-visually-hidden")
+    }
+    else {
+        document.getElementById("providerData-error-group").classList.add("govuk-visually-hidden")
+    }
+}
