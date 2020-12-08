@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-My roles and permissions - calculate funding service
+My roles and permissions - Calculate funding service
 {% endblock %}
 
 {% block content %}
@@ -13,35 +13,36 @@ My roles and permissions - calculate funding service
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
         <span class="govuk-caption-xl">Calculate funding service </span>
-        <h1 class="govuk-heading-xl">My user roles and permissions</h1>
+        <h1 class="govuk-heading-xl">My user permissions</h1>
             
-        <p class="govuk-body">You have these roles in Calculate funding service (<abbr title="Manage your education and skills funding">CFS</abbr>).</p>
+        <p class="govuk-body">You have these permissions in Calculate funding service.</p>
         <table class="govuk-table">
             <caption class="govuk-table__caption">Internal user roles and permissions</caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header">
+                        Permission
                     </th>
                     <th scope="col" class="govuk-table__header">
-                        Role 1
-                    </th>
-                    <th scope="col" class="govuk-table__header">
-                        Role 2
-                    </th>
-                    <th scope="col" class="govuk-table__header">
-                        Role 3
+                        Your permissions
                     </th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Profiling</th>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No</span></td>
+                    <th scope="row" class="govuk-table__header">Create specification</th>
                     <td class="govuk-table__cell"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">done</span></td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No</span></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Edit specification</th>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Approve specification</th>
+                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">done</span></td>
                 </tr>
             </tbody>
         </table>
@@ -60,7 +61,7 @@ My roles and permissions - calculate funding service
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="form-group">
-            <p class="govuk-body"><a class="govuk-link" href="all-roles-and-permissions">View all available CFS roles and permissions</a></p>
+            <p class="govuk-body"><a class="govuk-link" href="all-roles-and-permissions">View all available Calculate funding service permissions</a></p>
         </div>
     </div>
 </div>
@@ -68,10 +69,9 @@ My roles and permissions - calculate funding service
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="form-group">
-            <h2 class="govuk-heading-l">Requesting roles</h2>
-            <p class="govuk-body">An approver at your organisation will be able to provide you with access to this
-                service. You may have more than
-                one approver in your organisation.</p>
+            <h2 class="govuk-heading-l">Requesting permissions</h2>
+            <p class="govuk-body">An approver at your organisation will be able to provide you with permissions to this
+                service. You may have more than one approver in your organisation.</p>
         </div>
     </div>
 </div>
