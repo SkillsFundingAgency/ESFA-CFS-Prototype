@@ -77,6 +77,7 @@ GOV.UK Prototype Kit
             <option value=""></option>
             <option value="fundingLineStructure-chosen">16 to 19</option>
             <option value="fundingLineStructure-1416">14 to 16</option>
+            <option value="fundingLineStructure-FDZ">FDZ</option>
             <option value="fundingLineStructure-gag">General Annual Grant</option>
             <option value="fundingLineStructure-pna">Academy Pupil Number Adjustment</option>
 
@@ -97,10 +98,10 @@ GOV.UK Prototype Kit
           </select>
         </div>
 
-        <div class="govuk-form-group" id="providerData-error-group">
+        <div class="govuk-form-group govuk-visually-hidden" id="providerData-error-group">
           <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
             <label class="govuk-label" for="sort">
-              Track latest core provider data
+              Track latest core provider data?
             </label>
             <div id="sign-in-hint" class="govuk-hint">
               Select yes if you wish to use the latest available provider data.
@@ -185,6 +186,9 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<script src="/public/javascripts/form-validation/create-spec.js"> </script>
+<script src="/public/javascripts/form-validation/create-spec.js">
+
+
+</script>
 
 {% endblock %}

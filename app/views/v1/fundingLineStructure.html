@@ -640,19 +640,23 @@ GOV.UK Prototype Kit
           ×
         </button>
       </div>
+
       <div class="govuk-modal-dialogue__content">
         <p class="govuk-body">You are about to refresh the provider funding for the DSG SIT specification.</p>
 
         <p class="govuk-body">Please ensure this is the specification you wish to get latest provider data for before
           confirming.
         </p>
-        <button class="govuk-button govuk-!-margin-right-1 govuk-button--warning" data-module="govuk-button">
-          Refresh provider funding
-        </button>
-        <button type="button" onclick="document.getElementById('refreshProviderData').style.display='none'"
-          class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
-          data-module="govuk-button">Close
-        </button>
+
+        <form action="refresh-provider-data" method="post" novalidate>
+          <button class="govuk-button govuk-!-margin-right-1 govuk-button--warning" data-module="govuk-button">
+            Refresh provider funding
+          </button>
+          <button type="button" onclick="document.getElementById('refreshProviderData').style.display='none'"
+            class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+            data-module="govuk-button">Close
+          </button>
+        </form>
       </div>
     </dialog>
   </div>
