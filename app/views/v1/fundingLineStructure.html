@@ -25,6 +25,10 @@ GOV.UK Prototype Kit
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">DSG SIT</h1>
     <span class="govuk-caption-xl govuk-!-margin-bottom-5">Dedicated schools grant for financial year 2020 to
       2021</span>
+
+
+    <!-- Awaiting user testing 
+
     <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -42,7 +46,11 @@ GOV.UK Prototype Kit
           1.0
         </dd>
       </div>
-    </dl>
+    </dl> 
+
+     End awaiting user testing-->
+
+
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
@@ -85,7 +93,6 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
 
     <div class="govuk-tabs" data-module="govuk-tabs">
       <h2 class="govuk-tabs__title">
@@ -653,7 +660,6 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
-
   window.onload = function additionalCalc() {
     var calcCreated = sessionStorage.getItem("calcCreated")
     if (calcCreated === "true") {
@@ -736,7 +742,6 @@ GOV.UK Prototype Kit
     var params = new URLSearchParams(document.location.search.split('?')[1])
     document.querySelector('.submitted__last-location').innerHTML = params.get('additional-calcs')
   }
-
 </script>
 
 {% endblock%}

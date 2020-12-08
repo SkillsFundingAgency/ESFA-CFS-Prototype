@@ -16,10 +16,9 @@ form.addEventListener('submit', function (e) {
     isFundingStreamValid = validateFundingStream()
     isFundingPeriodValid = validateFundingPeriod()
     isProviderDataValid = validateProviderData()
-    isTemplateVersion = validateTemplateVersion()
-    isLatest = trackLatest();
+    isTemplateVersion = validateTemplateVersion();
 
-    let isFormValid = isSpecNameValid && isFundingStreamValid && isFundingPeriodValid && isProviderDataValid && isTemplateVersion && isLatest;
+    let isFormValid = isSpecNameValid && isFundingStreamValid && isFundingPeriodValid && isProviderDataValid && isTemplateVersion;
 
     // submit to the server if the form is valid
     if (isFormValid) {
@@ -115,7 +114,6 @@ function validateTemplateVersion() {
     return valid
 }
 
-
 function getProviderData() {
     let coreProviderData = document.getElementById("coreProviderData");
     console.log(coreProviderData)
@@ -123,22 +121,19 @@ function getProviderData() {
 }
 
 document.getElementById('fundingStreamSpecification').onchange = function getfundingStreamSpecficiation() {
-    let fundingStreamSpecficiation = document.getElementById("fundingStreamSpecification");
     let fundingStreamSpecficiationText = fundingStreamSpecification.options[fundingStreamSpecification.selectedIndex].value;
     console.log(fundingStreamSpecficiationText)
     sessionStorage.setItem("funding stream", fundingStreamSpecficiationText)
-}
 
-function trackLatest() {
-    let valid = false;
-    console.log("hello")
-    var str = document.getElementById("fundingStreamSpecification").value;
-    var n = str.includes("FDZ");
+    let n = fundingStreamSpecficiationText.includes("FDZ");
     console.log(n)
-    if (n) {
+    if (n == true) {
         document.getElementById("providerData-error-group").classList.remove("govuk-visually-hidden")
+        document.getElementById("coreProviderData-group").classList.add("govuk-visually-hidden")
     }
     else {
         document.getElementById("providerData-error-group").classList.add("govuk-visually-hidden")
+        document.getElementById("coreProviderData-group").classList.remove("govuk-visually-hidden")
+
     }
 }
