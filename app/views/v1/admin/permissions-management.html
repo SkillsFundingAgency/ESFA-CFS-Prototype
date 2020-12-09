@@ -10,141 +10,82 @@ Permissions management
 
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <a href="#" class="govuk-back-link" onclick="goBack()">Back</a>
-    </div>
+  <div class="govuk-grid-column-full">
+    <a href="#" class="govuk-back-link" onclick="goBack()">Back</a>
+  </div>
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Set and view user permissions</h1>
-        <p class="govuk-body">Assign and view permissions for users of Calculate funding service (<abbr title="Manage your education and skills funding">CFS</abbr>).</p>
-    </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Set and view user permissions</h1>
+    <p class="govuk-body">Assign and view permissions for users of Calculate funding service (<abbr
+        title="Manage your education and skills funding">CFS</abbr>).</p>
+  </div>
 </div>
 
 <div class="govuk-grid-row govuk-!-margin-top-5">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--s" for="user-select">Select the user you wish to view, assign, or change permissions for</label>
-      </h1>
-            <div class="autocomplete-wrapper" oninput="permissionLevel()">
-                <select name="user-select" class="govuk-select" id="user-select">
-                    <option value="">Select a user</option>
-                    <option value="Robert Sparks">Robert Sparks</option>
-                    <option value="Alan Nichols">Alan Nichols</option>
-                    <option value="Bethan Phillimore">Bethan Phillimore</option>
-                </select>
-            </div>
-        
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="user-select">Enter the user you wish to view, assign, or change
+        permissions for</label>
+    </h1>
+    <div class="autocomplete-wrapper">
+      <select name="user-select" class="govuk-select" id="user-select">
+        <option value="">Select a user</option>
+        <option value="Robert Sparks">Robert Sparks</option>
+        <option value="Alan Nichols">Alan Nichols</option>
+        <option value="Bethan Phillimore">Bethan Phillimore</option>
+      </select>
     </div>
+  </div>
 </div>
 
 <div class="govuk-grid-row govuk-!-margin-top-5">
-    <div class="govuk-grid-column-two-thirds">
-        <dl class="govuk-summary-list govuk-visually-hidden govuk-summary-list--no-border" id="permissionLevel">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Current permissions level
-              </dt>
-              <dd class="govuk-summary-list__value" id="currentPermission"></dd>
-            </div>
-        </dl>
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Select funding stream
+      </label>
+      <select class="govuk-select" id="fundingStream">
+        <option></option>
+        <option value="16-19/16-19-results">16 to 19</option>
+        <option value="14-16/14-16-results">14 to 16</option>
+        <option value="gag/gag-results">General Annual Grant</option>
+        <option value="pna/pna-results">Academy Pupil Number Adjustment</option>
+      </select>
     </div>
+  </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-top-5">
-    <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="permissions-level-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Permission levels
-                </h1>
-              </legend>
-              <div id="permissions-level-hint" class="govuk-hint">
-                Set the permission level you wish this user to have.
-              </div>
-              <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="permissions-administrator" name="permissions-administrator" type="radio" value="government-gateway" aria-describedby="permissions-administrator-hint">
-                  <label class="govuk-label govuk-radios__label" for="permissions-administrator">
-                    Administrator
-                  </label>
-                  <div id="permissions-administrator-hint" class="govuk-hint govuk-radios__hint">
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>Profiling</li>
-                        <li>Manage data</li>
-                        <li>Funding approvals</li>
-                      </ul>
-                  </div>
-                </div>
 
-                <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="permissions-funding-approver" name="permissions-funding-approver" type="radio" value="government-gateway" aria-describedby="permissions-funding-approver-hint">
-                    <label class="govuk-label govuk-radios__label" for="permissions-funding-approver">
-                      Funding approver
-                    </label>
-                    <div id="permissions-funding-approver-hint" class="govuk-hint govuk-radios__hint">
-                      <ul class="govuk-list govuk-list--bullet">
-                          <li>Profiling</li>
-                          <li>Funding approvals</li>
-                        </ul>
-                    </div>
-                  </div>
-              </div>
-          
-            </fieldset>
-          </div>
 
-    </div>
-</div>
 
 <div class="govuk-grid-row govuk-!-margin-top-5">
-    <div class="govuk-grid-column-two-thirds">
-        <button class="govuk-button govuk-!-margin-right-1">Change permissions</button>
-        <button class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</button>
-    </div>
+  <div class="govuk-grid-column-two-thirds">
+    <button class="govuk-button govuk-!-margin-right-1">Save permissions</button>
+    <button class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</button>
+  </div>
 </div>
 
 
 <script type="text/javascript">
-    var selectEl = document.querySelector('#user-select')
-    accessibleAutocomplete.enhanceSelectElement({
-        autoselect: true,
-        confirmOnBlur: true,
-        defaultValue: "",
-        minLength: 2,
-        selectElement: selectEl,
-    })
+  var selectEl = document.querySelector('#user-select')
+  accessibleAutocomplete.enhanceSelectElement({
+    autoselect: true,
+    confirmOnBlur: true,
+    defaultValue: "",
+    minLength: 2,
+    selectElement: selectEl,
+  })
 
-    var queryStringParameters = window.location.search
-    var previouslySubmitted = queryStringParameters.length > 0
-    if (previouslySubmitted) {
-        var submittedEl = document.querySelector('.submitted')
-        submittedEl.classList.remove('submitted--hidden')
-        var params = new URLSearchParams(document.location.search.split('?')[1])
-        document.querySelector('.submitted__last-location').innerHTML = params.get('user-select')
-    }
-
-    function permissionLevel() {
-        var user = document.getElementById('user-select__option--0').textContent
-        if (user === "Alan Nichols") {
-            document.getElementById('currentPermission').innerHTML = "Administrator";
-            document.getElementById('permissionLevel').classList.remove("govuk-visually-hidden")
-            document.getElementById('permissions-administrator').checked = true
-        } else if (user === "Robert Sparks") {
-            document.getElementById('currentPermission').innerHTML = "Administrator";
-            document.getElementById('permissionLevel').classList.remove("govuk-visually-hidden")
-            document.getElementById('permissions-administrator').checked = true
-        } else if (user === "Bethan Phillimore") {
-            document.getElementById('currentPermission').innerHTML = "Funding approver";
-            document.getElementById('permissionLevel').classList.remove("govuk-visually-hidden")
-            document.getElementById('permissions-funding-approver').checked = true
-        }
-      }
-
-
-
+  var queryStringParameters = window.location.search
+  var previouslySubmitted = queryStringParameters.length > 0
+  if (previouslySubmitted) {
+    var submittedEl = document.querySelector('.submitted')
+    submittedEl.classList.remove('submitted--hidden')
+    var params = new URLSearchParams(document.location.search.split('?')[1])
+    document.querySelector('.submitted__last-location').innerHTML = params.get('user-select')
+  }
 </script>
 
 
