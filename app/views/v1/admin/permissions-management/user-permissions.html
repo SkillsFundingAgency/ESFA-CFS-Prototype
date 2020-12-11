@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Permissions management
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <a href="#" class="govuk-back-link" onclick="goBack()">Back</a>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Set and view user permissions
+                    </h1>
+                </legend>
+                <div id="nationality-hint" class="govuk-hint govuk-!-margin-bottom-7">
+                    Assign and view permissions for {{ data['user-select'] }} for {{ data['funding-stream'] }} funding stream.
+                </div>
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-create-specifications" name="can-create-specifications" type="checkbox"
+                            value="Can create specifications" aria-describedby="can-create-specifications-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-create-specifications">
+                            Can create specifications
+                        </label>
+                        <div id="can-create-specifications-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can create a specification for the funding stream
+                        </div>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-edit-specifications" name="can-edit-specifications" type="checkbox"
+                            value="Can edit specifications" aria-describedby="can-edit-specifications-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-edit-specifications">
+                            Can edit specifications
+                        </label>
+                        <div id="can-edit-specifications-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can edit a specification for the funding stream
+                        </div>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-approve-specifications" name="can-approve-specifications" type="checkbox"
+                            value="Can approve specifications" aria-describedby="can-approve-specifications-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-specifications">
+                            Can approve specifications
+                        </label>
+                        <div id="can-approve-specifications-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can approve a specification for the funding stream
+                        </div>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-edit-calculations" name="can-edit-calculations" type="checkbox"
+                            value="Can edit calculations" aria-describedby="can-edit-calculations-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-edit-calculations">
+                             Can edit calculations
+                        </label>
+                        <div id="can-edit-calculations-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can edit calculations within a specification for the funding stream
+                        </div>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-approve-calculations" name="can-approve-calculations" type="checkbox"
+                            value="Can approve calculations" aria-describedby="can-approve-calculations-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-calculations">
+                            Can approve calculations
+                        </label>
+                        <div id="can-approve-calculations-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can approve calculations last edited by another user
+                        </div>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-approve-any-calculation" name="can-approve-any-calculation" type="checkbox"
+                            value="Can approve any calculations">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-any-calculation">
+                            Can approve any calculations
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-map-data-source-files" name="can-map-data-source-files" type="checkbox"
+                            value="Can map data source files" aria-describedby="can-map-data-source-files-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-map-data-source-files">
+                            Can map data source files
+                        </label>
+                        <div id="can-map-data-source-files-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can map data source files to datasets within a specification for the funding stream
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
