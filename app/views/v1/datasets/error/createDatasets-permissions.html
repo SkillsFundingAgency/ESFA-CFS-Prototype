@@ -28,15 +28,29 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p class="new-permissions-banner">
-      You do not have permissions to create a data source file for 16 to 19</p>
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Permissions
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          You do not have permissions to create a data source file for 16 to 19
+          <a class="govuk-notification-banner__link" href="../v1/my-user-permissions">View permissions</a>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2 govuk-!-margin-top-5">Upload new data source</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2 govuk-!-margin-top-1">Upload new data source</h1>
     <span class="govuk-caption-xl govuk-!-margin-bottom-5">Load a new data source file to create a data set to use in
       calculations</span>
 
@@ -112,7 +126,7 @@ GOV.UK Prototype Kit
 
   </div>
 </div>
-
+</div>
 <script>
 
   function newDataSource() {
