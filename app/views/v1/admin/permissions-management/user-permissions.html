@@ -14,6 +14,24 @@ Permissions management
 
 <div class="govuk-grid-row govuk-!-margin-top-5">
     <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-notification-banner govuk-visually-hidden govuk-notification-banner--success" id="notification-banner" role="alert"
+            aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Success
+                </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+                <p class="govuk-notification-banner__heading">
+                    Permissions updated for {{ data['user-select'] }} for {{ data['funding-stream'] }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -22,12 +40,14 @@ Permissions management
                     </h1>
                 </legend>
                 <div id="nationality-hint" class="govuk-hint govuk-!-margin-bottom-7">
-                    Assign and view permissions for {{ data['user-select'] }} for {{ data['funding-stream'] }} funding stream.
+                    Assign and view permissions for {{ data['user-select'] }} for {{ data['funding-stream'] }} funding
+                    stream.
                 </div>
                 <div class="govuk-checkboxes govuk-checkboxes--small">
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-create-specifications" name="can-create-specifications" type="checkbox"
-                            value="Can create specifications" aria-describedby="can-create-specifications-hint">
+                        <input class="govuk-checkboxes__input" id="can-create-specifications"
+                            name="can-create-specifications" type="checkbox" value="Can create specifications"
+                            aria-describedby="can-create-specifications-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-create-specifications">
                             Can create specifications
                         </label>
@@ -36,8 +56,9 @@ Permissions management
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-edit-specifications" name="can-edit-specifications" type="checkbox"
-                            value="Can edit specifications" aria-describedby="can-edit-specifications-hint">
+                        <input class="govuk-checkboxes__input" id="can-edit-specifications"
+                            name="can-edit-specifications" type="checkbox" value="Can edit specifications"
+                            aria-describedby="can-edit-specifications-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-edit-specifications">
                             Can edit specifications
                         </label>
@@ -46,8 +67,9 @@ Permissions management
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-approve-specifications" name="can-approve-specifications" type="checkbox"
-                            value="Can approve specifications" aria-describedby="can-approve-specifications-hint">
+                        <input class="govuk-checkboxes__input" id="can-approve-specifications"
+                            name="can-approve-specifications" type="checkbox" value="Can approve specifications"
+                            aria-describedby="can-approve-specifications-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-approve-specifications">
                             Can approve specifications
                         </label>
@@ -56,18 +78,19 @@ Permissions management
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-edit-calculations" name="can-edit-calculations" type="checkbox"
-                            value="Can edit calculations" aria-describedby="can-edit-calculations-hint">
+                        <input class="govuk-checkboxes__input" id="can-edit-calculations" name="can-edit-calculations"
+                            type="checkbox" value="Can edit calculations" aria-describedby="can-edit-calculations-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-edit-calculations">
-                             Can edit calculations
+                            Can edit calculations
                         </label>
                         <div id="can-edit-calculations-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can edit calculations within a specification for the funding stream
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-approve-calculations" name="can-approve-calculations" type="checkbox"
-                            value="Can approve calculations" aria-describedby="can-approve-calculations-hint">
+                        <input class="govuk-checkboxes__input" id="can-approve-calculations"
+                            name="can-approve-calculations" type="checkbox" value="Can approve calculations"
+                            aria-describedby="can-approve-calculations-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-approve-calculations">
                             Can approve calculations
                         </label>
@@ -76,15 +99,16 @@ Permissions management
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-approve-any-calculation" name="can-approve-any-calculation" type="checkbox"
-                            value="Can approve any calculations">
+                        <input class="govuk-checkboxes__input" id="can-approve-any-calculation"
+                            name="can-approve-any-calculation" type="checkbox" value="Can approve any calculations">
                         <label class="govuk-label govuk-checkboxes__label" for="can-approve-any-calculation">
                             Can approve any calculations
                         </label>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-map-data-source-files" name="can-map-data-source-files" type="checkbox"
-                            value="Can map data source files" aria-describedby="can-map-data-source-files-hint">
+                        <input class="govuk-checkboxes__input" id="can-map-data-source-files"
+                            name="can-map-data-source-files" type="checkbox" value="Can map data source files"
+                            aria-describedby="can-map-data-source-files-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-map-data-source-files">
                             Can map data source files
                         </label>
@@ -95,6 +119,17 @@ Permissions management
                 </div>
             </fieldset>
         </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-columns-two-thirds">
+        <button class="govuk-button govuk-!-margin-right-1" onclick="document.getElementById('notification-banner').classList.remove('govuk-visually-hidden').scrollTop" data-module="govuk-button">
+            Save
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Back
+        </button>
     </div>
 </div>
 

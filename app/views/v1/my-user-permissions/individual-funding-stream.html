@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+My roles and permissions - Calculate funding service
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <a href="#" class="govuk-back-link" onclick="goBack()">Back</a>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <span class="govuk-caption-xl">Calculate funding service</span>
+        <h1 class="govuk-heading-xl">My user permissions for <span id="funding-stream">{{ data['funding-stream'] }}</span>.</h1> 
+
+        <table class="govuk-table">
+            <caption class="govuk-table__caption">Internal user roles and permissions</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header ">
+                        Permission
+                    </th>
+                    <th scope="col" class="govuk-table__header">
+                        Your permissions
+                    </th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">
+                        Permissions description
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can create specifications</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">check</span></td>
+                    <td class="govuk-table__cell">Can create a specification for the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can edit specifications</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can edit a specification for the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can approve specifications</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">check</span></td>
+                    <td class="govuk-table__cell">Can approve a specification for the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can edit calculations</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">check</span></td>
+                    <td class="govuk-table__cell">Can edit calculations within a specification for the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can approve calculations</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">check</span></td>
+                    <td class="govuk-table__cell">Can approve calculations last edited by another user</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can approve any calculations</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can approve any calculations</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can map data sets</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">check</span></td>
+                    <td class="govuk-table__cell">Can map data source files to datasets within a specification for the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can upload data source files</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">check</span></td>
+                    <td class="govuk-table__cell">Can upload or update data source files for a data schema belonging to the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can choose funding</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can choose an approved specification for the funding stream so that funding allocation values are generated and can be approved and released</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can refresh funding</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can refresh the funding allocation values for a specification for the funding stream that has been chosen for funding</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can approve funding</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can approve a funding allocation values for a specification for the funding stream that has been chosen for funding</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can release funding</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can release funding allocation values to downstream services for a specification for the funding stream that has been chosen for funding</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can create profile pattern</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">check</span></td>
+                    <td class="govuk-table__cell">Can create profile patterns for funding lines within the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can edit profile pattern</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">check</span></td>
+                    <td class="govuk-table__cell">Can edit profile patterns for funding lines within the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can delete profile pattern</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can delete profile patterns for funding lines within the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can assign profile pattern</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">check</span></td>
+                    <td class="govuk-table__cell">Can assign profile patterns for funding lines within the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can apply custom profile pattern</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">Yes</span><span class="material-icons">check</span></td>
+                    <td class="govuk-table__cell">Can apply custom profile patterns for funding lines within the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can create templates</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can create templates for the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can edit templates</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can edit templates for the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can delete templates</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can delete templates for the funding stream</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Can approve templates</th>
+                    <td class="govuk-table__cell permissionsIcon"><span class="govuk-visually-hidden">No</span></td>
+                    <td class="govuk-table__cell">Can approve templates for the funding stream</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <p class="govuk-body">You do not have any roles assigned to use in Manage your education and skills funding
+            (<abbr title="Manage your education and skills funding">MYESF</abbr>).</p>
+        <p class="govuk-body">You have these roles in Manage your education and skills funding (<abbr
+                title="Manage your education and skills funding">MYESF</abbr>).</p>
+    </div>
+</div> 
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="form-group">
+            <p class="govuk-body"><a class="govuk-link" href="all-roles-and-permissions">View all available Calculate funding service permissions</a></p>
+        </div>
+    </div>
+</div>
+
+-->
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="form-group">
+            <h2 class="govuk-heading-l">Requesting permissions</h2>
+            <p class="govuk-body">An approver at your organisation will be able to provide you with permissions to this
+                service. You may have more than one approver in your organisation.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+
+const fundingStream = document.getElementById('funding-stream').textContent
+
+</script>
+
+{% endblock %}
