@@ -16,7 +16,7 @@ My roles and permissions - Calculate funding service
     <div class="govuk-grid-column-full">
 
         <span class="govuk-caption-xl">Calculate funding service</span>
-        <h1 class="govuk-heading-xl">My user permissions for <span id="funding-stream">{{ data['funding-stream'] }}</span>.</h1> 
+        <h1 class="govuk-heading-xl">My user permissions for <span id="funding-stream">{{ data['funding-stream'] }}</span></h1> 
 
         <table class="govuk-table">
             <caption class="govuk-table__caption">Internal user roles and permissions</caption>
@@ -26,7 +26,7 @@ My roles and permissions - Calculate funding service
                         Permission
                     </th>
                     <th scope="col" class="govuk-table__header">
-                        Your permissions
+                        My permissions
                     </th>
                     <th scope="col" class="govuk-table__header govuk-!-width-one-half">
                         Permissions description
@@ -173,10 +173,5 @@ My roles and permissions - Calculate funding service
     </div>
 </div>
 
-<script>
-
-const fundingStream = document.getElementById('funding-stream').textContent
-
-</script>
 
 {% endblock %}
