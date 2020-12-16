@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Permissions management
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="#" class="govuk-back-link" onclick="goBack()">Back</a>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Funding stream permissions</h1>
+    <p class="govuk-body">Download all user permissions for a funding stream</p>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Select funding stream to download
+      </label>
+      <select name="funding-stream" class="govuk-select" id="fundingStream">
+        <option></option>
+        <option value="16 to 19">16 to 19</option>
+        <option value="14 to 16">14 to 16</option>
+        <option value="General annual grant">General Annual Grant</option>
+        <option value="Academy pupil number adjustment">Academy Pupil Number Adjustment</option>
+      </select>
+    </div>
+    </fieldset>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <button type="submit" class="govuk-button govuk-!-margin-right-1">Download</button>
+    <a class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</a>
+  </div>
+</div>
+
+{% endblock %}
