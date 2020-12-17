@@ -38,14 +38,14 @@ GOV.UK Prototype Kit
               Calculation name
             </label>
             <input class="govuk-input govuk-js-character-count" id="calculation-name" name="additionalCalc-name"
-              type="text">
+              type="text" aria-label="Calculation name">
           </div>
 
           <div class="govuk-form-group govuk-!-margin-top-5">
             <label class="govuk-label" for="sort">
               Value type
             </label>
-            <select class="govuk-select" id="value-type" name="value-type">
+            <select class="govuk-select" id="value-type" name="value-type" aria-label="Value type">
               <option></option>
               <option value="Percentage">Percentage</option>
               <option value="Number">Number</option>
@@ -58,17 +58,19 @@ GOV.UK Prototype Kit
               Calculation script
             </label>
             <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
-              aria-describedby="more-detail-hint">
+              aria-label="Calculation script">
 Return 0
         </textarea>
             </br>
-            <h4 class="govuk-heading-s" for="more-detail">
+            <h2 class="govuk-heading-s" for="more-detail">
               UKPRN
 
               <span id="event-name-hint" class="govuk-hint">
                 Optional: Enter a UKPRN to view calculation results for this provider
-              </span></h4>
-            <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
+              </span>
+            </h2>
+            <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text"
+              aria-label="enter-UKPRN">
 
           </div>
           </br>
@@ -78,7 +80,7 @@ Return 0
 
 
           <div class="govuk-inset-text" id="buildResult" style="display: none;">
-            <h4 class="govuk-heading-s">Build output</h4>
+            <h3 class="govuk-heading-s">Build output</h3>
             <p class="govuk-body">Code compiled successfully </p>
             <p class="govuk-body">Provider: <strong>Paddington Academy </strong></p>
             <p class="govuk-body">Provider results: <strong>3.5%</strong> </p>
@@ -121,8 +123,8 @@ Return 0
     var calcName = document.getElementById('calculation-name').value
 
     sessionStorage.setItem('calcCreated', 'true')
-    sessionStorage.setItem('calcName', calcName  )
-    sessionStorage.setItem('valueType', valueType )
+    sessionStorage.setItem('calcName', calcName)
+    sessionStorage.setItem('valueType', valueType)
     sessionStorage.setItem('status', 'Draft')
     sessionStorage.setItem('date', dateFormat + ' ' + time + ampm)
   }
