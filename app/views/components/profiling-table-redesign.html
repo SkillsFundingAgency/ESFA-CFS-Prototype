@@ -1,0 +1,109 @@
+{% extends "component-single.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+    Original
+</h1>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">
+            Profiling
+        </h2>
+        <p class="govuk-body">
+            View and makes changes to profile patterns by funding line.
+        </p>
+        <dl class="govuk-summary-list ">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Further Education Programme</br> Funding
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Rule based pattern
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./profiling/funding-line-profile-birmingham-programmefunding.html">
+                        View<span class="govuk-visually-hidden">Programme
+                            Funding</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Further Education Industry<br /> Placements Funding
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Rule based pattern
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./profiling/funding-line-profile-birmingham-industry.html">
+                        View<span class="govuk-visually-hidden"> Industry Placements Funding</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Further Education High Needs </br>Element 2 Student Funding
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Rule based pattern
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./profiling/funding-line-profile-birmingham-highneeds.html">
+                        View<span class="govuk-visually-hidden"> High Needs Element 2 Student
+                            Funding</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+        <p><a href="#" class="govuk-link" data-module="govuk-button">Export to CSV</a></p>
+    </div>
+</div>
+
+<h1 class="govuk-heading-xl govuk-!-margin-top-9">
+    Proposed change
+</h1>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <table class="govuk-table">
+            <caption class="govuk-table__caption">Funding line profiles</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Funding line</th>
+                    <th scope="col" class="govuk-table__header">Pattern type</th>
+                    <th scope="col" class="govuk-table__header">Total allocation</th>
+                    <th scope="col" class="govuk-table__header"></th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Further Education Programme Funding</th>
+                    <td class="govuk-table__cell">Rule based pattern </td>
+                    <td class="govuk-table__cell">£25,192,629</td>
+                    <td class="govuk-table__cell"><a class="govuk-link right-align" href="">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Further Education Industry Placements Funding</th>
+                    <td class="govuk-table__cell">Rule based pattern</td>
+                    <td class="govuk-table__cell">£20,786,636</td>
+                    <td class="govuk-table__cell"><a class="govuk-link right-align" href="">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Further Education High Needs Element 2 Student Funding
+                    </th>
+                    <td class="govuk-table__cell">Rule based pattern</td>
+                    <td class="govuk-table__cell">£12,267,728</td>
+                    <td class="govuk-table__cell"><a class="govuk-link right-align" href="">View</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
