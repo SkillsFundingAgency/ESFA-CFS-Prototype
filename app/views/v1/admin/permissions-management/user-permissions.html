@@ -24,7 +24,8 @@ Permissions management
             </div>
             <div class="govuk-notification-banner__content">
                 <p class="govuk-notification-banner__heading">
-                    Permissions updated for <span id="user">{{ data['user-select'] }}</span> for {{ data['funding-stream'] }}
+                    Permissions updated for <span id="user">{{ data['user-select'] }}</span> for
+                    {{ data['funding-stream'] }}
                 </p>
             </div>
         </div>
@@ -46,6 +47,16 @@ Permissions management
                     stream.
                 </div>
                 <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-administer-funding-streams"
+                            name="can-administer-funding-streams" type="checkbox" value="Can administer a funding stream" aria-describedby="can-create-specifications-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-administer-funding-streams">
+                            Can administer a funding stream
+                        </label>
+                        <div id="can-administer-funding-streams-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can grant and remove permissions for users of a funding stream
+                        </div>
+                    </div>
                     <div class="govuk-checkboxes__item">
                         <input checked class="govuk-checkboxes__input" id="can-create-specifications"
                             name="can-create-specifications" type="checkbox" value="Can create specifications"
@@ -120,47 +131,47 @@ Permissions management
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="ccan-choose-funding"
-                            name="can-choose-funding" type="checkbox" value="Can choose funding"
-                            aria-describedby="can-choose-funding-hint">
+                        <input class="govuk-checkboxes__input" id="ccan-choose-funding" name="can-choose-funding"
+                            type="checkbox" value="Can choose funding" aria-describedby="can-choose-funding-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-choose-funding">
                             Can choose funding
                         </label>
                         <div id="can-choose-funding-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can choose an approved specification for the funding stream so that funding allocation values are generated and can be approved and released
+                            Can choose an approved specification for the funding stream so that funding allocation
+                            values are generated and can be approved and released
                         </div>
-                    </div>                    
+                    </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-choose-funding"
-                            name="can-refresh-funding" type="checkbox" value="Can refresh funding"
-                            aria-describedby="can-refresh-funding-hint">
+                        <input class="govuk-checkboxes__input" id="can-choose-funding" name="can-refresh-funding"
+                            type="checkbox" value="Can refresh funding" aria-describedby="can-refresh-funding-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-refresh-funding">
                             Can refresh funding
                         </label>
                         <div id="can-refresh-funding-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can refresh the funding allocation values for a specification for the funding stream that has been chosen for funding
+                            Can refresh the funding allocation values for a specification for the funding stream that
+                            has been chosen for funding
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-approve-funding"
-                            name="can-approve-funding" type="checkbox" value="Can approve funding"
-                            aria-describedby="can-approve-funding-hint">
+                        <input class="govuk-checkboxes__input" id="can-approve-funding" name="can-approve-funding"
+                            type="checkbox" value="Can approve funding" aria-describedby="can-approve-funding-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-approve-funding">
                             Can approve funding
                         </label>
                         <div id="can-approve-funding-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can approve a funding allocation values for a specification for the funding stream that has been chosen for funding
+                            Can approve a funding allocation values for a specification for the funding stream that has
+                            been chosen for funding
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-release-funding"
-                            name="can-release-funding" type="checkbox" value="Can release funding"
-                            aria-describedby="can-release-funding-hint">
+                        <input class="govuk-checkboxes__input" id="can-release-funding" name="can-release-funding"
+                            type="checkbox" value="Can release funding" aria-describedby="can-release-funding-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-release-funding">
                             Can release funding
                         </label>
                         <div id="can-release-funding-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can release funding allocation values to downstream services for a specification for the funding stream that has been chosen for funding
+                            Can release funding allocation values to downstream services for a specification for the
+                            funding stream that has been chosen for funding
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
@@ -168,7 +179,7 @@ Permissions management
                             name="can-create-profile-pattern" type="checkbox" value="Can create profile pattern"
                             aria-describedby="can-create-profile-pattern-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-create-profile-pattern">
-                            Can create profile pattern	
+                            Can create profile pattern
                         </label>
                         <div id="can-create-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can create profile patterns for funding lines within the funding stream
@@ -179,7 +190,7 @@ Permissions management
                             name="can-edit-profile-pattern" type="checkbox" value="Can edit profile pattern"
                             aria-describedby="can-edit-profile-pattern-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-edit-profile-pattern">
-                            Can edit profile pattern	
+                            Can edit profile pattern
                         </label>
                         <div id="can-edit-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can edit profile patterns for funding lines within the funding stream
@@ -190,7 +201,7 @@ Permissions management
                             name="can-edit-profile-pattern" type="checkbox" value="Can edit profile pattern"
                             aria-describedby="can-edit-profile-pattern-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-edit-profile-pattern">
-                            Can edit profile pattern	
+                            Can edit profile pattern
                         </label>
                         <div id="can-edit-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can edit profile patterns for funding lines within the funding stream
@@ -201,7 +212,7 @@ Permissions management
                             name="can-delete-profile-pattern" type="checkbox" value="Can delete profile pattern"
                             aria-describedby="can-delete-profile-pattern-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-delete-profile-pattern">
-                            Can delete profile pattern	
+                            Can delete profile pattern
                         </label>
                         <div id="can-delete-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can delete profile patterns for funding lines within the funding stream
@@ -212,7 +223,7 @@ Permissions management
                             name="can-assign-profile-pattern" type="checkbox" value="Can assign profile pattern"
                             aria-describedby="can-assign-profile-pattern-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-assign-profile-pattern">
-                            Can assign profile pattern	
+                            Can assign profile pattern
                         </label>
                         <div id="can-assign-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can assign profile patterns for funding lines within the funding stream
@@ -220,54 +231,51 @@ Permissions management
                     </div>
                     <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="can-apply-custom-profile-pattern"
-                            name="can-apply-custom-profile-pattern" type="checkbox" value="Can apply custom profile pattern"
+                            name="can-apply-custom-profile-pattern" type="checkbox"
+                            value="Can apply custom profile pattern"
                             aria-describedby="can-apply-custom-profile-pattern-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-apply-custom-profile-pattern">
-                            Can apply custom profile pattern	
+                            Can apply custom profile pattern
                         </label>
                         <div id="can-apply-custom-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can apply custom profile patterns for funding lines within the funding stream
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-create-templates"
-                            name="can-create-templates" type="checkbox" value="Can create templates"
-                            aria-describedby="can-create-templates-hint">
+                        <input class="govuk-checkboxes__input" id="can-create-templates" name="can-create-templates"
+                            type="checkbox" value="Can create templates" aria-describedby="can-create-templates-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-create-templates">
-                            Can create templates	
+                            Can create templates
                         </label>
                         <div id="can-create-templates-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can create templates for the funding stream
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-edit-templates"
-                            name="can-edit-templates" type="checkbox" value="Can edit templates"
-                            aria-describedby="can-edit-templates-hint">
+                        <input class="govuk-checkboxes__input" id="can-edit-templates" name="can-edit-templates"
+                            type="checkbox" value="Can edit templates" aria-describedby="can-edit-templates-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-edit-templates">
-                            Can edit templates	
+                            Can edit templates
                         </label>
                         <div id="can-edit-templates-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can edit templates for the funding stream
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-delete-templates"
-                            name="can-delete-templates" type="checkbox" value="Can delete templates"
-                            aria-describedby="can-delete-templates-hint">
+                        <input class="govuk-checkboxes__input" id="can-delete-templates" name="can-delete-templates"
+                            type="checkbox" value="Can delete templates" aria-describedby="can-delete-templates-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-delete-templates">
-                            Can delete templates	
+                            Can delete templates
                         </label>
                         <div id="can-delete-templates-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can delete templates for the funding stream
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-approve-templates"
-                            name="can-approve-templates" type="checkbox" value="Can approve templates"
-                            aria-describedby="can-approve-templates-hint">
+                        <input class="govuk-checkboxes__input" id="can-approve-templates" name="can-approve-templates"
+                            type="checkbox" value="Can approve templates" aria-describedby="can-approve-templates-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-approve-templates">
-                            Can approve templates	
+                            Can approve templates
                         </label>
                         <div id="can-approve-templates-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can approve templates for the funding stream
@@ -293,13 +301,12 @@ Permissions management
 </div>
 
 <script>
+    let user = document.getElementById('user').innerText
+    let checkboxes = document.querySelectorAll("input[type='checkbox']")
+    let adminUsers = 'Robert Sparks'
 
-let user = document.getElementById('user').innerText
-let checkboxes = document.querySelectorAll("input[type='checkbox']")
-let adminUsers = 'Robert Sparks'
-
-window.onload = function userPermissions() {
-    console.log(user)
+    window.onload = function userPermissions() {
+        console.log(user)
         if (user == adminUsers) {
             fullPermissions();
         } else {
@@ -308,14 +315,13 @@ window.onload = function userPermissions() {
     }
 
 
-function fullPermissions () {
-    console.log('fullPermissions')
-    for (var i = 0; i < checkboxes.length; i++) {
+    function fullPermissions() {
+        console.log('fullPermissions')
+        for (var i = 0; i < checkboxes.length; i++) {
             if (checkboxes[i].type == 'checkbox')
-            checkboxes[i].checked = true;
+                checkboxes[i].checked = true;
         }
-}
-
+    }
 </script>
 
 {% endblock %}
