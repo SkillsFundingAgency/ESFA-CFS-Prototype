@@ -336,55 +336,72 @@ GOV.UK Prototype Kit
             </section>
             <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="profiling">
                 <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-l">
                             Profiling
                         </h2>
                         <p class="govuk-body">
                             View and makes changes to profile patterns by funding line.
                         </p>
-                        <dl class="govuk-summary-list">
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Funding line 1
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    Custom pattern
-                                </dd>
-                                <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="../profiling/funding-line-profile-custom.html">
-                                        View<span class="govuk-visually-hidden"> Funding line 1</span>
-                                    </a>
-                                </dd>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <table class="govuk-table">
+                                    <thead class="govuk-table__head">
+                                        <tr class="govuk-table__row">
+                                            <th scope="col" class="govuk-table__header govuk-!-width-one-half">Funding
+                                                line</th>
+                                            <th scope="col" class="govuk-table__header">Pattern type</th>
+                                            <th scope="col" class="govuk-table__header">Total allocation</th>
+                                            <th scope="col" class="govuk-table__header"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Further Education Programme
+                                                Funding</th>
+                                            <td class="govuk-table__cell">Rule based pattern </td>
+                                            <td class="govuk-table__cell">£25,192,629</td>
+                                            <td class="govuk-table__cell"><a class="govuk-link right-align"
+                                                    href="../profiling/funding-line-profile-national.html">
+                                                    View<span class="govuk-visually-hidden"> Funding line 1</span>
+                                                </a></td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Further Education Industry
+                                                Placements Funding</th>
+                                            <td class="govuk-table__cell">Rule based pattern</td>
+                                            <td class="govuk-table__cell">£20,786,636</td>
+                                            <td class="govuk-table__cell"><a class="govuk-link right-align"
+                                                    href="../profiling/funding-line-profile-national.html">
+                                                    View<span class="govuk-visually-hidden"> Funding line 1</span>
+                                                </a></td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Further Education High Needs
+                                                Element 2 Student Funding
+                                            </th>
+                                            <td class="govuk-table__cell">Rule based pattern</td>
+                                            <td class="govuk-table__cell">£12,267,728</td>
+                                            <td class="govuk-table__cell"><a class="govuk-link right-align"
+                                                    href="../profiling/funding-line-profile-national.html">
+                                                    View<span class="govuk-visually-hidden"> Funding line 1</span>
+                                                </a></td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Further Education High Needs
+                                                Element 3 Student Funding
+                                            </th>
+                                            <td class="govuk-table__cell"></td>
+                                            <td class="govuk-table__cell">£0</td>
+                                            <td class="govuk-table__cell"><a class="govuk-link right-align" href=""></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p><a href="#" class="govuk-link" data-module="govuk-button">Export to CSV</a></p>
                             </div>
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Funding line 2
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    National pattern
-                                </dd>
-                                <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="../profiling/funding-line-profile-national.html">
-                                        View<span class="govuk-visually-hidden"> Funding line 1</span>
-                                    </a>
-                                </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Funding line 3
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    Rule based pattern (Pattern name)
-                                </dd>
-                                <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="../profiling/funding-line-profile-rule.html">
-                                        View<span class="govuk-visually-hidden"> Funding line 1</span>
-                                    </a>
-                                </dd>
-                            </div>
-                        </dl>
-                        <p><a href="#" class="govuk-link" data-module="govuk-button">Export to CSV</a></p>
+                        </div>
+
                     </div>
                 </div>
             </section>
