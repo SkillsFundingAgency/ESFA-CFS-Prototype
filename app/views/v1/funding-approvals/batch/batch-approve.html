@@ -137,13 +137,31 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-9">
+<div class="govuk-grid-row govuk-!-margin-bottom-7">
   <div class="govuk-grid-column-three-quarters">
     <a class="govuk-link-m right-align" href="upload-batch-approve-release.html">
       Change batch<span class="govuk-visually-hidden"> name</span>
     </a>
   </div>
 </div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-form-group">
+      <label class="govuk-label">
+        Include a variation reason for the selected providers</label>
+      <span id="template-versions-hint" class="govuk-hint">
+        This will visible within CFS only</span>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published">Delivery data change</option>
+        <option value="updated" selected>Policy change</option>
+        <option value="views">Infrastructure change</option>
+        <option value="comments">Contract change</option>
+      </select>
+    </div>
+  </div>
+</div>
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
