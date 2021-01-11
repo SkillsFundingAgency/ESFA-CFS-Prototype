@@ -12,6 +12,7 @@ Permissions management
     </div>
 </div>
 
+
 <div class="govuk-grid-row govuk-!-margin-top-5">
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-notification-banner govuk-visually-hidden govuk-notification-banner--success"
@@ -24,8 +25,8 @@ Permissions management
             </div>
             <div class="govuk-notification-banner__content">
                 <p class="govuk-notification-banner__heading">
-                    Permissions updated for <span id="user">{{ data['user-select'] }}</span> for
-                    {{ data['funding-stream'] }}
+                    Permissions updated for <span id="user">{{ data['user-select'] }}</span> for the
+                    {{ data['funding-stream'] }} funding stream.
                 </p>
             </div>
         </div>
@@ -290,7 +291,7 @@ Permissions management
 <div class="govuk-grid-row">
     <div class="govuk-grid-columns-two-thirds">
         <button class="govuk-button govuk-!-margin-right-1"
-            onclick="document.getElementById('notification-banner').classList.remove('govuk-visually-hidden').scrollTop"
+            onclick="notificationBanner()"
             data-module="govuk-button">
             Save
         </button>
@@ -314,13 +315,17 @@ Permissions management
         }
     }
 
-
     function fullPermissions() {
         console.log('fullPermissions')
         for (var i = 0; i < checkboxes.length; i++) {
             if (checkboxes[i].type == 'checkbox')
                 checkboxes[i].checked = true;
         }
+    }
+
+    function notificationBanner () {
+        document.getElementById('notification-banner').classList.remove('govuk-visually-hidden')
+        window.scrollTo(0, 0);
     }
 </script>
 
