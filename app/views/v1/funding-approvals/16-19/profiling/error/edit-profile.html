@@ -50,30 +50,67 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Edit profile for funding line name</h1>
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Barnet London Borough Council</h3>
-        <p class="govuk-body-s"><span>UKPRN: </span>123456</p>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Edit profile for Funding line name</h1>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">South and City College Birmingham
+        </h3>
+        <!--<p class="govuk-body-s"><span>UKPRN: </span>10005967</p>-->
+        <p class="govuk-body-s">Last updated by Robert Sparks on 17 July 2020 at 2:14pm</p>
     </div>
 </div>
 
-<div class="govuk-grid-row">
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Total allocation</span>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£2,600,000</h2>
-        <span class="govuk-caption-m">Instalments paid value</span>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£1,000,000</h2>
-        <span class="govuk-caption-m">Balance available for profiling</span>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£1,600,000</h2>
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    UKPRN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    10005967 </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Total allocation
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    £2,600,000</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Installments paid value </dt>
+                <dd class="govuk-summary-list__value">
+                    £1,000,000</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Balance available for profiling
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    £1,600,000</dd>
+            </div>
+        </dl>
     </div>
 </div>
+
+
+
+
+
+
+
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <table class="govuk-table govuk-!-margin-top-7">
-            <caption class="govuk-table__caption">Profiling installments</caption>
+            <caption class="govuk-table__caption">Profiling instalments
+            </caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Instalment month</th>
+                    <th scope="col" class="govuk-table__header">Instalment month
+                    </th>
                     <th scope="col" class="govuk-table__header">Payment status</th>
                     <th scope="col" class="govuk-table__header">Instalment number</th>
                     <th scope="col" class="govuk-table__header">Per cent</th>
@@ -115,20 +152,27 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">5</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
-                            <input aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                class="input-suffix govuk-input govuk-input--width-10" id="input-4"
-                                onblur="sumPercentage()" name="installmentPercentage" type="text" value="20"
-                                aria-describedby="percent">
-                            <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>
+                            <div class="govuk-input__wrapper">
+                                <input
+                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
+                                    onblur=" sumPercentage()" name="installmentPercentage" type="text" value="10"
+                                    aria-describedby="percent">
+                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
+                            </div>
+
                         </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input aria-label="Enter the total amount for January. Enter 0 if this does not apply"
-                                class="input-prefix govuk-input " id="input-3" onblur="sumTotal()"
-                                name="installmentValue" type="text" aria-describedby="currency" autocomplete="off"
-                                value="320000">
+                    <td class="govuk-table__cell govuk-table__cell--numeric ">
+
+                        <div class="govuk-form-group right-align">
+                            <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
+                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
+                                    class="govuk-input input-prefix govuk-input--width-5" id="input-3"
+                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
+                                    autocomplete="off" value="320,000">
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -138,20 +182,25 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">6</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
-                            <input aria-label="Enter the total percetage for February. Enter 0 if this does not apply"
-                                class="input-suffix govuk-input govuk-input--width-10" id="input-4"
-                                onblur="sumPercentage(), flatProfile()" name="installmentPercentage" type="text"
-                                value="20" aria-describedby="percent">
-                            <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>
+                            <div class="govuk-input__wrapper"> <input
+                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="10"
+                                    aria-describedby="percent">
+                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
+                            </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
-                                class="input-prefix govuk-input " id="input-3" onblur="sumTotal()"
-                                name="installmentValue" type="text" aria-describedby="currency" autocomplete="off"
-                                value="320000">
+                    <td class="govuk-table__cell govuk-table__cell--numeric ">
+
+                        <div class="govuk-form-group right-align">
+                            <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
+                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
+                                    class="govuk-input input-prefix govuk-input--width-5" id="input-3"
+                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
+                                    autocomplete="off" value="320,000">
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -161,21 +210,26 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">7</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
-                            <input aria-label="Enter the total percetage for March. Enter 0 if this does not apply"
-                                class="input-suffix govuk-input govuk-input--width-10" id="input-4"
-                                onblur="sumPercentage()" name="installmentPercentage" type="text"
-                                aria-describedby="percent" value="10">
-                            <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span><br>
+                            <div class="govuk-input__wrapper"> <input
+                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="20"
+                                    aria-describedby="percent">
+                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
+                            </div>
                             <a class="govuk-!-margin-top-2 govuk-link" href="">Flat profile</a>
                         </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input aria-label="Enter the total amount for March. Enter 0 if this does not apply"
-                                class="input-prefix govuk-input " id="input-3" onblur="sumTotal()"
-                                name="installmentValue" type="text" aria-describedby="currency" autocomplete="off"
-                                value="160000">
+                    <td class="govuk-table__cell govuk-table__cell--numeric ">
+
+                        <div class="govuk-form-group right-align">
+                            <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
+                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
+                                    class="govuk-input input-prefix govuk-input--width-5" id="input-3"
+                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
+                                    autocomplete="off" value="160,000">
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -185,20 +239,25 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">8</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
-                            <input aria-label="Enter the total percetage for April. Enter 0 if this does not apply"
-                                class="input-suffix govuk-input govuk-input--width-10" id="input-4"
-                                onblur="sumPercentage()" name="installmentPercentage" type="text"
-                                aria-describedby="percent" value="10">
-                            <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>
+                            <div class="govuk-input__wrapper"> <input
+                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="20"
+                                    aria-describedby="percent">
+                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
+                            </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input aria-label="Enter the total amount for April. Enter 0 if this does not apply"
-                                class="input-prefix govuk-input " id="input-3" onblur="sumTotal()"
-                                name="installmentValue" type="text" aria-describedby="currency" autocomplete="off"
-                                value="160000">
+                    <td class="govuk-table__cell govuk-table__cell--numeric ">
+
+                        <div class="govuk-form-group right-align">
+                            <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
+                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
+                                    class="govuk-input input-prefix govuk-input--width-5" id="input-3"
+                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
+                                    autocomplete="off" value="160,000">
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -208,20 +267,25 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">9</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
-                            <input aria-label="Enter the total percetage for May. Enter 0 if this does not apply"
-                                class="input-suffix govuk-input govuk-input--width-10" id="input-4"
-                                onblur="sumPercentage()" name="installmentPercentage" type="text"
-                                aria-describedby="percent" value="10">
-                            <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>
+                            <div class="govuk-input__wrapper"> <input
+                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="20"
+                                    aria-describedby="percent">
+                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
+                            </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input aria-label="Enter the total amount for May. Enter 0 if this does not apply"
-                                class="input-prefix govuk-input " id="input-3" onblur="sumTotal()"
-                                name="installmentValue" type="text" aria-describedby="currency" autocomplete="off"
-                                value="160000">
+                    <td class="govuk-table__cell govuk-table__cell--numeric ">
+
+                        <div class="govuk-form-group right-align">
+                            <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
+                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
+                                    class="govuk-input input-prefix govuk-input--width-5" id="input-3"
+                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
+                                    autocomplete="off" value="160,000">
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -231,116 +295,135 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">10</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
-                            <input aria-label="Enter the total percetage for June. Enter 0 if this does not apply"
-                                class="input-suffix govuk-input govuk-input--width-10" id="input-4"
-                                onblur="sumPercentage()" name="installmentPercentage" type="text"
-                                aria-describedby="percent" value="10">
-                            <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>
+                            <div class="govuk-input__wrapper"> <input
+                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="10"
+                                    aria-describedby="percent">
+                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
+                            </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input aria-label="Enter the total amount for June. Enter 0 if this does not apply"
-                                class="input-prefix govuk-input " id="input-3" onblur="sumTotal()"
-                                name="installmentValue" type="text" aria-describedby="currency" autocomplete="off"
-                                value="160000">
+                    <td class="govuk-table__cell govuk-table__cell--numeric ">
+
+                        <div class="govuk-form-group right-align">
+                            <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
+                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
+                                    class="govuk-input input-prefix govuk-input--width-5" id="input-3"
+                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
+                                    autocomplete="off" value="160,000">
+                            </div>
                         </div>
                     </td>
                 </tr>
-
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">
-
-                        8 July 2021
-
-                    </th>
+                    <th scope="row" class="govuk-table__header">8 July 2021</th>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">11</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
-                            <input aria-label="Enter the total percetage for July. Enter 0 if this does not apply"
-                                class="input-suffix govuk-input govuk-input--width-10" id="input-4"
-                                onblur="sumPercentage()" name="installmentPercentage" type="text"
-                                aria-describedby="percent" value="10">
-                            <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>
+                            <div class="govuk-input__wrapper"> <input
+                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="5"
+                                    aria-describedby="percent">
+                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
+                            </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input aria-label="Enter the total amount for July. Enter 0 if this does not apply"
-                                class="input-prefix govuk-input " id="input-3" onblur="sumTotal()"
-                                name="installmentValue" type="text" aria-describedby="currency" autocomplete="off"
-                                value="160000">
+                    <td class="govuk-table__cell govuk-table__cell--numeric ">
+
+                        <div class="govuk-form-group right-align">
+                            <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
+                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
+                                    class="govuk-input input-prefix govuk-input--width-5" id="input-3"
+                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
+                                    autocomplete="off" value="160,000">
+                            </div>
                         </div>
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 August 2021</th>
+                    <th scope="row" class="govuk-table__header">8 Aug 2021</th>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">12</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
-                            <div class="govuk-form-group">
-                                <input aria-label="Enter the total percetage for August. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-10" id="input-4"
-                                    onblur="sumPercentage()" name="installmentPercentage" type="text"
-                                    aria-describedby="percent" value="30">
-                                <span id="percent" class="suffix" aria-label="Enter amount in percent">%</span>
-
-                            </div>
-                    </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <div class="govuk-form-group right-align">
-                                <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                                <input aria-label="Enter the total amount for August. Enter 0 if this does not apply"
-                                    class="input-prefix govuk-input " id="input-3" onblur="sumTotal()"
-                                    name="installmentValue" type="text" aria-describedby="currency" autocomplete="off"
-                                    value="480000">
+                            <div class="govuk-input__wrapper"> <input
+                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="5"
+                                    aria-describedby="percent">
+                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric ">
 
+
+                        <div class="govuk-form-group right-align">
+                            <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
+                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
+                                    class="govuk-input input-prefix govuk-input--width-5" id="input-3"
+                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
+                                    autocomplete="off" value="160,000">
+                            </div>
+                        </div>
+                    </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">To be carried forward</th>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <div class="govuk-form-group">
-                            <span id="currency" class="prefix" aria-label="Enter amount in pounds">£</span>
-                            <input aria-label="Enter the total amount for August. Enter 0 if this does not apply"
-                                class="input-prefix govuk-input " id="carryover" onblur="sumTotal()" name="carryover"
-                                type="text" aria-describedby="currency" autocomplete="off" value="7,000">
+                    <td class="govuk-table__cell govuk-table__cell--numeric ">
+
+                        <div class="govuk-form-group right-align">
+                            <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
+                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
+                                    class="govuk-input input-prefix govuk-input--width-5" id="input-3"
+                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
+                                    autocomplete="off" value="7,000">
+                            </div>
                         </div>
                     </td>
 
                 </tr>
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Total allocation</th>
+                    <th scope="row" class="govuk-table__header">
+                        Total allocation</th>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <span id="event-name-error" class="govuk-error-message" id="totalPercentage">
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><span id="event-name-error"
+                            class="govuk-error-message govuk-!-margin-right-2" id="totalPercentage">
                             <span class="govuk-visually-hidden">Error:</span>Total must be equal to 100%
-                        </span>
-                        <span class="govuk-!-margin-right-2 govuk-form-group--error"
-                            id="profilePercentage"></span><strong>120%</strong>
-                    </td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric" id="totalAllocation">
-                        <span id="event-name-error" class="govuk-error-message">
+                        </span><strong>%</strong></td>
+
+
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><span id="event-name-error"
+                            class="govuk-error-message">
                             <span class="govuk-visually-hidden">Error:</span>Total allocation greater than balance
                             available
-                        </span>
-                        <strong>£1,700,000</strong><span class="govuk-!-margin-left-2" id="profileTotal"></span></td>
+                        </span><strong>£</strong></td>
                 </tr>
+
             </tbody>
         </table>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
 
 <a class="govuk-button govuk-!-margin-right-1" href="javascript:history.back()">
     Apply profile
