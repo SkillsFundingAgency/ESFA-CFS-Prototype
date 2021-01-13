@@ -1,0 +1,205 @@
+{% extends "component-single.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">Old design</h1>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Variation management</h2>
+        <p class="govuk-body">Set the instalment from which a variation should take effect.</p>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row ">
+                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
+                    Funding line 1
+                </dt>
+                <dd class="govuk-summary-list__value ">
+                    April 2020 <br>
+                    Instalment 3
+                </dd>
+                <dd class="govuk-summary-list__actions ">
+                    <a class="govuk-link" href="variation/installment-variation.html">
+                        Change<span class="govuk-visually-hidden"> funding line 1</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
+                    Funding line 2
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    April 2020 <br>
+                    Instalment 3
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="variation/installment-variation.html">
+                        Change<span class="govuk-visually-hidden"> funding line 1</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
+                    Funding line 3
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    April 2020 <br>
+                    Instalment 3
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="variation/installment-variation.html">
+                        Change<span class="govuk-visually-hidden"> funding line 1</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+
+<h1 class="govuk-heading-xl">New design</h1>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Variation management</h2>
+        <p class="govuk-body">Set the instalment from which a variation should take effect.</p>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row ">
+                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
+                    Funding line 1
+                </dt>
+                <dd class="govuk-summary-list__value ">
+                    Initial allocation
+                </dd>
+                <dd class="govuk-summary-list__actions ">
+                    <a class="govuk-link" href="variation/installment-variation.html">
+                        Set<span class="govuk-visually-hidden"> funding line 1</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
+                    Funding line 2
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    April 2020 <br>
+                    Instalment 3
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="variation/installment-variation.html">
+                        Change<span class="govuk-visually-hidden"> funding line 1</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
+                    Funding line 3
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    April 2020 <br>
+                    Instalment 3
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="variation/installment-variation.html">
+                        Change<span class="govuk-visually-hidden"> funding line 1</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <table class="govuk-table">
+                <caption class="govuk-table__caption">Installment variation</caption>
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header app-custom-class">Funding line</th>
+                        <th scope="col" class="govuk-table__header app-custom-class">Current installment</th>
+                        <th scope="col" class="govuk-table__header app-custom-class">Future installment</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Funding line 1</th>
+                        <td class="govuk-table__cell">
+                            Initial allocation
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-form-group">
+                                <select class="govuk-select" id="sort" name="sort">
+                                <option value=""></option>
+                                  <option value="may2020-1">May 2020 installment 1</option>
+                                  <option value="may2020-2">May 2020 installment 2</option>
+                                  <option value="june2020-1">June 2020 installment 1</option>
+                                  <option value="june2020-2">June 2020 installment 2</option>
+                                </select>
+                              </div>
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Funding line 2</th>
+                        <td class="govuk-table__cell">
+                            April 2020 <br>
+                            Installment 3
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-form-group">
+                                <select class="govuk-select" id="sort" name="sort">
+                                    <option value=""></option>
+                                  <option value="may2020-1">May 2020 installment 1</option>
+                                  <option value="may2020-2">May 2020 installment 2</option>
+                                  <option value="june2020-1">June 2020 installment 1</option>
+                                  <option value="june2020-2">June 2020 installment 2</option>
+                                </select>
+                              </div>
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Funding line 3</th>
+                        <td class="govuk-table__cell">
+                            April 2020 <br>
+                            Installment 3
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-form-group">
+                                <select class="govuk-select" id="sort" name="sort">
+                                    <option value=""></option>
+                                  <option value="may2020-1">May 2020 installment 1</option>
+                                  <option value="may2020-2">May 2020 installment 2</option>
+                                  <option value="june2020-1">June 2020 installment 1</option>
+                                  <option value="june2020-2">June 2020 installment 2</option>
+                                </select>
+                              </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
