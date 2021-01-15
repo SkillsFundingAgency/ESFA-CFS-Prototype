@@ -342,7 +342,7 @@ GOV.UK Prototype Kit
                 Release date of funding to Business Central?
               </h3>
             </legend>
-            <span id="passport-issued-hint" class="govuk-hint">
+            <span id="date-time" class="govuk-hint">
               Set the date and time that the statement will be published externally for this funding stream. <br>For
               example, 12 11 2019
             </span>
@@ -353,25 +353,26 @@ GOV.UK Prototype Kit
                     <label class="govuk-label" for="event-name">
                       Release date
                     </label>
-                    <input class="govuk-input" id="event-name" name="event-name" type="date">
+                    <input class="govuk-input" id="release-date" name="event-name" type="date"
+                      aria-label="release date">
                   </div>
                 </div>
               </div>
             </div>
             <fieldset class="govuk-fieldset govuk-!-margin-top-5" role="group" aria-describedby="passport-issued-hint">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              <label class="govuk-label govuk-date-input__label" for="time">
                 Time
               </label>
               <span id="statementRelease-time" class="govuk-hint">
                 For example, 10:00AM
               </span>
-              <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input" id="hour-released">
                 <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    <label class="govuk-label govuk-date-input__label" for="hour">
                       Hour
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hour"
                       name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
                   </div>
                 </div>
@@ -391,7 +392,7 @@ GOV.UK Prototype Kit
                     <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                       AM/PM
                     </label>
-                    <select class="govuk-select" id="sort" name="sort">
+                    <select class="govuk-select" id="am-pm" name="sort">
                       <option value=""></option>
                       <option value="AM">AM</option>
                       <option value="PM" selected>PM</option>
@@ -429,10 +430,10 @@ GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                   Time
                 </label>
-                <span id="statementRelease-time" class="govuk-hint">
+                <span id="statementRelease-time2" class="govuk-hint">
                   For example, 10:00AM
                 </span>
-                <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input" id="hour-to-release">
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
                       <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
@@ -458,7 +459,7 @@ GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                         AM/PM
                       </label>
-                      <select class="govuk-select" id="sort" name="sort">
+                      <select class="govuk-select" id="ampm" name="sort">
                         <option value=""></option>
                         <option value="AM">AM</option>
                         <option value="PM" selected>PM</option>
