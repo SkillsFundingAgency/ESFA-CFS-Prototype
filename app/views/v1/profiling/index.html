@@ -1,0 +1,60 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+    endblock %} 
+    
+    {% block content %}
+    
+    <div class="govuk-grid-row  govuk-!-margin-bottom-9">
+      <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+          <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item" aria-current="page">
+              Profiling
+            </li>
+          </ol>
+        </div>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Profiling</h1>
+        <span class="govuk-caption-xl"></span>
+      </div>
+    </div>
+    
+    <!-- Top row start -->
+    <div class="govuk-grid-row govuk-!-margin-bottom-9">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m"><a href="view-provider-results/funding-stream.html">View provider results</a></h3>
+        <p class="govuk-body">Select a provider to view its calculation and quality assurance test results.</p>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">
+          <a href="view-specification-results/select-specification.html">View specification results</a>
+        </h3>
+        <p class="govuk-body">
+          Select a specification to view the calculation.
+        </p>
+    </div>
+    
+    <!--<div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m"><a href="view-qa-results/qa-results.html">View QA test result</a></h3>
+        <p class="govuk-body">View the passes and failures for quality assurances tests.</p>
+      </div> -->
+    <!-- removed as per user story 25341
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">
+          <a href="view-calculations-results/calculation-results.html">View calculation results</a>
+        </h3>
+        <p class="govuk-body">
+          View the results of a calculation.
+        </p>
+      </div> 
+    -->
+    </div>
+    
+    <!-- Top row end -->
+    <div class="govuk-grid-row">
+    
+    </div>
+    
+    {% endblock %}
+    </div>
