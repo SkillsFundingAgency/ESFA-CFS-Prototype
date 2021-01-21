@@ -31,18 +31,19 @@ GOV.UK Prototype Kit
 </div>
 
 
-<div class="govuk-error-summary hideError" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+<div class="govuk-error-summary hideError" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+    data-module="govuk-error-summary">
     <h2 class="govuk-error-summary__title" id="error-summary-title">
-      There is a problem
+        There is a problem
     </h2>
     <div class="govuk-error-summary__body">
-      <ul class="govuk-list govuk-error-summary__list">
-        <li>
-          <a href="#profile">Profile value cannot be greated than funding line value</a>
-        </li>
-      </ul>
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#profile">Profile value cannot be greated than funding line value</a>
+            </li>
+        </ul>
     </div>
-  </div>
+</div>
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
@@ -62,11 +63,11 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
 
         <table class="govuk-table govuk-!-margin-top-7" id="profile">
-            <caption class="govuk-table__caption">Profilling installments</caption>
+            <caption class="govuk-table__caption">Profiling instalments</caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header ">Installment</th>
-                    <th scope="col" class="govuk-table__header">Installment number</th>
+                    <th scope="col" class="govuk-table__header ">Instalment</th>
+                    <th scope="col" class="govuk-table__header">Instalment number</th>
                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage</th>
                 </tr>
             </thead>
@@ -77,56 +78,58 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<button class="govuk-button" data-module="govuk-button" id="addInstallment" onclick="addInstallment()"> Add installment </button>
+<button class="govuk-button" data-module="govuk-button" id="addInstallment" onclick="addInstallment()"> Add installment
+</button>
 
-<button class="govuk-button" data-module="govuk-button" id="deleteInstallment" onclick="deleteInstallment(); sumTotal()"> Delete installment </button>
+<button class="govuk-button" data-module="govuk-button" id="deleteInstallment"
+    onclick="deleteInstallment(); sumTotal()"> Delete installment </button>
 
-        <button class="govuk-button govuk-!-margin-right-1" onclick="totalError()" href="">
-            Save and continue
-        </button>
-          
-          <a class="govuk-button govuk-button--secondary" href="profile-patterns.html">
-            Cancel
-          </a>
+<button class="govuk-button govuk-!-margin-right-1" onclick="totalError()" href="">
+    Save and continue
+</button>
 
-    </div>
+<a class="govuk-button govuk-button--secondary" href="profile-patterns.html">
+    Cancel
+</a>
+
+</div>
 </div>
 
 <script>
 
-//Profiling insert installment
+    //Profiling insert instalment
 
-function addInstallment() {
-  var newRow=document.getElementById('profile').insertRow();  
-  newRow.innerHTML = "<th scope='row' class='govuk-table__header'>August 2021</th><td class='govuk-table__cell'>12</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-3' id='installmentValue' name='installmentValue' type='number'></div></td>";
-}
+    function addInstallment() {
+        var newRow = document.getElementById('profile').insertRow();
+        newRow.innerHTML = "<th scope='row' class='govuk-table__header'>August 2021</th><td class='govuk-table__cell'>12</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-3' id='installmentValue' name='installmentValue' type='number'></div></td>";
+    }
 
-//Delete last installment
+    //Delete last instalment
 
-function deleteInstallment() {
-  document.getElementById("profile").deleteRow(-1);
-}
+    function deleteInstallment() {
+        document.getElementById("profile").deleteRow(-1);
+    }
 
-// Check value is correct 
+    // Check value is correct 
 
-function sumTotal() {
-    var arr = document.getElementsByName('installmentValue');
-    var total= 0;
-    for(var i=0;i<arr.length;i++){
-        if(parseInt(arr[i].value))
-            total += parseInt(arr[i].value);
+    function sumTotal() {
+        var arr = document.getElementsByName('installmentValue');
+        var total = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (parseInt(arr[i].value))
+                total += parseInt(arr[i].value);
             console.log(total)
             // Show total value in 'total profile value'
             document.getElementById("profileTotal").innerHTML = total
+        }
     }
-}
 
-function totalError() {
-    if (total != "100");
-    {
-        document.querySelector('.govuk-error-summary').style.display = 'block';
+    function totalError() {
+        if (total != "100");
+        {
+            document.querySelector('.govuk-error-summary').style.display = 'block';
+        }
     }
-}
 
 </script>
 
