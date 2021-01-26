@@ -451,10 +451,10 @@ GOV.UK Prototype Kit
 
     //Profiling insert installment
 
-    function addInstallment() {
-        var newRow = document.getElementById('profile').insertRow();
-        newRow.innerHTML = "<th scope='row' class='govuk-table__header'>September 2021</th><td class='govuk-table__cell'>2</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-3' id='installmentValue' name='installmentValue' type='number'></div></td>";
-    }
+    // function addInstallment() {
+    //    var newRow = document.getElementById('profile').insertRow();
+    //    newRow.innerHTML = "<th scope='row' class='govuk-table__header'>September 2021</th><td class='govuk-table__cell'>2</td><td class='govuk-table__cell'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-3' id='installmentValue' name='installmentValue' type='number'></div></td>";
+    //  }
 
     //Delete last installment
 
@@ -462,6 +462,13 @@ GOV.UK Prototype Kit
         document.getElementById("profile").deleteRow(-1);
     }
 
+
+
+    $(document).ready(function () {
+        $('body').on('click', 'table a', function (e) {
+            $(this).closest('tr').after('<tr><td>New Content 1</td><td><a href="#">New Content 2</a></td></tr>');
+        });
+    });
 
 </script>
 
