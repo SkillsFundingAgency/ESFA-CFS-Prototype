@@ -68,7 +68,7 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-        <table class="govuk-table govuk-!-margin-top-7">
+        <table class="govuk-table govuk-!-margin-top-7" id="profile">
             <caption class="govuk-table__caption">Profiling instalments
             </caption>
             <thead class="govuk-table__head">
@@ -77,7 +77,7 @@ GOV.UK Prototype Kit
                     </th>
                     <th scope="col" class="govuk-table__header">Instalment number</th>
                     <th scope="col" class="govuk-table__header">Per cent</th>
-                    <th scope="col" class="govuk-table__header">Per cent</th>
+                    <th scope="col" class="govuk-table__header">Manage rows</th>
 
                 </tr>
             </thead>
@@ -98,7 +98,18 @@ GOV.UK Prototype Kit
 
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell">
+                        <button class="govuk-button" data-module="govuk-button" id="addInstallment"
+                            onclick="addInstallment()"> Add row
+                        </button>
+                        </br>
+                        <button class="govuk-button" data-module="govuk-button" id="deleteInstallment"
+                            onclick="deleteInstallment(); sumTotal()"> Delete row </button>
+
+
+
+                        <!-- <a href="#" class="govuk-link">Add row</a></br><a href="#" class="govuk-link">Delete row</a>-->
+                    </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">October 2020</th>
@@ -116,7 +127,9 @@ GOV.UK Prototype Kit
 
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">November 2020</th>
@@ -134,7 +147,9 @@ GOV.UK Prototype Kit
 
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">December 2020 </th>
@@ -152,7 +167,9 @@ GOV.UK Prototype Kit
 
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">January 2021</th>
@@ -170,7 +187,9 @@ GOV.UK Prototype Kit
 
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
 
                 </tr>
                 <tr class="govuk-table__row">
@@ -187,7 +206,9 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
 
                 </tr>
                 <tr class="govuk-table__row">
@@ -205,7 +226,9 @@ GOV.UK Prototype Kit
                             <!--<a class="govuk-!-margin-top-2 govuk-link" href="">Flat profile</a>-->
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
 
                 </tr>
                 <tr class="govuk-table__row">
@@ -222,7 +245,9 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
 
                 </tr>
                 <tr class="govuk-table__row">
@@ -239,7 +264,9 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">June 2021</th>
@@ -255,7 +282,9 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
 
                 </tr>
                 <tr class="govuk-table__row">
@@ -272,11 +301,13 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
 
                 </tr>
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Aug 2021</th>
+                    <th scope="row" class="govuk-table__header">August 2021</th>
                     <td class="govuk-table__cell">12</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
@@ -289,7 +320,9 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Add row</a></br><a href="#"
+                            class="govuk-link">Delete row</a>
+                    </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">Total allocation</th>
@@ -411,6 +444,25 @@ GOV.UK Prototype Kit
             elem.msRequestFullscreen();
         }
     }
+
+
+
+
+
+    //Profiling insert installment
+
+    function addInstallment() {
+        var newRow = document.getElementById('profile').insertRow();
+        newRow.innerHTML = "<th scope='row' class='govuk-table__header'>September 2021</th><td class='govuk-table__cell'>2</td><td class='govuk-table__cell govuk-table__cell--numeric'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-3' id='installmentValue' name='installmentValue' type='number'></div></td>";
+    }
+
+    //Delete last installment
+
+    function deleteInstallment() {
+        document.getElementById("profile").deleteRow(-1);
+    }
+
+
 </script>
 
 {% endblock %}
