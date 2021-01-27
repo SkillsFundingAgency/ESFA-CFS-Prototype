@@ -11,12 +11,14 @@ $(document).ready(function () {
 
 // remove row 
 $('table').on('click', 'a[id="deleteRow"]', function(e){
-  $(this).closest('tr').remove()
+  $(this).closest('tr').remove();
+  e.preventDefault();
 });
 
-// add row
+// add row profiling
 $('table').on('click','a[id="addRow"]', function(e){
-  $(this).closest('tr').after('<tr><td>test #1</td><td><a id="deleteRow" href="#">Remove row</a></td><td><a id="addRow" href="#">Add row</a></td></tr>')
+  $(this).closest('tr').after('<tr class="govuk-table__row"> <th scope="row" class="govuk-table__header"> <div class="govuk-form-group"> <select class="govuk-select" id="sort" name="sort"> <option value="september" selected>September 2020</option> <option value="october">October 2020</option> <option value="november">November 2020</option> <option value="december">December 2020</option> <option value="january">January 2021</option> <option value="february">February 2021</option> <option value="march">March 2021</option> <option value="april">April 2021</option> <option value="may">May 2021</option> <option value="june">June 2021</option> <option value="july">July 2021</option> <option value="august">August 2021</option> </select> </div></th> <th scope="row" class="govuk-table__header"> <div class="govuk-form-group"> <select class="govuk-select" id="sort" name="sort"> <option value="1" selected>1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> </select> </div></th> <td class="govuk-table__cell"> <div class="govuk-form-group"> <div class="govuk-input__wrapper"> <input aria-label="Enter the total percetage for January. Enter 0 if this does not apply" class="input-suffix govuk-input govuk-input--width-5" id="input-4" onblur=" sumPercentage()" name="installmentPercentage" type="text" value="10" aria-describedby="percent"> <div class="govuk-input__suffix" aria-hidden="true">%</div></div></div></td><td class="govuk-table__cell"> <a id="addRow" href="#">Add row</a> </br> <a href="#" id="deleteRow">Remove row</a> </td></tr>')
+  e.preventDefault();
 });
 
 //Filter and search 
