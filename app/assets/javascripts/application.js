@@ -12,8 +12,12 @@ $(document).ready(function () {
 // remove row 
 $('table').on('click', 'a[id="deleteRow"]', function(e){
   $(this).closest('tr').remove()
-})
+});
 
+// add row
+$('table').on('click','a[id="addRow"]', function(e){
+  $(this).closest('tr').after('<tr><td>test #1</td><td><a id="deleteRow" href="#">Remove row</a></td><td><a id="addRow" href="#">Add row</a></td></tr>')
+});
 
 //Filter and search 
 $(document).ready(function () {
@@ -267,5 +271,3 @@ function goBack() {
 function goBack2() {
   window.history.go(-2);
 }
-
-
