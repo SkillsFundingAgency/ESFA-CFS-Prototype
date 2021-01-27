@@ -1,14 +1,17 @@
-
-
 /* global $ */
 
 // Warn about using the kit in production
 if (window.console && window.console.info) {
-  window.console.info('GOV.UK Prototype Kit - do not use for production')
+  window.console.info('GOV.UK Prototype Kit - do not use for production');
 }
 
 $(document).ready(function () {
-  window.GOVUKFrontend.initAll()
+  window.GOVUKFrontend.initAll();
+});
+
+// remove row 
+$('table').on('click', 'a[id="deleteRow"]', function(e){
+  $(this).closest('tr').remove()
 })
 
 
@@ -17,7 +20,7 @@ $(document).ready(function () {
   $("#myInput").on("keyup", function () {
     var value = $(this).val().toLowerCase();
     $("#myList li").filter(function () {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
 });
@@ -27,7 +30,7 @@ $(document).ready(function () {
   $("#mainContentSearch").on("keyup", function () {
     var value = $(this).val().toLowerCase();
     $("#mainContentResults tr").filter(function () {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
 });
@@ -37,7 +40,7 @@ $(document).ready(function () {
   $("#profilingSearch").on("keyup", function () {
     var value = $(this).val().toLowerCase();
     $("#accordion-default div").filter(function () {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
 });
@@ -47,7 +50,7 @@ $(document).ready(function () {
   $("#mainContentSearch").on("keyup", function () {
     var value = $(this).val().toLowerCase();
     $("#mainContentResults div").filter(function () {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
 });
@@ -57,8 +60,7 @@ $('.filter-expand').click(function () {
   if ($("[id^=filter-content]").hasClass('filter-content')) {
     $("[id^=filter-content]").removeClass('filter-content');
     $("[id^=arrowRotate]").addClass('arrowChange');
-  }
-  else {
+  } else {
     $("[id^=arrowRotate]").removeClass('arrowChange');
     $("[id^=filter-content]").addClass('filter-content');
   }
@@ -90,9 +92,11 @@ $(function () {
     "Scala",
     "Scheme"
   ];
+
   function split(val) {
     return val.split(/,\s*/);
   }
+
   function extractLast(term) {
     return split(term).pop();
   }
@@ -105,7 +109,8 @@ $(function () {
         event.preventDefault();
       }
     })
-    .autocomplete({
+
+    .autocomplete ({
       minLength: 0,
       source: function (request, response) {
         // delegate back to autocomplete, but extract the last term
@@ -147,7 +152,7 @@ $(function () {
 
 
 // Select all checkboxesç
-$('#select-all').click(function (event) {
+$('#select-all').click(function () {
   if (this.checked) {
     // Iterate each checkbox
     $('.govuk-table .govuk-table__cell .govuk-checkboxes .govuk-checkboxes__item :checkbox').each(function () {
@@ -179,14 +184,14 @@ $('#gag-repayment-no').change(function () {
 $(function () {
   $('#specification').on('change', function () {
     $('#specification-link').attr('href', $(this).val());
-  })
+  });
 });
 
 
 // Checkbox count 
 
-var count
-var checked = 0
+var count = 0;
+var checked = 0;
 
 count = $("input[id='provider-approval']").length;
 document.getElementById("checkbox-count").innerHTML = count;
@@ -195,15 +200,13 @@ $(".provider-checked").click(function () {
   checked = $('.provider-checked:checked').length;
   console.log(checked);
   document.getElementById("checkbox-checked").innerHTML = checked;
-  $("#select-all").prop('checked', false)
+  $("#select-all").prop('checked', false);
 });
 
 $("#select-all").click(function () {
   if (this.checked) {
     $('.provider-checked:checkbox').not(this).prop('checked', this.checked);
     document.getElementById("checkbox-checked").innerHTML = count;
-  } else {
-    document.getElementById("checkbox-checked").innerHTML = 0;
   }
 });
 
@@ -211,10 +214,10 @@ $('.provider-checked').change(function () {
   var total = 0;
   $('.provider-checked:checked').each(function () {
     total += $(this).closest('.provider-value').text();
-    console.log(total)
+    console.log(total);
   });
   $('#total').text(total);
-  console.log(total)
+  console.log(total);
 });
 
 
@@ -228,14 +231,14 @@ function tallyValues() {
   var fundingTotal = 0;
 
   // Loop through each dom element
-  $('table .provider-value').each(function (i, val) {
+  $('table .provider-value').each(function () {
 
     // Find the previous sibling (td) and then find the input inside and see if it's checked
     var checkbox_cell_is_checked = $(this).prev().find('input').is(':checked');
 
     // Is it checked?
     if (checkbox_cell_is_checked) {
-      fundingTotal += parseInt($(this).text())
+      fundingTotal += parseInt($(this).text());
     }
   });
 
@@ -253,7 +256,6 @@ function showEdit() {
   document.getElementById('viewEdit').style.display = 'block';
 }
 
-
 // Go back (onclick="goBack()")
 
 function goBack() {
@@ -265,7 +267,5 @@ function goBack() {
 function goBack2() {
   window.history.go(-2);
 }
-
-// Autocomplete
 
 
