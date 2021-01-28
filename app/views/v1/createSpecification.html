@@ -21,34 +21,7 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
-    <div id="error-summary" class="govuk-error-summary govuk-visually-hidden" aria-labelledby="error-summary-title"
-      role="alert" tabindex="-1" data-module="govuk-error-summary">
-      <h2 class="govuk-error-summary__title" id="error-summary-title">
-        There is a problem
-      </h2>
-      <div class="govuk-error-summary__body">
-        <ul class="govuk-list govuk-error-summary__list">
-          <li id="specification-name-errorSummary" class="govuk-visually-hidden">
-            <a href="#spec-name">Enter a specification name</a>
-          </li>
-          <li id="funding-stream-errorSummary" class="govuk-visually-hidden">
-            <a href="#funding-stream-error">Select a funding stream</a>
-          </li>
-          <li id="funding-period-errorSummary" class="govuk-visually-hidden">
-            <a href="#funding-period-error">Select a funding period</a>
-          </li>
-          <li id="providerData-errorSummary" class="govuk-visually-hidden">
-            <a href="#providerData-error">Please select an option</a>
-          </li>
-          <li id="template-version-errorSummary" class="govuk-visually-hidden">
-            <a href="#template-version-error">Select a template version</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-
-    <form action="/v1/specifications" id="createSpec" method="post" name="createSpecForm" class="form">
+<form action="/v1/specifications" id="createSpec" method="post" novalidate data-validate='create-spec'>
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
@@ -60,9 +33,6 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="spec-name">
             Specification name
           </label>
-          <span id="specification-name-error" class="govuk-error-message govuk-visually-hidden">
-            <span class="govuk-visually-hidden">Error:</span> Enter a specification name
-          </span>
           <input class="govuk-input govuk-!-width-two-thirds" id="spec-name" name="spec-name" type="text">
         </div>
 
@@ -70,9 +40,7 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="fundingStreamSpecification">
             Funding stream
           </label>
-          <span id="funding-stream-error" class="govuk-error-message govuk-visually-hidden">
-            <span class="govuk-visually-hidden">Error:</span> Select a funding stream
-          </span>
+      
           <select class="govuk-select" id="fundingStreamSpecification" name="fundingStreamSpecification">
             <option value=""></option>
             <option value="fundingLineStructure-chosen">16 to 19</option>
@@ -87,9 +55,7 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="fundingPeriod">
             Funding period
           </label>
-          <span id="funding-period-error" class="govuk-error-message govuk-visually-hidden">
-            <span class="govuk-visually-hidden">Error:</span> Select a funding period
-          </span>
+         
           <select class="govuk-select" id="fundingPeriod" name="fundingPeriod">
             <option value=""></option>
             <option value="A-SAY2019-2020">Academies and Schools Academic Year 2019 to 2020</option>
@@ -175,7 +141,7 @@ GOV.UK Prototype Kit
           <textarea class="govuk-textarea" id="more-detail" name="spec-detail" rows="8"></textarea>
         </div>
       </fieldset>
-      <button class="govuk-button" type="submit" data-module="govuk-button">Save and
+      <button class="govuk-button" data-module="govuk-button">Save and
         continue</button>
       <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Cancel
@@ -185,8 +151,15 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<script src="/public/javascripts/form-validation/create-spec.js">
 
+<script type="application/json" id="create-spec">
+{ 		  	
+			  	"spec-name": {
+			      "presence": {
+			        "message": "^you must provide your name"
+			      }
+			    }
+}
 
 </script>
 
