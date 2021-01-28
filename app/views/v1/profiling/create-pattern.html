@@ -40,48 +40,50 @@ GOV.UK Prototype Kit
 
 
 
+<form action="/v1/profiling/create-pattern2" method="post" class="form">
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
 
 
-        <div class="govuk-form-group">
-            <label class="govuk-label" for="address-line-1">
-                Rule based pattern name
-            </label>
-            <span id="event-name-hint" class="govuk-hint">
-                Use a descriptive unique name other users can understand
-            </span>
-            <input class="govuk-input" id="address-line-1" name="rule-based-pattern-name" type="text">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                    Rule based pattern name
+                </label>
+                <span id="event-name-hint" class="govuk-hint">
+                    Use a descriptive unique name other users can understand
+                </span>
+                <input class="govuk-input" id="address-line-1" name="rule-based-pattern-name" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="more-detail">
+                    Description
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="rule-based-pattern-detail" rows="8"
+                    aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+
+            <a href="view-all-rule-patterns.html" class="govuk-button govuk-button--secondary"
+                data-module="govuk-button">
+                Cancel
+            </a>
+
+
         </div>
-
-        <div class="govuk-form-group">
-            <label class="govuk-label" for="more-detail">
-                Description
-            </label>
-            <textarea class="govuk-textarea" id="more-detail" name="data-more-detail" rows="8"
-                aria-describedby="more-detail-hint"></textarea>
-        </div>
-
-
-        <a href="create-pattern2.html" class="govuk-button" data-module="govuk-button">
-            Continue
-        </a>
-
-
-        <a href="view-all-rule-patterns.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Cancel
-        </a>
-
-
     </div>
-</div>
 
 
 
 
-
+</form>
 
 
 

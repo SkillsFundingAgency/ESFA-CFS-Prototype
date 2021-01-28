@@ -6,7 +6,7 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
+<div class="govuk-grid-row govuk-!-margin-bottom-1">
     <div class="govuk-grid-column-full">
         <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
             <ol class="govuk-breadcrumbs__list">
@@ -27,17 +27,43 @@ GOV.UK Prototype Kit
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
                     View 16-19 Programme Funding
                 </li>
+
             </ol>
         </div>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">16-19 Programme Funding
-        </h1>
-        <span class="govuk-caption-xl">View rule based pattern</span>
+
     </div>
 </div>
 
+
+
+<div class="govuk-grid-row govuk-!-margin-top-1">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-notification-banner govuk-visually-hidden govuk-notification-banner--success"
+            id="notification-banner" role="alert" aria-labelledby="govuk-notification-banner-title"
+            data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Success
+                </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+                <p class="govuk-notification-banner__heading">
+                    Permissions updated for <span id="user">{{ data['user-select'] }}</span> for the
+                    {{ data['funding-stream'] }} funding stream.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-        <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">16-19 Programme Funding
+        </h1>
+        <span class="govuk-caption-xl">View rule based pattern</span>
+        <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
             <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
                     What is 16-19 Programme Funding?
@@ -142,9 +168,21 @@ GOV.UK Prototype Kit
                     data-module="govuk-button">Approve pattern</a>
 
                 <p><a href="#" class="govuk-link" data-module="govuk-button">Export to CSV</a></p>
+                <p class="govuk-body" id="lastSaved">Last edited 25 March 2020 2:57pm </br>by Robert SPARKS</p>
 
                 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
             </div>
         </div>
+
+
+
+        <script>
+
+
+            function notificationBanner() {
+                document.getElementById('notification-banner').classList.remove('govuk-visually-hidden')
+                window.scrollTo(0, 0);
+            }
+        </script>
 
         {% endblock %}

@@ -6,7 +6,7 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+<div class="govuk-grid-row  govuk-!-margin-bottom-1">
     <div class="govuk-grid-column-full">
         <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
             <ol class="govuk-breadcrumbs__list">
@@ -25,50 +25,68 @@ GOV.UK Prototype Kit
                         patterns</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/profiling/create-pattern">Name and
-                        description</a>
+                    <a class="govuk-breadcrumbs__link" href="/v1/profiling/create-pattern"> {{
+                        data['rule-based-pattern-name'] }}</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Create pattern for {{ data['rule-based-pattern-name'] }}
-
+                    Create rule based pattern
                 </li>
             </ol>
         </div>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2"> Create pattern for {{ data['rule-based-pattern-name'] }}
-        </h1>
+
+    </div>
+</div>
+
+
+<div class="govuk-grid-row govuk-!-margin-top-1">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-notification-banner govuk-visually-hidden govuk-notification-banner--success"
+            id="notification-banner" role="alert" aria-labelledby="govuk-notification-banner-title"
+            data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Success
+                </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+                <p class="govuk-notification-banner__heading">
+                    Rule based pattern {{
+                    data['rule-based-pattern-name'] }} has been successfully saved.
+
+
+                </p>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-        <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{
+            data['rule-based-pattern-name'] }}
+        </h1>
+        <span class="govuk-caption-xl">Create rule based pattern</span>
+        <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
             <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                    What is 16-19 Programme Funding?
+                    What is {{
+                    data['rule-based-pattern-name'] }}?
                 </span>
             </summary>
             <div class="govuk-details__text">
-                <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt
-                    ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris
-                    nisi
-                    ut aliquip ex ea commodo consequat.<a
+                <p class="govuk-body">{{
+                    data['rule-based-pattern-detail'] }}<a
                         onclick="document.getElementById('editDescription').style.display='block'" href="#"
-                        class="govuk-link">Edit</a> </p>
+                        class="govuk-link"> Edit</a> </p>
             </div>
         </details>
     </div>
 </div>
 
-
-
-
-
-
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-        <table class="govuk-table govuk-!-margin-top-7">
+        <table class="govuk-table govuk-!-margin-top-7" id="profile">
             <caption class="govuk-table__caption">Profiling instalments
             </caption>
             <thead class="govuk-table__head">
@@ -77,12 +95,67 @@ GOV.UK Prototype Kit
                     </th>
                     <th scope="col" class="govuk-table__header">Instalment number</th>
                     <th scope="col" class="govuk-table__header">Per cent</th>
+                    <th scope="col" class="govuk-table__header">Manage rows</th>
+
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 September 2020</th>
-                    <td class="govuk-table__cell">1</td>
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-form-group">
+
+                            <select class="govuk-select" id="sort" name="sort">
+                                <option value="september" selected>September 2020</option>
+                                <option value="october">October 2020</option>
+                                <option value="november">November 2020</option>
+                                <option value="december">December 2020</option>
+                                <option value="january">January 2021</option>
+                                <option value="february">February 2021</option>
+                                <option value="march">March 2021</option>
+                                <option value="april">April 2021</option>
+                                <option value="may">May 2021</option>
+                                <option value="june">June 2021</option>
+                                <option value="july">July 2021</option>
+                                <option value="august">August 2021</option>
+
+                            </select>
+                        </div>
+
+                    </th>
+                    <th scope="row" class="govuk-table__header">
+                        <div class="govuk-form-group">
+
+                            <select class="govuk-select" id="sort" name="sort">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+
+                            </select>
+                        </div>
+
+                    </th>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group">
                             <div class="govuk-input__wrapper">
@@ -96,204 +169,40 @@ GOV.UK Prototype Kit
 
                         </div>
                     </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 October 2020</th>
-                    <td class="govuk-table__cell">2</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper">
-                                <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
-                                    onblur=" sumPercentage()" name="installmentPercentage" type="text" value="10"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-
-                        </div>
+                        <a id="addRow" href="#">Add row</a>
+                        </br>
+                        <a href="#">Remove row</a>
                     </td>
                 </tr>
+
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 November 2020</th>
-                    <td class="govuk-table__cell">3</td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper">
-                                <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
-                                    onblur=" sumPercentage()" name="installmentPercentage" type="text" value="10"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-
-                        </div>
+                    <th scope="row" class="govuk-table__header">Total allocation</th>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><span class="govuk-!-margin-right-2"
+                            id="profilePercentage"></span><strong>%</strong>
                     </td>
+                    <td class="govuk-table__cell"></td>
                 </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 December 2020 </th>
-                    <td class="govuk-table__cell">4</td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper">
-                                <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
-                                    onblur=" sumPercentage()" name="installmentPercentage" type="text" value="10"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-
-                        </div>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 January 2021</th>
-                    <td class="govuk-table__cell">5</td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper">
-                                <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
-                                    onblur=" sumPercentage()" name="installmentPercentage" type="text" value="10"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-
-                        </div>
-                    </td>
-
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 February 2021</th>
-                    <td class="govuk-table__cell">6</td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper"> <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
-                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="10"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-                        </div>
-                    </td>
-
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 March 2021</th>
-                    <td class="govuk-table__cell">7</td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper"> <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
-                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="10"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-                            <!--<a class="govuk-!-margin-top-2 govuk-link" href="">Flat profile</a>-->
-                        </div>
-                    </td>
-
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 April 2021</th>
-                    <td class="govuk-table__cell">8</td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper"> <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
-                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="10"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-                        </div>
-                    </td>
-
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 May 2021</th>
-                    <td class="govuk-table__cell">9</td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper"> <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
-                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="10"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-                        </div>
-                    </td>
-
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 June 2021</th>
-                    <td class="govuk-table__cell">10</td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper"> <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
-                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="10"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-                        </div>
-                    </td>
-
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 July 2021</th>
-                    <td class="govuk-table__cell">11</td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper"> <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
-                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="0"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-                        </div>
-                    </td>
-
-                </tr>
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">8 Aug 2021</th>
-                    <td class="govuk-table__cell">12</td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper"> <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
-                                    onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="0"
-                                    aria-describedby="percent">
-                                <div class="govuk-input__suffix" aria-hidden="true">%</div>
-                            </div>
-                        </div>
-                    </td>
-
-                </tr>
-
-
-
             </tbody>
         </table>
     </div>
 </div>
 
-<a class="govuk-button govuk-!-margin-right-1" href="view-pattern.html">
-    Save
-</a>
 
-<a class="govuk-button govuk-button--secondary" href="view-pattern.html">
+<button class="govuk-button govuk-!-margin-right-1" onclick="notificationBanner()" data-module="govuk-button">
+    Save
+</button>
+
+<a class="govuk-button govuk-button--secondary" href="view-all-rule-patterns.html">
     Cancel
 </a>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="index.html" class="govuk-back-link">Back</a>
+    </div>
+</div>
 
 </div>
 </div>
@@ -337,13 +246,10 @@ GOV.UK Prototype Kit
             </div>
         </dialog>
     </div>
-    <div class="govuk-modal-dialogue__backdrop"></div>
+
 </div>
 
 <script>
-
-
-
     // Sum percentages
 
     function sumPercentage() {
@@ -388,6 +294,37 @@ GOV.UK Prototype Kit
             /* IE/Edge */
             elem.msRequestFullscreen();
         }
+    }
+
+
+
+
+
+    //Profiling insert installment
+
+    // function addInstallment() {
+    //    var newRow = document.getElementById('profile').insertRow();
+    //    newRow.innerHTML = "<th scope='row' class='govuk-table__header'>September 2021</th><td class='govuk-table__cell'>2</td><td class='govuk-table__cell'><div class='govuk-form-group'><input onblur='sumTotal()' class='govuk-input govuk-input--width-3' id='installmentValue' name='installmentValue' type='number'></div></td>";
+    //  }
+
+    //Delete last installment
+
+    function deleteInstallment() {
+        document.getElementById("profile").deleteRow(-1);
+    }
+
+
+
+    $(document).ready(function () {
+        $('body').on('click', 'table a', function (e) {
+            $(this).closest('tr').after(
+                '<tr><td>New Content 1</td><td><a href="#">New Content 2</a></td></tr>');
+        });
+    });
+
+    function notificationBanner() {
+        document.getElementById('notification-banner').classList.remove('govuk-visually-hidden')
+        window.scrollTo(0, 0);
     }
 </script>
 
