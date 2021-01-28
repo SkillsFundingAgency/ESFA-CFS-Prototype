@@ -42,7 +42,6 @@ GOV.UK Prototype Kit
                         </li>
                         <li>Providers already approved or released will not be shown in the provider count summaries
                         </li>
-
                     </ul>
         </div>
     </div>
@@ -63,14 +62,14 @@ GOV.UK Prototype Kit
             data-module="govuk-button">
             Release funding
         </button>
-        <a class="govuk-button govuk-button--secondary" href="../view-funding.html" data-module="govuk-button">
-            Cancel
-        </a>
+        <button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" onclick="processHold()"
+            data-module="govuk-button">
+            Process hold status
+        </button>
         </fieldset>
         </form>
     </div>
 </div>
-
 
 <script>
     function approve() {
@@ -80,10 +79,11 @@ GOV.UK Prototype Kit
 
     function release() {
         document.getElementById('batchProviders').action = 'batch-release-in-progress'
+    }
 
+    function processHold() {
+        document.getElementById('batchProviders').action = 'process-hold-in-progress'
     }
 </script>
-
-
 
 {% endblock %}
