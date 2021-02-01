@@ -164,7 +164,7 @@ GOV.UK Prototype Kit
 
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <a href="edit-profile.html" class="govuk-button" data-module="govuk-button">Edit profile</a>
+                <a href="edit-profile.html" class="govuk-button" data-module="govuk-button">Edit pattern</a>
                
                 <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" onclick="document.getElementById('approveFunding').style.display='block'" data-module="govuk-button">
                  Approve pattern
@@ -199,7 +199,7 @@ GOV.UK Prototype Kit
         </button>
       </div>
       <div class="govuk-modal-dialogue__content">
-        <p class="govuk-body">Are you sure you want to approve the rull based pattern 16-19 Programme Funding?</p>
+        <p class="govuk-body">Are you sure you want to approve the rule based pattern 16-19 Programme Funding?</p>
        
         <button class="govuk-button govuk-!-margin-right-1 govuk-button--warning" onclick="notificationBanner()" data-module="govuk-button" data-module="govuk-button">
 Approve pattern</button>
@@ -224,7 +224,8 @@ Approve pattern</button>
 
             function notificationBanner() {
                 document.getElementById('notification-banner').classList.remove('govuk-visually-hidden')
-                window.scrollTo(0, 0);
+                window.scrollTo(0, 0)
+                document.getElementById('approveFunding').style.display='none';
             }
         </script>
 
