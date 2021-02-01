@@ -25,7 +25,7 @@ GOV.UK Prototype Kit
                         patterns</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/profiling/create-pattern"> {{
+                    <a class="govuk-breadcrumbs__link" href="/v1/profiling/create-pattern" aria-label="rule-based-pattern-name"> {{
                         data['rule-based-pattern-name'] }}</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
@@ -63,7 +63,7 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2" aria-label="rule based pattern name">{{
             data['rule-based-pattern-name'] }}
         </h1>
         <span class="govuk-caption-xl">Create rule based pattern</span>
@@ -104,7 +104,7 @@ GOV.UK Prototype Kit
                     <th scope="row" class="govuk-table__header">
                         <div class="govuk-form-group">
 
-                            <select class="govuk-select" id="sort" name="sort">
+                            <select class="govuk-select" id="month" name="sort" aria-label="month selection">
                                 <option value="september" selected>September 2020</option>
                                 <option value="october">October 2020</option>
                                 <option value="november">November 2020</option>
@@ -125,7 +125,7 @@ GOV.UK Prototype Kit
                     <th scope="row" class="govuk-table__header">
                         <div class="govuk-form-group">
 
-                            <select class="govuk-select" id="sort" name="sort">
+                            <select class="govuk-select" id="instalment" name="sort" aria-label="instalment selection">
                                 <option value="1" selected>1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -160,10 +160,10 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <div class="govuk-input__wrapper">
                                 <input
-                                    aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
+                                    aria-label="Enter the total percentage for January. Enter 0 if this does not apply"
                                     class="input-suffix govuk-input govuk-input--width-5" id="input-4"
                                     onblur=" sumPercentage()" name="installmentPercentage" type="text" value="10"
-                                    aria-describedby="percent">
+                                    >
                                 <div class="govuk-input__suffix" aria-hidden="true">%</div>
                             </div>
 
@@ -200,7 +200,7 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <a href="index.html" class="govuk-back-link">Back</a>
+        <a href="./view-all-rule-patterns" class="govuk-back-link">Back</a>
     </div>
 </div>
 
@@ -213,7 +213,7 @@ GOV.UK Prototype Kit
 <div class="govuk-modal-dialogue" id="editDescription" data-module="govuk-modal-dialogue">
     <div class="govuk-modal-dialogue__wrapper">
         <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
-            aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
+            aria-label="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
             <div class="govuk-modal-dialogue__header" id="fullScreen">
                 <svg role="presentation" focusable="false" class="govuk-modal-dialogue__crown"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 97" height="30" width="36">
@@ -235,7 +235,7 @@ GOV.UK Prototype Kit
                         Edit description
                     </label>
                     <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
-                        aria-describedby="more-detail-hint"> </textarea>
+                        aria-label="more-detail-hint"> </textarea>
                 </div>
 
                 <button type="button" onclick="document.getElementById('editDescription').style.display='none'"
