@@ -1,9 +1,11 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit {%
 endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-4">
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
     <div class="govuk-grid-column-full">
         <div class="govuk-breadcrumbs">
             <ol class="govuk-breadcrumbs__list">
@@ -21,30 +23,30 @@ endblock %}
     </div>
 </div>
 
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Select funding stream</h1>
-<span class="govuk-caption-xl govuk-!-margin-bottom-8">Select a funding stream to view and edit rule based patterns
-    for</span>
-
-<form action="/v1/profiling/view-all-rule-patterns" id="funding-stream" method="post" novalidate data-validate='funding-stream'>
-
-    <div class="govuk-form-group">
-    <label class="govuk-label" for="sort">
-        Funding stream
-    </label>
-    <select class="govuk-select" id="selectfundingStream" aria-label="funding stream">
-        <option></option>
-        <option value="16-19/16-19-results">16 to 19</option>
-        <option value="14-16/14-16-results">14 to 16</option>
-        <option value="gag/gag-results">General Annual Grant</option>
-        <option value="pna/pna-results">Academy Pupil Number Adjustment</option>
-    </select>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="/v1/profiling/view-all-rule-patterns" method="post" novalidate data-validate='funding-stream'>
+            <h1 class="govuk-heading-xl">Select funding stream</h1>
+            <span class="govuk-caption-xl govuk-!-margin-bottom-8">Select a funding stream to view and edit rule based
+                patterns for</span>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                    Funding stream
+                </label>
+                <select class="govuk-select" name="selectFundingStream" id="selectfundingStream"
+                    aria-label="funding stream">
+                    <option></option>
+                    <option value="16-19/16-19-results">16 to 19</option>
+                    <option value="14-16/14-16-results">14 to 16</option>
+                    <option value="gag/gag-results">General Annual Grant</option>
+                    <option value="pna/pna-results">Academy Pupil Number Adjustment</option>
+                </select>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
     </div>
+</div>
 
-<button class="govuk-button" data-module="govuk-button">
-        Continue</button>
-
-
-</form>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <a href="index.html" class="govuk-back-link">Back</a>
@@ -53,14 +55,13 @@ endblock %}
 
 
 <script type="application/json" id="funding-stream">
-{ 		  	
-			  	"selectfundingStream": {
-			      "presence": {
-			        "message": "^You must select a funding stream"
-			      }
-			    },
-}
-
+    {
+        "selectFundingStream": {
+            "presence": {
+                "message": "^Please select a funding stream"
+            }
+        }
+    }
 </script>
 
 
