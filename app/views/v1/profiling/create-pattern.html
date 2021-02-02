@@ -40,13 +40,10 @@ GOV.UK Prototype Kit
 
 
 
-<form action="/v1/profiling/create-pattern2" method="post" class="form">
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-
-
-
+<form action="/v1/profiling/create-pattern2" method="post" class="form" novalidate data-validate='create-pattern'>
             <div class="govuk-form-group">
                 <label class="govuk-label" for="address-line-1">
                     Rule based pattern name
@@ -54,14 +51,14 @@ GOV.UK Prototype Kit
                 <span id="event-name-hint" class="govuk-hint">
                     Use a descriptive unique name other users can understand
                 </span>
-                <input class="govuk-input" id="address-line-1" name="rule-based-pattern-name" type="text">
+                <input class="govuk-input" id="pattern-name" name="pattern-name" type="text">
             </div>
 
             <div class="govuk-form-group">
                 <label class="govuk-label" for="more-detail">
                     Description
                 </label>
-                <textarea class="govuk-textarea" id="more-detail" name="rule-based-pattern-detail" rows="8"
+                <textarea class="govuk-textarea" id="pattern-description" name="pattern-description" rows="8"
                     aria-label="more-detail-hint"></textarea>
             </div>
 
@@ -86,7 +83,20 @@ GOV.UK Prototype Kit
 </form>
 
 
-
+<script type="application/json" id="create-pattern">
+{ 		  	
+			  	"pattern-name": {
+			      "presence": {
+			        "message": "^Please enter a name for the pattern"
+			      }
+			    },
+                	"pattern-description": {
+			      "presence": {
+			        "message": "^Please enter a description for the pattern"
+			      }
+			    }
+}
+</script>
 
 
 {% endblock %}
