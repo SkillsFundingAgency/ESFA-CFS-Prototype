@@ -26,7 +26,7 @@ GOV.UK Prototype Kit
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
                     <a class="govuk-breadcrumbs__link" href="/v1/profiling/create-pattern" aria-label="rule-based-pattern-name"> {{
-                        data['rule-based-pattern-name'] }}</a>
+                        data['pattern-name'] }}</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
                     Create rule based pattern
@@ -51,7 +51,7 @@ GOV.UK Prototype Kit
             <div class="govuk-notification-banner__content">
                 <p class="govuk-notification-banner__heading">
                     Rule based pattern {{
-                    data['rule-based-pattern-name'] }} has been successfully saved.
+                    data['pattern-name'] }} has been successfully saved.
 
 
                 </p>
@@ -64,19 +64,19 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-three-quarters">
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2" aria-label="rule based pattern name">{{
-            data['rule-based-pattern-name'] }}
+            data['pattern-name'] }}
         </h1>
         <span class="govuk-caption-xl">Create rule based pattern</span>
         <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
             <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
                     What is {{
-                    data['rule-based-pattern-name'] }}?
+                    data['pattern-name'] }}?
                 </span>
             </summary>
             <div class="govuk-details__text">
                 <p class="govuk-body">{{
-                    data['rule-based-pattern-detail'] }}<a
+                    data['pattern-description'] }}<a
                         onclick="document.getElementById('editDescription').style.display='block'" href="#"
                         class="govuk-link"> Edit</a> </p>
             </div>
@@ -86,6 +86,8 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
+            <!--<form action="/v1/profiling/view-all-rule-patterns" method="post" novalidate data-validate='pattern-table'>-->
+
         <table class="govuk-table govuk-!-margin-top-7" id="profile">
             <caption class="govuk-table__caption">Profiling instalments
             </caption>
@@ -105,7 +107,8 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
 
                             <select class="govuk-select" id="month" name="sort" aria-label="month selection">
-                                <option value="september" selected>September 2020</option>
+                                <option value="empty" selected></option>
+                                <option value="september" >September 2020</option>
                                 <option value="october">October 2020</option>
                                 <option value="november">November 2020</option>
                                 <option value="december">December 2020</option>
@@ -126,7 +129,8 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
 
                             <select class="govuk-select" id="instalment" name="sort" aria-label="instalment selection">
-                                <option value="1" selected>1</option>
+                                <option value="0" selected></option>
+                                <option value="1" >1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -162,7 +166,7 @@ GOV.UK Prototype Kit
                                 <input
                                     aria-label="Enter the total percentage for January. Enter 0 if this does not apply"
                                     class="input-suffix govuk-input govuk-input--width-5" id="input-4"
-                                    onblur=" sumPercentage()" name="installmentPercentage" type="text" value="10"
+                                    onblur=" sumPercentage()" name="installmentPercentage" type="text" value=""
                                     >
                                 <div class="govuk-input__suffix" aria-hidden="true">%</div>
                             </div>
@@ -180,23 +184,26 @@ GOV.UK Prototype Kit
                     <th scope="row" class="govuk-table__header">Total allocation</th>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell govuk-table__cell--numeric center-align"><span class="govuk-!-margin-right-2"
-                            id="profilePercentage"></span><strong>%</strong>
+                            id="profilePercentage" id="profilePercentage"></span><strong>%</strong>
                     </td>
                     <td class="govuk-table__cell"></td>
                 </tr>
             </tbody>
         </table>
+
+
+      <button class="govuk-button govuk-!-margin-right-1" onclick="notificationBanner()" data-module="govuk-button">
+    Save
+    </button>
+
+    <a class="govuk-button govuk-button--secondary" href="view-all-rule-patterns.html">
+    Cancel
+    </a>
+  <!--  </form>-->
     </div>
 </div>
 
 
-<button class="govuk-button govuk-!-margin-right-1" onclick="notificationBanner()" data-module="govuk-button">
-    Save
-</button>
-
-<a class="govuk-button govuk-button--secondary" href="view-all-rule-patterns.html">
-    Cancel
-</a>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -248,6 +255,17 @@ GOV.UK Prototype Kit
     </div>
 
 </div>
+
+
+<!-- <script type="application/json" id="pattern-table">
+    {
+        "profilePercentage": {
+            "maximum": 100 {
+                "message": "^Please select a funding stream"
+            }
+        }
+    }
+</script>-->
 
 <script>
     // Sum percentages
@@ -327,5 +345,6 @@ GOV.UK Prototype Kit
         window.scrollTo(0, 0);
     }
 </script>
+
 
 {% endblock %}
