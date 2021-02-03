@@ -68,15 +68,8 @@ GOV.UK Prototype Kit
         <a class="govuk-link govuk-link--no-visited-state" href="editSpecification">Edit specification</a>
       </li>
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="createAdditionalCalculation">Create additional
-          calculation</a>
-      </li>
-      <li>
         <a class="govuk-link govuk-link--no-visited-state" href="#"
           onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="createDataset">Create data set</a>
       </li>
       <li>
         <a class="govuk-link govuk-link--no-visited-state" href="#"
@@ -111,7 +104,7 @@ GOV.UK Prototype Kit
         </li>
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#obsolete-attribute">
-            Obsolete attributes
+            Calculation errors
           </a>
         </li>
         <li class="govuk-tabs__list-item">
@@ -133,10 +126,10 @@ GOV.UK Prototype Kit
       <section class="govuk-tabs__panel" id="funding-line-structure">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l">Funding line structure</h2>
+            <h2 class="govuk-heading-l">Funding line structure <strong class="govuk-tag govuk-!-margin-left-2">Approved</strong></h2>
             <form action="" method="get">
               <label class="govuk-label" for="template-calcs">Select template calculations
-                <div class="autocomplete-wrapper govuk-!-margin-bottom-5">
+                <div class="autocomplete-wrapper govuk-!-margin-bottom-9">
                   <select name="template-calcs" class="govuk-select" id="template-calcs">
                     <option value="">Select template calculations </option>
                     <option value="fundingStream: GAG">General annual grant (GAG)</option>
@@ -149,13 +142,6 @@ GOV.UK Prototype Kit
                 </div>
               </label>
             </form>
-          </div>
-
-
-          <div class="govuk-grid-column-one-third ">
-            <strong class="govuk-tag right-align ">
-              Approved
-            </strong>
           </div>
         </div>
         <table class="govuk-table">
@@ -199,12 +185,17 @@ GOV.UK Prototype Kit
           <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-l">Additional calculations</h2>
           </div>
+          <div class="govuk-grid-column-one-third">
+            <ul class="govuk-list govuk-list--spaced">
+              <li><a class="govuk-link" href="createAdditionalCalculation">Create additional calculation</a></li>
+            </ul>
+          </div>
         </div>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <form action="" method="get">
               <label class="govuk-label" for="additional-calcs">Search additional calculations
-                <div class="autocomplete-wrapper govuk-!-margin-bottom-5">
+                <div class="autocomplete-wrapper govuk-!-margin-bottom-9">
                   <select name="additional-calcs" class="govuk-select" id="additional-calcs">
                     <option value="">Select additional calculations </option>
                     <option value="fundingStream: GAG">General annual grant (GAG)</option>
@@ -272,8 +263,11 @@ GOV.UK Prototype Kit
             <h2 class="govuk-heading-l">Data sets</h2>
           </div>
           <div class="govuk-grid-column-one-third">
-            <a class="govuk-link govuk-button" data-module="govuk-button" href="datasets/dataRelationshipsDSGSIT">Map
-              data source file to data set</a> </a>
+            <ul class="govuk-list govuk-list--spaced">
+              <li><a class="govuk-link" data-module="govuk-button" href="datasets/dataRelationshipsDSGSIT">Map data
+                  source file to data set</a>
+              <li><a class="govuk-link" href="createDataset">Create data set</a></li>
+            </ul>
           </div>
         </div>
         <table class="govuk-table">
@@ -332,11 +326,6 @@ GOV.UK Prototype Kit
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-l">Release timetable</h2>
-          </div>
-          <div class="govuk-grid-column-one-third ">
-            <strong class="govuk-tag right-align ">
-              Approved
-            </strong>
           </div>
         </div>
         <div class="govuk-form-group">
@@ -542,14 +531,14 @@ GOV.UK Prototype Kit
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="obsolete-attribute">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l">Obsolete attribute management</h2>
-            <p class="govuk-body">Manage changes to calculation</p>
+            <h2 class="govuk-heading-l">Calculation errors</h2>
+            <p class="govuk-body"></p>
           </div>
         </div>
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            
+
           </div>
         </div>
 
