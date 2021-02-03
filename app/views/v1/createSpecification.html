@@ -24,12 +24,12 @@ GOV.UK Prototype Kit
 </div>
 
 <form action="/v1/specifications" id="createSpec" method="post" novalidate data-validate='create-spec'>
-      <fieldset class="govuk-fieldset">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-xl">
-            Create specification
-          </h1>
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Create specification
+        </h1>
         <div class="govuk-form-group" id="specificationName">
           <label class="govuk-label" for="spec-name">
             Specification name
@@ -41,7 +41,7 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="fundingStreamSpecification">
             Funding stream
           </label>
-      
+
           <select class="govuk-select" id="fundingStreamSpecification" name="fundingStreamSpecification">
             <option value=""></option>
             <option value="fundingLineStructure-chosen">16 to 19</option>
@@ -56,7 +56,7 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="fundingPeriod">
             Funding period
           </label>
-         
+
           <select class="govuk-select" id="fundingPeriod" name="fundingPeriod">
             <option value=""></option>
             <option value="A-SAY2019-2020">Academies and Schools Academic Year 2019 to 2020</option>
@@ -141,14 +141,14 @@ GOV.UK Prototype Kit
           </label>
           <textarea class="govuk-textarea" id="more-detail" name="spec-detail" rows="8"></textarea>
         </div>
-      </fieldset>
-      <button class="govuk-button" data-module="govuk-button">Save and
-        continue</button>
-      <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Cancel
-      </a>
-    </form>
-  </div>
+  </fieldset>
+  <button class="govuk-button" data-module="govuk-button">Save and
+    continue</button>
+  <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Cancel
+  </a>
+</form>
+</div>
 </div>
 
 
@@ -156,7 +156,7 @@ GOV.UK Prototype Kit
 { 		  	
 			  	"spec-name": {
 			      "presence": {
-			        "message": "^you must provide your name"
+			        "message": "^Please enter a specification name"
 			      }
 			    }
 }
