@@ -86,7 +86,8 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-            <!--<form action="/v1/profiling/view-all-rule-patterns" method="post" novalidate data-validate='pattern-table'>-->
+         
+        <form action="javascript:notificationBanner()" method="post" novalidate data-validate='pattern-table'>
 
         <table class="govuk-table govuk-!-margin-top-7" id="profile">
             <caption class="govuk-table__caption">Profiling instalments
@@ -184,7 +185,7 @@ GOV.UK Prototype Kit
                     <th scope="row" class="govuk-table__header">Total allocation</th>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell govuk-table__cell--numeric center-align"><span class="govuk-!-margin-right-2"
-                            id="profilePercentage" id="profilePercentage"></span><strong>%</strong>
+                            name="installmentPercentage" id="profilePercentage"></span><strong>%</strong>
                     </td>
                     <td class="govuk-table__cell"></td>
                 </tr>
@@ -192,14 +193,14 @@ GOV.UK Prototype Kit
         </table>
 
 
-      <button class="govuk-button govuk-!-margin-right-1" onclick="notificationBanner()" data-module="govuk-button">
+      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
     Save
     </button>
 
     <a class="govuk-button govuk-button--secondary" href="view-all-rule-patterns.html">
     Cancel
     </a>
-  <!--  </form>-->
+  </form>
     </div>
 </div>
 
@@ -257,15 +258,21 @@ GOV.UK Prototype Kit
 </div>
 
 
-<!-- <script type="application/json" id="pattern-table">
-    {
-        "profilePercentage": {
-            "maximum": 100 {
-                "message": "^Please select a funding stream"
-            }
+<script type="application/json" id="pattern-table">
+  {
+    "installmentPercentage": {
+        "numericality": {
+            "lessThan": 100,
+            "notLessThan": "^Please select a funding stream"
         }
-    }
-</script>-->
+    },
+    "profileTable": {
+         "presence": {
+           "message": "^Please enter an event name"
+         }
+       }
+}
+</script>
 
 <script>
     // Sum percentages
