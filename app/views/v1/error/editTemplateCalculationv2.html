@@ -25,6 +25,19 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#calculation-error">Enum value is not valid</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div class="govuk-grid-row govuk-!-margin-bottom-5" id="saveMessage" style="display: none;">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
@@ -51,7 +64,8 @@ GOV.UK Prototype Kit
                 Calculation status
               </dt>
               <dd class="govuk-summary-list__value">
-                <strong id="calc-status" class="govuk-tag govuk-tag--green govuk-!-margin-top-2 calc-status">Draft
+                <strong class="govuk-tag govuk-tag--red">
+                  Error
                 </strong>
               </dd>
             </div>
@@ -69,10 +83,13 @@ GOV.UK Prototype Kit
         </div>
       </div>
 
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-form-group--error">
         <h4 class="govuk-heading-s" for="more-detail">
           Calculation script
         </h4>
+        <span id="calculation-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Enum value is not valid
+        </span>
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
           aria-describedby="more-detail-hint">
 Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
@@ -85,6 +102,8 @@ Else
 Return A
 End If
         </textarea>
+      </div>
+
         <h4 class="govuk-heading-s" for="more-detail">
           UKPRN
 
@@ -93,7 +112,6 @@ End If
           </span></h4>
         <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
 
-      </div>
       <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
         Build calculation
       </button>
@@ -118,9 +136,9 @@ End If
           <button class="govuk-button govuk-!-margin-right-1 btn-approve" id="btn-approve" data-module="govuk-button">
             Approve
           </button>
-          <button onclick="goBack()" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <a href="fundingLineStructure.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Cancel
-          </button>
+          </a>
         </div>
       </div>
 
