@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="manageDatasets.html">Manage data source files</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Update data source file</li>
+    </ol>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+            data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                        <a href="#event-name-error">There has been a data schema change since the last version of this
+                            data source file was uploaded. Please retry uploading using the Create new version
+                            option.</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action=" " method="post" class="form" id="updateDataset">
+            <fieldset class="govuk-fieldset">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update data source</h1>
+                <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Lump sum for 2020 to 2021 (version 1)
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Joe Young <span class="govuk-!-margin-left-2">21 November 12:24pm</span>
+                    </div>
+                </details>
+                <div class="govuk-radios">
+                    <label class="govuk-label" for="file-upload-1">
+                        Select update type
+                    </label>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="updateTypeMerge" name="updateType"
+                            onclick="updateTypeCheck()" type="radio" value="merge/merge-in-progress">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+                            Merge existing version
+                        </label>
+                        <div id="merge" class="govuk-hint govuk-radios__hint">
+                            Combine a new data source with the existing file
+                        </div>
+                    </div>
+                    <div class="govuk-radios__item govuk-!-margin-bottom-7">
+                        <input class="govuk-radios__input" id="updateTypeReplace" onclick="updateTypeCheck()"
+                            name="updateType" type="radio" value="/v1/datasets/manageDatasets">
+                        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            Create new version
+                        </label>
+                        <div id="create-new" class="govuk-hint govuk-radios__hint">
+                            Replace the existing data source with a new file
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="file-upload-1">
+                        Select data source file
+                    </label>
+                    <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="more-detail">
+                        Description
+                    </label>
+                    <span id="more-detail-hint" class="govuk-hint">
+                    </span>
+                    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
+                        aria-describedby="more-detail-hint">
+{{ data['data-more-detail'] }}
+            </textarea>
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="more-detail">
+                        Change note
+                    </label>
+                    <span id="more-detail-hint" class="govuk-hint">
+                    </span>
+                    <textarea class="govuk-textarea" id="more-detail" name="change-note-data" rows="5"
+                        aria-describedby="more-detail-hint"></textarea>
+                </div>
+                <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                    Save
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                </button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<script>
+
+    function updateTypeCheck() {
+        console.log("updateTypeCheck ran")
+        var updateType = document.getElementsByName('updateType');
+        for (var i = 0, length = updateType.length; i < length; i++) {
+            if (updateType[i].checked) {
+                // do whatever you want with the checked radio
+                document.getElementById('updateDataset').action = updateType[i].value;
+                // only one radio can be logically checked, don't check the rest
+                break;
+            }
+        }
+    }
+
+</script>
+
+
+{% endblock %}
