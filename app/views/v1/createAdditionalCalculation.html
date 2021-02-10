@@ -23,14 +23,12 @@ GOV.UK Prototype Kit
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Create additional calculation</li>
       </ol>
     </div>
-    <form action="/v1/fundingLineStructure" method="post" class="form">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">
-            Create additional calculation
-          </h1>
-        </legend>
 
+    <form action="/v1/fundingLineStructure" method="post" novalidate data-validate='my-form-validation'>
+      <fieldset class="govuk-fieldset">
+        <h1 class="govuk-heading-xl">
+          Create additional calculation
+        </h1>
 
         <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
           <div class="govuk-form-group">
@@ -58,26 +56,26 @@ GOV.UK Prototype Kit
               Calculation script
             </label>
             <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
-              aria-label="Calculation script">
-Return 0
-        </textarea>
-            </br>
-            <h2 class="govuk-heading-s" for="more-detail">
-              UKPRN
-
-              <span id="event-name-hint" class="govuk-hint">
-                Optional: Enter a UKPRN to view calculation results for this provider
-              </span>
-            </h2>
-            <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text"
-              aria-label="enter-UKPRN">
-
+              aria-label="Calculation script">Return 0</textarea>
           </div>
-          </br>
-          <a data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
-            Build calculation
-          </a>
 
+          <div class="govuk-grid-row govuk-!-margin-top-5">
+            <div class="govuk-grid-column-two-thirds">
+              <h2 class="govuk-heading-s" for="more-detail">
+                UKPRN
+                <span id="event-name-hint" class="govuk-hint">
+                  Optional: Enter a UKPRN to view calculation results for this provider
+                </span>
+              </h2>
+              <input class="govuk-input govuk-input--width-10 govuk-!-margin-bottom-5" id="width-5" name="width-5" type="text"
+                aria-label="enter-UKPRN">
+                <br>
+              <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button"
+                data-module="govuk-button">
+                Build calculation
+              </button>
+            </div>
+          </div>
 
           <div class="govuk-inset-text" id="buildResult" style="display: none;">
             <h3 class="govuk-heading-s">Build output</h3>
@@ -105,17 +103,23 @@ Return 0
 </div>
 
 <script>
-
   function buildOuput() {
     document.getElementById('buildResult').style.display = "block"
   }
 
   function createCalc(dt) {
-    var Timeoptions = { hour: '2-digit', minute: '2-digit' };
+    var Timeoptions = {
+      hour: '2-digit',
+      minute: '2-digit'
+    };
     var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
     var ampm = time >= 12 ? 'pm' : 'am';
     var date = new Date()
-    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }
     var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
 
 
@@ -128,7 +132,30 @@ Return 0
     sessionStorage.setItem('status', 'Draft')
     sessionStorage.setItem('date', dateFormat + ' ' + time + ampm)
   }
-
 </script>
+
+<script type="application/json" id="my-form-validation">
+  {
+    "additionalCalc-name": {
+      "presence": {
+        "message": "^Enter an additional calculation name"
+      }
+    },
+
+    "value-type": {
+      "presence": {
+        "message": "^Select a value type"
+      }
+    },
+
+    "more-detail": {
+      "presence": {
+        "message": "^Enter calculation script"
+      }
+    }
+
+  }
+</script>
+
 
 {% endblock %}
