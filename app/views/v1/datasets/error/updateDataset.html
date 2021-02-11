@@ -32,7 +32,7 @@ GOV.UK Prototype Kit
                 <ul class="govuk-list govuk-error-summary__list">
                     <li>
                         <a href="#event-name-error">There has been a data schema change since the last version of this
-                            data source file was uploaded. Please retry uploading using the create new version
+                            data source file was uploaded. Retry uploading using the create new version
                             option.</a>
                     </li>
 
@@ -42,9 +42,9 @@ GOV.UK Prototype Kit
     </div>
 </div>
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <form action=" " method="post" class="form" id="updateDataset">
-            <fieldset class="govuk-fieldset">
+    <form action=" " method="post" class="form" id="updateDataset">
+        <fieldset class="govuk-fieldset">
+            <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update data source</h1>
                 <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
                     <summary class="govuk-details__summary">
@@ -53,15 +53,28 @@ GOV.UK Prototype Kit
                         </span>
                     </summary>
                     <div class="govuk-details__text">
-                        <p class="govuk-body"><strong>Last updated by:</strong> Nathan TOWNSEND <span
-                                class="govuk-!-margin-left-2">21 November 12:24pm</span>
+                        <p class="govuk-body">Nathan TOWNSEND <span class="govuk-!-margin-left-2">21 November
+                                12:24pm</span>
                         </p>
-                        <p class="govuk-body"><strong>Core provider data version:</strong> 21 August 2021 - Initial
-                            providers
 
-                        </p>
                     </div>
                 </details>
+            </div>
+            <div class="govuk-grid-column-full">
+
+                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Core provider data version to upload against
+                        </dt>
+                        <dd class="govuk-summary-list__value"> 21 August 2021 - Initial providers
+                        </dd>
+                    </div>
+
+                </dl>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+
                 <div class="govuk-radios">
                     <label class="govuk-label" for="file-upload-1">
                         Select update type
@@ -101,7 +114,7 @@ GOV.UK Prototype Kit
                     </span>
                     <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
                         aria-describedby="more-detail-hint">
-{{ data['data-more-detail'] }}
+            {{ data['data-more-detail'] }}
             </textarea>
                 </div>
                 <div class="govuk-form-group">
@@ -119,9 +132,10 @@ GOV.UK Prototype Kit
                 <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Cancel
                 </button>
-            </fieldset>
-        </form>
-    </div>
+        </fieldset>
+</div>
+</form>
+</div>
 </div>
 
 <script>
