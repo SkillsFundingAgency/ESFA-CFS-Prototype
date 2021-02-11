@@ -55,46 +55,39 @@ GOV.UK Prototype Kit
 
                 </dl>
             </div>
-            <div class="govuk-grid-column-two-thirds">
 
-                <div class="govuk-form-group">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <label class="govuk-label" for="file-upload-1">
-                            Select update type
+            <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-radios">
+                    <label class="govuk-label" for="file-upload-1">
+                        Select update type
+                    </label>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="updateTypeMerge" name="updateType"
+                            onclick="updateTypeCheck()" type="radio" value="merge/merge-in-progress">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+                            Merge existing version
                         </label>
-                    </legend>
-                    <div class="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="updateTypeMerge" name="updateType"
-                                onclick="updateTypeCheck()" type="radio" value="merge/merge-in-progress">
-                            <label class="govuk-label govuk-radios__label" for="changed-name">
-                                Merge existing version
-                            </label>
-                            <div id="merge" class="govuk-hint govuk-radios__hint">
-                                Combine a new data source with the existing file
-                            </div>
+                        <div id="merge" class="govuk-hint govuk-radios__hint">
+                            Combine a new data source with the existing file
                         </div>
-                        <div class="govuk-radios__item govuk-!-margin-bottom-7">
-                            <input class="govuk-radios__input" id="updateTypeReplace" onclick="updateTypeCheck()"
-                                name="updateType" type="radio" value="/v1/datasets/manageDatasets">
-                            <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                                Create new version
-                            </label>
-                            <div id="create-new" class="govuk-hint govuk-radios__hint">
-                                Replace the existing data source with a new file
-                            </div>
+                    </div>
+                    <div class="govuk-radios__item govuk-!-margin-bottom-7">
+                        <input class="govuk-radios__input" id="updateTypeReplace" onclick="updateTypeCheck()"
+                            name="updateType" type="radio" value="/v1/datasets/manageDatasets">
+                        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            Create new version
+                        </label>
+                        <div id="create-new" class="govuk-hint govuk-radios__hint">
+                            Replace the existing data source with a new file
                         </div>
                     </div>
                 </div>
-
-
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="file-upload-1">
                         Select data source file
                     </label>
                     <input class="govuk-file-upload" id="file-upload-1" name="file-upload" type="file">
                 </div>
-
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="more-detail">
                         Description
@@ -103,8 +96,8 @@ GOV.UK Prototype Kit
                     </span>
                     <textarea class="govuk-textarea" id="file-description" name="description" rows="5"
                         aria-describedby="more-detail-hint">{{ data['data-more-detail'] }}</textarea>
-                </div>
 
+                </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="change-note">
                         Change note
@@ -121,12 +114,12 @@ GOV.UK Prototype Kit
                     Cancel
                 </button>
         </fieldset>
-</div>
-</form>
+    </form>
 </div>
 </div>
 
 <script>
+
     function updateTypeCheck() {
         console.log("updateTypeCheck ran")
         var updateType = document.getElementsByName('updateType');
@@ -139,36 +132,32 @@ GOV.UK Prototype Kit
             }
         }
     }
+
 </script>
 
 <script type="application/json" id="update-data-source">
     {
         "file-upload": {
             "presence": {
-                "message": "^Select a data source file"
+                "message": "^Please select a file"
             }
         },
-
+      
         "description": {
             "presence": {
-                "message": "Enter a description"
+                "message": "^Please enter a description"
             }
         },
-
+  
         "change-note-data": {
             "presence": {
-                "message": "^Enter a change note"
-            }
-        },
-
-        "updateType": {
-            "presence": {
-                "message": "^Select update type"
+                "message": "^Please enter a change note"
             }
         }
-
+  
     }
-</script>
+    
+    </script>
 
 
 {% endblock %}
