@@ -21,27 +21,38 @@ Permissions management
 
 <div class="govuk-grid-row govuk-!-margin-top-2">
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="sort">
-        Select funding stream to download
-      </label>
-      <select name="funding-stream" class="govuk-select" id="fundingStream">
-        <option></option>
-        <option value="16 to 19">16 to 19</option>
-        <option value="14 to 16">14 to 16</option>
-        <option value="General annual grant">General Annual Grant</option>
-        <option value="Academy pupil number adjustment">Academy Pupil Number Adjustment</option>
-      </select>
-    </div>
-    </fieldset>
+    <form action="" method="post" class="form" novalidate data-validate="permissions">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Select funding stream to download
+        </label>
+        <select name="funding-stream" class="govuk-select" id="fundingStream">
+          <option></option>
+          <option value="16 to 19">16 to 19</option>
+          <option value="14 to 16">14 to 16</option>
+          <option value="General annual grant">General Annual Grant</option>
+          <option value="Academy pupil number adjustment">Academy Pupil Number Adjustment</option>
+        </select>
+      </div>
+
+      <button type="submit" class="govuk-button govuk-!-margin-right-1">Download</button>
+      <a class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</a>
+
+      </fieldset>
+    </form>
   </div>
 </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <button type="submit" class="govuk-button govuk-!-margin-right-1">Download</button>
-    <a class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</a>
-  </div>
-</div>
 
+<script type="application/json" id="permissions">
+  {
+
+    "funding-stream": {
+      "presence": {
+        "message": "^Select a funding stream"
+      }
+    }
+
+  }
+</script>
 {% endblock %}

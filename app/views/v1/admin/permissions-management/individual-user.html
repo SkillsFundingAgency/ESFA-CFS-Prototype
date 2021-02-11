@@ -23,46 +23,40 @@ Permissions management
 
 <div class="govuk-grid-row govuk-!-margin-top-2">
   <div class="govuk-grid-column-two-thirds">
-    <form action="user-permissions" method="post" class="form">
-      <label class="govuk-label" id="user-permissions" for="user-select">Enter the user you wish to view, assign, or change permissions
-        for</label>
+    <form action="user-permissions" method="post" class="form" novalidate data-validate="permissions">
       <fieldset class="govuk-fieldset">
-        <div class="autocomplete-wrapper">
-          <select name="user-select" onchange="user()" class="govuk-select" id="user-select">
-            <option value="">Select a user</option>
-            <option value="Robert Sparks">Robert Sparks</option>
-            <option value="Alan Nichols">Alan Nichols</option>
-            <option value="Bethan Phillimore">Bethan Phillimore</option>
+        <div class="govuk-form-group">
+          <label class="govuk-label" id="user-permissions" for="user-select">Enter the user you wish to view, assign, or
+            change permissions for</label>
+          <div class="autocomplete-wrapper">
+            <select name="userSelect" onchange="user()" class="govuk-select" id="user-select">
+              <option></option>
+              <option value="Robert Sparks">Robert Sparks</option>
+              <option value="Alan Nichols">Alan Nichols</option>
+              <option value="Bethan Phillimore">Bethan Phillimore</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="fundingStream">
+            Select funding stream
+          </label>
+          <select name="funding-stream" class="govuk-select" id="fundingStream">
+            <option></option>
+            <option value="16 to 19">16 to 19</option>
+            <option value="14 to 16">14 to 16</option>
+            <option value="General annual grant">General Annual Grant</option>
+            <option value="Academy pupil number adjustment">Academy Pupil Number Adjustment</option>
           </select>
         </div>
+
+        <button type="submit" class="govuk-button govuk-!-margin-right-1">Continue</button>
+        <a class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</a>
   </div>
 </div>
-
-<div class="govuk-grid-row govuk-!-margin-top-5">
-  <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="fundingStream">
-        Select funding stream
-      </label>
-      <select name="funding-stream" class="govuk-select" id="fundingStream">
-        <option></option>
-        <option value="16 to 19">16 to 19</option>
-        <option value="14 to 16">14 to 16</option>
-        <option value="General annual grant">General Annual Grant</option>
-        <option value="Academy pupil number adjustment">Academy Pupil Number Adjustment</option>
-      </select>
-    </div>
-    </fieldset>
-  </div>
-</div>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <button type="submit" class="govuk-button govuk-!-margin-right-1">Continue</button>
-    <a class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</a>
-  </div>
-</div>
-
+</fieldset>
+</form>
 
 <script type="text/javascript">
   var selectEl = document.querySelector('#user-select')
@@ -81,6 +75,23 @@ Permissions management
     submittedEl.classList.remove('submitted--hidden')
     var params = new URLSearchParams(document.location.search.split('?')[1])
     document.querySelector('.submitted__last-location').innerHTML = params.get('user-select')
+  }
+</script>
+
+<script type="application/json" id="permissions">
+  {
+    "userSelect": {
+      "presence": {
+        "message": "^Enter a user"
+      }
+    },
+
+    "funding-stream": {
+      "presence": {
+        "message": "^Select a funding stream"
+      }
+    }
+
   }
 </script>
 
