@@ -74,7 +74,7 @@ GOV.UK Prototype Kit
                     <label class="govuk-label" for="file-upload-1">
                         Select data source file
                     </label>
-                    <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                    <input class="govuk-file-upload" id="file-upload-1" name="file-upload" type="file">
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="more-detail">
@@ -83,9 +83,7 @@ GOV.UK Prototype Kit
                     <span id="more-detail-hint" class="govuk-hint">
                     </span>
                     <textarea class="govuk-textarea" id="file-description" name="description" rows="5"
-                        aria-describedby="more-detail-hint">
-            {{ data['data-more-detail'] }}
-            </textarea>
+                        aria-describedby="more-detail-hint">{{ data['data-more-detail'] }}</textarea>
 
                 </div>
                 <div class="govuk-form-group">
@@ -126,19 +124,25 @@ GOV.UK Prototype Kit
 </script>
 
 <script type="application/json" id="update-data-source">
-    { 		  	
-              "description": {
-                      "presence": {
-                        "message": "^Please enter a description"
-                      }
-              },
-               
-              "change-note-data": {
-                "presence": {
-                  "message": "^Please enter a change note"
-                }
+    {
+        "file-upload": {
+            "presence": {
+                "message": "^Please select a file"
+            }
+        },
+      
+        "description": {
+            "presence": {
+                "message": "^Please enter a description"
+            }
+        },
+  
+        "change-note-data": {
+            "presence": {
+                "message": "^Please enter a change note"
+            }
         }
-              
+  
     }
     
     </script>
