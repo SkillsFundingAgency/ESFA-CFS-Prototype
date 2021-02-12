@@ -22,7 +22,8 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <form action="/v1/datasets/manageDatasets" method="post" class="form" id="updateDataset" novalidate data-validate='update-data-source'>
+    <form action="/v1/datasets/manageDatasets" method="post" class="form" id="updateDataset" novalidate
+        data-validate='update-data-source'>
         <fieldset class="govuk-fieldset">
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update data source</h1>
@@ -142,27 +143,28 @@ GOV.UK Prototype Kit
 
 <script type="application/json" id="update-data-source">
     {
+       
+        "updateType": {
+            "presence": {
+                "message": "^Select update type"
+            }
+        }, 
         "file-upload": {
             "presence": {
                 "message": "^Select a data source file"
             }
         },
-
+        
         "description": {
             "presence": {
                 "message": "^Enter a description"
             }
         },
+       
 
         "change-note-data": {
             "presence": {
                 "message": "^Enter a change note"
-            }
-        },
-
-        "updateType": {
-            "presence": {
-                "message": "^Select update type"
             }
         }
 
