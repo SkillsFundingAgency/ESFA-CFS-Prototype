@@ -37,13 +37,6 @@ Permissions management
     </div>
   </div>
   </fieldset>
-  <!--
-  <div class="govuk-grid-row govuk-!-margin-top-5">
-    <div class="govuk-grid-column-two-thirds">
-      <button type="submit" class="govuk-button govuk-!-margin-right-1">Continue</button>
-      <button class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</button>
-    </div>
-  </div>-->
 </form>
 
 <section id="permissions" class="govuk-visually-hidden">
@@ -227,7 +220,6 @@ Permissions management
 
 function fundingStreamPermissions () {
   var fundingStreamSelect = document.getElementById('fundingStream').value;
-  console.log(fundingStreamSelect)
   document.getElementById('fundingStreamSelected').innerHTML = fundingStreamSelect
   document.getElementById('streamAdmin').innerHTML = fundingStreamSelect
   document.getElementById('permissions').classList.remove('govuk-visually-hidden')
