@@ -24,20 +24,18 @@ GOV.UK Prototype Kit
       </ol>
     </div>
 
-    <form action="/v1/fundingLineStructure-gag" method="post" class="form">
+    <form action="/v1/fundingLineStructure-gag" method="post" class="form" novalidate data-validate="create-data-set">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-heading-xl">Create data set</h1>
-        </legend>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
             Select data schema
           </label>
 
-          <select class="govuk-select" id="providerdataYes" name="providerdata" aria-label="select-data-schema"
+          <select class="govuk-select" id="providerdataYes" name="data-schema" aria-label="select-data-schema"
             onchange="showproviderdata()">
-            <option value="draft"></option>
+            <option></option>
             <option value="APT Adjusted Factors">APT Adjusted Factors</option>
             <option value="FDZ Example Specification">FDZ Example Specification</option>
             <option value="draft">APT Final Baselines</option>
@@ -122,5 +120,28 @@ GOV.UK Prototype Kit
   }
 
 </script>
+
+<script type="application/json" id="create-data-set">
+  {
+      "data-schema": {
+          "presence": {
+              "message": "^Select a data schema"
+          }
+      },
+
+      "dataset-name": {
+          "presence": {
+              "message": "^Enter a data set  name"
+          }
+      },
+
+      "description": {
+          "presence": {
+              "message": "^Enter a description"
+          }
+      }
+  }
+</script>
+
 
 {% endblock %}

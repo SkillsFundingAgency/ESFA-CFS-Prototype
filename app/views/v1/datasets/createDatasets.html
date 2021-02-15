@@ -43,12 +43,11 @@ GOV.UK Prototype Kit
           <span id="event-name-hint" class="govuk-hint">
             Select a funding stream you have permissions for</span>
           <select class="govuk-select" id="funding-stream" name="fundingStream">
-            <option value="draft"></option>
-            <option value="draft">16 to 19</option>
-            <option value="draft">14 to 16</option>
-            <option value="draft">General Annual Grant</option>
-            <option>Academy Pupil Number Adjustment </option>
-
+            <option></option>
+            <option value="16 to 19">16 to 19</option>
+            <option value="14 to 16">14 to 16</option>
+            <option value="General Annual Grant">General Annual Grant</option>
+            <option value="Academy Pupil Number Adjustment">Academy Pupil Number Adjustment </option>
           </select>
         </div>
 
@@ -123,8 +122,6 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-
-
 <script type="application/json" id="upload-data-source">
   {
       "fundingStream": {
@@ -158,6 +155,7 @@ GOV.UK Prototype Kit
 
   }
 </script>
+
 <script>
 
   function newDataSource() {
