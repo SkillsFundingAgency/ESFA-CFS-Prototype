@@ -19,7 +19,7 @@ Permissions management
   </div>
 </div>
 
-<form action="my-user-permissions/individual-funding-stream" method="post" class="form">
+<form action="my-user-permissions/index" method="post" class="form">
   <div class="govuk-grid-row govuk-!-margin-top-2">
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-form-group">
@@ -37,14 +37,14 @@ Permissions management
     </div>
   </div>
   </fieldset>
-  <!--
   <div class="govuk-grid-row govuk-!-margin-top-5">
     <div class="govuk-grid-column-two-thirds">
       <button type="submit" class="govuk-button govuk-!-margin-right-1">Continue</button>
       <button class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</button>
     </div>
-  </div>-->
+  </div>
 </form>
+
 
 
 
@@ -52,11 +52,10 @@ Permissions management
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <!-- <span class="govuk-caption-xl">Calculate funding service</span>
+    <span class="govuk-caption-xl">Calculate funding service</span>
     <h1 class="govuk-heading-xl">My user permissions for <span id="funding-stream">{{ data['funding-stream'] }}</span>
-    </h1>-->
-    <h3 class="govuk-heading-m govuk-!-margin-top-5">You have these permissions for the 16-19 funding stream in
-      calculate funding service</h3>
+    </h1>
+    <h3 class="govuk-heading-m">You have these permissions in calculate funding service</h3>
     <table class="govuk-table govuk-!-margin-top-5">
       <caption class="govuk-table__caption">Calculate funding service permissions</caption>
       <thead class="govuk-table__head">
@@ -216,7 +215,7 @@ Permissions management
   <div class="govuk-grid-column-full">
     <div class="form-group">
       <h2 class="govuk-heading-l">Requesting permissions</h2>
-      <p class="govuk-body">An administrator for your funding stream will be able to provide you with permissions
+      <p class="govuk-body">An administator for your funding stream will be able to provide you with permissions
         to this service.</p>
       <p class="govuk-body">The administrator's for the {{ data['funding-stream'] }} funding streams are:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -226,7 +225,6 @@ Permissions management
     </div>
   </div>
 </div>
-
 
 
 {% endblock %}
