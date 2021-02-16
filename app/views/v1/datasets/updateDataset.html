@@ -89,6 +89,38 @@ GOV.UK Prototype Kit
 
 
                 <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+
+                        <label class="govuk-label" for="file-upload-1">
+                            Do you want to treat empty cells in the file as values?
+                        </label>
+                        <div class="govuk-radios govuk-!-margin-top-4">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="sign-in" name="emptyCell" type="radio"
+                                    value="government-gateway" aria-describedby="sign-in-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="sign-in">
+                                    Yes </label>
+                                <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                    Allow an empty cell to replace any existing previous value
+
+                                </div>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="sign-in-2" name="emptyCell" type="radio"
+                                    value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                                    No </label>
+                                <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                                    Ignore any empty cells in the file upload
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
                     <label class="govuk-label" for="file-upload-1">
                         Select data source file
                     </label>
@@ -147,6 +179,11 @@ GOV.UK Prototype Kit
         "updateType": {
             "presence": {
                 "message": "^Select update type"
+            }
+        }, 
+        "emptyCell": {
+            "presence": {
+                "message": "^Select how empty cells are treated"
             }
         }, 
         "file-upload": {
