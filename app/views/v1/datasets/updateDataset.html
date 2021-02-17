@@ -89,13 +89,14 @@ GOV.UK Prototype Kit
                 <div class="govuk-form-group govuk-visually-hidden" id="emptyCells">
                     <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
 
-                        <label class="govuk-label" for="file-upload-1">
+                        <label class="govuk-label" for="emptyCellQuestion">
                             Do you want to treat empty cells as values when updating providers?
                         </label>
                         <div class="govuk-radios govuk-!-margin-top-4">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sign-in" name="emptyCell" type="radio"
-                                    value="government-gateway" aria-describedby="sign-in-item-hint">
+                                <input class="govuk-radios__input" id="emptyCellQuestion" name="emptyCell" type="radio"
+                                    value="government-gateway" aria-describedby="sign-in-item-hint"
+                                    onchange="getEmptyCell()">
                                 <label class="govuk-label govuk-radios__label" for="sign-in">
                                     Yes </label>
                                 <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
@@ -169,8 +170,12 @@ GOV.UK Prototype Kit
             }
         }
     }
+    function getEmptyCell() {
+        var coreProviderData = document.getElementById("coreProviderData").value;
+        console.log(coreProviderData)
+        sessionStorage.setItem('provider data changed', coreProviderData);
 
-
+    }
 
 </script>
 
