@@ -62,7 +62,7 @@ GOV.UK Prototype Kit
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="updateTypeMerge" name="updateType"
-                                onclick="updateTypeCheck().document.getElementById('emptyCells').classList.add('govuk-visually-hidden')"
+                                onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.remove('govuk-visually-hidden')"
                                 type="radio" value="merge/merge-in-progress">
                             <label class="govuk-label govuk-radios__label" for="changed-name">
                                 Merge existing version
@@ -73,7 +73,7 @@ GOV.UK Prototype Kit
                         </div>
                         <div class="govuk-radios__item govuk-!-margin-bottom-7">
                             <input class="govuk-radios__input" id="updateTypeReplace"
-                                onclick="updateTypeCheck().document.getElementById('emptyCells').classList.remove('govuk-visually-hidden')"
+                                onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.add('govuk-visually-hidden')"
                                 name="updateType" type="radio" value="/v1/datasets/manageDatasets">
                             <label class="govuk-label govuk-radios__label" for="changed-name-2">
                                 Create new version
