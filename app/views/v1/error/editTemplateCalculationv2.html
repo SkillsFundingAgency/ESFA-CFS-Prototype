@@ -18,21 +18,23 @@ GOV.UK Prototype Kit
           <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
+          <a class="govuk-breadcrumbs__link" href="../fundingLineStructure.html">DSG SIT</a>
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Provisional Schools Block Funding Excluding Growth
         </li>
       </ol>
     </div>
 
-    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+      data-module="govuk-error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">
         There is a problem
       </h2>
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#calculation-error">Enum value is not valid</a>
+            <a href="#calculation-error">Enum value is not valid</a></br>
+            <a href="#calculation-error">Missing funding line</a>
           </li>
         </ul>
       </div>
@@ -88,7 +90,7 @@ GOV.UK Prototype Kit
           Calculation script
         </h4>
         <span id="calculation-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Enum value is not valid
+          <span class="govuk-visually-hidden">Error:</span> Enum value is not valid </br> Missing funding line
         </span>
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
           aria-describedby="more-detail-hint">
@@ -104,13 +106,14 @@ End If
         </textarea>
       </div>
 
-        <h4 class="govuk-heading-s" for="more-detail">
-          UKPRN
+      <h4 class="govuk-heading-s" for="more-detail">
+        UKPRN
 
-          <span id="event-name-hint" class="govuk-hint">
-            Optional: Enter a UKPRN to view calculation results for this provider
-          </span></h4>
-        <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
+        <span id="event-name-hint" class="govuk-hint">
+          Optional: Enter a UKPRN to view calculation results for this provider
+        </span>
+      </h4>
+      <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
 
       <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
         Build calculation
@@ -155,8 +158,8 @@ End If
     document.getElementById('buildResult').style.display = "block"
   }
 
-  function saveCalc () {
-    document.getElementById('saveMessage').style.display = 'block'; 
+  function saveCalc() {
+    document.getElementById('saveMessage').style.display = 'block';
     window.scrollTo(0, 0);
     var Timeoptions = { hour: '2-digit', minute: '2-digit' };
     var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
