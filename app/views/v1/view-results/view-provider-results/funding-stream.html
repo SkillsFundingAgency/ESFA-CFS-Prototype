@@ -33,21 +33,21 @@ endblock %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <form action="" method="get">
-          <label class="govuk-label" for="fundingStream">Select funding stream
-            <div class="autocomplete-wrapper">
-              <select name="fundingStream" class="govuk-select" id="funding-stream">
-                <option value="">Select a funding stream</option>
-                <option value="fundingStream: GAG">General annual grant (GAG)</option>
-                <option value="fundingStream: DSG">Dedicated schools grant (DSG)</option>
-                <option value="fundingStream: PES">PE and sports premium (PSG)</option>
-                <option value="fundingStream: PNA">Pupil number adjustment (PNA)</option>
-                <option value="fundingStream: 1619">16 to 19</option>
-                <option value="fundingStream: 1416">14 to 16</option>
-                <option value="fundingStream: PNA">Dance and drama awards (DADA)</option>
-              </select>
-            </div>
-          </label>
+          <label class="govuk-label" for="fundingStream">Select a funding stream</br>
+            <input list="fundingstream" class="govuk-select govuk-!-margin-top-1" size="40" name="browser"
+              id="browser"></label>
+          <datalist id="fundingstream">
+            <option value="General annual grant (GAG)">
+            <option value="Dedicated schools grant (DSG)">
+            <option value="PE and sports premium (PSG)">
+            <option value="Pupil number adjustment (PNA)">
+            <option value="16 to 19">
+            <option value="14 to 16">
+            <option value="Dance and drama awards (DADA)">
+
+          </datalist>
         </form>
+
       </div>
     </div>
 
