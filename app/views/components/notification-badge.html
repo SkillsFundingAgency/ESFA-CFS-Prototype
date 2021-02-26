@@ -1,0 +1,56 @@
+{% extends "component-single.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a class="govuk-link" href="#">Calulation errors <span class="notification-badge">32</span></a>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-7">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Notification badge</h2>
+        <p>This pattern lets the user know that there is new information to view, like unread messages, and how many of
+            them there are. The notification badge is part of the account header.</p>
+
+        <h2 class="govuk-heading-l">When to use</h2>
+        <p>Use the notification badge when the user needs to be alerted that they have, for example, unread messages and
+            how many of them there are. Only use it if the number changes when the user performs an action.</p>
+
+        <h2 class="govuk-heading-l">When not to use</h2>
+        <p class="govuk-body">Do not use the notification badge when:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>the number of things is 0</li>
+            <li>there is no action</li>
+            <li>Unless there is a strong user need, only use a notification badge as a part of the navigation.</li>
+        </ul>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-7">
+    <div class="govuk-grid-column-two-thirds">
+        <p>The notification badge is a number displayed to the right-hand side of whatever it refers to.</p>
+
+        <a class="govuk-link" href="#">Calulation errors <span class="notification-badge">32</span></a>
+
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-7">
+    <div class="govuk-grid-column-two-thirds">
+        <p>If the number is more than 99, display ‘99+’.</p>
+        <a class="govuk-link" href="#">Calulation errors <span class="notification-badge">99+</span></a>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-7">
+    <div class="govuk-grid-column-two-thirds">
+        <p>If there are 0 things, do not show the badge.</p>
+
+        <a class="govuk-link" href="#">Calulation errors </a>
+    </div>
+</div>
+
+{% endblock %}
