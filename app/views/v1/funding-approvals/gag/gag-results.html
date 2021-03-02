@@ -26,10 +26,21 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">{{ data['spec-name']}}</h1>
-        <span class="govuk-caption-l">General annual grant for academies and schools academic year 2019 to 2020 </span>
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">General annual grant for academies and schools</h1>
+        <span class="govuk-caption-l">Academic year 2019 to 2020 </span>
     </div>
+    <div class="govuk-grid-column-one-third">
+        <ul class="govuk-list right-align">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="#" onclick="document.getElementById('refreshFundingModal').style.display='block'">Refresh funding</a>
+            <p class="govuk-body-s govuk-!-margin-bottom-0">Last refresh 16 December 2019 11:23am </p>
+          </li>
+          <li>
+            <a href="../batch/upload-batch-approve-release" class="govuk-link" data-module="govuk-button">Switch to batch approval</a>
+          </li>
+        </ul>
+      </div>
 </div>
 
 <div class="govuk-grid-row">
@@ -190,11 +201,6 @@ GOV.UK Prototype Kit
                                 City technology college<span>(1)</span>
                             </label>
                         </div>
-
-
-
-
-
                     </div>
                 </div>
             </fieldset>
@@ -502,8 +508,10 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="Free schools">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Akaal Primary
-                                                School</a>
+                                            <a href="provider-funding-overview.html" class="govuk-link">Akaal Primary School</a>
+                                                <strong class="govuk-tag govuk-tag--grey">
+                                                    indicative
+                                                </strong>
                                         </label>
                                     </div>
                                 </div>

@@ -157,7 +157,7 @@ $(function () {
 // }
 
 
-// Select all checkboxesç
+// Select all checkboxes
 $('#select-all').click(function () {
   if (this.checked) {
     // Iterate each checkbox

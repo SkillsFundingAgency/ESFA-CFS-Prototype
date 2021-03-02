@@ -99,3 +99,54 @@ div.filter-content {
 	overflow-y: scroll;
 	max-height: 200px;
 }
+
+.hidden {
+	display: none;
+}
+
+.hiddenCheckboxes {
+	cursor: pointer;
+}
+
+.hiddenCheckboxes:hover{
+	background: #F8F8F8;
+	outline: 3px solid #FFBF47;
+}
+
+.hiddenCheckboxes:focus {
+	background: #F8F8F8;
+	outline: 3px solid #FFBF47;
+}
+
+.checkboxExpand {
+	margin-top: 10px; 
+}
+
+.checkboxExpanded {
+	-ms-transform: rotate(180deg);
+-moz-transform: rotate(180deg);
+-webkit-transform: rotate(180deg);
+transform: rotate(180deg);
+}
+
+.filterbyHeading {
+	text-align: left;
+	border: none;
+	box-shadow: none;
+}
+
+.filterbyHeading:hover {
+	background-color: #dbdad9;
+	text-align: left ;
+	border-color: #fd0;
+}
+
+.filterbyHeading:active {
+	background-color: #dbdad9;
+	text-align: left ;
+	border-color: #fd0;
+}
+
+dd {
+margin-inline-start: 10px;
+}
