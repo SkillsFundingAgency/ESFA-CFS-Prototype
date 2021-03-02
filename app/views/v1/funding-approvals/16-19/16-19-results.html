@@ -25,10 +25,33 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+
+
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">{{ data['spec-name']}}</h1>
-        <span class="govuk-caption-l">16 to 19 for academies and schools academic year 2019 to 2020 </span>
+        <span class="govuk-caption-l">16 to 19 for academies and schools academic year 2019 to 2020</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <ul class="govuk-list right-align">
+            <li>
+                <a href="../batch/upload-batch-approve-release" class="govuk-link" data-module="govuk-button">Switch to
+                    batch approval</a>
+            </li>
+            <li>
+
+                <a class="govuk-link" href="#"
+                    onclick="document.getElementById('refreshFundingModal').style.display='block'">
+                    Refresh
+                    funding</a>
+            </li>
+            <p class="govuk-body-s govuk-!-margin-bottom-0">Last refresh 16 December 2019 11:23am </p>
+            </li>
+
+        </ul>
     </div>
 </div>
 
@@ -1078,10 +1101,7 @@ GOV.UK Prototype Kit
                     </ul>
                 </nav>
                 <div class="right-align">
-                    <button id="" onclick="document.getElementById('refreshFundingModal').style.display='block'"
-                        class="govuk-button govuk-button--primary" data-module="govuk-button">
-                        Refresh funding
-                    </button>
+
                     <a id="approveFunding" href="../funding-approval.html" class="govuk-button govuk-button--primary"
                         data-module="govuk-button">
                         Approve funding

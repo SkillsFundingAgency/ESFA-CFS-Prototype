@@ -25,10 +25,27 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">General annual grant for academies and schools</h1>
-        <span class="govuk-caption-l">Academic year 2019 to 2020 </span>
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-two-thirds ">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">{{ data['spec-name']}}</h1>
+        <span class="govuk-caption-l">General annual grant for academies and schools academic year 2019 to 2020</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <ul class="govuk-list right-align">
+
+            <li>
+                <a href="../batch/upload-batch-approve-release" class="govuk-link" data-module="govuk-button">Switch to
+                    batch approval</a>
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="#"
+                    onclick="document.getElementById('refreshFundingModal').style.display='block'">Refresh funding</a>
+                <p class="govuk-body-s govuk-!-margin-bottom-0">Last refresh 16 December 2019 11:23am </p>
+            </li>
+        </ul>
     </div>
     <div class="govuk-grid-column-one-third">
         <ul class="govuk-list right-align">
@@ -931,8 +948,8 @@ GOV.UK Prototype Kit
                     </ul>
                 </nav>
                 <div class="right-align">
-                    <button id="" onclick="document.getElementById('refreshFundingModal').style.display='block'" class="govuk-button govuk-button--primary"
-                        data-module="govuk-button">
+                    <button id="" onclick="document.getElementById('refreshFundingModal').style.display='block'"
+                        class="govuk-button govuk-button--primary" data-module="govuk-button">
                         Refresh funding
                     </button>
                     <a id="approveFunding" href="../funding-approval.html" class="govuk-button govuk-button--primary"
@@ -976,7 +993,8 @@ GOV.UK Prototype Kit
                     <li>Allocation values</li>
                     <li>Profile values</li>
                 </ul>
-                <p class="govuk-body">This update will affect providers in specification General annual grant for the funding stream general annual grant 2019 to 2020. </p>
+                <p class="govuk-body">This update will affect providers in specification General annual grant for the
+                    funding stream general annual grant 2019 to 2020. </p>
 
                 <button type="button" onclick="document.getElementById('refreshFundingModal').style.display='none'"
                     class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
