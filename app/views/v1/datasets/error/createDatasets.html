@@ -18,7 +18,7 @@ GOV.UK Prototype Kit
           <a class="govuk-breadcrumbs__link" href="manageData.html">Manage data</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="manageDatasets">Managa data source files</a>
+          <a class="govuk-breadcrumbs__link" href="manageDatasets">Manage data source files</a>
         </li>
         <li class="govuk-breadcrumbs__list-item" aria-current="page">Load new data source file</li>
       </ol>
@@ -28,7 +28,7 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+    <div class="govuk-error-summary" aria-label="error-summary-title" role="alert" tabindex="-1"
       data-module="govuk-error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">
         There is a problem
@@ -39,8 +39,9 @@ GOV.UK Prototype Kit
             <a href="#event-name-error">Enter a unique data set source file name</a>
           </li>
           <li>
-            <a href="#file-upload-error">Validation check failed</a>
+            <a href="#file-upload-error">Validation check failed, select a file with a unique name</a>
           </li>
+
         </ul>
       </div>
     </div>
@@ -51,26 +52,42 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Upload new data source</h1>
-    <span class="govuk-caption-xl govuk-!-margin-bottom-8">Load a new data source file to create a data set to use in
+    <span class="govuk-caption-xl govuk-!-margin-bottom-5">Load a new data source file to create a data set to use in
       calculations</span>
+    <form action="/v1/datasets/manageDatasets" method="post" class="form" id="uploadDataset" novalidate
+      data-validate='upload-data-source'>
 
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group govuk-!-margin-top-3">
+          <label class="govuk-label" for="funding-stream">
+            Funding stream
+          </label>
+          <span id="funding-stream-selection" class="govuk-hint">
+            Select a funding stream you have permissions for</span>
+          <select class="govuk-select" id="funding-stream" name="fundingStream">
+            <option></option>
+            <option value="16 to 19">16 to 19</option>
+            <option value="14 to 16">14 to 16</option>
+            <option value="General Annual Grant">General Annual Grant</option>
+            <option value="Academy Pupil Number Adjustment">Academy Pupil Number Adjustment </option>
+          </select>
+        </div>
 
-    <div class="govuk-form-group govuk-!-margin-top-6">
-      <label class="govuk-label" for="sort">
-        Funding stream
-      </label>
-      <span id="event-name-hint" class="govuk-hint">
-        Select a funding stream you have permissions for</span>
-      <select class="govuk-select" id="sort" name="sort">
-        <option value="draft"></option>
-        <option value="draft">16 to 19</option>
-        <option value="draft">14 to 16</option>
-        <option value="draft">General Annual Grant</option>
-        <option>Academy Pupil Number Adjustment</option>
+  </div>
+  <div class="govuk-grid-column-full">
 
-      </select>
-    </div>
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Core provider data version to upload against
+        </dt>
+        <dd class="govuk-summary-list__value"> 21 August 2021 - Initial providers
+        </dd>
+      </div>
 
+    </dl>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
 
     <div class="govuk-form-group">
       <label class="govuk-label" for="sort">
@@ -90,16 +107,16 @@ GOV.UK Prototype Kit
 
     <div class="govuk-form-group govuk-form-group--error">
       <label class="govuk-label" for="event-name">
-        Dataset source file name
+        Data set source file name
       </label>
-      <span id="event-name-hint" class="govuk-hint">
+      <span id="file-name" class="govuk-hint">
         Use a descriptive unique name other users can understand
       </span>
       <span id="event-name-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Enter a unique dataset source file name
+        <span class="govuk-visually-hidden">Error:</span> Enter a unique data set source file name
       </span>
       <input class="govuk-input govuk-input--error" id="event-name" name="event-name" type="text"
-        aria-describedby="event-name-hint event-name-error">
+        aria-label="file-name event-name-error">
     </div>
 
 
@@ -109,7 +126,7 @@ GOV.UK Prototype Kit
         Description
       </label>
       <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
-        aria-describedby="more-detail-hint"></textarea>
+        aria-label="more-detail-hint"></textarea>
     </div>
 
     <div class="govuk-form-group govuk-form-group--error">
@@ -117,10 +134,11 @@ GOV.UK Prototype Kit
         Upload a file
       </label>
       <span id="file-upload-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Validation check failed please see <a href="">error report</a>
+        <span class="govuk-visually-hidden">Error:</span> Validation check failed, select a file with a unique name.
+        Please see <a href="">error report</a>
       </span>
       <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1" type="file"
-        aria-describedby="file-upload-1-error">
+        aria-label="file-upload-1-error">
     </div>
 
     <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
