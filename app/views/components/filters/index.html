@@ -1,0 +1,59 @@
+{% extends "component-nav.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Filters</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <ul class="govuk-list">
+            <li>
+                <a class="govuk-link" href="/components/filters/funding-search-filter">Funding approvals filters</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/components/filters/view-providers">View providers filters</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/components/filters/view-specification-results">View specification filters</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/components/filters/local-authority">Local authority filter</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/components/filters/error-status">Filter by error status</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/components/filters/specification-filters.html">Specification filters</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="#">Manage data source files</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/#">Map data source files</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/#">Download data schemas</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/#">Download data schemas</a>
+            </li>
+
+            
+
+<script>
+    var elm = document.getElementsByTagName('li')
+    var length = elm.length;
+    for (var i = 0; i < length; i++) {
+        elm[i].className = elm[i].className + " govuk-!-margin-bottom-2";
+    }
+</script>
+
+{% endblock %}

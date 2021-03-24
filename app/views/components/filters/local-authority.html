@@ -1,0 +1,105 @@
+{% extends "component-single.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group filterbyContainer">
+    <fieldset class="govuk-fieldset">
+        <button
+            class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+            <h4 class="govuk-heading-s">
+                Filter by local authority <span><i class="material-icons right-align"> keyboard_arrow_down
+                    </i></span>
+            </h4>
+            <p class="govuk-body-s govuk-!-margin-bottom-0" id="local-authority-count"></p>
+        </button>
+        <div id="filter-content" class="filter-content">
+            <div class="govuk-form-group filterSearch">
+                <label class="govuk-label filterLabel" for="filter-by-local-authority">
+                    Search
+                </label>
+                <input class="govuk-input filterSearchInput" id="filter-by-local-authority-search"
+                    autocomplete="off" name="search" type="text">
+            </div>
+            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="local-authority-1" name="local-authority"
+                        type="checkbox" value="hmrc" onclick="countChecked()">
+                    <label class="govuk-label govuk-checkboxes__label" for="local-authority">
+                        Torbay <span>(1)</span>
+                    </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="local-authority-2" name="local-authority"
+                        type="checkbox" value="employment-tribunal" onclick="countChecked()">
+                    <label class="govuk-label govuk-checkboxes__label" for="local-authority-2">
+                        West Berkshire <span>(1)</span>
+                    </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="local-authority-3" name="local-authority"
+                        type="checkbox" value="employment-tribunal" onclick="countChecked()">
+                    <label class="govuk-label govuk-checkboxes__label" for="local-authority-3">
+                        Kingston upon Hull, City of <span>(1)</span>
+                    </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="local-authority-4" name="local-authority"
+                        type="checkbox" value="employment-tribunal" onclick="countChecked()">
+                    <label class="govuk-label govuk-checkboxes__label" for="local-authority-4">
+                        North Lincolnshire <span>(1)</span>
+                    </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="local-authority-4" name="local-authority"
+                        type="checkbox" value="employment-tribunal" onclick="countChecked()">
+                    <label class="govuk-label govuk-checkboxes__label" for="local-authority-4">
+                        Birmingham <span>(1)</span>
+                    </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="local-authority-4" name="local-authority"
+                        type="checkbox" value="employment-tribunal" onclick="countChecked()">
+                    <label class="govuk-label govuk-checkboxes__label" for="local-authority-4">
+                        Sefton <span>(1)</span>
+                    </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="local-authority-4" name="local-authority"
+                        type="checkbox" value="employment-tribunal" onclick="countChecked()">
+                    <label class="govuk-label govuk-checkboxes__label" for="local-authority-4">
+                        South Tyneside <span>(1)</span>
+                    </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="local-authority-4" name="local-authority"
+                        type="checkbox" value="employment-tribunal" onclick="countChecked()">
+                    <label class="govuk-label govuk-checkboxes__label" for="local-authority-4">
+                        County Durham <span>(2)</span>
+                    </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="local-authority-4" name="local-authority"
+                        type="checkbox" value="employment-tribunal" onclick="countChecked()">
+                    <label class="govuk-label govuk-checkboxes__label" for="local-authority-4">
+                        Barnsley <span>(1)</span>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+{% endblock %}

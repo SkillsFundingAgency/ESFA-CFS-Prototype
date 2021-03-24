@@ -1,0 +1,42 @@
+{% extends "component-nav.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group filterbyContainer">
+    <fieldset class="govuk-fieldset">
+        <button
+            class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+            <h4 class="govuk-heading-s">
+                Filter by error status <span><i class="material-icons right-align"> keyboard_arrow_down
+                    </i></span>
+            </h4>
+            <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+        </button>
+
+        <div id="filter-content" class="filter-content">
+            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="filter-by-with-errors"
+                        name="filter-by-with-errors" autocomplete="off" type="checkbox" value="with-errors">
+                    <label class="govuk-label govuk-checkboxes__label" for="filter-by-with-errors">
+                        With errors
+                    </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="filter-by-without-errors"
+                        name="filter-by-without-errors" autocomplete="off" type="checkbox"
+                        value="without-errors">
+                    <label class="govuk-label govuk-checkboxes__label" for="filter-by-without-errors">
+                        Without errors
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+{% endblock %}
