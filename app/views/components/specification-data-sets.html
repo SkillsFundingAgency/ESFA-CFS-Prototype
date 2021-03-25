@@ -1,0 +1,117 @@
+{% extends "component-single.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Data sets</h2>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <ul class="govuk-list govuk-list--spaced">
+            <li><a class="govuk-link" href="createDataset">Create data set</a></li>
+            <li><a class="govuk-link" data-module="govuk-button" href="datasets/dataRelationshipsDSGSIT">Map data
+                    source file to data set</a>
+        </ul>
+    </div>
+</div>
+<table class="govuk-table">
+    <caption class="govuk-table__caption">Data sets and schemas</caption>
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Data set</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Data schema</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Allow indicative allocation statements</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+                <p>APT Funding floor baseline data set</p>
+                <div class="govuk-!-margin-top-2">
+                    <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Data set description
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue diam sit amet dui
+                            posuere,
+                            id rutrum sem feugiat. Phasellus condimentum hendrerit nunc, sed lacinia risus efficitur
+                            hendrerit. Mauris sed.
+                        </div>
+                    </details>
+                </div>
+            </th>
+            <td class="govuk-table__cell">APT 1718 funding floor baseline data set</td>
+            <td class="govuk-table__cell">
+                <div class="govuk-form-group">
+                    <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input checked class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                            value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
+                            value="no">
+                        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </td>
+
+            </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+                <p>APT adjusted factors</p>
+                <div class="govuk-!-margin-top-2">
+                    <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Data set description
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue diam sit amet dui
+                            posuere,
+                            id rutrum sem feugiat. Phasellus condimentum hendrerit nunc, sed lacinia risus efficitur
+                            hendrerit. Mauris sed.
+                        </div>
+                    </details>
+                </div>
+            </th>
+            <td class="govuk-table__cell">APT adjusted factors</td>
+            <td class="govuk-table__cell">
+                <div class="govuk-form-group">
+                    <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input checked class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                            value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
+                            value="no">
+                        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
