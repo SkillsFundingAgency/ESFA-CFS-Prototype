@@ -29,7 +29,7 @@ Permissions management
           <label class="govuk-label" id="user-permissions" for="user-select">Enter the user you wish to view, assign, or
             change permissions for</label>
           <div class="autocomplete-wrapper">
-            <select name="userSelect" onchange="user()" class="govuk-select" id="user-select">
+            <select name="user-select" onchange="user()" class="govuk-select" id="user-select">
               <option></option>
               <option value="Robert Sparks">Robert Sparks</option>
               <option value="Alan Nichols">Alan Nichols</option>
@@ -80,9 +80,9 @@ Permissions management
 
 <script type="application/json" id="permissions">
   {
-    "userSelect": {
+    "user-select": {
       "presence": {
-        "message": "^Enter a user"
+        "message": "^Enter a user you wish to view, assign, or change permissions for"
       }
     },
 
