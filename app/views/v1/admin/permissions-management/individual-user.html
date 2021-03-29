@@ -31,9 +31,9 @@ Permissions management
           <div class="autocomplete-wrapper">
             <select name="user-select" onchange="user()" class="govuk-select" id="user-select">
               <option></option>
-              <option value="Robert Sparks">Robert Sparks</option>
-              <option value="Alan Nichols">Alan Nichols</option>
-              <option value="Bethan Phillimore">Bethan Phillimore</option>
+              <option value="Robert Sparks">SPARKS, Robert</option>
+              <option value="Alan Nichols">NICHOLS, Alan</option>
+              <option value="Bethan Phillimore">PHILLIMORE, Bethan</option>
             </select>
           </div>
         </div>
@@ -66,9 +66,9 @@ Permissions management
     defaultValue: "",
     minLength: 2,
     selectElement: selectEl,
-    tNoResults: function() {
-                return "No user found, only users who have confirmed skills are available"
-            },
+    tNoResults: function () {
+      return "No user found, only users who have confirmed skills are available"
+    },
   })
 
   var queryStringParameters = window.location.search
