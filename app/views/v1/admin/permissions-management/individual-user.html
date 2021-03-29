@@ -66,6 +66,9 @@ Permissions management
     defaultValue: "",
     minLength: 2,
     selectElement: selectEl,
+    tNoResults: function() {
+                return "No user found, only users who have confirmed skills are available"
+            },
   })
 
   var queryStringParameters = window.location.search
