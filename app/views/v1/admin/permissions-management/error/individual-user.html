@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Permissions management
+{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+      data-module="govuk-error-summary">
+
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#">No permissions found for user and funding stream</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="#" class="govuk-back-link" onclick="goBack()">Back</a>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Set and view user permissions</h1>
+    <p class="govuk-body">Assign and view permissions for users of Calculate funding service.</p>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="user-permissions" method="post" class="form" novalidate data-validate="permissions">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <label class="govuk-label" id="user-permissions" for="user-select">Enter the user you wish to view, assign, or
+            change permissions for</label>
+          <div class="autocomplete-wrapper">
+            <select name="userSelect" onchange="user()" class="govuk-select" id="user-select">
+              <option></option>
+              <option value="Robert Sparks">Robert Sparks</option>
+              <option value="Alan Nichols">Alan Nichols</option>
+              <option value="Bethan Phillimore">Bethan Phillimore</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="fundingStream">
+            Select funding stream
+          </label>
+          <select name="funding-stream" class="govuk-select" id="fundingStream">
+            <option></option>
+            <option value="16 to 19">16 to 19</option>
+            <option value="14 to 16">14 to 16</option>
+            <option value="General annual grant">General Annual Grant</option>
+            <option value="Academy pupil number adjustment">Academy Pupil Number Adjustment</option>
+          </select>
+        </div>
+
+        <button type="submit" class="govuk-button govuk-!-margin-right-1">Continue</button>
+        <a class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</a>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var selectEl = document.querySelector('#user-select')
+  accessibleAutocomplete.enhanceSelectElement({
+    autoselect: true,
+    confirmOnBlur: true,
+    defaultValue: "",
+    minLength: 2,
+    selectElement: selectEl,
+  })
+
+  var queryStringParameters = window.location.search
+  var previouslySubmitted = queryStringParameters.length > 0
+  if (previouslySubmitted) {
+    var submittedEl = document.querySelector('.submitted')
+    submittedEl.classList.remove('submitted--hidden')
+    var params = new URLSearchParams(document.location.search.split('?')[1])
+    document.querySelector('.submitted__last-location').innerHTML = params.get('user-select')
+  }
+</script>
+
+<script type="application/json" id="permissions">
+  {
+    "userSelect": {
+      "presence": {
+        "message": "^Enter a user"
+      }
+    },
+
+    "funding-stream": {
+      "presence": {
+        "message": "^Select a funding stream"
+      }
+    }
+
+  }
+</script>
+
+
+
+{% endblock %}
