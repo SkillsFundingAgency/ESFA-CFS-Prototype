@@ -101,7 +101,7 @@ GOV.UK Prototype Kit
                     <p class="govuk-body-s govuk-!-margin-bottom-0" id="providerTypeSelected"></p>
                 </button>
 
-                <div id="filter-content" class="filter-content">
+                <div id="filter-content" class="filter-content filter-expand">
                     <div class="govuk-form-group filterSearch">
                         <label id="filter-by-provider-type" class="govuk-label filterLabel"
                             for="filter-by-provider-type">
@@ -317,8 +317,6 @@ GOV.UK Prototype Kit
                 'input[name="filter-by-provider-sub-type"]:checked').length + " selected";
             document.getElementById("filter-by-status").textContent = document.querySelectorAll(
                 'input[name="filter-by-status"]:checked').length + " selected";
-            document.getElementById("local-authority-count").textContent = document.querySelectorAll(
-                'input[name="local-authority"]:checked').length + " selected";
                 document.getElementById("filter-indicative").textContent = document.querySelectorAll(
                 'input[name="statement-type"]:checked').length + " selected";
         }

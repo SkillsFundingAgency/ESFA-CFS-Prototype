@@ -102,4 +102,9 @@ GOV.UK Prototype Kit
     </fieldset>
 </div>
 
+<script>
+    document.getElementById("local-authority-count").textContent = document.querySelectorAll(
+    'input[name="local-authority"]:checked').length + " selected";
+</script>
+
 {% endblock %}
