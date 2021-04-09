@@ -1,0 +1,83 @@
+<div class="govuk-grid-column-full">
+</div>
+
+
+
+{{ govukTable({
+    caption: "Caption text",
+    classes: "govuk-!-margin-top-5",
+    firstCellIsHeader: false,
+    head: [
+        {
+            text: "Column 1 heading"
+        },
+        {
+            text: "Column 2 heading"
+        }
+    ],
+    rows: [
+        [
+            {
+                text: "Row 1, column 1"
+            },
+            {
+                text: "Row 1, column 2"
+            }
+        ],
+        [
+            {
+                text: "Row 2, column 1"
+            },
+            {
+                text: "Row 2, column 2"
+            }
+        ],
+        [
+            {
+                text: "Row 3, column 1"
+            },
+            {
+                text: "Row 3, column 2"
+            }
+        ]
+    ]
+}) }}
+
+{{ govukAccordion({
+    id: "",
+    classes
+    items: [
+        {
+            heading: {
+                text: "Heading one"
+            },
+            content: {
+                html: "Content one HTML"
+            }
+        },
+        {
+            heading: {
+                text: "Heading two"
+            },
+            content: {
+                html: "Content two HTML"
+            }
+        },
+        {
+            heading: {
+                text: "Heading three"
+            },
+            content: {
+                html: "Content three HTML"
+            }
+        },
+        {
+            heading: {
+                text: "Heading four"
+            },
+            content: {
+                html: "Content four HTML"
+            }
+        }
+    ]
+}) }}
