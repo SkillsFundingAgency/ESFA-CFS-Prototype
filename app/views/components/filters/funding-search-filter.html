@@ -101,7 +101,7 @@ GOV.UK Prototype Kit
                     <p class="govuk-body-s govuk-!-margin-bottom-0" id="providerTypeSelected"></p>
                 </button>
 
-                <div id="filter-content" class="filter-content filter-expand">
+                <div id="filter-content" class="filter-content">
                     <div class="govuk-form-group filterSearch">
                         <label id="filter-by-provider-type" class="govuk-label filterLabel"
                             for="filter-by-provider-type">
@@ -253,8 +253,7 @@ GOV.UK Prototype Kit
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-without-errors" name="filter-by-status"
                                 autocomplete="off" type="checkbox" value="without-errors" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-without-errors"
-                                onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-without-errors">
                                 Without errors <span>(6)</span>
                             </label>
                         </div>
@@ -305,103 +304,84 @@ GOV.UK Prototype Kit
             </fieldset>
         </div>
 
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <button
-                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-                    <h4 class="govuk-heading-s">Filter by open date<span><i class="material-icons right-align">
-                                keyboard_arrow_down</i></span>
-                    </h4>
-                    <div class="govuk-!-margin-bottom-0" id="filter-month">
-                        <p class="govuk-body-s govuk-!-margin-bottom-0">Date applied <a href="#" class="govuk-link govuk-!-margin-left-2">Clear</a></p>
-
-                    </div>
+            <div class="govuk-form-group filterbyContainer">
+                    <fieldset class="govuk-fieldset">
+                <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by open date <span><i
+                                class="material-icons right-align">keyboard_arrow_down</i></span></h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="open-month-selected"> </p>
                 </button>
-                <div id="filter-content" class="filter-content sidebar-overflow-visible ">
-                    <div class="opener-month-filter">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                            <p class="govuk-body-s opener-date-input-title">
-                                <strong>From</strong>
-                            </p>
-                        </legend>
-                        <div class="govuk-date-input" id="opener-date">
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="opener-from-date-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                                        id="opener-from-date-day" name="opener-from-date-day" type="text" pattern="[0-9]*"
-                                        inputmode="numeric"></div>
-                            </div>
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="opener-from-date-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                                        id="opener-from-date-month" name="opener-from-date-month" type="text"
-                                        pattern="[0-9]*" inputmode="numeric"></div>
-                            </div>
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="opener-from-date-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                                        id="opener-from-date-year" name="opener-from-date-year" type="text"
-                                        pattern="[0-9]*" inputmode="numeric"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="opener-month-filter govuk-!-margin-top-0">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                            <p class="govuk-body-s opener-date-input-title">
-                               <strong>To</strong>
-                            </p>
-                        </legend>
-                        <div class="govuk-date-input" id="opener-date">
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="opener-to-date-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                                        id="opener-to-date-day" name="opener-to-date-day" type="text" pattern="[0-9]*"
-                                        inputmode="numeric"></div>
-                            </div>
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="opener-to-date-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                                        id="opener-to-date-month" name="opener-to-date-month" type="text"
-                                        pattern="[0-9]*" inputmode="numeric"></div>
-                            </div>
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="opener-to-date-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                                        id="opener-to-date-year" name="opener-to-date-year" type="text"
-                                        pattern="[0-9]*" inputmode="numeric"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="govuk-button govuk-button--secondary" onclick="applyOpenerDate()"> Apply </button>
 
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label id="filter-by-open-date" class="govuk-label filterLabel" for="filter-by-open-date">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="filter-by-open-date-search"
+                            name="filter-by-open-date-search" autocomplete="off" type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-2" name="filter-by-open-date"
+                                type="checkbox" value="all" onclick="selectAllCheckboxes(this)">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                All <span>(30)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-january"
+                                name="filter-by-open-date" type="checkbox" value="january" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                August 2010 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-february"
+                                name="filter-by-open-date" type="checkbox" value="february" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                September 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-march"
+                                name="filter-by-open-date" type="checkbox" value="march" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                October 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-april"
+                                name="filter-by-open-date" type="checkbox" value="april" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                November 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-may"
+                                name="filter-by-open-date" type="checkbox" value="may" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                December 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-june"
+                                name="filter-by-open-date" type="checkbox" value="june" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                January 2022 <span>(10)</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
+            </fieldset>
         </div>
 
-        <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked'); countChecked();">Clear filters</a>
+
+        <a href="#" class="govuk-link right-align"
+            onclick="$('input:checkbox').removeAttr('checked'); countChecked();">Clear filters</a>
     </div>
 
     <script>
         // Filter checkbox count
-        countChecked()
-
         function countChecked() {
             document.getElementById("providerTypeSelected").textContent = document.querySelectorAll(
                 'input[name="filter-by-provider-type"]:checked').length + " selected";
@@ -411,7 +391,8 @@ GOV.UK Prototype Kit
                 'input[name="filter-by-status"]:checked').length + " selected";
             document.getElementById("filter-indicative").textContent = document.querySelectorAll(
                 'input[name="statement-type"]:checked').length + " selected";
-            document.getElementById('filter-month').innerHTML ='' 
+            document.getElementById("open-month-selected").textContent = document.querySelectorAll(
+                'input[name="filter-by-open-date"]:checked').length + " selected";
         }
 
         function selectAllCheckboxes(elem) {
@@ -419,8 +400,9 @@ GOV.UK Prototype Kit
             document.getElementsByName(name).checked = true;
         }
 
-        function applyOpenerDate(){
-            document.getElementById('filter-month').innerHTML = '<p class="govuk-body-s govuk-!-margin-bottom-0">Date applied <a href="#" class="govuk-link govuk-!-margin-left-2">Clear</a></p>';
+        function applyOpenerDate() {
+            document.getElementById('filter-month').innerHTML =
+                '<p class="govuk-body-s govuk-!-margin-bottom-0">Date applied <a href="#" class="govuk-link govuk-!-margin-left-2">Clear</a></p>';
         }
 
         hiddenCheckboxes = () => {
