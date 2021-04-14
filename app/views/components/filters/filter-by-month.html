@@ -97,16 +97,15 @@ GOV.UK Prototype Kit
                 </div>
         </div>
 
-            <fieldset class="govuk-fieldset">
-                <div class="govuk-form-group filterbyContainer">
-                <button
-                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+              <div class="govuk-form-group filterbyContainer">
+                    <fieldset class="govuk-fieldset">
+                <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
                     <h4 class="govuk-heading-s">Filter by open date <span><i
                                 class="material-icons right-align">keyboard_arrow_down</i></span></h4>
-                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="providerTypeSelected"></p>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="open-month-selected"> </p>
                 </button>
 
-                <div id="filter-content" class="filter-content filter-expand">
+                <div id="filter-content" class="filter-content">
                     <div class="govuk-form-group filterSearch">
                         <label id="filter-by-open-date" class="govuk-label filterLabel" for="filter-by-open-date">
                             Search
@@ -117,7 +116,7 @@ GOV.UK Prototype Kit
                     <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-open-date-2" name="filter-by-open-date"
-                                type="checkbox" value="all" onclick="selectAllCheckboxes(this)">
+                                type="checkbox" value="all" onclick="selectAllCheckboxes(this)" onclick="countChecked()">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
                                 All <span>(30)</span>
                             </label>
@@ -126,48 +125,48 @@ GOV.UK Prototype Kit
                             <input class="govuk-checkboxes__input" id="filter-by-open-date-january"
                                 name="filter-by-open-date" type="checkbox" value="january" onclick="countChecked()">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                January <span>(10)</span>
+                                August 2010 <span>(10)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-open-date-february"
                                 name="filter-by-open-date" type="checkbox" value="february" onclick="countChecked()">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                February <span>(10)</span>
+                                September 2021 <span>(10)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-open-date-march"
                                 name="filter-by-open-date" type="checkbox" value="march" onclick="countChecked()">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                March <span>(10)</span>
+                                October 2021 <span>(10)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-open-date-april"
                                 name="filter-by-open-date" type="checkbox" value="april" onclick="countChecked()">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                April <span>(10)</span>
+                                November 2021 <span>(10)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-open-date-may"
                                 name="filter-by-open-date" type="checkbox" value="may" onclick="countChecked()">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                May <span>(10)</span>
+                                December 2021 <span>(10)</span>
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="filter-by-open-date-june"
                                 name="filter-by-open-date" type="checkbox" value="june" onclick="countChecked()">
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                June <span>(10)</span>
+                                January 2022 <span>(10)</span>
                             </label>
                         </div>
                     </div>
                 </div>
-                </div>
             </fieldset>
+        </div>
 
 
     </div>
@@ -175,12 +174,11 @@ GOV.UK Prototype Kit
 
 <script>
     // Filter checkbox count
-    countChecked()
 
-    function countChecked() {
-        document.getElementById('filter-month').innerHTML = ''
-    }
-
+        function countChecked() {
+            document.getElementById("open-month-selected").textContent = document.querySelectorAll(
+                'input[name="filter-by-open-date"]:checked').length + " selected";
+        }
     function applyOpenerDate() {
         document.getElementById('filter-month').innerHTML =
             '<p class="govuk-body-s govuk-!-margin-bottom-0">Date applied <a href="#" class="govuk-link govuk-!-margin-left-2">Clear</a></p>';
