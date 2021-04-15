@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="../view-funding.html">Select specification</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="upload-batch-approve-release.html">Upload batch file</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          Confirm approval
+        </li>
+      </ol>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm funding approval</h1>
+    <span class="govuk-caption-xl govuk-!-margin-bottom-1">Check the information below carefully before approving the
+      funding
+    </span>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
+  <div class="govuk-grid-column-three-quarters">
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+      <div class="govuk-summary-list__row govuk-!-width-one-third">
+        <dt class="govuk-summary-list__key govuk-!-width-one-third">
+          Last refresh </dt>
+        <dd class="govuk-summary-list__value govuk-!-padding-left-2">
+          1 March 2021 9:52am by Robert SPARKS</dd>
+      </div>
+      <div class="govuk-summary-list__row govuk-!-width-one-third">
+        <dt class="govuk-summary-list__key govuk-!-width-one-third">
+          Last calculation results update
+        </dt>
+
+        <dd class="govuk-summary-list__value govuk-!-padding-left-2">
+          2 March 2021 10:31am
+        </dd>
+
+      </div>
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-3">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Approved funding values can change when data or calculations are altered. If the funding values change, their
+        status will become ‘updated’ and they will need to be approved again.
+
+      </strong>
+
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-three-quarters">
+    <p class="govuk-body">Selected providers may not appear in the provider count due to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Provider record missing from funding data
+      </li>
+      <li>Providers currently in error state</li>
+      <li>Providers already set as approved or released
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<!--
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Number of providers selected
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+          106
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="funding-resultsv2.html">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Funding period
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+          2019 to 2020
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <table class="govuk-table govuk-!-margin-bottom-0">
+      <caption class="govuk-table__caption">Funding approval information</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Description</th>
+          <th scope="col" class="govuk-table__header">Summary</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Providers selected</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body"><a href="#" class="govuk-link" data-module="govuk-button">Export
+                all as
+                CSV</a></p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            <p class="govuk-body">71</p>
+          </td>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Funding period</th>
+          <td class="govuk-table__cell">2019 to 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Specification selected</th>
+          <td class="govuk-table__cell">GFT PE and Sport 2019 to 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total funding being approved</th>
+          <td class="govuk-table__cell">PE and Sport Premium Grant</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£41,830</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-7">
+  <div class="govuk-grid-column-three-quarters">
+    <a class="govuk-link-m right-align" href="upload-batch-approve-release.html">
+      Change batch<span class="govuk-visually-hidden"> name</span>
+    </a>
+  </div>
+</div>
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="confirm-approve-in-progress" method="post" novalidate>
+
+      <button data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Confirm approval
+      </button>
+
+      <a href="../view-funding.html" button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
