@@ -35,15 +35,12 @@ GOV.UK Prototype Kit
                         </h1>
                     </legend>
 
-                    <h2 class="govuk-heading-m" for="specification">Specification</h2>
-                    <p id="specification" class="govuk-body"></p>
-
-
                     <ul class="govuk-list govuk-list--bullet">
-                        <li>upload file must be in xlsx format</li>
-                        <li>the file can only contain one UKPRN column</li>
-                        <li>uploaded data must be in the first sheet of the xlsx file</li>
-                        <li>providers already approved or released will not be shown in the provider count summaries
+                        <li>The file is in xlsx format</li>
+                        <li>The file contains one UKPRN column</li>
+                        <li>The upload data must be in the first sheet of the xlsx file
+                        </li>
+                        <li>Providers already approved or released will not be shown in the provider count summaries
                         </li>
                     </ul>
         </div>
@@ -78,11 +75,6 @@ GOV.UK Prototype Kit
     function approve() {
         document.getElementById('batchProviders').action = 'batch-approve-in-progress'
 
-    }
-
-    window.onload = function getSpecification() {
-        let specification = sessionStorage.getItem('view funding specification')
-        document.getElementById('specification').innerHTML = specification
     }
 
     function release() {
