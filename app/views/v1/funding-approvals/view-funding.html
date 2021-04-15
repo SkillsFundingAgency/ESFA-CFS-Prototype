@@ -20,26 +20,26 @@ endblock %}
   </div>
 </div>
 
-<div class="govuk-form-group">
-  <label class="govuk-label" for="sort">
-    Funding stream
-  </label>
-  <select class="govuk-select" id="fundingStream">
-    <option></option>
-    <option value="16-19/16-19-results">16 to 19</option>
-    <option value="14-16/14-16-results">14 to 16</option>
-    <option value="gag/gag-results">General Annual Grant (GAG)</option>
-    <option value="pna/pna-results">Academy Pupil Number Adjustment (PNA)</option>
-    <option value="dsg/dsg-results">Dedicated Schools Grant (DSG)</option>
-
-  </select>
-</div>
+<form action="" method="post" id="viewFunding" novalidate>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+      Funding stream
+    </label>
+    <select class="govuk-select" name="fundingStream" id="fundingStream">
+      <option></option>
+      <option value="16-19/16-19-results">16 to 19</option>
+      <option value="14-16/14-16-results">14 to 16</option>
+      <option value="gag/gag-results">General Annual Grant (GAG)</option>
+      <option value="pna/pna-results">Academy Pupil Number Adjustment (PNA)</option>
+      <option value="dsg/dsg-results">Dedicated Schools Grant (DSG)</option>
+    </select>
+  </div>
 
 <div class="govuk-form-group">
   <label class="govuk-label" for="sort">
     Funding period
   </label>
-  <select class="govuk-select" id="fundingPeriod" name="sort" onchange="getFundingStream()">
+  <select class="govuk-select" id="fundingPeriod" name="fundingPeriod" onchange="getFundingStream()">
     <option></option>
     <option value="2019 to 2020">2019 to 2020</option>
     <option value="2020 to 2021">2020 to 2021</option>
@@ -74,30 +74,23 @@ endblock %}
     Specification
   </label>
   <p id="specification" class="govuk-body"></p>
-
-  <a href="" id="viewFundingLink" class="govuk-button" data-module="govuk-button">
-
-  </a>
 </div>
+
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
 
 
 <script>
 
   var batch = document.getElementById('batchYes').value
 
-
   function showspec() {
     document.getElementById('specificationDetails').classList.remove("govuk-visually-hidden");
-    if (batch = 'yes') {
-      document.getElementById('viewFundingLink').innerHTML = "Continue"
-    } else {
-      document.getElementById('viewFundingLink').innerHTML = "View funding"
-    }
   }
 
   function batchProcess() {
     console.log(batch)
-    document.getElementById('viewFundingLink').href = batch
+    document.getElementById('viewFunding').action = batch
   }
 
 
@@ -105,9 +98,10 @@ endblock %}
     var fundingStream = document.getElementById("fundingStream");
     var fundingStreamText = fundingStream.options[fundingStream.selectedIndex].text;
     var fundingPeriod = document.getElementById("fundingPeriod").value;
-    document.getElementById("specification").innerHTML = fundingStreamText + ' ' + fundingPeriod;
+    var specification = document.getElementById("specification").innerHTML = fundingStreamText + ', ' + fundingPeriod;
     var fundingStreamLink = document.getElementById("fundingStream").value;
-    document.getElementById("viewFundingLink").href = fundingStreamLink
+    document.getElementById("viewFunding").action = fundingStreamLink
+    sessionStorage.setItem ('view funding specification', specification)
   }
 
 </script>
