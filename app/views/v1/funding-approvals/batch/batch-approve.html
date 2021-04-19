@@ -31,62 +31,6 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-4">
-  <div class="govuk-grid-column-three-quarters">
-
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-
-      <div class="govuk-summary-list__row govuk-!-width-one-third">
-        <dt class="govuk-summary-list__key govuk-!-width-one-third">
-          Last refresh </dt>
-        <dd class="govuk-summary-list__value govuk-!-padding-left-2">
-          1 March 2021 9:52am by Robert SPARKS</dd>
-      </div>
-      <div class="govuk-summary-list__row govuk-!-width-one-third">
-        <dt class="govuk-summary-list__key govuk-!-width-one-third">
-          Last calculation results update
-        </dt>
-
-        <dd class="govuk-summary-list__value govuk-!-padding-left-2">
-          2 March 2021 10:31am
-        </dd>
-
-      </div>
-
-    </dl>
-  </div>
-</div>
-
-<div class="govuk-grid-row govuk-!-margin-bottom-3">
-  <div class="govuk-grid-column-three-quarters">
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Warning</span>
-        Approved funding values can change when data or calculations are altered. If the funding values change, their
-        status will become ‘updated’ and they will need to be approved again.
-
-      </strong>
-
-    </div>
-  </div>
-</div>
-
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-  <div class="govuk-grid-column-three-quarters">
-    <p class="govuk-body">Selected providers may not appear in the provider count due to:</p>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Provider record missing from funding data
-      </li>
-      <li>Providers currently in error state</li>
-      <li>Providers already set as approved or released
-      </li>
-    </ul>
-  </div>
-</div>
-
-
 <!--
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -171,8 +115,38 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
+<!-- FUNDING APPROVAL WARNINGS -->
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    Review the following warnings before continuing
+  </strong>
+</div>
 
+<ul class="govuk-list govuk-list--bullet">
+  <li>Providers were last refreshed 1 March 2021 by Robert SPARKS</li>
+  <li>Total provider amount was last calculated 1 March 2021, 10.31am</li>
+  <li>Selected providers may not appear in the provider count due to; provider record missing from funding data, providers currently in error state or providers already set as approved or released</li>
+</ul>
 
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend">
+      <strong>You are required to review any page warnings before continuing</strong>
+    </legend>
+    <div class="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          I acknowledge that I have reviewed all warnings and wish to continue
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+<!-- END FUNDING APPROVAL WARNINGS -->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
