@@ -129,28 +129,28 @@ GOV.UK Prototype Kit
   <li>Total provider amount was last calculated 1 March 2021, 10.31am</li>
   <li>Selected providers may not appear in the provider count due to; provider record missing from funding data, providers currently in error state or providers already set as approved or released</li>
 </ul>
-
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend">
-      <strong>You are required to review any page warnings before continuing</strong>
-    </legend>
-    <div class="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-        <label class="govuk-label govuk-checkboxes__label" for="waste">
-          I acknowledge that I have reviewed all warnings and wish to continue
-        </label>
-      </div>
-    </div>
-
-  </fieldset>
-</div>
 <!-- END FUNDING APPROVAL WARNINGS -->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="confirm-approve-in-progress" method="post" novalidate>
+    <form action="confirm-approve-in-progress" method="post" novalidate data-validate='warning-review-checkbox-validation'>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="acknowledgementCheckbox">
+          <legend class="govuk-fieldset__legend">
+            <strong>You are required to review any page warnings before continuing</strong>
+          </legend>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acknowledgementCheckbox" name="acknowledgementCheckbox" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="acknowledgementCheckbox">
+                I acknowledge that I have reviewed all warnings and wish to continue
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
 
       <button data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
         Confirm approval
@@ -162,5 +162,23 @@ GOV.UK Prototype Kit
     </form>
   </div>
 </div>
+
+<script type="application/json" id="warning-review-checkbox-validation">
+
+  {
+  
+  "acknowledgementCheckbox": {
+  
+  "presence": {
+  
+  "message": "^You must acknowledge that you have read and reviewed the provider warnings"
+  
+  }
+  
+  }
+  
+  }
+  
+</script>
 
 {% endblock %}
