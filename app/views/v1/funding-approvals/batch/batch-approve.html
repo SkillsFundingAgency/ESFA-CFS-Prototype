@@ -115,20 +115,6 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<!-- FUNDING APPROVAL WARNINGS -->
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-warning-text__assistive">Warning</span>
-    Review the following warnings before continuing
-  </strong>
-</div>
-
-<ul class="govuk-list govuk-list--bullet">
-  <li>Providers were last refreshed 1 March 2021 by Robert SPARKS</li>
-  <li>Total provider amount was last calculated 1 March 2021, 10.31am</li>
-  <li>Selected providers may not appear in the provider count due to; provider record missing from funding data, providers currently in error state or providers already set as approved or released</li>
-</ul>
 <!-- END FUNDING APPROVAL WARNINGS -->
 
 <div class="govuk-grid-row">
@@ -138,13 +124,24 @@ GOV.UK Prototype Kit
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="acknowledgementCheckbox">
           <legend class="govuk-fieldset__legend">
-            <strong>You are required to review any page warnings before continuing</strong>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                The provider amount shown might not be up to date
+              </strong>
+            </div>
           </legend>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Providers were last refreshed 1 March 2021 by Robert SPARKS</li>
+            <li>Total provider amount was last calculated 1 March 2021, 10.31am</li>
+            <li>Selected providers may not appear in the provider count due to; provider record missing from funding data, providers currently in error state or providers already set as approved or released</li>
+          </ul>
           <div class="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="acknowledgementCheckbox" name="acknowledgementCheckbox" type="checkbox" value="carcasses">
               <label class="govuk-label govuk-checkboxes__label" for="acknowledgementCheckbox">
-                I acknowledge that I have reviewed all warnings and wish to continue
+                I acknowledge that the total provider amount shown may not be up to date
               </label>
             </div>
           </div>
@@ -171,7 +168,7 @@ GOV.UK Prototype Kit
   
   "presence": {
   
-  "message": "^You must acknowledge that you have read and reviewed the provider warnings"
+  "message": "^You must acknowledge that you understand the provider amount shown might not be up to date"
   
   }
   
