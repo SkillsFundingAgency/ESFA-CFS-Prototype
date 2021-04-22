@@ -29,6 +29,32 @@ GOV.UK Prototype Kit
                 <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update Lump sum for 2020 to 2021 (version 1)</h1>
     </div>
 </div>
+
+<!-- CONVERTOR WIZARD WARNING -->
+<div class="govuk-error-summary govuk-error-summary-orange" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+    data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        Converter wizard in progress
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <p class="govuk-body">Initiated by SYSTEM on 17 October 20120, 11:50am</p>
+                <p class="govuk-body"><i>You will not be able to update this page until the converter wizard is complete.</i></p>
+            </li>
+        </ul>
+        <!-- CONVERTOR WIZARD SPINNER ANIMATION AND TEXT -->
+        <div class="govuk-!-margin-top-1 govuk-!-margin-bottom-2">
+            <span id="loader-content" class="inline-loader" role="alert" aria-live="assertive"></span>
+            <span class="govuk-body">
+              Converter wizard running. Please wait.
+            </span>
+        </div>
+        <!-- END CONVERTOR WIZARD SPINNER ANIMATION AND TEXT -->
+    </div>
+</div>
+<!-- END CONVERTOR WIZARD WARNING -->
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
 
@@ -62,7 +88,7 @@ GOV.UK Prototype Kit
                     <input class="govuk-radios__input" id="updateTypeMerge" name="updateType"
                         onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.remove('govuk-visually-hidden')"
                         type="radio" value="merge/merge-in-progress" aria-label="update-type-merge">
-                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                    <label class="govuk-label govuk-radios__label" for="updateTypeMerge">
                         Merge existing version
                     </label>
                     <div id="merge" class="govuk-hint govuk-radios__hint">
@@ -74,7 +100,7 @@ GOV.UK Prototype Kit
                         onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.add('govuk-visually-hidden')"
                         name="updateType" type="radio" value="/v1/datasets/manageDatasets"
                         aria-label="update-type-replace">
-                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    <label class="govuk-label govuk-radios__label" for="updateTypeReplace">
                         Create new version
                     </label>
                     <div id="create-new" class="govuk-hint govuk-radios__hint">
@@ -95,7 +121,7 @@ GOV.UK Prototype Kit
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="emptyCellQuestion" name="emptyCell" type="radio"
                             value="government-gateway" aria-describedby="sign-in-item-hint" onchange="getEmptyCell()">
-                        <label class="govuk-label govuk-radios__label" for="sign-in">
+                        <label class="govuk-label govuk-radios__label" for="emptyCellQuestion">
                             Yes </label>
                         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
                             Allow an empty cell to replace an existing previous value
@@ -125,7 +151,7 @@ GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-form-group">
-            <label class="govuk-label" for="more-detail">
+            <label class="govuk-label" for="file-description">
                 Description
             </label>
             <span id="description-detail" class="govuk-hint">
@@ -135,7 +161,7 @@ GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-form-group">
-            <label class="govuk-label" for="change-note">
+            <label class="govuk-label" for="more-detail">
                 Change note
             </label>
             <span id="change-note" class="govuk-hint">

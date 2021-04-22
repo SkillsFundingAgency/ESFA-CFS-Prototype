@@ -31,37 +31,6 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-3">
-  <div class="govuk-grid-column-three-quarters">
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Warning</span>
-        Released funding values can change when data or calculations are altered. If the </br>funding values change,
-        their
-        status will become ‘updated’ and they will need to be released again.
-      </strong>
-    </div>
-  </div>
-</div>
-
-<div class="govuk-grid-row govuk-!-margin-bottom-3">
-  <div class="govuk-grid-column-three-quarters">
-    <p class="govuk-body">Selected providers may not appear in the provider count due to:</p>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Provider record missing from funding data
-      </li>
-      <li>Providers currently in error state</li>
-      <li>Providers already set as released
-      </li>
-      <li>Providers set as draft or updated and cannot be set to released before being approved
-      </li>
-    </ul>
-  </div>
-</div>
-
-
 <!--
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -144,15 +113,36 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-
-
-
-
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="confirm-release-in-progress" method="post" novalidate>
+    <form action="confirm-release-in-progress" method="post" novalidate novalidate data-validate='warning-review-checkbox-validation'>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="acknowledgementCheckbox">
+          <legend class="govuk-fieldset__legend">
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                  Review the following warnings before continuing
+              </strong>
+            </div>
+          </legend>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Released funding values can change when data or calculations are altered. If the 
+              funding values change, their status will become ‘updated’ and they will need to be released again.</li>
+              <li>Selected providers may not appear in the provider count due to; provider record missing from funding data, providers currently in error state, providers already set as released, Providers set as draft or updated and cannot be set to released before being approved</li>
+          </ul>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acknowledgementCheckbox" name="acknowledgementCheckbox" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="acknowledgementCheckbox">
+                I acknowledge that I have reviewed all warnings and wish to continue
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
 
       <button data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
         Confirm release
@@ -164,5 +154,23 @@ GOV.UK Prototype Kit
     </form>
   </div>
 </div>
+
+<script type="application/json" id="warning-review-checkbox-validation">
+
+  {
+  
+  "acknowledgementCheckbox": {
+  
+  "presence": {
+  
+  "message": "^You must acknowledge that you have read and reviewed all warnings"
+  
+  }
+  
+  }
+  
+  }
+  
+</script>
 
 {% endblock %}
