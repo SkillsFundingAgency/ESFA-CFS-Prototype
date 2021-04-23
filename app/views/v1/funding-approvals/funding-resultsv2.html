@@ -24,6 +24,30 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
+<!-- CALCULATION RUNNING WARNING -->
+<div class="govuk-error-summary govuk-error-summary-orange" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+    data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        Calculation run in progress
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <p class="govuk-body">Initiated by SYSTEM on 17 October 20120, 11:50am</p>
+                <p class="govuk-body"><i>You will not be able to update this page until the calculation run is complete.</i></p>
+            </li>
+        </ul>
+        <!-- CALCULATION RUNNING SPINNER ANIMATION AND TEXT -->
+        <div class="govuk-!-margin-top-1 govuk-!-margin-bottom-2">
+            <span id="loader-content" class="inline-loader" role="alert" aria-live="assertive"></span>
+            <span class="govuk-body">
+              Calculation running. Please wait.
+            </span>
+        </div>
+        <!-- END CALCULATION RUNNING SPINNER ANIMATION AND TEXT -->
+    </div>
+</div>
+<!-- END CALCULATION RUNNING WARNING -->
 
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
     <div class="govuk-grid-column-two-thirds ">
