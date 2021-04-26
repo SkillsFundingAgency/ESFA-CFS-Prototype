@@ -6,6 +6,11 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
+<!-- VARIABLES FOR VARIATIONS SUCCESS MESSAGE -->
+{% set successNotificationHeading = "Variations successfully saved" %}
+{% set successNotificationContent = "Future instalments have been updated." %} 
+<!-- END VARIABLES FOR VARIATIONS SUCCESS MESSAGE -->
+
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
 <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
@@ -21,6 +26,11 @@ GOV.UK Prototype Kit
   </ol>
 </div>
 
+<!-- SUCCESS BANNER - USED UPON SUCCESSFUL SAVE OF VARIATION TAB -->
+<div class="notification-banner-success govuk-!-display-none">
+  {% include "components/notification-banner-success.html" %}
+</div>
+<!-- END SUCCESS BANNER - USED UPON SUCCESSFUL SAVE OF VARIATION TAB -->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-9">
@@ -570,7 +580,7 @@ GOV.UK Prototype Kit
                                     </td>
                                     <td class="govuk-table__cell">
                                         <div class="govuk-form-group">
-                                            <select class="govuk-select" id="fundingline1" name="sort"
+                                            <select class="govuk-select funding-line-dropdown-js" id="fundingline1" name="sort"
                                                 aria-label="funding line 1">
                                                 <option value=""></option>
                                                 <option value="may2020-1">May 2020 instalment 1</option>
@@ -592,7 +602,7 @@ GOV.UK Prototype Kit
                                     </td>
                                     <td class="govuk-table__cell">
                                         <div class="govuk-form-group">
-                                            <select class="govuk-select" id="fundingline2" name="sort"
+                                            <select class="govuk-select funding-line-dropdown-js" id="fundingline2" name="sort"
                                                 aria-label="funding line 2">
                                                 <option value=""></option>
                                                 <option value="may2020-1">May 2020 instalment 1</option>
@@ -614,7 +624,7 @@ GOV.UK Prototype Kit
                                     </td>
                                     <td class="govuk-table__cell">
                                         <div class="govuk-form-group">
-                                            <select class="govuk-select" id="fundingline3" name="sort"
+                                            <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
                                                 aria-label="funding line 3">
                                                 <option value=""></option>
                                                 <option value="may2020-1">May 2020 instalment 1</option>
@@ -631,7 +641,7 @@ GOV.UK Prototype Kit
             </div>
         </div>
         
-        <button class="govuk-button" data-module="govuk-button">
+        <button class="govuk-button gag-variation-management-save-button-js" data-module="govuk-button" disabled>
             Save and continue
         </button>
         
