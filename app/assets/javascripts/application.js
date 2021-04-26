@@ -195,35 +195,38 @@ $(function () {
 
 
 // Checkbox count 
+$(document).ready(function () {
 
-var count = 0;
-var checked = 0;
+  var count = 0;
+  var checked = 0;
 
-count = $("input[id='provider-approval']").length;
-document.getElementById("checkbox-count").innerHTML = count;
+  count = $("input[id='provider-approval']").length;
+  document.getElementById("checkbox-count").innerHTML = count;
 
-$(".provider-checked").click(function () {
-  checked = $('.provider-checked:checked').length;
-  console.log(checked);
-  document.getElementById("checkbox-checked").innerHTML = checked;
-  $("#select-all").prop('checked', false);
-});
+  $(".provider-checked").click(function () {
+    checked = $('.provider-checked:checked').length;
+    console.log(checked);
+    document.getElementById("checkbox-checked").innerHTML = checked;
+    $("#select-all").prop('checked', false);
+  });
 
-$("#select-all").click(function () {
-  if (this.checked) {
-    $('.provider-checked:checkbox').not(this).prop('checked', this.checked);
-    document.getElementById("checkbox-checked").innerHTML = count;
-  }
-});
+  $("#select-all").click(function () {
+    if (this.checked) {
+      $('.provider-checked:checkbox').not(this).prop('checked', this.checked);
+      document.getElementById("checkbox-checked").innerHTML = count;
+    }
+  });
 
-$('.provider-checked').change(function () {
-  var total = 0;
-  $('.provider-checked:checked').each(function () {
-    total += $(this).closest('.provider-value').text();
+  $('.provider-checked').change(function () {
+    var total = 0;
+    $('.provider-checked:checked').each(function () {
+      total += $(this).closest('.provider-value').text();
+      console.log(total);
+    });
+    $('#total').text(total);
     console.log(total);
   });
-  $('#total').text(total);
-  console.log(total);
+
 });
 
 
@@ -273,3 +276,25 @@ function goBack() {
 function goBack2() {
   window.history.go(-2);
 }
+
+// Show success message on fundingLineStructure-gag#variation-management page when user clicks save button
+$(".gag-variation-management-save-button-js").on( "click", function(e) {
+  // Prevent default button action 
+  e.preventDefault();
+
+  // Show sucess banner by removing the class that is hiding it
+  $('.notification-banner-success').removeClass("govuk-!-display-none");
+
+  // Scroll page to the success banner so it is visible to the user
+  $([document.documentElement, document.body]).animate({
+    scrollTop: $(".govuk-breadcrumbs").offset().top
+}, 500);
+});
+// END Show success message on fundingLineStructure-gag#variation-management page when user clicks save button
+
+// ON fundingLineStructure-gag#variation-management PAGE, ENABLE SAVE BUTTON WHEN A USER MAKES A SELECTION FROM A FUTURE INSTALMENT DROPDOWN
+$('.funding-line-dropdown-js').on('change', function() {
+  $('.gag-variation-management-save-button-js').prop("disabled", false); // Element(s) are now enabled.
+});
+// END ON fundingLineStructure-gag#variation-management PAGE, ENABLE SAVE BUTTON WHEN A USER MAKES A SELECTION FROM A FUTURE INSTALMENT DROPDOWN
+
