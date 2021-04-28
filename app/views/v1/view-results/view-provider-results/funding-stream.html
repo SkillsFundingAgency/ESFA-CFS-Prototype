@@ -21,21 +21,22 @@ endblock %}
   </div>
 </div>
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
-        Select funding stream
-      </h1>
-      <span class="govuk-caption-xl govuk-!-margin-bottom-6">Select the funding you wish to view providers for</span>
-    </legend>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <form action="" method="get">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+            Select funding stream
+          </h1>
+          <span class="govuk-caption-xl govuk-!-margin-bottom-6">Select the funding you wish to view providers
+            for</span>
+        </legend>
+        <form action="provider-results.html" method="get" no-validate data-validate='funding-stream'>
           <label class="govuk-label" for="fundingStream">Select a funding stream</br>
-            <input list="fundingstream" class="govuk-select govuk-!-margin-top-1" size="40" name="browser"
-              id="browser"></label>
+            <input list="fundingstream" name="fundingStream" class="govuk-select govuk-!-margin-top-1" size="40"
+              name="browser" id="browser"></label>
           <datalist id="fundingstream">
             <option value="General annual grant (GAG)">
             <option value="Dedicated schools grant (DSG)">
@@ -44,28 +45,34 @@ endblock %}
             <option value="16 to 19">
             <option value="14 to 16">
             <option value="Dance and drama awards (DADA)">
-
           </datalist>
-        </form>
 
-      </div>
     </div>
-
-
-  </fieldset>
+  </div>
 </div>
-
-
-
-<a href="provider-results.html" id="specification-link" class="govuk-button" data-module="govuk-button">
-  Continue
-</a>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <a href="profile-patterns.html" class="govuk-back-link">Back</a>
+    <div class="govuk-button-group">
+      <button id="specification-link" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      <a href="#" onclick="goBack ()" class="govuk-link">Back</a>
+    </div>
   </div>
 </div>
+
+</form>
+</fieldset>
+
+
+
+
+
+
+
+
+
 
 
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
@@ -87,6 +94,17 @@ endblock %}
     submittedEl.classList.remove('submitted--hidden')
     var params = new URLSearchParams(document.location.search.split('?')[1])
     document.querySelector('.submitted__last-location').innerHTML = params.get('funding-stream')
+  }
+</script>
+
+<script type="application/json" id="funding-stream">
+  {
+    "fundingStream": {
+      "presence": {
+        "message": "^Select a funding stream"
+      }
+    }
+
   }
 </script>
 
