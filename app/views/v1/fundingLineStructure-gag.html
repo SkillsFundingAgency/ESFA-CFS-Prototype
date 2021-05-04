@@ -86,32 +86,32 @@ GOV.UK Prototype Kit
         </h2>
         <ul class="govuk-tabs__list">
           <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#funding-line-structure">
+            <a class="govuk-tabs__tab govuk-tabs__tab-js" href="#funding-line-structure">
               Funding line structure
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#additional-calculations">
+            <a class="govuk-tabs__tab govuk-tabs__tab-js" href="#additional-calculations">
               Additional calculations
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#calculation-errors">
+            <a class="govuk-tabs__tab govuk-tabs__tab-js" href="#calculation-errors">
               Calculation errors <span class="notification-badge">11</span>
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data-sets">
+            <a class="govuk-tabs__tab govuk-tabs__tab-js" href="#data-sets">
               Data sets
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#release-timetable">
+            <a class="govuk-tabs__tab govuk-tabs__tab-js" href="#release-timetable">
               Release timetable
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#variation-management">
+            <a class="govuk-tabs__tab govuk-tabs__tab-js" href="#variation-management">
               Variations
             </a>
           </li>
@@ -642,9 +642,15 @@ GOV.UK Prototype Kit
             </div>
         </div>
         
-        <button class="govuk-button gag-variation-management-save-button-js" data-module="govuk-button" disabled>
-            Save
-        </button>
+        <div class="govuk-button-group">
+          <button class="govuk-button gag-variation-management-save-button-js" data-module="govuk-button" disabled>
+              Save
+          </button>
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+        </div>
         
         </form>
         
