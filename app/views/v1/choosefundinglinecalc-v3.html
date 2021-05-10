@@ -18,8 +18,8 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen.html">{{ data['spec-name']
-                        }}</a>
+                    <a class="govuk-breadcrumbs__link"
+                        href="fundingLineStructure-chosen.html">{{ data['spec-name']}}</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">Create data set</li>
             </ol>
@@ -27,267 +27,44 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-
-
 <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-        <h1 class="govuk-heading-xl">Create data set</h1>
-    </legend>
-
-
-
-    <h3 class="govuk-heading-m">
-        Select a data set name
-    </h3>
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-three-quarters">
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="address-line-1">
-                    Data set name
-                </label>
-                <span id="event-name-hint" class="govuk-hint">
-                    Use a descriptive unique name other users can understand
-                </span>
-                <input class="govuk-input" id="address-line-1" name="dataset-name" type="text">
-            </div>
-        </div>
-    </div>
-
-    </br></br>
-    <h3 class="govuk-heading-m">
-        Select funding lines and calculations
-    </h3>
-
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-three-quarters">
-            <form action="" method="get">
-                <label class="govuk-label" for="fundingStream">Select a funding line or calculation
+        <div class="govuk-grid-column-two-thirds">
+                <label class="govuk-label govuk-label--m" for="fundingStream">Search funding lines or calculations
+                    <div id="data-set-name-hint" class="govuk-hint">
+                        Add funding lines and calculations that you want to be part of the data set.
+                    </div>
                     <div class="autocomplete-wrapper">
                         <select name="fundingStream" class="govuk-select" id="funding-stream">
                             <option value="">Select a funding stream</option>
                             <option value="fundingStream: GAG">Area Cost Factor </option>
-                            <option value="fundingStream: DSG">Programme Funding Without Area Cost Allowance Applied
-                            </option>
-                            <option value="fundingStream: PES">Programme Funding With Area Cost Allowance Applied
-                            </option>
-                            <option value="fundingStream: PNA">Programme Funding Without Area Cost Allowance Applied
-                            </option>
+                            <option value="fundingStream: DSG">Programme Funding Without Area Cost Allowance Applied</option>
+                            <option value="fundingStream: PES">Programme Funding With Area Cost Allowance Applied</option>
+                            <option value="fundingStream: PNA">Programme Funding Without Area Cost Allowance Applied</option>
                             <option value="fundingStream: PNA">Area Cost Allowance </option>
                             <option value="fundingStream: PNA">Area Cost Allowance Adjustment </option>
                         </select>
                     </div>
                 </label>
-            </form>
+                <button data-prevent-double-click="true" onclick="addToDataSet()" class="govuk-button govuk-button--secondary"
+                    data-module="govuk-button">Add to data set</button>
         </div>
     </div>
-    <div class="govuk-grid-row">
+
+    <div class="govuk-grid-row govuk-!-margin-top-5">
         <div class="govuk-grid-column-full">
-            <table class="govuk-table table-vertical-align" id="funcalc">
+            <table class="govuk-table table-vertical-align" id="dataSetItems">
+                <caption class="govuk-table__caption govuk-table__caption--m">Funding lines and calculations</caption>
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
-                        <th scope="col" class="govuk-table__header">Choose</th>
-                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Structure</th>
                         <th scope="col" class="govuk-table__header">Name</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Structure</th>
                         <th scope="col" class="govuk-table__header">Status</th>
+                        <th scope="col" class="govuk-table__header">Remove row</th>
                     </tr>
                 </thead>
-
                 <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">
-                            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                    type="checkbox" value="provider-name">
-                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                            </div>
-                        </th>
-                        <td class="govuk-table__cell"><strong>FUN</strong></td>
-                        <td class="govuk-table__cell">Total Funding
-                            Allocation</td>
-                        <td class="govuk-table__cell">Draft</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">
-                            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                    type="checkbox" value="provider-name">
-                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                            </div>
-                        </th>
-                        <td class="govuk-table__cell"><strong>CAL</strong></td>
-                        <td class="govuk-table__cell">Disadvantage Funding</td>
-                        <td class="govuk-table__cell">Draft</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">
-                            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                    type="checkbox" value="provider-name">
-                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                            </div>
-                        </th>
-                        <td class="govuk-table__cell"><strong>CAL</strong></td>
-                        <td class="govuk-table__cell">Disadvantage Block 1 and Block 2 Total</td>
-                        <td class="govuk-table__cell">Draft</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">
-                            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                    type="checkbox" value="provider-name">
-                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                            </div>
-                        </th>
-                        <td class="govuk-table__cell"><strong>CAL</strong></td>
-                        <td class="govuk-table__cell">Disadvantage Block 1 Total Funding</td>
-                        <td class="govuk-table__cell">Draft</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">
-                            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                    type="checkbox" value="provider-name">
-                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                            </div>
-                        </th>
-                        <td class="govuk-table__cell"><strong>CAL</strong></td>
-                        <td class="govuk-table__cell">Economic Deprivation Funding</td>
-                        <td class="govuk-table__cell">Draft</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">
-                            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                    type="checkbox" value="provider-name">
-                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                            </div>
-                        </th>
-                        <td class="govuk-table__cell"><strong>FUN</strong></td>
-                        <td class="govuk-table__cell">Block 1 Funding Payment
-                        </td>
-                        <td class="govuk-table__cell">Draft</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">
-                            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                    type="checkbox" value="provider-name">
-                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                            </div>
-                        </th>
-                        <td class="govuk-table__cell"><strong>CAL</strong></td>
-                        <td class="govuk-table__cell">Student Funding Including Programme Costs with Block 1 Factor
-                            Applied
-                        </td>
-                        <td class="govuk-table__cell">Draft</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">
-                            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                    type="checkbox" value="provider-name">
-                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                            </div>
-                        </th>
-                        <td class="govuk-table__cell"><strong>CAL</strong></td>
-                        <td class="govuk-table__cell">Block 1 Factor
-                        </td>
-                        <td class="govuk-table__cell">Draft</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">
-                            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="provider-approval" name="provider-approval"
-                                    type="checkbox" value="provider-name">
-                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                            </div>
-                        </th>
-                        <td class="govuk-table__cell"><strong>FUN</strong></td>
-                        <td class="govuk-table__cell">Student Funding With Retention Programme Cost Weighting and L3
-                            Maths and English
-                        </td>
-                        <td class="govuk-table__cell">Draft</td>
-                    </tr>
-                    <!--
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">
-                                <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                    <input class="govuk-checkboxes__input" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="provider-name">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                                </div>
-                            </th>
-                            <td class="govuk-table__cell"><strong>CAL</strong></td>
-                            <td class="govuk-table__cell">Area Cost Allowance Adjustment
-                            </td>
-                            <td class="govuk-table__cell">Draft</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">
-                                <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                    <input class="govuk-checkboxes__input" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="provider-name">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                                </div>
-                            </th>
-                            <td class="govuk-table__cell"><strong>FUN</strong></td>
-                            <td class="govuk-table__cell">Area Cost Allowance
-                            </td>
-                            <td class="govuk-table__cell">Draft</td>
-                        </tr>
-                      
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">
-                                <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                    <input class="govuk-checkboxes__input" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="provider-name">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                                </div>
-                            </th>
-                            <td class="govuk-table__cell"><strong>CAL</strong></td>
-                            <td class="govuk-table__cell">Programme Funding Without Area Cost Allowance Applied
-                            </td>
-                            <td class="govuk-table__cell">Draft</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">
-                                <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                    <input class="govuk-checkboxes__input" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="provider-name">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                                </div>
-                            </th>
-                            <td class="govuk-table__cell"><strong>CAL</strong></td>
-                            <td class="govuk-table__cell">Programme Funding With Area Cost Allowance Applied
-                            </td>
-                            <td class="govuk-table__cell">Draft</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">
-                                <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                    <input class="govuk-checkboxes__input" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="provider-name">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                                </div>
-                            </th>
-                            <td class="govuk-table__cell"><strong>CAL</strong></td>
-                            <td class="govuk-table__cell">Programme Funding Without Area Cost Allowance Applied
-                            </td>
-                            <td class="govuk-table__cell">Draft</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">
-                                <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                    <input class="govuk-checkboxes__input" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="provider-name">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"></label>
-                                </div>
-                            </th>
-                            <td class="govuk-table__cell"><strong>CAL</strong></td>
-                            <td class="govuk-table__cell">Area Cost Factor
-                            </td>
-                            <td class="govuk-table__cell">Draft</td>
-                        </tr>-->
+                    
                 </tbody>
             </table>
         </div>
@@ -296,15 +73,9 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-
-
-            <button class="govuk-button govuk-button--warning " data-module="govuk-button" id="deleteInstallment"
-                onclick="deleteInstallment(); sumTotal()"> Delete </button>
-
             <form action="/v1/fundingLineStructure-chosen" method="post" class="form">
                 <button class="govuk-button " data-module="govuk-button" onclick="checkboxChoice()">Save and
                     continue</button>
-
 
                 <a href="fundingLineStructure-chosen.html" class="govuk-button govuk-button--secondary"
                     data-module="govuk-button">
@@ -320,16 +91,24 @@ GOV.UK Prototype Kit
     <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
     <script>
-
-        function deleteInstallment() {
-            document.getElementById("funcalc").deleteRow(-1);
+        function addToDataSet() {
+            let name = document.getElementById("funding-stream").value
+            let table = document.getElementById("dataSetItems");
+            let row = table.insertRow(1);
+            row.className = "govuk-table__row"
+            var cell1 = row.insertCell(0);
+            cell1.className = "govuk-table__header"
+            cell1.innerHTML = name
+            var cell2 = row.insertCell(1);
+            cell2.className = "govuk-table__cell"
+            cell2.innerHTML = "Funding line";
+            var cell3 = row.insertCell(2);
+            cell3.className = "govuk-table__cell"
+            cell3.innerHTML = "Draft";
+            var cell4 = row.insertCell(3);
+            cell4.className = "govuk-table__cell"
+            cell4.innerHTML = "<a class='govuk-link' href='#'' id='deleteRow'>Remove</a>";
         }
-
-        function checkboxChoice() {
-            sessionStorage.setItem('CFS data', 'true');
-        }
-
-
 
         var selectEl = document.querySelector('#funding-stream')
         accessibleAutocomplete.enhanceSelectElement({
