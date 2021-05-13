@@ -1477,7 +1477,7 @@
                     ref: function(e) {
                         i.elementReferences[-1] = e
                     },
-                    type: "text",
+                    type: "search",
                     role: "combobox",
                     required: l,
                     value: O

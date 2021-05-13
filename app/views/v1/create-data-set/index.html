@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link"
+                        href="fundingLineStructure-chosen.html">General annual grant</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Choose data source</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action=" " onsubmit="patternChoice();" method="post" name="dataSourceTypeForm" class="form" novalidate data-validate='dataSourceType'>
+            <div id="chooseDataSourceForm" class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="data-source-type-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Choose data source type
+                        </h1>
+                    </legend>
+                    <div id="data-source-type-hint" class="govuk-hint">
+                        Choose the type of data source you wish to create.
+                    </div>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="CFSdataset" name="data-source-type" type="radio"
+                                value="create-data-set/choosefundingstream" aria-describedby="published-specification-hint">
+                            <label class="govuk-label govuk-radios__label" for="sign-in">
+                                Published specifications
+                            </label>
+                            <div id="published-specification-hint" class="govuk-hint govuk-radios__hint">
+                                Reference funding lines and calcuations used in another funding stream.
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="CFSdataset-2" name="data-source-type" type="radio"
+                                value="createDataset" aria-describedby="data-source-hint">
+                            <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                                Data set
+                            </label>
+                            <div id="data-source-hint" class="govuk-hint govuk-radios__hint">
+                                Create a new data set to be used for this specification.
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <button id="patternLink" class="govuk-button govuk-!-margin-right-1"
+            data-module="govuk-button">
+             Continue
+        </button>
+
+        <a href="fundingLineStructure-chosen.html" class="govuk-button govuk-button--secondary"
+            data-module="govuk-button">
+            Cancel
+        </a>
+        </form>
+    </div>
+</div>
+
+<script>
+
+    function patternChoice() {
+            patternType = document.querySelector('input[name="data-source-type"]:checked').value
+            document.dataSourceTypeForm.action = patternType
+        }
+
+</script>
+
+<script type="application/json" id="dataSourceType">
+    {
+      "data-source-type": {
+        "presence": {
+          "message": "^Select published specification or data set"
+        }
+      }
+  
+    }
+</script>
+
+{% endblock %}
