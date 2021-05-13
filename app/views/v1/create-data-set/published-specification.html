@@ -7,8 +7,7 @@ GOV.UK Prototype Kit
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
+    <div class="govuk-grid-column-full">
         <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
             <ol class="govuk-breadcrumbs__list">
                 <li class="govuk-breadcrumbs__list-item">
@@ -18,12 +17,25 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link"
-                        href="fundingLineStructure-chosen.html">{{ data['spec-name']}}</a>
+                    <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen.html">General annual grant</a>
                 </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">Create data set</li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="choosespectype.html">Select data source</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="choosefundingstream.html">Select funding stream and
+                        period</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Select funding lines and calculations</li>
             </ol>
         </div>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Select funding lines and calculations for {{ data['dataset-fundingStream'] }}</h1>
     </div>
 </div>
 
@@ -35,18 +47,21 @@ GOV.UK Prototype Kit
                         Add funding lines and calculations that you want to be part of the data set.
                     </div>
                     <div class="autocomplete-wrapper">
-                        <select name="fundingStream" class="govuk-select" id="funding-stream">
+                        <select name="datasetFundingLineCalculation" class="govuk-select" id="funding-stream">
                             <option value="">Select a funding stream</option>
                             <option value="fundingStream: GAG">Area Cost Factor </option>
-                            <option value="fundingStream: DSG">Programme Funding Without Area Cost Allowance Applied</option>
-                            <option value="fundingStream: PES">Programme Funding With Area Cost Allowance Applied</option>
-                            <option value="fundingStream: PNA">Programme Funding Without Area Cost Allowance Applied</option>
+                            <option value="fundingStream: DSG">Programme Funding Without Area Cost Allowance Applied
+                            </option>
+                            <option value="fundingStream: PES">Programme Funding With Area Cost Allowance Applied
+                            </option>
+                            <option value="fundingStream: PNA">Programme Funding Without Area Cost Allowance Applied
+                            </option>
                             <option value="fundingStream: PNA">Area Cost Allowance </option>
                             <option value="fundingStream: PNA">Area Cost Allowance Adjustment </option>
                         </select>
                     </div>
                 </label>
-                <button data-prevent-double-click="true" onclick="addToDataSet()" class="govuk-button govuk-button--secondary"
+                <button onclick="addToDataSet()" data-prevent-double-click="true" class="govuk-button govuk-button--secondary"
                     data-module="govuk-button">Add to data set</button>
         </div>
     </div>
@@ -64,7 +79,7 @@ GOV.UK Prototype Kit
                     </tr>
                 </thead>
                 <tbody class="govuk-table__body">
-                    
+
                 </tbody>
             </table>
         </div>
@@ -77,15 +92,13 @@ GOV.UK Prototype Kit
                 <button class="govuk-button " data-module="govuk-button" onclick="checkboxChoice()">Save and
                     continue</button>
 
-                <a href="fundingLineStructure-chosen.html" class="govuk-button govuk-button--secondary"
-                    data-module="govuk-button">
+                <a href="create-data-set" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Cancel
                 </a>
             </form>
 
         </div>
     </div>
-
 
 
     <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
@@ -108,6 +121,7 @@ GOV.UK Prototype Kit
             var cell4 = row.insertCell(3);
             cell4.className = "govuk-table__cell"
             cell4.innerHTML = "<a class='govuk-link' href='#'' id='deleteRow'>Remove</a>";
+            e.preventDefault();
         }
 
         var selectEl = document.querySelector('#funding-stream')
@@ -129,7 +143,16 @@ GOV.UK Prototype Kit
         }
     </script>
 
+    <script type="application/json" id="fundingLineCalculation">
+        {
+            "datasetFundingLineCalculation": {
+                "presence": {
+                    "message": "^Enter and funding line or calculation"
+                }
+            }
 
+        }
+    </script>
 
 
 

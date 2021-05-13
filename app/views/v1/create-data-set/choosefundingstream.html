@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen.html">General annual grant</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="choosespectype.html">Select data source</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Select funding stream and period</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="published-specification" method="post" name="dataSourceTypeForm" class="form" novalidate data-validate='fundingStreamAndPeriod'>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    Select funding stream and period
+                </h1>
+            </legend>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="dataset-fundingStreams">
+                    Funding stream
+                </label>
+                <select class="govuk-select" id="sort" name="dataset-fundingStream">
+                    <option value=""></option>
+                    <option value="16 to 19">16 to 19</option>
+                    <option value="14 to 16">14 to 16</option>
+                    <option value="General annual grant">General Annual Grant</option>
+                    <option value="Academy pupil number adjustment">Academy Pupil Number Adjustment</option>
+
+                </select>
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="dataset-fundingPeriod">
+                    Funding period
+                </label>
+                <select class="govuk-select" id="fundingPeriod" name="dataset-fundingPeriod"
+                    onchange="getFundingStream()">
+                    <option></option>
+                    <option value="2019 to 2020">2019 to 2020</option>
+                    <option value="2020 to 2021">2020 to 2021</option>
+                    <option value="Academies and Schools Academic Year 2019 to 2020">Academies and Schools Academic Year
+                        2019 to 2020
+                    </option>
+                    <option value="Academic year 2019 to 2020">Academic year 2019 to 2020</option>
+                </select>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-right-1">
+                Continue
+            </button>
+
+            <a href="fundingLineStructure-chosen.html" class="govuk-button govuk-button--secondary"
+                data-module="govuk-button">
+                Cancel
+            </a>
+        </form>
+
+    </div>
+</div>
+
+<script>
+    function patternChoice() {
+        console.log("buttonclicked")
+        var patternType = document.querySelector('input[name="data-type"]:checked').value;
+        console.log(patternType)
+        document.getElementById('patternLink').href = patternType
+    }
+</script>
+
+<script type="application/json" id="fundingStreamAndPeriod">
+    {
+
+        "dataset-fundingStream": {
+            "presence": {
+                "message": "^Select a funding stream"
+            }
+        },
+
+        "dataset-fundingPeriod": {
+            "presence": {
+                "message": "^Select a funding period"
+            }
+        }
+
+    }
+</script>
+
+{% endblock %}

@@ -15,7 +15,7 @@
 
 .autocomplete__input {
     background-color: transparent;
-    position: relative
+    position: relative;
 }
 
 .autocomplete__hint {
@@ -132,4 +132,12 @@
         font-size:19px;
         line-height: 1.31579
     }
+}
+
+// autocomplete with clear
+
+.clear-button {
+    float: right;
+    margin-top: -30px;
+    margin-right: 20px;
 }
