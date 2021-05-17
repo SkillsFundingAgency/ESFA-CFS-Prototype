@@ -41,7 +41,7 @@ GOV.UK Prototype Kit
                 <label class="govuk-label" for="dataset-fundingStreams">
                     Funding stream
                 </label>
-                <select class="govuk-select" id="sort" name="dataset-fundingStream">
+                <select class="govuk-select" id="fundingStream" name="dataset-fundingStream">
                     <option value=""></option>
                     <option value="16 to 19">16 to 19</option>
                     <option value="14 to 16">14 to 16</option>
@@ -56,8 +56,8 @@ GOV.UK Prototype Kit
                     Funding period
                 </label>
                 <select class="govuk-select" id="fundingPeriod" name="dataset-fundingPeriod"
-                    onchange="getFundingStream()">
-                    <option></option>
+                    onchange="showSpecification()">
+                    <option value=""></option>
                     <option value="2019 to 2020">2019 to 2020</option>
                     <option value="2020 to 2021">2020 to 2021</option>
                     <option value="Academies and Schools Academic Year 2019 to 2020">Academies and Schools Academic Year
@@ -66,6 +66,17 @@ GOV.UK Prototype Kit
                     <option value="Academic year 2019 to 2020">Academic year 2019 to 2020</option>
                 </select>
             </div>
+
+            <dl id="showSpecification" class="govuk-visually-hidden govuk-summary-list govuk-summary-list__row--no-border">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Specification
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Specfication name
+                    </dd>
+                </div>
+            </dl>
 
             <button class="govuk-button govuk-!-margin-right-1">
                 Continue
@@ -81,12 +92,11 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
-    function patternChoice() {
-        console.log("buttonclicked")
-        var patternType = document.querySelector('input[name="data-type"]:checked').value;
-        console.log(patternType)
-        document.getElementById('patternLink').href = patternType
-    }
+
+function showSpecification() {
+    let specificaion = document.getElementById("showSpecification")
+    specificaion.classList.remove("govuk-visually-hidden")
+}
 </script>
 
 <script type="application/json" id="fundingStreamAndPeriod">

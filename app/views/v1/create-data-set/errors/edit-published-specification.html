@@ -32,6 +32,19 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#obsolete-attribute-error">Obsolete attribute detected</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -111,7 +124,41 @@ GOV.UK Prototype Kit
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
-
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><span id="obsolete-attribute-error" class="govuk-form-group--error">Area cost factor
+                        <span id="passport-issued-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> Obsolete attribute detected
+                          </span>
+                        </span>
+                    </th>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">160</td>
+                    <td class="govuk-table__cell"><a class='govuk-link' href='#' id='deleteRow'>Remove row</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Area cost allowance</th>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">198</td>
+                    <td class="govuk-table__cell"><a class='govuk-link' href='#' id='deleteRow'>Remove row</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Area cost allowance adjustment</th>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">292</td>
+                    <td class="govuk-table__cell"><a class='govuk-link' href='#' id='deleteRow'>Remove row</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Programme Funding Without Area Cost Allowance Applied</th>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">290</td>
+                    <td class="govuk-table__cell"><a class='govuk-link' href='#' id='deleteRow'>Remove row</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Programme Funding With Area Cost Allowance Applied</th>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">301</td>
+                    <td class="govuk-table__cell"><a class='govuk-link' href='#' id='deleteRow'>Remove row</a></td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -149,7 +196,7 @@ GOV.UK Prototype Kit
         cell2.innerHTML = "Funding line";
         var cell3 = row.insertCell(2);
         cell3.className = "govuk-table__cell"
-        cell3.innerHTML = "176";
+        cell3.innerHTML = "FUN-PFWACAA10020393C";
         var cell4 = row.insertCell(3);
         cell4.className = "govuk-table__cell"
         cell4.innerHTML = "<a class='govuk-link' href='#'' id='deleteRow'>Remove row</a>";
