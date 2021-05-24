@@ -32,6 +32,19 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#obsolete-attribute-error">Obsolete attribute detected</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -60,10 +73,10 @@ GOV.UK Prototype Kit
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Reference specificaion
+                    Specification you are selecting from
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['dataset-fundingStream']}} specification
+                    16 to 19 specification
                 </dd>
             </div>
         </dl>
@@ -72,28 +85,29 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row govuk-!-margin-top-5">
     <div class="govuk-grid-column-two-thirds">
-            <fieldset class="govuk-fieldset">
-                <label class="govuk-label govuk-label--m" for="fundingStream">Search funding lines or calculations
-                    <div id="data-set-name-hint" class="govuk-hint">
-                        Add funding lines and calculations that you want to be part of the data set.
-                    </div>
-                    <div class="autocomplete-wrapper">
-                        <select name="datasetFundingLineCalculation" class="govuk-select" id="funding-stream">
-                            <option value="">Select a funding stream</option>
-                            <option value="fundingStream: GAG">Area Cost Factor </option>
-                            <option value="fundingStream: DSG">Programme Funding Without Area Cost Allowance Applied
-                            </option>
-                            <option value="fundingStream: PES">Programme Funding With Area Cost Allowance Applied
-                            </option>
-                            <option value="fundingStream: PNA">Programme Funding Without Area Cost Allowance Applied
-                            </option>
-                            <option value="fundingStream: PNA">Area Cost Allowance </option>
-                            <option value="fundingStream: PNA">Area Cost Allowance Adjustment </option>
-                        </select>
-                    </div>
-                </label>
-                <button onclick="addToDataSet()" data-prevent-double-click="true" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add to data set</button>
-            </fieldset>
+        <fieldset class="govuk-fieldset">
+            <label class="govuk-label govuk-label--m" for="fundingStream">Search funding lines or calculations
+                <div id="data-set-name-hint" class="govuk-hint">
+                    Add funding lines and calculations that you want to be part of the data set.
+                </div>
+                <div class="autocomplete-wrapper">
+                    <select name="datasetFundingLineCalculation" class="govuk-select" id="funding-stream">
+                        <option value="">Select a funding stream</option>
+                        <option value="fundingStream: GAG">Area Cost Factor </option>
+                        <option value="fundingStream: DSG">Programme Funding Without Area Cost Allowance Applied
+                        </option>
+                        <option value="fundingStream: PES">Programme Funding With Area Cost Allowance Applied
+                        </option>
+                        <option value="fundingStream: PNA">Programme Funding Without Area Cost Allowance Applied
+                        </option>
+                        <option value="fundingStream: PNA">Area Cost Allowance </option>
+                        <option value="fundingStream: PNA">Area Cost Allowance Adjustment </option>
+                    </select>
+                </div>
+            </label>
+            <button onclick="addToDataSet()" data-prevent-double-click="true"
+                class="govuk-button govuk-button--secondary" data-module="govuk-button">Add to data set</button>
+        </fieldset>
     </div>
 </div>
 
@@ -105,12 +119,46 @@ GOV.UK Prototype Kit
                 <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
                     <th scope="col" class="govuk-table__header">Structure</th>
-                    <th scope="col" class="govuk-table__header">ID</th>
+                    <th scope="col" class="govuk-table__header">Calculation identifier</th>
                     <th scope="col" class="govuk-table__header">Remove row</th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
-
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header"><span id="obsolete-attribute-error" class="govuk-form-group--error">Area cost factor
+                        <span id="passport-issued-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> Obsolete attribute detected
+                          </span>
+                        </span>
+                    </th>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">160</td>
+                    <td class="govuk-table__cell"><a class='govuk-link' href='#' id='deleteRow'>Remove row</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Area cost allowance</th>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">198</td>
+                    <td class="govuk-table__cell"><a class='govuk-link' href='#' id='deleteRow'>Remove row</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Area cost allowance adjustment</th>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">292</td>
+                    <td class="govuk-table__cell"><a class='govuk-link' href='#' id='deleteRow'>Remove row</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Programme Funding Without Area Cost Allowance Applied</th>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">290</td>
+                    <td class="govuk-table__cell"><a class='govuk-link' href='#' id='deleteRow'>Remove row</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Programme Funding With Area Cost Allowance Applied</th>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">301</td>
+                    <td class="govuk-table__cell"><a class='govuk-link' href='#' id='deleteRow'>Remove row</a></td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -135,23 +183,24 @@ GOV.UK Prototype Kit
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
 <script>
-    function addToDataSet(createDataSetItem) {
+    function addToDataSet() {
         let name = document.getElementById("funding-stream").value
-        let table = document.getElementById("dataSetItems")
-        let row = table.insertRow(1)
+        let table = document.getElementById("dataSetItems");
+        let row = table.insertRow(1);
         row.className = "govuk-table__row"
-        var cell1 = row.insertCell(0)
+        var cell1 = row.insertCell(0);
         cell1.className = "govuk-table__header"
         cell1.innerHTML = name
-        var cell2 = row.insertCell(1)
+        var cell2 = row.insertCell(1);
         cell2.className = "govuk-table__cell"
-        cell2.innerHTML = "Funding line"
-        var cell3 = row.insertCell(2)
+        cell2.innerHTML = "Funding line";
+        var cell3 = row.insertCell(2);
         cell3.className = "govuk-table__cell"
-        cell3.innerHTML = Math.floor(Math.random() * 101)
-        var cell4 = row.insertCell(3)
+        cell3.innerHTML = "FUN-PFWACAA10020393C";
+        var cell4 = row.insertCell(3);
         cell4.className = "govuk-table__cell"
-        cell4.innerHTML = "<a class='govuk-link' href='#'' id='deleteRow'>Remove row</a>"
+        cell4.innerHTML = "<a class='govuk-link' href='#'' id='deleteRow'>Remove row</a>";
+        e.preventDefault();
     }
 
     var selectEl = document.querySelector('#funding-stream')
@@ -177,7 +226,7 @@ GOV.UK Prototype Kit
     {
         "datasetFundingLineCalculation": {
             "presence": {
-                "message": "^Select a funding line or calculation"
+                "message": "^Enter and funding line or calculation"
             }
         }
 
