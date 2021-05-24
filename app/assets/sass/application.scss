@@ -35,6 +35,10 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+.border {
+	border: 1px solid #b1b4b6;
+}
+
 .subHeader {
 	background-color: $govuk-link-colour;
 }
