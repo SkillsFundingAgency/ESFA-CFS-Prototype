@@ -14,25 +14,46 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../specifications.html">Specifications</a>
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../fundingLineStructure-chosen.html">General annual grant</a>
+                    <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen.html">General annual grant</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/create-data-set">Data set type</a>
+                    <a class="govuk-breadcrumbs__link" href="choosespectype.html">Select data source</a>
                 </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    <a class="govuk-breadcrumbs__link" href="choose-funding-stream.html">Funding stream and period</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    <a class="govuk-breadcrumbs__link" href="dataset-details.html">Data set details</a>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="choosefundingstream.html">Select funding stream and
+                        period</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">Select funding lines and calculations</li>
             </ol>
         </div>
     </div>
-  </div>
+</div>
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+    data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#search-error">Funding line or calculation could not be added</a>
+            </li>
+            <li>
+                <a href="#obsolete-attribute-error">Obsolete attribute detected</a>
+            </li>
+            <li>
+                <a href="#remove-row-error">Row could not be removed</a>
+            </li>
+            <li>
+                <a href="#data-set-creation-error">Data set could not be created, try again</a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 
 <div class="govuk-grid-row">
@@ -62,7 +83,7 @@ GOV.UK Prototype Kit
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Reference specification
+                    Reference specificaion
                 </dt>
                 <dd class="govuk-summary-list__value">
                     {{ data['dataset-fundingStream']}} specification
@@ -72,22 +93,28 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-two-thirds govuk-form-group--error">
         <fieldset class="govuk-fieldset">
-            <label class="govuk-label govuk-label--s" for="fundingStream">Select funding lines or calculations
+            <label class="govuk-label govuk-label--m" for="fundingStream">Search funding lines or calculations
+                <div id="data-set-name-hint" class="govuk-hint">
+                    Add funding lines and calculations that you want to be part of the data set.
+                </div>
+                <span id="search-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> Funding line or calculation could not be added
+                </span>
                 <div class="autocomplete-wrapper">
                     <select name="datasetFundingLineCalculation" class="govuk-select" id="funding-stream">
                         <option value="">Select a funding stream</option>
-                        <option value="area cost factor">Area Cost Factor </option>
-                        <option value="Programme Funding Without Area Cost Allowance Applied">Programme Funding Without Area Cost Allowance Applied
+                        <option value="fundingStream: GAG">Area Cost Factor </option>
+                        <option value="fundingStream: DSG">Programme Funding Without Area Cost Allowance Applied
                         </option>
-                        <option value="Programme Funding With Area Cost Allowance Applied">Programme Funding With Area Cost Allowance Applied
+                        <option value="fundingStream: PES">Programme Funding With Area Cost Allowance Applied
                         </option>
-                        <option value="Programme Funding Without Area Cost Allowance Applied">Programme Funding Without Area Cost Allowance Applied
+                        <option value="fundingStream: PNA">Programme Funding Without Area Cost Allowance Applied
                         </option>
-                        <option value="Area Cost Allowance">Area Cost Allowance </option>
-                        <option value="Area Cost Allowance Adjustment ">Area Cost Allowance Adjustment </option>
+                        <option value="fundingStream: PNA">Area Cost Allowance </option>
+                        <option value="fundingStream: PNA">Area Cost Allowance Adjustment </option>
                     </select>
                 </div>
             </label>
@@ -97,9 +124,9 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <form action="/v1/fundingLineStructure-chosen" method="post" class="form">
+<div class="govuk-grid-row govuk-!-margin-top-5 ">
+    <div class="govuk-grid-column-full ">
+        <div class="govuk-form-group--error">
             <table class="govuk-table table-vertical-align" id="dataSetItems">
                 <caption class="govuk-table__caption govuk-table__caption--m">Funding lines and calculations</caption>
                 <thead class="govuk-table__head">
@@ -109,17 +136,51 @@ GOV.UK Prototype Kit
                         <th scope="col" class="govuk-table__header">ID</th>
                         <th scope="col" class="govuk-table__header">Remove row</th>
                     </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><span id="obsolete-attribute-error"
+                                class="govuk-form-group--error">Area cost factor
+                                <span id="passport-issued-error" class="govuk-error-message">
+                                    <span class="govuk-visually-hidden">Error:</span> Obsolete attribute detected
+                                </span>
+                            </span>
+                        </th>
+                        <td class="govuk-table__cell">Funding line</td>
+                        <td class="govuk-table__cell">160</td>
+                        <td class="govuk-table__cell"><a class='govuk-link govuk-form-group--error' href='#'
+                                id='deleteRow'>Remove row</a>
+                            <span id="remove-row-error" class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> Row could not be removed
+                            </span>
+                        </td>
+                    </tr>
                 </thead>
                 <tbody class="govuk-table__body">
 
                 </tbody>
             </table>
-
-        <button class="govuk-button " data-module="govuk-button">Save and continue</button>
-        <a href="create-data-set" class="govuk-button govuk-button--secondary" data-module="govuk-button">Cancel</a>
-        </form>
+            <span id="passport-issued-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden" id="data-set-creation-error">Error:</span> Data set could not be created, try again
+            </span>
+        </div>
     </div>
 </div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="/v1/fundingLineStructure-chosen" method="post" class="form">
+            <button class="govuk-button" data-module="govuk-button" onclick="checkboxChoice()">Save and
+                continue
+            </button>
+
+            <a href="create-data-set" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Cancel
+            </a>
+        </form>
+
+    </div>
+</div>
+
 
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
@@ -172,5 +233,9 @@ GOV.UK Prototype Kit
 
     }
 </script>
+
+
+
+
 
 {% endblock %}
