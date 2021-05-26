@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../fundingLineStructure-chosen.html">General annual grant</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/v1/create-data-set">Data set type</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Funding stream and period</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#passport-issued-error">Multiple data sets cannot reference the same specification</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+        <form action="dataset-details" method="post" name="dataSourceTypeForm" class="form" novalidate
+            data-validate='fundingStreamAndPeriod'>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="funding-stream-and-period-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Which funding stream and period?
+                        </h1>
+                        <div id="funding-stream-and-period-hint" class="govuk-hint">
+                            The funding stream and period of the specification you wish to reference.                          
+                        </div>
+                    </legend>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="dataset-fundingStreams">
+                            Funding stream
+                        </label>
+                        <select class="govuk-select" id="fundingStream" name="dataset-fundingStream">
+                            <option value=""></option>
+                            <option selected value="16 to 19">16 to 19</option>
+                            <option value="14 to 16">14 to 16</option>
+                            <option value="General annual grant">General Annual Grant</option>
+                            <option value="Academy pupil number adjustment">Academy Pupil Number Adjustment</option>
+
+                        </select>
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="dataset-fundingPeriod">
+                            Funding period
+                        </label>
+                        <select class="govuk-select" id="fundingPeriod" name="dataset-fundingPeriod"
+                            onchange="showSpecification()">
+                            <option value=""></option>
+                            <option selected value="2019 to 2020">2019 to 2020</option>
+                            <option value="2020 to 2021">2020 to 2021</option>
+                            <option value="Academies and Schools Academic Year 2019 to 2020">Academies and Schools
+                                Academic Year
+                                2019 to 2020
+                            </option>
+                            <option value="Academic year 2019 to 2020">Academic year 2019 to 2020</option>
+                        </select>
+                    </div>
+
+                    <dl id="showSpecification" class="govuk-visually-hidden govuk-summary-list govuk-summary-list__row--no-border govuk-!-margin-top-5 ">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Specification
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Specfication name
+                            </dd>
+                        </div>
+                    </dl>
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-right-1">
+                Save and continue
+            </button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
