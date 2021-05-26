@@ -42,20 +42,20 @@ GOV.UK Prototype Kit
                                 value="create-data-set/choose-funding-stream"
                                 aria-describedby="published-specification-hint">
                             <label class="govuk-label govuk-radios__label" for="sign-in">
-                                Published specification
+                                Released data
                             </label>
                             <div id="published-specification-hint" class="govuk-hint govuk-radios__hint">
-                                Reference funding lines and calcuations used in another funding stream specification.
+                                Data set referencing released allocations data from another CFS specification
                             </div>
                         </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="CFSdataset-2" name="data-source-type" type="radio"
                                 value="createDataset" aria-describedby="data-source-hint">
                             <label class="govuk-label govuk-radios__label" for="sign-in-2">
-                                Data set
+                                Uploaded data
                             </label>
                             <div id="data-source-hint" class="govuk-hint govuk-radios__hint">
-                                Create a new data set to be used for this specification.
+                                Data set referencing data uploaded into CFS
                             </div>
                         </div>
                     </div>
@@ -69,11 +69,6 @@ GOV.UK Prototype Kit
         <button id="patternLink" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
             Continue
         </button>
-
-        <a href="fundingLineStructure-chosen.html" class="govuk-button govuk-button--secondary"
-            data-module="govuk-button">
-            Cancel
-        </a>
         </form>
     </div>
 </div>
@@ -89,7 +84,7 @@ GOV.UK Prototype Kit
     {
         "data-source-type": {
             "presence": {
-                "message": "^Select published specification or data set"
+                "message": "^Select released data or uploaded data"
             }
         }
 
