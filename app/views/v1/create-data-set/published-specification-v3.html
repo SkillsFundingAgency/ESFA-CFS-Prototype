@@ -69,77 +69,62 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-9">
-    <div class="govuk-grid-column-two-thirds govuk-!-padding-4 border">
-        <fieldset class="govuk-fieldset">
-            <label class="govuk-label govuk-label--m" for="fundingStream">Search funding lines or calculations
-                <div id="data-set-name-hint" class="govuk-hint">
-                    Add funding lines and calculations that you want to be part of the data set.
-                </div>
-                <div class="autocomplete-wrapper">
-                    <select name="datasetFundingLineCalculation" class="govuk-select" id="funding-stream">
-                        <option value="">Select a funding stream</option>
-                        <option value="fundingStream: GAG">Area Cost Factor </option>
-                        <option value="fundingStream: DSG">Programme Funding Without Area Cost Allowance Applied
-                        </option>
-                        <option value="fundingStream: PES">Programme Funding With Area Cost Allowance Applied
-                        </option>
-                        <option value="fundingStream: PNA">Programme Funding Without Area Cost Allowance Applied
-                        </option>
-                        <option value="fundingStream: PNA">Area Cost Allowance </option>
-                        <option value="fundingStream: PNA">Area Cost Allowance Adjustment </option>
-                    </select>
-                </div>
-            </label>
-            <button onclick="addToDataSet()" data-prevent-double-click="true"
-                class="govuk-button govuk-button--secondary govuk-!-margin-bottom-2" data-module="govuk-button">Add to
-                data set</button>
-        </fieldset>
-    </div>
-</div>
-
-<div class="govuk-grid-row govuk-!-margin-top-5">
-    <div class="govuk-grid-column-full">
-        <h3 class="govuk-heading-m">Selected funding lines and calculations</h3>
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-third">
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="selected-search">
-                        Search selected funding lines and calculations
-                    </label>
-                    <input class="govuk-input" onkeyup="searchSelected()" id="selected-search" name="selected-search"
-                        type="text">
-                </div>
-            </div>
-        </div>
-        <table class="govuk-table table-vertical-align" id="dataSetItems">
-            </caption>
-            <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
-                    <th scope="col" class="govuk-table__header">Structure</th>
-                    <th scope="col" class="govuk-table__header">ID</th>
-                    <th scope="col" class="govuk-table__header">Remove row</th>
-                </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-
-            </tbody>
-        </table>
-    </div>
-</div>
-
 <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                    <h4 class="govuk-heading-s"> Search</h4>
+                </legend>
+                <div class="govuk-form-group filterSearch">
+                    <label class="govuk-label filterLabel" for="filter-by-type">
+                        Search added funding lines or calculations
+                    </label>
+                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()" id="searchSelected"
+                        autocomplete="off" name="searchSelected" type="text">
+                </div>
+            </fieldset>
+        </div>
+    </div>
     <div class="govuk-grid-column-two-thirds">
+                <fieldset class="govuk-fieldset">
+                    <h4 class=" govuk-heading-s" for="fundingStream">Search funding lines or calculations
+                        <div id="data-set-name-hint" class="govuk-hint">
+                            Add funding lines and calculations that you want to be part of the data set.
+                        </div>
+                        <div class="autocomplete-wrapper">
+                            <select name="datasetFundingLineCalculation" class="govuk-select" id="funding-stream">
+                                <option value="">Select a funding stream</option>
+                                <option value="fundingStream: GAG">Area Cost Factor </option>
+                                <option value="fundingStream: DSG">Programme Funding Without Area Cost Allowance Applied
+                                </option>
+                                <option value="fundingStream: PES">Programme Funding With Area Cost Allowance Applied
+                                </option>
+                                <option value="fundingStream: PNA">Programme Funding Without Area Cost Allowance Applied
+                                </option>
+                                <option value="fundingStream: PNA">Area Cost Allowance </option>
+                                <option value="fundingStream: PNA">Area Cost Allowance Adjustment </option>
+                            </select>
+                        </div>
+                    </h4>
+                    <button onclick="addToDataSet()" data-prevent-double-click="true"
+                        class="govuk-button govuk-button--secondary govuk-!-margin-bottom-2" data-module="govuk-button">Add to
+                        data set</button>
+                </fieldset>
+        <table class="govuk-table table-vertical-align" id="dataSetItems">
+        </caption>
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
+                <th scope="col" class="govuk-table__header">Structure</th>
+                <th scope="col" class="govuk-table__header">ID</th>
+                <th scope="col" class="govuk-table__header">Remove row</th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
 
-        <form action="/v1/fundingLineStructure-chosen" method="post" class="form">
-            <button class="govuk-button " data-module="govuk-button" onclick="checkboxChoice()">Save</button>
-
-            <a href="create-data-set" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Cancel
-            </a>
-        </form>
-
+        </tbody>
+    </table>
     </div>
 </div>
 
@@ -187,7 +172,7 @@ GOV.UK Prototype Kit
     function searchSelected() {
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("selected-search");
+        input = document.getElementById("searchSelected");
         filter = input.value.toUpperCase();
         table = document.getElementById("dataSetItems");
         tr = table.getElementsByTagName("tr");
