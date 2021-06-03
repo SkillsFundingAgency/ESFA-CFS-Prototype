@@ -298,3 +298,46 @@ $('.funding-line-dropdown-js').on('change', function() {
 });
 // END ON fundingLineStructure-gag#variation-management PAGE, ENABLE SAVE BUTTON WHEN A USER MAKES A SELECTION FROM A FUTURE INSTALMENT DROPDOWN
 
+// $('.table-filter-jq').on("click", function(e) {
+//     e.preventDefault();
+    
+//     $('.govuk-table__row').each(function(i) {
+//       if ($("input:checkbox:not(:checked)")) {
+//           $(this).hide();
+//       };
+//   });
+// });
+
+// $(function() {
+//   $('.table-filter-jq').on("click", function(e) {
+//       e.preventDefault();
+//       console.log("test");
+
+//       $('.govuk-table__row').each(function(item) {
+//           if (item > 1) {
+//               $(this).hide();
+//           };
+//       });
+//   });
+// });
+
+// $("input:checkbox:not(:checked)").hide();
+
+
+$('.table-filter-jq').on("click", function(e) {
+  // Declare variables
+  var input, table, tr;
+  input = document.getElementById("filterCheckbox");
+  table = document.getElementById("dataSetItems");
+  tr = table.getElementsByTagName("tr");
+  
+  e.preventDefault();
+  
+  // Loop through all table rows, and hide unselected
+  for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+          $("input:checkbox:not(:checked)").hide();
+      }
+  }
+});
