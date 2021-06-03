@@ -70,25 +70,6 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-                    <h4 class="govuk-heading-s">Search funding lines or calculations</h4>
-                </legend>
-                <div class="govuk-form-group filterSearch">
-                    <label class="govuk-label filterLabel" for="filter-by-type">
-                        
-                    </label>
-                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()" id="searchSelected"
-                        autocomplete="off" name="searchSelected" type="search">
-                </div>
-            </fieldset>
-        </div>
-    </div>
-</div>
-
-<div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
         <div class="govuk-tabs" data-module="govuk-tabs">
@@ -107,8 +88,28 @@ GOV.UK Prototype Kit
                 </a>
               </li>
             </ul>
-            <div class="govuk-tabs__panel" id="past-day">
+            <div class="govuk-tabs__panel" id="all">
                 <h2 class="govuk-heading-l">Funding lines and calculations</h2>
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <div class="govuk-form-group filterbyContainer">
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                                    <h4 class="govuk-heading-s">Search funding lines or calculations</h4>
+                                </legend>
+                                <div class="govuk-form-group filterSearch">
+                                    <label class="govuk-label filterLabel" for="filter-by-type">
+                                        
+                                    </label>
+                                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()" id="searchSelected"
+                                        autocomplete="off" name="searchSelected" type="search">
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>    
+                </div>
+
                 <table class="govuk-table table-vertical-align" id="dataSetItems">
                     <!-- <caption class="govuk-table__caption govuk-table__caption--m">Funding lines and calculations</caption> -->
                     <thead class="govuk-table__head">
@@ -155,8 +156,28 @@ GOV.UK Prototype Kit
                 </table>
           
             </div>
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="selected">
               <h2 class="govuk-heading-l">Selected funding lines and calculations</h2>
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-form-group filterbyContainer">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                                <h4 class="govuk-heading-s">Search funding lines or calculations</h4>
+                            </legend>
+                            <div class="govuk-form-group filterSearch">
+                                <label class="govuk-label filterLabel" for="filter-by-type">
+                                    
+                                </label>
+                                <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()" id="searchSelected"
+                                    autocomplete="off" name="searchSelected" type="search">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            
               <table class="govuk-table table-vertical-align" id="dataSetItems">
                 <!-- <caption class="govuk-table__caption govuk-table__caption--m">Selected funding lines and calculations
                 </caption> -->
