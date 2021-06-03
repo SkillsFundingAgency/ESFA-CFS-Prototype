@@ -1,0 +1,325 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen.html">General annual grant</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="choosespectype.html">Select data source</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="choosefundingstream.html">Select funding stream and
+                        period</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Select funding lines and calculations</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Select funding lines and calculations</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <dl class="govuk-summary-list govuk-summary-list__row--no-border">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Funding stream
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['dataset-fundingStream']}}
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Funding period
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['dataset-fundingPeriod']}}
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Reference specificaion
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['dataset-fundingStream']}} specification
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                    <h4 class="govuk-heading-s">Search funding lines or calculations</h4>
+                </legend>
+                <div class="govuk-form-group filterSearch">
+                    <label class="govuk-label filterLabel" for="filter-by-type">
+                        
+                    </label>
+                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()" id="searchSelected"
+                        autocomplete="off" name="searchSelected" type="search">
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+              Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                <a class="govuk-tabs__tab" href="#past-day">
+                  All
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                  Selected
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-tabs__panel" id="past-day">
+                <h2 class="govuk-heading-l">Funding lines and calculations</h2>
+                <table class="govuk-table table-vertical-align" id="dataSetItems">
+                    <!-- <caption class="govuk-table__caption govuk-table__caption--m">Funding lines and calculations</caption> -->
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
+                        <th scope="col" class="govuk-table__header">Structure</th>
+                        <th scope="col" class="govuk-table__header">ID</th>
+                        <th scope="col" class="govuk-table__header">Add to or remove from data set</th>
+                    </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__header">Area cost factor</td>
+                            <td class="govuk-table__cell">Funding line</td>
+                            <td class="govuk-table__cell">160</td>
+                            <td class="govuk-table__cell"><a class='govuk-link' href="javascript:;" onClick="addToDataset(this.id)" id='addToDataset1'>Add to data set</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__header">Area cost allowance</td>
+                            <td class="govuk-table__cell">Funding line</td>
+                            <td class="govuk-table__cell">198</td>
+                            <td class="govuk-table__cell"><a class='govuk-link' href="javascript:;" onClick="addToDataset(this.id)"  id='addToDataset2'>Add to data set</a> 
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__header">Area cost allowance adjustment</td>
+                            <td class="govuk-table__cell">Funding line</td>
+                            <td class="govuk-table__cell">292</td>
+                            <td class="govuk-table__cell"><a class='govuk-link' href="javascript:;" onClick="addToDataset(this.id)"  id='addToDataset3'>Add to data set</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__header">Programme Funding Without Area Cost Allowance Applied</td>
+                            <td class="govuk-table__cell">Funding line</td>
+                            <td class="govuk-table__cell">290</td>
+                            <td class="govuk-table__cell"><a class='govuk-link' href="javascript:;" onClick="addToDataset(this.id)"  id='addToDataset4'>Add to data set</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__header">Programme Funding With Area Cost Allowance Applied</td>
+                            <td class="govuk-table__cell">Funding line</td>
+                            <td class="govuk-table__cell">301</td>
+                            <td class="govuk-table__cell"><a class='govuk-link' href="javascript:;" onClick="addToDataset(this.id)"  id='addToDataset5'>Add to data set</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+          
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+              <h2 class="govuk-heading-l">Selected funding lines and calculations</h2>
+              <table class="govuk-table table-vertical-align" id="dataSetItems">
+                <!-- <caption class="govuk-table__caption govuk-table__caption--m">Selected funding lines and calculations
+                </caption> -->
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
+                        <th scope="col" class="govuk-table__header">Structure</th>
+                        <th scope="col" class="govuk-table__header">ID</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header">Area cost factor</td>
+                        <td class="govuk-table__cell">Funding line</td>
+                        <td class="govuk-table__cell">160</td>
+    
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header">Area cost allowance</td>
+                        <td class="govuk-table__cell">Funding line</td>
+                        <td class="govuk-table__cell">198</td>
+    
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header">Area cost allowance adjustment</td>
+                        <td class="govuk-table__cell">Funding line</td>
+                        <td class="govuk-table__cell">292</td>
+    
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header">Programme Funding Without Area Cost Allowance Applied
+                        </td>
+                        <td class="govuk-table__cell">Funding line</td>
+                        <td class="govuk-table__cell">290</td>
+    
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header">Programme Funding With Area Cost Allowance Applied</td>
+                        <td class="govuk-table__cell">Funding line</td>
+                        <td class="govuk-table__cell">301</td>
+                    </tr>
+                </tbody>
+            </table>
+          
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+              <h2 class="govuk-heading-l">Past month</h2>
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Case manager</th>
+                    <th scope="col" class="govuk-table__header">Cases opened</th>
+                    <th scope="col" class="govuk-table__header">Cases closed</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">David Francis</td>
+                    <td class="govuk-table__cell">98</td>
+                    <td class="govuk-table__cell">95</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Paul Farmer</td>
+                    <td class="govuk-table__cell">122</td>
+                    <td class="govuk-table__cell">131</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Rita Patel</td>
+                    <td class="govuk-table__cell">126</td>
+                    <td class="govuk-table__cell">142</td>
+                  </tr>
+                </tbody>
+              </table>
+          
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+              <h2 class="govuk-heading-l">Past year</h2>
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Case manager</th>
+                    <th scope="col" class="govuk-table__header">Cases opened</th>
+                    <th scope="col" class="govuk-table__header">Cases closed</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">David Francis</td>
+                    <td class="govuk-table__cell">1380</td>
+                    <td class="govuk-table__cell">1472</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Paul Farmer</td>
+                    <td class="govuk-table__cell">1129</td>
+                    <td class="govuk-table__cell">1083</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Rita Patel</td>
+                    <td class="govuk-table__cell">1539</td>
+                    <td class="govuk-table__cell">1265</td>
+                  </tr>
+                </tbody>
+              </table>
+          
+            </div>
+          </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">
+                By creating the data set the selected funding lines and calculations will be avaliable for
+                reference from this specificaiton in your calculation scripts.
+            </p>
+
+            <a href="check-data-set" class="govuk-button">
+                Save and continue
+            </a>
+
+            <div class="app-back-to-top app-back-to-top--fixed " data-module="app-back-to-top">
+                <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+                    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+                    width="13" height="17" viewBox="0 0 13 17">
+                    <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                    </svg>Back to top
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    function searchSelected() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("searchSelected");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("dataSetItems");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            td2 = tr[i].getElementsByTagName("td")[2];
+            if (td || td2) {
+                txtValue = td.textContent || td.innerText || td2.textContent || td2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function addToDataset(clicked_id)
+  { 
+    let content = document.getElementById(clicked_id).innerHTML 
+      
+    if (content === "Add to data set") {
+      document.getElementById(clicked_id).innerHTML = "Remove from data set <strong class='govuk-!-margin-left-2 govuk-tag govuk-tag--green'>Added to data set</strong>"
+    } else {
+        document.getElementById(clicked_id).innerHTML = "Add to data set"
+    }
+  }
+</script>
+{% endblock %}
