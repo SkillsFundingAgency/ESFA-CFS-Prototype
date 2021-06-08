@@ -298,46 +298,30 @@ $('.funding-line-dropdown-js').on('change', function() {
 });
 // END ON fundingLineStructure-gag#variation-management PAGE, ENABLE SAVE BUTTON WHEN A USER MAKES A SELECTION FROM A FUTURE INSTALMENT DROPDOWN
 
-// $('.table-filter-jq').on("click", function(e) {
-//     e.preventDefault();
-    
-//     $('.govuk-table__row').each(function(i) {
-//       if ($("input:checkbox:not(:checked)")) {
-//           $(this).hide();
-//       };
-//   });
-// });
-
-// $(function() {
-//   $('.table-filter-jq').on("click", function(e) {
-//       e.preventDefault();
-//       console.log("test");
-
-//       $('.govuk-table__row').each(function(item) {
-//           if (item > 1) {
-//               $(this).hide();
-//           };
-//       });
-//   });
-// });
-
-// $("input:checkbox:not(:checked)").hide();
-
-
+// published-specification-v3: SHOW ONLY SELECTED TABLE ITEMS
 $('.table-filter-jq').on("click", function(e) {
   // Declare variables
-  var input, table, tr;
+  var input, table, tr, inputNotSelected;
   input = document.getElementById("filterCheckbox");
   table = document.getElementById("dataSetItems");
   tr = table.getElementsByTagName("tr");
-  
-  e.preventDefault();
-  
-  // Loop through all table rows, and hide unselected
-  for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-          $("input:checkbox:not(:checked)").hide();
-      }
-  }
-});
+  inputNotSelected = $("input:checkbox:not(:checked)");
+
+  if ( $('.table-filter-jq').is(":checked") ) {
+    console.log("checkbox is checked");
+
+    for (i = 0; i < tr.length; i++) {
+        if (inputNotSelected) {
+          console.log( inputNotSelected );
+          $(inputNotSelected).parent().parent().parent().parent().hide();
+        } // end if
+    } //end for loop
+  } else {
+    console.log("checkbox is not checked");
+
+    $('.govuk-table__row').show();
+  }// end else
+
+}); //end if
+// END published-specification-v3: SHOW ONLY SELECTED TABLE ITEMS
+
