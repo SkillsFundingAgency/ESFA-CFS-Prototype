@@ -1,0 +1,34 @@
+{% extends "component-single.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Loading spinner
+        </h1>        
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-9">
+        <h2 class="govuk-heading-l center-align" id="fullLoader-content">Creating data set</h2>
+        <h3 class="govuk-heading-m center-align">Please wait, this could take several minutes</h3>
+        <div id="loader-content" class="loader loader-full" role="alert" aria-live="assertive"></div>
+        <p class="govuk-body center-align">Please do not refresh the page, you will be redirected automatically</p>
+    </div>
+</div>
+
+<script>
+    setTimeout(contentChange, 6000);
+
+    function contentChange() {
+        document.getElementById("fullLoader-content").innerHTML = "Refresh of funding in progress";
+    };
+</script>
+
+{% endblock %}

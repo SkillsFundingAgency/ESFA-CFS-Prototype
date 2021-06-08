@@ -298,3 +298,30 @@ $('.funding-line-dropdown-js').on('change', function() {
 });
 // END ON fundingLineStructure-gag#variation-management PAGE, ENABLE SAVE BUTTON WHEN A USER MAKES A SELECTION FROM A FUTURE INSTALMENT DROPDOWN
 
+// published-specification-v3: SHOW ONLY SELECTED TABLE ITEMS
+$('.table-filter-jq').on("click", function(e) {
+  // Declare variables
+  var input, table, tr, inputNotSelected;
+  input = document.getElementById("filterCheckbox");
+  table = document.getElementById("dataSetItems");
+  tr = table.getElementsByTagName("tr");
+  inputNotSelected = $("input:checkbox:not(:checked)");
+
+  if ( $('.table-filter-jq').is(":checked") ) {
+    console.log("checkbox is checked");
+
+    for (i = 0; i < tr.length; i++) {
+        if (inputNotSelected) {
+          console.log( inputNotSelected );
+          $(inputNotSelected).parent().parent().parent().parent().hide();
+        } // end if
+    } //end for loop
+  } else {
+    console.log("checkbox is not checked");
+
+    $('.govuk-table__row').show();
+  }// end else
+
+}); //end if
+// END published-specification-v3: SHOW ONLY SELECTED TABLE ITEMS
+

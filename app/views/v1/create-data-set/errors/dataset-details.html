@@ -32,18 +32,39 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#unique-name-error">Data set name must be unique, the chosen data set name already exists. Enter a unique data set name.</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
     <form action="published-specification-v3" method="post" class="form" novalidate data-validate="create-data-set">
       <fieldset class="govuk-fieldset">
           <h1 class="govuk-heading-xl">Data set details</h1>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
           <label class="govuk-label" for="address-line-1">
             Data set name
           </label>
           <span id="event-name-hint" class="govuk-hint">
             Use a descriptive unique name other users can understand
           </span>
+          <span id="unique-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Data set name must be unique.
+        </span>
           <input class="govuk-input" id="address-line-1" name="dataset-name" type="text">
         </div>
 

@@ -35,6 +35,14 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+.font-regular {
+	font-weight: 100;
+}
+
+.font-bold {
+	font-weight: 700;
+}
+
 .border {
 	border: 1px solid #b1b4b6;
 }
@@ -58,6 +66,13 @@ $govuk-assets-path: '/govuk/assets/';
 .input-search {
 	max-width: 80%;
 	margin: auto;
+}
+
+// Position sticky - content that sticks to the viewport as you scroll
+.position-sticky {
+	position: sticky;
+	top: 1rem;
+	z-index: 1020;
 }
 
 .right-align {

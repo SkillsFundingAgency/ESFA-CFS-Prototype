@@ -1,0 +1,437 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../fundingLineStructure-gag.html">General annual grant</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../create-data-set.html">Data set type</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="choose-funding-stream.html">Funding stream and
+                        period</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="dataset-details.html">Data set details</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Select funding lines and calculations</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Select funding lines and calculations</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <dl class="govuk-summary-list govuk-summary-list__row--no-border">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Funding stream
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['dataset-fundingStream']}}
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Funding period
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['dataset-fundingPeriod']}}
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Reference specification
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['dataset-fundingStream']}} specification
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third position-sticky">
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                    <h4 class="govuk-heading-s"> Search</h4>
+                </legend>
+                <div class="govuk-form-group filterSearch">
+                    <label class="govuk-label filterLabel" for="filter-by-type">
+                        Search added funding lines or calculations
+                    </label>
+                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()" id="searchSelected"
+                        autocomplete="off" name="searchSelected" type="text">
+                </div>
+            </fieldset>
+        </div>
+        
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="filter">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-heading-s">
+                      Filter selection
+                    </h1>
+                  </legend>
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input table-filter-jq" id="filter" name="filter" type="checkbox" value="">
+                    <label class="govuk-label govuk-checkboxes__label" for="filter">
+                    Show only selected
+                    </label>
+                </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <a href="check-data-set" class="govuk-button">
+            Continue to summary
+        </a>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table table-vertical-align" id="dataSetItems">
+        </caption>
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">
+                    Name
+                    <br>
+                </th>
+                <th scope="col" class="govuk-table__header">Structure</th>
+                <th scope="col" class="govuk-table__header">ID</th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-1">
+                                Area cost factor
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">160</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-2">
+                                Area cost allowance
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">198</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-3">
+                                Area cost allowance adjustment
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">292</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-4">
+                                Programme Funding Without Area Cost Allowance Applied
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">290</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Programme Funding With Area Cost Allowance Applied
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                                Item name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">Funding line</td>
+                <td class="govuk-table__cell">301</td>
+            </tr>
+
+            </tbody>
+    </table>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
+
+<script>
+    function addToDataSet(createDataSetItem) {
+        let name = document.getElementById("funding-stream").value
+        let table = document.getElementById("dataSetItems")
+        let row = table.insertRow(1)
+        row.className = "govuk-table__row"
+        var cell1 = row.insertCell(0)
+        cell1.className = "govuk-table__header"
+        cell1.innerHTML = name
+        var cell2 = row.insertCell(1)
+        cell2.className = "govuk-table__cell"
+        cell2.innerHTML = "Funding line"
+        var cell3 = row.insertCell(2)
+        cell3.className = "govuk-table__cell"
+        cell3.innerHTML = Math.floor(Math.random() * 101)
+        var cell4 = row.insertCell(3)
+        cell4.className = "govuk-table__cell"
+        cell4.innerHTML = "<a class='govuk-link' href='#'' id='deleteRow'>Remove row</a>"
+    }
+
+    var selectEl = document.querySelector('#funding-stream')
+    accessibleAutocomplete.enhanceSelectElement({
+        autoselect: true,
+        confirmOnBlur: true,
+        defaultValue: "",
+        minLength: 2,
+        selectElement: selectEl
+    })
+
+    var queryStringParameters = window.location.search
+    var previouslySubmitted = queryStringParameters.length > 0
+    if (previouslySubmitted) {
+        var submittedEl = document.querySelector('.submitted')
+        submittedEl.classList.remove('submitted--hidden')
+        var params = new URLSearchParams(document.location.search.split('?')[1])
+        document.querySelector('.submitted__last-location').innerHTML = params.get('funding-stream')
+    }
+
+    function searchSelected() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("searchSelected");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("dataSetItems");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+{% endblock %}
