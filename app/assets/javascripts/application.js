@@ -325,3 +325,11 @@ $('.table-filter-jq').on("click", function(e) {
 }); //end if
 // END published-specification-v3: SHOW ONLY SELECTED TABLE ITEMS
 
+// updateDataset-v4: TOGGLE HIDDEN CONTENT
+$(".content-toggle-jq").on("click", function(e) {
+  e.preventDefault();
+  
+  $('.content-toggle-container-jq').hide();
+  $('.hidden-content-jq').removeClass('hide-me');
+});
+// END updateDataset-v4: TOGGLE HIDDEN CONTENT

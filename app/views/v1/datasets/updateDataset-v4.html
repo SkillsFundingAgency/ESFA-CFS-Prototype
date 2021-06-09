@@ -1,0 +1,253 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="manageDatasets.html">Manage data source files</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Update data source file</li>
+    </ol>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <form action="/v1/datasets/manageDatasets" method="post" class="form" id="updateDataset" novalidate
+            data-validate='update-data-source'>
+            <fieldset class="govuk-fieldset">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update Lump sum for 2020 to 2021 (version 1)</h1>
+    </div>
+</div>
+
+<!-- CONVERTOR WIZARD WARNING -->
+<div class="govuk-error-summary govuk-error-summary-orange" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+    data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        Converter wizard in progress
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <p class="govuk-body">Initiated by SYSTEM on 17 October 20120, 11:50am</p>
+                <p class="govuk-body"><i>You will not be able to update this data source file until the converter wizard is complete.</i></p>
+            </li>
+        </ul>
+        <!-- CONVERTOR WIZARD SPINNER ANIMATION AND TEXT -->
+        <div class="govuk-!-margin-top-1 govuk-!-margin-bottom-2">
+            <span id="loader-content" class="inline-loader" role="alert" aria-live="assertive"></span>
+            <span class="govuk-body">
+              Converter wizard running. Please wait.
+            </span>
+        </div>
+        <!-- END CONVERTOR WIZARD SPINNER ANIMATION AND TEXT -->
+    </div>
+</div>
+<!-- END CONVERTOR WIZARD WARNING -->
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Last updated by</dt>
+                <dd class="govuk-summary-list__value"> Nathan Townsend, <span>21 November 12:24pm</span>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Core provider data version to upload against
+                </dt>
+                <dd class="govuk-summary-list__value"> 21 August 2021 - Initial providers
+                </dd>
+            </div>
+
+        </dl>
+    </div>
+
+    <!-- WHY CAN'T I SEE THIS PAGE? -->
+        <div class="govuk-grid-column-full govuk-!-padding-3 border content-toggle-container-jq">
+            <h3 class="govuk-heading-s">Why is some of this page hidden?</h3>
+            <p>While the converter wizard is in progress, we are unable to make any updates to the page. This message will automatically dissappear when the converter wizard is complete.</p>
+            <a href="" class="content-toggle-jq">I understand I cannot currently update this page. Show page content.</a>
+        </div>
+    <!-- END WHY CAN'T I SEE THIS PAGE? -->
+
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-2 hidden-content-jq hide-me">
+
+        <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <label class="govuk-label" for="select-update-type">
+                    Select update type
+                </label>
+            </legend>
+            <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="updateTypeMerge" name="updateType"
+                        onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.remove('govuk-visually-hidden')"
+                        type="radio" value="merge/merge-in-progress" aria-label="update-type-merge">
+                    <label class="govuk-label govuk-radios__label" for="updateTypeMerge">
+                        Merge existing version
+                    </label>
+                    <div id="merge" class="govuk-hint govuk-radios__hint">
+                        Combine a new data source with the existing file
+                    </div>
+                </div>
+                <div class="govuk-radios__item govuk-!-margin-bottom-7">
+                    <input class="govuk-radios__input" id="updateTypeReplace"
+                        onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.add('govuk-visually-hidden')"
+                        name="updateType" type="radio" value="/v1/datasets/manageDatasets"
+                        aria-label="update-type-replace">
+                    <label class="govuk-label govuk-radios__label" for="updateTypeReplace">
+                        Create new version
+                    </label>
+                    <div id="create-new" class="govuk-hint govuk-radios__hint">
+                        Replace the existing data source with a new file
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="govuk-form-group govuk-visually-hidden" id="emptyCells">
+            <fieldset class="govuk-fieldset" aria-label="sign-in-hint">
+
+                <label class="govuk-label" for="emptyCellQuestion">
+                    Do you want to treat empty cells as values when updating providers?
+                </label>
+                <div class="govuk-radios govuk-!-margin-top-4">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="emptyCellQuestion" name="emptyCell" type="radio"
+                            value="government-gateway" aria-describedby="sign-in-item-hint" onchange="getEmptyCell()">
+                        <label class="govuk-label govuk-radios__label" for="emptyCellQuestion">
+                            Yes </label>
+                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                            Allow an empty cell to replace an existing previous value
+
+                        </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sign-in-2" name="emptyCell" type="radio"
+                            value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                            No </label>
+                        <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                            Ignore any empty cells in the file upload
+
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+                Select data source file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload" type="file">
+        </div>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="file-description">
+                Description
+            </label>
+            <span id="description-detail" class="govuk-hint">
+            </span>
+            <textarea class="govuk-textarea" id="file-description" name="description" rows="5"
+                aria-label="description-detail">{{ data['data-more-detail'] }}</textarea>
+        </div>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+                Change note
+            </label>
+            <span id="change-note" class="govuk-hint">
+            </span>
+            <textarea class="govuk-textarea" id="more-detail" name="change-note-data" rows="5"
+                aria-describedby="change-note""></textarea>
+        </div>
+        <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+            Save
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+        </button>
+        </fieldset>
+    </div>
+    </form>
+</div>
+</div>
+
+<script>
+    function updateTypeCheck() {
+        console.log("updateTypeCheck ran")
+        var updateType = document.getElementsByName('updateType');
+        for (var i = 0, length = updateType.length; i < length; i++) {
+            if (updateType[i].checked) {
+                // do whatever you want with the checked radio
+                document.getElementById('updateDataset').action = updateType[i].value;
+                // only one radio can be logically checked, don't check the rest
+                break;
+            }
+        }
+    }
+
+    function getEmptyCell() {
+        var coreProviderData = document.getElementById("coreProviderData").value;
+        console.log(coreProviderData)
+        sessionStorage.setItem('provider data changed', coreProviderData);
+
+    }
+</script>
+
+<script type="application/json" id="update-data-source">
+    {
+
+        "updateType": {
+            "presence": {
+                "message": "^Select update type"
+            }
+        },
+
+
+        "file-upload": {
+            "presence": {
+                "message": "^Select a data source file"
+            }
+        },
+
+        "description": {
+            "presence": {
+                "message": "^Enter a description"
+            }
+        },
+
+
+        "change-note-data": {
+            "presence": {
+                "message": "^Enter a change note"
+            }
+        }
+
+    }
+</script>
+
+<!--  "emptyCell": {
+            "presence": {
+                "message": "^Select how empty cells are treated"
+            }
+        }, -->
+
+{% endblock %}
