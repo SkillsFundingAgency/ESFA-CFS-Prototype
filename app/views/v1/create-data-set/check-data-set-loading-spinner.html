@@ -1,4 +1,4 @@
-{% extends "component-single.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
 GOV.UK Prototype Kit
@@ -19,7 +19,8 @@ GOV.UK Prototype Kit
     setTimeout(contentChange, 6000);
 
     function contentChange() {
-        document.getElementById("fullLoader-content").innerHTML = "Refresh of funding in progress";
+        window.location.href = "http://localhost:3000/v1/fundingLineStructure-gag#data-sets";
+
     };
 </script>
 
