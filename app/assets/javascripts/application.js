@@ -299,7 +299,8 @@ $('.funding-line-dropdown-js').on('change', function() {
 // END ON fundingLineStructure-gag#variation-management PAGE, ENABLE SAVE BUTTON WHEN A USER MAKES A SELECTION FROM A FUTURE INSTALMENT DROPDOWN
 
 // published-specification-v3: SHOW ONLY SELECTED TABLE ITEMS
-$('.table-filter-jq').on("click", function(e) {
+$('.table-filter-jq').on("click", function(e) { // Look for the 'Show only selected' checkbox and run this code when a user clicks the checkbox.
+
   // Declare variables
   var input, table, tr, inputNotSelected;
   input = document.getElementById("filterCheckbox");
@@ -307,22 +308,33 @@ $('.table-filter-jq').on("click", function(e) {
   tr = table.getElementsByTagName("tr");
   inputNotSelected = $("input:checkbox:not(:checked)");
 
-  if ( $('.table-filter-jq').is(":checked") ) {
+  // Show the 'No items selected' message.
+  $('.no-items-selected-jq').removeClass('hide-me');
+
+  // Once the user clicks the 'Show only selected' filter, check to see if the checkbox is checked or not.
+  if ( $('.table-filter-jq').is(":checked") ) { // If the checkbox is checked already...
     console.log("checkbox is checked");
 
-    for (i = 0; i < tr.length; i++) {
-        if (inputNotSelected) {
-          console.log( inputNotSelected );
-          $(inputNotSelected).parent().parent().parent().parent().hide();
-        } // end if
-    } //end for loop
-  } else {
-    console.log("checkbox is not checked");
+    // Check if any items in the <table> are currently checked...
+    if ( $('.table-input').is(":checked") ) { // ...if any item within the <table> IS checked...
+      console.log('something is checked')
+      $('.no-items-selected-jq').addClass('hide-me'); // ...Then hide the 'you have no items selected' message
+    } // end if
 
+    // Hide any items within the table that are not 'checked/selected'
+    for (i = 0; i < tr.length; i++) {
+      if (inputNotSelected) {
+        console.log( inputNotSelected );
+        $(inputNotSelected).parent().parent().parent().parent().hide();
+      }
+    } //end for loop
+  } else { // Otherwise show all items in the <table> and hide the 'no items selected' message.
+    console.log("checkbox is not checked");
+    $('.no-items-selected-jq').addClass('hide-me');
     $('.govuk-table__row').show();
   }// end else
 
-}); //end if
+});
 // END published-specification-v3: SHOW ONLY SELECTED TABLE ITEMS
 
 // updateDataset-v4: TOGGLE HIDDEN CONTENT
@@ -333,3 +345,4 @@ $(".content-toggle-jq").on("click", function(e) {
   $('.hidden-content-jq').removeClass('hide-me');
 });
 // END updateDataset-v4: TOGGLE HIDDEN CONTENT
+
