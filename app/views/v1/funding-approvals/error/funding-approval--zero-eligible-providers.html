@@ -27,7 +27,7 @@ GOV.UK Prototype Kit
     </div>
 
     <!-- ERROR MESSAGES -->
-    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+    <div id="error-summary" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
       data-module="govuk-error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">
         There is a problem
@@ -35,7 +35,7 @@ GOV.UK Prototype Kit
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#passport-issued-error">Could not confirm funding approval as there are no eligible providers to be approved. Choose at least one provider with the status of draft or updated.</a>
+            <a href="#no-eligible-providers">Could not confirm funding approval as there are no eligible providers to be approved. Choose at least one provider with the status of draft or updated.</a>
           </li>
         </ul>
       </div>
@@ -142,11 +142,18 @@ GOV.UK Prototype Kit
       <tbody class="govuk-table__body">
 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Providers selected</th>
+          <th scope="row" class="govuk-table__header">
+            <div class="govuk-form-group--error">
+              Providers selected
+              <span id="no-eligible-providers" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> No eligible providers to be approved.
+              </span>
+            </div>
+          </th>
           <td class="govuk-table__cell">
-            <p class="govuk-body"><a href="#" class="govuk-link" data-module="govuk-button">Export
+            <!-- <p class="govuk-body"><a href="#" class="govuk-link" data-module="govuk-button">Export
                 all as
-                CSV</a></p>
+                CSV</a></p> -->
           </td>
           <td class="govuk-table__cell govuk-table__cell--numeric">
             <p class="govuk-body govuk-!-margin-bottom-0">0</p>
@@ -207,7 +214,7 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-column-full">
 
 
-    <a href="../funding-approvals/16-19/16-19-results.html"><button data-prevent-double-click="true"
+    <a href="#error-summary"><button data-prevent-double-click="true"
         class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
         Confirm approval
       </button></a>
