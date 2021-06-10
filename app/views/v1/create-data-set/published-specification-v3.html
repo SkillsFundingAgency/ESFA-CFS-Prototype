@@ -88,21 +88,19 @@ GOV.UK Prototype Kit
                 </div>
             </fieldset>
         </div>
-        
-        <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="filter">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-heading-s">
-                      Filter selection
-                    </h1>
-                  </legend>
-                <div class="govuk-checkboxes govuk-checkboxes--small">
-                <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input table-filter-jq" id="filter" name="filter" type="checkbox" value="">
-                    <label class="govuk-label govuk-checkboxes__label" for="filter">
-                    Show only selected
-                    </label>
-                </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                    <h4 class="govuk-heading-s"> Filter selection</h4>
+                </legend>
+                <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-2">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input table-filter-jq" id="filter" name="filter" type="checkbox" value="">
+                        <label class="govuk-label govuk-checkboxes__label" for="filter">
+                        Show only selected
+                        </label>
+                    </div>
                 </div>
             </fieldset>
         </div>
@@ -129,8 +127,8 @@ GOV.UK Prototype Kit
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-1">
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox1" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox1">
                                 Area cost factor
                             </label>
                         </div>
@@ -144,8 +142,8 @@ GOV.UK Prototype Kit
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-2">
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox2" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox2">
                                 Area cost allowance
                             </label>
                         </div>
@@ -159,8 +157,8 @@ GOV.UK Prototype Kit
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-3">
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox3" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox3">
                                 Area cost allowance adjustment
                             </label>
                         </div>
@@ -174,8 +172,8 @@ GOV.UK Prototype Kit
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-4">
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox4" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox4">
                                 Programme Funding Without Area Cost Allowance Applied
                             </label>
                         </div>
@@ -189,8 +187,8 @@ GOV.UK Prototype Kit
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox5" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox5">
                                 Programme Funding With Area Cost Allowance Applied
                             </label>
                         </div>
@@ -204,169 +202,172 @@ GOV.UK Prototype Kit
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox6" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox6">
+                                Funding Basis
                             </label>
                         </div>
                     </div>
                 </td>
-                <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">Calculation</td>
+                <td class="govuk-table__cell">173</td>
             </tr>
 
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox7" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox7">
+                                Phase of education
                             </label>
                         </div>
                     </div>
                 </td>
-                <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">Calculation</td>
+                <td class="govuk-table__cell">213</td>
             </tr>
 
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox8" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox8">
+                                Notional SEN Funding
                             </label>
                         </div>
                     </div>
                 </td>
                 <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">362</td>
             </tr>
 
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox9" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox9">
+                                Days open in year
                             </label>
                         </div>
                     </div>
                 </td>
-                <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">Calculation</td>
+                <td class="govuk-table__cell">273</td>
             </tr>
 
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox10" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox10">
+                                Proportion of year open
                             </label>
                         </div>
                     </div>
                 </td>
-                <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">Calculation</td>
+                <td class="govuk-table__cell">166</td>
             </tr>
 
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox11" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox11">
+                                Days in the year
                             </label>
                         </div>
                     </div>
                 </td>
-                <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">Calculation</td>
+                <td class="govuk-table__cell">194</td>
             </tr>
 
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox12" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox12">
+                                Pupil Led Factors SEN
                             </label>
                         </div>
                     </div>
                 </td>
                 <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">201</td>
             </tr>
 
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox13" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox13">
+                                Basic Entitlement - Primary SEN Total
                             </label>
                         </div>
                     </div>
                 </td>
-                <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">Calculation</td>
+                <td class="govuk-table__cell">160</td>
             </tr>
 
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox14" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox14">
+                                Primary Basic Entitlement Rate
                             </label>
                         </div>
                     </div>
                 </td>
-                <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">Calculation</td>
+                <td class="govuk-table__cell">119</td>
             </tr>
 
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox15" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox15">
+                                Primary Basic Entitlement Factor
                             </label>
                         </div>
                     </div>
                 </td>
-                <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">Calculation</td>
+                <td class="govuk-table__cell">228</td>
             </tr>
 
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="filterCheckbox" name="provider-approval" type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label" for="table-item-5">
-                                Item name
+                            <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox16" name="provider-approval" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox16">
+                                Primary Pupil Count SBS
                             </label>
                         </div>
                     </div>
                 </td>
-                <td class="govuk-table__cell">Funding line</td>
-                <td class="govuk-table__cell">301</td>
+                <td class="govuk-table__cell">Calculation</td>
+                <td class="govuk-table__cell">195</td>
             </tr>
 
             </tbody>
     </table>
+
+    <p class="no-items-selected-jq hide-me">You have zero items selected.</p>
+
     </div>
 </div>
 
