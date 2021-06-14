@@ -38,21 +38,47 @@ GOV.UK Prototype Kit
           <h1 class="govuk-heading-xl">Data set details</h1>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="address-line-1">
+          <!-- <label class="govuk-label" for="address-line-1">
             Data set name
           </label>
           <span id="event-name-hint" class="govuk-hint">
             Use a descriptive unique name other users can understand
           </span>
-          <input class="govuk-input" id="address-line-1" name="dataset-name" type="text">
+          <input class="govuk-input" id="address-line-1" name="dataset-name" type="text"> -->
+
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            label: {
+              text: "Data set name",
+              classes: "govuk-label"
+            },
+            hint: {
+              text: "Use a descriptive unique name other users can understand."
+            },
+            id: "dataset-name",
+            name: "dataset-name",
+            value: data['dataset-name']
+          }) }}
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="more-detail">
+          <!-- <label class="govuk-label" for="more-detail">
             Description
-          </label>
-          <textarea class="govuk-textarea" id="more-detail" name="description" rows="8"
-            aria-label="more-detail-hint"></textarea>
+          </label> -->
+          <!-- <textarea class="govuk-textarea" id="more-detail" name="dataset-description" rows="8"
+            aria-label="more-detail-hint"></textarea> -->
+            {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+            {{ govukTextarea({
+              name: "dataset-description",
+              id: "dataset-description",
+              label: {
+                text: "Description",
+                classes: "govuk-label"
+              },
+              value: data['dataset-description']
+            }) }}
         </div>
 
         <div class="govuk-form-group govuk-visually-hidden" id="providerdata">
@@ -114,7 +140,7 @@ GOV.UK Prototype Kit
           }
       },
 
-      "description": {
+      "dataset-description": {
           "presence": {
               "message": "^Provide a description"
           }
