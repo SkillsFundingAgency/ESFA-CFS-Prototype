@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../fundingLineStructure-chosen.html">General annual grant</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="edit-published-specification.html">Edit selected funding lines and calculations</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Check data set</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Check funding lines and calculations
+        </h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table table-vertical-align" id="dataSetItems">
+            <caption class="govuk-table__caption govuk-table__caption--m">Selected funding lines and calculations
+            </caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
+                    <th scope="col" class="govuk-table__header">Structure</th>
+                    <th scope="col" class="govuk-table__header">ID</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header">Area cost factor</td>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">160</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header">Area cost allowance</td>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">198</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header">Area cost allowance adjustment</td>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">292</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header">Programme Funding Without Area Cost Allowance Applied
+                    </td>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">290</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header">Programme Funding With Area Cost Allowance Applied</td>
+                    <td class="govuk-table__cell">Funding line</td>
+                    <td class="govuk-table__cell">301</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Now update your data set</h2>
+        <p class="govuk-body">By updating the data set the above funding line and calculations will be available for
+            reference from this specification in your calculation scripts. Those removed will no longer be available</p>
+
+        <div class="govuk-button-group">
+            <a href="check-data-set-loading-spinner.html" class="govuk-button" data-module="govuk-button">
+                Update data set
+            </a>
+
+            <a href="edit-published-specification.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Make changes
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
