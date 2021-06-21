@@ -31,7 +31,7 @@ GOV.UK Prototype Kit
 </div>
 
 <!-- CONVERTOR WIZARD WARNING -->
-<div class="govuk-error-summary govuk-error-summary-orange" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+<div id="converter-wizard" class="govuk-error-summary govuk-error-summary-orange" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
     data-module="govuk-error-summary">
     <h2 class="govuk-error-summary__title" id="error-summary-title">
         Converter wizard in progress
@@ -87,7 +87,7 @@ GOV.UK Prototype Kit
                 <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="updateTypeMerge" name="updateType"
                         onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.remove('govuk-visually-hidden')"
-                        type="radio" value="merge/merge-in-progress" aria-label="update-type-merge" disabled="disabled">
+                        type="radio" value="merge/merge-in-progress" aria-label="update-type-merge">
                     <label class="govuk-label govuk-radios__label" for="updateTypeMerge">
                         Merge existing version
                     </label>
@@ -99,7 +99,7 @@ GOV.UK Prototype Kit
                     <input class="govuk-radios__input" id="updateTypeReplace"
                         onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.add('govuk-visually-hidden')"
                         name="updateType" type="radio" value="/v1/datasets/manageDatasets"
-                        aria-label="update-type-replace" disabled="disabled">
+                        aria-label="update-type-replace">
                     <label class="govuk-label govuk-radios__label" for="updateTypeReplace">
                         Create new version
                     </label>
@@ -147,7 +147,7 @@ GOV.UK Prototype Kit
             <label class="govuk-label" for="file-upload-1">
                 Select data source file
             </label>
-            <input class="govuk-file-upload" id="file-upload-1" name="file-upload" type="file" disabled="disabled">
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload" type="file">
         </div>
 
         <div class="govuk-form-group">
@@ -156,7 +156,7 @@ GOV.UK Prototype Kit
             </label>
             <span id="description-detail" class="govuk-hint">
             </span>
-            <textarea class="govuk-textarea" id="file-description" name="description" rows="5" disabled="disabled"
+            <textarea class="govuk-textarea" id="file-description" name="description" rows="5"
                 aria-label="description-detail">{{ data['data-more-detail'] }}</textarea>
         </div>
 
@@ -166,12 +166,12 @@ GOV.UK Prototype Kit
             </label>
             <span id="change-note" class="govuk-hint">
             </span>
-            <textarea class="govuk-textarea" id="more-detail" name="change-note-data" rows="5" disabled="disabled
+            <textarea class="govuk-textarea" id="more-detail" name="change-note-data" rows="5"
                 aria-describedby="change-note""></textarea>
         </div>
-        <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" disabled>
+        <a href="#converter-wizard" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
             Save
-        </button>
+        </a>
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Cancel
         </button>
