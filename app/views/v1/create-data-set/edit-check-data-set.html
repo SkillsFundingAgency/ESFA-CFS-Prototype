@@ -62,8 +62,12 @@ GOV.UK Prototype Kit
             Released data from 16 to 19 specification.
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/v1/create-data-set/dataset-details">
+            <!-- <a class="govuk-link" href="/v1/create-data-set/dataset-details">
                 Change <span class="govuk-visually-hidden">dataset name</span>
+            </a> -->
+            <a
+                onclick="document.getElementById('editDescription').style.display='block'" href="#"
+                class="govuk-link">Change
             </a>
           </dd>
         </div>
@@ -138,6 +142,8 @@ GOV.UK Prototype Kit
 
     </div>
 </div>
+
+{% include "includes/edit-modal.html" %}
 
 
 {% endblock %}
