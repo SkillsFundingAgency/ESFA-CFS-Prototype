@@ -131,9 +131,14 @@ GOV.UK Prototype Kit
             </fieldset>
         </div>
 
-        <a href="edit-check-data-set" class="govuk-button">
-            Continue to summary
-        </a>
+        <div class="govuk-button-group">
+            <a href="edit-check-data-set" class="govuk-button">
+                Continue to summary
+            </a>
+            <a href="../fundingLineStructure-gag#data-sets" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Cancel
+            </a>
+        </div>
     </div>
     <div class="govuk-grid-column-two-thirds">
         <table class="govuk-table table-vertical-align" id="dataSetItems">
@@ -185,7 +190,7 @@ GOV.UK Prototype Kit
                         <div class="govuk-checkboxes__item">
                             <input checked class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox3" name="provider-approval" type="checkbox" value="">
                             <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox3">
-                                Area cost allowance adjustment
+                                Area cost allowance adjustment <strong class="govuk-tag govuk-tag--blue">Used in calculation</strong>
                             </label>
                         </div>
                     </div>
