@@ -28,17 +28,28 @@ GOV.UK Prototype Kit
 
     <!-- ERROR MESSAGES -->
     <div id="error-summary" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
-      data-module="govuk-error-summary">
-      <h2 class="govuk-error-summary__title" id="error-summary-title">
-        There is a problem
-      </h2>
-      <div class="govuk-error-summary__body">
-        <ul class="govuk-list govuk-error-summary__list">
-          <li>
-            <a href="#no-eligible-providers">Could not confirm funding approval as there are no eligible providers to be approved. Choose at least one provider with the status of draft or updated.</a>
-          </li>
-        </ul>
-      </div>
+    data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#no-eligible-providers">There are no eligible providers to be approved. Providers in the batch file may not be eligible because:</a>
+        </li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          Providers are already approved and released.
+        </li>
+        <li>
+          Providers are currently in error state
+        </li>
+        <li>
+          There is a mismatch on the provider identifies in the batch file versus the funding data
+        </li>
+      </ul>
+    </div>
     </div>
     <!-- END ERROR MESSAGES -->
 

@@ -38,7 +38,18 @@ GOV.UK Prototype Kit
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
         <li>
-          <a href="#no-eligible-providers">Could not confirm funding release as there are no eligible providers in your selection. Providers must have a status of approved in order to be released</a>
+          <a href="#no-eligible-providers">There are no eligible providers to be release. Providers in the batch file may not be eligible because:</a>
+        </li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          Providers are already approved and released.
+        </li>
+        <li>
+          Providers are currently in error state
+        </li>
+        <li>
+          There is a mismatch on the provider identifies in the batch file versus the funding data
         </li>
       </ul>
     </div>
@@ -119,7 +130,7 @@ GOV.UK Prototype Kit
             <div class="govuk-form-group--error">
               Providers selected
               <span id="no-eligible-providers" class="govuk-error-message">
-                  <span class="govuk-visually-hidden">Error:</span> No eligible providers to be approved.
+                  <span class="govuk-visually-hidden">Error:</span> No eligible providers to be released.
               </span>
             </div>
           </th>
