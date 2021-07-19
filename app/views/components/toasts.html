@@ -1,0 +1,51 @@
+{% extends "component-single.html" %}
+
+{% block pageTitle %}
+Calculate funding service - components
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <h1 class="govuk-heading-xl">Toast notifications</h1>
+
+    <h2 class="govuk-heading-m">Standard alert</h2>
+
+    <div class="govuk-alert">
+        <h2 class="govuk-heading-m">New passport</h2>
+        <p class="govuk-body">            
+            We&#x27;ll send your new passport by secure
+            delivery. The cost is included in the passport
+            fee.
+        </p>
+    </div>
+
+<h2 class="govuk-heading-m">Alert notifying of a successful outcome</h2>
+
+<div class="govuk-alert govuk-alert--success">
+    <h2 class="govuk-heading-m">Payment successful</h2>
+    <p class="govuk-body">
+        We&#x27;ve sent details to
+        test-email@test-corp.co.uk
+        <br />
+        <a href="#">Download confirmation</a>
+    </p>
+</div>
+
+<h2 class="govuk-heading-m">Alert indicating an error</h2>
+
+<div class="govuk-alert govuk-alert--error">
+    <h2 class="govuk-heading-m">
+      Payment unsuccessful
+    </h2>
+    <p class="govuk-body">
+        Please try again or contact our
+      <a href="#">support team</a>
+      for assistance.
+    </p>
+  </div>
+
+</div>
+
+{% endblock %}
