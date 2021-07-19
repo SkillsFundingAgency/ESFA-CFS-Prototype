@@ -47,15 +47,15 @@ endblock %} {% block content %}
       <th scope="col" class="govuk-table__header govuk-!-width-one-half">
         Data set
       </th>
-      <th scope="col" class="govuk-table__header">Mapped data source file</th>
+      <th scope="col" class="govuk-table__header">Data set type</th>
+      <th scope="col" class="govuk-table__header">Mapped data source</th>
       <th scope="col" class="govuk-table__header"></th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
-        January census data
-        <span class="govuk-body-s govuk-!-margin-left-1">(Provider data)</span>
+        Baseline data from 2021 - 2022
         <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
@@ -63,9 +63,6 @@ endblock %} {% block content %}
             </span>
           </summary>
           <div class="govuk-details__text">
-            <p class="govuk-body">
-              <strong>Data schema:</strong> PE and Sport premium
-            </p>
             <p class="govuk-body">
               <strong>Description:</strong> Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Aliquam congue diam sit amet dui
@@ -80,7 +77,8 @@ endblock %} {% block content %}
           </div>
         </details>
       </th>
-      <td class="govuk-table__cell">PE and Sport data (version 3)</td>
+      <td class="govuk-table__cell">Released data</td>
+      <td class="govuk-table__cell">PE and Sport premium (version 1)</td>
       <td class="govuk-table__cell">
         <a href="selectSourceDataset" class="govuk-link">Change</a>
       </td>
@@ -106,7 +104,8 @@ endblock %} {% block content %}
           </div>
         </details>
       </th>
-      <td class="govuk-table__cell">No data source files uploaded to map to</td>
+      <td class="govuk-table__cell">Uploaded data</td>
+      <td class="govuk-table__cell">No data source uploaded to map to (version 4)</td>
       <td class="govuk-table__cell">
         <!-- <a href="upload-data-source-file.html" class="govuk-link">Upload data soure file</a> -->
       </td>
@@ -138,6 +137,7 @@ endblock %} {% block content %}
           </div>
         </details>
       </th>
+      <td class="govuk-table__cell">Uploaded data</td>
       <td class="govuk-table__cell">
         PE and Sport data (version 3) <br />
         <strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2">
@@ -175,8 +175,9 @@ endblock %} {% block content %}
           </div>
         </details>
       </th>
+      <td class="govuk-table__cell">Uploaded data</td>
       <td class="govuk-table__cell">
-        No data source file mapped
+        No data source mapped (version 2)
       </td>
       <td class="govuk-table__cell">
         <a href="selectSourceDataset" class="govuk-link">Map</a>
@@ -209,6 +210,7 @@ endblock %} {% block content %}
           </div>
         </details>
       </th>
+      <td class="govuk-table__cell">Uploaded data</td>
       <td class="govuk-table__cell">
             <div class="govuk-!-margin-top-1 govuk-!-margin-bottom-2">
               <span id="loader-content" class="inline-loader" role="alert" aria-live="assertive"></span>

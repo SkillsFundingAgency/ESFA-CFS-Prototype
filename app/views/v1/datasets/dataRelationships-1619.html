@@ -46,8 +46,8 @@ endblock %} {% block content %}
       <th scope="col" class="govuk-table__header govuk-!-width-one-third">
         Data set
       </th>
+      <th scope="col" class="govuk-table__header">Data Set Type</th>
       <th scope="col" class="govuk-table__header">Mapped data source file</th>
-      <th scope="col" class="govuk-table__header">Type</th>
       <th scope="col" class="govuk-table__header"></th>
     </tr>
   </thead>
@@ -64,9 +64,6 @@ endblock %} {% block content %}
           </summary>
           <div class="govuk-details__text">
             <p class="govuk-body">
-              <strong>Data schema:</strong> 16 to 19
-            </p>
-            <p class="govuk-body">
               <strong>Description:</strong> {{ data ['description'] }}
             </p>
             <p class="govuk-body">
@@ -78,11 +75,10 @@ endblock %} {% block content %}
           </div>
         </details>
       </th>
-      <td class="govuk-table__cell">No data source file mapped</td>
       <td class="govuk-table__cell">
-        Published specifications
-
+        Released data
       </td>
+      <td class="govuk-table__cell">No data source mapped</td>
       <td class="govuk-table__cell">
         <a href="/v1/choosefundinglinecalc" class="govuk-link">Map</a>
       </td>
