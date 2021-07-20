@@ -1105,6 +1105,9 @@ GOV.UK Prototype Kit
 window.onload = function showStackedAlert() {
     var x = document.getElementById("govuk-alert-stacked");
     x.className = "show";
+    setTimeout(function () {
+      x.className = x.className.replace("show", "");
+    }, 10000);
   }
 
     function myFunction() {
