@@ -1,0 +1,112 @@
+{% extends "component-single.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+          Notification Banners
+      </h1>        
+  </div>
+</div>
+
+<!-- Notification - Attention - Calculation run is in progress -->
+<div class="govuk-notification-banner govuk-notification-banner--attention govuk-!-padding-2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-notification-banner__tag govuk-tag govuk-tag--orange govuk-!-margin-0 govuk-!-margin-right-2" id="govuk-notification-banner-title">
+            Attention
+          </h2>
+          <p class="govuk-notification-banner__heading govuk-!-margin-bottom-0">
+            Calculation run is in progress
+          </p>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <a class="govuk-notification-banner__link right-align" href="#">Read more</a>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p>Initiated by SYSTEM on 17 October 2020, 11:50am.</p>
+    
+    <p>You will not be able to update this data source file until the converter wizard is complete.</p>
+  </div>
+</div>
+
+<!-- Notification - Important - 7 days to send application -->
+<div class="govuk-notification-banner govuk-!-padding-2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-notification-banner__tag govuk-tag govuk-tag--blue govuk-!-margin-0 govuk-!-margin-right-2" id="govuk-notification-banner-title">
+            Important
+          </h2>
+          <p class="govuk-notification-banner__heading govuk-!-margin-bottom-0">
+            You have 7 days left to send your application.
+          </p>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <a class="govuk-notification-banner__link right-align" href="#">Read more</a>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-notification-banner__content">
+    You have 7 days remaining to send your application. <a href="#">View application</a>.
+  </div>
+</div>
+
+<!-- Notification - Important - Permissions required -->
+<div class="govuk-notification-banner govuk-!-padding-2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-notification-banner__tag govuk-tag govuk-tag--blue govuk-!-margin-0 govuk-!-margin-right-2" id="govuk-notification-banner-title">
+            Important
+          </h2>
+          <p class="govuk-notification-banner__heading govuk-!-margin-bottom-0">
+            Certain permissions are required to view this page
+          </p>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <a class="govuk-notification-banner__link right-align" href="#">Read more</a>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-notification-banner__content">
+    You are missing 6 permissions that are required to view this page.
+    For a full list of permissions you require, and how to gain them, <a href="#">check your permissions</a>.
+  </div>
+</div>
+
+<!-- Notification - Success - Changes saved -->
+<div class="govuk-notification-banner govuk-notification-banner--success govuk-!-padding-2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-notification-banner__tag govuk-tag govuk-tag--green govuk-!-margin-0 govuk-!-margin-right-2" id="govuk-notification-banner-title">
+            Success
+          </h2>
+          <p class="govuk-notification-banner__heading govuk-!-margin-bottom-0">
+            Your changes have been saved
+          </p>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <!-- <button class="right-align">Dismiss</button> -->
+        <button class="govuk-notification-banner__dismiss-btn-jq govuk-button govuk-button--secondary right-align govuk-!-margin-0" data-module="govuk-button">
+          Dismiss
+        </button>
+        <a class="govuk-notification-banner__link right-align govuk-!-padding-right-3" href="#">Read more</a>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-notification-banner__content">
+    Your changes to 16-19 have been saved.
+  </div>
+</div>
+
+  {% endblock %}

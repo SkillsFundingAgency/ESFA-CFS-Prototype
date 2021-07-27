@@ -346,3 +346,29 @@ $(".content-toggle-jq").on("click", function(e) {
 });
 // END updateDataset-v4: TOGGLE HIDDEN CONTENT
 
+// NOTIFICAITON BANNER JS
+var link, content;
+  link = document.getElementsByClassName("govuk-notification-banner__link");
+  content = document.getElementsByClassName("govuk-notification-banner__content");
+
+$(content).hide(); // Hide notification content
+
+// Read more/read less
+$(link).on("click", function(e) {
+  e.preventDefault();
+
+  // Toggle link text from Show more/Show less
+  $(this).text($(this).text() == 'Read more' ? 'Read less' : 'Read more');
+
+  // Show notification content
+  $(this).parent().parent().parent().parent().find(content).slideToggle();
+});
+
+// Dismiss notification
+$('.govuk-notification-banner__dismiss-btn-jq').on("click", function(e) {
+  e.preventDefault();
+
+  $(this).parent().parent().parent().parent().fadeOut();
+});
+// END NOTIFICAITON BANNER JS
+
