@@ -156,9 +156,12 @@
 
 .govuk-notification-banner__link {
     font-family: "GDS Transport",arial,sans-serif;
-    line-height: 38px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
+}
+
+.govuk-notification-banner__link--success {
+    line-height: 38px;
 }
 
 @media print {
