@@ -1,4 +1,4 @@
-.govuk-notification-banner--legacy {
+.govuk-notification-banner {
     font-family: "GDS Transport",arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -6,9 +6,13 @@
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;
-    margin-bottom: 30px;
+    margin-bottom: 1rem;
     border: 5px solid #1d70b8;
-    background-color: #1d70b8
+    // background-color: #1d70b8
+}
+
+.govuk-notification-banner__tag {
+    vertical-align: text-bottom;
 }
 
 @media print {
@@ -34,7 +38,7 @@
 
 @media (min-width: 40.0625em) {
     .govuk-notification-banner {
-        margin-bottom:50px
+        margin-bottom: 1rem
     }
 }
 
@@ -42,18 +46,19 @@
     outline: 3px solid #fd0
 }
 
-.govuk-notification-banner__header--legacy {
-    padding: 2px 15px 5px;
+.govuk-notification-banner__header {
+    // padding: 2px 15px 5px;
     border-bottom: 1px solid transparent
 }
 
 @media (min-width: 40.0625em) {
-    .govuk-notification-banner__header--legacy {
-        padding:2px 20px 5px
+    .govuk-notification-banner__header {
+        // padding:2px 20px 5px
     }
 }
 
-.govuk-notification-banner__title--legacy {
+.govuk-notification-banner__title {
+    display: inline-block;
     font-family: "GDS Transport",arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -61,19 +66,20 @@
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;
-    margin: 0;
-    padding: 0;
+    margin: 0 10px 0 0;
+    padding: 5px;
+    background-color: #1d70b8;
     color: #fff
 }
 
 @media print {
-    .govuk-notification-banner__title--legacy {
+    .govuk-notification-banner__title {
         font-family: sans-serif
     }
 }
 
 @media (min-width: 40.0625em) {
-    .govuk-notification-banner__title--legacy {
+    .govuk-notification-banner__title {
         font-size:19px;
         font-size: 1.1875rem;
         line-height: 1.31579
@@ -81,41 +87,42 @@
 }
 
 @media print {
-    .govuk-notification-banner__title--legacy {
+    .govuk-notification-banner__title {
         font-size: 14pt;
         line-height: 1.15
     }
 }
 
-.govuk-notification-banner__content--legacy {
+.govuk-notification-banner__content {
     color: #0b0c0c;
-    padding: 15px;
+    padding: 20px 0 10px 0;
     background-color: #fff
 }
 
 @media print {
-    .govuk-notification-banner__content--legacy {
+    .govuk-notification-banner__content {
         color: #000
     }
 }
 
 @media (min-width: 40.0625em) {
-    .govuk-notification-banner__content--legacy {
-        padding:20px
+    .govuk-notification-banner__content {
+        // padding:20px
     }
 }
 
-.govuk-notification-banner__content--legacy>* {
+.govuk-notification-banner__content>* {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     max-width: 1200px
 }
 
-.govuk-notification-banner__content--legacy>:last-child {
+.govuk-notification-banner__content>:last-child {
     margin-bottom: 0
 }
 
-.govuk-notification-banner__heading--legacy {
+.govuk-notification-banner__heading {
+    display: inline-block;
     font-family: "GDS Transport",arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -123,18 +130,17 @@
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 1.11111;
-    margin: 0 0 15px 0;
     padding: 0
 }
 
 @media print {
-    .govuk-notification-banner__heading--legacy {
+    .govuk-notification-banner__heading {
         font-family: sans-serif
     }
 }
 
 @media (min-width: 40.0625em) {
-    .govuk-notification-banner__heading--legacy {
+    .govuk-notification-banner__heading {
         font-size:24px;
         font-size: 1.5rem;
         line-height: 1.25
@@ -142,7 +148,7 @@
 }
 
 @media print {
-    .govuk-notification-banner__heading--legacy {
+    .govuk-notification-banner__heading {
         font-size: 18pt;
         line-height: 1.15
     }
@@ -152,6 +158,10 @@
     font-family: "GDS Transport",arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
+}
+
+.govuk-notification-banner__link--success {
+    line-height: 38px;
 }
 
 @media print {
@@ -189,25 +199,36 @@
     color: #0b0c0c
 }
 
-.govuk-notification-banner--success--legacy {
+.govuk-notification-banner--success {
     border-color: #00703c;
-    background-color: #00703c
+    // background-color: #00703c
+
+    .govuk-notification-banner__title {
+        background-color: #00703c;
+    }
 }
 
-.govuk-notification-banner--success--legacy .govuk-notification-banner__link:link,.govuk-notification-banner--success--legacy .govuk-notification-banner__link:visited {
+.govuk-notification-banner--success .govuk-notification-banner__link:link,.govuk-notification-banner--success .govuk-notification-banner__link:visited {
     color: #00703c
 }
 
-.govuk-notification-banner--success--legacy .govuk-notification-banner__link:hover {
+.govuk-notification-banner--success .govuk-notification-banner__link:hover {
     color: #004e2a
 }
 
-.govuk-notification-banner--success--legacy .govuk-notification-banner__link:active {
+.govuk-notification-banner--success .govuk-notification-banner__link:active {
     color: #00703c
 }
 
-.govuk-notification-banner--success--legacy .govuk-notification-banner__link:focus {
+.govuk-notification-banner--success .govuk-notification-banner__link:focus {
     color: #0b0c0c
 }
 
+.govuk-notification-banner--attention {
+    border-color: #f47738;
+
+    .govuk-notification-banner__title {
+        background-color: #f47738;
+    }
+}
 
