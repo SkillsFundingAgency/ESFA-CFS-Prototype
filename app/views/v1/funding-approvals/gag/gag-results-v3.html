@@ -889,26 +889,10 @@ GOV.UK Prototype Kit
                     </ul>
                 </nav>
                 <div class="right-align">
-                    <div class="govuk-form-group display-inline govuk-!-margin-right-2">
-                        <label class="govuk-label" for="sort">
-                        Action:
-                        </label>
-                        <select class="govuk-select" id="sort" name="sort">
-                        <option value="published" selected>Approve funding</option>
-                        <option value="updated">Release for statement</option>
-                        <option value="updated" >Release funding</option>
-                        <option value="views">Hold providers</option>
-                        <option value="comments">Remove hold</option>
-                        </select>
-                    </div>
-                    <a id="approveFunding" href="#" class="govuk-button govuk-button--primary vertical-align-bottom"
+                    <a id="approveFunding" href="/v1/funding-approvals/gag/gag-results-v3-actions" class="govuk-button govuk-button--primary vertical-align-bottom"
                         data-module="govuk-button">
                         Continue
                     </a>
-                    <!-- <a href="../funding-release.html" class="govuk-button govuk-button--warning"
-                        data-module="govuk-button">
-                        Release funding
-                    </a> -->
                 </div>
             </div>
         </div>

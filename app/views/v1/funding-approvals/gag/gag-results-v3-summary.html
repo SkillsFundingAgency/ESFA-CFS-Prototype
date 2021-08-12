@@ -1,0 +1,274 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% set funding_stream = "General annual grant" %}
+{% set funding_year = "2019 to 2020" %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/view-funding.html">Select
+                        specification</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">Funding approval results </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-two-thirds ">
+        <a href="/v1/funding-approvals/gag/gag-results-v3-actions" class="govuk-back-link">Back</a>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Review your actions</h1>
+        <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">Academies General Annual Grant 2019 to 2020</h1>
+        <span class="govuk-caption-l">Academies general annual grant for academies academic year 2019 to 2020</span> -->
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+        
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-heading-m">Providers selected</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Provider name</th>
+                <th scope="col" class="govuk-table__header">Warning</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">South Devon College</th>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Newbury College</th>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Hull College</th>
+                    <td class="govuk-table__cell">This provider contains allocations that have not been released for statement.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">John Leggott Sixth Form College</th>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">South and City College Birmingham</th>
+                    <td class="govuk-table__cell">This provider has not yet been 'Approved.'</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Hugh Baird College</th>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="govuk-heading-m">Action to take</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+              Release funding
+            </li>
+        </ul>
+
+        <button class="govuk-button" data-module="govuk-button">
+            Release funding
+        </button>
+
+    </div>
+
+</div>
+
+
+<!--Includes -->
+{% include "components/refresh-funding-modal.html" %}
+
+<!--Includes end -->
+
+
+
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("providerNameSearch");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById('filter-by-provider-3').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-3");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-' + filter
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+
+    document.getElementById('filter-by-provider-2').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-2");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-' + filter
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById('filter-by-provider-1').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-1");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-' + filter
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById('filter-by-provider-subtype-1').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-subtype-1");
+        filter = input.value;
+        console.log(filter)
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[5];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function clearFilters() {
+        let filterContainer = document.getElementById("filters");
+        let filtersChecked = filterContainer.getElementsByTagName("input")
+        for (var i = 0; i < filtersChecked.length; ++i) {
+            filtersChecked[i].checked = false;
+        }
+    }
+
+    window.onload = function () {
+        document.getElementById("providerValue").innerHTML = sessionStorage.getItem("provider data changed");
+    }
+
+    // Filter checkbox count
+    function countChecked() {
+        document.getElementById("providerTypeSelected").textContent = document.querySelectorAll(
+            'input[name="filter-by-provider-type"]:checked').length + " selected";
+        document.getElementById("providerSubTypeSelected").textContent = document.querySelectorAll(
+            'input[name="filter-by-provider-sub-type"]:checked').length + " selected";
+        document.getElementById("filter-by-status").textContent = document.querySelectorAll(
+            'input[name="filter-by-status"]:checked').length + " selected";
+        document.getElementById("filter-indicative").textContent = document.querySelectorAll(
+            'input[name="statement-type"]:checked').length + " selected";
+        document.getElementById("open-month-selected").textContent = document.querySelectorAll(
+            'input[name="filter-by-open-date"]:checked').length + " selected";
+    }
+
+    function selectAllCheckboxes(elem) {
+        let name = elem.name;
+        document.getElementsByName(name).checked = true;
+    }
+
+    function applyOpenerDate() {
+        document.getElementById('filter-month').innerHTML =
+            '<p class="govuk-body-s govuk-!-margin-bottom-0">Date applied <a href="#" class="govuk-link govuk-!-margin-left-2">Clear</a></p>';
+    }
+
+    hiddenCheckboxes = () => {
+        let hidden = document.getElementById('filter-by-provider-type-conditional');
+        if (hidden.style.display === "block") {
+            hidden.style.display = "none";
+        } else {
+            hidden.style.display = "block";
+        }
+    }
+
+    function inputKeyUp(e) {
+        e.which = e.which || e.keyCode;
+        if (e.which == 13) {
+            hiddenCheckboxes();
+        }
+    }
+</script>
+
+{% endblock %}
