@@ -21,11 +21,20 @@ endblock %} {% block content %}
         </li>
       </ol>
     </div>
-    <h1 class="govuk-heading-xl">
-      Dedicated schools grant SIT
-      <span class="govuk-caption-xl">Financial year 2020 to 2021</span>
-    </h1>
-  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">{{ data['fundingStream'] }}</h1>
+      <span class="govuk-caption-l">Academic year 2019 to 2020</span>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list right-align">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/v1/fundingLineStructure-gag">Manage specificaiton</a>
+        </li>
+      </ul>
+    </div>
 </div>
 
 <div class="govuk-grid-row">
