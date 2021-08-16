@@ -6,6 +6,12 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
+<!-- VARIABLES -->
+{% set successNotificationHeading = "Variations successfully saved" %}
+{% set successNotificationContent = "Future instalments have been updated." %}
+{% set fundingApprovalsLink  = "/dsg/dsg-results" %}
+<!-- END VARIABLES -->
+
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
 <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
@@ -58,30 +64,11 @@ GOV.UK Prototype Kit
       </div>
     </details>
   </div>
-  <div class="govuk-grid-column-one-third">
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('approveSpecification').style.display='block'">Approve specification</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('fundingConfirmation').style.display='block'">Choose for funding</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="editSpecification">Edit specification</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('refreshProviderData').style.display='block'">Refresh provider data</a>
-      </li>
 
-    </ul>
-  </div>
+<!-- Specification links-->
+{% include "components/specification-links.html" %}
+<!-- End specification links-->
+
 </div>
 
 <div class="govuk-grid-row">

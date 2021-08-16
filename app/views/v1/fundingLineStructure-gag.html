@@ -6,10 +6,12 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<!-- VARIABLES FOR VARIATIONS SUCCESS MESSAGE -->
+<!-- VARIABLES -->
 {% set successNotificationHeading = "Variations successfully saved" %}
-{% set successNotificationContent = "Future instalments have been updated." %} 
-<!-- END VARIABLES FOR VARIATIONS SUCCESS MESSAGE -->
+{% set successNotificationContent = "Future instalments have been updated." %}
+{% set fundingApprovalsLink  = "/gag/gag-results" %}
+
+<!-- END VARIABLES -->
 
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
@@ -42,37 +44,11 @@ GOV.UK Prototype Kit
       <strong class="govuk-tag govuk-tag--green">In year opener enabled</strong>
     </p>
   </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <ul class="govuk-list">
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="#"
-            onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="#"
-            onclick="document.getElementById('approveSpecification').style.display='block'">Approve specification</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="#"
-            onclick="document.getElementById('fundingConfirmation').style.display='block'">Choose for funding</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="editSpecification">Edit specification</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="funding-approvals/gag/gag-results">Funding approvals</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="#"
-            onclick="document.getElementById('refreshProviderData').style.display='block'">Refresh provider data</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="#">View specification results</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+
+
+<!-- Specification links-->
+  {% include "components/specification-links.html" %}
+<!-- End specification links-->
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
