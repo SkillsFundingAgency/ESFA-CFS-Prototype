@@ -6,6 +6,13 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
+<!-- VARIABLES -->
+{% set successNotificationHeading = "Variations successfully saved" %}
+{% set successNotificationContent = "Future instalments have been updated." %}
+{% set fundingApprovalsLink  = "/16-19/16-19-results" %}
+{% set fundingStream  = "16 to 19" %}
+<!-- END VARIABLES -->
+
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
 
@@ -24,31 +31,19 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-9">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">{{ data['spec-name'] }}</h1>
-    <span class="govuk-caption-l">16 to 19 for academies and schools academic year 2019 to 2020</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19</h1>
+    <span class="govuk-caption-l">16 to 19 academic year 2019 to 2020</span>
+    <p class="govuk-body govuk-!-margin-top-2">
+      <strong class="govuk-tag">Approved</strong>
+      <strong class="govuk-tag">Chosen for funding</strong>
+    </p>
   </div>
-  <div class="govuk-grid-column-one-third">
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="editSpecification">Edit specification</a>
-      </li>
 
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
-      </li>
 
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('fundingConfirmation').style.display='block'">Choose for funding</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('refreshProviderData').style.display='block'">Refresh provider data</a>
-      </li>
-    </ul>
-  </div>
-</div>
+<!-- Specification links-->
+  {% include "components/specification-links.html" %}
+<!-- End specification links-->
+
 
 <div class="govuk-grid-row govuk-!-margin-top-3">
   <div class="govuk-grid-column-full">
@@ -56,7 +51,7 @@ GOV.UK Prototype Kit
     <details class="govuk-details govuk-!-margin-bottom-5" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          What is {{ data['spec-name'] }}
+          What is {{ fundingStream }}?
         </span>
       </summary>
       <div class="govuk-details__text">
@@ -80,11 +75,6 @@ GOV.UK Prototype Kit
           </a>
         </li>
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#calculation-errors">
-            Calculation errors <span class="notification-badge">11</span>
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#past-month">
             Data sets
           </a>
@@ -104,7 +94,7 @@ GOV.UK Prototype Kit
       <section class="govuk-tabs__panel" id="past-day">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l">Funding line structure</h2>
+            <h2 class="govuk-heading-l">Funding line structure <strong class="govuk-tag">Approved</strong></h2>
             <div class="govuk-form-group search-container">
               <label class="govuk-label" for="event-name">
                 Search by calculation
@@ -112,10 +102,8 @@ GOV.UK Prototype Kit
               <input class="govuk-input" id="event-name" name="event-name" type="text">
             </div>
           </div>
-
-
-
         </div>
+
         <table class="govuk-table govuk-!-width-full">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -190,7 +178,7 @@ GOV.UK Prototype Kit
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l">Additional calculations</h2>
+            <h2 class="govuk-heading-l">Additional calculations <strong class="govuk-tag">Approved</strong></h2>
           </div>
           <div class="govuk-grid-column-one-third">
             <ul class="govuk-list govuk-list--spaced">
@@ -308,92 +296,7 @@ GOV.UK Prototype Kit
           </ul>
         </nav>
       </section>
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="calculation-errors">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l">Calculation errors</h2>
-            <p class="govuk-body">Errors found in calculations. Each error can contain many calculations.</p>
-          </div>
-        </div>
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-              <div class="govuk-accordion__section ">
-                <div class="govuk-accordion__section-header">
-                  <h2 class="govuk-accordion__section-heading">
-                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                      Enum value is not valid
-                    </span>
-                  </h2>
-                </div>
-                <div id="enum-is-not-valid" class="govuk-accordion__section-content" aria-labelledby="enum-not-valid">
-                  <p class="govuk-body"><strong>Template calculations</strong></p>
-                  <ul class="govuk-list">
-                    <li>
-                      <a class="govuk-link" href="error/editTemplateCalculationv2">Provisional Schools Block Funding
-                        Excluding Growth</a>
-                    </li>
-                  </ul>
-                  <p class="govuk-body govuk-!-margin-top-7"><strong>Additional calculations</strong></p>
-                  <ul class="govuk-list">
-                    <li>No calculations to display</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="govuk-accordion__section">
-                <div class="govuk-accordion__section-header">
-                  <h2 class="govuk-accordion__section-heading">
-                    <span class="govuk-accordion__section-button" id="incorrect-value-type">
-                      Missing funding lines
-                    </span>
-                  </h2>
-                </div>
-                <div id="accordion-default-content-1" class="govuk-accordion__section-content"
-                  aria-labelledby="incorrect-value-type">
-                  <p class="govuk-body"><strong>Template calculations</strong></p>
-                  <ul class="govuk-list">
-                    <li>
-                      <a class="govuk-link" href="error/editTemplateCalculationv2">Provisional Schools Block Funding
-                        Excluding Growth</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Provisional Schools Block</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Programme funding</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Student financial support funding</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Primary IDACI band F</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Primary attainment: low primary prior attainment</a>
-                    </li>
-                  </ul>
-                  <p class="govuk-body govuk-!-margin-top-7"><strong>Additional calculations</strong></p>
-                  <ul class="govuk-list">
-                    <li>
-                      <a class="govuk-link" href="#">Block 1</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Block 2</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Block 3</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Block 4</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
@@ -609,10 +512,6 @@ GOV.UK Prototype Kit
           </fieldset>
 
         </div>
-
-
-
-
       </section>
 
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="variation-management">
@@ -623,60 +522,115 @@ GOV.UK Prototype Kit
           </div>
         </div>
 
-
-
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row ">
-                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
-                  Funding line 1
-                </dt>
-                <dd class="govuk-summary-list__value ">
-                  April 2020 <br>
-                  Instalment 3
-                </dd>
-                <dd class="govuk-summary-list__actions ">
-                  <a class="govuk-link" href="variation/installment-variation.html">
-                    Change<span class="govuk-visually-hidden"> funding line 1</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
-                  Funding line 2
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  April 2020 <br>
-                  Instalment 3
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="variation/installment-variation.html">
-                    Change<span class="govuk-visually-hidden"> funding line 1</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
-                  Funding line 3
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  April 2020 <br>
-                  Instalment 3
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="variation/installment-variation.html">
-                    Change<span class="govuk-visually-hidden"> funding line 1</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
+              <form action="/v1/fundingLineStructure.html#release-timetable" method="post" class="form" novalidate data-validate="variation">
+                  <div class="govuk-form-group">
+                      <table class="govuk-table">
+                          <caption class="govuk-table__caption">Instalment variation</caption>
+                          <thead class="govuk-table__head">
+                              <tr class="govuk-table__row">
+                                  <th scope="col" class="govuk-table__header app-custom-class">Funding line</th>
+                                  <th scope="col" class="govuk-table__header app-custom-class">Currently set instalment</th>
+                                  <th scope="col" class="govuk-table__header app-custom-class">Future instalment</th>
+                              </tr>
+                          </thead>
+                          <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row">
+                                  <th scope="row" class="govuk-table__header">
+                                    Funding line 1<br />
+                                    <span class="govuk-body-s">GAG-001</span>
+                                  </th>
+                                  <td class="govuk-table__cell">
+                                      Initial allocation <br>
+      
+                                  </td>
+                                  <td class="govuk-table__cell">
+                                      <div class="govuk-form-group">
+                                          <select class="govuk-select funding-line-dropdown-js" id="fundingline1" name="sort"
+                                              aria-label="funding line 1">
+                                              <option value=""></option>
+                                              <option value="may2020-1">May 2020 instalment 1</option>
+                                              <option value="may2020-2">May 2020 instalment 2</option>
+                                              <option value="june2020-1">June 2020 instalment 1</option>
+                                              <option value="june2020-2">June 2020 instalment 2</option>
+                                          </select>
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                  <th scope="row" class="govuk-table__header">
+                                    Funding line 2<br />
+                                    <span class="govuk-body-s">GAG-002</span>
+                                  </th>
+                                  <td class="govuk-table__cell">
+                                      April 2020 <br>
+                                      Instalment 3
+                                  </td>
+                                  <td class="govuk-table__cell">
+                                      <div class="govuk-form-group">
+                                          <select class="govuk-select funding-line-dropdown-js" id="fundingline2" name="sort"
+                                              aria-label="funding line 2">
+                                              <option value=""></option>
+                                              <option value="may2020-1">May 2020 instalment 1</option>
+                                              <option value="may2020-2">May 2020 instalment 2</option>
+                                              <option value="june2020-1">June 2020 instalment 1</option>
+                                              <option value="june2020-2">June 2020 instalment 2</option>
+                                          </select>
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                  <th scope="row" class="govuk-table__header">
+                                    Funding line 3<br />
+                                    <span class="govuk-body-s">GAG-003</span>
+                                  </th>
+                                  <td class="govuk-table__cell">
+                                      April 2020 <br>
+                                      Instalment 3
+                                  </td>
+                                  <td class="govuk-table__cell">
+                                      <div class="govuk-form-group">
+                                        <p class="govuk-body-s">No further instalments in funding period</p>
+                                        <!-- <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                                              aria-label="funding line 3">
+                                              <option value=""></option>
+                                              <option value="may2020-1">May 2020 instalment 1</option>
+                                              <option value="may2020-2">May 2020 instalment 2</option>
+                                              <option value="june2020-1">June 2020 instalment 1</option>
+                                              <option value="june2020-2">June 2020 instalment 2</option>
+                                          </select> -->
+                                      </div>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
           </div>
-        </div>
+      </div>
+      
+      <div class="govuk-button-group">
+        <button class="govuk-button gag-variation-management-save-button-js" data-module="govuk-button" disabled>
+            Save
+        </button>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Reset future instalments
+        </button>
+      </div>
+      
+      </form>
+      
+      <script type="application/json" id="variations">
+          {
+              "no yet required": {
+                  "presence": {
+                      "message": "^Select future installment"
+                  }
+              },
+          }
+      </script>
+
       </section>
     </div>
   </div>

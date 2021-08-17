@@ -1,28 +1,41 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <ul class="govuk-list">
+        {% if (fundingStream != "16 to 19") %} 
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="#"
             onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
         </li>
+        {% endif %}
+        {% if (fundingStream != "16 to 19") %} 
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="#"
             onclick="document.getElementById('approveSpecification').style.display='block'">Approve specification</a>
         </li>
+        {% endif %}
+        {% if (fundingStream != "16 to 19") %} 
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="#"
             onclick="document.getElementById('fundingConfirmation').style.display='block'">Choose for funding</a>
         </li>
+        {% endif %}
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="editSpecification">Edit specification</a>
         </li>
+        {% if (fundingStream != "16 to 19") %} 
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="funding-approvals/{{fundingApprovalsLink}}">Funding approvals</a>
         </li>
+        {% endif %}
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="#"
             onclick="document.getElementById('refreshProviderData').style.display='block'">Refresh provider data</a>
         </li>
+        {% if (fundingStream === "16 to 19") %} 
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">View funding</a>
+        </li>
+        {% endif %}
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="#">View specification results</a>
         </li>
