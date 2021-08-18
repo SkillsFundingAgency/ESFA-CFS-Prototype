@@ -34,8 +34,8 @@ endblock %}
         </label>
         <select class="govuk-select" id="fundingStream" name="fundingStream">
           <option value=""></option>
-          <option value="blank">16-19</option>
-          <option value="blank">General Annual Grant (GAG)</option>
+          <option value="16 to 19">16 to 19</option>
+          <option value="General annual grant">General Annual Grant (GAG)</option>
         </select>
       </div>
 
@@ -56,8 +56,8 @@ endblock %}
         </label>
         <select class="govuk-select" id="specification" name="viewSpecificationSelection">
           <option name="viewSpecificationSelection"></option>
-          <option name="viewSpecificationSelection" value="live data">GFT PE and Sport Premium</option>
-          <option name="viewSpecificationSelection" value="no live data">GFT PE and Sport Premium (no live data)</option>
+          <option name="viewSpecificationSelection" value="live data">{{ data['fundingStream'] }}</option>
+          <option name="viewSpecificationSelection" value="no live data">{{ data['fundingStream'] }} (no live data)</option>
         </select>
       </div>
 

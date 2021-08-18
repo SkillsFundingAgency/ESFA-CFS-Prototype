@@ -13,6 +13,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Components that aren't in Frontend
+@import "components/card";
 @import "components/cookie-banner";
 @import "components/file-download";
 @import "components/timeout";
@@ -37,6 +38,10 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/sortable-table";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.display-inline {
+	display: inline-block;
+}
 
 .font-regular {
 	font-weight: 100;
@@ -271,4 +276,8 @@ transform: translateY(-40px) translateX(-27px);
 
 	  .govuk-list-number--spaced li{
 		margin-bottom: 15px;
-	}	  
+	}
+
+.vertical-align-bottom {
+	vertical-align: bottom;
+}
