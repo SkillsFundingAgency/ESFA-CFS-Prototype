@@ -1,0 +1,1251 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% set funding_stream = "16 to 19" %}
+{% set funding_year = "2019 to 2020" %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/v1/funding-management/funding-management.html">Funding management</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding.html">Release management</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Release management results
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Non-Learning Grant</h1>
+        <span class="govuk-caption-l">16 to 19 for academies and schools academic year 2019 to 2020</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "components/funding-approvals-links.html" %}
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset" aria-describedby="search-conditional-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
+                    <h4 class="govuk-heading-s">Search</h4>
+                </legend>
+                <span id="search-conditional-hint" class="govuk-hint sidebar-search-span">
+                    Select one option.
+                </span>
+
+                <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible"
+                    data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="search-conditional" name="search-conditional"
+                            type="radio" value="provider-name" data-aria-controls="search-conditional-provider">
+                        <label class="govuk-label govuk-radios__label" for="search-conditional">
+                            Provider name
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="search-conditional-provider">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="search-conditional-provider"
+                                name="search-conditional-provider" type="text" spellcheck="false">
+                        </div>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="search-conditional-2" name="search-conditional"
+                            type="radio" value="ukprn" data-aria-controls="search-conditional-ukprn">
+                        <label class="govuk-label govuk-radios__label" for="search-conditional-ukprn">
+                            UKPRN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="search-conditional-ukprn">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="search-conditional-ukprn"
+                                name="search-conditional-ukprn" type="number">
+                        </div>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="search-conditional-3" name="search-conditional"
+                            type="radio" value="text" data-aria-controls="search-conditional-upin">
+                        <label class="govuk-label govuk-radios__label" for="search-conditional-upin">
+                            UPIN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="search-conditional-upin">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="search-conditional-upin"
+                                name="search-conditional-upin" type="number">
+                        </div>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="search-conditional-4" name="search-conditional"
+                            type="radio" value="text" data-aria-controls="search-conditional-urn">
+                        <label class="govuk-label govuk-radios__label" for="search-conditional-urn">
+                            URN
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="search-conditional-urn">
+                        <div class="govuk-form-group">
+                            <input class="govuk-input sidebar-search-input" id="search-conditional-urn"
+                                name="search-conditional-urn" type="number">
+                        </div>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by provider type <span><i
+                                class="material-icons right-align">keyboard_arrow_down</i></span></h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="providerTypeSelected"></p>
+                </button>
+
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label id="filter-by-provider-type" class="govuk-label filterLabel"
+                            for="filter-by-provider-type">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="filter-by-provider-type-search"
+                            name="filter-by-provider-type-search" autocomplete="off" type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
+                                name="filter-by-provider-type" type="checkbox" value="all" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                All <span>(30)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
+                                name="filter-by-provider-type" type="checkbox" value="free schools"
+                                onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                Free schools <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
+                                name="filter-by-provider-type" type="checkbox" value="academies"
+                                onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                Academies <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
+                                name="filter-by-provider-type" type="checkbox" value="independent schools"
+                                onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                Independent schools <span>(10)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by provider sub type <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span>
+                    </h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="providerSubTypeSelected"></p>
+                </button>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label class="govuk-label filterLabel" for="filter-by-type">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search"
+                            type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
+                                name="filter-by-provider-type" type="checkbox" value="all" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                All <span>(36)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-sub-type-2"
+                                name="filter-by-provider-sub-type" type="checkbox" value="free schools"
+                                onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-sub-type">
+                                Free schools <span> (7)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-sub-type-2"
+                                name="filter-by-provider-sub-type" type="checkbox" value="academy sponsor lef"
+                                onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-sub-type">
+                                Academy sponsor led <span> (11)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-sub-type-2"
+                                name="filter-by-provider-sub-type" type="checkbox" value="city technology college"
+                                onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-sub-type">
+                                City technology college<span> (3)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-sub-type-2"
+                                name="filter-by-provider-sub-type" type="checkbox" value="academy converter"
+                                onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-sub-type">
+                                Academy converter<span> (9)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-sub-type-2"
+                                name="filter-by-provider-sub-type" type="checkbox" value="academy sponsor led"
+                                onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-sub-type">
+                                Academy sponsor led<span> (6)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by status <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span>
+                    </h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="filter-by-status"></p>
+                </button>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox-autoheight">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
+                                name="filter-by-provider-type" type="checkbox" value="all" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                All <span>(18)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-approved" name="filter-by-status"
+                                autocomplete="off" type="checkbox" value="approved" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="approved">
+                                Approved <span>(4)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-released" name="filter-by-status"
+                                autocomplete="off" type="checkbox" value="released" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="released">
+                                Released <span>(2)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-updated" name="filter-by-status"
+                                autocomplete="off" type="checkbox" value="updated" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="updated">
+                                Updated <span>(4)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-with-errors" name="filter-by-status"
+                                autocomplete="off" type="checkbox" value="with-errors" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-with-errors">
+                                With errors <span>(1)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-without-errors" name="filter-by-status"
+                                autocomplete="off" type="checkbox" value="without-errors" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-without-errors">
+                                Without errors <span>(6)</span>
+                            </label>
+                        </div>
+                    </div>
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by allocation type <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span>
+                    </h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="filter-indicative">1 selected</p>
+                </button>
+                <div id="filter-content" class="filter-content sidebar-overflow-visible ">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input checked class="govuk-radios__input" onclick="countChecked()"
+                                        id="all-statements" name="statement-type" type="radio" value="all statements">
+                                    <label class="govuk-label govuk-radios__label" for="all-statements">
+                                        Show all allocation types
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" onclick="countChecked()" id="hide-indicative"
+                                        name="statement-type" type="radio" value="hide indicative">
+                                    <label class="govuk-label govuk-radios__label" for="hide-indicative">
+                                        Hide indicative allocations <span>(10)</span>
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" onclick="countChecked()" id="show-indicative"
+                                        name="statement-type" type="radio" value="show indicative">
+                                    <label class="govuk-label govuk-radios__label" for="show-indicative">
+                                        Only indicative allocations <span>(6)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by open date <span><i
+                                class="material-icons right-align">keyboard_arrow_down</i></span></h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="open-month-selected"> </p>
+                </button>
+
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label id="filter-by-open-date" class="govuk-label filterLabel" for="filter-by-open-date">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="filter-by-open-date-search"
+                            name="filter-by-open-date-search" autocomplete="off" type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-2" name="filter-by-open-date"
+                                type="checkbox" value="all" onclick="selectAllCheckboxes(this)"
+                                onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                All <span>(60)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-january"
+                                name="filter-by-open-date" type="checkbox" value="january" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                August 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-february"
+                                name="filter-by-open-date" type="checkbox" value="february" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                September 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-march"
+                                name="filter-by-open-date" type="checkbox" value="march" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                October 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-april"
+                                name="filter-by-open-date" type="checkbox" value="april" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                November 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-may"
+                                name="filter-by-open-date" type="checkbox" value="may" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                December 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-june"
+                                name="filter-by-open-date" type="checkbox" value="june" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                January 2022 <span>(10)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+        <a href="#" class="govuk-link right-align"
+            onclick="$('input:checkbox').removeAttr('checked'); countChecked();">Clear filters</a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <table class="govuk-table" id="fundingApprovalsProviders">
+                    <caption class="govuk-table__caption"></caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-half">
+                                Provider name<br>
+                                <span class="govuk-!-margin-right-2"> <span id="checkbox-checked"></span> / <span
+                                        id="checkbox-count"></span> </span>
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="select-all" type="checkbox"
+                                            value="select-all">
+                                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                            Select all
+                                        </label>
+                                    </div>
+                                </div>
+                            </th>
+                            <th scope="col" class="govuk-table__header">UKPRN</th>
+                            <th scope="col" class="govuk-table__header">Status</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">
+                                Funding total<br>
+                                <span id="fundingTotal"></span> <br>
+                                <p class="govuk-body-s govuk-!-margin-bottom-0">of filtered providers</p>
+                            </th>
+                            <th scope="col" style=" display:none">Provider type</th>
+                        </tr>
+                    </thead>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="Free Schools">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                        <a href="provider-funding-overview-abbeygate.html" class="govuk-link">Abbeygate
+                                            Sixth
+                                            Form College</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">10083728</td>
+                        <td class="govuk-table__cell">Draft</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                            1,699,145</td>
+                        <td style="display: none">Free Schools</td>
+                        <td style="display: none">Free schools 16 to 19</td>
+                        <td style="display: none">Suffolk</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="Academies">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                        <a href="provider-funding-overview-abbeycollege.html" class="govuk-link">Abbey
+                                            College,
+                                            Ramsey</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">10035138</td>
+                        <td class="govuk-table__cell">Draft</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                            479,370</td>
+                        <td style="display: none">Academies</td>
+                        <td style="display: none">Academy converter</td>
+                        <td style="display: none">Cambridgeshire</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="Academies">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                        <a href="provider-funding-overview-abbeygrange.html" class="govuk-link">
+                                            Abbey Grange Church of England Academy</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">10034529</td>
+                        <td class="govuk-table__cell">Draft</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                            1,645,999</td>
+                        <td style="display: none">Academies</td>
+                        <td style="display: none">Academy converter</td>
+                        <td style="display: none">Leeds</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="Academies">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                        <a href="provider-funding-overview-academies.html" class="govuk-link">Abbeywood
+                                            Community School</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">10039896</td>
+                        <td class="govuk-table__cell">Draft</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                            387,217</td>
+                        <td style="display: none">Academies</td>
+                        <td style="display: none">Academy sponsor led</td>
+                        <td style="display: none">South Gloucestershire</td>
+
+
+                    </tr>
+                    <tbody class="govuk-table__body table-vertical-align">
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Abingdon and
+                                                Witney College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10000055</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                9,996,753</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Oxfordshire</td>
+
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Activate
+                                                Learning</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10004927</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                45,444,792</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Oxfordshire</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Ada National
+                                                College for Digital Skills</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10057981</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                878,681</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Haringey</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Barking and
+                                                Dagenham College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10000528</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                17,309,515</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Barking and Dagenham</td>
+
+
+                        </tr>
+
+
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet and
+                                                Southgate College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10000533</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td id="providerValue" class="govuk-table__cell govuk-table__cell--numeric gbp"></td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Barnet</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Barnsley
+                                                College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10000536</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                26,000,320</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Barnet</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Basingstoke
+                                                College of Technology</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10000560</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                6,147,399</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Hampshire</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Bath College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10001465</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                9,922,656</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Bath and North East Somerset</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="filter-by-provider"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Bedford
+                                                College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10000610</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                28,769,457</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Bedford</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Birmingham
+                                                Metropolitan College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10006442</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                24,653,156</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Birmingham</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Bishop
+                                                Auckland College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10000720</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                3,539,243</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">County Durham</td>
+
+                        </tr>
+
+
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Blackburn
+                                                College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10000747</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                14,830,027</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Blackburn with Darwen</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">East Durham
+                                                College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10002111</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                8,838,468</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">County Durham</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Hugh Baird
+                                                College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10003193</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                11,631,543</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Sefton</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Hull College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10003200</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                9,481,287</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Kingston upon Hull, City of</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">John Leggott
+                                                Sixth Form College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10003491</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                7,071,822</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">North Lincolnshire</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Newbury
+                                                College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10004596</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                3,701,430</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">West Berkshire</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview-southcollege.html"
+                                                class="govuk-link">South and
+                                                City
+                                                College Birmingham</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10005967</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                26,707,629</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Birmingham</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">
+                                                South Devon College
+                                            </a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10005977</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                11,673,504</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Torbay</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Tyne Coast
+                                                College</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">10005999</td>
+                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
+                                12,224,175</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">South Tyneside</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <div class="govuk-grid-row ">
+                    <div class="govuk-grid-column-two-thirds">
+                        <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-5"
+                            data-module="app-back-to-top">
+                            <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+                                <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+                                    xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                                    <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                                </svg>Back to top
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="govuk-!-margin-top-5 govuk-!-margin-bottom-9" role="navigation" aria-label="Pagination">
+                    <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+                    <ul class="pagination">
+                        <li class="pagination__item"><a class="pagination__link" href="#0"
+                                aria-label="Previous page"><span aria-hidden="true" role="presentation">&laquo;</span>
+                                Previous</a></li>
+                        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 1">1</a>
+                        </li>
+                        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a>
+                        </li>
+                        <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true"
+                                aria-label="Page 3, current page">3</a></li>
+                        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a>
+                        </li>
+                        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a>
+                        </li>
+                        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next
+                                <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
+                    </ul>
+                </nav>
+                <div class="right-align">
+
+                    <!-- <a id="approveFunding" href="../funding-approval.html" class="govuk-button govuk-button--primary"
+                        data-module="govuk-button">
+                        Approve funding
+                    </a> -->
+                    <a href="channel-select.html" class="govuk-button govuk-button--warning"
+                        data-module="govuk-button">
+                        Release funding
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Includes -->
+{% include "components/refresh-funding-modal.html" %}
+
+<!--Includes end -->
+
+<script>
+
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("providerNameSearch");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById('filter-by-provider-3').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-3");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-' + filter
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+
+    document.getElementById('filter-by-provider-2').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-2");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-' + filter
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById('filter-by-provider-1').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-1");
+        filter = input.value;
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                    document.getElementById('approveFunding').href = 'funding-approval-' + filter
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    document.getElementById('filter-by-provider-subtype-1').onclick = function () {
+        console.log("Filter applied")
+        // Declare variables
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("filter-by-provider-subtype-1");
+        filter = input.value;
+        console.log(filter)
+        table = document.getElementById("fundingApprovalsProviders");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[5];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue === filter) {
+                    tr[i].style.display = " ";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function clearFilters() {
+        let filterContainer = document.getElementById("filters");
+        let filtersChecked = filterContainer.getElementsByTagName("input")
+        for (var i = 0; i < filtersChecked.length; ++i) {
+            filtersChecked[i].checked = false;
+        }
+    }
+
+    window.onload = function () {
+        document.getElementById("providerValue").innerHTML = sessionStorage.getItem("provider data changed");
+    }
+
+
+
+
+    // Filter checkbox count
+    function countChecked() {
+        document.getElementById("providerTypeSelected").textContent = document.querySelectorAll(
+            'input[name="filter-by-provider-type"]:checked').length + " selected";
+        document.getElementById("providerSubTypeSelected").textContent = document.querySelectorAll(
+            'input[name="filter-by-provider-sub-type"]:checked').length + " selected";
+        document.getElementById("filter-by-status").textContent = document.querySelectorAll(
+            'input[name="filter-by-status"]:checked').length + " selected";
+        document.getElementById("filter-indicative").textContent = document.querySelectorAll(
+            'input[name="statement-type"]:checked').length + " selected";
+        document.getElementById("open-month-selected").textContent = document.querySelectorAll(
+            'input[name="filter-by-open-date"]:checked').length + " selected";
+    }
+
+    function selectAllCheckboxes(elem) {
+        let name = elem.name;
+        document.getElementsByName(name).checked = true;
+    }
+
+    function applyOpenerDate() {
+        document.getElementById('filter-month').innerHTML =
+            '<p class="govuk-body-s govuk-!-margin-bottom-0">Date applied <a href="#" class="govuk-link govuk-!-margin-left-2">Clear</a></p>';
+    }
+
+    hiddenCheckboxes = () => {
+        let hidden = document.getElementById('filter-by-provider-type-conditional');
+        if (hidden.style.display === "block") {
+            hidden.style.display = "none";
+        } else {
+            hidden.style.display = "block";
+        }
+    }
+
+    function inputKeyUp(e) {
+        e.which = e.which || e.keyCode;
+        if (e.which == 13) {
+            hiddenCheckboxes();
+        }
+    }
+
+
+</script>
+
+
+{% endblock %}
