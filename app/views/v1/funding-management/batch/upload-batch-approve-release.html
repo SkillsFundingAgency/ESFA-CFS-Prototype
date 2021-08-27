@@ -14,10 +14,10 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../../funding-management/funding-management.html">Funding management</a>
+                    <a class="govuk-breadcrumbs__link" href="/v1/funding-management/funding-management.html">Funding management</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../view-funding.html">Funding approvals</a>
+                    <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding.html">Release management</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
                     Upload batch file
@@ -73,9 +73,9 @@ GOV.UK Prototype Kit
             </label>
             <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
         </div>
-        <button class="govuk-button govuk-!-margin-right-1" onclick="approve()" data-module="govuk-button">
-            Approve funding
-        </button>
+        <a href="channel-select.html" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+            Continue
+        </a>
         <!-- <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" onclick="release()"
             data-module="govuk-button">
             Release funding

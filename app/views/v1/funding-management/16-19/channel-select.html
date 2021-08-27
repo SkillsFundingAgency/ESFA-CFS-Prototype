@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/v1/funding-management/funding-management.html">Funding management</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding.html">Release management</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/v1/funding-management/16-19/16-19-results.html">Release management results</a>
+      </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          Select channel
+        </li>
+      </ol>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Select channel to release to</h1>
+    <span class="govuk-caption-xl govuk-!-margin-bottom-1">Choose the channels that you would like to release the funding to</span>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Which channels do you want to release to?
+          </h1>
+        </legend>
+        <div id="waste-hint" class="govuk-hint">
+          Select all that apply.
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="statement" name="statement" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="statement">
+              Release for statement
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="payment" name="payment" type="checkbox" value="mines">
+            <label class="govuk-label govuk-checkboxes__label" for="payment">
+              Release for payment
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="management-information" name="management-information" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="management-information">
+              Management information
+            </label>
+          </div>
+        </div>
+    
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="../funding-release.html"><button data-prevent-double-click="true"
+        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Continue
+      </button></a>
+
+    <a href="../16-19/16-19-results.html" button class="govuk-button govuk-button--secondary"
+      data-module="govuk-button">
+      Cancel
+    </a>
+  </div>
+</div>
+
+{% endblock %}

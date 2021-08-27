@@ -14,10 +14,7 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../../funding-management/funding-management.html">Funding management</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../view-funding.html">Funding approvals</a>
+                    <a class="govuk-breadcrumbs__link" href="../view-funding.html">Select specification</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
                     Upload batch file
@@ -73,13 +70,30 @@ GOV.UK Prototype Kit
             </label>
             <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
         </div>
-        <button class="govuk-button govuk-!-margin-right-1" onclick="approve()" data-module="govuk-button">
-            Approve funding
-        </button>
-        <!-- <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" onclick="release()"
-            data-module="govuk-button">
-            Release funding
-        </button> -->
+
+        <div>
+            <div class="govuk-form-group display-inline govuk-!-margin-right-2">
+                <label class="govuk-label" for="sort">
+                Action:
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                <option value="published" selected="">Approve funding</option>
+                <option value="updated">Release for statement</option>
+                <option value="updated">Release funding</option>
+                <option value="views">Hold providers</option>
+                <option value="comments">Remove hold</option>
+                <option value="comments">Withdraw allocations</option>
+                </select>
+            </div>
+            <a id="approveFunding" href="/v1/funding-approvals/batch/upload-batch-approve-release-v2-withdraw-allocation-review" class="govuk-button govuk-button--primary vertical-align-bottom" data-module="govuk-button">
+                Continue
+            </a>
+            <!-- <a href="../funding-release.html" class="govuk-button govuk-button--warning"
+                data-module="govuk-button">
+                Release funding
+            </a> -->
+        </div>
+        
         <!-- <button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" onclick="processHold()"
             data-module="govuk-button">
             Process hold status
