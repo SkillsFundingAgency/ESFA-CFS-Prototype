@@ -36,7 +36,7 @@ GOV.UK Prototype Kit
         <span class="govuk-caption-l">16 to 19 for academies and schools academic year 2019 to 2020</span>
     </div>
     <div class="govuk-grid-column-one-third">
-        {% include "components/funding-approvals-links.html" %}
+        {% include "components/release-funding-links.html" %}
     </div>
 </div>
 
@@ -243,6 +243,8 @@ GOV.UK Prototype Kit
             </fieldset>
         </div>
 
+ <!-- Removed until validated by user testing 
+
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
                 <button
@@ -343,7 +345,7 @@ GOV.UK Prototype Kit
             </fieldset>
         </div>
 
-        <div class="govuk-form-group filterbyContainer">
+       <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
@@ -414,28 +416,12 @@ GOV.UK Prototype Kit
                     </div>
                 </div>
             </fieldset>
-        </div>
+        </div> -->
 
 
         <a href="#" class="govuk-link right-align"
             onclick="$('input:checkbox').removeAttr('checked'); countChecked();">Clear filters</a>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
@@ -459,9 +445,7 @@ GOV.UK Prototype Kit
                             </th>
                             <th scope="col" class="govuk-table__header">UKPRN</th>
                             <th scope="col" class="govuk-table__header">Status</th>
-                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">
-                                Funding total<br>
-                                <span id="fundingTotal"></span> <br>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding total<br><span id="fundingTotal"></span> <br>
                                 <p class="govuk-body-s govuk-!-margin-bottom-0">of filtered providers</p>
                             </th>
                             <th scope="col" style=" display:none">Provider type</th>
@@ -482,7 +466,7 @@ GOV.UK Prototype Kit
                             </div>
                         </td>
                         <td class="govuk-table__cell">10083728</td>
-                        <td class="govuk-table__cell">Draft</td>
+                        <td class="govuk-table__cell">Released for statement</td>
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                             1,699,145</td>
                         <td style="display: none">Free Schools</td>
@@ -504,7 +488,7 @@ GOV.UK Prototype Kit
                             </div>
                         </td>
                         <td class="govuk-table__cell">10035138</td>
-                        <td class="govuk-table__cell">Draft</td>
+                        <td class="govuk-table__cell">Released for statement</td>
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                             479,370</td>
                         <td style="display: none">Academies</td>
@@ -525,7 +509,7 @@ GOV.UK Prototype Kit
                             </div>
                         </td>
                         <td class="govuk-table__cell">10034529</td>
-                        <td class="govuk-table__cell">Draft</td>
+                        <td class="govuk-table__cell">Released for statement</td>
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                             1,645,999</td>
                         <td style="display: none">Academies</td>
@@ -546,7 +530,7 @@ GOV.UK Prototype Kit
                             </div>
                         </td>
                         <td class="govuk-table__cell">10039896</td>
-                        <td class="govuk-table__cell">Draft</td>
+                        <td class="govuk-table__cell">Released for statement</td>
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                             387,217</td>
                         <td style="display: none">Academies</td>
@@ -570,7 +554,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10000055</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Released for statement</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 9,996,753</td>
                             <td style="display: none">Colleges</td>
@@ -594,7 +578,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10004927</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Released for statement</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 45,444,792</td>
                             <td style="display: none">Colleges</td>
@@ -616,7 +600,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10057981</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 878,681</td>
                             <td style="display: none">Colleges</td>
@@ -639,7 +623,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10000528</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 17,309,515</td>
                             <td style="display: none">Colleges</td>
@@ -664,7 +648,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10000533</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Approved</td>
                             <td id="providerValue" class="govuk-table__cell govuk-table__cell--numeric gbp"></td>
                             <td style="display: none">Colleges</td>
                             <td style="display: none">Further education</td>
@@ -686,7 +670,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10000536</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 26,000,320</td>
                             <td style="display: none">Colleges</td>
@@ -707,7 +691,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10000560</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 6,147,399</td>
                             <td style="display: none">Colleges</td>
@@ -729,7 +713,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10001465</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 9,922,656</td>
                             <td style="display: none">Colleges</td>
@@ -752,7 +736,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10000610</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 28,769,457</td>
                             <td style="display: none">Colleges</td>
@@ -774,7 +758,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10006442</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 24,653,156</td>
                             <td style="display: none">Colleges</td>
@@ -796,7 +780,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10000720</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 3,539,243</td>
                             <td style="display: none">Colleges</td>
@@ -820,7 +804,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10000747</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Approved</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 14,830,027</td>
                             <td style="display: none">Colleges</td>
@@ -842,7 +826,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10002111</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Released for payment and contracting</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 8,838,468</td>
                             <td style="display: none">Colleges</td>
@@ -864,7 +848,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10003193</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Released for payment and contracting</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 11,631,543</td>
                             <td style="display: none">Colleges</td>
@@ -886,7 +870,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10003200</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Released for payment and contracting</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 9,481,287</td>
                             <td style="display: none">Colleges</td>
@@ -908,7 +892,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10003491</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Released for payment and contracting</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 7,071,822</td>
                             <td style="display: none">Colleges</td>
@@ -931,7 +915,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10004596</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Released for payment</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 3,701,430</td>
                             <td style="display: none">Colleges</td>
@@ -955,7 +939,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10005967</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Released for payment</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 26,707,629</td>
                             <td style="display: none">Colleges</td>
@@ -979,7 +963,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10005977</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Released for payment</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 11,673,504</td>
                             <td style="display: none">Colleges</td>
@@ -1000,7 +984,7 @@ GOV.UK Prototype Kit
                                 </div>
                             </td>
                             <td class="govuk-table__cell">10005999</td>
-                            <td class="govuk-table__cell">Draft</td>
+                            <td class="govuk-table__cell">Released for payment</td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value gbp" value="200">
                                 12,224,175</td>
                             <td style="display: none">Colleges</td>
