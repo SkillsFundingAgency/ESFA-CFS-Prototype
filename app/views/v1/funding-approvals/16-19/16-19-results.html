@@ -40,9 +40,8 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
+    <div class="govuk-grid-column-one-third position-sticky">
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset" aria-describedby="search-conditional-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
@@ -415,27 +414,14 @@ GOV.UK Prototype Kit
                 </div>
             </fieldset>
         </div>
-
-
-        <a href="#" class="govuk-link right-align"
-            onclick="$('input:checkbox').removeAttr('checked'); countChecked();">Clear filters</a>
+        <button href="#" class="govuk-button govuk-button--secondary" onclick="$('input:checkbox').removeAttr('checked'); countChecked();">
+            Clear filters
+        </button>
+    <br>
+    <a id="approveFunding" href="../funding-approval.html" class="govuk-button govuk-button--primary" data-module="govuk-button">
+        Approve funding
+    </a>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
@@ -1046,13 +1032,6 @@ GOV.UK Prototype Kit
                                 <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
                     </ul>
                 </nav>
-                <div class="right-align">
-
-                    <a id="approveFunding" href="../funding-approval.html" class="govuk-button govuk-button--primary"
-                        data-module="govuk-button">
-                        Approve funding
-                    </a>
-                </div>
             </div>
         </div>
     </div>

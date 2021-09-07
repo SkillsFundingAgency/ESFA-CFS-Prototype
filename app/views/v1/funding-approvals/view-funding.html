@@ -23,7 +23,7 @@ endblock %}
   </div>
 </div>
 
-<form action="" method="post" id="viewFunding" novalidate>
+<form action="" method="post" id="viewFunding" novalidate data-validate='funding-stream'>
   <div class="govuk-form-group">
     <label class="govuk-label" for="sort">
       Funding stream
@@ -83,6 +83,27 @@ endblock %}
   <button class="govuk-button" data-module="govuk-button">Continue</button>
 
 
+  <script type="application/json" id="funding-stream">
+    {
+      "fundingStream": {
+        "presence": {
+          "message": "^Select a funding stream"
+        }
+      },
+      "fundingPeriod"{
+        "presence": {
+          "message": "^Select a funding period"
+        }
+      },
+      "batch"{
+        "presence": {
+          "message": "^Select a funding stream"
+        }
+      }
+  
+    }
+  </script>
+
 <script>
 
   var batch = document.getElementById('batchYes').value
@@ -95,8 +116,7 @@ endblock %}
     console.log(batch)
     document.getElementById('viewFunding').action = batch
   }
-
-
+  
   function getFundingStream() {
     var fundingStream = document.getElementById("fundingStream");
     var fundingStreamText = fundingStream.options[fundingStream.selectedIndex].text;
