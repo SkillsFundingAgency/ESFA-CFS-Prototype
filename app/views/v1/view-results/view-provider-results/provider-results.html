@@ -268,27 +268,29 @@ GOV.UK Prototype Kit
                 </div>
             </fieldset>
         </div>
-        <button href="" class="govuk-link govuk-button govuk-button--secondary" onclick="$('input:checkbox').removeAttr('checked');">
+        <button href="" class="govuk-link govuk-button" onclick="$('input:checkbox').removeAttr('checked');">
             Clear filters</button>
     </div>
 
     <div class="govuk-grid-column-two-thirds">
         <!-- Provider details component START-->
         <div class="providerResults-details">
-            <h3 class="govuk-heading-m"><a href="results.html" class="govuk-link">Abbey College, Ramsey</a></h3>
+            <h3 class="govuk-heading-m"><a href="results.html" class="govuk-link">Abbey College, Ramsey</a><strong class="govuk-tag govuk-!-margin-left-2 govuk-tag--grey">
+                indicative
+            </strong></h3>
+            <p class="govuk-body-s govuk-!-margin-top-2">
+                <span>UKPRN: <strong>10015211</strong></span>
+                <span>UPIN: <strong>No data found</strong></span>
+                <span>URN: <strong>100742</strong></span>
+            </p>
             <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
                         Provider details
                     </span>
                 </summary>
-                <p class="govuk-body-s govuk-!-margin-top-2">
-                    <span>UKPRN: <strong>10015211</strong></span>
-                    <span>UPIN: <strong>No data found</strong></span>
-                    <span>URN: <strong>100742</strong></span>
-                    <span>Establishment number: <strong>4249</strong></span>
-                </p>
                 <!--Content too long for multiple per line-->
+                <p class="govuk-body-s govuk-!-margin-top-2">Establishment number: <strong>4249</strong></p>
                 <p class="govuk-body-s">Provider type: <strong>Local authority maintanined school</strong></p>
                 <p class="govuk-body-s">Provider subtype: <strong>Community school</strong></p>
                 <!--End-->
