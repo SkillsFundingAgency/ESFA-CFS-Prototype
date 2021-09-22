@@ -43,6 +43,16 @@ $govuk-assets-path: '/govuk/assets/';
 	display: inline-block;
 }
 
+.display-block {
+	display: block;
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
 .font-regular {
 	font-weight: 100;
 }
