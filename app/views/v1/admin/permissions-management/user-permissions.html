@@ -46,9 +46,10 @@ Permissions management
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group">
 
+            <!-- ADMINISTRATION PERMISSIONS -->
             <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="nationality-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                    Funding
+                    Administration permissions
                 </legend>
                 
                 <div class="govuk-checkboxes govuk-checkboxes--small">
@@ -61,6 +62,130 @@ Permissions management
                         </label>
                         <div id="can-administer-funding-streams-hint" class="govuk-hint govuk-checkboxes__hint">
                             Can grant and remove permissions for users of a funding stream
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!--  CALCULATION PERMISSIONS -->
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="nationality-hint">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    Calculation permissions
+                </legend>
+                
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-approve-all-calculations"
+                            name="can-approve-all-calculations" type="checkbox" value="Can approve all calculations"
+                            aria-describedby="can-approve-all-calculations-hint">
+                        <label checked class="govuk-label govuk-checkboxes__label" for="can-approve-all-calculations">
+                            Can approve all calculations
+                        </label>
+                        <div id="can-approve-all-calculations-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can approve all calculations
+                        </div>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-approve-any-calculation"
+                            name="can-approve-any-calculation" type="checkbox" value="Can approve any calculations">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-any-calculation">
+                            Can approve any calculations
+                        </label>
+                        <div id="can-approve-any-calculations-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can approve all calculations
+                        </div>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-approve-calculations"
+                            name="can-approve-calculations" type="checkbox" value="Can approve calculations"
+                            aria-describedby="can-approve-calculations-hint">
+                        <label checked class="govuk-label govuk-checkboxes__label" for="can-approve-calculations">
+                            Can approve calculations
+                        </label>
+                        <div id="can-approve-calculations-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can approve calculations last edited by another user
+                        </div>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input checked] class="govuk-checkboxes__input" id="can-edit-calculations"
+                            name="can-edit-calculations" type="checkbox" value="Can edit calculations"
+                            aria-describedby="can-edit-calculations-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-edit-calculations">
+                            Can edit calculations
+                        </label>
+                        <div id="can-edit-calculations-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can edit calculations within a specification for the funding stream
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <!--  DATA PERMISSIONS -->
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="nationality-hint">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    Data permissions
+                </legend>
+                
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-map-data-sets"
+                            name="can-map-data-sets" type="checkbox" value="Can map data sets"
+                            aria-describedby="can-map-data-sets-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-map-data-sets-files">
+                            Can map data sets
+                        </label>
+                        <div id="can-map-data-sets-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can map data source files to datasets within a specification for the funding stream
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-push-into-sql"
+                            name="can-push-into-sql" type="checkbox" value="Can push into SQL"
+                            aria-describedby="can-push-into-sql-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-push-into-sql">
+                            Can push CFS data into SQL for QA
+                        </label>
+                        <div id="can-push-into-sql-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can push CFS data into SQL for QA
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-upload-data-source-files"
+                            name="can-upload-data-source-files" type="checkbox" value="Can upload data source files"
+                            aria-describedby="can-upload-data-source-files-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-upload-data-source-files">
+                            Can upload data source files
+                        </label>
+                        <div id="can-upload-data-source-files-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can upload or update data source files for a data schema belonging to the funding stream
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!--  FUNDING PERMISSIONS -->
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="nationality-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    Funding permissions
+                </legend>
+                
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-approve-funding" name="can-approve-funding"
+                            type="checkbox" value="Can approve funding" aria-describedby="can-approve-funding-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-funding">
+                            Can approve funding
+                        </label>
+                        <div id="can-approve-funding-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can approve a funding allocation values for a specification for the funding stream that has
+                            been chosen for funding
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
@@ -86,17 +211,6 @@ Permissions management
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-approve-funding" name="can-approve-funding"
-                            type="checkbox" value="Can approve funding" aria-describedby="can-approve-funding-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-funding">
-                            Can approve funding
-                        </label>
-                        <div id="can-approve-funding-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can approve a funding allocation values for a specification for the funding stream that has
-                            been chosen for funding
-                        </div>
-                    </div>
-                    <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="can-release-funding" name="can-release-funding"
                             type="checkbox" value="Can release funding" aria-describedby="can-release-funding-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-release-funding">
@@ -110,97 +224,37 @@ Permissions management
                 </div>
             </fieldset>
 
+            <!--  PROFILE PERMISSIONS -->
             <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="nationality-hint">
 
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                    Specifications
+                    Profile permissions
                 </legend>
                 
                 <div class="govuk-checkboxes govuk-checkboxes--small">
                     <div class="govuk-checkboxes__item">
-                        <input checked class="govuk-checkboxes__input" id="can-create-specifications"
-                            name="can-create-specifications" type="checkbox" value="Can create specifications"
-                            aria-describedby="can-create-specifications-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-create-specifications">
-                            Can create specifications
+                        <input class="govuk-checkboxes__input" id="can-apply-custom-profile-pattern"
+                            name="can-apply-custom-profile-pattern" type="checkbox"
+                            value="Can apply custom profile pattern"
+                            aria-describedby="can-apply-custom-profile-pattern-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-apply-custom-profile-pattern">
+                            Can apply custom profile pattern
                         </label>
-                        <div id="can-create-specifications-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can create a specification for the funding stream
+                        <div id="can-apply-custom-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can apply custom profile patterns for funding lines within the funding stream
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input checked class="govuk-checkboxes__input" id="can-edit-specifications"
-                            name="can-edit-specifications" type="checkbox" value="Can edit specifications"
-                            aria-describedby="can-edit-specifications-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-edit-specifications">
-                            Can edit specifications
+                        <input class="govuk-checkboxes__input" id="can-assign-profile-pattern"
+                            name="can-assign-profile-pattern" type="checkbox" value="Can assign profile pattern"
+                            aria-describedby="can-assign-profile-pattern-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-assign-profile-pattern">
+                            Can assign profile pattern
                         </label>
-                        <div id="can-edit-specifications-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can edit a specification for the funding stream
+                        <div id="can-assign-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can assign profile patterns for funding lines within the funding stream
                         </div>
                     </div>
-                    <div class="govuk-checkboxes__item">
-                        <input checked class="govuk-checkboxes__input" id="can-approve-specifications"
-                            name="can-approve-specifications" type="checkbox" value="Can approve specifications"
-                            aria-describedby="can-approve-specifications-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-specifications">
-                            Can approve specifications
-                        </label>
-                        <div id="can-approve-specifications-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can approve a specification for the funding stream
-                        </div>
-                    </div>
-                </div>
-
-            </fieldset>
-
-            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="nationality-hint">
-
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                    Calculations
-                </legend>
-                
-                <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                        <input checked] class="govuk-checkboxes__input" id="can-edit-calculations"
-                            name="can-edit-calculations" type="checkbox" value="Can edit calculations"
-                            aria-describedby="can-edit-calculations-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-edit-calculations">
-                            Can edit calculations
-                        </label>
-                        <div id="can-edit-calculations-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can edit calculations within a specification for the funding stream
-                        </div>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-approve-calculations"
-                            name="can-approve-calculations" type="checkbox" value="Can approve calculations"
-                            aria-describedby="can-approve-calculations-hint">
-                        <label checked class="govuk-label govuk-checkboxes__label" for="can-approve-calculations">
-                            Can approve calculations
-                        </label>
-                        <div id="can-approve-calculations-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can approve calculations last edited by another user
-                        </div>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-approve-any-calculation"
-                            name="can-approve-any-calculation" type="checkbox" value="Can approve any calculations">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-any-calculation">
-                            Can approve any calculations
-                        </label>
-                    </div>
-                </div>
-
-            </fieldset>
-
-            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="nationality-hint">
-
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                    Profiles
-                </legend>
-                
-                <div class="govuk-checkboxes govuk-checkboxes--small">
                     <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="can-create-profile-pattern"
                             name="can-create-profile-pattern" type="checkbox" value="Can create profile pattern"
@@ -223,51 +277,73 @@ Permissions management
                             Can edit profile patterns for funding lines within the funding stream
                         </div>
                     </div>
+                </div>
+
+            </fieldset>
+
+            <!--  SPECIFICATION PERMISSIONS -->
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="nationality-hint">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    Specification permissions
+                </legend>
+                
+                <div class="govuk-checkboxes govuk-checkboxes--small">
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-delete-profile-pattern"
-                            name="can-delete-profile-pattern" type="checkbox" value="Can delete profile pattern"
-                            aria-describedby="can-delete-profile-pattern-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-delete-profile-pattern">
-                            Can delete profile pattern
+                        <input checked class="govuk-checkboxes__input" id="can-approve-specifications"
+                            name="can-approve-specifications" type="checkbox" value="Can approve specifications"
+                            aria-describedby="can-approve-specifications-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-specifications">
+                            Can approve specifications
                         </label>
-                        <div id="can-delete-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can delete profile patterns for funding lines within the funding stream
+                        <div id="can-approve-specifications-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can approve a specification for the funding stream
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-assign-profile-pattern"
-                            name="can-assign-profile-pattern" type="checkbox" value="Can assign profile pattern"
-                            aria-describedby="can-assign-profile-pattern-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-assign-profile-pattern">
-                            Can assign profile pattern
+                        <input checked class="govuk-checkboxes__input" id="can-create-specifications"
+                            name="can-create-specifications" type="checkbox" value="Can create specifications"
+                            aria-describedby="can-create-specifications-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-create-specifications">
+                            Can create specifications
                         </label>
-                        <div id="can-assign-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can assign profile patterns for funding lines within the funding stream
+                        <div id="can-create-specifications-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can create a specification for the funding stream
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-apply-custom-profile-pattern"
-                            name="can-apply-custom-profile-pattern" type="checkbox"
-                            value="Can apply custom profile pattern"
-                            aria-describedby="can-apply-custom-profile-pattern-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-apply-custom-profile-pattern">
-                            Can apply custom profile pattern
+                        <input checked class="govuk-checkboxes__input" id="can-edit-specifications"
+                            name="can-edit-specifications" type="checkbox" value="Can edit specifications"
+                            aria-describedby="can-edit-specifications-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-edit-specifications">
+                            Can edit specifications
                         </label>
-                        <div id="can-apply-custom-profile-pattern-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can apply custom profile patterns for funding lines within the funding stream
+                        <div id="can-edit-specifications-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can edit a specification for the funding stream
                         </div>
                     </div>
                 </div>
 
             </fieldset>
 
+            <!--  TEMPLATE PERMISSIONS -->
             <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="nationality-hint">
 
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                    Templates
+                    Template permissions
                 </legend>
                 
                 <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="can-approve-templates" name="can-approve-templates"
+                            type="checkbox" value="Can approve templates" aria-describedby="can-approve-templates-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-templates">
+                            Can approve templates
+                        </label>
+                        <div id="can-approve-templates-hint" class="govuk-hint govuk-checkboxes__hint">
+                            Can approve templates for the funding stream
+                        </div>
+                    </div>
                     <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="can-create-templates" name="can-create-templates"
                             type="checkbox" value="Can create templates" aria-describedby="can-create-templates-hint">
@@ -288,50 +364,10 @@ Permissions management
                             Can edit templates for the funding stream
                         </div>
                     </div>
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-delete-templates" name="can-delete-templates"
-                            type="checkbox" value="Can delete templates" aria-describedby="can-delete-templates-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-delete-templates">
-                            Can delete templates
-                        </label>
-                        <div id="can-delete-templates-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can delete templates for the funding stream
-                        </div>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-approve-templates" name="can-approve-templates"
-                            type="checkbox" value="Can approve templates" aria-describedby="can-approve-templates-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-approve-templates">
-                            Can approve templates
-                        </label>
-                        <div id="can-approve-templates-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can approve templates for the funding stream
-                        </div>
-                    </div>
                 </div>
 
             </fieldset>
-
-            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="nationality-hint">
-
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                    Data
-                </legend>
-                
-                <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-map-data-source-files"
-                            name="can-map-data-source-files" type="checkbox" value="Can map data source files"
-                            aria-describedby="can-map-data-source-files-hint">
-                        <label class="govuk-label govuk-checkboxes__label" for="can-map-data-source-files">
-                            Can map data source files
-                        </label>
-                        <div id="can-map-data-source-files-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can map data source files to datasets within a specification for the funding stream
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
+            
         </div>
     </div>
 </div>
