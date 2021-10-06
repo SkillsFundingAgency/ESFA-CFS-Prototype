@@ -372,3 +372,12 @@ $('.govuk-notification-banner__dismiss-btn-jq').on("click", function(e) {
 });
 // END NOTIFICAITON BANNER JS
 
+// UPDATE DATASET NOTIFICATION
+var urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('showDataLoadNotification')) {
+  $('#updateDatasetBanner').removeClass('govuk-!-display-none');
+  setInterval(function() {
+    $('#updateDatasetBanner').addClass('govuk-!-display-none');
+  },5000);
+}
+
