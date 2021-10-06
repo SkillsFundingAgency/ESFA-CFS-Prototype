@@ -376,7 +376,7 @@ $('.govuk-notification-banner__dismiss-btn-jq').on("click", function(e) {
 var urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has('showDataLoadNotification')) {
   $('#updateDatasetBanner').removeClass('govuk-!-display-none');
-  setInterval(function() {
+  setTimeout(function() {
     $('#updateDatasetBanner').addClass('govuk-!-display-none');
   },5000);
 }
