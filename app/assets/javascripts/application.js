@@ -373,6 +373,7 @@ $('.govuk-notification-banner__dismiss-btn-jq').on("click", function(e) {
 // END NOTIFICAITON BANNER JS
 
 // UPDATE DATASET NOTIFICATION
+// When a user updates a data set - direct them to /v1/fundingLineStructure-gag?showDataLoadNotification=1#data-sets with '?showDataLoadNotification=1' in the URL which we can then use to determine whether to show the #updateDatasetBanner (check-data-set-loading-spinner--update-data-set.html)
 var urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has('showDataLoadNotification')) {
   $('#updateDatasetBanner').removeClass('govuk-!-display-none');
