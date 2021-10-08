@@ -54,7 +54,7 @@ endblock %}
 
 <div class="govuk-radios govuk-radios--inline">
   <label class="govuk-label govuk-!-margin-bottom-2" for="file-upload-1">
-    Select yes if you wish to approve a preselected batch of providers
+    Would you like to approve a batch of providers?
   </label>
   <div class="govuk-radios__item">
     <input class="govuk-radios__input" id="batchYes" name="batch" onclick="batchProcess(), showspec()" type="radio"
@@ -65,7 +65,7 @@ endblock %}
   </div>
   <div class="govuk-radios__item govuk-!-margin-bottom-7">
     <input class="govuk-radios__input" id="updateTypeReplace" onclick="showspec()" name="batch" type="radio"
-      value="/v1/datasets/manageDatasets">
+      value="/v1/datasets/manageDatasets" checked>
     <label class="govuk-label govuk-radios__label" for="changed-name-2">
       No
     </label>
