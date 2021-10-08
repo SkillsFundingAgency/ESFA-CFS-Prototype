@@ -104,140 +104,192 @@ GOV.UK Prototype Kit
                         Contracts
                     </a>
                 </li>
-                <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#versionHistory">
-                        Version History
-                    </a>
-                </li>
             </ul>
-            <section class="govuk-tabs__panel" id="allocation-history">
+            <!-- ALLOCATION HISTORY -->
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="allocation-history">
                 <h2 class="govuk-heading-l">Allocation history</h2>
                 <table class="govuk-table">
-                    <caption class="govuk-table__caption">History of status changes</caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header ">Status</th>
-                            <th scope="col" class="govuk-table__header ">Date/time of change
-                            </th>
-                            <th scope="col" class="govuk-table__header ">Variation reason
-                            </th>
-                            <th scope="col" class="govuk-table__header govuk-table__header--numeric ">
-                                Funding stream
-                                value</th>
+                            <th scope="col" class="govuk-table__header">Approved</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Released version</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Statement</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding total</th>
                         </tr>
                     </thead>
                     <tbody class="govuk-table__body">
+
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Released for payment and contracting
+                            <td class="govuk-table__cell">
+                                <b>By Sarah SMITH</b><br />
+                                V4.5<br />
+                                1 October 2021 10:12am
                                 <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                                     <summary class="govuk-details__summary">
                                       <span class="govuk-details__summary-text">
-                                        Withdraw funding
+                                        Variation reason
                                       </span>
                                     </summary>
                                     <div class="govuk-details__text">
-                                      <p class="govuk-body">Are you sure you want to withdraw funding?</p>
-                                      <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0" data-module="govuk-button">
-                                        Withdraw funding
-                                      </button>
+                                      Update the funding.
                                     </div>
                                 </details>
-                            </th>
-                            <td class="govuk-table__cell">9 June 2020 at 11:41am</br>By Robert
-                                SPARKS</td>
-                            <td class="govuk-table__cell "> Funding Updated</br>Profile Updated
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
 
                             </td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£479,370</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£1,645,999</td>
                         </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Approved</th>
-                            <td class="govuk-table__cell">8 June 2020 at 10:49am</br>By Robert
-                                SPARKS</td>
-                            <td class="govuk-table__cell "> Funding Updated</br>Profile Updated
 
-                            </td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£479,370</td>
-                        </tr>
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Updated</th>
-                            <td class="govuk-table__cell">8 June 2020 at 8:57am</br>by Robert
-                                SPARKS</td>
-                            <td class="govuk-table__cell "> Funding Updated</br>Profile Updated
-
-                            </td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£479,160</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Released for statement
+                            <td class="govuk-table__cell">
+                                <b>By John JOHN</b><br />
+                                V3.1<br />
+                                22 September 2021 10:45am
                                 <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                                     <summary class="govuk-details__summary">
                                       <span class="govuk-details__summary-text">
-                                        Withdraw funding
+                                        Variation reason
                                       </span>
                                     </summary>
                                     <div class="govuk-details__text">
-                                      This action cannot be undone. Are you sure you want to withdraw funding?
-                                      <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0" data-module="govuk-button">
-                                        Withdraw funding
-                                      </button>
+                                      Update the funding.
+                                    </div>
+                                  </details>
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                v4.0
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                By Robert SPARKS<br />
+                                22 September 2021 14:22am
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                By Robert SPARKS<br />
+                                22 September 2021 14:22am
+                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                      <span class="govuk-details__summary-text">
+                                        Variation reason
+                                      </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                      Update the funding.
                                     </div>
                                 </details>
-                            </th>
-                            <td class="govuk-table__cell">7 June 2020 at 1:17pm</br>By Robert
-                                SPARKS</td>
-                            <td class="govuk-table__cell ">
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£1,645,999</td>
+                        </tr>
 
-                            </td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£459,370</td>
-                        </tr>
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Approved</th>
-                            <td class="govuk-table__cell">6 June 2020 at 1:56pm</br>By Robert
-                                SPARKS</td>
-                            <td class="govuk-table__cell ">
+                            <td class="govuk-table__cell">
+                                <b>By Lisa Jones</b><br />
+                                V2.2<br />
+                                10 September 2021 09:32am
+                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                      <span class="govuk-details__summary-text">
+                                        Variation reason
+                                      </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                      Update the funding.
+                                    </div>
+                                  </details>
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                v3.0
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                By Robert SPARKS<br />
+                                15 September 2021 14:22am
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£1,645,999</td>
+                        </tr>
 
-                            </td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£459,370</td>
-                        </tr>
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Updated</th>
-                            <td class="govuk-table__cell">5 June 2020 at 3:41pm</br>By Robert
-                                SPARKS</td>
-                            <td class="govuk-table__cell ">
+                            <td class="govuk-table__cell">
+                                <b>By Alex LOWE</b><br />
+                                V1.2<br />
+                                31 August 2021 11:12am
+                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                      <span class="govuk-details__summary-text">
+                                        Variation reason
+                                      </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                      Update the funding.
+                                    </div>
+                                  </details>
                             </td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£459,370</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                v2.0
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                By A N Other<br />
+                                1 September 2021 14:22am
+                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                      <span class="govuk-details__summary-text">
+                                        Variation reason
+                                      </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                      Update the funding.
+                                    </div>
+                                </details>
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                £1,645,999
+                            </td>
                         </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Approved</th>
-                            <td class="govuk-table__cell">4 June 2020 at 10:12am</br>By Robert
-                                SPARKS</td>
-                            <td class="govuk-table__cell ">
 
-                            </td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£459,370</td>
-                        </tr>
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Draft</th>
-                            <td class="govuk-table__cell">3 June 2020 at 11:53m</br>By Robert
-                                SPARKS</td>
-                            <td class="govuk-table__cell ">
-
+                            <td class="govuk-table__cell">
+                                <b>A N Provider</b><br />
+                                V0.6<br />
+                                2 August 2021 07:01am
+                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                      <span class="govuk-details__summary-text">
+                                        Variation reason
+                                      </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                      Update the funding.
+                                    </div>
+                                  </details>
                             </td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£459,370</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Draft</th>
-                            <td class="govuk-table__cell">2 June 2020 at 5:10pm</br>By Robert
-                                SPARKS</td>
-                            <td class="govuk-table__cell ">
-
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                v1.0
                             </td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£359,370</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                By A N Other<br />
+                                3 August 2021 14:22am
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                By Robert SPARKS<br />
+                                5 August 2021 14:22am
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                £1,645,999
+                            </td>
                         </tr>
+
                     </tbody>
                 </table>
             </section>
+            <!-- END ALLOCATION HISTORY -->
             <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="released-calculations">
                 <h2 class="govuk-heading-l">Released calculations</h2>
                 <table class="govuk-table">
@@ -661,191 +713,6 @@ GOV.UK Prototype Kit
                               </div>
                     </section>
                         <!-- END Contracts Tab -->
-                        <!-- VERSION HISTORY -->
-                        <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="versionHistory">
-                            <h2 class="govuk-heading-l">Version history</h2>
-                            <table class="govuk-table">
-                                <thead class="govuk-table__head">
-                                    <tr class="govuk-table__row">
-                                        <th scope="col" class="govuk-table__header">Approved</th>
-                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Released version</th>
-                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Statement</th>
-                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding</th>
-                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding total</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="govuk-table__body">
-            
-                                    <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell">
-                                            <b>By Sarah SMITH</b><br />
-                                            V4.5<br />
-                                            1 October 2021 10:12am
-                                            <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                                <summary class="govuk-details__summary">
-                                                  <span class="govuk-details__summary-text">
-                                                    Variation reason
-                                                  </span>
-                                                </summary>
-                                                <div class="govuk-details__text">
-                                                  Update the funding.
-                                                </div>
-                                            </details>
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-            
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">£1,645,999</td>
-                                    </tr>
-            
-                                    <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell">
-                                            <b>By John JOHN</b><br />
-                                            V3.1<br />
-                                            22 September 2021 10:45am
-                                            <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                                <summary class="govuk-details__summary">
-                                                  <span class="govuk-details__summary-text">
-                                                    Variation reason
-                                                  </span>
-                                                </summary>
-                                                <div class="govuk-details__text">
-                                                  Update the funding.
-                                                </div>
-                                              </details>
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            v4.0
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            By Robert SPARKS<br />
-                                            22 September 2021 14:22am
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            By Robert SPARKS<br />
-                                            22 September 2021 14:22am
-                                            <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                                <summary class="govuk-details__summary">
-                                                  <span class="govuk-details__summary-text">
-                                                    Variation reason
-                                                  </span>
-                                                </summary>
-                                                <div class="govuk-details__text">
-                                                  Update the funding.
-                                                </div>
-                                            </details>
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">£1,645,999</td>
-                                    </tr>
-            
-                                    <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell">
-                                            <b>By Lisa Jones</b><br />
-                                            V2.2<br />
-                                            10 September 2021 09:32am
-                                            <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                                <summary class="govuk-details__summary">
-                                                  <span class="govuk-details__summary-text">
-                                                    Variation reason
-                                                  </span>
-                                                </summary>
-                                                <div class="govuk-details__text">
-                                                  Update the funding.
-                                                </div>
-                                              </details>
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            v3.0
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            By Robert SPARKS<br />
-                                            15 September 2021 14:22am
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">£1,645,999</td>
-                                    </tr>
-            
-                                    <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell">
-                                            <b>By Alex LOWE</b><br />
-                                            V1.2<br />
-                                            31 August 2021 11:12am
-                                            <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                                <summary class="govuk-details__summary">
-                                                  <span class="govuk-details__summary-text">
-                                                    Variation reason
-                                                  </span>
-                                                </summary>
-                                                <div class="govuk-details__text">
-                                                  Update the funding.
-                                                </div>
-                                              </details>
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            v2.0
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            By A N Other<br />
-                                            1 September 2021 14:22am
-                                            <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                                <summary class="govuk-details__summary">
-                                                  <span class="govuk-details__summary-text">
-                                                    Variation reason
-                                                  </span>
-                                                </summary>
-                                                <div class="govuk-details__text">
-                                                  Update the funding.
-                                                </div>
-                                            </details>
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            £1,645,999
-                                        </td>
-                                    </tr>
-            
-                                    <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell">
-                                            <b>A N Provider</b><br />
-                                            V0.6<br />
-                                            2 August 2021 07:01am
-                                            <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                                <summary class="govuk-details__summary">
-                                                  <span class="govuk-details__summary-text">
-                                                    Variation reason
-                                                  </span>
-                                                </summary>
-                                                <div class="govuk-details__text">
-                                                  Update the funding.
-                                                </div>
-                                              </details>
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            v1.0
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            By A N Other<br />
-                                            3 August 2021 14:22am
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            By Robert SPARKS<br />
-                                            5 August 2021 14:22am
-                                        </td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric">
-                                            £1,645,999
-                                        </td>
-                                    </tr>
-            
-                                </tbody>
-                            </table>
-                        </section>
-                        <!-- END VERSION HISTORY -->
         </div>
         <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     </div>
