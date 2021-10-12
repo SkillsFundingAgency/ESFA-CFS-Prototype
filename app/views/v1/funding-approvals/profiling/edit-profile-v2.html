@@ -57,7 +57,6 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
-
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -89,6 +88,14 @@ GOV.UK Prototype Kit
             </div>
         </dl>
     </div>
+
+    <!-- QUICK LINKS -->
+    <div class="govuk-grid-column-one-third">
+        <ul class="govuk-list right-align">
+            <li><a class="govuk-link" href="edit-profile-paid.html">Edit historic instalments</a></li>
+        </ul>
+    </div>
+    <!-- END QUICK LINKS -->
 </div>
 
 
@@ -113,73 +120,29 @@ GOV.UK Prototype Kit
                     <th scope="row" class="govuk-table__header">8 September 2020</th>
                     <td class="govuk-table__cell"><strong class="govuk-tag">Paid</strong></td>
                     <td class="govuk-table__cell">1</td>
-                    <td class="govuk-table__cell">
-                    </td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper">
-                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
-                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
-                                    class="govuk-input input-prefix govuk-input--width-10" id="input-3"
-                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
-                                    autocomplete="off" value="320,000">
-                            </div>
-                        </div>
-                    </td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">£250,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">8 October 2020</th>
                     <td class="govuk-table__cell"><strong class="govuk-tag">Paid</strong></td>
                     <td class="govuk-table__cell">2</td>
-                    <td class="govuk-table__cell">
-                    </td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper">
-                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
-                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
-                                    class="govuk-input input-prefix govuk-input--width-10" id="input-3"
-                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
-                                    autocomplete="off" value="320,000">
-                            </div>
-                        </div>
-                    </td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">£250,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">8 November 2020</th>
                     <td class="govuk-table__cell"><strong class="govuk-tag">Paid</strong></td>
                     <td class="govuk-table__cell">3</td>
-                    <td class="govuk-table__cell">
-                    </td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper">
-                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
-                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
-                                    class="govuk-input input-prefix govuk-input--width-10" id="input-3"
-                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
-                                    autocomplete="off" value="320,000">
-                            </div>
-                        </div>
-                    </td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">£250,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">9 December 2020 </th>
                     <td class="govuk-table__cell"><strong class="govuk-tag">Paid</strong></td>
                     <td class="govuk-table__cell">4</td>
-                    <td class="govuk-table__cell">
-                    </td>
-                    <td class="govuk-table__cell">
-                        <div class="govuk-form-group">
-                            <div class="govuk-input__wrapper">
-                                <div class="govuk-input__prefix right-align" aria-hidden="true">£</div>
-                                <input aria-label="Enter the total amount for February. Enter 0 if this does not apply"
-                                    class="govuk-input input-prefix govuk-input--width-10" id="input-3"
-                                    onblur="sumTotal()" name="installmentValue" type="text" aria-describedby="currency"
-                                    autocomplete="off" value="320,000">
-                            </div>
-                        </div>
-                    </td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">£250,000</td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">12 January 2021</th>
@@ -443,47 +406,14 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <form action="funding-line-profile-national" method="post" novalidate data-validate='warning-review-checkbox-validation'>
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="acknowledgementCheckbox">
-                <legend class="govuk-fieldset__legend">
-                    <div class="govuk-warning-text">
-                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                    <strong class="govuk-warning-text__text">
-                        <span class="govuk-warning-text__assistive">Warning</span>
-                        You are editing historic instalments
-                    </strong>
-                    </div>
-                </legend>
-                <ul class="govuk-list govuk-list--bullet">
-                    <li>Editing historic instalments can... (What are the repercusions?)</li>
-                    <li>Be sure that you want to edit historic instalments</li>
-                </ul>
-                <div class="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="acknowledgementCheckbox" name="acknowledgementCheckbox" type="checkbox" value="carcasses">
-                    <label class="govuk-label govuk-checkboxes__label" for="acknowledgementCheckbox">
-                        I acknowledge that I am editing historic instalments and wish to continue
-                    </label>
-                    </div>
-                </div>
-            
-                </fieldset>
-            </div>
-            <button data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-                Apply approval
-              </button>
-            <!-- <a href="/v1/funding-approvals/profiling/funding-line-profile-national" data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-                Apply approval
-            </a> -->
-            <a class="govuk-button govuk-button--secondary" href="#" onclick="document.getElementById('fundingConfirmation').style.display='block'">
-                Cancel
-            </a>
-        </form>
-    </div>
-</div>
+<a class="govuk-button govuk-!-margin-right-1" href="javascript:history.back()">
+    Apply profile
+</a>
+
+
+<a class="govuk-button govuk-button--secondary" href="#"
+    onclick="document.getElementById('fundingConfirmation').style.display='block'">
+    Cancel</a>
 
 </div>
 </div>
@@ -640,23 +570,5 @@ GOV.UK Prototype Kit
         }
     }
 </script>
-
-<script type="application/json" id="warning-review-checkbox-validation">
-
-    {
-    
-    "acknowledgementCheckbox": {
-    
-    "presence": {
-    
-    "message": "^You must acknowledge that you understand you are editing historic instalments"
-    
-    }
-    
-    }
-    
-    }
-    
-  </script>
 
 {% endblock %}
