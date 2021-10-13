@@ -34,50 +34,6 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-4">
-  <div class="govuk-grid-column-three-quarters">
-
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-
-      <div class="govuk-summary-list__row govuk-!-width-one-third">
-        <dt class="govuk-summary-list__key govuk-!-width-one-third">
-          Last refresh </dt>
-        <dd class="govuk-summary-list__value govuk-!-padding-left-2">
-          1 March 2021 9:52am by Robert SPARKS</dd>
-      </div>
-      <div class="govuk-summary-list__row govuk-!-width-one-third">
-        <dt class="govuk-summary-list__key govuk-!-width-one-third">
-          Last calculation results update
-        </dt>
-
-        <dd class="govuk-summary-list__value govuk-!-padding-left-2">
-          2 March 2021 10:31am
-        </dd>
-
-      </div>
-
-    </dl>
-  </div>
-</div>
-
-
-<div class="govuk-grid-row govuk-!-margin-bottom-3">
-  <div class="govuk-grid-column-three-quarters">
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Warning</span>
-        Approved funding values can change when data or calculations are altered. If the funding values change, their
-        status will become ‘updated’ and they will need to be approved again.
-      </strong>
-    </div>
-  </div>
-</div>
-
-
-
-
-
 
 <!--
 <div class="govuk-grid-row">
@@ -191,19 +147,67 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <form action="/v1/funding-approvals/batch/confirm-approve-in-progress" method="post" novalidate data-validate='warning-review-checkbox-validation'>
 
-    <a href="/v1/funding-approvals/batch/confirm-approve-in-progress.html"><button data-prevent-double-click="true"
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="acknowledgementCheckbox">
+          <legend class="govuk-fieldset__legend">
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                The provider amount shown might not be up to date
+              </strong>
+            </div>
+          </legend>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Providers were last refreshed 1 March 2021, 09:52am by Robert SPARKS</li>
+            <li>Total provider amount was last calculated 1 March 2021, 10:31am</li>
+            <li>Selected providers may not appear in the provider count due to; provider record missing from funding data, providers currently in error state or providers already set as approved or released</li>
+          </ul>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acknowledgementCheckbox" name="acknowledgementCheckbox" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="acknowledgementCheckbox">
+                I acknowledge that the total provider amount shown may not be up to date
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
+
+      <button data-prevent-double-click="true"
         class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
         Confirm approval
-      </button></a>
+      </button>
 
+      <a href="../funding-approvals/16-19/16-19-results.html" button class="govuk-button govuk-button--secondary"
+        data-module="govuk-button">
+        Cancel
+      </a>
 
-    <a href="../funding-approvals/16-19/16-19-results.html" button class="govuk-button govuk-button--secondary"
-      data-module="govuk-button">
-      Cancel
-    </a>
-
+    </form>
   </div>
 </div>
+
+<!-- FORM VALIDATON JS -->
+<script type="application/json" id="warning-review-checkbox-validation">
+
+  {
+  
+  "acknowledgementCheckbox": {
+  
+  "presence": {
+  
+  "message": "^You must acknowledge that you understand the provider amount shown might not be up to date"
+  
+  }
+  
+  }
+  
+  }
+  
+</script>
 
 {% endblock %}
