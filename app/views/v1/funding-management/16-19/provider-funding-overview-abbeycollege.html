@@ -55,19 +55,6 @@ GOV.UK Prototype Kit
                     {{ data['spec-name'] }}
                 </dd>
             </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Latest status </dt>
-                <dd class="govuk-summary-list__value">
-                    Released</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Funding total
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    £479,370 </dd>
-            </div>
         </dl>
     </div>
 </div>
@@ -94,16 +81,16 @@ GOV.UK Prototype Kit
                         Profiling
                     </a>
                 </li>
-                <li class="govuk-tabs__list-item">
+                <!-- <li class="govuk-tabs__list-item">
                     <a class="govuk-tabs__tab" href="#providerFunding">
                         Provider funding
                     </a>
-                </li>
-                <li class="govuk-tabs__list-item">
+                </li> -->
+                <!-- <li class="govuk-tabs__list-item">
                     <a class="govuk-tabs__tab" href="#contracts">
                         Contracts
                     </a>
-                </li>
+                </li> -->
             </ul>
             <!-- ALLOCATION HISTORY -->
             <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="allocation-history">
@@ -111,7 +98,7 @@ GOV.UK Prototype Kit
                 <table class="govuk-table">
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header">Approved</th>
+                            <th scope="col" class="govuk-table__header">Approved version</th>
                             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Released version</th>
                             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Statement</th>
                             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding</th>
@@ -122,8 +109,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <b>By Sarah SMITH</b><br />
-                                v4.5<br />
+                                <b>v4.5</b><br />
+                                By Sarah SMITH<br />
                                 1 October 2021 10:12am
                                 <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                                     <summary class="govuk-details__summary">
@@ -146,8 +133,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <b>By John JOHN</b><br />
-                                v3.1<br />
+                                <b>v3.1</b><br />
+                                By John JOHN<br />
                                 22 September 2021 10:45am
                                 <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                                     <summary class="govuk-details__summary">
@@ -186,8 +173,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <b>By Lisa Jones</b><br />
-                                v2.2<br />
+                                <b>v2.2</b><br />
+                                By Lisa Jones<br />
                                 10 September 2021 09:32am
                                 <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                                     <summary class="govuk-details__summary">
@@ -215,8 +202,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <b>By Alex LOWE</b><br />
-                                v1.2<br />
+                                <b>v1.2</b><br />
+                                By Alex LOWE<br />
                                 31 August 2021 11:12am
                                 <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                                     <summary class="govuk-details__summary">
@@ -256,8 +243,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <b>A N Provider</b><br />
-                                v0.6<br />
+                                <b>v0.6</b><br />
+                                A N Provider<br />
                                 2 August 2021 07:01am
                                 <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                                     <summary class="govuk-details__summary">
@@ -566,7 +553,7 @@ GOV.UK Prototype Kit
                     </div>
                 </div>
             </section>
-            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="providerFunding">
+            <!-- <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="providerFunding">
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-l">
@@ -637,9 +624,9 @@ GOV.UK Prototype Kit
                         </table>
                     </div>
                 </div>
-            </section>
+            </section> -->
                         <!-- START Contracts Tab -->
-                        <section class="govuk-tabs__panel" id="contracts">
+                        <!-- <section class="govuk-tabs__panel" id="contracts">
                             <div class="govuk-grid-row">
                                 <div class="govuk-grid-column-full">
                                   <h2 class="govuk-heading-l">
@@ -655,7 +642,6 @@ GOV.UK Prototype Kit
                                         <th scope="col" class="govuk-table__header">Funding line</th>
                                         <th scope="col" class="govuk-table__header">Funding allocation</th>
                                         <th scope="col" class="govuk-table__header">Status</th>
-                                       <!-- Removed for review  <th scope="col" class="govuk-table__header">Withdraw allocation</th> -->
                                       </tr>
                                     </thead>
                                     <tbody class="govuk-table__body">
@@ -669,11 +655,6 @@ GOV.UK Prototype Kit
                                         <td class="govuk-table__cell">
                                             <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
                                         </td>
-                                       <!-- Removed for review  <td class="govuk-table__cell">
-                                            <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0 right-align" data-module="govuk-button">
-                                                Withdraw allocation
-                                            </button>
-                                        </td> -->
                                       </tr>
                                       <tr class="govuk-table__row">
                                         <th scope="row" class="govuk-table__header">
@@ -711,7 +692,7 @@ GOV.UK Prototype Kit
             
                                 </div>
                               </div>
-                    </section>
+                    </section> -->
                         <!-- END Contracts Tab -->
         </div>
         <a href="javascript:history.back()" class="govuk-back-link">Back</a>
