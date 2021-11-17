@@ -39,7 +39,7 @@
           Funding stream
         </dt>
         <dd class="govuk-summary-list__value" id="fundingStreamSQL">
-
+          {{ data['sql-funding-stream'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -47,7 +47,7 @@
           Funding period
         </dt>
         <dd class="govuk-summary-list__value" id="fundingPeriodSQL">
-
+          {{ data['sql-funding-period'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -55,7 +55,15 @@
           Specification
         </dt>
         <dd class="govuk-summary-list__value">
-          Specification name
+          {{ data['sqlSpecification'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Data type
+        </dt>
+        <dd class="govuk-summary-list__value">
+
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -78,7 +86,7 @@
   </div>
 </div>
 
-<a href="/start" class="govuk-button" data-module="govuk-button">
+<a href="/v1/datasets/manageData" class="govuk-button" data-module="govuk-button">
   Continue
 </a>
 
