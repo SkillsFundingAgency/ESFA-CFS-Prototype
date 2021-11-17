@@ -288,6 +288,137 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset">
                 <button
                     class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by error status <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span>
+                    </h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="filter-by-status"></p>
+                </button>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox-autoheight">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-with-errors"
+                                name="filter-by-provider-type" type="checkbox" value="all" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
+                                With errors <span>(3)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-without-errors" name="filter-by-status"
+                                autocomplete="off" type="checkbox" value="approved" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="approved">
+                                Without errors <span>(68)</span>
+                            </label>
+                        </div>
+                    </div>
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by allocation type <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span>
+                    </h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="filter-indicative">1 selected</p>
+                </button>
+                <div id="filter-content" class="filter-content sidebar-overflow-visible ">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input checked="" class="govuk-radios__input" onclick="countChecked()" id="all-statements" name="statement-type" type="radio" value="all statements">
+                                    <label class="govuk-label govuk-radios__label" for="all-statements">
+                                        Show all allocation types
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" onclick="countChecked()" id="hide-indicative" name="statement-type" type="radio" value="hide indicative">
+                                    <label class="govuk-label govuk-radios__label" for="hide-indicative">
+                                        Hide indicative allocations <span>(10)</span>
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" onclick="countChecked()" id="show-indicative" name="statement-type" type="radio" value="show indicative">
+                                    <label class="govuk-label govuk-radios__label" for="show-indicative">
+                                        Only indicative allocations <span>(6)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by open date <span><i class="material-icons right-align">keyboard_arrow_down</i></span></h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="open-month-selected"> </p>
+                </button>
+
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-form-group filterSearch">
+                        <label id="filter-by-open-date" class="govuk-label filterLabel" for="filter-by-open-date">
+                            Search
+                        </label>
+                        <input class="govuk-input filterSearchInput" id="filter-by-open-date-search" name="filter-by-open-date-search" autocomplete="off" type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-2" name="filter-by-open-date" type="checkbox" value="all" onclick="selectAllCheckboxes(this)">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                All <span>(60)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-january" name="filter-by-open-date" type="checkbox" value="january" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                August 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-february" name="filter-by-open-date" type="checkbox" value="february" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                September 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-march" name="filter-by-open-date" type="checkbox" value="march" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                October 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-april" name="filter-by-open-date" type="checkbox" value="april" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                November 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-may" name="filter-by-open-date" type="checkbox" value="may" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                December 2021 <span>(10)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-open-date-june" name="filter-by-open-date" type="checkbox" value="june" onclick="countChecked()">
+                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
+                                January 2022 <span>(10)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <!-- COMMENTING OUT THE RELEASE PURPOSE FILTER BOX UNTIL ROB WANTS TO ADD IT BACK -->
+        <!-- <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
                     <h4 class="govuk-heading-s">Filter by release purpose <span><i class="material-icons right-align">
                                 keyboard_arrow_down</i></span>
                     </h4>
@@ -323,16 +454,10 @@ GOV.UK Prototype Kit
                                 Contract <span>(1)</span>
                             </label>
                         </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-without-errors" name="filter-by-status"
-                                autocomplete="off" type="checkbox" value="without-errors" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-without-errors">
-                                Management information <span>(6)</span>
-                            </label>
-                        </div>
                     </div>
             </fieldset>
-        </div>
+        </div> -->
+        <!-- END COMMENTING OUT THE RELEASE PURPOSE FILTER BOX UNTIL ROB WANTS TO ADD IT BACK -->
 
  <!-- Removed until validated by user testing 
         <div class="govuk-form-group filterbyContainer">
@@ -603,36 +728,6 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="Colleges">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Abingdon and
-                                                Witney College</a>
-                                        </label><br>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000055</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="govuk-table__cell">
-                                Draft<br />
-                                v0.1
-                            </td>
-                            <td class="govuk-table__cell">
-                                
-                            </td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                                £9,996,753</td>
-                            <td style="display: none">Colleges</td>
-                            <td style="display: none">Further education</td>
-                            <td style="display: none">Oxfordshire</td>
-
-
-
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="Colleges">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Activate
                                                 Learning</a>
                                         </label><br>
@@ -803,35 +898,7 @@ GOV.UK Prototype Kit
 
 
                         </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="Colleges">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Bath College</a>
-                                        </label><br>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10001465</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="govuk-table__cell">
-                                Draft<br />
-                                v0.2
-                            </td>
-                            <td class="govuk-table__cell">
-                                Statement v9.8<br />
-                                Payment v1.3<br />
-                                Contract v4.2</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                                £9,922,656</td>
-                            <td style="display: none">Colleges</td>
-                            <td style="display: none">Further education</td>
-                            <td style="display: none">Bath and North East Somerset</td>
 
-
-                        </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
@@ -981,35 +1048,6 @@ GOV.UK Prototype Kit
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="Colleges">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Hugh Baird
-                                                College</a>
-                                        </label><br>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10003193</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="govuk-table__cell">
-                                Draft<br />
-                                v0.5
-                            </td>
-                            <td class="govuk-table__cell">
-                                Payment v10.1<br />
-                                Contract v10.3</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                                £11,631,543</td>
-                            <td style="display: none">Colleges</td>
-                            <td style="display: none">Further education</td>
-                            <td style="display: none">Sefton</td>
-
-
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="Colleges">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Hull College</a>
                                         </label><br>
                                         <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10003200</p>
@@ -1148,21 +1186,27 @@ GOV.UK Prototype Kit
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="Colleges">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Tyne Coast
-                                                College</a>
-                                        </label><br>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10005999</p>
+                                <div class="govuk-form-group govuk-form-group--error">
+                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                                    name="provider-approval" type="checkbox" value="Colleges">
+                                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                                    <a href="provider-funding-overview.html" class="govuk-link">Tyne Coast
+                                                        College</a>
+                                                </label><br>
+                                                <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10005999</p>
+                                            </div>
+                                        </div>
+                                        <span class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Provider 10089100 no applicable variation found for variances ["IsIndicative: True != False","Provider: DateOpened: 11/1/2021 12:00:00 AM +00:00 1= 12/1/2021 12:00:00 AM 00:00"].</span>
                                     </div>
-                                </div>
+                                </fieldset>
+                              </div>
                             </td>
                             <td class="govuk-table__cell">
-                                Updated<br />
-                                v9.1
+                                <span class="govuk-error-message">Error</span>
                             </td>
                             <td class="govuk-table__cell">
                                 Payment v8.9
