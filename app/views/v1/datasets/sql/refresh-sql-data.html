@@ -1,0 +1,154 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+    endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../manageData">Manage data</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="refresh-sql-v2">Refresh SQL</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    Data types available
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Available SQL data for {{ data['sqlSpecification'] }}
+          </h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="/v1/datasets/sql/loading-spinner-full">
+            <h2 class="govuk-heading-l">Type 1</h2>
+            <p class="govuk-body">Short explanation about what the data contains.</p>
+            <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Help with type 1
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <dl class="govuk-summary-list govuk-summary-list--no-border">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Last SQL refresh
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                8 October 2020 10:13am
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Last funding data change
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                11 October 2020 10:00am
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </details>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Refresh SQL data
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="/v1/datasets/sql/loading-spinner-full">
+            <h2 class="govuk-heading-l">Type 2</h2>
+            <p class="govuk-body">Short explanation about what the data contains.</p>
+            <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Help with type 2
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <dl class="govuk-summary-list govuk-summary-list--no-border">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Last SQL refresh
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                8 October 2020 10:13am
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Last funding data change
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                11 October 2020 10:00am
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </details>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Create SQL data
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="/v1/datasets/sql/loading-spinner-full">
+            <h2 class="govuk-heading-l">Type 3</h2>
+            <div class="govuk-inset-text">
+                SQL data up to date
+            </div>
+            <p class="govuk-body">Short explanation about what the data contains.</p>
+            <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Help with type 3
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <dl class="govuk-summary-list govuk-summary-list--no-border">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Last SQL update
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                8 October 2020 10:13am
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Last funding data change
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                11 October 2020 10:00am
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </details>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
