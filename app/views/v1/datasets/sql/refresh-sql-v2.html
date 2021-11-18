@@ -3,9 +3,9 @@
 
 {% block content %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-9">
+<div class="govuk-grid-row ">
   <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+    <div class="govuk-breadcrumbs">
       <ol class="govuk-breadcrumbs__list">
         <li class="govuk-breadcrumbs__list-item">
           <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
@@ -21,8 +21,7 @@
   </div>
 </div>
 
-<form action="refresh-sql-data" method="post" name="refreshSQL" onsubmit="return validateForm()"
-  class="form">
+<form action="" method="post" name="refreshSQL" id="refreshSQL" class="form">
   <fieldset class="govuk-fieldset">
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -63,11 +62,11 @@
       <label class="govuk-label" for="sort">
         Specification
       </label>
-      <select class="govuk-select" id="SQLspecification" name="sqlSpecification">
+      <select class="govuk-select" id="SQLspecification" name="sqlSpecification" onchange="formAction()">
         <option></option>
-        <option value="Specification 1 (Chosen for funding)">Specification 1 (Chosen for funding)</option>
-        <option value="Specification 2">Specification 2</option>
-        <option value="Specification 3">Specification 3</option>
+        <option value="refresh-sql-data">Specification 1 (Chosen for funding)</option>
+        <option value="refresh-sql-data-permissions">Specification 2</option>
+        <option value="refresh-sql-data-job-details">Specification 3</option>
         <option value="Specification 4">Specification 4</option>
       </select>
     </div>
@@ -79,5 +78,13 @@
   </fieldset>
 </form>
 
+<script>
+
+  function formAction() {
+    var link = document.getElementById('SQLspecification').value
+    document.getElementById('refreshSQL').action = link
+  }
+
+</script>
 
 {% endblock %}
