@@ -5,7 +5,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs">
+        <div class="govuk-breadcrumbs ">
             <ol class="govuk-breadcrumbs__list">
                 <li class="govuk-breadcrumbs__list-item">
                     <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
@@ -24,11 +24,10 @@
     </div>
 </div>
 
-
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">
-            Available SQL data for Specification 1 (Chosen for funding)
+            Available SQL data for specification 3
           </h1>
     </div>
 </div>
@@ -65,9 +64,9 @@
                     </dl>
                 </div>
             </details>
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Refresh SQL data
-            </button>
+            <div class="govuk-inset-text">
+                Funding release in progress. Please wait.
+            </div>
         </form>
     </div>
 </div>
@@ -96,9 +95,9 @@
                     </dl>
                 </div>
             </details>
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Create SQL data
-            </button>
+            <div class="govuk-inset-text">
+                Calculation run in progress. Please wait.
+            </div>
         </form>
     </div>
 </div>
@@ -107,9 +106,6 @@
     <div class="govuk-grid-column-two-thirds">
         <form action="/v1/datasets/sql/loading-spinner-full">
             <h2 class="govuk-heading-l">Latest released state allocation results</h2>
-            <div class="govuk-inset-text">
-                SQL data up to date
-            </div>
             <p class="govuk-body">Short explanation about what the data contains.</p>
             <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
                 <summary class="govuk-details__summary">
@@ -138,7 +134,9 @@
                     </dl>
                 </div>
             </details>
-
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Refresh SQL data
+            </button>
         </form>
     </div>
 </div>

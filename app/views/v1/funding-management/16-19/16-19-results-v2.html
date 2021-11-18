@@ -286,35 +286,6 @@ GOV.UK Prototype Kit
 
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
-                <button
-                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-                    <h4 class="govuk-heading-s">Filter by error status <span><i class="material-icons right-align">
-                                keyboard_arrow_down</i></span>
-                    </h4>
-                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="filter-by-status"></p>
-                </button>
-                <div id="filter-content" class="filter-content">
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox-autoheight">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-with-errors"
-                                name="filter-by-provider-type" type="checkbox" value="all" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                With errors <span>(3)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-without-errors" name="filter-by-status"
-                                autocomplete="off" type="checkbox" value="approved" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="approved">
-                                Without errors <span>(68)</span>
-                            </label>
-                        </div>
-                    </div>
-            </fieldset>
-        </div>
-
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
                 <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
                     <h4 class="govuk-heading-s">Filter by allocation type <span><i class="material-icons right-align">
                                 keyboard_arrow_down</i></span>
@@ -723,17 +694,12 @@ GOV.UK Prototype Kit
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="Colleges">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Activate
-                                                Learning</a>
-                                        </label><br>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10004927</p>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">Activate
+                                    Learning
+                                </a><br>
+                                <p class="govuk-body-s govuk-!-margin-left-6 govuk-!-margin-bottom-0">
+                                    <strong>UKPRN</strong>: 10004927
+                                </p>
                             </td>
                             <td class="govuk-table__cell">
                                 Updated<br />
@@ -751,17 +717,13 @@ GOV.UK Prototype Kit
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="Colleges">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Ada National
-                                                College for Digital Skills</a>
-                                        </label><br>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10057981</p>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">Ada National
+                                    College for Digital Skills
+                                </a>
+                                <br>
+                                <p class="govuk-body-s govuk-!-margin-left-6 govuk-!-margin-bottom-0">
+                                    <strong>UKPRN</strong>: 10057981
+                                </p>
                             </td>
                             <td class="govuk-table__cell">
                                 Updated<br />
@@ -901,17 +863,9 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="filter-by-provider"
-                                            name="provider-approval" type="checkbox" value="Colleges">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Bedford
-                                                College</a>
-                                        </label><br>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000610</p>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">Bedford College</a>
+                                <br>
+                                <p class="govuk-body-s govuk-!-margin-left-6 govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000610</p>
                             </td>
                             <td class="govuk-table__cell">
                                 Updated<br />
@@ -1043,16 +997,9 @@ GOV.UK Prototype Kit
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="Colleges">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Hull College</a>
-                                        </label><br>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10003200</p>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">Hull College</a>
+                                <br>
+                                <p class="govuk-body-s govuk-!-margin-left-6 govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10003200</p>
                             </td>
                             <td class="govuk-table__cell">
                                 Updated<br />
@@ -1186,27 +1133,23 @@ GOV.UK Prototype Kit
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-form-group govuk-form-group--error">
-                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small">
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                                    name="provider-approval" type="checkbox" value="Colleges">
-                                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                                    <a href="provider-funding-overview.html" class="govuk-link">Tyne Coast
-                                                        College</a>
-                                                </label><br>
-                                                <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10005999</p>
-                                            </div>
+                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                                name="provider-approval" type="checkbox" value="Colleges">
+                                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                                <a href="provider-funding-overview.html" class="govuk-link">Tyne Coast
+                                                    College</a>
+                                            </label><br>
+                                            <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10005999</p>
                                         </div>
-                                        <span class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Provider 10089100 no applicable variation found for variances ["IsIndicative: True != False","Provider: DateOpened: 11/1/2021 12:00:00 AM +00:00 1= 12/1/2021 12:00:00 AM 00:00"].</span>
                                     </div>
-                                </fieldset>
-                              </div>
+                                </div>
+                                
                             </td>
                             <td class="govuk-table__cell">
-                                <span class="govuk-error-message">Error</span>
+                                Approved v7.3
                             </td>
                             <td class="govuk-table__cell">
                                 Payment v8.9
