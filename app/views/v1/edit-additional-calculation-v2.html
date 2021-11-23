@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['additionalCalc-name'] }}
+        </li>
+      </ol>
+    </div>
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Training outcome recorded and trainee withdrawn
+        </h3>
+        <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there's a problem.</p>
+      </div>
+    </div>
+
+    
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h2 class="govuk-heading-l">{{ data['additionalCalc-name'] }}
+          <strong class="govuk-tag govuk-tag--green">
+            DRAFT
+          </strong></h2>
+      </legend>
+
+      <div class="govuk-grid-row govuk-!-margin-bottom-2">
+        <div class="govuk-grid-column-full">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="calculation-name">
+              Calculation name
+            </label>
+            <input class="govuk-input" id="calculation-name" name="calculation-name" type="text"></div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="value-type">
+              Value type
+            </label>
+            <select class="govuk-select" id="value-type" name="value-type">
+              <option value=""> </option>
+              <option value="{{ data['value-type'] }}">{{ data['value-type'] }}</option>
+              <option value="percentage" selected>Percentage</option>
+              <option value="number">Number</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-heading-s" for="more-detail">
+          Calculation script
+        </h3>
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20" aria-label="calculation script">
+Return 0
+
+        </textarea>
+
+        <label class="govuk-label" for="ukprn">
+          UKPRN
+        </label>
+        <span id="ukprn-hint" class="govuk-hint">
+          Optional: Enter a UKPRN to view calculation results for this provider
+        </span>
+        <input class="govuk-input govuk-input--width-10" id="ukprn" name="ukprn" type="text">
+      </div>
+
+      <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
+        Build calculation
+      </button>
+
+      <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
+          results</a></p>
+
+      <div class="govuk-inset-text" id="buildResult" style="display: none;">
+        <h5 class="govuk-heading-s">Build output</h5>
+        <p class="govuk-body">Code compiled successfully </p>
+        <p class="govuk-body">Provider: <strong>Abbeygate Sixth Form College
+          </strong></p>
+        <p class="govuk-body">Provider result: <strong>£10,836</strong></p>
+      </div>
+
+
+      <div class="govuk-grid-row govuk-!-margin-top-9">
+        <div class="govuk-grid-column-full">
+          <button class="govuk-button govuk-!-margin-right-1" onclick="saveCalc()" data-module="govuk-button">
+            Save
+          </button>
+
+          <button class="govuk-button govuk-!-margin-right-1 btn-approve" id="btn-approve" data-module="govuk-button">
+            Approve
+          </button>
+          <a href="fundingLineStructure.html" class="govuk-button govuk-!-margin-right-1 govuk-button--secondary"
+            data-module="govuk-button">
+            Cancel
+          </a>
+          <a class="govuk-button govuk-button--warning" href="delete-additional-calculation" data-module="govuk-button">
+            Delete calculation
+          </a>
+        </div>
+      </div>
+
+      <p class="govuk-body" id="lastSaved">Last saved 25 March 2020 2:57pm</p>
+      <a href="calculation-version-history.html">
+        <p class="govuk-body">View calculation history</p>
+      </a>
+  </div>
+</div>
+
+<script>
+  function buildOuput() {
+    document.getElementById('buildResult').style.display = "block"
+  }
+
+  window.onload = function additionalCalc() {
+    var status = sessionStorage.getItem("status");
+    var dateTime = sessionStorage.getItem("date");
+    document.getElementById('calc-status').innerHTML = status;
+    document.getElementById('editedDate').innerHTML = "Last saved " + dateTime;
+  }
+
+  function saveCalc() {
+    document.getElementById('saveMessage').style.display = 'block';
+    window.scrollTo(0, 0);
+    var Timeoptions = {
+      hour: '2-digit',
+      minute: '2-digit'
+    };
+    var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
+    var ampm = time >= 12 ? 'pm' : 'am';
+    var date = new Date()
+    var dateOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('saveTime').innerHTML = dateFormat + ' ' + time + ampm
+    document.getElementById('lastSaved').innerHTML = 'Last saved ' + dateFormat + ' ' + time + ampm
+  }
+</script>
+
+{% endblock %}
