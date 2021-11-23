@@ -1,0 +1,570 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/view-funding.html">Select
+                        specification</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="16-19-results.html">Funding approval results</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Provider funding overview
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-grid-column-full govuk-!-margin-bottom-7">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">Abbey College, Ramsey</h1>
+    <span class="govuk-caption-l">16 to 19 for academies and schools academic year 2019 to 2020
+
+    </span>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-half">
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    UKPRN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    10035138
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Specification
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['spec-name'] }}
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+                Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#allocation-history">
+                        Allocation history
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#released-calculations">
+                        Released calculations
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#profiling">
+                        Profiling
+                    </a>
+                </li>
+                <!-- <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#providerFunding">
+                        Provider funding
+                    </a>
+                </li> -->
+                <!-- <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#contracts">
+                        Contracts
+                    </a>
+                </li> -->
+            </ul>
+            <!-- ALLOCATION HISTORY -->
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="allocation-history">
+                <h2 class="govuk-heading-l">Allocation history</h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Status</th>
+                        <th scope="col" class="govuk-table__header">Version</th>
+                        <th scope="col" class="govuk-table__header">Date and time</th>
+                        <th scope="col" class="govuk-table__header">Funding total</th>
+                        <th scope="col" class="govuk-table__header">More details</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            Updated
+                        </th>
+                        <td class="govuk-table__cell">v4.2</td>
+                        <td class="govuk-table__cell">
+                            23 September 2021, 10:14 AM
+                        </td>
+                        <td class="govuk-table__cell">£45,444,792</td>
+                        <td class="govuk-table__cell">
+                            <a href="provider-funding-overview-abbeycollege-more-details.html" class="govuk-link">More details</a>
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Approved</th>
+                        <td class="govuk-table__cell">v4.1</td>
+                        <td class="govuk-table__cell">
+                            23 September 2021, 10:14 AM
+                        </td>
+                        <td class="govuk-table__cell">£45,444,792</td>
+                        <td class="govuk-table__cell">
+                            <a href="provider-funding-overview-abbeycollege-more-details.html" class="govuk-link">More details</a>
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Updated</th>
+                        <td class="govuk-table__cell">v4.1</td>
+                        <td class="govuk-table__cell">
+                            23 September 2021, 10:14 AM
+                        </td>
+                        <td class="govuk-table__cell">£45,444,792</td>
+                        <td class="govuk-table__cell">
+                            <a href="provider-funding-overview-abbeycollege-more-details.html" class="govuk-link">More details</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </section>
+            <!-- END ALLOCATION HISTORY -->
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="released-calculations">
+                <h2 class="govuk-heading-l">Released calculations</h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header app-custom-class">Structure</th>
+                            <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+                            <th scope="col" class="govuk-table__header app-custom-class">Calculation type</th>
+                            <th scope="col" class="govuk-table__header app-custom-class govuk-table__header--numeric">
+                                Breakdown</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row govuk-!-margin-top-9">
+                            <th scope="row" class="govuk-table__header"><strong>Funding line</strong></th>
+                            <td class="govuk-table__cell"><strong>Band 5 Student Funding</strong></td>
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong></strong></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Template calculation specification</td>
+                            <td class="govuk-table__cell">Band 5 Student Funding</td>
+                            <td class="govuk-table__cell">Cash</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£11,225,460</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Band 5 Students less T-Level students</td>
+                            <td class="govuk-table__cell">Pupil Number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">2,806</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Band 5 rate current year</td>
+                            <td class="govuk-table__cell">Rate</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£4,000</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Band 5 student proportion</td>
+                            <td class="govuk-table__cell">Weighting</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">56.09%</td>
+                        </tr>
+
+                    </tbody>
+
+                    <tbody class="govuk-table__body govuk-!-margin-top-5">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><strong>Funding line</strong></th>
+                            <td class="govuk-table__cell"><strong>Band 4 Student Funding</strong></td>
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong></strong></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Template calculation specification</td>
+                            <td class="govuk-table__cell">Band 4 Funded Students</td>
+                            <td class="govuk-table__cell">Pupil Number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">1,584</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Band 4 total proportion</td>
+                            <td class="govuk-table__cell">Weighting</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">31.66%</td>
+                        </tr>
+                    </tbody>
+                    <tbody class="govuk-table__body govuk-!-margin-top-5">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><strong>Funding line</strong></th>
+                            <td class="govuk-table__cell"><strong>Band 4a Student Funding</strong></td>
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong></strong></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Template calculation specification</td>
+                            <td class="govuk-table__cell">Band 4a Student Funding</td>
+                            <td class="govuk-table__cell">Cash</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£4,175,355</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Band 4a funded students </td>
+                            <td class="govuk-table__cell">Pupil number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">1265.259</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Band 4 rate current year </td>
+                            <td class="govuk-table__cell">Rate</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£3,300</td>
+                        </tr>
+                    </tbody>
+                    <tbody class="govuk-table__body govuk-!-margin-top-5">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><strong>Funding line</strong></th>
+                            <td class="govuk-table__cell"><strong>Band 4b Student Funding</strong></td>
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong></strong></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Template calculation specification</td>
+                            <td class="govuk-table__cell">Band 4a Student Funding</td>
+                            <td class="govuk-table__cell">Cash</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£1,051,681</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Band 4a funded students </td>
+                            <td class="govuk-table__cell">Pupil number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">318.6911</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Band 4 rate current year </td>
+                            <td class="govuk-table__cell">Rate</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£3,300</td>
+                        </tr>
+                    </tbody>
+                    <tbody class="govuk-table__body govuk-!-margin-top-5">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><strong>Funding line</strong></th>
+                            <td class="govuk-table__cell"><strong>Economic Deprivation funding</strong></td>
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong></strong></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Template calculation specification</td>
+                            <td class="govuk-table__cell">Block 1 Funding payment</td>
+                            <td class="govuk-table__cell">Cash</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£2,419,102</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Student funding including programme costs </br>with block 1
+                                factor
+                                applied</td>
+                            <td class="govuk-table__cell">Number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£2,419,102</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Student funding with retention programme cost </br>weighting
+                                and L3
+                                Maths and English</td>
+                            <td class="govuk-table__cell">Number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£18,092,982</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Block 1 Factor</td>
+                            <td class="govuk-table__cell">Number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">13.37%</td>
+                        </tr>
+                    </tbody>
+                    <tbody class="govuk-table__body govuk-!-margin-top-5">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><strong>Funding line</strong></th>
+                            <td class="govuk-table__cell"><strong>Area cost allowance adjustment</strong></td>
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong></strong></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Template calculation specification</td>
+                            <td class="govuk-table__cell">Area cost allowance adjustment</td>
+                            <td class="govuk-table__cell">Cash</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Programme funding with area cost allowance applied</td>
+                            <td class="govuk-table__cell">Number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£23,983,281</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Programme funding without area cost allowance applied</td>
+                            <td class="govuk-table__cell">Number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">£23,983,281</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell">Area Cost Factor</td>
+                            <td class="govuk-table__cell">Number</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </section>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="profiling">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                        <h2 class="govuk-heading-l">
+                            Profiling
+                        </h2>
+                        <p class="govuk-body">
+                            View and makes changes to profile patterns by funding line.
+                        </p>
+
+
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <p><a href="#" class="govuk-link" data-module="govuk-button">Export to
+                                        CSV</a></p>
+                                <table class="govuk-table">
+                                    <thead class="govuk-table__head">
+                                        <tr class="govuk-table__row">
+
+                                            <th scope="col" class="govuk-table__header govuk-!-width-one-half">Funding
+                                                line</th>
+                                            <th scope="col" class="govuk-table__header">Pattern type</th>
+                                            <th scope="col" class="govuk-table__header">Total allocation</th>
+                                            <th scope="col" class="govuk-table__header"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Further Education Programme
+                                                Funding</th>
+                                            <td class="govuk-table__cell">Rule based pattern </td>
+                                            <td class="govuk-table__cell">£25,192,629</td>
+                                            <td class="govuk-table__cell"><a class="govuk-link right-align"
+                                                    href="../profiling/funding-line-profile-national.html">
+                                                    View<span class="govuk-visually-hidden"> Funding line 1</span>
+                                                </a></td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Further Education Industry
+                                                Placements Funding</th>
+                                            <td class="govuk-table__cell">Rule based pattern</td>
+                                            <td class="govuk-table__cell">£20,786,636</td>
+                                            <td class="govuk-table__cell"><a class="govuk-link right-align"
+                                                    href="../profiling/funding-line-profile-national.html">
+                                                    View<span class="govuk-visually-hidden"> Funding line 1</span>
+                                                </a></td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Further Education High Needs
+                                                Element 2 Student Funding
+                                            </th>
+                                            <td class="govuk-table__cell">Rule based pattern</td>
+                                            <td class="govuk-table__cell">£12,267,728</td>
+                                            <td class="govuk-table__cell"><a class="govuk-link right-align"
+                                                    href="../profiling/funding-line-profile-national.html">
+                                                    View<span class="govuk-visually-hidden"> Funding line 1</span>
+                                                </a></td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Further Education High Needs
+                                                Element 3 Student Funding
+                                            </th>
+                                            <td class="govuk-table__cell">Rule based pattern</td>
+                                            <td class="govuk-table__cell">£0</td>
+                                            <td class="govuk-table__cell"><a class="govuk-link right-align"
+                                                    href="../profiling/funding-line-profile-national.html">
+                                                    View<span class="govuk-visually-hidden"> Funding line 1</span>
+                                                </a></td>
+                                            </td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Further Education High Needs
+                                                Element 4 Student Funding
+                                            </th>
+                                            <td class="govuk-table__cell"></td>
+                                            <td class="govuk-table__cell">Excluded</td>
+                                            <td class="govuk-table__cell"><a class="govuk-link right-align" href=""></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="providerFunding">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                        <h2 class="govuk-heading-l">
+                            Provider Funding
+                        </h2>
+                        <p class="govuk-body">
+                            Total funding Abbey College, Ramsey
+                            receives from all eligible funding streams.
+                        </p>
+
+                        <table class="govuk-table">
+                            <caption class="govuk-table__caption">Funding streams and amounts</caption>
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Funding streams</th>
+                                    <th scope="col" class="govuk-table__header">Specification </th>
+                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amounts
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header"><a
+                                            href="/v1/funding-approvals/14-16/provider-funding-overview.html">14 to 16
+                                        </a></th>
+                                    <td class="govuk-table__cell">14 to 16 Specification</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£466,088</strong>
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">Further Education 14-16 Programme Funding </td>
+                                    <td class="govuk-table__cell"></td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£466,088</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">16 to 19</th>
+                                    <td class="govuk-table__cell">{{ data['spec-name'] }}</td>
+
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">
+                                        <strong>£26,707,629</strong>
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">Further Education Programme Funding </td>
+                                    <td class="govuk-table__cell"></td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£25,192,629</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">Further Education Industry Placements Funding </td>
+                                    <td class="govuk-table__cell"></td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£441,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">Further Education High Needs Element 2 Student Funding
+                                    </td>
+                                    <td class="govuk-table__cell"></td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">£1,074,000</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Total funding</th>
+                                    <td class="govuk-table__cell"></td>
+
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">
+                                        <strong>£27,173,717</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section> -->
+                        <!-- START Contracts Tab -->
+                        <!-- <section class="govuk-tabs__panel" id="contracts">
+                            <div class="govuk-grid-row">
+                                <div class="govuk-grid-column-full">
+                                  <h2 class="govuk-heading-l">
+                                    Contracts
+                                  </h2>
+            
+                                  <p class="govuk-body govuk-!-margin-bottom-7">1 of 4 contracts have been completed.</p>
+            
+                                  <table class="govuk-table">
+                                    <caption class="govuk-table__caption govuk-table__caption-m">Contracts</caption>
+                                    <thead class="govuk-table__head">
+                                      <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header">Funding line</th>
+                                        <th scope="col" class="govuk-table__header">Funding allocation</th>
+                                        <th scope="col" class="govuk-table__header">Status</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody class="govuk-table__body">
+                                      <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">
+                                            14-16 Student Funding
+                                        </th>
+                                        <td class="govuk-table__cell">
+                                            14-16 Student Funding
+                                        </td>
+                                        <td class="govuk-table__cell">
+                                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                                        </td>
+                                      </tr>
+                                      <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">
+                                            14-16 Area cost allowance adjustment
+                                        </th>
+                                        <td class="govuk-table__cell">
+                                            Area cost allowance adjustment
+                                        </td>
+                                        <td class="govuk-table__cell">
+                                            <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="eligibility-status">Contract overdue</strong>
+                                        </td>
+                                      </tr>
+                                      <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">14-16 Economic deprivation funding</th>
+                                        <td class="govuk-table__cell">
+                                            Block 1 Funding payment
+                                        </td>
+                                        <td class="govuk-table__cell">
+                                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Contract not signed</strong>
+                                        </td>
+                                      </tr>
+                                      <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">14-16 Economic Deprivation funding</th>
+                                        <td class="govuk-table__cell">
+                                            Block 1 Funding payment
+                                        </td>
+                                        <td class="govuk-table__cell">
+                                            <strong class="govuk-tag govuk-tag--yellow app-task-list__tag" id="eligibility-status">Contract due to be signed</strong>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+            
+            
+            
+                                </div>
+                              </div>
+                    </section> -->
+                        <!-- END Contracts Tab -->
+        </div>
+        <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    </div>
+</div>
+
+{% endblock %}
