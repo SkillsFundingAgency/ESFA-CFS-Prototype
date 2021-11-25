@@ -25,14 +25,14 @@ GOV.UK Prototype Kit
             </ol>
         </div>
 
-        <div class="govuk-error-summary" style="display: none;" id="buildCalculation-error" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <div class="govuk-error-summary" id="buildCalculation-error" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
             <h2 class="govuk-error-summary__title" id="error-summary-title">
               There is a problem
             </h2>
             <div class="govuk-error-summary__body">
               <ul class="govuk-list govuk-error-summary__list">
                 <li>
-                  <a href="#buildCalculation">Build calculation must be completed before calculation name can be changed</a>
+                  <a href="#calculation-name">Calculation name must be unique</a>
                 </li>
               </ul>
             </div>
@@ -86,11 +86,15 @@ GOV.UK Prototype Kit
             <div class="govuk-grid-row govuk-!-margin-bottom-2">
                 <div class="govuk-grid-column-full">
 
-                    <div class="govuk-form-group">
+                    <div class="govuk-form-group govuk-form-group--error">
                         <label class="govuk-label" for="calculation-name">
                             Calculation name
                         </label>
-                        <input class="govuk-input" id="calculation-name" name="calculation-name" type="text"></div>
+                        <span id="calculation-name-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> Calculation name must be unique
+                          </span>
+                        <input class="govuk-input" id="calculation-name" name="calculation-name" type="text">
+                    </div>
 
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="value-type">
