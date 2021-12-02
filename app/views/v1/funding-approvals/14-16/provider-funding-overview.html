@@ -14,14 +14,16 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/view-funding.html">Select
-                        specification</a>
+                    <a class="govuk-breadcrumbs__link" href="../../funding-management">Funding management</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="14-16-results.html">Funding approval results</a>
+                    <a class="govuk-breadcrumbs__link" href="../view-funding.html">Funding approvals</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="14-16-results.html">14 to 16</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Provider funding overview
+                    South and City College Birmingham
                 </li>
             </ol>
         </div>
@@ -89,8 +91,8 @@ GOV.UK Prototype Kit
                     </a>
                 </li>
                 <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#released-calculations">
-                        Released calculations
+                    <a class="govuk-tabs__tab" href="#calculations">
+                        Calculations
                     </a>
                 </li>
                 <li class="govuk-tabs__list-item">
@@ -103,82 +105,147 @@ GOV.UK Prototype Kit
                         Provider funding
                     </a>
                 </li>
-                <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#withdrawAllocation">
-                        Withdraw Allocation
-                    </a>
-                </li>
-                <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#contracts">
-                        Contracts
-                    </a>
-                </li>
             </ul>
             <section class="govuk-tabs__panel" id="funding-stream-history">
                 <h2 class="govuk-heading-l">Funding stream history</h2>
                 <table class="govuk-table">
-                    <caption class="govuk-table__caption">History of status changes</caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
                             <th scope="col" class="govuk-table__header">Status</th>
-                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Author</th>
-                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date/time of change
-                            </th>
-                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding stream
-                                value</th>
+                            <th scope="col" class="govuk-table__header">Version</th>
+                            <th scope="col" class="govuk-table__header">Date, time, author</th>
+                            <th scope="col" class="govuk-table__header">Funding total</th>
+                            <th scope="col" class="govuk-table__header">Variation reason</th>
                         </tr>
                     </thead>
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">
-                                Funding released<br />
-                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                                Released
+                            </th>
+                            <td class="govuk-table__cell">1.0</td>
+                            <td class="govuk-table__cell">
+                                20 Aug 2021 at 16:06pm<br />
+                                Robert SPARKS
+                            </td>
+                            <td class="govuk-table__cell">£566,088</td>
+                            <td class="govuk-table__cell">
+                                <details class="govuk-details" data-module="govuk-details">
                                     <summary class="govuk-details__summary">
                                       <span class="govuk-details__summary-text">
-                                        Withdraw funding
+                                        Show variation reasons
                                       </span>
                                     </summary>
                                     <div class="govuk-details__text">
-                                      This action cannot be undone. Are you sure you want to withdraw funding?
-                                      <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0" data-module="govuk-button">
-                                        Withdraw funding
-                                      </button>
+                                        <ul class="govuk-list govuk-list--bullet">
+                                            <li>Funding Updated</li>
+                                            <li>Profile Updated</li>
+                                        </ul>
                                     </div>
                                 </details>
-                            </th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">Robert SPARKS</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">20 Aug 2021 at 16:06pm</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£566,088</td>
+                            </td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Approved</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">Robert SPARKS</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">16 May 2019 at 2:30pm</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£466,088</td>
+                            <td class="govuk-table__cell">0.9</td>
+                            <td class="govuk-table__cell">
+                                16 May 2019 at 2:30pm<br />
+                                by Robert SPARKS
+                            </td>
+                            <td class="govuk-table__cell">£466,088</td>
+                            <td class="govuk-table__cell">
+                                <details class="govuk-details" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                      <span class="govuk-details__summary-text">
+                                        Show variation reasons
+                                      </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                        <ul class="govuk-list govuk-list--bullet">
+                                            <li>Funding Updated</li>
+                                            <li>Profile Updated</li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Updated</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">Robert SPARKS</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">16 May 2019 at 2:30pm</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£466,088</td>
+                            <td class="govuk-table__cell">0.9</td>
+                            <td class="govuk-table__cell">
+                                16 May 2019 at 2:30pm<br />
+                                by Robert SPARKS
+                            </td>
+                            <td class="govuk-table__cell">£466,088</td>
+                            <td class="govuk-table__cell">
+                                <details class="govuk-details" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                      <span class="govuk-details__summary-text">
+                                        Show variation reasons
+                                      </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                        <ul class="govuk-list govuk-list--bullet">
+                                            <li>Funding Updated</li>
+                                            <li>Profile Updated</li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Updated</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">Robert SPARKS</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">16 May 2019 at 2:30pm</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£466,088</td>
+                            <td class="govuk-table__cell">0.8</td>
+                            <td class="govuk-table__cell">
+                                16 May 2019 at 2:30pm<br />
+                                by Robert SPARKS
+                            </td>
+                            <td class="govuk-table__cell">£466,088</td>
+                            <td class="govuk-table__cell">
+                                <details class="govuk-details" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                      <span class="govuk-details__summary-text">
+                                        Show variation reasons
+                                      </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                        <ul class="govuk-list govuk-list--bullet">
+                                            <li>Funding Updated</li>
+                                            <li>Profile Updated</li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Updated</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">Robert SPARKS</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">16 May 2019 at 2:30pm</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£466,088</td>
+                            <td class="govuk-table__cell">0.7</td>
+                            <td class="govuk-table__cell">
+                                16 May 2019 at 2:30pm<br />
+                                by Robert SPARKS
+                            </td>
+                            <td class="govuk-table__cell">£466,088</td>
+                            <td class="govuk-table__cell">
+                                <details class="govuk-details" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                      <span class="govuk-details__summary-text">
+                                        Show variation reasons
+                                      </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                        <ul class="govuk-list govuk-list--bullet">
+                                            <li>Funding Updated</li>
+                                            <li>Profile Updated</li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </section>
-            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="released-calculations">
-                <h2 class="govuk-heading-l">Released calculations</h2>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="calculations">
+                <h2 class="govuk-heading-l">Calculations</h2>
                 <table class="govuk-table">
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
@@ -194,7 +261,7 @@ GOV.UK Prototype Kit
                             <th scope="row" class="govuk-table__header"><strong>Funding line</strong></th>
                             <td class="govuk-table__cell"><strong>14-16 Student Funding</strong></td>
                             <td class="govuk-table__cell"></td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric"><strong></strong></td>
+                            <td class="govuk-table__cell"><strong></strong></td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
@@ -509,270 +576,6 @@ GOV.UK Prototype Kit
                     </div>
                 </div>
             </section>
-            <!-- Withdraw Allocation Tab -->
-            <section class="govuk-tabs__panel" id="withdrawAllocation">
-                <h2 class="govuk-heading-l">Withdraw Allocation</h2>
-                <table class="govuk-table">
-                    <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header app-custom-class">Allocation name</th>
-                            <th scope="col" class="govuk-table__header app-custom-class govuk-table__header--numeric">
-                                Breakdown
-                            </th>
-                            <th scope="col" class="govuk-table__header app-custom-class">Withdraw allocation</th>
-                        </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-                        <!-- new funding line -->
-                        <tr class="govuk-table__row govuk-!-margin-top-9">
-                            <td class="govuk-table__cell"><strong>14-16 Student Funding</strong></td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£11,225,460</td>
-                            <td class="govuk-table__cell">
-                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                    <summary class="govuk-details__summary">
-                                      <span class="govuk-details__summary-text">
-                                        Withdraw allocation
-                                      </span>
-                                    </summary>
-                                    <div class="govuk-details__text">
-                                      This action cannot be undone. Are you sure you want to withdraw funding?<br />
-                                      <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0" data-module="govuk-button">
-                                        Withdraw funding
-                                      </button>
-                                    </div>
-                                </details>
-                            </td>
-                        </tr>
-                        <!-- new funding line -->
-                        <tr class="govuk-table__row govuk-!-margin-top-9">
-                            <td class="govuk-table__cell"><strong>14-16 Area cost allowance adjustment</strong></td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£11,225,460</td>
-                            <td class="govuk-table__cell">
-                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                    <summary class="govuk-details__summary">
-                                      <span class="govuk-details__summary-text">
-                                        Withdraw allocation
-                                      </span>
-                                    </summary>
-                                    <div class="govuk-details__text">
-                                      This action cannot be undone. Are you sure you want to withdraw funding?<br />
-                                      <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0" data-module="govuk-button">
-                                        Withdraw funding
-                                      </button>
-                                    </div>
-                                </details>
-                            </td>
-                        </tr>
-                        <!-- new funding line -->
-                        <tr class="govuk-table__row govuk-!-margin-top-9">
-                            <td class="govuk-table__cell"><strong>Band 4 Student Funding</strong></td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£11,225,460</td>
-                            <td class="govuk-table__cell">
-                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                    <summary class="govuk-details__summary">
-                                      <span class="govuk-details__summary-text">
-                                        Withdraw allocation
-                                      </span>
-                                    </summary>
-                                    <div class="govuk-details__text">
-                                      This action cannot be undone. Are you sure you want to withdraw funding?<br />
-                                      <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0" data-module="govuk-button">
-                                        Withdraw funding
-                                      </button>
-                                    </div>
-                                </details>
-                            </td>
-                        </tr>
-                        <!-- new funding line -->
-                        <tr class="govuk-table__row govuk-!-margin-top-9">
-                            <td class="govuk-table__cell"><strong>Band 4a Student Funding</strong></td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£11,225,460</td>
-                            <td class="govuk-table__cell">
-                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                                    <summary class="govuk-details__summary">
-                                      <span class="govuk-details__summary-text">
-                                        Withdraw allocation
-                                      </span>
-                                    </summary>
-                                    <div class="govuk-details__text">
-                                      This action cannot be undone. Are you sure you want to withdraw funding?<br />
-                                      <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0" data-module="govuk-button">
-                                        Withdraw funding
-                                      </button>
-                                    </div>
-                                </details>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                </table>
-            </section>
-            <!-- END Withdraw Allocation Tab -->
-            <!-- START Contracts Tab -->
-            <section class="govuk-tabs__panel" id="contracts">
-                <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-full">
-                      <h2 class="govuk-heading-l">
-                        Contracts
-                      </h2>
-
-                      <p class="govuk-body govuk-!-margin-bottom-7">1 of 4 contracts have been completed.</p>
-                 <!-- version 2
-                      <ol class="app-task-list">
-                        <li>
-                          <h2 class="app-task-list__section">
-                            14-16 Student Funding
-                          </h2>
-                          <ul class="app-task-list__items">
-                            <li class="app-task-list__item">
-                              <span class="app-task-list__task-name">
-                                <a href="#" aria-describedby="eligibility-status">
-                                    14-16 Student Funding
-                                </a>
-                              </span>
-                              <strong class="govuk-tag app-task-list__tag govuk-!-margin-left-2" id="eligibility-status">Completed</strong>
-                              <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0 right-align" data-module="govuk-button">
-                                Withdraw allocation
-                              </button>
-                            </li>
-                          </ul>
-                        </li>
-                
-                        <li>
-                          <h2 class="app-task-list__section">
-                            14-16 Area cost allowance adjustment
-                          </h2>
-                          <ul class="app-task-list__items">
-                            <li class="app-task-list__item">
-                              <span class="app-task-list__task-name">
-                                <a href="#" aria-describedby="company-information-status">
-                                    Area cost allowance adjustment
-                                </a>
-                              </span>
-                              <strong class="govuk-tag govuk-tag--red app-task-list__tag govuk-!-margin-left-2" id="company-information-status">Contract overdue</strong>
-                              <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0 right-align" data-module="govuk-button">
-                                Withdraw allocation
-                            </button>
-                            </li>
-                          </ul>
-                        </li>
-                
-                        <li>
-                          <h2 class="app-task-list__section">
-                            14-16 Economic Deprivation funding
-                          </h2>
-                          <ul class="app-task-list__items">
-                            <li class="app-task-list__item">
-                              <span class="app-task-list__task-name">
-                                Block 1 Funding payment
-                              </span>
-                              <strong class="govuk-tag govuk-tag--grey app-task-list__tag govuk-!-margin-left-2" id="submit-pay-status">Contract not signed</strong>
-                              <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0 right-align" data-module="govuk-button">
-                                Withdraw allocation
-                            </button>
-                            </li>
-                          </ul>
-                        </li>
-
-                        <li>
-                            <h2 class="app-task-list__section">
-                              14-16 Economic Deprivation funding
-                            </h2>
-                            <ul class="app-task-list__items">
-                              <li class="app-task-list__item">
-                                <span class="app-task-list__task-name">
-                                  Block 1 Funding payment
-                                </span>
-                                <strong class="govuk-tag govuk-tag--yellow app-task-list__tag govuk-!-margin-left-2" id="submit-pay-status">Contract due to be signed</strong>
-                                <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0 right-align" data-module="govuk-button">
-                                    Withdraw allocation
-                                </button>
-                              </li>
-                            </ul>
-                          </li>
-                      </ol>
-                        -->
-
-                      <table class="govuk-table">
-                        <caption class="govuk-table__caption govuk-table__caption-m">Contracts</caption>
-                        <thead class="govuk-table__head">
-                          <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header">Funding line</th>
-                            <th scope="col" class="govuk-table__header">Funding allocation</th>
-                            <th scope="col" class="govuk-table__header">Status</th>
-                            <th scope="col" class="govuk-table__header">Withdraw allocation</th>
-                          </tr>
-                        </thead>
-                        <tbody class="govuk-table__body">
-                          <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">
-                                14-16 Student Funding
-                            </th>
-                            <td class="govuk-table__cell">
-                                14-16 Student Funding
-                            </td>
-                            <td class="govuk-table__cell">
-                                <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-                            </td>
-                            <td class="govuk-table__cell">
-                                <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0 right-align" data-module="govuk-button">
-                                    Withdraw allocation
-                                </button>
-                            </td>
-                          </tr>
-                          <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">
-                                14-16 Area cost allowance adjustment
-                            </th>
-                            <td class="govuk-table__cell">
-                                Area cost allowance adjustment
-                            </td>
-                            <td class="govuk-table__cell">
-                                <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="eligibility-status">Contract overdue</strong>
-                            </td>
-                            <td class="govuk-table__cell">
-                                <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0 right-align" data-module="govuk-button">
-                                    Withdraw allocation
-                                </button>
-                            </td>
-                          </tr>
-                          <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">14-16 Economic deprivation funding</th>
-                            <td class="govuk-table__cell">
-                                Block 1 Funding payment
-                            </td>
-                            <td class="govuk-table__cell">
-                                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Contract not signed</strong>
-                            </td>
-                            <td class="govuk-table__cell">
-                                <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0 right-align" data-module="govuk-button">
-                                    Withdraw allocation
-                                </button>
-                            </td>
-                          </tr>
-                          <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">14-16 Economic Deprivation funding</th>
-                            <td class="govuk-table__cell">
-                                Block 1 Funding payment
-                            </td>
-                            <td class="govuk-table__cell">
-                                <strong class="govuk-tag govuk-tag--yellow app-task-list__tag" id="eligibility-status">Contract due to be signed</strong>
-                            </td>
-                            <td class="govuk-table__cell">
-                                <button class="govuk-button govuk-button--warning govuk-!-margin-bottom-0 right-align" data-module="govuk-button">
-                                    Withdraw allocation
-                                </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-
-
-                    </div>
-                  </div>
-            </section>
-            <!-- END Contracts Tab -->
         </div>
         <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     </div>

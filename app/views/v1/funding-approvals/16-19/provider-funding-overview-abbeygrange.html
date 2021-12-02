@@ -14,14 +14,16 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/view-funding.html">Select
-                        specification</a>
+                    <a class="govuk-breadcrumbs__link" href="../../funding-management">Funding management</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="16-19-results.html">Funding approval results</a>
+                    <a class="govuk-breadcrumbs__link" href="../view-funding.html">Funding approvals</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="16-19-results.html">16 to 19</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Provider funding overview
+                    Abbey Grange Church of England Academy
                 </li>
             </ol>
         </div>
@@ -88,8 +90,8 @@ GOV.UK Prototype Kit
                     </a>
                 </li>
                 <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#released-calculations">
-                        Released calculations
+                    <a class="govuk-tabs__tab" href="#calculations">
+                        Calculations
                     </a>
                 </li>
                 <li class="govuk-tabs__list-item">
@@ -106,31 +108,59 @@ GOV.UK Prototype Kit
             <section class="govuk-tabs__panel" id="funding-stream-history">
                 <h2 class="govuk-heading-l">Funding stream history</h2>
                 <table class="govuk-table">
-                    <caption class="govuk-table__caption">History of status changes</caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
                             <th scope="col" class="govuk-table__header">Status</th>
-                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Author</th>
-                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date/time of change
-                            </th>
-                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding stream
-                                value</th>
+                            <th scope="col" class="govuk-table__header">Version</th>
+                            <th scope="col" class="govuk-table__header">Date, time, author</th>
+                            <th scope="col" class="govuk-table__header">Funding total</th>
+                            <th scope="col" class="govuk-table__header">Variation reason</th>
                         </tr>
                     </thead>
                     <tbody class="govuk-table__body">
 
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Updated</th>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">Robert SPARKS</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">16 May 2019 at 2:30pm</td>
-                            <td class="govuk-table__cell govuk-table__cell--numeric">£1,645,999</td>
+                            <td class="govuk-table__cell">0.2</td>
+                            <td class="govuk-table__cell">
+                                16 May 2019 at 2:30pm<br />
+                                by Robert SPARKS
+                            </td>
+                            <td class="govuk-table__cell">£1,645,999</td>
+                            <td class="govuk-table__cell">
+                                <details class="govuk-details" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                      <span class="govuk-details__summary-text">
+                                        Show variation reasons
+                                      </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                        <ul class="govuk-list govuk-list--bullet">
+                                            <li>Funding Updated</li>
+                                            <li>Profile Updated</li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Draft</th>
+                            <td class="govuk-table__cell">0.1</td>
+                            <td class="govuk-table__cell">
+                                16 May 2019 at 2:30pm<br />
+                                by Robert SPARKS
+                            </td>
+                            <td class="govuk-table__cell">£1,645,999</td>
+                            <td class="govuk-table__cell">
+                            
+                            </td>
                         </tr>
 
                     </tbody>
                 </table>
             </section>
-            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="released-calculations">
-                <h2 class="govuk-heading-l">Released calculations</h2>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="calculations">
+                <h2 class="govuk-heading-l">Calculations</h2>
                 <table class="govuk-table">
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
