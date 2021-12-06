@@ -20,7 +20,7 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding.html">Release management</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="16-19-results-v2.html">16 to 19 results</a>
+                    <a class="govuk-breadcrumbs__link" href="dsg-results.html">DSG results</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
                     St Mary's Catholic School
@@ -337,31 +337,37 @@ GOV.UK Prototype Kit
             </section>
             <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="profiling">
                 <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-l">
                             Profiling
                         </h2>
                         <p class="govuk-body">
                             View and makes changes to profile patterns by funding line.
                         </p>
-                        <dl class="govuk-summary-list">
-
-
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key ">
-                                    Academies Advanced Maths Premium Funding
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    Custom pattern
-                                </dd>
-                                <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="./funding-line-profile-custom.html">
-                                        View<span class="govuk-visually-hidden"> Funding line 1</span>
-                                    </a>
-                                </dd>
-                            </div>
-                        </dl>
                         <p><a href="#" class="govuk-link" data-module="govuk-button">Export to CSV</a></p>
+                        <table class="govuk-table">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+
+                                    <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Funding
+                                        line</th>
+                                    <th scope="col" class="govuk-table__header">Pattern type</th>
+                                    <th scope="col" class="govuk-table__header">Total allocation</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">
+                                        <a href="profiling/funding-line-profile-dsg.html">
+                                            Academies Advanced Maths Premium Funding (DSG-001)
+                                        </a>
+                                    </th>
+                                    <td class="govuk-table__cell">Custom pattern</td>
+                                    <td class="govuk-table__cell"></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
