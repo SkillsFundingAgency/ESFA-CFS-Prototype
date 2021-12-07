@@ -319,38 +319,46 @@ GOV.UK Prototype Kit
                         <p class="govuk-body">
                             View and makes changes to profile patterns by funding line.
                         </p>
-                        <dl class="govuk-summary-list">
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    <a class="govuk-link" href="./profiling/funding-line-profile-custom.html">
-                                        Funding line 1 (PNA-001)
-                                    </a>
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    Custom pattern
-                                </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    <a class="govuk-link" href="./profiling/funding-line-profile-national.html">
-                                        Funding line 2 (PNA-001)
-                                    </a>
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    National pattern
-                                </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    <a class="govuk-link" href="./profiling/funding-line-profile-rule.html">
-                                        Funding line 3 (PNA-001)
-                                    </a>
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    Rule based pattern (Pattern name)
-                                </dd>
-                            </div>
-                        </dl>
+                        <table class="govuk-table">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+
+                                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Funding
+                                        line</th>
+                                    <th scope="col" class="govuk-table__header">Pattern type</th>
+                                    <th scope="col" class="govuk-table__header">Total allocation</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">
+                                        <a class="govuk-link" href="./profiling/funding-line-profile-custom.html">
+                                            Funding line 1 (PNA-001)
+                                        </a>
+                                    </th>
+                                    <td class="govuk-table__cell">Custom pattern</td>
+                                    <td class="govuk-table__cell"></td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">
+                                        <a class="govuk-link" href="./profiling/funding-line-profile-national.html">
+                                            Funding line 2 (PNA-001)
+                                        </a>
+                                    </th>
+                                    <td class="govuk-table__cell">National pattern</td>
+                                    <td class="govuk-table__cell"></td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">
+                                        <a class="govuk-link" href="./profiling/funding-line-profile-rule.html">
+                                            Funding line 3 (PNA-001)
+                                        </a>
+                                    </th>
+                                    <td class="govuk-table__cell">Rule based pattern (Pattern name)</td>
+                                    <td class="govuk-table__cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <p><a href="#" class="govuk-link" data-module="govuk-button">Export to CSV</a></p>
                     </div>
                 </div>
