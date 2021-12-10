@@ -27,6 +27,11 @@
           <a class="govuk-link govuk-link--no-visited-state" href="funding-approvals/{{fundingApprovalsLink}}">Funding approvals</a>
         </li>
         {% endif %}
+        {% if (fundingStream != "16 to 19") %} 
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="funding-management/{{fundingApprovalsLink}}">Release management</a>
+        </li>
+        {% endif %}
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="#"
             onclick="document.getElementById('refreshProviderData').style.display='block'">Refresh provider data</a>
