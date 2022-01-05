@@ -90,17 +90,26 @@ GOV.UK Prototype Kit
                         <label class="govuk-label" for="calculation-name">
                             Calculation name
                         </label>
-                        <input class="govuk-input" id="calculation-name" name="calculation-name" type="text" value="____ block 1%%%">
+                        <input class="govuk-input" id="calculation-name" name="calculation-name" type="text" value="block 1%">
                     </div>
-                        <p id="calculation-source-code-name" class="govuk-body">Source code name: <em>block1PcntPcntPcnt</em></p>
+                        <p id="calculation-source-code-name" class="govuk-body">Source code name: <em>block1Percent</em></p>
                         <details class="govuk-details" data-module="govuk-details">
                             <summary class="govuk-details__summary">
                               <span class="govuk-details__summary-text">
-                                What is a Source code name?
+                                Why is my source code name different to my calculation name
                               </span>
                             </summary>
                             <div class="govuk-details__text">
-                              A source code name is how we store and save your name. It must be unique. We remove spaces, remove special characters such as '!' and rename some special characters, for example a per cent sign (%) becomes Pcnt.
+                                <p class="govuk-body">The source code name is how we save your calculation name. It must be unique. Special characters are removed or replaced with words:</p>
+                                <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                                <li>&lt; is replaced with 'LessThan'</li>
+                                <li>&gt; is replaced with 'GreaterThan'</li>
+                                <li>&percnt; is replaced with 'Percent'</li>
+                                <li>&pound; is replaced with 'Pound'</li>
+                                <li>&equals; is replaced with 'Equals'</li>
+                                <li>&plus; is replaced with 'Plus'</li>
+                                </ul>
+                                <p class="govuk-body">We remove all other special characters. This may mean your calculation name is not unique. If this happens, we will ask you to change the calculation name.</p
                             </div>
                           </details>
                     <div class="govuk-form-group">
