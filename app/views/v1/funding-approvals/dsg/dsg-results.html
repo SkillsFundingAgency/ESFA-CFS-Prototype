@@ -11,16 +11,18 @@ GOV.UK Prototype Kit
         <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
             <ol class="govuk-breadcrumbs__list">
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                  <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/view-funding.html">Select
-                        specification</a>
+                  <a class="govuk-breadcrumbs__link" href="../../funding-management">Funding Management</a>
                 </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../../funding-approvals/view-funding">Funding Approvals</a>
+                  </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Funding approval results
+                  DSG
                 </li>
-            </ol>
+              </ol>
         </div>
     </div>
 </div>
@@ -34,17 +36,19 @@ GOV.UK Prototype Kit
         <span class="govuk-caption-l">Dedicated Schools Grant for Financial Year 2019 to 2020</span>
     </div>
     <div class="govuk-grid-column-one-third">
-        <ul class="govuk-list right-align">
-
-            <li>
-                <a href="../batch/upload-batch-approve-release" class="govuk-link" data-module="govuk-button">Upload
-                    batch file of providers</a>
-            </li>
+        <p class="govuk-!-margin-bottom-0">Actions:</p>
+        <ul class="govuk-list">
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="#"
                     onclick="document.getElementById('refreshFundingModal').style.display='block'">Refresh funding</a>
                 <p class="govuk-body-s govuk-!-margin-bottom-0">Last refresh 16 December 2019 11:23am </p>
             </li>
+        </ul>
+        <p class="govuk-!-margin-bottom-0">Navigate to:</p>
+        <ul class="govuk-list">
+            <li><a class="govuk-link" href="/v1/fundingLineStructure-gag">Manage specification</a></li>
+            <li><a href="../../funding-management/16-19/16-19-results.html" class="govuk-link" data-module="govuk-button">Release management</a></li>
+            <li><a class="govuk-link" href="/v1/view-results/view-specification-results/view-specification#downloadable-reports">Specification reports</a></li>
         </ul>
     </div>
 </div>
@@ -379,17 +383,6 @@ GOV.UK Prototype Kit
                         <tr class="govuk-table__row">
                             <th scope="col" class="govuk-table__header govuk-!-width-one-half">
                                 Provider name<br>
-                                <span class="govuk-!-margin-right-2"> <span id="checkbox-checked"></span> / <span
-                                        id="checkbox-count"></span> </span>
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="select-all" type="checkbox"
-                                            value="select-all">
-                                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                            Select all
-                                        </label>
-                                    </div>
-                                </div>
                             </th>
                             <th scope="col" class="govuk-table__header">UKPRN</th>
                             <th scope="col" class="govuk-table__header">Status</th>
@@ -403,17 +396,7 @@ GOV.UK Prototype Kit
                     <tbody class="govuk-table__body table-vertical-align">
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="346757869">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview-stmarys.html" class="govuk-link">St
-                                                Mary's
-                                                Catholic School</a>
-                                        </label>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview-stmarys.html" class="govuk-link">St Mary's Catholic School</a>
                             </td>
                             <td class="govuk-table__cell">10053815</td>
                             <td class="govuk-table__cell">Draft</td>
@@ -422,16 +405,8 @@ GOV.UK Prototype Kit
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="346757869">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Akaal
-                                                Primary School</a>
-                                        </label>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview-gag.html" class="govuk-link">Akaal
+                                    Primary School</a>
                             </td>
                             <td class="govuk-table__cell">10053815</td>
                             <td class="govuk-table__cell">Draft</td>
@@ -441,17 +416,9 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="284821882">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview-newislington.html" class="govuk-link">New
-                                                Islington
-                                                Free School</a>
-                                        </label>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview-newislington.html" class="govuk-link">New
+                                    Islington
+                                    Free School</a>
                             </td>
                             <td class="govuk-table__cell">10041679</td>
                             <td class="govuk-table__cell">Draft</td>
@@ -462,16 +429,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">David Nieper
-                                                School</a>
-                                        </label>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview.html" class="govuk-link">David Nieper
+                                    School</a>
                             </td>
                             <td class="govuk-table__cell">10054162</td>
                             <td class="govuk-table__cell">Draft</td>
@@ -481,16 +440,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Earl's Court
-                                                Free School Primary</a>
-                                        </label>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview.html" class="govuk-link">Earl's Court
+                                    Free School Primary</a>
                             </td>
                             <td class="govuk-table__cell">10046718</td>
                             <td class="govuk-table__cell">Draft</td>
@@ -501,16 +452,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">The Bishop of
-                                                Winchester School</a>
-                                        </label>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview.html" class="govuk-link">The Bishop of
+                                    Winchester School</a>
                             </td>
                             <td class="govuk-table__cell">10030436</td>
                             <td class="govuk-table__cell">Draft</td>
@@ -520,16 +463,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview-laurus.html" class="govuk-link">Laurus
-                                                Cheadle Hulme</a>
-                                        </label>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview-laurus.html" class="govuk-link">Laurus
+                                    Cheadle Hulme</a>
                             </td>
                             <td class="govuk-table__cell">10068126</td>
                             <td class="govuk-table__cell">Draft</td>
@@ -539,16 +474,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Wootton Park
-                                                School</a>
-                                        </label>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview.html" class="govuk-link">Wootton Park
+                                    School</a>
                             </td>
                             <td class="govuk-table__cell">10056995</td>
                             <td class="govuk-table__cell">Draft</td>
@@ -558,16 +485,8 @@ GOV.UK Prototype Kit
 
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="196520871">
-                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                            <a href="provider-funding-overview.html" class="govuk-link">Ipswich
-                                                School</a>
-                                        </label>
-                                    </div>
-                                </div>
+                                <a href="provider-funding-overview.html" class="govuk-link">Ipswich
+                                    School</a>
                             </td>
                             <td class="govuk-table__cell">10032966</td>
                             <td class="govuk-table__cell">Draft</td>
@@ -612,17 +531,18 @@ GOV.UK Prototype Kit
                     </ul>
                 </nav>
                 <div class="right-align">
-
-
-
+                    <!-- REFRESH FUNDING CTA -->
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="document.getElementById('refreshFundingModal').style.display='block'">
+                        Refresh funding
+                    </button>
                     <a id="approveFunding" href="../funding-approval.html" class="govuk-button govuk-button--primary"
                         data-module="govuk-button">
                         Approve funding
                     </a>
-                    <a href="../funding-release.html" class="govuk-button govuk-button--warning"
+                    <!-- <a href="../funding-release.html" class="govuk-button govuk-button--warning"
                         data-module="govuk-button">
                         Release funding
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div>

@@ -1,0 +1,195 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="../view-funding.html">Select specification</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="upload-batch-approve-release.html">Upload batch file</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          Confirm release
+        </li>
+      </ol>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm release funding</h1>
+    <span class="govuk-caption-xl govuk-!-margin-bottom-5">Check the information below carefully before releasing the
+      funding
+    </span>
+  </div>
+</div>
+
+<!--
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Number of providers selected
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+          106
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="funding-resultsv2.html">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Funding period
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+          2019 to 2020
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <table class="govuk-table govuk-!-margin-bottom-0">
+      <caption class="govuk-table__caption">Funding release information</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Description</th>
+          <th scope="col" class="govuk-table__header">Summary</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Providers selected</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body"><a href="#" class="govuk-link" data-module="govuk-button">Export all as CSV</a></p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            <p class="govuk-body govuk-!-margin-bottom-0">71</p>
+            <p class="govuk-body-s govuk-!-margin-bottom-0">Of which 8 are indicative</p>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Channels to release to</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>Statement</li>
+              <li>Payment</li>
+              <li>Management information</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            <ul class="govuk-list govuk-!-margin-bottom-0">
+              <li>11</li>
+              <li>71</li>
+              <li>60</li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Funding period</th>
+          <td class="govuk-table__cell">2019 to 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Specification selected</th>
+          <td class="govuk-table__cell">GFT PE and Sport 2019 to 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total funding being approved</th>
+          <td class="govuk-table__cell">PE and Sport Premium Grant</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£41,830</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-7">
+  <div class="govuk-grid-column-three-quarters">
+    <a class="govuk-link-m right-align" href="upload-batch-approve-release.html">
+      Change batch<span class="govuk-visually-hidden"> name</span>
+    </a>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="confirm-release-in-progress" method="post" novalidate novalidate data-validate='warning-review-checkbox-validation'>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="acknowledgementCheckbox">
+          <legend class="govuk-fieldset__legend">
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                  Review the following warnings before continuing
+              </strong>
+            </div>
+          </legend>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Released funding values can change when data or calculations are altered. If the 
+              funding values change, their status will become ‘updated’ and they will need to be released again.</li>
+              <li>Selected providers may not appear in the provider count due to; provider record missing from funding data, providers currently in error state, providers already set as released, providers set as draft or updated and cannot be set to released before being approved</li>
+          </ul>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acknowledgementCheckbox" name="acknowledgementCheckbox" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="acknowledgementCheckbox">
+                I acknowledge that I have reviewed all warnings and wish to continue
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
+
+      <button data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Confirm release
+      </button>
+
+      <a href="../view-funding.html" button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
+  </div>
+</div>
+
+<script type="application/json" id="warning-review-checkbox-validation">
+
+  {
+  
+  "acknowledgementCheckbox": {
+  
+  "presence": {
+  
+  "message": "^You must acknowledge that you have read and reviewed all warnings"
+  
+  }
+  
+  }
+  
+  }
+  
+</script>
+
+{% endblock %}

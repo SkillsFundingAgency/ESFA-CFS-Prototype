@@ -1,0 +1,84 @@
+{% extends "component-single.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+<table class="govuk-table" data-module="gov-sortable-table">
+
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+            <th scope="col" class="govuk-table__header" id="1" aria-sort="none">
+                <button type="button" data-index="1">Additional calculation name</button>
+
+            </th>
+
+            <th scope="col" class="govuk-table__header"  id="2" aria-sort="none">
+                <button type="button" data-index="2">Status</button>
+            </th>
+
+            <th scope="col" class="govuk-table__header" id="3" aria-sort="none">
+                <button type="button" data-index="3">Value type</button>
+            </th>
+
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric" id="4" aria-sort="none">
+                <button type="button" data-index="4">Last edited date</button>
+            </th>
+
+        </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell">Block 3</td>
+
+            <td class="govuk-table__cell">Approved</td>
+
+            <td class="govuk-table__cell">Currency</td>
+
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="04/10/2021 10:26am">25 December
+                2020 10:26am
+            </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell">Block 1</td>
+
+            <td class="govuk-table__cell">Draft</td>
+
+            <td class="govuk-table__cell">Percentage</td>
+
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="04/10/2021 10:26pm">4 November
+                2020 10:26am
+            </td>
+
+        </tr>
+        <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell">Block 2</td>
+
+            <td class="govuk-table__cell">Approved</td>
+
+            <td class="govuk-table__cell">Number</td>
+
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="04/10/2021 4:26pm">10 December
+                2020 10:26am
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
+
+<script src="/public/javascripts/sortable-table.js"></script>
+
+{% endblock %}

@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-3">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="view-funding.html">Select specification</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="funding-resultsv2.html">Funding results</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          Confirm release
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <!-- ERROR MESSAGES -->
+    <div id="error-summary" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+    data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#no-eligible-providers">There are no eligible providers to be released. Providers in the batch file may not be eligible because:</a>
+        </li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          Providers are already released, in an updated state, or a draft state
+        </li>
+        <li>
+          Providers are currently in error state
+        </li>
+        <li>
+          There is a mismatch on the provider identifiers in the batch file versus the funding data
+        </li>
+      </ul>
+    </div>
+    </div>
+    <!-- END ERROR MESSAGES -->
+  </div>
+</div>
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm release funding
+</h1>
+<span class="govuk-caption-xl govuk-!-margin-bottom-8">Check the information below carefully before approving the
+  funding
+</span>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-3">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Released funding values can change when data or calculations are altered. If the funding values change, their
+        status will become ‘updated’ and they will need to be approved again.
+      </strong>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Number of providers selected
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+          106
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="funding-resultsv2.html">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Funding period
+        </dt>
+        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+          2019 to 2020
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <table class="govuk-table govuk-!-margin-bottom-0">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"></th>
+          <th scope="col" class="govuk-table__header">Summary</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <div class="govuk-form-group--error">
+              Providers selected
+              <span id="no-eligible-providers" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> No eligible providers to be released.
+              </span>
+            </div>
+          </th>
+          <td class="govuk-table__cell">
+            <!-- <p class="govuk-body"><a href="#" class="govuk-link" data-module="govuk-button">Export all as CSV</a></p> -->
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            <p class="govuk-body govuk-!-margin-bottom-0">0</p>
+          </td>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Funding period</th>
+          <td class="govuk-table__cell">2019 to 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Specification selected</th>
+          <td class="govuk-table__cell">GFT PE and Sport 2019 to 2020</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total funding being approved</th>
+          <td class="govuk-table__cell">PE and Sport Premium Grant</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£0</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-three-quarters">
+    <a class="govuk-link-m right-align" href="funding-resultsv2.html">
+      Change selection<span class="govuk-visually-hidden"> name</span>
+    </a>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="#error-summary" data-prevent-double-click="true" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+      Confirm release
+    </a>
+
+    <a href="funding-resultsv2.html" button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Cancel
+    </a>
+  </div>
+</div>
+
+{% endblock %}

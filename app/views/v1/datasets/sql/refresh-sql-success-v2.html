@@ -14,7 +14,13 @@
           <a class="govuk-breadcrumbs__link" href="../manageData">Manage data</a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          Refresh SQL
+          <a class="govuk-breadcrumbs__link" href="refresh-sql-v2">Funding stream, period and specification</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="refresh-sql-data.html">Available SQL data</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          SQL refresh successful
         </li>
       </ol>
     </div>
@@ -39,7 +45,7 @@
           Funding stream
         </dt>
         <dd class="govuk-summary-list__value" id="fundingStreamSQL">
-
+          {{ data['sql-funding-stream'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -47,7 +53,7 @@
           Funding period
         </dt>
         <dd class="govuk-summary-list__value" id="fundingPeriodSQL">
-
+          {{ data['sql-funding-period'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -55,30 +61,22 @@
           Specification
         </dt>
         <dd class="govuk-summary-list__value">
-          Specification name
+          {{ data['sqlSpecification'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Last SQL update
-        </dt>
-        <dd class="govuk-summary-list__value" id="dateTimeSQL">
-
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Last funding data change
+          Data type
         </dt>
         <dd class="govuk-summary-list__value">
-          8 October 2020 10:00am
+          Latest calculation results
         </dd>
       </div>
     </dl>
   </div>
 </div>
 
-<a href="/start" class="govuk-button" data-module="govuk-button">
+<a href="/v1/datasets/manageData" class="govuk-button" data-module="govuk-button">
   Continue
 </a>
 

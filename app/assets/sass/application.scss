@@ -13,6 +13,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Components that aren't in Frontend
+@import "components/card";
 @import "components/cookie-banner";
 @import "components/file-download";
 @import "components/timeout";
@@ -30,10 +31,39 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/input-prefixes-suffixes";
 @import "components/permission-icon";
 @import "components/notification-banner";
+@import "components/notification-banner-v2";
 @import "components/notification-badge";
 @import "components/month-filter";
+@import "components/toast";
+@import "components/sortable-table";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.display-inline {
+	display: inline-block;
+}
+
+.display-block {
+	display: block;
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.font-regular {
+	font-weight: 100;
+}
+
+.font-bold {
+	font-weight: 700;
+}
+
+.border {
+	border: 1px solid #b1b4b6;
+}
 
 .subHeader {
 	background-color: $govuk-link-colour;
@@ -54,6 +84,13 @@ $govuk-assets-path: '/govuk/assets/';
 .input-search {
 	max-width: 80%;
 	margin: auto;
+}
+
+// Position sticky - content that sticks to the viewport as you scroll
+.position-sticky {
+	position: sticky;
+	top: 1rem;
+	z-index: 1020;
 }
 
 .right-align {
@@ -246,3 +283,11 @@ transform: translateY(-40px) translateX(-27px);
 	.govuk-input--width-7 {
 		max-width: 14ex;
 	  }
+
+	  .govuk-list-number--spaced li{
+		margin-bottom: 15px;
+	}
+
+.vertical-align-bottom {
+	vertical-align: bottom;
+}

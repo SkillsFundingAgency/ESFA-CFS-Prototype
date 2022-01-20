@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/v1/funding-management">Funding management</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding.html">Release management</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="upload-batch-approve-release.html">Upload batch file</a>
+      </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          Select channel
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-form-group">
+      <form action="funding-release" id="createSpec" method="post" novalidate data-validate='release-channels'>
+      <fieldset class="govuk-fieldset" aria-describedby="select-all-that-apply">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            For which purposes would you like to release?
+          </h1>
+        </legend>
+        <div id="select-all-that-apply" class="govuk-hint">
+          Select all that apply.
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="statement" name="release-channel" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="statement">
+              Statement
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="payment" name="release-channel" type="checkbox" value="mines">
+            <label class="govuk-label govuk-checkboxes__label" for="payment">
+             Payment or contract
+            </label>
+          </div>
+        </div>
+    
+      </fieldset>
+
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <button data-prevent-double-click="true"
+        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+    <a href="../16-19/16-19-results.html" button class="govuk-button govuk-button--secondary"
+      data-module="govuk-button">
+      Cancel
+    </a>
+  </div>
+</div>
+
+<script type="application/json" id="release-channels">
+  { 		  	
+        "release-channel": {
+        "presence": {
+        "message": "^Select the channles you wish to release to"
+      }
+    }
+  }
+</script>
+
+{% endblock %}

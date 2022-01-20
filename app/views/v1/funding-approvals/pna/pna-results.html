@@ -14,11 +14,13 @@ GOV.UK Prototype Kit
                     <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/view-funding.html">Select
-                        specification</a>
+                    <a class="govuk-breadcrumbs__link" href="../../funding-management">Funding management</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../view-funding.html">Funding approvals</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Funding approval results
+                    PNA
                 </li>
             </ol>
         </div>
@@ -34,11 +36,11 @@ GOV.UK Prototype Kit
         <span class="govuk-caption-l">Academy pupil number adjustment for 2019 to 2020</span>
     </div>
     <div class="govuk-grid-column-one-third">
-        <ul class="govuk-list right-align">
-
+        <p class="govuk-!-margin-bottom-0">Actions:</p>
+        <ul class="govuk-list">
             <li>
-                <a href="../batch/upload-batch-approve-release" class="govuk-link" data-module="govuk-button">Upload
-                    batch file of providers</a>
+                <a href="../batch/upload-batch-approve-release" class="govuk-link" data-module="govuk-button">
+                    Approve batch of providers</a>
             </li>
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="#"
@@ -625,16 +627,13 @@ GOV.UK Prototype Kit
                     </ul>
                 </nav>
                 <div class="right-align">
-
-
-
+                    <!-- REFRESH FUNDING CTA -->
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="document.getElementById('refreshFundingModal').style.display='block'">
+                        Refresh funding
+                    </button>
                     <a id="approveFunding" href="../funding-approval.html" class="govuk-button govuk-button--primary"
                         data-module="govuk-button">
                         Approve funding
-                    </a>
-                    <a href="../funding-release.html" class="govuk-button govuk-button--warning"
-                        data-module="govuk-button">
-                        Release funding
                     </a>
                     <p class="govuk-body-s">Last refresh on 16 December 2019 11:23am</p>
                 </div>

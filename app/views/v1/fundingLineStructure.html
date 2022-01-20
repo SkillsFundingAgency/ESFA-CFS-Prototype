@@ -6,6 +6,12 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
+<!-- VARIABLES -->
+{% set successNotificationHeading = "Variations successfully saved" %}
+{% set successNotificationContent = "Future instalments have been updated." %}
+{% set fundingApprovalsLink  = "/dsg/dsg-results" %}
+<!-- END VARIABLES -->
+
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
 <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
@@ -15,6 +21,9 @@ GOV.UK Prototype Kit
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      DSG SIT
     </li>
   </ol>
 </div>
@@ -58,30 +67,11 @@ GOV.UK Prototype Kit
       </div>
     </details>
   </div>
-  <div class="govuk-grid-column-one-third">
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('approveConfirmation').style.display='block'">Approve all calculations</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('approveSpecification').style.display='block'">Approve specification</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('fundingConfirmation').style.display='block'">Choose for funding</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="editSpecification">Edit specification</a>
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="#"
-          onclick="document.getElementById('refreshProviderData').style.display='block'">Refresh provider data</a>
-      </li>
 
-    </ul>
-  </div>
+<!-- Specification links-->
+{% include "components/specification-links.html" %}
+<!-- End specification links-->
+
 </div>
 
 <div class="govuk-grid-row">
@@ -113,11 +103,6 @@ GOV.UK Prototype Kit
           </a>
         </li>
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#release-timetable">
-            Release timetable
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#variation-management">
             Variations
           </a>
@@ -126,8 +111,7 @@ GOV.UK Prototype Kit
       <section class="govuk-tabs__panel" id="funding-line-structure">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l">Funding line structure <strong
-                class="govuk-tag govuk-!-margin-left-2">Draft</strong></h2>
+            <h2 class="govuk-heading-l">Funding line structure</h2>
             <form action="" method="get">
               <label class="govuk-label" for="template-calcs">Select template calculations
                 <div class="autocomplete-wrapper govuk-!-margin-bottom-9">
@@ -194,8 +178,7 @@ GOV.UK Prototype Kit
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="additional-calculations">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l">Additional calculations <strong
-              class="govuk-tag govuk-!-margin-left-2">Draft</strong></h2>
+            <h2 class="govuk-heading-l">Additional calculations</h2>
           </div>
           <div class="govuk-grid-column-one-third">
             <ul class="govuk-list govuk-list--spaced">
@@ -224,25 +207,76 @@ GOV.UK Prototype Kit
           <div class="govuk-grid-column-one-third">
           </div>
         </div>
-        <table class="govuk-table" id="table-additional-calculations">
+        <table class="govuk-table" data-module="gov-sortable-table">
+
           <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Additional calculation name</th>
-              <th scope="col" class="govuk-table__header">Status</th>
-              <th scope="col" class="govuk-table__header">Value type</th>
-              <th scope="col" class="govuk-table__header">Last edited date</th>
-            </tr>
+              <tr class="govuk-table__row">
+      
+                  <th scope="col" class="govuk-table__header" id="1" aria-sort="none">
+                      <button type="button" data-index="1">Additional calculation name</button>
+      
+                  </th>
+      
+                  <th scope="col" class="govuk-table__header"  id="2" aria-sort="none">
+                      <button type="button" data-index="2">Status</button>
+                  </th>
+      
+                  <th scope="col" class="govuk-table__header" id="3" aria-sort="none">
+                      <button type="button" data-index="3">Value type</button>
+                  </th>
+      
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric" id="4" aria-sort="none">
+                      <button type="button" data-index="4">Last edited date</button>
+                  </th>
+      
+              </tr>
           </thead>
+      
           <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><a href="edit-additional-calculation">
-                  Block 1</a></th>
-              <td class="govuk-table__cell" id="status">Draft</td>
-              <td class="govuk-table__cell">Percentage</td>
-              <td class="govuk-table__cell" id="editedDate">4 November 2020 10:26am</td>
-            </tr>
+      
+              <tr class="govuk-table__row">
+      
+                  <td class="govuk-table__cell">Block 3</td>
+      
+                  <td class="govuk-table__cell">Approved</td>
+      
+                  <td class="govuk-table__cell">Currency</td>
+      
+                  <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="04/10/2021 10:26am">25 December
+                      2020 10:26am
+                  </td>
+      
+              </tr>
+      
+              <tr class="govuk-table__row">
+      
+                  <td class="govuk-table__cell">Block 1</td>
+      
+                  <td class="govuk-table__cell">Draft</td>
+      
+                  <td class="govuk-table__cell">Percentage</td>
+      
+                  <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="04/10/2021 10:26pm">4 November
+                      2020 10:26am
+                  </td>
+      
+              </tr>
+              <tr class="govuk-table__row">
+      
+                  <td class="govuk-table__cell">Block 2</td>
+      
+                  <td class="govuk-table__cell">Approved</td>
+      
+                  <td class="govuk-table__cell">Number</td>
+      
+                  <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="04/10/2021 4:26pm">10 December
+                      2020 10:26am
+                  </td>
+      
+              </tr>
+      
           </tbody>
-        </table>
+      </table>
         <!--
         <div id="noCalcs" class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -334,151 +368,6 @@ GOV.UK Prototype Kit
         </table>
       </section>
 
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="release-timetable">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l">Release timetable</h2>
-          </div>
-        </div>
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-              <h3 class="govuk-heading-m">
-                Release date of funding to Business Central?
-              </h3>
-            </legend>
-            <span id="date-time" class="govuk-hint">
-              Set the date and time that the statement will be published externally for this funding stream. <br>For
-              example, 12 11 2019
-            </span>
-            <div class="govuk-date-input" id="passport-issued">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="event-name">
-                      Release date
-                    </label>
-                    <input class="govuk-input" id="release-date" name="event-name" type="date"
-                      aria-label="release date">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <fieldset class="govuk-fieldset govuk-!-margin-top-5" role="group" aria-describedby="passport-issued-hint">
-              <label class="govuk-label govuk-date-input__label" for="time">
-                Time
-              </label>
-              <span id="statementRelease-time" class="govuk-hint">
-                For example, 10:00AM
-              </span>
-              <div class="govuk-date-input" id="hour-released">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="hour">
-                      Hour
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hour"
-                      name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label govuk-!-margin-bottom-2"
-                      for="passport-issued-month">
-                      Minute
-                    </label>
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                      :00
-                    </label>
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                      AM/PM
-                    </label>
-                    <select class="govuk-select" id="am-pm" name="sort">
-                      <option value=""></option>
-                      <option value="AM">AM</option>
-                      <option value="PM" selected>PM</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-        </div>
-
-        <div class="govuk-form-group govuk-!-margin-top-9">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-              <h3 class="govuk-heading-m">
-                Release date of statement to Manage Your Education and Skills Funding (MYESF)?
-              </h3>
-            </legend>
-            <span id="passport-issued-hint" class="govuk-hint">
-              Set the date and time that the statement will be published externally for this funding stream. <br>For
-              example, 12 11 2019
-            </span>
-            <div class="govuk-date-input" id="statement-releasedate">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="event-name">
-                    Release date
-                  </label>
-                  <input class="govuk-input" id="event-name" name="event-name" type="date">
-                </div>
-              </div>
-            </div>
-
-            <div class="govuk-form-group govuk-!-margin-top-5">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                  Time
-                </label>
-                <span id="statementRelease-time2" class="govuk-hint">
-                  For example, 10:00AM
-                </span>
-                <div class="govuk-date-input" id="hour-to-release">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                        Hour
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
-                        name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label govuk-!-margin-bottom-2"
-                        for="passport-issued-month">
-                        Minute
-                      </label>
-                      <p class="govuk-body" for="passport-issued-month">
-                        :00
-                      </p>
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                        AM/PM
-                      </label>
-                      <select class="govuk-select" id="ampm" name="sort">
-                        <option value=""></option>
-                        <option value="AM">AM</option>
-                        <option value="PM" selected>PM</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-              <button class="govuk-button govuk-!-margin-top-9">Save changes</button>
-            </div>
-        </div>
-
-      </section>
-
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="variation-management">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
@@ -489,56 +378,112 @@ GOV.UK Prototype Kit
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row ">
-                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
-                  Funding line 1
-                </dt>
-                <dd class="govuk-summary-list__value ">
-                  Initial allocation
-                </dd>
-                <dd class="govuk-summary-list__actions ">
-                  <a class="govuk-link" href="variation/installment-variation.html">
-                    Set<span class="govuk-visually-hidden"> funding line 1</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
-                  Funding line 2
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  April 2020 <br>
-                  Instalment 3
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="variation/installment-variation.html">
-                    Change<span class="govuk-visually-hidden"> funding line 1</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key  govuk-!-width-one-half">
-                  Funding line 3
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  April 2020 <br>
-                  Instalment 3
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="variation/installment-variation.html">
-                    Change<span class="govuk-visually-hidden"> funding line 1</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
+              <form action="/v1/fundingLineStructure.html#release-timetable" method="post" class="form" novalidate data-validate="variation">
+                  <div class="govuk-form-group">
+                      <table class="govuk-table">
+                          <caption class="govuk-table__caption">Instalment variation</caption>
+                          <thead class="govuk-table__head">
+                              <tr class="govuk-table__row">
+                                  <th scope="col" class="govuk-table__header app-custom-class">Funding line</th>
+                                  <th scope="col" class="govuk-table__header app-custom-class">Currently set instalment</th>
+                                  <th scope="col" class="govuk-table__header app-custom-class">Future instalment</th>
+                              </tr>
+                          </thead>
+                          <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row">
+                                  <th scope="row" class="govuk-table__header">
+                                    Funding line 1<br />
+                                    <span class="govuk-body-s">GAG-001</span>
+                                  </th>
+                                  <td class="govuk-table__cell">
+                                      Initial allocation <br>
+      
+                                  </td>
+                                  <td class="govuk-table__cell">
+                                      <div class="govuk-form-group">
+                                          <select class="govuk-select funding-line-dropdown-js" id="fundingline1" name="sort"
+                                              aria-label="funding line 1">
+                                              <option value=""></option>
+                                              <option value="may2020-1">May 2020 instalment 1</option>
+                                              <option value="may2020-2">May 2020 instalment 2</option>
+                                              <option value="june2020-1">June 2020 instalment 1</option>
+                                              <option value="june2020-2">June 2020 instalment 2</option>
+                                          </select>
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                  <th scope="row" class="govuk-table__header">
+                                    Funding line 2<br />
+                                    <span class="govuk-body-s">GAG-002</span>
+                                  </th>
+                                  <td class="govuk-table__cell">
+                                      April 2020 <br>
+                                      Instalment 3
+                                  </td>
+                                  <td class="govuk-table__cell">
+                                      <div class="govuk-form-group">
+                                          <select class="govuk-select funding-line-dropdown-js" id="fundingline2" name="sort"
+                                              aria-label="funding line 2">
+                                              <option value=""></option>
+                                              <option value="may2020-1">May 2020 instalment 1</option>
+                                              <option value="may2020-2">May 2020 instalment 2</option>
+                                              <option value="june2020-1">June 2020 instalment 1</option>
+                                              <option value="june2020-2">June 2020 instalment 2</option>
+                                          </select>
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                  <th scope="row" class="govuk-table__header">
+                                    Funding line 3<br />
+                                    <span class="govuk-body-s">GAG-003</span>
+                                  </th>
+                                  <td class="govuk-table__cell">
+                                      April 2020 <br>
+                                      Instalment 3
+                                  </td>
+                                  <td class="govuk-table__cell">
+                                      <div class="govuk-form-group">
+                                        <p class="govuk-body-s">No further instalments in funding period</p>
+                                        <!-- <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                                              aria-label="funding line 3">
+                                              <option value=""></option>
+                                              <option value="may2020-1">May 2020 instalment 1</option>
+                                              <option value="may2020-2">May 2020 instalment 2</option>
+                                              <option value="june2020-1">June 2020 instalment 1</option>
+                                              <option value="june2020-2">June 2020 instalment 2</option>
+                                          </select> -->
+                                      </div>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
           </div>
-        </div>
+      </div>
+      
+      <div class="govuk-button-group">
+        <button class="govuk-button gag-variation-management-save-button-js" data-module="govuk-button" disabled>
+            Save
+        </button>
 
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Reset future instalments
+        </button>
+      </div>
+      
+      </form>
+      
+      <script type="application/json" id="variations">
+          {
+              "no yet required": {
+                  "presence": {
+                      "message": "^Select future installment"
+                  }
+              },
+          }
+      </script>
       </section>
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="calculation-errors">
         <div class="govuk-grid-row">
@@ -589,36 +534,10 @@ GOV.UK Prototype Kit
                       <a class="govuk-link" href="error/editTemplateCalculationv2">Provisional Schools Block Funding
                         Excluding Growth</a>
                     </li>
-                    <li>
-                      <a class="govuk-link" href="#">Provisional Schools Block</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Programme funding</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Student financial support funding</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Primary IDACI band F</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Primary attainment: low primary prior attainment</a>
-                    </li>
                   </ul>
                   <p class="govuk-body govuk-!-margin-top-7"><strong>Additional calculations</strong></p>
                   <ul class="govuk-list">
-                    <li>
-                      <a class="govuk-link" href="#">Block 1</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Block 2</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Block 3</a>
-                    </li>
-                    <li>
-                      <a class="govuk-link" href="#">Block 4</a>
-                    </li>
+                    <li>No calculations to display</li>
                   </ul>
                 </div>
               </div>
@@ -788,7 +707,7 @@ GOV.UK Prototype Kit
   <div class="govuk-modal-dialogue__backdrop"></div>
 </div>
 
-<script>
+<script src="/public/javascripts/sortable-table.js">
   window.onload = function additionalCalc() {
     var calcCreated = sessionStorage.getItem("calcCreated")
     if (calcCreated === "true") {

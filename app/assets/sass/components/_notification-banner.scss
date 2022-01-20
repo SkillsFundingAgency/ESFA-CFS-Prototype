@@ -1,4 +1,4 @@
-.govuk-notification-banner {
+.govuk-notification-banner--legacy {
     font-family: "GDS Transport",arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -42,18 +42,18 @@
     outline: 3px solid #fd0
 }
 
-.govuk-notification-banner__header {
+.govuk-notification-banner__header--legacy {
     padding: 2px 15px 5px;
     border-bottom: 1px solid transparent
 }
 
 @media (min-width: 40.0625em) {
-    .govuk-notification-banner__header {
+    .govuk-notification-banner__header--legacy {
         padding:2px 20px 5px
     }
 }
 
-.govuk-notification-banner__title {
+.govuk-notification-banner__title--legacy {
     font-family: "GDS Transport",arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -67,13 +67,13 @@
 }
 
 @media print {
-    .govuk-notification-banner__title {
+    .govuk-notification-banner__title--legacy {
         font-family: sans-serif
     }
 }
 
 @media (min-width: 40.0625em) {
-    .govuk-notification-banner__title {
+    .govuk-notification-banner__title--legacy {
         font-size:19px;
         font-size: 1.1875rem;
         line-height: 1.31579
@@ -81,41 +81,41 @@
 }
 
 @media print {
-    .govuk-notification-banner__title {
+    .govuk-notification-banner__title--legacy {
         font-size: 14pt;
         line-height: 1.15
     }
 }
 
-.govuk-notification-banner__content {
+.govuk-notification-banner__content--legacy {
     color: #0b0c0c;
     padding: 15px;
     background-color: #fff
 }
 
 @media print {
-    .govuk-notification-banner__content {
+    .govuk-notification-banner__content--legacy {
         color: #000
     }
 }
 
 @media (min-width: 40.0625em) {
-    .govuk-notification-banner__content {
+    .govuk-notification-banner__content--legacy {
         padding:20px
     }
 }
 
-.govuk-notification-banner__content>* {
+.govuk-notification-banner__content--legacy>* {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     max-width: 1200px
 }
 
-.govuk-notification-banner__content>:last-child {
+.govuk-notification-banner__content--legacy>:last-child {
     margin-bottom: 0
 }
 
-.govuk-notification-banner__heading {
+.govuk-notification-banner__heading--legacy {
     font-family: "GDS Transport",arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -128,13 +128,13 @@
 }
 
 @media print {
-    .govuk-notification-banner__heading {
+    .govuk-notification-banner__heading--legacy {
         font-family: sans-serif
     }
 }
 
 @media (min-width: 40.0625em) {
-    .govuk-notification-banner__heading {
+    .govuk-notification-banner__heading--legacy {
         font-size:24px;
         font-size: 1.5rem;
         line-height: 1.25
@@ -142,7 +142,7 @@
 }
 
 @media print {
-    .govuk-notification-banner__heading {
+    .govuk-notification-banner__heading--legacy {
         font-size: 18pt;
         line-height: 1.15
     }
@@ -189,23 +189,25 @@
     color: #0b0c0c
 }
 
-.govuk-notification-banner--success {
+.govuk-notification-banner--success--legacy {
     border-color: #00703c;
     background-color: #00703c
 }
 
-.govuk-notification-banner--success .govuk-notification-banner__link:link,.govuk-notification-banner--success .govuk-notification-banner__link:visited {
+.govuk-notification-banner--success--legacy .govuk-notification-banner__link:link,.govuk-notification-banner--success--legacy .govuk-notification-banner__link:visited {
     color: #00703c
 }
 
-.govuk-notification-banner--success .govuk-notification-banner__link:hover {
+.govuk-notification-banner--success--legacy .govuk-notification-banner__link:hover {
     color: #004e2a
 }
 
-.govuk-notification-banner--success .govuk-notification-banner__link:active {
+.govuk-notification-banner--success--legacy .govuk-notification-banner__link:active {
     color: #00703c
 }
 
-.govuk-notification-banner--success .govuk-notification-banner__link:focus {
+.govuk-notification-banner--success--legacy .govuk-notification-banner__link:focus {
     color: #0b0c0c
 }
+
+

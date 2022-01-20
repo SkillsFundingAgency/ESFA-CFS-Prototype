@@ -1,0 +1,244 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="fundingLineStructure.html">DSG SIT</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['additionalCalc-name'] }}
+                </li>
+            </ol>
+        </div>
+
+        <div class="govuk-notification-banner govuk-notification-banner--attention govuk-!-padding-2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h2 class="govuk-notification-banner__tag govuk-tag govuk-tag--orange govuk-!-margin-0 govuk-!-margin-right-2" id="govuk-notification-banner-title">
+                      Attention
+                    </h2>
+                    <p class="govuk-notification-banner__heading govuk-!-margin-bottom-0">
+                      This calculation has been modified
+                    </p>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                  <a class="govuk-notification-banner__link right-align" href="#">Read more</a>
+                </div>
+              </div>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p>You are no longer viewing the most up to date content for this page.</p>
+              <p>Refresh this page to view the latest calculation content.</p>
+              <p>This calculation has been modified by Dan Symonds-Lloyd on the 25 November 2021 at 12:14am.</p>
+            </div>
+          </div>
+
+        <div class="govuk-error-summary" style="display: none;" id="buildCalculation-error" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#buildCalculation">Build calculation must be completed before calculation name can be changed</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        <div id="saveMessage" style="display: none;" class="govuk-notification-banner govuk-notification-banner--success govuk-!-padding-2"
+            role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-three-quarters">
+                        <h2 class="govuk-notification-banner__tag govuk-tag govuk-tag--green govuk-!-margin-0 govuk-!-margin-right-2"
+                            id="govuk-notification-banner-title">
+                            Success
+                        </h2>
+                        <p class="govuk-notification-banner__heading govuk-!-margin-bottom-0">
+                            Calculation updated
+                        </p>
+                    </div>
+                    <div class="govuk-grid-column-one-quarter">
+                        <!-- <button class="right-align">Dismiss</button> -->
+                        <button
+                            class="govuk-notification-banner__dismiss-btn-jq govuk-button govuk-button--secondary right-align govuk-!-margin-0"
+                            data-module="govuk-button">
+                            Dismiss
+                        </button>
+                        <a class="govuk-notification-banner__link govuk-notification-banner__link--success right-align govuk-!-padding-right-3"
+                            href="#">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-notification-banner__content">
+                <div id="saveTime">
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h2 class="govuk-heading-l">{{ data['additionalCalc-name'] }}
+                    <strong class="govuk-tag govuk-tag--green">
+                        DRAFT
+                    </strong></h2>
+            </legend>
+
+            <div class="govuk-grid-row govuk-!-margin-bottom-2">
+                <div class="govuk-grid-column-full">
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="calculation-name">
+                            Calculation name
+                        </label>
+                        <input class="govuk-input" id="calculation-name" name="calculation-name" type="text"></div>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="value-type">
+                            Value type
+                        </label>
+                        <select class="govuk-select" id="value-type" name="value-type">
+                            <option value=""> </option>
+                            <option value="{{ data['value-type'] }}">{{ data['value-type'] }}</option>
+                            <option value="percentage" selected>Percentage</option>
+                            <option value="number">Number</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="govuk-form-group">
+                <h3 class="govuk-heading-s" for="more-detail">
+                    Calculation script
+                </h3>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
+                    aria-label="calculation script">
+Return 0
+
+        </textarea>
+
+                <label class="govuk-label" for="ukprn">
+                    UKPRN
+                </label>
+                <span id="ukprn-hint" class="govuk-hint">
+                    Optional: Enter a UKPRN to view calculation results for this provider
+                </span>
+                <input class="govuk-input govuk-input--width-10" id="ukprn" name="ukprn" type="text">
+            </div>
+
+            <button data-prevent-double-click="true" id="buildCalculation" onclick="buildOuput()" class="govuk-button govuk-button--secondary"
+                data-module="govuk-button">
+                Build calculation
+            </button>
+
+            <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation results</a></p>
+
+            <div class="govuk-inset-text" id="buildResult" style="display: none;">
+                <h5 class="govuk-heading-s">Build output</h5>
+                <p class="govuk-body">Code compiled successfully </p>
+                <p class="govuk-body">Provider: <strong>Abbeygate Sixth Form College
+                    </strong></p>
+                <p class="govuk-body">Provider result: <strong>£10,836</strong></p>
+            </div>
+
+
+            <div class="govuk-grid-row govuk-!-margin-top-9">
+                <div class="govuk-grid-column-full">
+                    <button class="govuk-button govuk-!-margin-right-1" onclick="nameChanged()" data-module="govuk-button">
+                        Save
+                    </button>
+
+                    <button class="govuk-button govuk-!-margin-right-1 btn-approve govuk-button--secondary" id="btn-approve"
+                        data-module="govuk-button">
+                        Approve
+                    </button>
+                    <a href="fundingLineStructure.html"
+                        class="govuk-button govuk-!-margin-right-1 govuk-button--secondary" data-module="govuk-button">
+                        Cancel
+                    </a>
+                   <!-- Removed from scope 
+                       <a class="govuk-button govuk-button--warning" href="delete-additional-calculation"
+                        data-module="govuk-button">
+                        Delete calculation
+                    </a> -->
+                </div>
+            </div>
+
+            <p class="govuk-body" id="lastSaved">Last saved 25 March 2020 2:57pm</p>
+            <a href="calculation-version-history.html">
+                <p class="govuk-body">View calculation history</p>
+            </a>
+    </div>
+</div>
+
+<script>
+    function buildOuput() {
+        document.getElementById('buildResult').style.display = "block"
+    }
+
+    window.onload = function additionalCalc() {
+        var status = sessionStorage.getItem("status");
+        var dateTime = sessionStorage.getItem("date");
+        document.getElementById('calc-status').innerHTML = status;
+        document.getElementById('editedDate').innerHTML = "Last saved " + dateTime;
+    }
+
+    function nameChanged() {
+        var nameChanged = document.getElementById('calculation-name').value
+        var ukprn = document.getElementById('ukprn').value
+        if (nameChanged == "") {
+            saveCalc()
+        } else if (nameChanged !== "" && ukprn == "" ) {
+            document.getElementById('buildCalculation-error').style.display = "block"
+            window.scrollTo(0, 0);
+        } else {
+            saveCalc ()
+        }
+    }
+
+    function saveCalc() {
+        document.getElementById('saveMessage').style.display = 'block';
+        document.getElementById('buildCalculation-error').style.display = "none"
+        window.scrollTo(0, 0);
+        var Timeoptions = {
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+        var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
+        var ampm = time >= 12 ? 'pm' : 'am';
+        var date = new Date()
+        var dateOptions = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        }
+        var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+        document.getElementById('saveTime').innerHTML = 'Upated: ' + dateFormat + ' ' + time + ampm
+        document.getElementById('lastSaved').innerHTML = 'Last saved ' + dateFormat + ' ' + time + ampm
+    }
+</script>
+
+{% endblock %}

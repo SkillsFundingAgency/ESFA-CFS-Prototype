@@ -1,0 +1,113 @@
+{% extends "component-single.html" %}
+
+{% block pageTitle %}
+Calculate funding service - components
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <h1 class="govuk-heading-xl">Toast notifications</h1>
+
+  <h2 class="govuk-heading-m">Standard alert</h2>
+
+  <div class="govuk-alert">
+    <h2 class="govuk-heading-m">Calculation engine</h2>
+    <p class="govuk-body">
+      Calculation engine is running
+    </p>
+  </div>
+
+  <h2 class="govuk-heading-m">Alert notifying of a successful outcome</h2>
+
+  <div class="govuk-alert govuk-alert--success">
+    <h2 class="govuk-heading-m">Payment successful</h2>
+    <p class="govuk-body">
+      We&#x27;ve sent details to
+      test-email@test-corp.co.uk
+      <br />
+      <a href="#">Download confirmation</a>
+    </p>
+  </div>
+
+  <h2 class="govuk-heading-m">Alert indicating an error</h2>
+
+  <div class="govuk-alert govuk-alert--error">
+    <h2 class="govuk-heading-m">
+      Payment unsuccessful
+    </h2>
+    <p class="govuk-body">
+      Please try again or contact our
+      <a href="#">support team</a>
+      for assistance.
+    </p>
+  </div>
+
+  <h2 class="govuk-heading-m">Example alert</h2>
+
+  <button onclick="showAlert()" class="govuk-button">Show alert</button>
+  <button onclick="showStackedAlert()" class="govuk-button">Show stacked alert</button>
+
+  <h2 class="govuk-heading-m">Example page</h2>
+
+  <a class="govuk-body" href="example-pages/toast-example">On page example</a>
+
+</div>
+
+<div id="govuk-alert">
+  <div class="govuk-alert">
+    <h2 class="govuk-heading-m">Calculation engine</h2>
+    <p class="govuk-body">
+      Calculation engine is running, wait for this to complete before refreshing funding.
+    </p>
+  </div>
+</div>
+
+<div id="govuk-alert-stacked">
+  <div class="govuk-alert">
+    <h2 class="govuk-heading-m">Calculation engine</h2>
+    <p class="govuk-body">
+      Calculation engine is running, wait for this to complete before refreshing funding.
+    </p>
+  </div>
+
+  <div class="govuk-alert govuk-alert--success">
+    <h2 class="govuk-heading-m">Providers approved</h2>
+    <p class="govuk-body">60 providers were successfully approved.
+    </p>
+  </div>
+
+  <div class="govuk-alert">
+    <h2 class="govuk-heading-m">Permissions</h2>
+    <p class="govuk-body">You do not have the following permissions for any funding stream on this page:
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Permission required 1</li>
+        <li>Permission required 2</li>
+        <li>Permission required 3</li>
+        <li>Permission required 4</li>
+    </ul>
+    <a class="govuk-notification-banner__link" href="../v1/my-user-permissions">Check your user permissions</a>
+    </p>
+  </div>
+</div>
+
+<script>
+  function showAlert() {
+    var x = document.getElementById("govuk-alert");
+    x.className = "show";
+    setTimeout(function () {
+      x.className = x.className.replace("show", "");
+    }, 6000);
+  }
+
+  function showStackedAlert() {
+    var x = document.getElementById("govuk-alert-stacked");
+    x.className = "show";
+    setTimeout(function () {
+      x.className = x.className.replace("show", "");
+    }, 6000);
+  }
+</script>
+
+{% endblock %}

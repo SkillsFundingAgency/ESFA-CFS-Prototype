@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="../view-funding.html">Select specification</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="upload-batch-approve-release-v2.html">Upload batch file</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Withdraw allocations
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <form action="" method="post" id="batchProviders" novalidate>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
+                            Withdraw allocations
+                        </h1>
+                    </legend>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+        
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-heading-m">Providers selected</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Provider name</th>
+                <th scope="col" class="govuk-table__header">Warning</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">South Devon College</th>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Newbury College</th>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Hull College</th>
+                    <td class="govuk-table__cell">This provider contains allocations that have not been released for statement.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">John Leggott Sixth Form College</th>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">South and City College Birmingham</th>
+                    <td class="govuk-table__cell">This provider has not yet been 'Approved.'</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Hugh Baird College</th>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="govuk-heading-m">Action to take</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+              Withdraw allocations
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+            <a id="approveFunding" href="#" class="govuk-button govuk-button--warning vertical-align-bottom" data-module="govuk-button">
+                Withdraw allocations
+            </a>
+            <!-- <a href="../funding-release.html" class="govuk-button govuk-button--warning"
+                data-module="govuk-button">
+                Release funding
+            </a> -->
+        
+        <!-- <button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" onclick="processHold()"
+            data-module="govuk-button">
+            Process hold status
+        </button>-->
+        </fieldset>
+        </form>
+    </div>
+</div>
+
+<script>
+    function approve() {
+        document.getElementById('batchProviders').action = 'batch-approve-in-progress'
+
+    }
+
+    window.onload = function getSpecification() {
+        let specification = sessionStorage.getItem('view funding specification')
+        document.getElementById('specification').innerHTML = specification
+    }
+
+    function release() {
+        document.getElementById('batchProviders').action = 'batch-release-in-progress'
+    }
+
+    function processHold() {
+        document.getElementById('batchProviders').action = 'process-hold-in-progress'
+    }
+</script>
+
+{% endblock %}

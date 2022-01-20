@@ -203,6 +203,72 @@ GOV.UK Prototype Kit
             </fieldset>
         </div>
 
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by results status <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span>
+                    </h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
+                </button>
+                <div id="filter-content" class="filter-content">
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-approved" name="filter-by-approved" autocomplete="off" type="checkbox" value="approved">
+                            <label class="govuk-label govuk-checkboxes__label" for="approved">
+                                With exceptions <span>(4)</span>
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="filter-by-released" name="filter-by-released" autocomplete="off" type="checkbox" value="released">
+                            <label class="govuk-label govuk-checkboxes__label" for="released">
+                                Without exceptions <span>(2)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group filterbyContainer">
+            <fieldset class="govuk-fieldset">
+                <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
+                    <h4 class="govuk-heading-s">Filter by allocation type <span><i class="material-icons right-align">
+                                keyboard_arrow_down</i></span>
+                    </h4>
+                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="filter-indicative">1 selected</p>
+                </button>
+                <div id="filter-content" class="filter-content sidebar-overflow-visible ">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input checked="" class="govuk-radios__input" onclick="countChecked()" id="all-statements" name="statement-type" type="radio" value="all statements">
+                                    <label class="govuk-label govuk-radios__label" for="all-statements">
+                                        Show all allocation types
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" onclick="countChecked()" id="hide-indicative" name="statement-type" type="radio" value="hide indicative">
+                                    <label class="govuk-label govuk-radios__label" for="hide-indicative">
+                                        Hide indicative allocations <span>(10)</span>
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" onclick="countChecked()" id="show-indicative" name="statement-type" type="radio" value="show indicative">
+                                    <label class="govuk-label govuk-radios__label" for="show-indicative">
+                                        Only indicative allocations <span>(10)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
         <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked'); countChecked()">
             Clear filters</a>
     </div>
