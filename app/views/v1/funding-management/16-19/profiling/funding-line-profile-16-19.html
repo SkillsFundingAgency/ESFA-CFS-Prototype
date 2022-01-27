@@ -67,22 +67,14 @@ GOV.UK Prototype Kit
                 <dt class="govuk-summary-list__key">
                     Instalments processed value </dt>
                 <dd class="govuk-summary-list__value">
-                    £1,000,000</dd>
+                    -£1,000,000</dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Balance available for profiling
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    £1,600,000</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Amount brought forward
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    -£2,600,000
-                </dd>
+                    -£1,600,000</dd>
             </div>
         </dl>
     </div>
@@ -90,7 +82,7 @@ GOV.UK Prototype Kit
 
 
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-full">
         <table class="govuk-table govuk-!-margin-top-5">
             <caption class="govuk-table__caption">Profiling instalments</caption>
@@ -212,8 +204,40 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <p><a href="#" class="govuk-link" data-module="govuk-button">Export to CSV</a></p>
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h3 class="govuk-heading-m">Amount to be carried forward
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    From this period
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    -£2,000,000
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      At a per cent of
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      10%
+                    </dd>
+                  </div>
+              </dl>
+        </h3>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m">Like to export this data?</h3>
+        <p><a href="#" class="govuk-link" data-module="govuk-button">Export page to CSV</a></p>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
         <h3 class="govuk-heading-m">Previous profiles</h3>
         <div class="govuk-inset-text">
             No profile history exists for this funding line.
