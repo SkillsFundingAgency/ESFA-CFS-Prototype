@@ -1,4 +1,5 @@
-{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{# - We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. - #}
+
 {%- set assetPath = '/govuk/assets' -%}
 
 {% extends "govuk/template.njk" %}
@@ -38,21 +39,23 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
+
 {{ govukHeader({
+  
     homepageUrl: "/start",
     containerClasses: "govuk-width-container",
     serviceName: "Calculate funding service (Development)", 
     serviceUrl: "/start",
+    
     navigation: [
       {
-        href: "/start",
+        href: "/start.html",
         text: "Home",
-        active: true
+        active: true 
       },
       {
         href: "/v1/specifications.html",
-        text: "Specifications"
-      },
+        text: "Specifications"      },
       {
         href: "/v1/datasets/manageData.html",
         text: "Manage data"
@@ -73,7 +76,11 @@ GOV.UK Prototype Kit
     ]
   }) 
 }}
+
+
 {% endblock %}
+
+
 
 {% block beforeContent %}
 
