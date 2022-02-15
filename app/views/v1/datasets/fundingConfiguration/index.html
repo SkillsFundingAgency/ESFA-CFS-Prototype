@@ -19,7 +19,7 @@ GOV.UK Prototype Kit
     </a>
   </li>
   <li class="govuk-breadcrumbs__list-item">
-    JSON data
+    Funding configuration 
   </li>
 </ol>
 </div>
@@ -29,13 +29,19 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row  govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Funding configuration</h1>
+    <span class="govuk-caption-xl">Select a funding stream and period to download JSON configuration files.</span>
+  </div>
+</div>
+
+{# <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-        <h1 class="govuk-heading-xl">JSON data</h1>
-        <p class="govuk-body">Select funding stream and period to see available JSON data</p>
-
-        <form action="json-download/download-files" method="post" id="viewFunding" novalidate data-validate='funding-stream'>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Funding configuration</h1>
+            <span class="govuk-caption-xl">Select a funding stream and funding period to download JSON configuration files.</span>
+             #}
+        <form action="/v1/datasets/fundingConfiguration/download-files" method="post" id="viewFunding" novalidate data-validate='funding-stream'>
             <div class="govuk-form-group">
               <label class="govuk-label" for="sort">
                 Funding stream
@@ -63,8 +69,8 @@ GOV.UK Prototype Kit
               <option value="Academic year 2019 to 2020">Academic year 2019 to 2020</option>
             </select>
           </div>
-    </div>
-</div>
+    {# </div>
+</div> #}
 
 <button class="govuk-button" data-module="govuk-button">Continue</button>
 </form>

@@ -5,14 +5,18 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-        <div class="govuk-breadcrumbs">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage data</li>
-            </ol>
-        </div>
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start.html">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      Manage data
+    </li>
+  </ol>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -48,9 +52,10 @@ GOV.UK Prototype Kit
             <h3 class="govuk-heading-m"><a href="sql/refresh-sql-v2">SQL Data</a></h3>
             <p class="govuk-body">Refresh or create SQL data</p>
         </div>
-                <div class="govuk-grid-column-one-third">
-            <h3 class="govuk-heading-m"><a href="/v1/json-download">Funding and profiling config</a></h3>
-            <p class="govuk-body">Download the json config files</p>
+
+    <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-m"><a href="fundingConfiguration/index">Funding and profiling configuration</a></h3>
+            <p class="govuk-body">Download the funding and profiling configuration files.</p>
         </div>
 
 <!--            
