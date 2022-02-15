@@ -4,11 +4,8 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
-
-<div class="govuk-grid-row govuk-!-margin-bottom-9">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+{% block beforeContent %}
+        <div class="govuk-breadcrumbs">
             <ol class="govuk-breadcrumbs__list">
                 <li class="govuk-breadcrumbs__list-item">
                     <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
@@ -16,6 +13,12 @@ GOV.UK Prototype Kit
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage data</li>
             </ol>
         </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Manage data</h1>
         <span class="govuk-caption-xl">Upload new or updated data source files</span>
     </div>

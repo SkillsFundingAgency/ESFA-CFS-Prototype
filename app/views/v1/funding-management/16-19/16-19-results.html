@@ -4,12 +4,42 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/start.html">
+      Calculate funding
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/funding-management">
+      Funding management
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a
+      class="govuk-breadcrumbs__link"
+      href="/v1/funding-management/view-funding.html"
+    >
+      Release management
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item" aria-current="page">
+    16 to 19 results
+  </li>
+</ol>
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 {% set funding_stream = "16 to 19" %}
 {% set funding_year = "2019 to 2020" %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+{# <div class="govuk-grid-row  govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-full">
         <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
             <ol class="govuk-breadcrumbs__list">
@@ -28,7 +58,7 @@ GOV.UK Prototype Kit
             </ol>
         </div>
     </div>
-</div>
+</div> #}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-9 ">
     <div class="govuk-grid-column-two-thirds">

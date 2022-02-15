@@ -4,22 +4,32 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/start.html">
+      Calculate funding
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="manageData">
+      Manage data
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item" aria-current="page">
+    Map data sources to data sets for a specification
+  </li>
+</ol>
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
   <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Map data sources to data sets for a specification
-        </li>
-      </ol>
-    </div>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Map data source files</h1>
     <span class="govuk-caption-xl">Map data source files to data sets for a specification</span>
   </div>

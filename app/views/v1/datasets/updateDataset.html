@@ -4,22 +4,34 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-    <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="manageDatasets.html">Manage data source files</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Update data source file</li>
-    </ol>
+<div class="govuk-breadcrumbs govuk">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/start.html">
+      Calculate funding
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="manageData">
+      Manage data
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="manageDatasets.html">
+      Manage data source files
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item" aria-current="page">
+    Update data source file
+  </li>
+</ol>
 </div>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
