@@ -4,23 +4,32 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/start.html">
+      Calculate funding
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="manageData">
+      Manage data
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item" aria-current="page">
+    Download data schema template
+  </li>
+</ol>
+</div>
+
+{% endblock %}
+
 {% block content %}
-
-
 
 <div class="govuk-grid-row govuk-!-margin-bottom-3">
   <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Download data schema template</li>
-      </ol>
-    </div>
     <h1 class="govuk-heading-xl">Download data schema template</h1>
   </div>
 </div>

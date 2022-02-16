@@ -4,16 +4,7 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
-
-<!-- VARIABLES -->
-{% set successNotificationHeading = "Variations successfully saved" %}
-{% set successNotificationContent = "Future instalments have been updated." %}
-{% set fundingApprovalsLink  = "/dsg/dsg-results" %}
-<!-- END VARIABLES -->
-
-<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
-
+{% block beforeContent %}
 <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
@@ -27,6 +18,17 @@ GOV.UK Prototype Kit
     </li>
   </ol>
 </div>
+{% endblock %}
+
+{% block content %}
+
+<!-- VARIABLES -->
+{% set successNotificationHeading = "Variations successfully saved" %}
+{% set successNotificationContent = "Future instalments have been updated." %}
+{% set fundingApprovalsLink  = "/dsg/dsg-results" %}
+<!-- END VARIABLES -->
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">

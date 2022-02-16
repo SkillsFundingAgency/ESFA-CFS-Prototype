@@ -4,6 +4,31 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start.html">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../../funding-management">
+        Funding management
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../view-funding.html">
+        Funding approvals
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      16 to 19
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
 {% block content %}
 
 {% set funding_stream = "16 to 19" %}
@@ -11,22 +36,6 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row  govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../../funding-management">Funding management</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../view-funding.html">Funding approvals</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                16 to 19
-                </li>
-            </ol>
-        </div>
     </div>
 </div>
 

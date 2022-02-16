@@ -1,9 +1,9 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-    endblock %} {% block content %}
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit 
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+{% endblock %} 
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
             <ol class="govuk-breadcrumbs__list">
                 <li class="govuk-breadcrumbs__list-item">
                     <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
@@ -21,7 +21,13 @@
                 <li class="govuk-breadcrumbs__list-item" aria-current="page">
                     Clone template </li>
             </ol>
-        </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Clone a template</h1>
         <span class="govuk-caption-xl govuk-!-margin-bottom-5">Clone a template of DSG 2020 to
             2021 version 1.4</span>
