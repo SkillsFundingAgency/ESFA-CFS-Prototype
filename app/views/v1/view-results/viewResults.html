@@ -1,26 +1,22 @@
-{% extends "layout.html" %} 
-
-{% block pageTitle %} GOV.UK Prototype Kit 
-{% endblock %} 
-
-
-{% block beforeContent %}
-        <div class="govuk-breadcrumbs">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-            <li class="govuk-breadcrumbs__list-item" aria-current="page">View results</li>
-            </ol>
-        </div>
-{% endblock %}
-
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+endblock %} 
 
 {% block content %}
 
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-4">
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-9">
   <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          View results
+        </li>
+      </ol>
+    </div>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">View results</h1>
     <span class="govuk-caption-xl">View results for providers and calculations.</span>
   </div>
