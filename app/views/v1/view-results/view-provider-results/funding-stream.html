@@ -1,25 +1,35 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-endblock %}
+{% extends "layout.html" %} 
+
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">
+        View results
+      </a>
+    </li>
+      <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" aria-current="page">
+        Select funding stream
+      </a>
+    </li>
+  </ol>
+  
+</div>
+
+{% endblock %}
 
 {% block content %}
-
-<div class="govuk-grid-row  govuk-!-margin-bottom-4">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">View results</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          Select funding stream
-        </li>
-      </ol>
-    </div>
-  </div>
-</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
