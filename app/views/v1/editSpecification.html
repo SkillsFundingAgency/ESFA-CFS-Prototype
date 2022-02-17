@@ -5,45 +5,58 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-    <div class="govuk-breadcrumbs govuk">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Edit specification</li>
-      </ol>
-    </div>
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="specifications">
+        Specifications
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a
+        class="govuk-breadcrumbs__link"
+        href="/v1/funding-management/view-funding"
+      >
+        Release management
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      General annual grant
+    </li>
+  </ol>
+</div>
+
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-    <form action="/v1/editSpecification-loading-spinner-full" method="post" class="form">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">
+      <form action="/v1/editSpecification-loading-spinner-full" method="post" class="form">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
             Edit specification
           </h1>
-        </legend>
+          </legend>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-line-1">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
             Specification name
           </label>
-          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"
+            <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"
             value="{{ data['spec-name'] }}">
-        </div>
+          </div>
 
-        <span class="govuk-caption-m">Funding stream</span>
-        <h2 class="govuk-heading-m">16 to 19</h3>
+          <span class="govuk-caption-m">Funding stream</span>
+          <h2 class="govuk-heading-m">16 to 19</h3>
 
           <span class="govuk-caption-m">Funding period</span>
           <h3 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020</h3>
@@ -119,30 +132,31 @@ GOV.UK Prototype Kit
             </label>
             <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"></textarea>
           </div>
-      </fieldset>
+        </fieldset>
 
-      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
         Save and continue
       </button>
 
-      <a href="fundingLineStructure-chosen.html" class="govuk-button govuk-button--secondary"
+        <a href="fundingLineStructure-chosen.html" class="govuk-button govuk-button--secondary"
         data-module="govuk-button">
         Cancel
       </a>
-    </form>
+      </form>
 
+    </div>
   </div>
-</div>
 
-<script>
+  <script>
 
-  function getProviderData() {
-    var coreProviderData = document.getElementById("coreProviderData").value;
-    console.log(coreProviderData)
-    sessionStorage.setItem('provider data changed', coreProviderData);
+    function getProviderData() {
+      var coreProviderData = document
+        .getElementById("coreProviderData")
+        .value;
+      console.log(coreProviderData)
+      sessionStorage.setItem('provider data changed', coreProviderData);
 
-  }
-
-</script>
+    }
+  </script>
 
 {% endblock %}

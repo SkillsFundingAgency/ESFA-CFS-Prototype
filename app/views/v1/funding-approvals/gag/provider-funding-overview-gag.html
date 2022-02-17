@@ -4,32 +4,42 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../../funding-management">Funding management</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../view-funding.html">Funding approvals</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="gag-results.html">General Annual Grant</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Provider funding overview
-                </li>
-            </ol>
-        </div>
-    </div>
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="../../funding-management">
+        Funding management 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="../view-funding">
+        Funding approvals 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="gag-results">
+        General Annual Grant 
+      </a>
+    </li>
+      <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" aria-current="page">
+        Provider funding overview
+      </a>
+    </li>
+  </ol>
+  
 </div>
 
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row govuk-grid-column-full govuk-!-margin-bottom-7">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">Barnet London Borough Council</h1>

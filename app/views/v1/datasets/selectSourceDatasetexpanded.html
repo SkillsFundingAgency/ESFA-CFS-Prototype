@@ -4,26 +4,49 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="manageData">
+        Manage data
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a
+        class="govuk-breadcrumbs__link"
+          <a class="govuk-breadcrumbs__link" href="datasetRelationships"
+      >
+        Map data source files 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a
+        class="govuk-breadcrumbs__link"
+          <a class="govuk-breadcrumbs__link" href="dataRelationshipsDSGSIT"
+      >
+        Dedicated schools grant SIT
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      Change Dedicated schools grant SIT
+    </li>
+  </ol>
+  
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page"><a class="govuk-breadcrumbs__link"
-            href="datasetRelationships">Map data source files</a></li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page"><a class="govuk-breadcrumbs__link"
-            href="dataRelationshipsDSGSIT">Dedicated schools grant SIT</a></li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Change Dedicated schools grant SIT</li>
-      </ol>
-    </div>
-
     <h1 class="govuk-heading-xl">Dedicated schools grant SIT
       <span class="govuk-caption-xl">Financial year 2020 to 2021</span>
     </h1>
