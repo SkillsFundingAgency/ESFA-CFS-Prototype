@@ -4,59 +4,79 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      Manage data
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage data</li>
-            </ol>
-        </div>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Manage data</h1>
-        <span class="govuk-caption-xl">Upload new or updated data source files</span>
-    </div>
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Manage data</h1>
+    <span class="govuk-caption-xl">
+      Upload new or updated data source files
+    </span>
+  </div>
 </div>
 
 <!-- Top row start -->
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-m"><a href="manageDatasets">Manage data source files</a></h3>
-        <p class="govuk-body">Upload new or updated data source files</p>
-    </div>
-    <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-m"><a href="datasetRelationships">Map data source files to data sets for a
-                specification</a></h3>
-        <p class="govuk-body">Select the data source file a data set uses.</p>
-    </div>
-    <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-m"><a href="schemas">Download data schemas</a></h3>
-        <p class="govuk-body">Download the data schema for data source.</p>
-    </div>
-</div>
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      <a href="manageDatasets">Manage data source files</a>
+    </h3>
+    <p class="govuk-body">Upload new or updated data source files</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      <a href="datasetRelationships">
+        Map data source files to data sets for a specification
+      </a>
+    </h3>
+    <p class="govuk-body">Select the data source file a data set uses.</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      <a href="schemas">Download data schemas</a>
+    </h3>
+    <p class="govuk-body">Download the data schema for data source.</p>
+  </div>
+</div>;
 <!-- Top row end -->
 
 
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-            <h3 class="govuk-heading-m"><a href="sql/refresh-sql-v2">SQL Data</a></h3>
-            <p class="govuk-body">Refresh or create SQL data</p>
-        </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      <a href="sql/refresh-sql-v2">SQL Data</a>
+    </h3>
+    <p class="govuk-body">Refresh or create SQL data</p>
+  </div>
 
-<!--            
-            <div class="govuk-grid-column-one-third">
-                <h3 class="govuk-heading-m"><a href="">govuk-heading-m</a></h3>
-                <p class="govuk-body">govuk-body</p>
-            </div>
-            <div class="govuk-grid-column-one-third">
-                <h3 class="govuk-heading-m"><a href="">govuk-heading-m</a></h3>
-                <p class="govuk-body">govuk-body</p>
-            </div>
--->
-        </div>
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">
+      <a href="fundingConfiguration/index">
+        Funding and profiling configuration
+      </a>
+    </h3>
+    <p class="govuk-body">
+      Download the funding and profiling configuration files.
+    </p>
+  </div>
+
+
+</div>
     
 
 

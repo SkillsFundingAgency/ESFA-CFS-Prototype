@@ -4,29 +4,42 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<!-- VARIABLES -->
+
+{% set fundingStream  = "16 to 19" %}
+<!-- END VARIABLES -->
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="specifications">
+        Specifications
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      {{ fundingStream }}
+    </li>
+  </ol>
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 <!-- VARIABLES -->
 {% set successNotificationHeading = "Variations successfully saved" %}
 {% set successNotificationContent = "Future instalments have been updated." %}
 {% set fundingApprovalsLink  = "/16-19/16-19-results" %}
-{% set fundingStream  = "16 to 19" %}
 <!-- END VARIABLES -->
 
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
-
-
-<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ fundingStream }}</li>
-  </ol>
-</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-9">

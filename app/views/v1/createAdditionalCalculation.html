@@ -4,26 +4,41 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="specifications">
+        Specifications
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a
+        class="govuk-breadcrumbs__link"
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen"
+      >
+        {{ data['spec-name'] }}
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      Create additional calculation
+    </li>
+  </ol>
+  
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen.html">{{ data['spec-name'] }}</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Create additional calculation</li>
-      </ol>
-    </div>
-
     <form action="/v1/fundingLineStructure" method="post" novalidate data-validate='my-form-validation'>
       <fieldset class="govuk-fieldset">
         <h1 class="govuk-heading-xl">
