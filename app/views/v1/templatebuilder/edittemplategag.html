@@ -1,22 +1,33 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-    endblock %} {% block content %}
+{% extends "layout.html" %} 
+
+{% block pageTitle %}
+ GOV.UK Prototype Kit 
+ {% endblock %} 
+
+ {% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start.html">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting">
+        Templates
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">GAG-AY-21-22</li>
+  </ol>
+</div>
+
+{% endblock %}
+ 
+ {% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link"
-                        href="../templatebuilder/templatelisting.html">Templates</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    GAG-AY-21-22
-                </li>
-            </ol>
-        </div>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">GAG AY-2021</h1>
     </div>
 </div>
