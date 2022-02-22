@@ -115,8 +115,8 @@ GOV.UK Prototype Kit
                     </a>
                 </li>
                 <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#providerFunding">
-                        Provider funding
+                    <a class="govuk-tabs__tab" href="#provider-data">
+                        Provider data
                     </a>
                 </li>
             </ul>
@@ -523,65 +523,381 @@ GOV.UK Prototype Kit
                 </div>
             </section>
 
-            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="providerFunding">
-                <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-full">
-                        <h2 class="govuk-heading-l">
-                            Provider Funding
-                        </h2>
-                        <p class="govuk-body">
-                            Total funding Abbey Grange Church of England Academy receives from all eligible funding
-                            streams.
-                        </p>
+            <section class="govuk-tabs__panel" id="provider-data" role="tabpanel" aria-labelledby="tab_provider-data">
+                
+                
 
-                        <table class="govuk-table">
-                            <caption class="govuk-table__caption">Funding streams and amounts</caption>
-                            <thead class="govuk-table__head">
-                                <tr class="govuk-table__row">
-                                    <th scope="col" class="govuk-table__header">Funding streams</th>
-                                    <th scope="col" class="govuk-table__header">Specification </th>
-                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amounts
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="govuk-table__body">
-
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">16 to 19</th>
-                                    <td class="govuk-table__cell">{{ data['spec-name'] }}</td>
-
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                                        <strong> £1,645,999</strong>
-                                    </td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <td class="govuk-table__cell">Academies Programme Funding </td>
-                                    <td class="govuk-table__cell"></td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£1,638,199</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <td class="govuk-table__cell">Academies Advanced Maths Premium Funding</td>
-                                    <td class="govuk-table__cell"></td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£7,800</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <td class="govuk-table__cell">Academies High Needs Element 2 Student Funding </td>
-                                    <td class="govuk-table__cell"></td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">£1,074,000</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">Total funding</th>
-                                    <td class="govuk-table__cell"></td>
-
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">
-                                        <strong>£1,645,999</strong>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
+                <h2 class="govuk-heading-l">Provider data</h2>
+                                <div class="govuk-warning-text">
+                                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                    <strong class="govuk-warning-text__text">
+                                        <span class="govuk-warning-text__assistive">Warning</span>
+                                        You are using Conisborough college from the master version.
+                                    </strong>
+                                </div>
+                                <h4 class="govuk-heading-m">Establishment details</h4>
+                                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Name
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            St Mary's Catholic School
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Number
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            4249
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            UKPRN
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            8883726
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            UPIN
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            0
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            URN
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            100742
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Previous establishment number
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            2189
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Predecessor UKPRN
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            10015431, 10015437, 10019583
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Successor UKPRN
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            10017381
+                                        </dd>
+                                    </div>
+                
+                
+                                </dl>
+                                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">Provider details</h4>
+                                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Type
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Local authority maintained school
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Type code
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            54
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Sub type
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Community school
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Sub type code
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            CO </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Phase of education
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            4
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Provider profile type
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Further education type name
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Six form college
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Further education type code
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            02
+                                        </dd>
+                                    </div>
+                
+                                </dl>
+                                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">Location details</h4>
+                                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Local authority
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Lewisham
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Local authority code
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            209
+                                        </dd>
+                                    </div>
+                
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Town
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            London
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Postcode
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            SE6 2SE
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Regional schools commissioner region name
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            South Central England and North West London
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Regional schools commissioner region code
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            SENEWL
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Government office region name
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            South East
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Government office region code
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            SE
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            London region code
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            202
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            London region name
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Camden
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Local government group type
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Metropolitan
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Postcode
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            M
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Country
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            England
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Country code
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            E92000001
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Previous local authority </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Bromley
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Previous local authority code</dt>
+                                        <dd class="govuk-summary-list__value">
+                                            391
+                                        </dd>
+                                    </div>
+                
+                                </dl>
+                                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">Status details</h4>
+                                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Status
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Open
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Date opened
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Unknown
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Date closed
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Unknown
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Reason establishment opened
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Not applicable
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Reason establishment closed
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Not applicable
+                                        </dd>
+                                    </div>
+                                </dl>
+                                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">Trust details</h4>
+                                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Status
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Not applicable
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Name
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Code
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                        </dd>
+                                    </div>
+                                </dl>
+                                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">Payment organisation details</h4>
+                                <dl class="govuk-summary-list govuk-!-margin-bottom-6 govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Name
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Not applicable
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Identifier
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Unknown
+                                        </dd>
+                                    </div>
+                                </dl>
+                
+                
+                            </section>
         </div>
         <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     </div>
