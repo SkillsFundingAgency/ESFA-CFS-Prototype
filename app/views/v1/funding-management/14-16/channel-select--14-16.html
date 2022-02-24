@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/v1/funding-management">Funding management</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding.html">Release management</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/v1/funding-management/14-16/14-16-results.html">14 to 16 results</a>
+      </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">
+          Release purpose
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-form-group">
+      <form action="funding-release--16-19" id="createSpec" method="post" novalidate data-validate='release-channels'>
+      <fieldset class="govuk-fieldset" aria-describedby="select-all-that-apply">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            For which purposes would you like to release?
+          </h1>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        There are no release purposes configured for the selected funding stream and funding period.
+      </strong>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    </form>
+    <a href="../14-16/14-16-results.html" button class="govuk-button govuk-button--secondary"
+      data-module="govuk-button">
+      Cancel
+    </a>
+  </div>
+</div>
+
+<script type="application/json" id="release-channels">
+  { 		  	
+        "release-channel": {
+        "presence": {
+        "message": "^Select the channles you wish to release to"
+      }
+    }
+  }
+</script>
+
+{% endblock %}
