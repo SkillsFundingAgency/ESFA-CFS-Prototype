@@ -4,31 +4,41 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/profiling/index">
+        Profiling
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/profiling/select-funding-stream">
+        Select funding stream
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/profiling/view-all-rule-patterns">
+        View all rule based patterns
+      </a>
+    </li>
+
+  </ol>
+  
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row  govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/profiling/index">Profiling</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/profiling/select-funding-stream">Select funding
-                        stream</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/profiling/view-all-rule-patterns">View all rule based
-                        patterns</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Create a rule based pattern
-                </li>
-            </ol>
-        </div>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2"> Create a rule based pattern
         </h1>
         <span class="govuk-caption-xl">Select a name and description</span>

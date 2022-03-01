@@ -1,88 +1,94 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-endblock %}
+{% extends "layout.html" %}
+
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">
+        View results 
+      </a>
+    </li>
+    
+  </ol>
+  
+</div>
+
+{% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">View results</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          Select funding stream
-        </li>
-      </ol>
-    </div>
-  </div>
-</div>
-
-<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
+  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
     There is a problem
   </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#funding-stream-error">Select the funding stream you wish to view providers for</a>
-      </li>
-    </ul>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#funding-stream-error">Select the funding stream you wish to view providers for</a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div class="govuk-form-group govuk-form-group--error">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
+  <div class="govuk-form-group govuk-form-group--error">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
         Select funding stream
       </h1>
-    </legend>
-    <span class="govuk-hint">Select the funding you wish to view providers for.</span>
-    <span id="funding-stream-error" class="govuk-error-message">
-      <span class="govuk-visually-hidden">Error:</span> Select the funding stream you wish to view providers for</span>
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="general-annual-grant" name="general-annual-grant" type="radio" value="england">
-        <label class="govuk-label govuk-radios__label" for="general-annual-grant">
+      </legend>
+      <span class="govuk-hint">Select the funding you wish to view providers for.</span>
+      <span id="funding-stream-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Select the funding stream you wish to view providers for</span>
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="general-annual-grant" name="general-annual-grant" type="radio" value="england">
+          <label class="govuk-label govuk-radios__label" for="general-annual-grant">
           General annual grant
         </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="dsg" name="dsg" type="radio"
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="dsg" name="dsg" type="radio"
           value="scotland">
-        <label class="govuk-label govuk-radios__label" for="dsg">
+          <label class="govuk-label govuk-radios__label" for="dsg">
           Dedicated schools grant
         </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="pe-sports-grant" name="pe-sports-grant" type="radio" value="wales">
-        <label class="govuk-label govuk-radios__label" for="pe-sports-grant">
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="pe-sports-grant" name="pe-sports-grant" type="radio" value="wales">
+          <label class="govuk-label govuk-radios__label" for="pe-sports-grant">
           PE and sports grant
         </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="16-to-19" name="16-to-19" type="radio"
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="16-to-19" name="16-to-19" type="radio"
           value="northern-ireland">
-        <label class="govuk-label govuk-radios__label" for="16-to-19">
+          <label class="govuk-label govuk-radios__label" for="16-to-19">
           16 to 19
         </label>
+        </div>
       </div>
-    </div>
-  </fieldset>
-</div>
+    </fieldset>
+  </div>
 
-<a href="provider-results.html" id="specification-link" class="govuk-button" data-module="govuk-button">
+  <a href="provider-results.html" id="specification-link" class="govuk-button" data-module="govuk-button">
   Continue
 </a>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <a href="profile-patterns.html" class="govuk-back-link">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="profile-patterns.html" class="govuk-back-link">Back</a>
+    </div>
   </div>
-</div>
 
 {% endblock %}

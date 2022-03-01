@@ -1,54 +1,60 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-    endblock %}  
-    
-    {% block content %}
-    
-    <div class="govuk-grid-row  govuk-!-margin-bottom-9">
-      <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-          <ol class="govuk-breadcrumbs__list">
-            <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-            </li>
-            <li class="govuk-breadcrumbs__list-item" aria-current="page">
-              Select specification
-            </li>
-          </ol>
-        </div>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Select specification</h1>
-        <span class="govuk-caption-xl">You can select the specification and funding period.</span>
-      </div>
+{% extends "layout.html" %}
+
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+
+  </ol>
+  
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row  govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Select specification</h1>
+      <span class="govuk-caption-xl">You can select the specification and funding period.</span>
     </div>
-    
-    
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="sort">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
         Funding stream
       </label>
-      <select class="govuk-select" id="sort" name="sort">
-        <option value="blank">option 1</option>
-        <option value="blank">option 2</option>
-      </select>
-    </div>
-    
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="sort">
+    <select class="govuk-select" id="sort" name="sort">
+      <option value="blank">option 1</option>
+      <option value="blank">option 2</option>
+    </select>
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
         Funding period
       </label>
-      <select class="govuk-select" id="sort" name="sort">
-        <option value="blank">2019 to 2020</option>
-        <option value="blank">2018 to 2019</option>
-      </select>
-    </div>
-    
-    
-    <a
+    <select class="govuk-select" id="sort" name="sort">
+      <option value="blank">2019 to 2020</option>
+      <option value="blank">2018 to 2019</option>
+    </select>
+  </div>
+
+  <a
       href="select-specification.html"
       class="govuk-button"
       data-module="govuk-button"
     >
       View funding
     </a>
-    
-    {% endblock %}
-    
+
+{% endblock %}

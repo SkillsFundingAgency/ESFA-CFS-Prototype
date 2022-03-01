@@ -4,35 +4,48 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/start.html">
+      Calculate funding
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/funding-management">
+      Funding management
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a
+      class="govuk-breadcrumbs__link"
+      href="/v1/funding-management/view-funding.html"
+    >
+      Release management
+    </a>
+  </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a
+      class="govuk-breadcrumbs__link"
+      href="16-19-results-v2.html"
+    >
+      16 to 19 results
+    </a>
+  </li>
+
+</ol>
+
+</div>
+
+{% endblock %}
+
 <!-- VARIABLES -->
 {% set ProviderName = "Abbey College, Ramsey" %}
 <!-- END VARIABLES -->
 
 {% block content %}
-
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/funding-management">Funding management</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding.html">Release management</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="16-19-results-v2.html">16 to 19 results</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Abbey College, Ramsey
-                </li>
-            </ol>
-        </div>
-    </div>
-</div>
 
 <div class="govuk-grid-row govuk-grid-column-full govuk-!-margin-bottom-7">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">Abbey College, Ramsey</h1>

@@ -4,6 +4,37 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="../view-funding">
+        Select specification
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="../funding-resultsv2">
+        Funding approval results
+      </a>
+    </li>
+        <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="../provider-funding-overview-gag">
+        Barnet London Borough Council
+      </a>
+    </li>
+
+  </ol>
+  
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row  govuk-!-margin-bottom-5">
