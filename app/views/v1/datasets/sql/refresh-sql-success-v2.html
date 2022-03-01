@@ -1,99 +1,132 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-    endblock %}
+{% extends "layout.html" %}
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start.html">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a
+        class="govuk-breadcrumbs__link"
+        href="../manageData"
+      >
+        Manage data 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a
+        class="govuk-breadcrumbs__link"
+        href="refresh-sql-v2"
+      >
+        Funding stream, period and specification 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a
+        class="govuk-breadcrumbs__link"
+        href="refresh-sql-data"
+      >
+        Available SQL data 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      SQL refresh successful 
+    </li>
+  </ol>
+</div>
+{% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="../manageData">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="refresh-sql-v2">Funding stream, period and specification</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="refresh-sql-data.html">Available SQL data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          SQL refresh successful
-        </li>
-      </ol>
-    </div>
-  </div>
-</div>
-
-<div class="govuk-grid-row ">
-  <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-panel govuk-panel--confirmation ">
-      <h1 class="govuk-panel__title">
+  <div class="govuk-grid-row ">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation ">
+        <h1 class="govuk-panel__title">
         Refresh successful
       </h1>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Funding stream
         </dt>
-        <dd class="govuk-summary-list__value" id="fundingStreamSQL">
-          {{ data['sql-funding-stream'] }}
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+          <dd class="govuk-summary-list__value" id="fundingStreamSQL">
+            {{ data['sql-funding-stream'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Funding period
         </dt>
-        <dd class="govuk-summary-list__value" id="fundingPeriodSQL">
-          {{ data['sql-funding-period'] }}
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+          <dd class="govuk-summary-list__value" id="fundingPeriodSQL">
+            {{ data['sql-funding-period'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Specification
         </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['sqlSpecification'] }}
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+          <dd class="govuk-summary-list__value">
+            {{ data['sqlSpecification'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Data type
         </dt>
-        <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value">
           Latest calculation results
         </dd>
-      </div>
-    </dl>
+        </div>
+      </dl>
+    </div>
   </div>
-</div>
 
-<a href="/v1/datasets/manageData" class="govuk-button" data-module="govuk-button">
+  <a href="/v1/datasets/manageData" class="govuk-button" data-module="govuk-button">
   Continue
 </a>
 
-<script>
+  <script>
 
-  window.onload = function () {
-    document.getElementById('fundingStreamSQL').innerHTML = sessionStorage.getItem('funding stream sql')
-    document.getElementById('fundingPeriodSQL').innerHTML = sessionStorage.getItem('funding period sql')
-    var Timeoptions = { hour: '2-digit', minute: '2-digit' };
-    var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
-    var ampm = time >= 12 ? 'pm' : 'am';
-    var date = new Date()
-    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
-    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
-    document.getElementById('dateTimeSQL').innerHTML = dateFormat + ' ' + time + ampm
-  }
-
-</script>
+    window.onload = function () {
+      document
+        .getElementById('fundingStreamSQL')
+        .innerHTML = sessionStorage
+        .getItem('funding stream sql')
+      document
+        .getElementById('fundingPeriodSQL')
+        .innerHTML = sessionStorage
+        .getItem('funding period sql')
+      var Timeoptions = {
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+      var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
+      var ampm = time >= 12
+        ? 'pm'
+        : 'am';
+      var date = new Date()
+      var dateOptions = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }
+      var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+      document
+        .getElementById('dateTimeSQL')
+        .innerHTML = dateFormat + ' ' + time + ampm
+    }
+  </script>
 
 {% endblock %}

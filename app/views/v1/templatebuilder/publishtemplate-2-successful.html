@@ -1,107 +1,120 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-endblock %} {% block content %}
+{% extends "layout.html" %}
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link"
-                        href="../templatebuilder/templatelisting.html">Templates</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="createnewtemplate.html">Create a new
-                        template</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="createnewtemplate-build.html">Edit template</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Publish template
-                </li>
-            </ol>
-        </div>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">GAG SA19-20 successfully published</h1>
-        <span class="govuk-caption-xl">Summary of published template</span>
-
-    </div>
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start.html">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a
+        class="govuk-breadcrumbs__link"
+        href="../templatebuilder/templatelisting.html"
+      >
+        Templates
+      </a>
+    </li>
+     <li class="govuk-breadcrumbs__list-item">
+      <a
+        class="govuk-breadcrumbs__link"
+        href="createnewtemplate"
+      >
+        Create a new template
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a
+        class="govuk-breadcrumbs__link"
+        href="edittemplate"
+      >
+        Edit template 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      Publish template
+    </li>
+  </ol>
 </div>
+{% endblock %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-two-thirds">
+{% block content %}
 
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
+    <div class="govuk-grid-row govuk-!-margin-bottom-5">
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">GAG SA19-20 successfully published</h1>
+            <span class="govuk-caption-xl">Summary of published template</span>
 
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+        </div>
+    </div>
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-5">
+        <div class="govuk-grid-column-two-thirds">
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
                     Funding stream
                 </dt>
-                <dd class="govuk-summary-list__value">
+                    <dd class="govuk-summary-list__value">
                     General annual grant
 
                 </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
                     Funding period
                 </dt>
-                <dd class="govuk-summary-list__value">
+                    <dd class="govuk-summary-list__value">
                     Academies and Schools Academic Year 2019 to 2020</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
                     Version
                 </dt>
-                <dd class="govuk-summary-list__value">
+                    <dd class="govuk-summary-list__value">
                     0.1 </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
                     Description
                 </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['template-description'] }} </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                    <dd class="govuk-summary-list__value">
+                        {{ data['template-description'] }}
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
                     Publish note
                 </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['publish-note'] }} </dd>
-            </div>
-        </dl>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['publish-note'] }}
+                    </dd>
+                </div>
+            </dl>
+        </div>
     </div>
-</div>
 
-
-
-
-
-<img src="/public/images/template-gag.jpg" width="1200" height="800" alt="">
+    <img src="/public/images/template-gag.jpg" width="1200" height="800" alt="">
 
 </br>
 </br>
-
-
-
 
 <div class="govuk-grid-row govuk-!-margin-bottom-3">
-    <div class="govuk-grid-column-two-thirds">
-        <strong class="govuk-tag govuk-tag--green left-align ">
+<div class="govuk-grid-column-two-thirds">
+    <strong class="govuk-tag govuk-tag--green left-align ">
             Publish successful
         </strong>
-    </div>
 </div>
-
-
+</div>
 
 <a href="../templatebuilder/templatelisting-1619.html" class="govuk-button govuk-button" data-module="govuk-button">
     Continue to listing page
 </a>
-
-
 
 {% endblock %}
