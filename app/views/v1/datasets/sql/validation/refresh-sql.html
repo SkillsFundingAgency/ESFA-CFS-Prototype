@@ -23,8 +23,15 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-  <form action="/v1/datasets/sql/loading-spinner-full" method="post" name="refreshSQL" onsubmit="return validateForm()" class="form">
-    <fieldset class="govuk-fieldset">
+<div class="govuk-grid-row  govuk-!-margin-bottom-9">
+<div class="govuk-grid-column-full">
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Refresh SQL</h1>
+  <span class="govuk-caption-l">Refresh SQL funding</span>
+</div>
+</div>
+
+<form action="/v1/datasets/sql/loading-spinner-full" method="post" name="refreshSQL" onsubmit="return validateForm()" class="form">
+  <fieldset class="govuk-fieldset">
 
       <div class="govuk-form-group" id="refresh-sql-error-funding-stream" >
         <label class="govuk-label" for="sort">
