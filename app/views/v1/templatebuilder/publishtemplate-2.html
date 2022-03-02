@@ -4,7 +4,8 @@
 GOV.UK Prototype Kit 
 {% endblock %}
 
-{% block beforeContent %}
+ {% block beforeContent %}
+
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
@@ -13,24 +14,16 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a
-        class="govuk-breadcrumbs__link"
-        href="../templatebuilder/templatelisting.html"
-      >
+      <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting">
         Templates
       </a>
     </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a
-        class="govuk-breadcrumbs__link"
-        href="edittemplate"
-      >
-        Edit template 
+     <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="edittemplate">
+        Edit template
       </a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">
-      Publish template
-    </li>
+
   </ol>
 </div>
 {% endblock %}
@@ -84,9 +77,6 @@ GOV.UK Prototype Kit
             </dl>
         </div>
     </div>
-
-
-
     <div class="govuk-grid-row">
         <form action="publishtemplate-2-successful" method="post" class="form">
             <fieldset class="govuk-fieldset">
@@ -103,9 +93,6 @@ GOV.UK Prototype Kit
                 </br>
             </br>
 
-
-
-
             <button class="govuk-button govuk-button--warning" data-module="govuk-button">
                     Publish
                 </button>
@@ -116,6 +103,5 @@ GOV.UK Prototype Kit
 
 <a href="edittemplate.html" class="govuk-back-link">Back</a>
 </div>
-
 
 {% endblock %}

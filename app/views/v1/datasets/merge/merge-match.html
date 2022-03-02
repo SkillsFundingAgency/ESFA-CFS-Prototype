@@ -1,84 +1,84 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-    endblock %}
+{% extends "layout.html" %}
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../manageData">
+        Manage data
+      </a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="../manageData">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          Merge data source
-        </li>
-      </ol>
-    </div>
-  </div>
-</div>
-
-<div class="govuk-grid-row ">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Merge completed</h1>
-    <div class="govuk-inset-text">
+  <div class="govuk-grid-row ">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Merge completed</h1>
+      <div class="govuk-inset-text">
       Data in both versions is identical. No changes were made.
     </div>
+    </div>
   </div>
-</div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Data source
         </dt>
-        <dd class="govuk-summary-list__value" id="fundingStreamSQL">
+          <dd class="govuk-summary-list__value" id="fundingStreamSQL">
           1920 Funding factors
         </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Data source version
         </dt>
-        <dd class="govuk-summary-list__value" id="fundingStreamSQL">
+          <dd class="govuk-summary-list__value" id="fundingStreamSQL">
           4 </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Data schema
         </dt>
-        <dd class="govuk-summary-list__value" id="fundingPeriodSQL">
+          <dd class="govuk-summary-list__value" id="fundingPeriodSQL">
           16 to 19 factors
         </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Additional rows created
         </dt>
-        <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value">
           0
         </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
           Existing rows amended
         </dt>
-        <dd class="govuk-summary-list__value" id="dateTimeSQL">
+          <dd class="govuk-summary-list__value" id="dateTimeSQL">
           0
         </dd>
-      </div>
-    </dl>
+        </div>
+      </dl>
+    </div>
   </div>
-</div>
 
-<a href="/v1/datasets/manageDatasets" class="govuk-button" data-module="govuk-button">
+  <a href="/v1/datasets/manageDatasets" class="govuk-button" data-module="govuk-button">
   Continue
 </a>
-
 
 {% endblock %}

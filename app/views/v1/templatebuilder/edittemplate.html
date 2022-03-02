@@ -1,83 +1,69 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit 
+{% extends "layout.html" %}
 
-
-{% endblock %} 
-    
-{% block beforeContent %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start.html">
-        Calculate funding
-      </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a
-        class="govuk-breadcrumbs__link"
-        href="../templatebuilder/templatelisting.html"
-      >
-        Templates
-      </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a
-        class="govuk-breadcrumbs__link"
-        href="../templatebuilder/templateversions.html"
-      >
-        DSG FY-20-21
-      </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">
-      Version 1.4
-    </li>
-  </ol>
-</div>
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
 {% endblock %}
-    
-    
-    {% block content %}
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">DSG FY-20-21</h1>
-        <span class="govuk-caption-l govuk-!-margin-bottom-2">Dedicated
+{% block beforeContent %}
+    <div class="govuk-breadcrumbs">
+        <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link"
+                        href="../templatebuilder/templatelisting.html">Templates</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../templatebuilder/templateversions.html">DSG FY-20-21</a>
+            </li>
+            
+        </ol>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">DSG FY-20-21</h1>
+            <span class="govuk-caption-l govuk-!-margin-bottom-2">Dedicated
             schools grant for financial year
             2020 to 2021</span>
-        <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
+            <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
                     What is DSG FY-20-21?
                 </span>
-            </summary>
-            <div class="govuk-details__text">
-                <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                </summary>
+                <div class="govuk-details__text">
+                    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt
                     ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris
                     nisi
                     ut aliquip ex ea commodo consequat. <a
                         onclick="document.getElementById('editDescription').style.display='block'" href="#"
-                        class="govuk-link">Edit</a></p>
-            </div>
-        </details>
+                        class="govuk-link">Edit</a>
+                    </p>
+                </div>
+            </details>
+        </div>
     </div>
-</div>
 
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-m">Version</span>
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">1.4<strong
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-m">Version</span>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2">1.4<strong
                 class="govuk-tag govuk-tag govuk-!-margin-left-2">
                 In progress
-            </strong> </h3>
-        <p class="govuk-body-s"><a class="govuk-link" href="templateversions.html">View all
-                versions</a></p>
+            </strong>
+            </h3>
+            <p class="govuk-body-s">
+                <a class="govuk-link" href="templateversions.html">View all
+                versions</a>
+            </p>
+        </div>
     </div>
-</div>
-
-
-
-
 
 </br>
 
@@ -94,9 +80,18 @@
         <div class="govuk-grid-column-one-third govuk-!-padding-left-0">
             <p class="govuk-body" aria-label="Template actions" style="visibility:hidden">Template actions</p>
             <ul class="govuk-list inline-block-list">
-                <li><a href="#" class="govuk-link-m"><span>&#43;</span> Add a new funding line</a></li>
-                <li><a href="#" class="govuk-link-m"><span>&#8617;</span> Undo</a></li>
-                <li><a href="#" class="govuk-link-m"><span>&#8618;</span> Redo</a></li>
+                <li>
+                    <a href="#" class="govuk-link-m">
+                        <span>&#43;</span> Add a new funding line</a>
+                </li>
+                <li>
+                    <a href="#" class="govuk-link-m">
+                        <span>&#8617;</span> Undo</a>
+                </li>
+                <li>
+                    <a href="#" class="govuk-link-m">
+                        <span>&#8618;</span> Redo</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -104,7 +99,7 @@
 
 <div class="govuk-!-margin-bottom-0">
     <svg class="" width="1350" height="700">
-        <rect width="1200" height="800" stroke-width="8" fill="gray" />
+        <rect width="1200" height="800" stroke-width="8" fill="gray"/>
     </svg>
 </div>
 
@@ -122,14 +117,16 @@
             <span class="zoom out govuk-!-margin-right-1" aria-hidden="true"><img
                     src="/public/images/minus (1).png"></span>
             <span class="hide-me">zoom out</span>
-        </a></div>
+        </a>
+    </div>
     <div class="tooltip">
         <span class="tooltiptext">Full screen</span>
         <a title="Full screen" href="#" id="openFullScreen" style="text-decoration: none;">
             <span class="full screen govuk-!-margin-right-1" aria-hidden="true"><img
                     src="/public/images/expand.png"></span>
             <span class="hide-me">full screen</span>
-        </a></div>
+        </a>
+    </div>
     <div class="tooltip">
         <span class="tooltiptext">Fit to screen</span>
         <a title="Fit to screen" href="#" id="fitToScreen" style="text-decoration: none;">
@@ -139,7 +136,6 @@
         </a>
     </div>
 </div>
-
 
 <!--
 <div class="govuk-!-margin-bottom-1 right-align fitscreen-icon">
@@ -158,30 +154,31 @@
 </div> -->
 </br>
 <div class="govuk-grid-row ">
-    <div class="govuk-grid-column-full ">
-        <button class="govuk-button" data-module="govuk-button">
+<div class="govuk-grid-column-full ">
+    <button class="govuk-button" data-module="govuk-button">
             Save</button>
-        <a href="../templatebuilder/publishtemplate-2.html" button class="govuk-button govuk-button--warning"
+    <a href="../templatebuilder/publishtemplate-2.html" button class="govuk-button govuk-button--warning"
             data-module="govuk-button">
             Continue to publish
-            </button> </a>
-        <div class="right-align">
-            <a href="clonetemplate.html" class="govuk-button govuk-button--secondary govuk-!-margin-left-1"
+            </button>
+</a>
+<div class="right-align">
+    <a href="clonetemplate.html" class="govuk-button govuk-button--secondary govuk-!-margin-left-1"
                 data-module="govuk-button">
                 Clone template
             </a>
-            <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                 Export template
             </a>
-        </div>
-        <!-- <a href="templateversions.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+</div>
+<!-- <a href="templateversions.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Back
         </a>-->
-        <p class="govuk-body-s">
-            <strong>Last updated:</strong> 19 May 2020 9:14am by Nathan Townsend
+<p class="govuk-body-s">
+    <strong>Last updated:</strong> 19 May 2020 9:14am by Nathan Townsend
         </p>
-        <a href="templateversions.html" class="govuk-back-link">Back</a>
-    </div>
+<a href="templateversions.html" class="govuk-back-link">Back</a>
+</div>
 </div>
 
 </br>
@@ -189,28 +186,27 @@
 {% include "includes/edit-modal.html" %}
 
 <script>
-    // Full screen
+// Full screen
 
-    document.getElementById("openFullScreen").onclick = openFullscreen;
-    var elem = document.getElementById("fullScreen");
+document
+.getElementById("openFullScreen")
+.onclick = openFullscreen;
+var elem = document.getElementById("fullScreen");
 
-    function openFullscreen() {
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) {
-            /* Firefox */
-            elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) {
-            /* Chrome, Safari & Opera */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) {
-            /* IE/Edge */
-            elem.msRequestFullscreen();
-        }
-    }
+function openFullscreen() {
+if (elem.requestFullscreen) {
+elem.requestFullscreen();
+} else if (elem.mozRequestFullScreen) {
+/* Firefox */
+elem.mozRequestFullScreen();
+} else if (elem.webkitRequestFullscreen) {
+/* Chrome, Safari & Opera */
+elem.webkitRequestFullscreen();
+} else if (elem.msRequestFullscreen) {
+/* IE/Edge */
+elem.msRequestFullscreen();
+}
+}
 </script>
-
-
-
 
 {% endblock %}

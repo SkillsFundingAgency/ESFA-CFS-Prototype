@@ -1,65 +1,76 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-endblock %} {% block content %}
+{% extends "layout.html" %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html"
-            >Calculate funding</a
-          >
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          <a class="govuk-breadcrumbs__link" href="datasetRelationships"
-            >Map data source files</a
-          >
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          <a class="govuk-breadcrumbs__link" href="dataRelationshipsDSGSIT"
-            >Dedicated schools grant SIT</a
-          >
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          Change Dedicated schools grant SIT
-        </li>
-      </ol>
-    </div>
-    <h1 class="govuk-heading-xl">
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="manageData">
+        Manage data 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="datasetRelationships">
+        Map data source files 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="dataRelationshipsDSGSIT">
+        Dedicated schools grant SIT
+      </a>
+    </li>
+
+  </ol>
+  
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
       Dedicated schools grant SIT
       <span class="govuk-caption-l">Financial year 2020 - 2021</span>
-    </h1>
+      </h1>
+    </div>
   </div>
-</div>
 
-<div class="govuk-warning-text permissions-banner">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-warning-text__assistive">Warning</span>
+  <div class="govuk-warning-text permissions-banner">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
     You do not have permissions to map data source files
   </strong>
-</div>
+  </div>
 
-<div class="govuk-form-group">
-  <fieldset
+  <div class="govuk-form-group">
+    <fieldset
     class="govuk-fieldset"
     aria-describedby="how-contacted-conditional-hint"
   >
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h4 class="govuk-heading-s">Select data source file</h4>
-    </legend>
-    <span id="how-contacted-conditional-hint" class="govuk-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h4 class="govuk-heading-s">Select data source file</h4>
+      </legend>
+      <span id="how-contacted-conditional-hint" class="govuk-hint">
       Select one option.
     </span>
-    <div
+      <div
       class="govuk-radios govuk-radios--conditional"
       data-module="govuk-radios"
     >
-      <div class="govuk-radios__item">
-        <input
+        <div class="govuk-radios__item">
+          <input
           class="govuk-radios__input"
           id="how-contacted-conditional"
           name="how-contacted"
@@ -67,255 +78,255 @@ endblock %} {% block content %}
           value="email"
           data-aria-controls="conditional-how-contacted-conditional"
           disabled
-        />
-        <label
+/>
+          <label
           class="govuk-label govuk-radios__label"
           for="how-contacted-conditional"
         >
           APT Adjusted Factors Phase 1 QA
           <span class="govuk-hint">
-            <strong>Description:</strong> Lorem ipsum dolor sit amet,
+              <strong>Description:</strong> Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. Aliquam congue diam sit amet dui
             posuere
           </span>
-        </label>
-      </div>
+          </label>
+        </div>
 
-      <div
+        <div
         class="govuk-radios__conditional govuk-radios__conditional--hidden"
         id="conditional-how-contacted-conditional"
       >
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h4 class="govuk-heading-s">Select data source version</h4>
-            </legend>
-            <div class="govuk-radios govuk-radios--small">
-              <div class="govuk-radios__item">
-                <input
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h4 class="govuk-heading-s">Select data source version</h4>
+              </legend>
+              <div class="govuk-radios govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input
                   class="govuk-radios__input"
                   id="changed-name"
                   name="changed-name"
                   type="radio"
                   value="month"
                   
-                />
-                <label
+/>
+                  <label
                   class="govuk-label govuk-radios__label"
                   for="changed-name"
                 >
                   APT Adjusted Factors Phase 1 QA (version 10)
 
                   <div class="govuk-!-margin-top-1">
-                    <details
+                      <details
                       class="govuk-details  summary-margin-removal"
                       data-module="govuk-details"
                     >
-                      <summary class="govuk-details__summary ">
-                        <span class="govuk-details__summary-text">
+                        <summary class="govuk-details__summary ">
+                          <span class="govuk-details__summary-text">
                           Version details
                         </span>
-                      </summary>
-                      <div class="govuk-details__text summary-margin-removal">
-                        <p class="govuk-body-s">
-                          <strong>Version notes:</strong> New data
+                        </summary>
+                        <div class="govuk-details__text summary-margin-removal">
+                          <p class="govuk-body-s">
+                            <strong>Version notes:</strong> New data
                         </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated:</strong> 13th November 2019
+                          <p class="govuk-body-s">
+                            <strong>Last updated:</strong> 13th November 2019
                           10:54am
                         </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated by:</strong> Nathan Townsend
+                          <p class="govuk-body-s">
+                            <strong>Last updated by:</strong> Nathan Townsend
                         </p>
-                      </div>
-                    </details>
-                  </div>
-                </label>
-              </div>
+                        </div>
+                      </details>
+                    </div>
+                  </label>
+                </div>
 
-              <div class="govuk-radios__item">
-                <input
+                <div class="govuk-radios__item">
+                  <input
                   class="govuk-radios__input"
                   id="changed-name"
                   name="changed-name"
                   type="radio"
                   value="month"
-                />
-                <label
+/>
+                  <label
                   class="govuk-label govuk-radios__label"
                   for="changed-name"
                 >
                   APT Adjusted Factors Phase 1 QA (version 9)
                   <div class="govuk-!-margin-top-1">
-                    <details
+                      <details
                       class="govuk-details summary-margin-removal"
                       data-module="govuk-details"
                     >
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
                           Version details
                         </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <p class="govuk-body-s">
-                          <strong>Version notes:</strong> New data
+                        </summary>
+                        <div class="govuk-details__text">
+                          <p class="govuk-body-s">
+                            <strong>Version notes:</strong> New data
                         </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated:</strong> 13th November 2019
+                          <p class="govuk-body-s">
+                            <strong>Last updated:</strong> 13th November 2019
                           10:54am
                         </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated by:</strong> Nathan Townsend
+                          <p class="govuk-body-s">
+                            <strong>Last updated by:</strong> Nathan Townsend
                         </p>
-                      </div>
-                    </details>
-                  </div>
-                </label>
-              </div>
+                        </div>
+                      </details>
+                    </div>
+                  </label>
+                </div>
 
-              <div class="govuk-radios__item">
-                <input
+                <div class="govuk-radios__item">
+                  <input
                   class="govuk-radios__input"
                   id="changed-name"
                   name="changed-name"
                   type="radio"
                   value="month"
-                />
-                <label
+/>
+                  <label
                   class="govuk-label govuk-radios__label"
                   for="changed-name"
                 >
                   APT Adjusted Factors Phase 1 QA (version 8)
                   <div class="govuk-!-margin-top-1">
-                    <details
+                      <details
                       class="govuk-details summary-margin-removal"
                       data-module="govuk-details"
                     >
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
                           Version details
                         </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <p class="govuk-body-s">
-                          <strong>Version notes:</strong> New data
+                        </summary>
+                        <div class="govuk-details__text">
+                          <p class="govuk-body-s">
+                            <strong>Version notes:</strong> New data
                         </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated:</strong> 13th November 2019
+                          <p class="govuk-body-s">
+                            <strong>Last updated:</strong> 13th November 2019
                           10:54am
                         </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated by:</strong> Nathan Townsend
+                          <p class="govuk-body-s">
+                            <strong>Last updated by:</strong> Nathan Townsend
                         </p>
-                      </div>
-                    </details>
-                  </div>
-                </label>
-              </div>
+                        </div>
+                      </details>
+                    </div>
+                  </label>
+                </div>
 
-              <div class="govuk-radios__item">
-                <input
+                <div class="govuk-radios__item">
+                  <input
                   class="govuk-radios__input"
                   id="changed-name-2"
                   name="changed-name"
                   type="radio"
                   value="year"
-                />
-                <label
+/>
+                  <label
                   class="govuk-label govuk-radios__label"
                   for="changed-name-2"
                 >
                   APT Adjusted Factors Phase 1 QA (version 7)
                   <div class="govuk-!-margin-top-1">
-                    <details
+                      <details
                       class="govuk-details summary-margin-removal"
                       data-module="govuk-details"
                     >
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
                           Version details
                         </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <p class="govuk-body-s">
-                          <strong>Version notes:</strong> New data
+                        </summary>
+                        <div class="govuk-details__text">
+                          <p class="govuk-body-s">
+                            <strong>Version notes:</strong> New data
                         </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated:</strong> 13th November 2019
+                          <p class="govuk-body-s">
+                            <strong>Last updated:</strong> 13th November 2019
                           10:54am
                         </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated by:</strong> Nathan Townsend
+                          <p class="govuk-body-s">
+                            <strong>Last updated by:</strong> Nathan Townsend
                         </p>
-                      </div>
-                    </details>
-                  </div>
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input
+                        </div>
+                      </details>
+                    </div>
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input
                   class="govuk-radios__input"
                   id="changed-name-2"
                   name="changed-name"
                   type="radio"
                   value="year"
-                />
+/>
 
-                <label
+                  <label
                   class="govuk-label govuk-radios__label"
                   for="changed-name-2"
                 >
                   APT Adjusted Factors Phase 1 QA (version 6)
                   <div class="govuk-!-margin-top-1">
-                    <details
+                      <details
                       class="govuk-details summary-margin-removal"
                       data-module="govuk-details"
                     >
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
                           Version details
                         </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <p class="govuk-body-s">
-                          <strong>Version notes:</strong> New data
+                        </summary>
+                        <div class="govuk-details__text">
+                          <p class="govuk-body-s">
+                            <strong>Version notes:</strong> New data
                         </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated:</strong> 13th November 2019
+                          <p class="govuk-body-s">
+                            <strong>Last updated:</strong> 13th November 2019
                           10:54am
                         </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated by:</strong> Nathan Townsend
+                          <p class="govuk-body-s">
+                            <strong>Last updated by:</strong> Nathan Townsend
                         </p>
-                      </div>
-                    </details>
-                  </div>
-                </label>
+                        </div>
+                      </details>
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-          </fieldset>
-        </div>
-        <p class="govuk-body govuk-!-margin-top-5">
-          <a href="selectSourceDatasetexpanded.html" class="govuk-link"
+            </fieldset>
+          </div>
+          <p class="govuk-body govuk-!-margin-top-5">
+            <a href="selectSourceDatasetexpanded.html" class="govuk-link"
             >View 5 more versions</a
           >
-        </p>
+          </p>
+        </div>
       </div>
-    </div>
-  </fieldset>
-</div>
+    </fieldset>
+  </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-  <button disabled class="govuk-button" data-module="govuk-button">
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <button disabled class="govuk-button" data-module="govuk-button">
     Save
   </button>
-  <a
+    <a
     href="dataRelationshipsDSGSIT.html"
     class="govuk-button govuk-button--secondary"
     data-module="govuk-button"
   >
     Cancel
   </a>
-</div>
+  </div>
 
 {% endblock %}

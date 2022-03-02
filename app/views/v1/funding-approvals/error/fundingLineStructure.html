@@ -4,18 +4,28 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+<div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
+    <a class="govuk-breadcrumbs__link" href="specifications">
+        Specifications
+      </a>
     </li>
+
   </ol>
+  
 </div>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
   data-module="govuk-error-summary">
