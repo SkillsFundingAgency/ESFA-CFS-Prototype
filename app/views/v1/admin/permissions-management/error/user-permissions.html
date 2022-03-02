@@ -4,6 +4,14 @@
 Permissions management
 {% endblock %}
 
+{% block beforeContent %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="#" class="govuk-back-link" onclick="goBack()">Back</a>
+  </div>
+</div>
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
 
@@ -27,12 +35,7 @@ Permissions management
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <a href="#" class="govuk-back-link" onclick="document.getElementById('notSaved').style.display='block'">
-            Back</a>
-    </div>
-</div>
+
 
 
 <div class="govuk-grid-row govuk-!-margin-top-5">
