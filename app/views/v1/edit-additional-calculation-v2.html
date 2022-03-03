@@ -137,6 +137,17 @@ Return 0
 
         </textarea>
 
+    <div class="govuk-form-group">
+    <div class="right-align maths-icon govuk-!-margin-right-3">
+    <div class="tooltip">
+        <span class="tooltiptext">Full screen</span>
+        <a title="Full screen" href="#" id="openFullScreen" style="text-decoration: none;">
+            <span class="full screen govuk-!-margin-right-1" aria-hidden="true"><img
+                    src="/public/images/expand.png"></span>
+            <span class="hide-me">full screen</span>
+        </a></div>
+        </div>
+
                 <label class="govuk-label" for="ukprn">
                     UKPRN
                 </label>
@@ -235,6 +246,30 @@ Return 0
         var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
         document.getElementById('saveTime').innerHTML = 'Upated: ' + dateFormat + ' ' + time + ampm
         document.getElementById('lastSaved').innerHTML = 'Last saved ' + dateFormat + ' ' + time + ampm
+    }
+</script>
+
+{% include "includes/edit-modal.html" %}
+
+<script>
+    // Full screen
+
+    document.getElementById("openFullScreen").onclick = openFullscreen;
+    var elem = document.getElementById("fullScreen");
+
+    function openFullscreen() {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+            /* Firefox */
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+            /* Chrome, Safari & Opera */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+            /* IE/Edge */
+            elem.msRequestFullscreen();
+        }
     }
 </script>
 

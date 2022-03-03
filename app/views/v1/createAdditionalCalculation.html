@@ -6,20 +6,20 @@ GOV.UK Prototype Kit
 
 {% block beforeContent %}
 
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start">
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/start">
         Calculate funding
       </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="specifications">
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="specifications">
         Specifications
       </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a
         class="govuk-breadcrumbs__link"
           <a class="govuk-breadcrumbs__link" href="fundingLineStructure-chosen"
       >
@@ -54,25 +54,25 @@ GOV.UK Prototype Kit
               type="text" aria-label="Calculation name">
           </div>
           <p id="calculation-source-code-name" class="govuk-body">Source code name: <em>block1Percent</em></p>
-          <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
                   Why is my source code name different to my calculation name
                 </span>
-              </summary>
-              <div class="govuk-details__text">
-                  <p class="govuk-body">The source code name is how we save your calculation name. It must be unique. Special characters are removed or replaced with words:</p>
-                  <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-                  <li>&lt; is replaced with 'LessThan'</li>
-                  <li>&gt; is replaced with 'GreaterThan'</li>
-                  <li>&percnt; is replaced with 'Percent'</li>
-                  <li>&pound; is replaced with 'Pound'</li>
-                  <li>&equals; is replaced with 'Equals'</li>
-                  <li>&plus; is replaced with 'Plus'</li>
-                  </ul>
-                  <p class="govuk-body">We remove all other special characters. This may mean your calculation name is not unique. If this happens, we will ask you to change the calculation name.</p
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">The source code name is how we save your calculation name. It must be unique. Special characters are removed or replaced with words:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+              <li>&lt; is replaced with 'LessThan'</li>
+              <li>&gt; is replaced with 'GreaterThan'</li>
+              <li>&percnt; is replaced with 'Percent'</li>
+              <li>&pound; is replaced with 'Pound'</li>
+              <li>&equals; is replaced with 'Equals'</li>
+              <li>&plus; is replaced with 'Plus'</li>
+            </ul>
+            <p class="govuk-body">We remove all other special characters. This may mean your calculation name is not unique. If this happens, we will ask you to change the calculation name.</p
               </div>
-            </details>
+          </details>
 
           <div class="govuk-form-group govuk-!-margin-top-5">
             <label class="govuk-label" for="sort">
@@ -88,11 +88,13 @@ GOV.UK Prototype Kit
 
           <div class="govuk-form-group govuk-!-margin-top-5">
             <label class="govuk-label" for="more-detail">
-              Calculation script
+              Calculation script 
             </label>
             <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
               aria-label="Calculation script">Return 0</textarea>
           </div>
+
+          {% include "includes/full-screen.html" %}
 
           <div class="govuk-grid-row govuk-!-margin-top-5">
             <div class="govuk-grid-column-two-thirds">
@@ -104,7 +106,7 @@ GOV.UK Prototype Kit
               </h2>
               <input class="govuk-input govuk-input--width-10 govuk-!-margin-bottom-5" id="width-5" name="width-5" type="text"
                 aria-label="enter-UKPRN">
-                <br>
+              <br>
               <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button"
                 data-module="govuk-button">
                 Build calculation
@@ -115,8 +117,10 @@ GOV.UK Prototype Kit
           <div class="govuk-inset-text" id="buildResult" style="display: none;">
             <h3 class="govuk-heading-s">Build output</h3>
             <p class="govuk-body">Code compiled successfully </p>
-            <p class="govuk-body">Provider: <strong>Paddington Academy </strong></p>
-            <p class="govuk-body">Provider results: <strong>3.5%</strong> </p>
+            <p class="govuk-body">Provider: <strong>Paddington Academy </strong>
+            </p>
+            <p class="govuk-body">Provider results: <strong>3.5%</strong>
+            </p>
 
           </div>
 
@@ -132,65 +136,74 @@ GOV.UK Prototype Kit
               </a>
             </div>
           </div>
-      </fieldset>
-    </form>
+        </fieldset>
+      </form>
+    </div>
   </div>
-</div>
 
-<script>
-  function buildOuput() {
-    document.getElementById('buildResult').style.display = "block"
-  }
-
-  function createCalc(dt) {
-    var Timeoptions = {
-      hour: '2-digit',
-      minute: '2-digit'
-    };
-    var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
-    var ampm = time >= 12 ? 'pm' : 'am';
-    var date = new Date()
-    var dateOptions = {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    }
-    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
-
-
-    var valueType = document.getElementById('value-type').value
-    var calcName = document.getElementById('calculation-name').value
-
-    sessionStorage.setItem('calcCreated', 'true')
-    sessionStorage.setItem('calcName', calcName)
-    sessionStorage.setItem('valueType', valueType)
-    sessionStorage.setItem('status', 'Draft')
-    sessionStorage.setItem('date', dateFormat + ' ' + time + ampm)
-  }
-</script>
-
-<script type="application/json" id="my-form-validation">
-  {
-    "additionalCalc-name": {
-      "presence": {
-        "message": "^Enter an additional calculation name"
-      }
-    },
-
-    "value-type": {
-      "presence": {
-        "message": "^Select a value type"
-      }
-    },
-
-    "more-detail": {
-      "presence": {
-        "message": "^Enter calculation script"
-      }
+  <script>
+    function buildOuput() {
+      document
+        .getElementById('buildResult')
+        .style
+        .display = "block"
     }
 
-  }
-</script>
+    function createCalc(dt) {
+      var Timeoptions = {
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+      var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
+      var ampm = time >= 12
+        ? 'pm'
+        : 'am';
+      var date = new Date()
+      var dateOptions = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }
+      var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
 
+      var valueType = document
+        .getElementById('value-type')
+        .value
+      var calcName = document
+        .getElementById('calculation-name')
+        .value
+
+        sessionStorage
+        .setItem('calcCreated', 'true')
+      sessionStorage.setItem('calcName', calcName)
+      sessionStorage.setItem('valueType', valueType)
+      sessionStorage.setItem('status', 'Draft')
+      sessionStorage.setItem('date', dateFormat + ' ' + time + ampm)
+    }
+  </script>
+
+  <script type="application/json" id="my-form-validation">
+    {
+      "additionalCalc-name": {
+        "presence": {
+          "message": "^Enter an additional calculation name"
+        }
+      },
+
+      "value-type": {
+        "presence": {
+          "message": "^Select a value type"
+        }
+      },
+
+      "more-detail": {
+        "presence": {
+          "message": "^Enter calculation script"
+        }
+      }
+
+    }
+  </script>
+  
 
 {% endblock %}
