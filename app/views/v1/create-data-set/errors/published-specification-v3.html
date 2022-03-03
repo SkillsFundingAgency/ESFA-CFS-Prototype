@@ -4,36 +4,48 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../specifications.html">Specifications</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../fundingLineStructure-gag.html">General annual grant</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../create-data-set.html">Data set type</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="choose-funding-stream.html">Funding stream and
-                        period</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="dataset-details.html">Data set details</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">Select funding lines and calculations</li>
-            </ol>
-        </div>
-    </div>
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/start">
+            Calculate funding
+          </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="../specifications">
+            Specifications
+          </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="../fundingLineStructure-gag">
+            General annual grant
+          </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="../create-data-set">
+            Data set type
+          </a>
+        </li>
+           <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="choose-funding-stream">
+            Funding stream and period
+          </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="dataset-details">
+            Data set details
+          </a>
+        </li>
+
+      </ol>
+  
 </div>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
     <h2 class="govuk-error-summary__title" id="error-summary-title">
