@@ -4,23 +4,33 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+<div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
+    <a class="govuk-breadcrumbs__link" href="manageData">
+        Manage data
+      </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="manageDatasets.html">Manage data source files</a>
+    <a class="govuk-breadcrumbs__link" href="manageDatasets">
+        Manage data source files 
+      </a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">1920 Factors version history</li>
+    
   </ol>
+  
 </div>
 
+{% endblock %}
+
+{% block content %}
 
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">

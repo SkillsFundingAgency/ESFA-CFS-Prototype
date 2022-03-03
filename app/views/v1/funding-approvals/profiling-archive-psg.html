@@ -4,29 +4,33 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="funding-results.html">Funding approval results</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="provider-funding-overview.html">Provider funding
-                        overview</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Previous payment profiles
-                </li>
-            </ol>
-        </div>
-    </div>
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="funding-results">
+        Funding approval results
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="provider-funding-overview">
+        Provider funding overview
+      </a>
+    </li>
+
+  </ol>
+  
 </div>
+
+{% endblock %}
+
+{% block content %}
 
 <h1 class="govuk-heading-xl">Previous payment profiles</h1>
 

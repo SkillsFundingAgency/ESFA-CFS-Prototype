@@ -4,9 +4,23 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a href="editTemplateCalculation-error" class="govuk-back-link">
+    Back
+    </a>
+  
+</ol>
+</div>
+
+{% endblock %}
+
 {% block content %}
 
-<a href="editTemplateCalculation-error.html" class="govuk-back-link govuk-!-margin-bottom-8">Back</a>
+
 
 <h1 class="govuk-heading-xl" id="error-summary-title">
      Problems found with calculations

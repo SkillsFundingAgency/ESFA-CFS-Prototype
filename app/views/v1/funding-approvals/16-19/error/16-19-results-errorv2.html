@@ -4,27 +4,28 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/view-funding.html">Select
-                        specification</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Funding approval results
-                </li>
-            </ol>
-        </div>
-    </div>
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/view-funding">
+        Select specification 
+      </a>
+    </li>
+
+  </ol>
+  
 </div>
 
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
     data-module="govuk-error-summary">
@@ -44,7 +45,7 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-xl">Specification</span>
+        <span class="govuk-caption-l">Specification</span>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{ data['spec-name']}}</h1>
         <span class="govuk-caption-m">Funding period</span>
         <h1 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020</h1>

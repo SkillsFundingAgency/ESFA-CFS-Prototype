@@ -4,33 +4,37 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="manageData.html">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="manageDatasets">Manage data source files</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Load new data source file</li>
-      </ol>
-    </div>
-  </div>
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manageData">
+        Manage data
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manageDatasets">
+       Manage data source files 
+      </a>
+    </li>
+  </ol>
 </div>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Upload new data source</h1>
-    <span class="govuk-caption-xl govuk-!-margin-bottom-5">Load a new data source file to create a data set to use in
+    <span class="govuk-caption-l govuk-!-margin-bottom-5">Load a new data source file to create a data set to use in
       calculations</span>
     <form action="/v1/datasets/manageDatasets" method="post" class="form" id="uploadDataset" novalidate
       data-validate='upload-data-source'>

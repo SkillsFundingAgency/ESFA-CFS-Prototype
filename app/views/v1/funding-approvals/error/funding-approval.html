@@ -4,28 +4,36 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="view-funding">
+        Select specification
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="funding-resultsv2">
+        Funding approval results
+      </a>
+    </li>
+
+  </ol>
+  
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row  govuk-!-margin-bottom-3">
   <div class="govuk-grid-column-three-quarters">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="view-funding.html">Select specification</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="funding-resultsv2.html">Funding approval results</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          Confirm approval
-        </li>
-      </ol>
-    </div>
-
-
     <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
       data-module="govuk-error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">
@@ -45,7 +53,7 @@ GOV.UK Prototype Kit
 </div>
 
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm funding approval</h1>
-<span class="govuk-caption-xl govuk-!-margin-bottom-8">Check the information below carefully before approving the
+<span class="govuk-caption-l govuk-!-margin-bottom-8">Check the information below carefully before approving the
   funding
 </span>
 

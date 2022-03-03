@@ -4,28 +4,41 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/start.html">
+      Calculate funding
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="../view-funding.html">
+      Select specification
+    </a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a
+      class="govuk-breadcrumbs__link"
+      href="upload-batch-approve-release.html"
+    >
+      Upload batch file
+    </a>
+  </li>
+
+</ol>
+
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row  govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="../view-funding.html">Select specification</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="upload-batch-approve-release.html">Upload batch file</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          Confirm release
-        </li>
-      </ol>
-    </div>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm release funding</h1>
-    <span class="govuk-caption-xl govuk-!-margin-bottom-5">Check the information below carefully before releasing the
+    <span class="govuk-caption-l govuk-!-margin-bottom-5">Check the information below carefully before releasing the
       funding
     </span>
   </div>
