@@ -1,92 +1,93 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-    endblock %} {% block content %}
+{% extends "layout.html" %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link"
-                        href="../templatebuilder/templatelisting-basic.html">Templates</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Create a new template
-                </li>
-            </ol>
-        </div>
-    </div>
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting-basic.html">
+        Templates
+      </a>
+    </li>
+
+  </ol>
+  
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
             data-module="govuk-error-summary">
-            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
                 There is a problem
             </h2>
-            <div class="govuk-error-summary__body">
-                <ul class="govuk-list govuk-error-summary__list">
-                    <li>
-                        <a href="">You must select a funding stream to continue</a>
-                    </li>
-                    <li>
-                        <a href="">You must select a funding period to continue</a>
-                    </li>
+                <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+                        <li>
+                            <a href="">You must select a funding stream to continue</a>
+                        </li>
+                        <li>
+                            <a href="">You must select a funding period to continue</a>
+                        </li>
 
-                </ul>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Create a new template</h1>
-<span class="govuk-caption-xl govuk-!-margin-bottom-7">Build a new funding policy template</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Create a new template</h1>
+    <span class="govuk-caption-l govuk-!-margin-bottom-7">Build a new funding policy template</span>
 
+    <div class="govuk-form-group govuk-form-group--error">
 
-
-
-
-
-<div class="govuk-form-group govuk-form-group--error">
-
-    <label class="govuk-label" for="sort">
+        <label class="govuk-label" for="sort">
         Select a funding stream
     </label>
-    <span id="event-name-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> You must select a funding stream to continue
+        <span id="event-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> You must select a funding stream to continue
     </span>
-    <select class="govuk-select" id="sort" name="sort">
-        <option value="draft">General annual grant</option>
-        <option value="draft">Dedicated schools grant</option>
-        <option value="draft">PE and sport premium grant</option>
-    </select>
-</div>
+        <select class="govuk-select" id="sort" name="sort">
+            <option value="draft">General annual grant</option>
+            <option value="draft">Dedicated schools grant</option>
+            <option value="draft">PE and sport premium grant</option>
+        </select>
+    </div>
 
-<div class="govuk-form-group govuk-form-group--error">
-    <label class="govuk-label" for="sort">
+    <div class="govuk-form-group govuk-form-group--error">
+        <label class="govuk-label" for="sort">
         Select a funding period
     </label>
-    <span id="event-name-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> You must select a funding period to continue
+        <span id="event-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> You must select a funding period to continue
     </span>
-    <select class="govuk-select" id="sort" name="sort">
-        <option value="draft">Academic year 2020 to 2021</option>
-        <option value="draft">Financial year 2020 to 2021</option>
-    </select>
-</div>
+        <select class="govuk-select" id="sort" name="sort">
+            <option value="draft">Academic year 2020 to 2021</option>
+            <option value="draft">Financial year 2020 to 2021</option>
+        </select>
+    </div>
 
+    <div class="govuk-form-group">
 
-<div class="govuk-form-group">
-
-    <label class="govuk-label" for="more-detail">
+        <label class="govuk-label" for="more-detail">
         Template description
     </label>
-    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
         aria-describedby="more-detail-hint"></textarea>
-</div>
+    </div>
 </fieldset>
 
 <div class="govuk-grid-row">
@@ -100,10 +101,5 @@
         </a>
     </div>
 </div>
-
-
-
-
-
 
 {% endblock %}

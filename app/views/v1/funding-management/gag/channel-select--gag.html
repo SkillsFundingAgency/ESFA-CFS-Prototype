@@ -4,31 +4,38 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/funding-management">
+        Funding management
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding.html">
+        Release management
+      </a>
+    </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/v1/funding-management">Funding management</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding.html">Release management</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/v1/funding-management/gag/gag-results.html">General Annual Grant results</a>
-      </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          Release purpose
-        </li>
-      </ol>
-    </div>
-  </div>
+      <a class="govuk-breadcrumbs__link" href="/v1/funding-management/gag/gag-results.html">
+        General Annual Grant results
+      </a>
+    </li>
+
+  </ol>
+  
 </div>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-4">
   <div class="govuk-grid-column-three-quarters">

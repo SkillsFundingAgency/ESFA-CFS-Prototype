@@ -1,26 +1,33 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-    endblock %}
+{% extends "layout.html" %}
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../manageData">
+        Manage data
+      </a>
+    </li>
+
+  </ol>
+</div>
+{% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-9">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="../manageData">Manage data</a>
-          </li>
-          <li class="govuk-breadcrumbs__list-item">
-              Refresh SQL
-            </li>
-      </ol>
+  <div class="govuk-grid-row  govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Refresh successful</h1>
     </div>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Refresh successful</h1>
   </div>
-</div>
 
 
   <div class="govuk-grid-row">
@@ -30,17 +37,13 @@
           <dt class="govuk-summary-list__key">
             Funding stream
           </dt>
-          <dd class="govuk-summary-list__value" id="fundingStreamSQL">
-            
-          </dd>
+          <dd class="govuk-summary-list__value" id="fundingStreamSQL"></dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Funding period
           </dt>
-          <dd class="govuk-summary-list__value" id="fundingPeriodSQL">
-            
-          </dd>
+          <dd class="govuk-summary-list__value" id="fundingPeriodSQL"></dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -70,15 +73,17 @@
     </div>
   </div>
 
-
   <script>
 
-window.onload = function () {
-  document.getElementById('fundingStreamSQL').innerHTML = sessionStorage.getItem('funding stream sql')
-  document.getElementById('fundingPeriodSQL').innerHTML = sessionStorage.getItem('funding period sql')
+    window.onload = function () {
+      document
+        .getElementById('fundingStreamSQL')
+        .innerHTML = sessionStorage.getItem('funding stream sql')
+      document
+        .getElementById('fundingPeriodSQL')
+        .innerHTML = sessionStorage.getItem('funding period sql')
 
-}
-
+    }
   </script>
 
-  {% endblock %}
+{% endblock %}

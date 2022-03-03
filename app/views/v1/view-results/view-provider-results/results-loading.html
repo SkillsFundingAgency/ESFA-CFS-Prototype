@@ -4,28 +4,37 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">
+        View results
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/v1/view-results/view-provider-results/provider-results">
+        View provider results
+      </a>
+    </li>
+    
+  </ol>
+  
+</div>
+
+{% endblock %}
+
+
 {% block content %}
 
 <div class="govuk-grid-row  govuk-!-margin-bottom-2">
     <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs ">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">View results</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link"
-                        href="/v1/view-results/view-provider-results/provider-results">View provider results</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item govuk-!-margin-bottom-7" aria-current="page">
-                    Conisborough college
-                </li>
-            </ol>
-        </div>
-
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Conisborough college</h1>
 
     </div>

@@ -4,46 +4,46 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../view-funding.html">Select specification</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="#"
-                        onclick="document.getElementById('results').style.display='block'">
-                        Funding approval results</a>
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="../view-funding">
+        Select specification
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#"
+    onclick="document.getElementById('results').style.display='block'">
+    Funding approval results
+      </a>
+    </li>
+      <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#"
+      onclick="document.getElementById('overview').style.display='block'">
+      Barnet London Borough Council
+      </a>
+    </li>
+      <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#"
+      onclick="document.getElementById('fundingConfirmation').style.display='block'">
+       Funding line profile name
+      </a>
+    </li>
 
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-
-                    <a class="govuk-breadcrumbs__link" href="#"
-                        onclick="document.getElementById('overview').style.display='block'">
-                        Barnet London
-                        Borough Council</a>
-                </li>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-
-                    <a class="govuk-breadcrumbs__link" href="#"
-                        onclick="document.getElementById('fundingConfirmation').style.display='block'">
-                        Funding line profile
-                        name</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Edit profile
-                </li>
-            </ol>
-        </div>
-    </div>
+  </ol>
+  
 </div>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-two-thirds">

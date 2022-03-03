@@ -1,83 +1,80 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-  endblock %}
+{% extends "layout.html" %}
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../manageData">
+        Manage data
+      </a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-        <ol class="govuk-breadcrumbs__list">
-          <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-          </li>
-          <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="../manageData">Manage data</a>
-          </li>
-          <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="refresh-sql-v2">Funding stream, period and specification</a>
-          </li>
-          <li class="govuk-breadcrumbs__list-item">
-            Available SQL data
-          </li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  
-<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
+  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
     There is a problem
   </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#latestCalcResult">Error message</a>
-      </li>
-    </ul>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#latestCalcResult">Error message</a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 
-
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
           Available SQL data for Specification 1 (Chosen for funding)
         </h1>
+    </div>
   </div>
-</div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-4">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
       <form action="/v1/datasets/sql/loading-spinner-full">
         <div class="govuk-form-group govuk-form-group--error">
           <h2 class="govuk-heading-l">Latest calculation results</h2>
           <p class="govuk-body">Short explanation about what the data contains.</p>
           <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
                       Latest calculation results additional details
                   </span>
-              </summary>
-              <div class="govuk-details__text">
-                  <dl class="govuk-summary-list govuk-summary-list--no-border">
-                      <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
+            </summary>
+            <div class="govuk-details__text">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
                               Last SQL refresh
                           </dt>
-                          <dd class="govuk-summary-list__value">
+                  <dd class="govuk-summary-list__value">
                               8 October 2020 10:13am
                           </dd>
-                      </div>
-                      <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
                               Last funding data change
                           </dt>
-                          <dd class="govuk-summary-list__value">
+                  <dd class="govuk-summary-list__value">
                               11 October 2020 10:00am
                           </dd>
-                      </div>
-                  </dl>
-              </div>
+                </div>
+              </dl>
+            </div>
           </details>
           <span id="national-insurance-number-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> Error message
@@ -85,79 +82,79 @@
           <button class="govuk-button govuk-button--secondary" id="latestCalcResult" data-module="govuk-button">
               Refresh SQL data
           </button>
-      </form>
-  </div>
-</div>
+        </form>
+      </div>
+    </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-4">
-  <div class="govuk-grid-column-two-thirds">
-      <form action="/v1/datasets/sql/loading-spinner-full">
+    <div class="govuk-grid-row govuk-!-margin-bottom-4">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/v1/datasets/sql/loading-spinner-full">
           <h2 class="govuk-heading-l">Current state allocation results</h2>
           <p class="govuk-body">Short explanation about what the data contains.</p>
           <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
                       Current state allocation results additional details
                   </span>
-              </summary>
-              <div class="govuk-details__text">
-                  <dl class="govuk-summary-list govuk-summary-list--no-border">
-                      <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
+            </summary>
+            <div class="govuk-details__text">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
                               Last funding data change
                           </dt>
-                          <dd class="govuk-summary-list__value">
+                  <dd class="govuk-summary-list__value">
                               11 October 2020 10:00am
                           </dd>
-                      </div>
-                  </dl>
-              </div>
+                </div>
+              </dl>
+            </div>
           </details>
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
               Create SQL data
           </button>
-      </form>
-  </div>
-</div>
+        </form>
+      </div>
+    </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-4">
-  <div class="govuk-grid-column-two-thirds">
-      <form action="/v1/datasets/sql/loading-spinner-full">
+    <div class="govuk-grid-row govuk-!-margin-bottom-4">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/v1/datasets/sql/loading-spinner-full">
           <h2 class="govuk-heading-l">Latest released state allocation results</h2>
           <div class="govuk-inset-text">
               SQL data up to date
           </div>
           <p class="govuk-body">Short explanation about what the data contains.</p>
           <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
                       Latest released state allocation results additional details
                   </span>
-              </summary>
-              <div class="govuk-details__text">
-                  <dl class="govuk-summary-list govuk-summary-list--no-border">
-                      <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
+            </summary>
+            <div class="govuk-details__text">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
                               Last SQL update
                           </dt>
-                          <dd class="govuk-summary-list__value">
+                  <dd class="govuk-summary-list__value">
                               11 October 2020 10:13am
                           </dd>
-                      </div>
-                      <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
                               Last funding data change
                           </dt>
-                          <dd class="govuk-summary-list__value">
+                  <dd class="govuk-summary-list__value">
                               11 October 2020 10:00am
                           </dd>
-                      </div>
-                  </dl>
-              </div>
+                </div>
+              </dl>
+            </div>
           </details>
 
-      </form>
-  </div>
-</div>
+        </form>
+      </div>
+    </div>
 
-{% endblock %}
+  {% endblock %}

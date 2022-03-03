@@ -1,145 +1,170 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-    endblock %}
+{% extends "layout.html" %}
+
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../manageData">
+        Manage data
+      </a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-9">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="../manageData">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          Refresh SQL
-        </li>
-      </ol>
+  <div class="govuk-grid-row  govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Refresh SQL</h1>
+      <span class="govuk-caption-l">Refresh SQL funding</span>
     </div>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Refresh SQL</h1>
-    <span class="govuk-caption-xl">Refresh SQL funding</span>
   </div>
-</div>
 
-<form action="/v1/datasets/sql/loading-spinner-full" method="post" name="refreshSQL" onsubmit="return validateForm()"
+  <form action="/v1/datasets/sql/loading-spinner-full" method="post" name="refreshSQL" onsubmit="return validateForm()"
   class="form">
-  <fieldset class="govuk-fieldset">
+    <fieldset class="govuk-fieldset">
 
-    <div class="govuk-form-group" id="refresh-sql-error-funding-stream">
-      <label class="govuk-label" for="sort">
+      <div class="govuk-form-group" id="refresh-sql-error-funding-stream">
+        <label class="govuk-label" for="sort">
         Funding stream
       </label>
-      <span id="funding-stream-error" class="govuk-error-message hideError">
-        <span class="govuk-visually-hidden">Error:</span> Select funding stream
+        <span id="funding-stream-error" class="govuk-error-message hideError">
+          <span class="govuk-visually-hidden">Error:</span> Select funding stream
       </span>
-      <select class="govuk-select" id="fundingStream" name="funding-stream">
-        <option></option>
-        <option value="16-19/16-19-results">16 to 19</option>
-        <option value="14-16/14-16-results">14 to 16</option>
-        <option value="gag/gag-results">General Annual Grant</option>
-        <option value="pna/pna-results">Academy Pupil Number Adjustment</option>
-      </select>
-    </div>
+        <select class="govuk-select" id="fundingStream" name="funding-stream">
+          <option></option>
+          <option value="16-19/16-19-results">16 to 19</option>
+          <option value="14-16/14-16-results">14 to 16</option>
+          <option value="gag/gag-results">General Annual Grant</option>
+          <option value="pna/pna-results">Academy Pupil Number Adjustment</option>
+        </select>
+      </div>
 
-    <div class="govuk-form-group" id="refresh-sql-error-funding-period">
-      <label class="govuk-label" for="sort">
+      <div class="govuk-form-group" id="refresh-sql-error-funding-period">
+        <label class="govuk-label" for="sort">
         Funding period
       </label>
-      <span id="funding-period-error" class="govuk-error-message hideError">
-        <span class="govuk-visually-hidden">Error:</span> Select funding period
+        <span id="funding-period-error" class="govuk-error-message hideError">
+          <span class="govuk-visually-hidden">Error:</span> Select funding period
       </span>
-      <select class="govuk-select" id="fundingPeriod" name="fundingPeriod" onchange="getFundingStream()">
-        <option></option>
-        <option value="2019 to 2020">2019 to 2020</option>
-        <option value="2020 to 2021">2020 to 2021</option>
-        <option value="Academies and Schools Academic Year 2019 to 2020">Academies and Schools Academic Year 2019 to
+        <select class="govuk-select" id="fundingPeriod" name="fundingPeriod" onchange="getFundingStream()">
+          <option></option>
+          <option value="2019 to 2020">2019 to 2020</option>
+          <option value="2020 to 2021">2020 to 2021</option>
+          <option value="Academies and Schools Academic Year 2019 to 2020">Academies and Schools Academic Year 2019 to
           2020
         </option>
-        <option value="Academic year 2019 to 2020">Academic year 2019 to 2020</option>
-      </select>
-    </div>
+          <option value="Academic year 2019 to 2020">Academic year 2019 to 2020</option>
+        </select>
+      </div>
 
-    <div id="specificationDetails" class="govuk-visually-hidden">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+      <div id="specificationDetails" class="govuk-visually-hidden">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
 
-          <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                 Specification
               </dt>
-              <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__value">
                 Specification name
               </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                 Last SQL update
               </dt>
-              <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__value">
                 8 October 2020 10:13am
               </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                 Last funding data change
               </dt>
-              <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__value">
                 11 October 2020 10:00am
               </dd>
-            </div>
-          </dl>
+              </div>
+            </dl>
+          </div>
         </div>
-      </div>
-      <button data-prevent-double-click id="viewFundingLink" class="govuk-button" data-module="govuk-button">
+        <button data-prevent-double-click id="viewFundingLink" class="govuk-button" data-module="govuk-button">
         Push data
       </button>
-    </div>
+      </div>
 
+    </fieldset>
+  </form>
 
+  <script>
 
-  </fieldset>
-</form>
-
-<script>
-
-  function getFundingStream() {
-    document.getElementById('specificationDetails').classList.remove("govuk-visually-hidden");
-    var fundingStream = document.getElementById("fundingStream");
-    var fundingStreamText = fundingStream.options[fundingStream.selectedIndex].text;
-    var fundingPeriod = document.getElementById("fundingPeriod").value;
-    console.log(fundingPeriod)
-    console.log(fundingStreamText)
-    sessionStorage.setItem("funding stream sql", fundingStreamText)
-    sessionStorage.setItem("funding period sql", fundingPeriod)
-  }
-
-  function validateForm() {
-    var fundingStreamValidate = document.forms["refreshSQL"]["funding-stream"].value
-    var fundingPeriodValidate = document.forms["refreshSQL"]["fundingPeriod"].value
-    error = ""
-
-    if (fundingStreamValidate == "") {
-      document.getElementById('refresh-sql-error-funding-stream').classList.add("govuk-form-group--error");
-      document.getElementById('funding-stream-error').classList.remove("hideError")
-      error = "true"
-    };
-
-    if (fundingPeriodValidate == "") {
-      document.getElementById('refresh-sql-error-funding-period').classList.add("govuk-form-group--error");
-      document.getElementById('funding-period-error').classList.remove("hideError")
-      error = "true"
-      return false
+    function getFundingStream() {
+      document
+        .getElementById('specificationDetails')
+        .classList
+        .remove("govuk-visually-hidden");
+      var fundingStream = document.getElementById("fundingStream");
+      var fundingStreamText = fundingStream
+        .options[fundingStream.selectedIndex]
+        .text;
+      var fundingPeriod = document
+        .getElementById("fundingPeriod")
+        .value;
+      console.log(fundingPeriod)
+      console.log(fundingStreamText)
+      sessionStorage.setItem("funding stream sql", fundingStreamText)
+      sessionStorage.setItem("funding period sql", fundingPeriod)
     }
 
-    else {
-      return true
+    function validateForm() {
+      var fundingStreamValidate = document
+        .forms["refreshSQL"]["funding-stream"]
+        .value
+      var fundingPeriodValidate = document
+        .forms["refreshSQL"]["fundingPeriod"]
+        .value
+      error = ""
+
+      if (fundingStreamValidate == "") {
+        document
+          .getElementById('refresh-sql-error-funding-stream')
+          .classList
+          .add("govuk-form-group--error");
+        document
+          .getElementById('funding-stream-error')
+          .classList
+          .remove("hideError")
+        error = "true"
+      };
+
+      if (fundingPeriodValidate == "") {
+        document
+          .getElementById('refresh-sql-error-funding-period')
+          .classList
+          .add("govuk-form-group--error");
+        document
+          .getElementById('funding-period-error')
+          .classList
+          .remove("hideError")
+        error = "true"
+        return false
+      } else {
+        return true
+      }
+
     }
-
-  }
-
-</script>
+  </script>
 
 {% endblock %}
