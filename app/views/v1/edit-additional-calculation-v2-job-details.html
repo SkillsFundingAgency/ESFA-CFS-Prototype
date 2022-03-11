@@ -149,7 +149,11 @@ GOV.UK Prototype Kit
                     aria-label="calculation script">
 Return 0
 
-        </textarea>
+                </textarea>
+
+            <div class="right-align maths-icon govuk-!-margin-top-4">
+            {% include "includes/full-screen.html" %}
+           </div>
 
                 <label class="govuk-label" for="ukprn">
                     UKPRN
@@ -250,6 +254,4 @@ Return 0
         document.getElementById('saveTime').innerHTML = 'Upated: ' + dateFormat + ' ' + time + ampm
         document.getElementById('lastSaved').innerHTML = 'Last saved ' + dateFormat + ' ' + time + ampm
     }
-</script>
-
-{% endblock %}
+</script> {% endblock %}
