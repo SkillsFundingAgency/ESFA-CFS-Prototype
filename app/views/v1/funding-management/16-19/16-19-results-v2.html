@@ -35,6 +35,19 @@ GOV.UK Prototype Kit
 {% set funding_stream = "16 to 19" %}
 {% set funding_year = "2019 to 2020" %}
 
+<div class="govuk-error-summary govuk-visually-hidden" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#fundingApprovalsProviders">There are no selected providers to release</a>
+        </li>
+      </ul>
+    </div>
+</div>
+
 <div class="govuk-grid-row govuk-!-margin-bottom-9 ">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Mainstream 2021 to 2022</h1>
@@ -1222,7 +1235,7 @@ GOV.UK Prototype Kit
                         data-module="govuk-button">
                         Approve funding
                     </a> -->
-                    <a href="channel-select--16-19.html" class="govuk-button" data-module="govuk-button">
+                    <a href="channel-select--16-19.html" class="govuk-button approve-release-funding-btn-jq" data-module="govuk-button">
                         Release funding
                     </a>
                 </div>
