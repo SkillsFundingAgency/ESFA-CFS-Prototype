@@ -382,3 +382,27 @@ if (urlParams.has('showDataLoadNotification')) {
   },5000);
 }
 
+// Release Management - Show an error message when the user has not selected any providers to release
+$('.approve-release-funding-btn-jq').on("click", function(e) {
+
+  // Declare variables
+  var table, tr, inputsNotSelected;
+  table = document.getElementById("fundingApprovalsProviders");
+  tr = table.getElementsByTagName("tr");
+  numberOfInputsInTable = $("#fundingApprovalsProviders tr input:checkbox");
+  inputsNotSelected = $("#fundingApprovalsProviders tr input:checkbox:not(:checked)");
+  
+  for (i = 0; i < tr.length; i++) {
+    if (inputsNotSelected.length == numberOfInputsInTable.length) {
+      e.preventDefault();
+      
+      // Show error summary box
+      $(".govuk-error-summary").removeClass("govuk-visually-hidden");
+
+      // Scroll user to the error summary box
+      $(window).scrollTop(0);
+    }
+  } //end for loop
+});
+// END Release Management - Show an error message when the user has not selected any providers to release
+
