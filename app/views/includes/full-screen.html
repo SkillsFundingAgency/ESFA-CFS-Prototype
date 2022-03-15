@@ -1,33 +1,33 @@
-          <div class="right-align maths-icon govuk-!-margin-right-3">
-    <div class="tooltip">
-        <span class="tooltiptext">Full screen</span>
-        <a title="Full screen" href="#" id="openFullScreen" style="text-decoration: none;">
-            <span class="full screen govuk-!-margin-right-1" aria-hidden="true"><img
-                    src="/public/images/expand.png"></span>
-            <span class="hide-me">full screen</span>
-        </a></div>
-        </div>
+<div id="openFullScreen" style="display:inline; white-space:nowrap;">
+    <ul class="govuk-list inline-block-list">
+        <span class="govuk-grid-column-one-third govuk-!-padding-left-0" aria-hidden="true">
+            <a href="#" id="openFullScreen" style="display:inline; white-space:nowrap;"></span>Enter the script in full screen</a>
+    </span>
+</ul>
+</div>
 
 {% include "includes/edit-modal.html" %}
 
 <script>
-    // Full screen
+// Full screen
 
-    document.getElementById("openFullScreen").onclick = openFullscreen;
-    var elem = document.getElementById("fullScreen");
+document
+    .getElementById("openFullScreen")
+    .onclick = openFullscreen;
+var elem = document.getElementById("fullScreen");
 
-    function openFullscreen() {
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) {
-            /* Firefox */
-            elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) {
-            /* Chrome, Safari & Opera */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) {
-            /* IE/Edge */
-            elem.msRequestFullscreen();
-        }
+function openFullscreen() {
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+        /* Firefox */
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+        /* Chrome, Safari & Opera */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        /* IE/Edge */
+        elem.msRequestFullscreen();
     }
+}
 </script>

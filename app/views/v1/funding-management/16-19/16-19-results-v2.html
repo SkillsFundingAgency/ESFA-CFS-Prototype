@@ -60,6 +60,7 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third position-sticky">
+    
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset" aria-describedby="search-conditional-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
@@ -411,7 +412,7 @@ GOV.UK Prototype Kit
                             <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
                                 January 2022 <span>(10)</span>
                             </label>
-                        </div>
+                        </div>   
                     </div>
                 </div>
             </fieldset>
@@ -583,6 +584,8 @@ GOV.UK Prototype Kit
             Clear filters
         </button>
     </div>
+
+
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
@@ -1429,5 +1432,10 @@ GOV.UK Prototype Kit
 
 </script>
 
+<style>
+    .filterbyCheckbox {
+	max-height: none;
+    }
+</style>
 
 {% endblock %}
