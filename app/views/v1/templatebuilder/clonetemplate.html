@@ -64,14 +64,29 @@
         <a href="" class="govuk-button govuk-button--primary button-createSpecification" data-module="govuk-button">
             Clone template
         </a>
-        <a class="govuk-link" href="edittemplate">
+        <a class="govuk-link" href="#" onclick="document.getElementById('notSaved').style.display='block'">
             Cancel
         </a>
 </div>
 
-
-
-
-
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+    <div class="govuk-modal-dialogue__wrapper">
+        <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
+            aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
+         {% include "includes/modal-dialogue-header" %}
+            <div class="govuk-modal-dialogue__content">
+                <p class="govuk-body">Are you sure you want to leave without saving your changes?</p>
+                <a class="govuk-button govuk-button--warning govuk-!-margin-right-1" href="edittemplate">
+                    Leave this page
+                </a>
+                <button type="button" onclick="document.getElementById('notSaved').style.display='none'"
+                    class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+                    data-module="govuk-button">Stay on this page
+                </button>
+            </div>
+        </dialog>
+    </div>
+    <div class="govuk-modal-dialogue__backdrop"></div>
+</div>
 
 {% endblock %}

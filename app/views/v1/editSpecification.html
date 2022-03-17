@@ -132,14 +132,14 @@ GOV.UK Prototype Kit
           </div>
         </fieldset>
 
-        <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+         <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
         Save and continue
-      </button>
-
-        <a href="fundingLineStructure-chosen.html" class="govuk-button govuk-button--secondary"
-        data-module="govuk-button">
-        Cancel
-      </a>
+        </button>
+        <a class="govuk-link" href="#"
+            onclick="document.getElementById('notSaved').style.display='block'">Cancel</a>
+        </div>
+        
       </form>
 
     </div>
@@ -156,5 +156,25 @@ GOV.UK Prototype Kit
 
     }
   </script>
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+    <div class="govuk-modal-dialogue__wrapper">
+        <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
+            aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
+         {% include "includes/modal-dialogue-header" %}
+            <div class="govuk-modal-dialogue__content">
+                <p class="govuk-body">Are you sure you want to leave without saving your changes?</p>
+                <a class="govuk-button govuk-button--warning govuk-!-margin-right-1" href="fundingLineStructure">
+                    Leave this page
+                </a>
+                <button type="button" onclick="document.getElementById('notSaved').style.display='none'"
+                    class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+                    data-module="govuk-button">Stay on this page
+                </button>
+            </div>
+        </dialog>
+    </div>
+    <div class="govuk-modal-dialogue__backdrop"></div>
+</div>
 
 {% endblock %}
