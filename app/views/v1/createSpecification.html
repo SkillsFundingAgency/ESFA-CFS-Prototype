@@ -145,11 +145,19 @@ GOV.UK Prototype Kit
           <textarea class="govuk-textarea" id="more-detail" name="spec-detail" rows="8"></textarea>
         </div>
   </fieldset>
-  <button class="govuk-button" data-module="govuk-button">Save and
+  <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+            Save and continue 
+        </button>
+        <a class="govuk-link" href="#" onclick="document.getElementById('notSaved').style.display='block'">
+            Cancel
+        </a>
+</div>
+  {# <button class="govuk-button" data-module="govuk-button">Save and
     continue</button>
   <a href="specifications" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Cancel
-  </a>
+  </a> #}
 </form>
 </div>
 </div>
@@ -188,5 +196,25 @@ GOV.UK Prototype Kit
 </script>
 
 <script src="/public/javascripts/form-validation/create-spec.js"></script>
+
+  <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+    <div class="govuk-modal-dialogue__wrapper">
+        <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
+            aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
+         {% include "includes/modal-dialogue-header" %}
+            <div class="govuk-modal-dialogue__content">
+                <p class="govuk-body">Are you sure you want to leave without saving your changes?</p>
+                <a class="govuk-button govuk-button--warning govuk-!-margin-right-1" href="specifications">
+                    Leave this page
+                </a>
+                <button type="button" onclick="document.getElementById('notSaved').style.display='none'"
+                    class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+                    data-module="govuk-button">Stay on this page
+                </button>
+            </div>
+        </dialog>
+    </div>
+    <div class="govuk-modal-dialogue__backdrop"></div>
+</div>
 
 {% endblock %}
