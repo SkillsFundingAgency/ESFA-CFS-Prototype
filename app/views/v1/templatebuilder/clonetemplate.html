@@ -34,17 +34,14 @@
 </div>
 
 
-
-
-
 <div class="govuk-form-group">
-    <label class="govuk-label" for="sort">
+    <label class="govuk-label" for="sort1">
         Select a funding period
     </label>
     <span id="event-name-hint" class="govuk-hint">
         You will not be able to select a funding period if a template for this funding stream and period already exists.
     </span>
-    <select class="govuk-select" id="sort" name="sort">
+    <select class="govuk-select" id="sort1" name="sort">
         <option value="draft">Financial year 2021 to 2022</option>
         <option value="draft">Academic year 2021 to 2022</option>
     </select>
@@ -64,29 +61,40 @@
         <a href="" class="govuk-button govuk-button--primary button-createSpecification" data-module="govuk-button">
             Clone template
         </a>
-        <a class="govuk-link" href="#" onclick="document.getElementById('notSaved').style.display='block'">
+        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
             Cancel
         </a>
 </div>
 
+<script>
+    function check() {
+
+        //Array with inputs that evaluate to true or false based on input
+
+        const inputs = [
+            Boolean(document.getElementById("sort1").value),
+            Boolean(document.getElementById("more-detail").value),
+        ]
+
+        //starts the counter
+        let counter = 0
+
+        //increases counter by 1 for every true item in the array
+        for (var i = 0; i <= inputs.length; i++) {
+            if (inputs[i] === true) {
+                document.getElementById('notSaved').style.display = 'block'
+                counter++
+            }
+        }
+        if (counter === 0) {
+            history.back()
+        }
+
+    }
+</script>
+
 <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
-    <div class="govuk-modal-dialogue__wrapper">
-        <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
-            aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
-         {% include "includes/modal-dialogue-header" %}
-            <div class="govuk-modal-dialogue__content">
-                <p class="govuk-body">Are you sure you want to leave without saving your changes?</p>
-                <a class="govuk-button govuk-button--warning govuk-!-margin-right-1" href="edittemplate">
-                    Leave this page
-                </a>
-                <button type="button" onclick="document.getElementById('notSaved').style.display='none'"
-                    class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
-                    data-module="govuk-button">Stay on this page
-                </button>
-            </div>
-        </dialog>
-    </div>
-    <div class="govuk-modal-dialogue__backdrop"></div>
+{% include "includes/modal-dialogue.html" %}
 </div>
 
 {% endblock %}
