@@ -4,26 +4,34 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start">
+                Calculate funding
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="specifications">
+              Specifications
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-pna">
+            {{ data['spec-name'] }}
+          </a>
+      </li>
+    </ol>
+</div>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="specifications.html">{{ data['spec-name'] }}</a>
-        </li>
-
-      </ol>
-    </div>
-
     <form action="/v1/fundingLineStructure-pna" method="post" class="form">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -85,17 +93,19 @@ GOV.UK Prototype Kit
         </div>
       </fieldset>
 
+      <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button" onclick="newDataset()">Save and continue</button>
 
       <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Save and add another
       </a>
 
-      <a href="fundingLineStructure-pna" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      <a class="govuk-link govuk-!-margin-left-2" href="javascript:void(0);" onclick="check()">
         Cancel
-      </a>
+    </a>
     </form>
 
+  </div>
   </div>
 </div>
 
@@ -106,5 +116,36 @@ GOV.UK Prototype Kit
   }
 
 </script>
+
+<script>
+  function check() {
+
+      //Array with inputs that evaluate to true or false based on input
+
+      const inputs = [
+          Boolean(document.getElementById("sort").value),
+      ]
+
+      //starts the counter
+      let counter = 0
+
+      //increases counter by 1 for every true item in the array
+      for (var i = 0; i <= inputs.length; i++) {
+          if (inputs[i] === true) {
+              document.getElementById('notSaved').style.display = 'block'
+              counter++
+          }
+      }
+      if (counter === 0) {
+          history.back()
+      }
+
+  }
+</script>
+
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+  {% include "includes/modal-dialogue.html" %}
+</div>
 
 {% endblock %}
