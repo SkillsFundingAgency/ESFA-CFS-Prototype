@@ -71,14 +71,14 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <button id="patternLink" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        <div class="govuk-button-group">
+        <button id="patternLink" class="govuk-button" data-module="govuk-button">
             Continue
         </button>
+        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+            Cancel</a>
         </form>
     </div>
-</div>
 
 <script>
     function patternChoice() {
@@ -97,5 +97,37 @@ GOV.UK Prototype Kit
 
     }
 </script>
+
+<script>
+    function check() {
+
+        //Array with inputs that evaluate to true or false based on input
+
+        const inputs = [
+            Boolean(document.getElementById("CFSdataset").value),
+            Boolean(document.getElementById("CFSdataset-2").value),
+        ]
+
+        //starts the counter
+        let counter = 0
+
+        //increases counter by 1 for every true item in the array
+        for (var i = 0; i <= inputs.length; i++) {
+            if (inputs[i] === true) {
+                document.getElementById('notSaved').style.display = 'block'
+                counter++
+            }
+        }
+        if (counter === 0) {
+            history.back()
+        }
+
+    }
+</script>
+
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+    {% include "includes/modal-dialogue.html" %}
+</div>
 
 {% endblock %}
