@@ -4,22 +4,30 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manageData">
+        Manage data
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manageDatasets">
+        Manage data source files 
+      </a>
+    </li>
 
-<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-    <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="manageDatasets.html">Manage data source files</a>
-        </li>
-
-    </ol>
+  </ol>
 </div>
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -124,12 +132,16 @@ GOV.UK Prototype Kit
                     <textarea class="govuk-textarea" id="more-detail" name="change-note-data" rows="5"
                         aria-describedby="more-detail-hint"></textarea>
                 </div>
-                <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+
+                <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
                     Save
                 </button>
-                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                <a class="govuk-link" href="javascript:void(0);" onclick="check()">
                     Cancel
-                </button>
+                </a>
+            </div>
+
         </fieldset>
 </div>
 </form>
@@ -153,7 +165,38 @@ GOV.UK Prototype Kit
 
 </script>
 
-
+<script>
+    function check() {
+  
+        //Array with inputs that evaluate to true or false based on input
+  
+        const inputs = [
+            Boolean(document.getElementById("updateTypeMerge").value),
+        ]
+  
+        //starts the counter
+        let counter = 0
+  
+        //increases counter by 1 for every true item in the array
+        for (var i = 0; i <= inputs.length; i++) {
+            if (inputs[i] === true) {
+                document.getElementById('notSaved').style.display = 'block'
+                counter++
+            }
+        }
+        if (counter === 0) {
+            history.back()
+        }
+  
+    }
+  </script>
+  
+  
+  <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+    {% include "includes/modal-dialogue.html" %}
+  </div>
+  
+  
 
 
 

@@ -4,37 +4,44 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start">
+                Calculate funding
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="specifications">
+                Specifications
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="fundingLineStructure-gag">
+                {{ data['spec-name'] }}
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="choosespectype-gag">
+                Select data source
+            </a>
+        </li>
+    </ol>
+</div>
+
+{% endblock %}
+
 {% block content %}
 
+
+<form action="/v1/choosefundinglinecalc-gag" method="post" class="form">
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="specifications.html">Specifications</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="fundingLineStructure-gag.html">{{ data['spec-name'] }}</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="choosespectype-gag.html">Select data source</a>
-                </li>
-
-
-            </ol>
-        </div>
-
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-heading-xl">Select the funding stream</h1>
         </legend>
-
-
-
-
 
         <h3 class="govuk-heading-m">
             Choose a funding stream for the data set
@@ -53,22 +60,17 @@ GOV.UK Prototype Kit
             </select>
         </div>
 
-
-
         </br> </br>
 
-        <a href="choosefundinglinecalc-gag.html" class="govuk-button govuk-!-margin-right-1">
-            Save and continue
-        </a>
-
-
-
-
-        <a href="fundingLineStructure-gag.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
             Cancel
         </a>
         </form>
-
+    </div>
     </div>
 </div>
 
@@ -85,5 +87,36 @@ GOV.UK Prototype Kit
         document.getElementById('patternLink').href = patternType
     }
 </script>
+
+<script>
+    function check() {
+
+        //Array with inputs that evaluate to true or false based on input
+
+        const inputs = [
+            Boolean(document.getElementById("sort").value),
+        ]
+
+        //starts the counter
+        let counter = 0
+
+        //increases counter by 1 for every true item in the array
+        for (var i = 0; i <= inputs.length; i++) {
+            if (inputs[i] === true) {
+                document.getElementById('notSaved').style.display = 'block'
+                counter++
+            }
+        }
+        if (counter === 0) {
+            history.back()
+        }
+
+    }
+</script>
+
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+    {% include "includes/modal-dialogue.html" %}
+</div>
 
 {% endblock %}

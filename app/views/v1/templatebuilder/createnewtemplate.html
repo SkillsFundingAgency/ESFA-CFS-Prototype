@@ -1,109 +1,122 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-GOV.UK Prototype Kit 
+GOV.UK Prototype Kit
 {% endblock %}
 
- {% block beforeContent %}
+{% block beforeContent %}
 
 <div class="govuk-breadcrumbs govuk">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start.html">
-        Calculate funding
-      </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting">
-        Templates
-      </a>
-    </li>
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start.html">
+                Calculate funding
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting">
+                Templates
+            </a>
+        </li>
 
-  </ol>
+    </ol>
 </div>
 
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-grid-row govuk-!-margin-bottom-5">
-        <div class="govuk-grid-column-full">
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Create a new template</h1>
-            <span class="govuk-caption-l govuk-!-margin-bottom-7">Build a new funding policy template</span>
-        </div>
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Create a new template</h1>
+        <span class="govuk-caption-l govuk-!-margin-bottom-7">Build a new funding policy template</span>
     </div>
+</div>
 
-    <form action="/v1/templatebuilder/createnewtemplate-build" method="post" class="form">
-        <fieldset class="govuk-fieldset">
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
+<form action="/v1/templatebuilder/createnewtemplate-build" method="post" class="form">
+    <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
                 Select a funding stream
             </label>
-                <select class="govuk-select" id="sort" name="sort">
-                    <option value="draft"></option>
-                    <option value="draft">16 to 19</option>
-                    <option value="draft">14 to 16</option>
-                    <option value="draft">General Annual Grant</option>
-                    <option value="draft">Academy Pupil Number Adjustment</option>
-                </select>
-            </div>
+            <select class="govuk-select" id="sort" name="sort">
+                <option></option>
+                <option value="draft">16 to 19</option>
+                <option value="draft">14 to 16</option>
+                <option value="draft">General Annual Grant</option>
+                <option value="draft">Academy Pupil Number Adjustment</option>
+            </select>
+        </div>
 
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="sort">
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="period">
                 Select a funding period
             </label>
-                <span id="event-name-hint" class="govuk-hint">
+            <span id="event-name-hint" class="govuk-hint">
                 You will not be able to select a funding period if a template for this funding stream and period already
                 exists.
             </span>
-                <select class="govuk-select" id="sort" name="sort">
-                    <option value="draft"></option>
-                    <option value="draft">Academies and Schools Academic Year 2019 to 2020</option>
-                    <option>Academic year 2019 to 2020</option>
-                </select>
-            </div>
+            <select class="govuk-select" id="period" name="sort">
+                <option></option>
+                <option value="draft">Academies and Schools Academic Year 2019 to 2020</option>
+                <option>Academic year 2019 to 2020</option>
+            </select>
+        </div>
 
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="more-detail">
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
                 Template description
             </label>
-                <textarea class="govuk-textarea" id="more-detail" name="template-description" rows="8"
+            <textarea class="govuk-textarea" id="more-detail" name="template-description" rows="8"
                 aria-describedby="more-detail-hint"></textarea>
-            </div>
-
-        </fieldset>
-
-        <div class="govuk-button-group">
-        <button class="govuk-button" data-module="govuk-button">
-        Create template
-        </button>
-        <a class="govuk-link" href="#"
-            onclick="document.getElementById('notSaved').style.display='block'">Cancel</a>
         </div>
-          
-    </br>
 
+    </fieldset>
+
+    <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+            Create template
+        </button>
+        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+            Cancel
+        </a>
+    </div>
+
+    </br>
 
 </form>
 
+<script>
+    function check() {
+
+        //Array with inputs that evaluate to true or false based on input
+
+        const inputs = [
+            Boolean(document.getElementById("sort").value),
+            Boolean(document.getElementById("period").value),
+            Boolean(document.getElementById("more-detail").value),
+        ]
+
+        //starts the counter
+        let counter = 0
+
+        //increases counter by 1 for every true item in the array
+        for (var i = 0; i <= inputs.length; i++) {
+            if (inputs[i] === true) {
+                document.getElementById('notSaved').style.display = 'block'
+                counter++
+            }
+        }
+        if (counter === 0) {
+            history.back()
+        }
+
+    }
+</script>
+
+
 <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
-    <div class="govuk-modal-dialogue__wrapper">
-        <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
-            aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
-         {% include "includes/modal-dialogue-header" %}
-            <div class="govuk-modal-dialogue__content">
-                <p class="govuk-body">Are you sure you want to leave without saving your changes?</p>
-                <a class="govuk-button govuk-button--warning govuk-!-margin-right-1" href="templatelisting">
-                    Leave this page
-                </a>
-                <button type="button" onclick="document.getElementById('notSaved').style.display='none'"
-                    class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
-                    data-module="govuk-button">Stay on this page
-                </button>
-            </div>
-        </dialog>
-    </div>
-    <div class="govuk-modal-dialogue__backdrop"></div>
+    {% include "includes/modal-dialogue.html" %}
 </div>
 
 

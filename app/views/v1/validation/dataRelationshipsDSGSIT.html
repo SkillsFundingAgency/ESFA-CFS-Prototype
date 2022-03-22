@@ -1,26 +1,37 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-endblock %} {% block content %}
+{% extends "layout.html" %} 
+
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %} 
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start">
+                Calculate funding
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="manageData">
+                Manage data 
+            </a>
+        </li> 
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="datasetRelationships">
+            Map data sources to data sets for a specification
+          </a>
+      </li>
+    </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="manageData">Manage data</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          <a class="govuk-breadcrumbs__link" href="datasetRelationships.html">Map data sources to data sets for a
-            specification</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">
-          DSG SIT
-        </li>
-      </ol>
-    </div>
-
     <div class="govuk-error-summary govuk-error-summary-orange " aria-labelledby="error-summary-title" role="alert"
       tabindex="-1" data-module="govuk-error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">

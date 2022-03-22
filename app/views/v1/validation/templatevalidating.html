@@ -1,35 +1,43 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
-    endblock %} {% block content %}
+{% extends "layout.html" %} 
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %} 
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting.html">Templates</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/createnewtemplate.html">Create a new
-                        template</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/createnewtemplate-build.html">Edit
-                        template</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/publishtemplate.html">Publish
-                        template</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                    Validating template
-                </li>
-            </ol>
-        </div>
-    </div>
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start">
+                Calculate funding
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting">
+              Templates
+            </a>
+        </li> 
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../templatebuilder/createnewtemplate">
+                Create a new template
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../templatebuilder/createnewtemplate-build">
+                Edit template
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../templatebuilder/publishtemplate">
+                Publish template
+            </a>
+        </li>
+    </ol>
 </div>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-margin-top-9">

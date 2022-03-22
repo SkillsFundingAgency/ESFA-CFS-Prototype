@@ -4,27 +4,31 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-
-    <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-      <ol class="govuk-breadcrumbs__list">
+<div class="govuk-breadcrumbs govuk">
+    <ol class="govuk-breadcrumbs__list">
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+            <a class="govuk-breadcrumbs__link" href="start">
+                Calculate funding
+            </a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="manageData.html">Manage data</a>
+            <a class="govuk-breadcrumbs__link" href="../datasets/manageData">
+              Manage data 
+            </a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="manageDatasets">Managa data source files</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item" aria-current="page">Load new data source file</li>
-      </ol>
-    </div>
-  </div>
+          <a class="govuk-breadcrumbs__link" href="../datasets/manageDatasets">
+            Manage data source files
+          </a>
+      </li>
+    </ol>
 </div>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -92,14 +96,48 @@ GOV.UK Prototype Kit
 
     </fieldset>
 
-    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+    <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button">
       Create data source
     </button>
 
-    <a href="fundingLineStructure" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    <a class="govuk-link" href="javascript:void(0);" onclick="check()">
       Cancel
-    </a>
+  </a>
+</div>
   </div>
 </div>
+
+<script>
+  function check() {
+
+      //Array with inputs that evaluate to true or false based on input
+
+      const inputs = [
+          Boolean(document.getElementById("data-schema").value),
+      ]
+
+      //starts the counter
+      let counter = 0
+
+      //increases counter by 1 for every true item in the array
+      for (var i = 0; i <= inputs.length; i++) {
+          if (inputs[i] === true) {
+              document.getElementById('notSaved').style.display = 'block'
+              counter++
+          }
+      }
+      if (counter === 0) {
+          history.back()
+      }
+
+  }
+</script>
+
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+  {% include "includes/modal-dialogue.html" %}
+</div>
+
 
 {% endblock %}
