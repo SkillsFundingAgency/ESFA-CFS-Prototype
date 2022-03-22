@@ -143,7 +143,7 @@ GOV.UK Prototype Kit
             <a href="edit-check-data-set" class="govuk-button">
                 Continue to summary
             </a>
-            <a href="../fundingLineStructure-gag#data-sets" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <a class="govuk-link" href="javascript:void(0);" onclick="check()">
                 Cancel
             </a>
         </div>
@@ -477,5 +477,37 @@ window.onload = function() {
         }
     }
 </script>
+
+<script>
+    function check() {
+
+        //Array with inputs that evaluate to true or false based on input
+
+        const inputs = [
+            // Boolean(document.getElementById("filter").value),
+        ]
+
+        //starts the counter
+        let counter = 0
+
+        //increases counter by 1 for every true item in the array
+        for (var i = 0; i <= inputs.length; i++) {
+            if (inputs[i] === true) {
+                document.getElementById('notSaved').style.display = 'block'
+                counter++
+            }
+        }
+        if (counter === 0) {
+            history.back()
+        }
+
+    }
+</script>
+
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+    {% include "includes/modal-dialogue.html" %}
+</div>
+
 
 {% endblock %}

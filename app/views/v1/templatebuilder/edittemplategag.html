@@ -134,28 +134,22 @@
 </body>
 </br>
 </br>
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-button-group">
         <button class="govuk-button" data-module="govuk-button">
             Save</button>
         <a href="../templatebuilder/publishtemplate-2.html" button class="govuk-button govuk-button--warning"
             data-module="govuk-button">
             Continue to publish
             </button> </a>
-        <a class="govuk-link" href="templatelisting">Cancel</a>
-
-    </div>
-
+        <a class="govuk-link" href="javascript:void(0);" onclick="document.getElementById('notSaved').style.display='block'">
+            Cancel
+        </a>
 </div>
 
 
-
-
-
-
-
-
-
-
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+{% include "includes/modal-dialogue.html" %}
+</div>
 
 {% endblock %}

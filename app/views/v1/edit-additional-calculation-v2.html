@@ -180,24 +180,24 @@ Return 0
 
             <div class="govuk-grid-row govuk-!-margin-top-9">
                 <div class="govuk-grid-column-full">
-                    <button class="govuk-button govuk-!-margin-right-1" onclick="nameChanged()" data-module="govuk-button">
+                    <div class="govuk-button-group">
+                    <button class="govuk-button" onclick="nameChanged()" data-module="govuk-button">
                         Save
                     </button>
 
-                    <button class="govuk-button govuk-!-margin-right-1 btn-approve govuk-button--secondary" id="btn-approve"
+                    <button class="govuk-button btn-approve govuk-button--secondary" id="btn-approve"
                         data-module="govuk-button">
                         Approve
                     </button>
-                    <a href="fundingLineStructure.html"
-                        class="govuk-button govuk-!-margin-right-1 govuk-button--secondary" data-module="govuk-button">
-                        Cancel
-                    </a>
+                    <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+                        Cancel</a>
                    <!-- Removed from scope 
                        <a class="govuk-button govuk-button--warning" href="delete-additional-calculation"
                         data-module="govuk-button">
                         Delete calculation
                     </a> -->
                 </div>
+            </div>
             </div>
 
             <p class="govuk-body" id="lastSaved">Last saved 25 March 2020 2:57pm</p>
@@ -252,4 +252,39 @@ Return 0
         document.getElementById('saveTime').innerHTML = 'Upated: ' + dateFormat + ' ' + time + ampm
         document.getElementById('lastSaved').innerHTML = 'Last saved ' + dateFormat + ' ' + time + ampm
     }
-</script> {% endblock %}
+</script> 
+
+<script>
+    function check() {
+
+        //Array with inputs that evaluate to true or false based on input
+
+        const inputs = [
+            Boolean(document.getElementById("value-type").value),
+        ]
+
+        //starts the counter
+        let counter = 0
+
+        //increases counter by 1 for every true item in the array
+        for (var i = 0; i <= inputs.length; i++) {
+            if (inputs[i] === true) {
+                document.getElementById('notSaved').style.display = 'block'
+                counter++
+            }
+        }
+        if (counter === 0) {
+            history.back()
+        }
+
+    }
+</script>
+
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+    {% include "includes/modal-dialogue.html" %}
+</div>
+
+
+
+{% endblock %}

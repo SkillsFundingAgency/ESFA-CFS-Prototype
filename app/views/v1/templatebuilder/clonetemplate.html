@@ -34,17 +34,14 @@
 </div>
 
 
-
-
-
 <div class="govuk-form-group">
-    <label class="govuk-label" for="sort">
+    <label class="govuk-label" for="sort1">
         Select a funding period
     </label>
     <span id="event-name-hint" class="govuk-hint">
         You will not be able to select a funding period if a template for this funding stream and period already exists.
     </span>
-    <select class="govuk-select" id="sort" name="sort">
+    <select class="govuk-select" id="sort1" name="sort">
         <option value="draft">Financial year 2021 to 2022</option>
         <option value="draft">Academic year 2021 to 2022</option>
     </select>
@@ -60,21 +57,44 @@
 </div>
 </fieldset>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-button-group">
         <a href="" class="govuk-button govuk-button--primary button-createSpecification" data-module="govuk-button">
             Clone template
         </a>
-        <a class="govuk-link" href="edittemplate">Cancel</a>
-
-        </br>
-
-    </div>
+        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+            Cancel
+        </a>
 </div>
 
+<script>
+    function check() {
 
+        //Array with inputs that evaluate to true or false based on input
 
+        const inputs = [
+            Boolean(document.getElementById("sort1").value),
+            Boolean(document.getElementById("more-detail").value),
+        ]
 
+        //starts the counter
+        let counter = 0
 
+        //increases counter by 1 for every true item in the array
+        for (var i = 0; i <= inputs.length; i++) {
+            if (inputs[i] === true) {
+                document.getElementById('notSaved').style.display = 'block'
+                counter++
+            }
+        }
+        if (counter === 0) {
+            history.back()
+        }
+
+    }
+</script>
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+{% include "includes/modal-dialogue.html" %}
+</div>
 
 {% endblock %}

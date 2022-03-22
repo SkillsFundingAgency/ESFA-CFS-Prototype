@@ -161,13 +161,12 @@ GOV.UK Prototype Kit
         </fieldset>
       </div>
 
-      <div class="govuk-grid-row govuk-!-margin-bottom-5">
+        <div class="govuk-button-group">
         <a href="javascript:history.back()" class="govuk-button" data-module="govuk-button">
           Apply
         </a>
-        <a href="javascript:history.back()" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Cancel
-        </a>
+        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+          Cancel</a>
       </div>
 
 
@@ -313,5 +312,36 @@ GOV.UK Prototype Kit
         </div>
         <div class="govuk-modal-dialogue__backdrop"></div>
       </div>
+
+      <script>
+        function check() {
+    
+            //Array with inputs that evaluate to true or false based on input
+    
+            const inputs = [
+                Boolean(document.getElementById("profilePreview").value),
+                // Inputs need to be added
+            ]
+    
+            //starts the counter
+            let counter = 0
+    
+            //increases counter by 1 for every true item in the array
+            for (var i = 0; i <= inputs.length; i++) {
+                if (inputs[i] === true) {
+                    document.getElementById('notSaved').style.display = 'block'
+                    counter++
+                }
+            }
+            if (counter === 0) {
+                history.back()
+            }
+    
+        }
+    </script>    
+    
+    <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+        {% include "includes/modal-dialogue.html" %}
+    </div>
 
       {% endblock %}

@@ -47,7 +47,7 @@ GOV.UK Prototype Kit
       </div>
     </div>
 
-    <form action="" onsubmit="return saveCalc(this);">
+    <form action="" onsubmit="saveCalc(this);">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h2 class="govuk-heading-l">{{ data['additionalCalc-name'] }}</h2>
@@ -140,26 +140,27 @@ Return 0
 
         </div>
 
-
         <div class="govuk-grid-row govuk-!-margin-top-9">
-          <div class="govuk-grid-column-full">
-            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-              Save
-            </button>
+           <div class="govuk-grid-column-full">
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+        Save 
+        </button>
 
-    </form>
-    <button class="govuk-button govuk-!-margin-right-1 btn-approve" id="btn-approve" data-module="govuk-button">
-      Approve
-    </button>
-    <a href="fundingLineStructure.html" class="govuk-button govuk-!-margin-right-1 govuk-button--secondary"
-      data-module="govuk-button">
-      Cancel
-    </a>
-    <a class="govuk-button govuk-button--warning" href="delete-additional-calculation" data-module="govuk-button">
+            </form>
+
+
+                <button class="govuk-button " id="btn-approve" data-module="govuk-button">
+        Approve 
+        </button>
+            <a class="govuk-button govuk-button--warning" href="delete-additional-calculation" data-module="govuk-button">
       Delete calculation
     </a>
-  </div>
-</div>
+    <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+      Cancel</a>
+        </div>
+        </div>
+        </div>
 
 <p class="govuk-body" id="lastSaved">Last saved 25 March 2020 2:57pm</p>
 <a href="calculation-version-history.html">
@@ -199,4 +200,38 @@ Return 0
     document.getElementById('saveTime').innerHTML = dateFormat + ' ' + time + ampm
     document.getElementById('lastSaved').innerHTML = 'Last saved ' + dateFormat + ' ' + time + ampm
   }
-</script> {% endblock %}
+</script> 
+
+<script>
+  function check() {
+
+      //Array with inputs that evaluate to true or false based on input
+
+      const inputs = [
+          Boolean(document.getElementById("additional-calculation-name").value),
+          Boolean(document.getElementById("sort").value),
+          // Add inputs here
+      ]
+
+      //starts the counter
+      let counter = 0
+
+      //increases counter by 1 for every true item in the array
+      for (var i = 0; i <= inputs.length; i++) {
+          if (inputs[i] === true) {
+              document.getElementById('notSaved').style.display = 'block'
+              counter++
+          }
+      }
+      if (counter === 0) {
+          history.back()
+      }
+
+  }
+</script>
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+  {% include "includes/modal-dialogue.html" %}
+</div>
+
+{% endblock %}

@@ -179,13 +179,19 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
 
         <form action="/v1/fundingLineStructure-chosen" method="post" class="form">
+
+
+
+            <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button" onclick="checkboxChoice()">Save and
                 continue
             </button>
 
-            <a href="create-data-set" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <a class="govuk-link" href="javascript:void(0);" onclick="check()">
                 Cancel
             </a>
+        </div>
+        
         </form>
 
     </div>
@@ -244,7 +250,36 @@ GOV.UK Prototype Kit
     }
 </script>
 
+<script>
+    function check() {
 
+        //Array with inputs that evaluate to true or false based on input
+
+        const inputs = [
+            Boolean(document.getElementById("deleteRow").value),
+        ]
+
+        //starts the counter
+        let counter = 0
+
+        //increases counter by 1 for every true item in the array
+        for (var i = 0; i <= inputs.length; i++) {
+            if (inputs[i] === true) {
+                document.getElementById('notSaved').style.display = 'block'
+                counter++
+            }
+        }
+        if (counter === 0) {
+            history.back()
+        }
+
+    }
+</script>
+
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+    {% include "includes/modal-dialogue.html" %}
+</div>
 
 
 
