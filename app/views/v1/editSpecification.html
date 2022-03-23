@@ -19,14 +19,11 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a
-        class="govuk-breadcrumbs__link"
-        href="/v1/funding-management/view-funding"
-      >
+      <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding">
         Release management
       </a>
     </li>
-    
+
   </ol>
 </div>
 
@@ -34,27 +31,27 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <form action="/v1/editSpecification-loading-spinner-full" method="post" class="form">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading">
+    <form action="/v1/editSpecification-loading-spinner-full" method="post" class="form">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
             Edit specification
           </h1>
-          </legend>
+        </legend>
 
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="address-line-1">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
             Specification name
           </label>
-            <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"
+          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"
             value="{{ data['spec-name'] }}">
-          </div>
+        </div>
 
-          <span class="govuk-caption-m">Funding stream</span>
-          <h2 class="govuk-heading-m">16 to 19</h3>
+        <span class="govuk-caption-m">Funding stream</span>
+        <h2 class="govuk-heading-m">16 to 19</h3>
 
           <span class="govuk-caption-m">Funding period</span>
           <h3 class="govuk-heading-m">Academies and Schools Academic Year 2019 to 2020</h3>
@@ -80,7 +77,7 @@ GOV.UK Prototype Kit
                   </div>
                 </div>
                 <div class="govuk-radios__item">
-                  <input  class="govuk-radios__input" id="sign-in-2" name="sign-in"
+                  <input class="govuk-radios__input" id="sign-in-2" name="sign-in"
                     onClick="document.getElementById('coreProviderData-group').classList.remove('govuk-visually-hidden')"
                     type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
                   <label class="govuk-label govuk-radios__label" for="sign-in-2">
@@ -130,58 +127,58 @@ GOV.UK Prototype Kit
             </label>
             <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"></textarea>
           </div>
-        </fieldset>
+      </fieldset>
 
-         <div class="govuk-button-group">
+      <div class="govuk-button-group">
         <button class="govuk-button" data-module="govuk-button">
-        Save and continue
+          Save and continue
         </button>
         <a class="govuk-link" href="javascript:void(0);" onclick="check()">
-          Cancel</a>
-        </div>
-        
-      </form>
+          Cancel
+        </a>
+      </div>
 
-    </div>
+    </form>
+
   </div>
+</div>
 
-  <script>
+<script>
+  function getProviderData() {
+    var coreProviderData = document
+      .getElementById("coreProviderData")
+      .value;
+    console.log(coreProviderData)
+    sessionStorage.setItem('provider data changed', coreProviderData);
 
-    function getProviderData() {
-      var coreProviderData = document
-        .getElementById("coreProviderData")
-        .value;
-      console.log(coreProviderData)
-      sessionStorage.setItem('provider data changed', coreProviderData);
-
-    }
-  </script>
+  }
+</script>
 
 <script>
   function check() {
 
-      //Array with inputs that evaluate to true or false based on input
+    //Array with inputs that evaluate to true or false based on input
 
-      const inputs = [
-          Boolean(document.getElementById("coreProviderData-group").value),
-          Boolean(document.getElementById("coreProviderData").value),
-          Boolean(document.getElementById("template-version").value),
-          Boolean(document.getElementById("more-detail").value),
-      ]
+    const inputs = [
+      Boolean(document.getElementById("coreProviderData-group").value),
+      Boolean(document.getElementById("coreProviderData").value),
+      Boolean(document.getElementById("template-version").value),
+      Boolean(document.getElementById("more-detail").value),
+    ]
 
-      //starts the counter
-      let counter = 0
+    //starts the counter
+    let counter = 0
 
-      //increases counter by 1 for every true item in the array
-      for (var i = 0; i <= inputs.length; i++) {
-          if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
-              counter++
-          }
+    //increases counter by 1 for every true item in the array
+    for (var i = 0; i <= inputs.length; i++) {
+      if (inputs[i] === true) {
+        document.getElementById('notSaved').style.display = 'block'
+        counter++
       }
-      if (counter === 0) {
-          history.back()
-      }
+    }
+    if (counter === 0) {
+      history.back()
+    }
 
   }
 </script>

@@ -14,13 +14,13 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="manageData">
+      <a class="govuk-breadcrumbs__link" href="manageData">
         Manage data
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="datasetRelationships">
-        Map data source files 
+        Map data source files
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
@@ -30,7 +30,7 @@ GOV.UK Prototype Kit
     </li>
 
   </ol>
-  
+
 </div>
 
 {% endblock %}
@@ -355,7 +355,7 @@ GOV.UK Prototype Kit
   </button>
   <a class="govuk-link" href="javascript:void(0);" onclick="check()">
     Cancel
-</a>
+  </a>
 </div>
 
 
@@ -389,25 +389,25 @@ GOV.UK Prototype Kit
 <script>
   function check() {
 
-      //Array with inputs that evaluate to true or false based on input
+    //Array with inputs that evaluate to true or false based on input
 
-      const inputs = [
-          Boolean(document.getElementById("changed-name").value),
-      ]
+    const inputs = [
+      Boolean(document.getElementById("changed-name").value),
+    ]
 
-      //starts the counter
-      let counter = 0
+    //starts the counter
+    let counter = 0
 
-      //increases counter by 1 for every true item in the array
-      for (var i = 0; i <= inputs.length; i++) {
-          if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
-              counter++
-          }
+    //increases counter by 1 for every true item in the array
+    for (var i = 0; i <= inputs.length; i++) {
+      if (inputs[i] === true) {
+        document.getElementById('notSaved').style.display = 'block'
+        counter++
       }
-      if (counter === 0) {
-          history.back()
-      }
+    }
+    if (counter === 0) {
+      history.back()
+    }
 
   }
 </script>

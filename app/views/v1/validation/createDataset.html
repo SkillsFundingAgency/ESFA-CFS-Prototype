@@ -7,23 +7,23 @@ GOV.UK Prototype Kit
 {% block beforeContent %}
 
 <div class="govuk-breadcrumbs govuk">
-    <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="start">
-                Calculate funding
-            </a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="specifications">
-                Specifications 
-            </a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="fundingLineStructure">
-                DSG SIT
-          </a>
-      </li>
-    </ol>
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="specifications">
+        Specifications
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="fundingLineStructure">
+        DSG SIT
+      </a>
+    </li>
+  </ol>
 </div>
 
 {% endblock %}
@@ -93,57 +93,56 @@ GOV.UK Prototype Kit
     </fieldset>
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
+      <div class="govuk-grid-column-full">
 
         <div class="govuk-button-group">
-    <a href="fundingLineStructure" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-      Save and continue
-    </a>
+          <a href="fundingLineStructure" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+            Save and continue
+          </a>
 
-    <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Save and add another
-    </a>
+          <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Save and add another
+          </a>
 
-    <a class="govuk-link" href="javascript:void(0);" onclick="check()">
-      Cancel
-  </a>
-  </div>
-  </div>
-  </div>
-
-  <div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-      <span id="loader-content" class="inline-loader" role="alert" aria-live="assertive"></span>
-      <span class="govuk-body">Creating dataset. Please wait, you will be redirected automatically.</span>
+          <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+            Cancel
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-  
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-5">
+      <div class="govuk-grid-column-full">
+        <span id="loader-content" class="inline-loader" role="alert" aria-live="assertive"></span>
+        <span class="govuk-body">Creating dataset. Please wait, you will be redirected automatically.</span>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <script>
   function check() {
 
-      //Array with inputs that evaluate to true or false based on input
+    //Array with inputs that evaluate to true or false based on input
 
-      const inputs = [
-          Boolean(document.getElementById("sort").value),
-      ]
+    const inputs = [
+      Boolean(document.getElementById("sort").value),
+    ]
 
-      //starts the counter
-      let counter = 0
+    //starts the counter
+    let counter = 0
 
-      //increases counter by 1 for every true item in the array
-      for (var i = 0; i <= inputs.length; i++) {
-          if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
-              counter++
-          }
+    //increases counter by 1 for every true item in the array
+    for (var i = 0; i <= inputs.length; i++) {
+      if (inputs[i] === true) {
+        document.getElementById('notSaved').style.display = 'block'
+        counter++
       }
-      if (counter === 0) {
-          history.back()
-      }
+    }
+    if (counter === 0) {
+      history.back()
+    }
 
   }
 </script>

@@ -18,7 +18,7 @@ GOV.UK Prototype Kit
         Specifications
       </a>
     </li>
-    
+
   </ol>
 </div>
 
@@ -146,87 +146,83 @@ GOV.UK Prototype Kit
         </div>
   </fieldset>
   <div class="govuk-button-group">
-        <button class="govuk-button" data-module="govuk-button">
-            Save and continue 
-        </button>
-        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
-            Cancel
-        </a>
-</div>
+    <button class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+    <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+      Cancel
+    </a>
+  </div>
 </form>
 </div>
 </div>
 
 
 <script type="application/json" id="create-spec">
-{ 		  	
-			  	"spec-name": {
-			      "presence": {
-			        "message": "^Please enter a specification name"
-			      }
-          },
-          "fundingStreamSpecification": {
-			      "presence": {
-			        "message": "^Please select a funding stream"
-			      }
-          },
-          "fundingPeriod": {
-			      "presence": {
-			        "message": "^Please select a funding period"
-			      }
-          },
-          "sort": {
-			      "presence": {
-			        "message": "^Please select a template version"
-			      }
-          },
-          "spec-detail": {
-			      "presence": {
-			        "message": "^Please enter a description"
-			      }
-          }
-          
-}
+  {
+    "spec-name": {
+      "presence": {
+        "message": "^Please enter a specification name"
+      }
+    },
+    "fundingStreamSpecification": {
+      "presence": {
+        "message": "^Please select a funding stream"
+      }
+    },
+    "fundingPeriod": {
+      "presence": {
+        "message": "^Please select a funding period"
+      }
+    },
+    "sort": {
+      "presence": {
+        "message": "^Please select a template version"
+      }
+    },
+    "spec-detail": {
+      "presence": {
+        "message": "^Please enter a description"
+      }
+    }
 
+  }
 </script>
 
 <script src="/public/javascripts/form-validation/create-spec.js"></script>
 
-<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
-{% include "includes/modal-dialogue.html" %}
-</div>
-
 <script>
   function check() {
 
-      //Array with inputs that evaluate to true or false based on input
+    //Array with inputs that evaluate to true or false based on input
 
-      const inputs = [
+    const inputs = [
       Boolean(document.getElementById("spec-name").value),
       Boolean(document.getElementById("fundingStreamSpecification").value),
       Boolean(document.getElementById("fundingPeriod").value),
-      Boolean(document.getElementById("provider-data-yes").value),
-      Boolean(document.getElementById("provider-data-no").value),
-      Boolean(document.getElementById("coreProviderData").value),
       Boolean(document.getElementById("templateVersion").value),
       Boolean(document.getElementById("more-detail").value),
-      ]
+    ]
 
-      //starts the counter
-      let counter = 0
+    //starts the counter
+    let counter = 0
 
-      //increases counter by 1 for every true item in the array
-      for (var i = 0; i <= inputs.length; i++) {
-          if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
-              counter++
-          }
+    //increases counter by 1 for every true item in the array
+    for (var i = 0; i <= inputs.length; i++) {
+      if (inputs[i] === true) {
+        document.getElementById('notSaved').style.display = 'block'
+        counter++
       }
-      if (counter === 0) {
-          history.back()
-      }
+    }
+    if (counter === 0) {
+      history.back()
+    }
 
   }
 </script>
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+  {% include "includes/modal-dialogue.html" %}
+</div>
 
 {% endblock %}

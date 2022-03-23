@@ -1,30 +1,30 @@
-{% extends "layout.html" %} 
+{% extends "layout.html" %}
 
 {% block pageTitle %}
- GOV.UK Prototype Kit 
- {% endblock %} 
+GOV.UK Prototype Kit
+{% endblock %}
 
- {% block beforeContent %}
+{% block beforeContent %}
 
 <div class="govuk-breadcrumbs govuk">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start.html">
-        Calculate funding
-      </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting">
-        Templates
-      </a>
-    </li>
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start.html">
+                Calculate funding
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting">
+                Templates
+            </a>
+        </li>
 
-  </ol>
+    </ol>
 </div>
 
 {% endblock %}
- 
- {% block content %}
+
+{% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-full">
@@ -136,20 +136,16 @@
 </br>
 
 <div class="govuk-button-group">
-        <button class="govuk-button" data-module="govuk-button">
-            Save</button>
-        <a href="../templatebuilder/publishtemplate-2.html" button class="govuk-button govuk-button--warning"
-            data-module="govuk-button">
-            Continue to publish
-            </button> </a>
-        <a class="govuk-link" href="javascript:void(0);" onclick="document.getElementById('notSaved').style.display='block'">
-            Cancel
-        </a>
-</div>
-
-
-<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
-{% include "includes/modal-dialogue.html" %}
+    <button class="govuk-button" data-module="govuk-button">
+        Save</button>
+    <a href="../templatebuilder/publishtemplate-2.html" button class="govuk-button govuk-button--warning"
+        data-module="govuk-button">
+        Continue to publish
+        </button> </a>
+    <a class="govuk-link" href="javascript:void(0);"
+        onclick="history.back()">
+        Cancel
+    </a>
 </div>
 
 {% endblock %}

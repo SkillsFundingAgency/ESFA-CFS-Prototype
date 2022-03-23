@@ -121,7 +121,7 @@ End If
         <button class="govuk-button govuk-button--disabled govuk" id="btn-approve" data-module="govuk-button">
         Approve 
         </button>
-        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+        <a class="govuk-link" href="javascript:void(0);" onclick="history.back()">
           Cancel</a>
         </div>
         </div>
@@ -141,37 +141,5 @@ End If
   }
 
 </script> 
-
-<script>
-  function check() {
-
-      //Array with inputs that evaluate to true or false based on input
-
-      const inputs = [
-          Boolean(document.getElementById("more-detail").value),
-          // Inputs need to be added 
-      ]
-
-      //starts the counter
-      let counter = 0
-
-      //increases counter by 1 for every true item in the array
-      for (var i = 0; i <= inputs.length; i++) {
-          if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
-              counter++
-          }
-      }
-      if (counter === 0) {
-          history.back()
-      }
-
-  }
-</script>
-
-<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
-  {% include "includes/modal-dialogue.html" %}
-</div>
-
 
 {% endblock %}
