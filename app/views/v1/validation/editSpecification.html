@@ -7,23 +7,23 @@ GOV.UK Prototype Kit
 {% block beforeContent %}
 
 <div class="govuk-breadcrumbs govuk">
-    <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="/start">
-                Calculate funding
-            </a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="specifications">
-              Specifications
-            </a>
-        </li> 
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="fundingLineStructure">
-             DSG SIT
-          </a>
-      </li>
-    </ol>
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="specifications">
+        Specifications
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="fundingLineStructure">
+        DSG SIT
+      </a>
+    </li>
+  </ol>
 </div>
 
 {% endblock %}
@@ -69,8 +69,10 @@ GOV.UK Prototype Kit
         <span id="account-number-hint" class="govuk-hint">
           Select a funding stream before choosing a template version
         </span>
-        <input class="govuk-input govuk-!-width-two-thirds govuk-!-margin-bottom-2" id="two-thirds" name="two-thirds" type="text" value="GAG-AY-21-22, General annual grant, Version 2">
-        <p class="govuk-body"><a href="../templatebuilder/edittemplategag.html" class="govuk-link ">View template version</a></p>
+        <input class="govuk-input govuk-!-width-two-thirds govuk-!-margin-bottom-2" id="two-thirds" name="two-thirds"
+          type="text" value="GAG-AY-21-22, General annual grant, Version 2">
+        <p class="govuk-body"><a href="../templatebuilder/edittemplategag.html" class="govuk-link ">View template
+            version</a></p>
       </div>
 
       <div class="govuk-form-group">
@@ -83,39 +85,39 @@ GOV.UK Prototype Kit
     </fieldset>
 
     <div class="govuk-button-group">
-    <button class="govuk-button" data-module="govuk-button">
-      Save and continue
-    </button>
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
 
-    <a class="govuk-link" href="javascript:void(0);" onclick="check()">
-      Cancel
-  </a>
-   </div>
+      <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+        Cancel
+      </a>
+    </div>
   </div>
 </div>
 
 <script>
   function check() {
 
-      //Array with inputs that evaluate to true or false based on input
+    //Array with inputs that evaluate to true or false based on input
 
-      const inputs = [
-          Boolean(document.getElementById("address-line-1").value),
-      ]
+    const inputs = [
+      Boolean(document.getElementById("address-line-1").value),
+    ]
 
-      //starts the counter
-      let counter = 0
+    //starts the counter
+    let counter = 0
 
-      //increases counter by 1 for every true item in the array
-      for (var i = 0; i <= inputs.length; i++) {
-          if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
-              counter++
-          }
+    //increases counter by 1 for every true item in the array
+    for (var i = 0; i <= inputs.length; i++) {
+      if (inputs[i] === true) {
+        document.getElementById('notSaved').style.display = 'block'
+        counter++
       }
-      if (counter === 0) {
-          history.back()
-      }
+    }
+    if (counter === 0) {
+      history.back()
+    }
 
   }
 </script>

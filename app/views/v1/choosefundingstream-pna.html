@@ -63,56 +63,55 @@ GOV.UK Prototype Kit
         </br> </br>
 
         <div class="govuk-button-group">
-        <a href="choosefundinglinecalc-pna.html" class="govuk-button govuk-!-margin-right-1">
-            Save and continue
-        </a>
-        <a class="govuk-link govuk-!-margin-left-2" href="javascript:void(0);" onclick="check()">
-            Cancel
-        </a>
-        </form>
+            <a href="choosefundinglinecalc-pna.html" class="govuk-button govuk-!-margin-right-1">
+                Save and continue
+            </a>
+            <a class="govuk-link govuk-!-margin-left-2" href="javascript:void(0);" onclick="check()">
+                Cancel
+            </a>
+            </form>
 
+        </div>
     </div>
-</div>
 
-<script>
+    <script>
+        function patternChoice() {
+            console.log("buttonclicked")
+            var patternType = document.querySelector('input[name="data-type"]:checked').value;
+            console.log(patternType)
+            document.getElementById('patternLink').href = patternType
+        }
+    </script>
 
-    function patternChoice() {
-        console.log("buttonclicked")
-        var patternType = document.querySelector('input[name="data-type"]:checked').value;
-        console.log(patternType)
-        document.getElementById('patternLink').href = patternType
-    }
-</script>
+    <script>
+        function check() {
 
-<script>
-    function check() {
+            //Array with inputs that evaluate to true or false based on input
 
-        //Array with inputs that evaluate to true or false based on input
+            const inputs = [
+                Boolean(document.getElementById("sort").value),
+            ]
 
-        const inputs = [
-            Boolean(document.getElementById("sort").value),
-        ]
+            //starts the counter
+            let counter = 0
 
-        //starts the counter
-        let counter = 0
-
-        //increases counter by 1 for every true item in the array
-        for (var i = 0; i <= inputs.length; i++) {
-            if (inputs[i] === true) {
-                document.getElementById('notSaved').style.display = 'block'
-                counter++
+            //increases counter by 1 for every true item in the array
+            for (var i = 0; i <= inputs.length; i++) {
+                if (inputs[i] === true) {
+                    document.getElementById('notSaved').style.display = 'block'
+                    counter++
+                }
             }
+            if (counter === 0) {
+                history.back()
+            }
+
         }
-        if (counter === 0) {
-            history.back()
-        }
-
-    }
-</script>
+    </script>
 
 
-<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
-    {% include "includes/modal-dialogue.html" %}
-</div>
+    <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+        {% include "includes/modal-dialogue.html" %}
+    </div>
 
-{% endblock %}
+    {% endblock %}

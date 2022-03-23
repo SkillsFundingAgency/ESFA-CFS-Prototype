@@ -1,33 +1,33 @@
-{% extends "layout.html" %} 
-{% block pageTitle %} 
-GOV.UK Prototype Kit 
-{% endblock %} 
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
 
 {% block beforeContent %}
 
 <div class="govuk-breadcrumbs govuk">
-    <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="/start">
-                Calculate funding
-            </a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="../datasets/manageData">
-              Manage data
-            </a>
-        </li> 
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="../datasets/manageDatasets">
-              Manage data source files
-            </a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="../datasets/updateDataset">
-              Update data source
-            </a>
-        </li>
-    </ol>
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../datasets/manageData">
+        Manage data
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../datasets/manageDatasets">
+        Manage data source files
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../datasets/updateDataset">
+        Update data source
+      </a>
+    </li>
+  </ol>
 </div>
 
 {% endblock %}
@@ -42,12 +42,7 @@ GOV.UK Prototype Kit
     <h3 class="govuk-heading-m center-align">
       Please wait, this could take several minutes
     </h3>
-    <div
-      id="loader-content"
-      class="loader loader-full"
-      role="alert"
-      aria-live="assertive"
-    ></div>
+    <div id="loader-content" class="loader loader-full" role="alert" aria-live="assertive"></div>
     <p class="govuk-body center-align">
       Please do not refresh the page, you will be redirected automatically
     </p>

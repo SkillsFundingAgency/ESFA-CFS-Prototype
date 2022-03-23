@@ -16,28 +16,28 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="../view-funding">
+      <a class="govuk-breadcrumbs__link" href="../view-funding">
         Select specification
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="../funding-resultsv2">
-        Funding approval results 
+      <a class="govuk-breadcrumbs__link" href="../funding-resultsv2">
+        Funding approval results
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="../provider-funding-overview-gag">
+      <a class="govuk-breadcrumbs__link" href="../provider-funding-overview-gag">
         Barnet London Borough Council
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="funding-line-profile-custom">
-        Funding line profile name 
+      <a class="govuk-breadcrumbs__link" href="funding-line-profile-custom">
+        Funding line profile name
       </a>
     </li>
 
   </ol>
-  
+
 </div>
 
 {% endblock %}
@@ -161,7 +161,7 @@ GOV.UK Prototype Kit
         </fieldset>
       </div>
 
-        <div class="govuk-button-group">
+      <div class="govuk-button-group">
         <a href="javascript:history.back()" class="govuk-button" data-module="govuk-button">
           Apply
         </a>
@@ -315,33 +315,33 @@ GOV.UK Prototype Kit
 
       <script>
         function check() {
-    
-            //Array with inputs that evaluate to true or false based on input
-    
-            const inputs = [
-                Boolean(document.getElementById("profilePreview").value),
-                // Inputs need to be added
-            ]
-    
-            //starts the counter
-            let counter = 0
-    
-            //increases counter by 1 for every true item in the array
-            for (var i = 0; i <= inputs.length; i++) {
-                if (inputs[i] === true) {
-                    document.getElementById('notSaved').style.display = 'block'
-                    counter++
-                }
+
+          //Array with inputs that evaluate to true or false based on input
+
+          const inputs = [
+            Boolean(document.getElementById("profilePreview").value),
+            // Inputs need to be added
+          ]
+
+          //starts the counter
+          let counter = 0
+
+          //increases counter by 1 for every true item in the array
+          for (var i = 0; i <= inputs.length; i++) {
+            if (inputs[i] === true) {
+              document.getElementById('notSaved').style.display = 'block'
+              counter++
             }
-            if (counter === 0) {
-                history.back()
-            }
-    
+          }
+          if (counter === 0) {
+            history.back()
+          }
+
         }
-    </script>    
-    
-    <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+      </script>
+
+      <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
         {% include "includes/modal-dialogue.html" %}
-    </div>
+      </div>
 
       {% endblock %}

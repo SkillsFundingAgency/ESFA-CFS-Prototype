@@ -7,24 +7,24 @@ GOV.UK Prototype Kit
 {% block beforeContent %}
 
 <div class="govuk-breadcrumbs govuk">
-<ol class="govuk-breadcrumbs__list">
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/start.html">
-      Calculate funding
-    </a>
-  </li>
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="manageData.html">
-      Manage data
-    </a>
-  </li>
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="manageDatasets">
-      Manage data source files
-    </a>
-  </li>
-  
-</ol>
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start.html">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manageData.html">
+        Manage data
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manageDatasets">
+        Manage data source files
+      </a>
+    </li>
+
+  </ol>
 </div>
 
 {% endblock %}
@@ -117,11 +117,11 @@ GOV.UK Prototype Kit
     </fieldset>
 
     <div class="govuk-button-group">
-    <button class="govuk-button" data-module="govuk-button" onclick="newDataSource()">
-      Create data source
-    </button>
-    <a class="govuk-link" href="javascript:void(0);" onclick="check()">
-      Cancel</a>
+      <button class="govuk-button" data-module="govuk-button" onclick="newDataSource()">
+        Create data source
+      </button>
+      <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+        Cancel</a>
     </div>
     </form>
   </div>
@@ -129,68 +129,66 @@ GOV.UK Prototype Kit
 
 <script type="application/json" id="upload-data-source">
   {
-      "fundingStream": {
-          "presence": {
-              "message": "^Select a funding stream"
-          }
-      },
+    "fundingStream": {
+      "presence": {
+        "message": "^Select a funding stream"
+      }
+    },
 
-      "data-schema": {
-          "presence": {
-              "message": "^Select a data schema"
-          }
-      },
+    "data-schema": {
+      "presence": {
+        "message": "^Select a data schema"
+      }
+    },
 
-      "data-source-file-name": {
-          "presence": {
-              "message": "^Enter a data source file name"
-          }
-      },
+    "data-source-file-name": {
+      "presence": {
+        "message": "^Enter a data source file name"
+      }
+    },
 
-      "data-more-detail": {
-          "presence": {
-              "message": "^Enter a description"
-          }
-      },
-      "file-upload-1": {
-        "presence": {
-            "message": "^Select a data source file"
-        }
+    "data-more-detail": {
+      "presence": {
+        "message": "^Enter a description"
+      }
+    },
+    "file-upload-1": {
+      "presence": {
+        "message": "^Select a data source file"
+      }
     }
 
   }
 </script>
 
 <script>
-
   function newDataSource() {
     sessionStorage.setItem('new data source file', 'true');
   }
-
 </script>
 
 <script>
   function check() {
 
-      //Array with inputs that evaluate to true or false based on input
+    //Array with inputs that evaluate to true or false based on input
 
-      const inputs = [
-          Boolean(document.getElementById("funding-stream").value),
-      ]
+    const inputs = [
+      Boolean(document.getElementById("funding-stream").value),
+    ]
 
-      //starts the counter
-      let counter = 0
+    //starts the counter
+    let counter = 0
 
-      //increases counter by 1 for every true item in the array
-      for (var i = 0; i <= inputs.length; i++) {
-          if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
-              counter++
-          }
+    //increases counter by 1 for every true item in the array
+    for (var i = 0; i <= inputs.length; i++) {
+      if (inputs[i] === true) {
+        document.getElementById('notSaved').style.display = 'block'
+        counter++
       }
-      if (counter === 0) {
-          history.back()
-      }
+    }
+    if (counter === 0) {
+      history.back()
+    }
 
   }
 </script>

@@ -28,48 +28,47 @@ GOV.UK Prototype Kit
         </label>
       </div>
     </div>
-         <div class="govuk-button-group">
-        <button class="govuk-button govuk-!-margin-top-5" onclick="sessionStorage.setItem('calcCreated', 'false'); goBack2()" 
-        data-module="govuk-button">
+    <div class="govuk-button-group">
+      <button class="govuk-button govuk-!-margin-top-5"
+        onclick="sessionStorage.setItem('calcCreated', 'false'); goBack2()" data-module="govuk-button">
         Continue
-        </button>
-        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
-          Cancel</a>
-        </div>
+      </button>
+      <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+        Cancel
+      </a>
+    </div>
   </fieldset>
 </div>
 
 <script>
-
   window.onload = function additionalCalc() {
     var dateTime = sessionStorage.getItem("date");
     document.getElementById('editedDate').innerHTML = dateTime;
   }
-
 </script>
 
 <script>
   function check() {
 
-      //Array with inputs that evaluate to true or false based on input
+    //Array with inputs that evaluate to true or false based on input
 
-      const inputs = [
-          Boolean(document.getElementById("changed-name").value),
-      ]
+    const inputs = [
+      Boolean(document.getElementById("changed-name").value),
+    ]
 
-      //starts the counter
-      let counter = 0
+    //starts the counter
+    let counter = 0
 
-      //increases counter by 1 for every true item in the array
-      for (var i = 0; i <= inputs.length; i++) {
-          if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
-              counter++
-          }
+    //increases counter by 1 for every true item in the array
+    for (var i = 0; i <= inputs.length; i++) {
+      if (inputs[i] === true) {
+        document.getElementById('notSaved').style.display = 'block'
+        counter++
       }
-      if (counter === 0) {
-          history.back()
-      }
+    }
+    if (counter === 0) {
+      history.back()
+    }
 
   }
 </script>

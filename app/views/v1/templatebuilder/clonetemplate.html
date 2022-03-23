@@ -1,25 +1,24 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit 
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit
 
-{% endblock %} 
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-breadcrumbs">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link"
-                        href="../templatebuilder/templatelisting.html">Templates</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/templateversions.html">DSG FY-20-21</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="../templatebuilder/edittemplate.html">Version 1.4</a>
-                </li>
-                
-            </ol>
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start.html">Calculate funding</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../templatebuilder/templatelisting.html">Templates</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../templatebuilder/templateversions.html">DSG FY-20-21</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../templatebuilder/edittemplate.html">Version 1.4</a>
+        </li>
+
+    </ol>
 </div>
 {% endblock %}
 
@@ -58,12 +57,12 @@
 </fieldset>
 
 <div class="govuk-button-group">
-        <a href="" class="govuk-button govuk-button--primary button-createSpecification" data-module="govuk-button">
-            Clone template
-        </a>
-        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
-            Cancel
-        </a>
+    <a href="" class="govuk-button govuk-button--primary button-createSpecification" data-module="govuk-button">
+        Clone template
+    </a>
+    <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+        Cancel
+    </a>
 </div>
 
 <script>
@@ -94,7 +93,7 @@
 </script>
 
 <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
-{% include "includes/modal-dialogue.html" %}
+    {% include "includes/modal-dialogue.html" %}
 </div>
 
 {% endblock %}

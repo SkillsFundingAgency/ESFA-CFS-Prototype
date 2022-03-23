@@ -7,23 +7,23 @@ GOV.UK Prototype Kit
 {% block beforeContent %}
 
 <div class="govuk-breadcrumbs govuk">
-    <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="/start">
-                Calculate funding
-            </a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="specifications">
-              Specifications
-            </a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="fundingLineStructure-pna">
-            {{ data['spec-name'] }}
-          </a>
-      </li>
-    </ol>
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Calculate funding
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="specifications">
+        Specifications
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="fundingLineStructure-pna">
+        {{ data['spec-name'] }}
+      </a>
+    </li>
+  </ol>
 </div>
 
 {% endblock %}
@@ -94,51 +94,49 @@ GOV.UK Prototype Kit
       </fieldset>
 
       <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" onclick="newDataset()">Save and continue</button>
+        <button class="govuk-button" data-module="govuk-button" onclick="newDataset()">Save and continue</button>
 
-      <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Save and add another
-      </a>
+        <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and add another
+        </a>
 
-      <a class="govuk-link govuk-!-margin-left-2" href="javascript:void(0);" onclick="check()">
-        Cancel
-    </a>
+        <a class="govuk-link govuk-!-margin-left-2" href="javascript:void(0);" onclick="check()">
+          Cancel
+        </a>
     </form>
 
   </div>
-  </div>
+</div>
 </div>
 
 <script>
-
   function newDataset() {
     sessionStorage.setItem('new data', 'true');
   }
-
 </script>
 
 <script>
   function check() {
 
-      //Array with inputs that evaluate to true or false based on input
+    //Array with inputs that evaluate to true or false based on input
 
-      const inputs = [
-          Boolean(document.getElementById("sort").value),
-      ]
+    const inputs = [
+      Boolean(document.getElementById("sort").value),
+    ]
 
-      //starts the counter
-      let counter = 0
+    //starts the counter
+    let counter = 0
 
-      //increases counter by 1 for every true item in the array
-      for (var i = 0; i <= inputs.length; i++) {
-          if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
-              counter++
-          }
+    //increases counter by 1 for every true item in the array
+    for (var i = 0; i <= inputs.length; i++) {
+      if (inputs[i] === true) {
+        document.getElementById('notSaved').style.display = 'block'
+        counter++
       }
-      if (counter === 0) {
-          history.back()
-      }
+    }
+    if (counter === 0) {
+      history.back()
+    }
 
   }
 </script>
