@@ -6,24 +6,24 @@ GOV.UK Prototype Kit
 
 {% block beforeContent %}
 <div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start">
-        Calculate funding
-      </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="manageData">
-        Manage data
-      </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="manageDatasets">
-        Manage data source files 
-      </a>
-    </li>
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start">
+                Calculate funding
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="manageData">
+                Manage data
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="manageDatasets">
+                Manage data source files
+            </a>
+        </li>
 
-  </ol>
+    </ol>
 </div>
 {% endblock %}
 
@@ -134,13 +134,13 @@ GOV.UK Prototype Kit
                 </div>
 
                 <div class="govuk-button-group">
-                <button class="govuk-button" data-module="govuk-button">
-                    Save
-                </button>
-                <a class="govuk-link" href="javascript:void(0);" onclick="check()">
-                    Cancel
-                </a>
-            </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Save
+                    </button>
+                    <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+                        Cancel
+                    </a>
+                </div>
 
         </fieldset>
 </div>
@@ -149,7 +149,6 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
-
     function updateTypeCheck() {
         console.log("updateTypeCheck ran")
         var updateType = document.getElementsByName('updateType');
@@ -162,21 +161,20 @@ GOV.UK Prototype Kit
             }
         }
     }
-
 </script>
 
 <script>
     function check() {
-  
+
         //Array with inputs that evaluate to true or false based on input
-  
+
         const inputs = [
             Boolean(document.getElementById("updateTypeMerge").value),
         ]
-  
+
         //starts the counter
         let counter = 0
-  
+
         //increases counter by 1 for every true item in the array
         for (var i = 0; i <= inputs.length; i++) {
             if (inputs[i] === true) {
@@ -187,16 +185,16 @@ GOV.UK Prototype Kit
         if (counter === 0) {
             history.back()
         }
-  
+
     }
-  </script>
-  
-  
-  <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+</script>
+
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
     {% include "includes/modal-dialogue.html" %}
-  </div>
-  
-  
+</div>
+
+
 
 
 

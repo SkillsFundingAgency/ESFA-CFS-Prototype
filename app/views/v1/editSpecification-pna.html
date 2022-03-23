@@ -19,9 +19,7 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a
-        class="govuk-breadcrumbs__link"
-        href="fundingLineStructure-pna.html">{{ data['spec-name'] }}
+      <a class="govuk-breadcrumbs__link" href="fundingLineStructure-pna.html">{{ data['spec-name'] }}
       </a>
     </li>
 
@@ -96,14 +94,14 @@ GOV.UK Prototype Kit
       </fieldset>
 
       <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button">
-        Save and continue
-      </button>
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
 
-      <a class="govuk-link" href="javascript:void(0);" onclick="check()">
-        Cancel
-      </a>
-    </div>
+        <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+          Cancel
+        </a>
+      </div>
 
     </form>
 
@@ -111,38 +109,36 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
-
   function getProviderData() {
     var coreProviderData = document.getElementById("coreProviderData").value;
     console.log(coreProviderData)
     sessionStorage.setItem('provider data changed', coreProviderData);
 
   }
-
 </script>
 
 <script>
   function check() {
 
-      //Array with inputs that evaluate to true or false based on input
+    //Array with inputs that evaluate to true or false based on input
 
-      const inputs = [
-          Boolean(document.getElementById("coreProviderData").value),
-      ]
+    const inputs = [
+      Boolean(document.getElementById("coreProviderData").value),
+    ]
 
-      //starts the counter
-      let counter = 0
+    //starts the counter
+    let counter = 0
 
-      //increases counter by 1 for every true item in the array
-      for (var i = 0; i <= inputs.length; i++) {
-          if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
-              counter++
-          }
+    //increases counter by 1 for every true item in the array
+    for (var i = 0; i <= inputs.length; i++) {
+      if (inputs[i] === true) {
+        document.getElementById('notSaved').style.display = 'block'
+        counter++
       }
-      if (counter === 0) {
-          history.back()
-      }
+    }
+    if (counter === 0) {
+      history.back()
+    }
 
   }
 </script>

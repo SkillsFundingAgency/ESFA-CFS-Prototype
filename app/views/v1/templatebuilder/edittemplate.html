@@ -186,7 +186,7 @@ Create template
 </button>
 </div>
 
- <a class="govuk-link" href="javascript:void(0);" onclick="document.getElementById('notSaved').style.display='block'">
+ <a class="govuk-link" href="javascript:void(0);" onclick="history.back()">
      Cancel
      </a>
  
@@ -217,9 +217,5 @@ elem.msRequestFullscreen();
 }
 }
 </script>
-
-<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
-{% include "includes/modal-dialogue.html" %}
-</div>
 
 {% endblock %}
