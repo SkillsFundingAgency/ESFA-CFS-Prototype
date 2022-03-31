@@ -174,7 +174,7 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <div class="govuk-input__wrapper"> <input
                                     aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
                                     onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="10"
                                     aria-describedby="percent">
                                 <div class="govuk-input__suffix" aria-hidden="true">%</div>
@@ -202,7 +202,7 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <div class="govuk-input__wrapper"> <input
                                     aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
                                     onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="20"
                                     aria-describedby="percent">
                                 <div class="govuk-input__suffix" aria-hidden="true">%</div>
@@ -231,7 +231,7 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <div class="govuk-input__wrapper"> <input
                                     aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
                                     onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="20"
                                     aria-describedby="percent">
                                 <div class="govuk-input__suffix" aria-hidden="true">%</div>
@@ -259,7 +259,7 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <div class="govuk-input__wrapper"> <input
                                     aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
                                     onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="20"
                                     aria-describedby="percent">
                                 <div class="govuk-input__suffix" aria-hidden="true">%</div>
@@ -287,7 +287,7 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <div class="govuk-input__wrapper"> <input
                                     aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
                                     onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="10"
                                     aria-describedby="percent">
                                 <div class="govuk-input__suffix" aria-hidden="true">%</div>
@@ -315,7 +315,7 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <div class="govuk-input__wrapper"> <input
                                     aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
                                     onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="5"
                                     aria-describedby="percent">
                                 <div class="govuk-input__suffix" aria-hidden="true">%</div>
@@ -343,7 +343,7 @@ GOV.UK Prototype Kit
                         <div class="govuk-form-group">
                             <div class="govuk-input__wrapper"> <input
                                     aria-label="Enter the total percetage for January. Enter 0 if this does not apply"
-                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4 value="
+                                    class="input-suffix govuk-input govuk-input--width-5" id="input-4"
                                     onblur="sumPercentage()" name="installmentPercentage" type="text value=" value="5"
                                     aria-describedby="percent">
                                 <div class="govuk-input__suffix" aria-hidden="true">%</div>
@@ -441,12 +441,16 @@ GOV.UK Prototype Kit
 </script>
 
 <script>
+
     function check() {
+
 
         //Array with inputs that evaluate to true or false based on input
 
         const inputs = [
-            Boolean(document.getElementById("input-4").value),
+            Boolean(document.getElementById("input-4").value).addEventListener("input4ValueChanged"),
+            // Boolean(document.getElementById("input-3").value).addEventListener("input4ValueChanged"),
+
             // Inputs need to be added
         ]
 
@@ -465,6 +469,17 @@ GOV.UK Prototype Kit
         }
 
     }
+
+    function input4ValueChanged(){
+      if(document.getElementById("input-4").value != "")
+      {
+        return true;
+      } 
+      else {
+        return false;
+      }
+    }
+
 </script>
 
 <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
