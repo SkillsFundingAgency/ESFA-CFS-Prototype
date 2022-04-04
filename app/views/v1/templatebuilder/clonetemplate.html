@@ -40,7 +40,7 @@
     <span id="event-name-hint" class="govuk-hint">
         You will not be able to select a funding period if a template for this funding stream and period already exists.
     </span>
-    <select class="govuk-select" id="sort1" name="sort">
+    <select onchange="input4ValueChanged()" class="govuk-select" id="sort1" name="sort">
         <option value="draft">Financial year 2021 to 2022</option>
         <option value="draft">Academic year 2021 to 2022</option>
     </select>
@@ -51,7 +51,7 @@
     <label class="govuk-label" for="more-detail">
         Template description
     </label>
-    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+    <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
         aria-describedby="more-detail-hint">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. tenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea>
 </div>
 </fieldset>
@@ -66,29 +66,29 @@
 </div>
 
 <script>
+    let inputWasChanged = false
+
     function check() {
 
-        //Array with inputs that evaluate to true or false based on input
-
-        const inputs = [
-            Boolean(document.getElementById("sort1").value),
-            Boolean(document.getElementById("more-detail").value),
-        ]
-
-        //starts the counter
         let counter = 0
 
-        //increases counter by 1 for every true item in the array
-        for (var i = 0; i <= inputs.length; i++) {
-            if (inputs[i] === true) {
-                document.getElementById('notSaved').style.display = 'block'
-                counter++
-            }
+        if (inputWasChanged === true) {
+            document.getElementById('notSaved').style.display = 'block'
+            counter++
         }
         if (counter === 0) {
             history.back()
         }
 
+    }
+
+
+    function input4ValueChanged() {
+        if (document.getElementById("notSaved").value != "")
+
+        {
+            inputWasChanged = true;
+        }
     }
 </script>
 

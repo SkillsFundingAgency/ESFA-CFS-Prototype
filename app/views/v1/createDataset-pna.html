@@ -42,7 +42,7 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="sort">
             Select data schema
           </label>
-          <select class="govuk-select" id="sort" name="sort">
+          <select onchange="input4ValueChanged()" class="govuk-select" id="sort" name="sort">
             <option value="draft">APT Adjusted Factors</option>
             <option value="draft">APT Final Baselines</option>
             <option value="draft">APT Inputs and Adjustments</option>
@@ -59,14 +59,14 @@ GOV.UK Prototype Kit
           <span id="event-name-hint" class="govuk-hint">
             Use a descriptive unique name other users can understand
           </span>
-          <input class="govuk-input" id="address-line-1" name="dataset-name" type="text">
+          <input onchange="input4ValueChanged()" class="govuk-input" id="address-line-1" name="dataset-name" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="more-detail">
             Description
           </label>
-          <textarea class="govuk-textarea" id="more-detail" name="description" rows="8"
+          <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="more-detail" name="description" rows="8"
             aria-describedby="more-detail-hint"></textarea>
         </div>
 
@@ -78,13 +78,13 @@ GOV.UK Prototype Kit
           </legend>
           <div class="govuk-radios govuk-radios--inline">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
               <label class="govuk-label govuk-radios__label" for="changed-name">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
                 No
               </label>
@@ -116,28 +116,29 @@ GOV.UK Prototype Kit
 </script>
 
 <script>
+  let inputWasChanged = false
+
   function check() {
 
-    //Array with inputs that evaluate to true or false based on input
+      let counter = 0
 
-    const inputs = [
-      Boolean(document.getElementById("sort").value),
-    ]
-
-    //starts the counter
-    let counter = 0
-
-    //increases counter by 1 for every true item in the array
-    for (var i = 0; i <= inputs.length; i++) {
-      if (inputs[i] === true) {
-        document.getElementById('notSaved').style.display = 'block'
-        counter++
+      if (inputWasChanged === true) {
+          document.getElementById('notSaved').style.display = 'block'
+          counter++
       }
-    }
-    if (counter === 0) {
-      history.back()
-    }
+      if (counter === 0) {
+          history.back()
+      }
 
+  }
+
+
+  function input4ValueChanged() {
+      if (document.getElementById("notSaved").value != "")
+
+      {
+          inputWasChanged = true;
+      }
   }
 </script>
 

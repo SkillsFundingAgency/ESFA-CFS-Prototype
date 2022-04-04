@@ -70,7 +70,7 @@ GOV.UK Prototype Kit
             </legend>
             <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="updateTypeMerge" name="updateType"
+                    <input onchange="input4ValueChanged()" class="govuk-radios__input" id="updateTypeMerge" name="updateType"
                         onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.remove('govuk-visually-hidden')"
                         type="radio" value="merge/merge-in-progress" aria-label="update-type-merge">
                     <label class="govuk-label govuk-radios__label" for="updateTypeMerge">
@@ -81,7 +81,7 @@ GOV.UK Prototype Kit
                     </div>
                 </div>
                 <div class="govuk-radios__item govuk-!-margin-bottom-7">
-                    <input class="govuk-radios__input" id="updateTypeReplace"
+                    <input onchange="input4ValueChanged()" class="govuk-radios__input" id="updateTypeReplace"
                         onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.add('govuk-visually-hidden')"
                         name="updateType" type="radio" value="/v1/datasets/manageDatasets"
                         aria-label="update-type-replace">
@@ -132,7 +132,7 @@ GOV.UK Prototype Kit
             <label class="govuk-label" for="file-upload-1">
                 Select data source file
             </label>
-            <input class="govuk-file-upload" id="file-upload-1" name="file-upload" type="file">
+            <input onchange="input4ValueChanged()" class="govuk-file-upload" id="file-upload-1" name="file-upload" type="file">
         </div>
 
         <div class="govuk-form-group">
@@ -141,7 +141,7 @@ GOV.UK Prototype Kit
             </label>
             <span id="description-detail" class="govuk-hint">
             </span>
-            <textarea class="govuk-textarea" id="file-description" name="description" rows="5"
+            <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="file-description" name="description" rows="5"
                 aria-label="description-detail">{{ data['data-more-detail'] }}</textarea>
         </div>
 
@@ -151,7 +151,7 @@ GOV.UK Prototype Kit
             </label>
             <span id="change-note" class="govuk-hint">
             </span>
-            <textarea class="govuk-textarea" id="more-detail" name="change-note-data" rows="5"
+            <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="more-detail" name="change-note-data" rows="5"
                 aria-describedby="change-note"></textarea>
         </div>
 
@@ -229,31 +229,32 @@ GOV.UK Prototype Kit
             }
         }, -->
 
-<script>
-    function check() {
-
-        //Array with inputs that evaluate to true or false based on input
-
-        const inputs = [
-            Boolean(document.getElementById("updateTypeMerge").value),
-        ]
-
-        //starts the counter
-        let counter = 0
-
-        //increases counter by 1 for every true item in the array
-        for (var i = 0; i <= inputs.length; i++) {
-            if (inputs[i] === true) {
-                document.getElementById('notSaved').style.display = 'block'
-                counter++
+        <script>
+            let inputWasChanged = false
+        
+            function check() {
+        
+                let counter = 0
+        
+                if (inputWasChanged === true) {
+                    document.getElementById('notSaved').style.display = 'block'
+                    counter++
+                }
+                if (counter === 0) {
+                    history.back()
+                }
+        
             }
-        }
-        if (counter === 0) {
-            history.back()
-        }
-
-    }
-</script>
+        
+        
+            function input4ValueChanged() {
+                if (document.getElementById("notSaved").value != "")
+        
+                {
+                    inputWasChanged = true;
+                }
+            }
+        </script>
 
 
 <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
