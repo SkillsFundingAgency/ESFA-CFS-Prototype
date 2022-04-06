@@ -93,7 +93,7 @@ GOV.UK Prototype Kit
 
         {% include "includes/full-screen.html" %}
 
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
+        <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
           aria-describedby="more-detail-hint">
 Dim A as Decimal? A = Datasets.Test1619BCData.BCPoportionsB1
 
@@ -114,7 +114,8 @@ End If
           <span id="event-name-hint" class="govuk-hint">
             Optional: Enter a UKPRN to view calculation results for this provider
           </span></h4>
-        <input class="govuk-input govuk-input--width-10" id="width-5" name="width-5" type="text">
+        <input onchange="input4ValueChanged()" class="govuk-input govuk-input--width-10" id="width-5" name="width-5"
+          type="text">
 
       </div>
       <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
@@ -182,29 +183,28 @@ End If
 </script>
 
 <script>
+  let inputWasChanged = false
+
   function check() {
 
-    //Array with inputs that evaluate to true or false based on input
-
-    const inputs = [
-      Boolean(document.getElementById("more-detail").value),
-
-    ]
-
-    //starts the counter
     let counter = 0
 
-    //increases counter by 1 for every true item in the array
-    for (var i = 0; i <= inputs.length; i++) {
-      if (inputs[i] === true) {
-        document.getElementById('notSaved').style.display = 'block'
-        counter++
-      }
+    if (inputWasChanged === true) {
+      document.getElementById('notSaved').style.display = 'block'
+      counter++
     }
     if (counter === 0) {
       history.back()
     }
 
+  }
+
+  function input4ValueChanged() {
+    if (document.getElementById("notSaved").value != "")
+
+    {
+      inputWasChanged = true;
+    }
   }
 </script>
 

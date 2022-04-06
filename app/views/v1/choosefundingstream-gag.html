@@ -50,7 +50,7 @@ GOV.UK Prototype Kit
                 <label class="govuk-label" for="sort">
                     Funding streams
                 </label>
-                <select class="govuk-select" id="sort" name="sort">
+                <select onchange="input4ValueChanged()" class="govuk-select" id="sort" name="sort">
                     <option value="draft"></option>
                     <option value="draft">16 to 19</option>
                     <option value="draft">14 to 16</option>
@@ -84,31 +84,31 @@ GOV.UK Prototype Kit
 </script>
 
 <script>
+    let inputWasChanged = false
+
     function check() {
 
-        //Array with inputs that evaluate to true or false based on input
-
-        const inputs = [
-            Boolean(document.getElementById("sort").value),
-        ]
-
-        //starts the counter
         let counter = 0
 
-        //increases counter by 1 for every true item in the array
-        for (var i = 0; i <= inputs.length; i++) {
-            if (inputs[i] === true) {
-                document.getElementById('notSaved').style.display = 'block'
-                counter++
-            }
+        if (inputWasChanged === true) {
+            document.getElementById('notSaved').style.display = 'block'
+            counter++
         }
         if (counter === 0) {
             history.back()
         }
 
     }
-</script>
 
+
+    function input4ValueChanged() {
+        if (document.getElementById("notSaved").value != "")
+
+        {
+            inputWasChanged = true;
+        }
+    }
+</script>
 
 <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
     {% include "includes/modal-dialogue.html" %}
