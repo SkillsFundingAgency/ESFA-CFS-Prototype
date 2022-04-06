@@ -66,7 +66,8 @@ GOV.UK Prototype Kit
           </legend>
           <div class="govuk-radios govuk-radios--small">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name-2" name="changed-name"
+                type="radio" value="year">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
                 APT Adjusted Factors Phase 1 QA (version 10)
                 <div class="govuk-!-margin-top-1">
@@ -101,7 +102,8 @@ GOV.UK Prototype Kit
 
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name-2" name="changed-name"
+                type="radio" value="year">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
                 APT Adjusted Factors Phase 1 QA (version 9)
                 <div class="govuk-!-margin-top-1">
@@ -128,7 +130,8 @@ GOV.UK Prototype Kit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name-2" name="changed-name"
+                type="radio" value="year">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
                 APT Adjusted Factors Phase 1 QA (version 8)
                 <div class="govuk-!-margin-top-1">
@@ -155,7 +158,8 @@ GOV.UK Prototype Kit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name-2" name="changed-name"
+                type="radio" value="year">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
                 APT Adjusted Factors Phase 1 QA (version 7)
                 <div class="govuk-!-margin-top-1">
@@ -182,7 +186,8 @@ GOV.UK Prototype Kit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name-2" name="changed-name"
+                type="radio" value="year">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
                 APT Adjusted Factors Phase 1 QA (version 6)
                 <div class="govuk-!-margin-top-1">
@@ -209,7 +214,8 @@ GOV.UK Prototype Kit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name" name="changed-name"
+                type="radio" value="month">
               <label class="govuk-label govuk-radios__label" for="changed-name">
                 APT Adjusted Factors Phase 1 QA (version 5)
                 <div class="govuk-!-margin-top-1">
@@ -236,7 +242,8 @@ GOV.UK Prototype Kit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name" name="changed-name"
+                type="radio" value="month">
               <label class="govuk-label govuk-radios__label" for="changed-name">
                 APT Adjusted Factors Phase 1 QA (version 4)
                 <div class="govuk-!-margin-top-1">
@@ -263,7 +270,8 @@ GOV.UK Prototype Kit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name" name="changed-name"
+                type="radio" value="month">
               <label class="govuk-label govuk-radios__label" for="changed-name">
                 APT Adjusted Factors Phase 1 QA (version 3)
                 <div class="govuk-!-margin-top-1">
@@ -290,7 +298,8 @@ GOV.UK Prototype Kit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name-2" name="changed-name"
+                type="radio" value="year">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
                 APT Adjusted Factors Phase 1 QA (version 2)
                 <div class="govuk-!-margin-top-1">
@@ -317,7 +326,8 @@ GOV.UK Prototype Kit
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+              <input onchange="input4ValueChanged()" class="govuk-radios__input" id="changed-name-2" name="changed-name"
+                type="radio" value="year">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
                 APT Adjusted Factors Phase 1 QA (version 1)
                 <div class="govuk-!-margin-top-1">
@@ -387,28 +397,28 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
+  let inputWasChanged = false
+
   function check() {
 
-    //Array with inputs that evaluate to true or false based on input
-
-    const inputs = [
-      Boolean(document.getElementById("changed-name").value),
-    ]
-
-    //starts the counter
     let counter = 0
 
-    //increases counter by 1 for every true item in the array
-    for (var i = 0; i <= inputs.length; i++) {
-      if (inputs[i] === true) {
-        document.getElementById('notSaved').style.display = 'block'
-        counter++
-      }
+    if (inputWasChanged === true) {
+      document.getElementById('notSaved').style.display = 'block'
+      counter++
     }
     if (counter === 0) {
       history.back()
     }
 
+  }
+
+  function input4ValueChanged() {
+    if (document.getElementById("notSaved").value != "")
+
+    {
+      inputWasChanged = true;
+    }
   }
 </script>
 

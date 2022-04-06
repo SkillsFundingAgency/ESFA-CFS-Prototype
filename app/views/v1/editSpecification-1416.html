@@ -44,7 +44,7 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="address-line-1">
             Specification name
           </label>
-          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"
+          <input onchange="input4ValueChanged()" class="govuk-input" id="address-line-1" name="address-line-1" type="text"
             value="{{ data['spec-name'] }}">
         </div>
 
@@ -61,7 +61,7 @@ GOV.UK Prototype Kit
           <span id="account-number-hint" class="govuk-hint">
             Select a funding stream and funding period before choosing the provider data
           </span>
-          <select class="govuk-select" id="coreProviderData" name="sort" onchange="getProviderData()">
+          <select onchange="input4ValueChanged()" class="govuk-select" id="coreProviderData" name="sort" onchange="getProviderData()">
             <option></option>
             <option name="core-provider-data" value="284,821,882">16 to 19 21 August 2019 - Initial providers</option>
             <option name="core-provider-data" id="providerDataChange" value="0">16 to 19 1 September 2019 - Amended
@@ -76,7 +76,7 @@ GOV.UK Prototype Kit
           <span id="account-number-hint" class="govuk-hint">
             Select a funding stream and funding period before choosing a template version
           </span>
-          <select class="govuk-select" id="sort" name="sort">
+          <select onchange="input4ValueChanged()" class="govuk-select" id="sort" name="sort">
             <option value="draft"></option>
             <option value="draft">0.1</option>
             <option value="draft">0.2</option>
@@ -88,7 +88,7 @@ GOV.UK Prototype Kit
           <label class="govuk-label" for="more-detail">
             Can you provide more detail?
           </label>
-          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
+          <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="more-detail" name="more-detail" rows="8"
             aria-describedby="more-detail-hint"></textarea>
         </div>
       </fieldset>
@@ -117,28 +117,28 @@ GOV.UK Prototype Kit
 </script>
 
 <script>
+  let inputWasChanged = false
+
   function check() {
 
-    //Array with inputs that evaluate to true or false based on input
+      let counter = 0
 
-    const inputs = [
-      Boolean(document.getElementById("coreProviderData").value),
-    ]
-
-    //starts the counter
-    let counter = 0
-
-    //increases counter by 1 for every true item in the array
-    for (var i = 0; i <= inputs.length; i++) {
-      if (inputs[i] === true) {
-        document.getElementById('notSaved').style.display = 'block'
-        counter++
+      if (inputWasChanged === true) {
+          document.getElementById('notSaved').style.display = 'block'
+          counter++
       }
-    }
-    if (counter === 0) {
-      history.back()
-    }
+      if (counter === 0) {
+          history.back()
+      }
 
+  }
+
+  function input4ValueChanged() {
+      if (document.getElementById("notSaved").value != "")
+
+      {
+          inputWasChanged = true;
+      }
   }
 </script>
 

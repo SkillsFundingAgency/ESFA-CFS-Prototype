@@ -34,7 +34,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update data source</h1>
-        <details class="govuk-details" data-module="govuk-details">
+        <details onchange="input4ValueChanged()" class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
                     Lump sum for 2020 to 2021 (version 1)
@@ -49,7 +49,7 @@ GOV.UK Prototype Kit
             <label class="govuk-label" for="file-upload-1">
                 Select data source file
             </label>
-            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+            <input onchange="input4ValueChanged()" class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
             <div class="govuk-grid-row govuk-!-margin-top-2">
                 <div class="govuk-grid-column-two-thirds">
                     <strong class="govuk-tag govuk-tag--green left-align ">
@@ -64,7 +64,7 @@ GOV.UK Prototype Kit
             </label>
             <span id="more-detail-hint" class="govuk-hint">
             </span>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
+            <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
                 aria-describedby="more-detail-hint">
 Description inputted at point of creation to be shown here.
             </textarea>
@@ -75,7 +75,7 @@ Description inputted at point of creation to be shown here.
             </label>
             <span id="more-detail-hint" class="govuk-hint">
             </span>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
+            <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
                 aria-describedby="more-detail-hint"></textarea>
         </div>
 
@@ -91,30 +91,30 @@ Description inputted at point of creation to be shown here.
 </div>
 
 <script>
+    let inputWasChanged = false
+  
     function check() {
-
-        //Array with inputs that evaluate to true or false based on input
-
-        const inputs = [
-            Boolean(document.getElementById("file-upload-1").value),
-        ]
-
-        //starts the counter
+  
         let counter = 0
-
-        //increases counter by 1 for every true item in the array
-        for (var i = 0; i <= inputs.length; i++) {
-            if (inputs[i] === true) {
-                document.getElementById('notSaved').style.display = 'block'
-                counter++
-            }
+  
+        if (inputWasChanged === true) {
+            document.getElementById('notSaved').style.display = 'block'
+            counter++
         }
         if (counter === 0) {
             history.back()
         }
-
+  
     }
-</script>
+  
+    function input4ValueChanged() {
+        if (document.getElementById("notSaved").value != "")
+  
+        {
+            inputWasChanged = true;
+        }
+    }
+  </script>
 
 
 <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">

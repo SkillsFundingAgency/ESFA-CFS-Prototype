@@ -101,7 +101,7 @@ GOV.UK Prototype Kit
                         <label class="govuk-label" for="calculation-name">
                             Calculation name
                         </label>
-                        <input class="govuk-input" id="calculation-name" name="calculation-name" type="text"
+                        <input onchange="input4ValueChanged()" class="govuk-input" id="calculation-name" name="calculation-name" type="text"
                             value="block 1%">
                     </div>
                     <p id="calculation-source-code-name" class="govuk-body">Source code name: <em>block1Percent</em></p>
@@ -128,7 +128,7 @@ GOV.UK Prototype Kit
                             <label class="govuk-label" for="value-type">
                                 Value type
                             </label>
-                            <select class="govuk-select" id="value-type" name="value-type">
+                            <select onchange="input4ValueChanged()" class="govuk-select" id="value-type" name="value-type">
                                 <option value=""> </option>
                                 <option value="{{ data['value-type'] }}">{{ data['value-type'] }}</option>
                                 <option value="percentage" selected>Percentage</option>
@@ -146,13 +146,9 @@ GOV.UK Prototype Kit
 
                 {% include "includes/full-screen.html" %}
 
-                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
-                    aria-label="calculation script">
-Return 0
-
-        </textarea>
-
-
+                <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="more-detail" name="more-detail"
+                    rows="20" aria-label="calculation script">Return 0
+                </textarea>
 
                 <label class="govuk-label" for="ukprn">
                     UKPRN
@@ -257,28 +253,29 @@ Return 0
 </script>
 
 <script>
+    let inputWasChanged = false
+
     function check() {
 
-        //Array with inputs that evaluate to true or false based on input
-
-        const inputs = [
-            Boolean(document.getElementById("calculation-name").value),
-        ]
-
-        //starts the counter
         let counter = 0
 
-        //increases counter by 1 for every true item in the array
-        for (var i = 0; i <= inputs.length; i++) {
-            if (inputs[i] === true) {
-                document.getElementById('notSaved').style.display = 'block'
-                counter++
-            }
+        if (inputWasChanged === true) {
+            document.getElementById('notSaved').style.display = 'block'
+            counter++
         }
         if (counter === 0) {
             history.back()
         }
 
+    }
+
+
+    function input4ValueChanged() {
+        if (document.getElementById("notSaved").value != "")
+
+        {
+            inputWasChanged = true;
+        }
     }
 </script>
 

@@ -50,15 +50,15 @@ GOV.UK Prototype Kit
                     </legend>
                     <div class="govuk-radios govuk-radios--inline">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="CFSdataset" name="data-type" type="radio"
-                                value="choosefundingstream-gag.html">
+                            <input onchange="input4ValueChanged()" class="govuk-radios__input" id="CFSdataset"
+                                name="data-type" type="radio" value="choosefundingstream-gag.html">
                             <label class="govuk-label govuk-radios__label" for="CFSdataset">
                                 Published specifications
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="publishedspecification" name="data-type" type="radio"
-                                value="createDataset.html">
+                            <input onchange="input4ValueChanged()" class="govuk-radios__input"
+                                id="publishedspecification" name="data-type" type="radio" value="createDataset.html">
                             <label class="govuk-label govuk-radios__label" for="publishedspecification">
                                 Data sources</label>
                         </div>
@@ -101,28 +101,29 @@ GOV.UK Prototype Kit
 </script>
 
 <script>
+    let inputWasChanged = false
+
     function check() {
 
-        //Array with inputs that evaluate to true or false based on input
-
-        const inputs = [
-            Boolean(document.getElementById("CFSdataset").value),
-        ]
-
-        //starts the counter
         let counter = 0
 
-        //increases counter by 1 for every true item in the array
-        for (var i = 0; i <= inputs.length; i++) {
-            if (inputs[i] === true) {
-                document.getElementById('notSaved').style.display = 'block'
-                counter++
-            }
+        if (inputWasChanged === true) {
+            document.getElementById('notSaved').style.display = 'block'
+            counter++
         }
         if (counter === 0) {
             history.back()
         }
 
+    }
+
+
+    function input4ValueChanged() {
+        if (document.getElementById("notSaved").value != "")
+
+        {
+            inputWasChanged = true;
+        }
     }
 </script>
 
