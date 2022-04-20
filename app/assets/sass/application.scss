@@ -356,7 +356,13 @@ a:-webkit-any-link {
 	font-weight: bold;
 	display: inline-block;
 	background-image: url(../images/icon-tag-remove-cross.svg);
-
 	content: "";
-	background-image: src("/public/images/plus.png");
 	}
+
+.moj-filter__tag:link, .moj-filter__tag:visited {
+	color: #0b0c0c;
+}
+
+.hidediv{
+	display: none;   
+   }
