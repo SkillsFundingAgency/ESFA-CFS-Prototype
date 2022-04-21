@@ -54,7 +54,7 @@ GOV.UK Prototype Kit
                 <div class="govuk-form-group filterSearch">
                               <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2" for="filter-by-type">Search</h2>
 
-                            <a href="#" class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align" onclick="$('input:checkbox').removeAttr('checked');">
+                            <a href="#" class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align" onclick="$('input:search').removeAttr('filterSearch');">
                                 Clear search</a>
 
 
@@ -69,21 +69,25 @@ GOV.UK Prototype Kit
                 <div class="selected-filters-colour">
                 <div class="govuk-form-group filterSearch">
                               <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2" for="filter-by-type">Selected filters</h2>
-                            <a href="#" class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align" onclick="$('input:checkbox').removeAttr('checked');">
+                            <a href="#" class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align" onclick="$('input:checkbox').removeAttr('checked'); countChecked();">
                                 Clear filters</a>
+
                                 <p class="govuk-body-s">No filters selected</p>
 
+                                <div id="div1" style="display:none">
                                 <div class="moj-filter">
-                                    <div id="div1" style="display:none">
                                     <div class="moj-filter__content">   
                                       <div class="moj-filter__selected">
 
-                                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Funding stream</h3>
+                                        <h3 class="govuk-hint govuk-!-margin-bottom-0">Funding stream</h3>
                                         <ul class="moj-filter-tags">
                                           <li><a class="moj-filter__tag"><span class="govuk-visually-hidden">Remove this filter</span> PE and sports grant (1)</a></li>
                                         </ul>
-              
+                                    </div>
+
                                       </div>
+                                    </div>
+
                         </div>
                         </div>
                 </div>
@@ -331,6 +335,21 @@ GOV.UK Prototype Kit
         for(var i=0;i<chboxs.length;i++) { 
             if(chboxs[i].checked){
              vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    
+    
+    }
+
+    function hideMe (box) {
+        
+        var chboxs = document.getElementsByName("c2");
+        var vis = "block";
+        for(var i=0;i<chboxs.length;i++) { 
+            if(chboxs[i].checked){
+             vis = "none";
                 break;
             }
         }
