@@ -69,7 +69,9 @@ GOV.UK Prototype Kit
                 <div class="selected-filters-colour">
                 <div class="govuk-form-group filterSearch">
                               <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2" for="filter-by-type">Selected filters</h2>
-                            <a href="#" class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align" onclick="$('input:checkbox').removeAttr('checked'); countChecked();">
+                            <a href="" class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align" 
+                            onclick="$('input:checkbox').removeAttr('checked'); toggleMe(), countChecked();"
+                            >
                                 Clear filters</a>
 
                                 <div id="showHideText">
@@ -83,6 +85,9 @@ GOV.UK Prototype Kit
                                         <h3 class="govuk-hint govuk-body govuk-!-font-size-16" style="margin: 0px;">Funding stream</h3>
                                         <ul class="moj-filter-tags">
                                           <li><a class="moj-filter__tag" href="" onclick="$('input:checkbox').removeAttr('checked'); display:none, countChecked();"><span class="govuk-visually-hidden">Remove this filter</span> PE and sports grant (1)</a></li>
+                                          <div id="div2" style="display:none">
+                                          <li><a class="moj-filter__tag" href="" onclick="$('input:checkbox').removeAttr('checked'); countChecked();"><span class="govuk-visually-hidden">Remove this filter</span> 16 to 19 (1)</a></li>
+                                        </div>
                                         </ul>
                                       </div>
                                     </div>
@@ -124,9 +129,9 @@ GOV.UK Prototype Kit
                                                 </label>
                                             </div>
                                             <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="fundingstream2" name="organisation"
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF2" name="c2" onclick="showMeF2('div2')"
                                                     type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label" for="fundingstream2">
+                                                <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF2">
                                                     16 to 19 <span>(1)</span>
                                                 </label>
                                             </div>
@@ -154,8 +159,10 @@ GOV.UK Prototype Kit
                                 Funding period
                               </span>
                             </h2>
+                            
                           </div>
                           <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                            
                             <fieldset class="govuk-fieldset">
                                 <div class="govuk-form-group filterSearch">
                                     <label class="govuk-label filterLabel" for="filter-by-type">
@@ -338,8 +345,28 @@ GOV.UK Prototype Kit
             }
         }
         document.getElementById(box).style.display = vis;
-    
-    
+    }
+
+    function showMeF2 (box) {
+        
+        var chboxs = document.getElementsByName("c2");
+        var vis = "none";
+        for(var i=0;i<chboxs.length;i++) { 
+            if(chboxs[i].checked){
+             vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+        function toggleMe() {
+        var x = document.getElementsByClassName("moj-filter__content");
+
+        var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].classList.toggle("hidden")
+        }
     }
 
     document.getElementById('showHideChange').onchange = function() {
