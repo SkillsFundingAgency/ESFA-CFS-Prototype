@@ -46,8 +46,9 @@ GOV.UK Prototype Kit
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
                 <div class="govuk-form-group filterSearch">
-                    <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                        for="filter-by-type">Search</h2>
+                    <label
+                        class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                        for="mainContentSearch">Search</label>
 
                     <a href="#"
                         class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
@@ -56,7 +57,7 @@ GOV.UK Prototype Kit
 
 
                     <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch"
-                        autocomplete="off" name="search" type="text">
+                        autocomplete="off" name="searchBox" type="text">
                 </div>
             </fieldset>
         </div>
@@ -76,26 +77,32 @@ GOV.UK Prototype Kit
                             <p class="govuk-body-s">No filters selected</p>
                         </div>
 
-                        <div id="div1" style="display:none">
-                            <div class="moj-filter">
-                                <div class="moj-filter__content">
-                                    <div class="moj-filter__selected">
-                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16" style="margin: 0px;">
-                                            Funding stream</h3>
-                                        <ul class="moj-filter-tags">
-                                            <li><a class="moj-filter__tag" href=""
-                                                    onclick="$('input:checkbox').removeAttr('checked'); display:none, countChecked();"><span
-                                                        class="govuk-visually-hidden">Remove this filter</span> PE and
-                                                    sports grant (1)</a></li>
-                                            <div id="div2" style="display:none">
-                                                <li><a class="moj-filter__tag" href=""
-                                                        onclick="$('input:checkbox').removeAttr('checked'); countChecked();"><span
-                                                            class="govuk-visually-hidden">Remove this filter</span> 16
+                        <div class="filtersSelected">
+                            <div class="filter">
+                                <div class="filter__content">
+                                    <div class="filter__selected">
+                                        <div class="hidden" id="fundingStreamText">
+                                            <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                Funding stream</h3>
+                                        </div>
+                                        <ul class="filter-tags">
+                                            <div id="filterFundingStreamOption1" class="hidden">
+                                                <li><a class="filter__tag" href=""
+                                                        onclick="$('input:checkbox').removeAttr('checked'); display:none, countChecked();"><span
+                                                            class="govuk-visually-hidden">Remove this filter</span> PE
+                                                        and
+                                                        sports grant (1)</a></li>
+                                            </div>
+                                            <div id="filterFundingStreamOption2" class="hidden">
+                                                <li><a class="filter__tag" href=""
+                                                        onclick="$('input:checkbox').removeAttr('checked'); display:none, countChecked();"><span
+                                                            class="govuk-visually-hidden">Remove this filter</span>
+                                                        16
                                                         to 19 (1)</a></li>
                                             </div>
-                                            <div id="div3" style="display:none">
-                                                <li><a class="moj-filter__tag" href=""
-                                                        onclick="$('input:checkbox').removeAttr('checked'); countChecked();"><span
+                                            <div id="filterFundingStreamOption3" class="hidden">
+                                                <li><a class="filter__tag" href=""
+                                                        onclick="$('input:checkbox').removeAttr('checked'); display:none, countChecked();"><span
                                                             class="govuk-visually-hidden">Remove this filter</span>
                                                         General annual grant (1)</a></li>
                                             </div>
@@ -103,9 +110,9 @@ GOV.UK Prototype Kit
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
-
                 </div>
             </fieldset>
 
@@ -113,168 +120,198 @@ GOV.UK Prototype Kit
                 <div class="govuk-form-group filterSearch">
 
 
-                    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
-                        <div class="govuk-accordion__section ">
-                            <div class="govuk-accordion__section-header">
-                                <h2 class="govuk-accordion__section-heading">
-                                    <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
-                                        id="accordion-with-summary-sections-heading-1">
-                                        Funding stream
-                                    </span>
-                                </h2>
-                                <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
-                                    id="accordion-with-summary-sections-summary-1">
-                                    <span id="num">0</span> selected
+                    <div class="filterContainer">
+                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+                            <div class="govuk-accordion__section ">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                            id="accordion-with-summary-sections-heading-1">
+                                            Funding stream
+                                        </span>
+                                    </h2>
+                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                        id="accordion-with-summary-sections-summary-1">
+                                        <span id="num">0</span> selected
+                                    </div>
+                                </div>
+                                <div id="accordion-with-summary-sections-content-1"
+                                    class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-with-summary-sections-heading-1">
+                                    <fieldset class="govuk-fieldset">
+                                        <div class="govuk-form-group filterSearch">
+                                            <label class="govuk-label filterLabel" for="searchFundingStream">
+                                                Search for funding stream
+                                            </label>
+                                            <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                id="searchFundingStream" autocomplete="off" name="searchBox"
+                                                type="text">
+                                        </div>
+
+                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                            id="filterBySchoolResults">
+                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                <input class="govuk-checkboxes__input" id="showHideChange"
+                                                    name="filterBySchoolResultsFilter1"
+                                                    onclick="showMe('filterFundingStreamOption1')" type="checkbox"
+                                                    value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
+                                                    PE and sports grant <span>(1)</span>
+                                                </label>
+                                                <input type="hidden" id="hidden" value="0">
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF2"
+                                                    name="filterBySchoolResultsFilter2"
+                                                    onclick="showMeF2('filterFundingStreamOption2')" type="checkbox"
+                                                    value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF2">
+                                                    16 to 19 <span>(1)</span>
+                                                </label>
+                                                <input type="hidden" id="hidden" value="0">
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF3"
+                                                    onclick="showMeF3('filterFundingStreamOption3')"
+                                                    name="filterBySchoolResultsFilter3" type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF3">
+                                                    General annual grant <span>(1)</span>
+                                                </label>
+                                                <input type="hidden" id="hidden" value="0">
+                                            </div>
+                                        </div>
+                                    </fieldset>
                                 </div>
                             </div>
-                            <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content"
-                                aria-labelledby="accordion-with-summary-sections-heading-1">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-form-group filterSearch">
-                                        <label class="govuk-label filterLabel" for="filter-by-type">
-                                            Search for funding stream
-                                        </label>
-                                        <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
-                                            id="mainContentSearch" autocomplete="off" name="search" type="text">
-                                    </div>
-                                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
-                                        id="filterBySchoolResults">
-                                        <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                            <input class="govuk-checkboxes__input" id="showHideChange" name="c1"
-                                                onclick="showMe('div1')" type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
-                                                PE and sports grant <span>(1)</span>
-                                            </label>
-                                            <input type="hidden" id="hidden" value="0">
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="showHideChangeF2" name="c2"
-                                                onclick="showMeF2('div2')" type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF2">
-                                                16 to 19 <span>(1)</span>
-                                            </label>
-                                            <input type="hidden" id="hidden" value="0">
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="showHideChangeF3"
-                                                onclick="showMeF3('div3')" name="c3" type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF3">
-                                                General annual grant <span>(1)</span>
-                                            </label>
-                                            <input type="hidden" id="hidden" value="0">
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
 
-
-                        <div class="govuk-accordion__section ">
-                            <div class="govuk-accordion__section-header">
-                                <h2 class="govuk-accordion__section-heading">
-                                    <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
-                                        id="accordion-with-summary-sections-heading-1">
-                                        Funding period
-                                    </span>
-                                </h2>
-                                <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
-                                    id="accordion-with-summary-sections-summary-1">
-                                    0 selected
+                            <div class="govuk-accordion__section">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                            id="accordion-with-summary-sections-heading-1">
+                                            Funding period
+                                        </span>
+                                    </h2>
+                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                        id="accordion-with-summary-sections-summary-1">
+                                        0 selected
+                                    </div>
+                                </div>
+                                <div id="accordion-with-summary-sections-content-1"
+                                    class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-with-summary-sections-heading-1">
+                                    <fieldset class="govuk-fieldset">
+                                        <div class="govuk-form-group filterSearch">
+                                            <label class="govuk-label filterLabel" for="searchFundingPeriod">
+                                                Search for funding period
+                                            </label>
+                                            <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                id="searchFundingPeriod" autocomplete="off" name="searchFundingPeriod"
+                                                type="text">
+                                        </div>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                            id="filterBySchoolResults">
+                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                <input class="govuk-checkboxes__input" id="showHideChange"
+                                                    name="filterBySchoolResultsFilter1"
+                                                    onclick="showMe('filterFundingStreamOption1')" type="checkbox"
+                                                    value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
+                                                    Financial year 2020 to 2021<span>(1)</span>
+                                                </label>
+                                                <input type="hidden" id="hidden" value="0">
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF2"
+                                                    name="filterBySchoolResultsFilter2"
+                                                    onclick="showMeF2('filterFundingStreamOption1')" type="checkbox"
+                                                    value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF2">
+                                                    Academic year 2019 to 2020<span>(1)</span>
+                                                </label>
+                                                <input type="hidden" id="hidden" value="0">
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF3"
+                                                    onclick="showMeF3('filterFundingStreamOption3')"
+                                                    name="filterBySchoolResultsFilter3" type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF3">
+                                                    Academies and schools academic<span>(1)</span>
+                                                </label>
+                                                <input type="hidden" id="hidden" value="0">
+                                            </div>
+                                        </div>
+                                    </fieldset>
                                 </div>
                             </div>
-                            <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content"
-                                aria-labelledby="accordion-with-summary-sections-heading-1">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-form-group filterSearch">
-                                        <label class="govuk-label filterLabel" for="filter-by-type">
-                                            Search for funding period
-                                        </label>
-                                        <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
-                                            id="mainContentSearch" autocomplete="off" name="search" type="text">
-                                    </div>
-                                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
-                                        id="filterBySchoolResults">
-                                        <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                            <input class="govuk-checkboxes__input" id="showHideChange" name="c1"
-                                                onclick="showMe('div1')" type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
-                                                Financial year 2020 to 2021<span>(1)</span>
-                                            </label>
-                                            <input type="hidden" id="hidden" value="0">
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="showHideChangeF2" name="c2"
-                                                onclick="showMeF2('div2')" type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF2">
-                                                Academic year 2019 to 2020<span>(1)</span>
-                                            </label>
-                                            <input type="hidden" id="hidden" value="0">
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="showHideChangeF3"
-                                                onclick="showMeF3('div3')" name="c3" type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF3">
-                                                Academies and schools academic<span>(1)</span>
-                                            </label>
-                                            <input type="hidden" id="hidden" value="0">
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
 
-                        <div class="govuk-accordion__section ">
-                            <div class="govuk-accordion__section-header">
-                                <h2 class="govuk-accordion__section-heading">
-                                    <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
-                                        id="accordion-with-summary-sections-heading-1">
-                                        Status
-                                    </span>
-                                </h2>
-                                <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
-                                    id="accordion-with-summary-sections-summary-1">
-                                    0 selected
-                                </div>
-                            </div>
-                            <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content"
-                                aria-labelledby="accordion-with-summary-sections-heading-1">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
-                                        id="filterBySchoolResults">
-                                        <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                            <input class="govuk-checkboxes__input" id="showHideChange" name="c1"
-                                                onclick="showMe('div1')" type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
-                                                Approved<span>(4)</span>
-                                            </label>
-                                            <input type="hidden" id="hidden" value="0">
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="showHideChangeF2" name="c2"
-                                                onclick="showMeF2('div2')" type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF2">
-                                                Released<span>(2)</span>
-                                            </label>
-                                            <input type="hidden" id="hidden" value="0">
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="showHideChangeF3"
-                                                onclick="showMeF3('div3')" name="c3" type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF3">
-                                                Updated<span>(4)</span>
-                                            </label>
-                                            <input type="hidden" id="hidden" value="0">
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="showHideChangeF3"
-                                                onclick="showMeF3('div3')" name="c3" type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF3">
-                                                Error<span>(6)</span>
-                                            </label>
-                                            <input type="hidden" id="hidden" value="0">
-                                        </div>
+                            <div class="govuk-accordion__section ">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                            id="accordion-with-summary-sections-heading-1">
+                                            Status
+                                        </span>
+                                    </h2>
+                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                        id="accordion-with-summary-sections-summary-1">
+                                        0 selected
                                     </div>
-                                </fieldset>
+                                </div>
+                                <div id="accordion-with-summary-sections-content-1"
+                                    class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-with-summary-sections-heading-1">
+                                    <fieldset class="govuk-fieldset">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                            id="filterBySchoolResults">
+                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                <input class="govuk-checkboxes__input" id="showHideChange"
+                                                    name="filterBySchoolResultsFilter1"
+                                                    onclick="showMe('filterFundingStreamOption1')" type="checkbox"
+                                                    value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
+                                                    Approved<span>(4)</span>
+                                                </label>
+                                                <input type="hidden" id="hidden" value="0">
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChange"
+                                                    name="filterBySchoolResultsFilter2"
+                                                    onclick="showMeF2('filterFundingStreamOption2')" type="checkbox"
+                                                    value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF2">
+                                                    Released<span>(2)</span>
+                                                </label>
+                                                <input type="hidden" id="hidden" value="0">
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF2"
+                                                    onclick="showMeF3('filterFundingStreamOption3')"
+                                                    name="filterBySchoolResultsFilter3" type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF2">
+                                                    Updated<span>(4)</span>
+                                                </label>
+                                                <input type="hidden" id="hidden" value="0">
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF4"
+                                                    onclick="showMeF3('filterFundingStreamOption3')"
+                                                    name="filterBySchoolResultsFilter3" type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF34">
+                                                    Error<span>(6)</span>
+                                                </label>
+                                                <input type="hidden" id="hidden" value="0">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -372,9 +409,11 @@ GOV.UK Prototype Kit
             document.getElementById('fundingStreamLink').href = fundingStream
         }
 
+        // Show me the first filter 
+
         function showMe(box) {
 
-            var chboxs = document.getElementsByName("c1");
+            var chboxs = document.getElementsByName("filterBySchoolResultsFilter1");
             var vis = "none";
             for (var i = 0; i < chboxs.length; i++) {
                 if (chboxs[i].checked) {
@@ -384,10 +423,13 @@ GOV.UK Prototype Kit
             }
             document.getElementById(box).style.display = vis;
         }
+
+        // Show me the second filter 
+
 
         function showMeF2(box) {
 
-            var chboxs = document.getElementsByName("c2");
+            var chboxs = document.getElementsByName("filterBySchoolResultsFilter2");
             var vis = "none";
             for (var i = 0; i < chboxs.length; i++) {
                 if (chboxs[i].checked) {
@@ -398,9 +440,11 @@ GOV.UK Prototype Kit
             document.getElementById(box).style.display = vis;
         }
 
+        // Show me the third filter 
+
         function showMeF3(box) {
 
-            var chboxs = document.getElementsByName("c3");
+            var chboxs = document.getElementsByName("filterBySchoolResultsFilter3");
             var vis = "none";
             for (var i = 0; i < chboxs.length; i++) {
                 if (chboxs[i].checked) {
@@ -412,7 +456,7 @@ GOV.UK Prototype Kit
         }
 
         function toggleMe() {
-            var x = document.getElementsByClassName("moj-filter__content");
+            var x = document.getElementsByClassName("filter__content");
 
             var i;
             for (i = 0; i < x.length; i++) {
@@ -432,6 +476,7 @@ GOV.UK Prototype Kit
         });
         document.getElementById('showHideChange').onchange = function () {
             document.getElementById('showHideText').style.display = this.checked ? 'none' : 'block';
+            document.getElementById('fundingStreamText').style.display = this.checked ? 'block' : 'none';
         };
     </script>
 

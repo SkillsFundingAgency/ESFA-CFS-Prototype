@@ -22,6 +22,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/timeout";
 @import "components/error-summary";
 @import "components/back-to-top";
+@import "components/filter";
 @import "components/facet-tags";
 @import "components/radio-button-search.scss";
 @import "components/tooltip.scss";
@@ -39,6 +40,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/month-filter";
 @import "components/toast";
 @import "components/sortable-table";
+
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -293,107 +295,5 @@ transform: translateY(-40px) translateX(-27px);
 
 .vertical-align-bottom {
 	vertical-align: bottom;
-}
-
-.selected-filters-colour {
-	background-color: #f3f2f1;
-}
-
-.js-enabled .govuk-accordion__section--expanded .govuk-accordion__section-button {
-	padding-bottom: 0px;
-}
-
-
-
-.govuk-form-group .govuk-form-group:last-of-type {
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-.filterLabel {
-	margin-top: 5px;
-}
-
-.js-enabled .govuk-accordion__section-content {
-	padding-bottom: 25px;
-}
-
-.filterSearch {
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-.filterbyCheckbox {
-	padding-left: 0px;
-}
-
-.govuk-accordion__controls {
-	padding-top: 10px;
-}
-
-.moj-filter__tag:link, .moj-filter__tag:visited {
-	color: #0b0c0c;
-}
-
-.moj-filter__tag {
-	background-color: #fff;
-	border: 1px solid #0b0c0c;
-	display: inline-block;
-	margin-top: 5px;
-	padding: 5px;
-	text-decoration: none;
-}
-
-a:-webkit-any-link {
- cursor: pointer;
-}
-
-.moj-filter-tags {
-	padding-left: 0px;
-	margin-top: 5px;
-}
-
-.moj-filter__tag:after {
-	width: 10px;
-	height: 10px;
-	margin-left: 5px;
-	vertical-align: middle;
-	font-weight: bold;
-	display: inline-block;
-	background-image: url(../images/icon-tag-remove-cross.svg);
-	content: "";
-	}
-
-.moj-filter__tag:link, .moj-filter__tag:visited {
-	color: #0b0c0c;
-}
-
-.hidediv{
-	display: none;   
-   }
-
-.clearTags {
-	display: none;
-}
-
-.hidden {
-	display: none;
-}
-
-.selectedText {
-	margin-left: 45px;
-
-}
-
-.selectedText {
-	margin-left: 40px;
-}
-
-// .govuk-body-s {
-// 	margin-left: 25px;
-// }
-
-.js-enabled .govuk-accordion__section-summary {
-	margin-bottom: 12px; 
 }
 
