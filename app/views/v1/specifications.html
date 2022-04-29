@@ -92,7 +92,7 @@ GOV.UK Prototype Kit
                                         </div>
                                         <ul class="filter-tags">
                                             <div id="filterFundingStreamOption1" class="hidden">
-                                                <li><a class="filter__tag" href="" 
+                                                <li><a class="filter__tag" href="#" 
                                                         ><span
                                                             class="govuk-visually-hidden">Remove this filter</span> PE
                                                         and
@@ -131,10 +131,9 @@ GOV.UK Prototype Kit
                                             Funding stream
                                         </span>
                                     </h2>
-                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
-                                        id="accordion-with-summary-sections-summary-1">
-                                        <span id="num">0</span> selected
-                                    </div>
+                                    <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+                                        <span id="y">0</span> selected
+                                      </div>
                                 </div>
                                 <div id="accordion-with-summary-sections-content-1"
                                     class="govuk-accordion__section-content"
@@ -152,25 +151,25 @@ GOV.UK Prototype Kit
                                         <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
                                             id="filterBySchoolResults">
                                             <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                <input class="govuk-checkboxes__input noOfSelections" id="showHideChange"
+                                                <input class="govuk-checkboxes__input" id="showHideChange"
                                                     name="filterBySchoolResultsFilter1"
-                                                    onclick="showMe('filterFundingStreamOption1')" type="checkbox">
+                                                    onclick="showMe('filterFundingStreamOption1'), updateCount()" type="checkbox">
                                                 <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
                                                     PE and sports grant <span>(1)</span>
                                                 </label>
                                             </div>
                                             <div class="govuk-checkboxes__item"> 
-                                                <input class="govuk-checkboxes__input noOfSelections" id="showHideChangeF2"
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF2"
                                                     name="filterBySchoolResultsFilter2"
-                                                    onclick="showMeF2('filterFundingStreamOption2')" type="checkbox">
+                                                    onclick="showMeF2('filterFundingStreamOption2'), updateCount()" type="checkbox">
                                                 <label class="govuk-label govuk-checkboxes__label"
                                                     for="showHideChangeF2">
                                                     16 to 19 <span>(1)</span>
                                                 </label>
                                             </div>
                                             <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input noOfSelections" id="showHideChangeF3"
-                                                    onclick="showMeF3('filterFundingStreamOption3')"
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF3"
+                                                    onclick="showMeF3('filterFundingStreamOption3'), updateCount()"
                                                     name="filterBySchoolResultsFilter3" type="checkbox">
                                                 <label class="govuk-label govuk-checkboxes__label"
                                                     for="showHideChangeF3">
@@ -453,16 +452,12 @@ GOV.UK Prototype Kit
             }
         }
 
-        // Number of selections 
+        // Counter for checkboxes
 
-        $('.noOfSelections').change(function () {
-            var v = parseInt($('#hidden').val())
-            this.checked ? (v += 1) : (v -= 1)
-            $('#hidden').val(v)
-            document.getElementById('num').innerHTML = v;
-
-            // call ajax to update the value in the server
-        });
+        var updateCount = function() {
+    var x = $(".govuk-checkboxes__input:checked").length;
+    document.getElementById("y").innerHTML = x;
+};
 
         document.getElementById('showHideChange').onchange = function () {
             if ($('input[type=checkbox]:checked').length > 0) {
