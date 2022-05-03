@@ -31,16 +31,12 @@
 }
 
 .filterContainer .js-enabled .govuk-accordion__section-content {
-	padding-bottom: 25px;
+	padding-bottom: 0px;
 }
 
 .filterContainer .filterSearch {
 	padding-left: 0px;
 	padding-right: 0px;
-}
-
-.filterContainer .filterbyCheckbox {
-	padding-left: 5px;
 }
 
 .filterContainer .govuk-accordion__controls {
@@ -50,11 +46,6 @@
 .filtersSelected .filter__tag:link, .filter__tag:visited {
 	color: #0b0c0c;
 }
-
-// .filtersSelected .filter__tag:hover {
-// background-color: black;
-// }
-
 
 .filtersSelected .filter__tag {
 	background-color: #fff;
