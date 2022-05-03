@@ -22,6 +22,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/timeout";
 @import "components/error-summary";
 @import "components/back-to-top";
+@import "components/filter";
 @import "components/facet-tags";
 @import "components/radio-button-search.scss";
 @import "components/tooltip.scss";
@@ -39,6 +40,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/month-filter";
 @import "components/toast";
 @import "components/sortable-table";
+
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -294,3 +296,4 @@ transform: translateY(-40px) translateX(-27px);
 .vertical-align-bottom {
 	vertical-align: bottom;
 }
+
