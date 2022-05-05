@@ -57,31 +57,10 @@ GOV.UK Prototype Kit
 
           <!-- //Clear search  -->
 
-          <a href="#"
+          <a href=""
             class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
             onclick="
-
-                        document.getElementById('DatasourceRow1').style.display = 'table-row',
-                        document.getElementById('DatasourceRow1Details').style.display = '',
-                        document.getElementById('DatasourceRow1Text').style.display = '',
-                        document.getElementById('DatasourceRow1Download').style.display = '',
-
-
-                        
-                        document.getElementById('DatasourceRow2').style.display = 'table-row',
-                        document.getElementById('DatasourceRow2Details').style.display = '',
-                        document.getElementById('DatasourceRow2Text').style.display = ''
-                        document.getElementById('DatasourceRow3').style.display = 'table-row',
-                        document.getElementById('DatasourceRow3Details').style.display = '',
-                        document.getElementById('DatasourceRow3Text').style.display = ''
-                        document.getElementById('DatasourceRow4').style.display = 'table-row',
-                        document.getElementById('DatasourceRow4Details').style.display = '',
-                        document.getElementById('DatasourceRow4Text').style.display = ''
-                        document.getElementById('DatasourceRow5').style.display = 'table-row',
-                        document.getElementById('DatasourceRow5Details').style.display = '',
-                        document.getElementById('DatasourceRow5Text').style.display = ''
                         document.getElementById('mainContentSearch').value = ''
-
                         ">
             Clear search</a>
 
@@ -290,7 +269,6 @@ GOV.UK Prototype Kit
       </thead>
 
       <tbody class="govuk-table__body" id="mainContentResults">
-
         <tr class="govuk-table__row" id="newDataSource">
           <th scope="row" class="govuk-table__header"><a href="updateDataset">{{ data['data-source-file-name'] }}</a>
             <div class="govuk-!-margin-top-4" id="newDataSourceDetails">
@@ -318,7 +296,7 @@ GOV.UK Prototype Kit
           <td class="govuk-table__cell">11 November 2019 <br> 10:54am</td>
           <td class="govuk-table__cell" id="govuk-table__cell">
             <div>
-              <p class="govuk-body" >
+              <p class="govuk-body">
                 <a class="govuk-link" target="_self" href="">{{ data['data-source-file-name'] }}.xlsx </a>
               </p>
             </div>
@@ -359,136 +337,138 @@ GOV.UK Prototype Kit
         </tr>
 
         <tr class="govuk-table__row" id="DatasourceRow2">
-        <th scope="row" class="govuk-table__header"><a href="updateDataset">Student Data 201920</a>
-          <div class="govuk-!-margin-top-4" id="DatasourceRow1Details">
-            <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Data source details
-                </span>
-              </summary>
-              <div class="govuk-details__text" id="DatasourceRow1Text">
-                <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
-                <p class="govuk-body-s"><strong>Data schema description:</strong> Student data for 2019 2020 allocation
-                  year</p>
-                <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">Student Data 201920</a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow1Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow1Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> Student data for 2019 2020
+                    allocation
+                    year</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
 
-                <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
-                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
-                <p class="govuk-body-s"><a class="govuk-link" href="datasethistory">View all versions</a></p>
-              </div>
-            </details>
-          </div>
-        </th>
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                  <p class="govuk-body-s"><a class="govuk-link" href="datasethistory">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
 
-        <td class="govuk-table__cell">10 November 2019 <br> 9:14am</td>
-        <td class="govuk-table__cell">
-          <div>
-            <p class="govuk-body">
-              <a class="govuk-link" target="_self" href="">StudentData201920.xlsx </a>
-            </p>
-          </div>
-        </td>
+          <td class="govuk-table__cell">10 November 2019 <br> 9:14am</td>
+          <td class="govuk-table__cell">
+            <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">StudentData201920.xlsx </a>
+              </p>
+            </div>
+          </td>
         </tr>
 
-      <tr class="govuk-table__row" id="DatasourceRow3">
-        <th scope="row" class="govuk-table__header"><a href="updateDataset">1920 Student Data</a>
-          <div class="govuk-!-margin-top-4" id="DatasourceRow3Details">
-            <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Data source details
-                </span>
-              </summary>
-              <div class="govuk-details__text" id="DatasourceRow3Text">
-                <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
-                <p class="govuk-body-s"><strong>Data schema description:</strong> Factors data for 1920 allocation year
-                </p>
-                <p class="govuk-body-s"><strong>Data source version:</strong> 4</p>
+        <tr class="govuk-table__row" id="DatasourceRow3">
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">1920 Student Data</a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow3Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow3Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> Factors data for 1920 allocation
+                    year
+                  </p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 4</p>
 
-                <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan TOWNSEND</p>
-                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
-                <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
-              </div>
-            </details>
-          </div>
-        </th>
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan TOWNSEND</p>
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                  <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
 
-        <td class="govuk-table__cell">8 November 2019 <br> 8:59am</td>
-        <td class="govuk-table__cell">
-          <div>
-            <p class="govuk-body">
-              <a class="govuk-link" target="_self" href="">1920StudentData.xlsx </a>
-            </p>
-          </div>
-        </td>
+          <td class="govuk-table__cell">8 November 2019 <br> 8:59am</td>
+          <td class="govuk-table__cell">
+            <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">1920StudentData.xlsx </a>
+              </p>
+            </div>
+          </td>
         </tr>
 
 
         <tr class="govuk-table__row" id="DatasourceRow4">
-        <th scope="row" class="govuk-table__header"><a href="updateDataset">Phase 1 QA</a>
-          <div class="govuk-!-margin-top-4" id="DatasourceRow4Details">
-            <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Data source details
-                </span>
-              </summary>
-              <div class="govuk-details__text" id="DatasourceRow4Text">
-                <p class="govuk-body-s"> <strong>Data schema:</strong> Rates and baselines</p>
-                <p class="govuk-body-s"><strong>Data schema description:</strong> Phase 1 QA data for the allocation
-                  year</p>
-                <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">Phase 1 QA</a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow4Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow4Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> Rates and baselines</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> Phase 1 QA data for the allocation
+                    year</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
 
-                <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
-                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
-                <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
-              </div>
-            </details>
-          </div>
-        </th>
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                  <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
 
-        <td class="govuk-table__cell">4 November 2019 <br> 11:06am</td>
-        <td class="govuk-table__cell">
-          <div>
-            <p class="govuk-body">
-              <a class="govuk-link" target="_self" href="">Phase1QA.xlsx </a>
-            </p>
-          </div>
-        </td>
+          <td class="govuk-table__cell">4 November 2019 <br> 11:06am</td>
+          <td class="govuk-table__cell">
+            <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">Phase1QA.xlsx </a>
+              </p>
+            </div>
+          </td>
         </tr>
 
         <tr class="govuk-table__row" id="DatasourceRow5">
-        <th scope="row" class="govuk-table__header"><a href="updateDataset">FPF Historic Data</a>
-          <div class="govuk-!-margin-top-4" id="DatasourceRow5Details">
-            <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Data source details
-                </span>
-              </summary>
-              <div class="govuk-details__text" id="DatasourceRow5Text">
-                <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Funding</p>
-                <p class="govuk-body-s"><strong>Data schema description:</strong> FPF Historic Data for the allocation
-                  year</p>
-                <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">FPF Historic Data</a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow5Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow5Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Funding</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> FPF Historic Data for the allocation
+                    year</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
 
-                <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
-                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
-                <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
-              </div>
-            </details>
-          </div>
-        </th>
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                  <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
 
-        <td class="govuk-table__cell">1 November 2019 <br> 3:44pm</td>
-        <td class="govuk-table__cell">
-          <div>
-            <p class="govuk-body">
-              <a class="govuk-link" target="_self" href="">FPFHistoricData.xlsx </a>
-            </p>
-          </div>
-        </td>
+          <td class="govuk-table__cell">1 November 2019 <br> 3:44pm</td>
+          <td class="govuk-table__cell">
+            <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">FPFHistoricData.xlsx </a>
+              </p>
+            </div>
+          </td>
         </tr>
 
       </tbody>
