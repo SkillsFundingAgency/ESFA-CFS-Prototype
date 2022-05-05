@@ -13,14 +13,12 @@
 {% endblock %}
 
     {% block content %}
-<div class="govuk-grid-row govuk-!-margin-bottom-9">
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Templates</h1>
         <span class="govuk-caption-l">Create and manage funding templates for funding line calculation hierarchies for any given funding stream and period.</span>
     </div>
 </div>
-
-
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -38,20 +36,33 @@
     <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-                    <h4 class="govuk-heading-s">Search</h4>
-                </legend>
                 <div class="govuk-form-group filterSearch">
-                    <label class="govuk-label filterLabel" for="filter-by-type"> </label>
+                    <label
+                        class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                        for="mainContentSearch">Search</label>
+
+                    <a href="#"
+                        class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+                        onclick="
+                        document.getElementById('showTemplate').style.display = 'table-row',
+                        document.getElementById('showTemplateDetails').style.display = '',
+                        document.getElementById('showTemplateText').style.display = '',
+                        
+                        document.getElementById('showTemplateRow2').style.display = 'table-row',
+                        document.getElementById('showTemplateRow2Details').style.display = '',
+                        document.getElementById('showTemplateRow2Text').style.display = '',
+
+                        document.getElementById('mainContentSearch').value = ''">
+
+                        Clear search</a>
+                        
                     <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch"
-                        autocomplete="off" name="search" type="text" />
+                        autocomplete="off" name="searchBox" type="text">
                 </div>
             </fieldset>
         </div>
 
     </div>
-
-
 
     <div class="govuk-grid-column-two-thirds">
         <table class="govuk-table">
@@ -62,16 +73,16 @@
                 </tr>
             </thead>
             <tbody class="govuk-table__body" id="mainContentResults">
-                <tr class="govuk-table__row">
+                <tr class="govuk-table__row" id="showTemplate">
                     <th scope="row" class="govuk-table__header"><a href="edittemplate">DSG FY-2020</a>
-                        <div class="govuk-!-margin-top-3">
+                        <div class="govuk-!-margin-top-3" id="showTemplateDetails">
                             <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                                 <summary class="govuk-details__summary">
                                     <span class="govuk-details__summary-text">
                                         Template details
                                     </span>
                                 </summary>
-                                <div class="govuk-details__text">
+                                <div class="govuk-details__text" id="showTemplateText">
                                     <p class="govuk-body"><strong>Funding stream:</strong> Dedicated schools grant</p>
                                     <p class="govuk-body"><strong>Funding period:</strong> Financial year 2020 to 2021
                                     </p>
@@ -88,15 +99,15 @@
                     </th>
                     <td class="govuk-table__cell">19 May 2020 9:14am</td>
                 </tr>
-                <tr class="govuk-table__row">
+                <tr class="govuk-table__row" id="showTemplateRow2">
                     <th scope="row" class="govuk-table__header"><a href="edittemplategag.html">GAG AC-21-22</a>
-                        <div class="govuk-!-margin-top-3">
+                        <div class="govuk-!-margin-top-3" id="showTemplateRow2Details">
                             <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                                 <summary class="govuk-details__summary">
                                     <span class="govuk-details__summary-text">
                                         Template details </span>
                                 </summary>
-                                <div class="govuk-details__text">
+                                <div class="govuk-details__text" id="showTemplateRow2Text">
                                     <p class="govuk-body"><strong>Funding stream:</strong> General annual grant</p>
                                     <p class="govuk-body"><strong>Funding period:</strong> Academic year 2019 to 2020
                                     </p>
@@ -116,8 +127,6 @@
                 <tr class="govuk-table__row">
             </tbody>
         </table>
-
-
 
         <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
             <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">

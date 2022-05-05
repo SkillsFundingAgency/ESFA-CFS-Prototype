@@ -1,7 +1,7 @@
-{% extends "layout.html" %} 
+{% extends "layout.html" %}
 
-{% block pageTitle %} 
-GOV.UK Prototype Kit 
+{% block pageTitle %}
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,13 +14,13 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">
+      <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">
         View results
       </a>
     </li>
 
   </ol>
-  
+
 </div>
 
 {% endblock %}
@@ -34,30 +34,51 @@ GOV.UK Prototype Kit
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
-            Select funding stream
+            Select funding
           </h1>
-          <span class="govuk-caption-l govuk-!-margin-bottom-6">Select the funding you wish to view providers
-            for</span>
+          <span class="govuk-caption-l govuk-!-margin-bottom-6">
+            Select a funding stream and period to view the provider results.
+          </span>
         </legend>
         <form action="provider-results.html" method="get" no-validate data-validate='funding-stream'>
-          <label class="govuk-label" for="fundingStream">Select a funding stream</br>
-            <input list="fundingstream" name="fundingStream" class="govuk-select govuk-!-margin-top-1" size="40"
-              name="browser" id="browser"></label>
-          <datalist id="fundingstream">
-            <option value="General annual grant (GAG)">
-            <option value="Dedicated schools grant (DSG)">
-            <option value="PE and sports premium (PSG)">
-            <option value="Pupil number adjustment (PNA)">
-            <option value="16 to 19">
-            <option value="14 to 16">
-            <option value="Dance and drama awards (DADA)">
-          </datalist>
+
+          <div class="govuk-form-group fundingStream">
+            <label class="govuk-label" for="fundingStream">
+              Funding stream
+            </label>
+
+            <select class="govuk-select" id="fundingstream" name="fundingStream">
+              <option value=""></option>
+              <option value="General annual grant (GAG)" rel="noInput">General annual grant (GAG)</option>
+              <option value="Dedicated schools grant (DSG)" rel="noInput">Dedicated schools grant (DSG)</option>
+              <option value="PE and sports premium (PSG)" rel="noInput">PE and sports premium (PSG)</option>
+              <option value="Pupil number adjustment (PNA)" rel="noInput">Pupil number adjustment (PNA)</option>
+              <option value="16 to 19" rel="16-19">16 to 19</option>
+              <option value="14 to 16" rel="noInput">14 to 16</option>
+              <option value="Dance and drama awards (DADA)" rel="noInput">Dance and drama awards (DADA)</option>
+            </select>
+            </datalist>
+          </div>
+
+
+          <div class="govuk-form-group fundingPeriod">
+            <label class="govuk-label" for="fundingPeriod">
+              Funding period
+            </label>
+            <select class="govuk-select" id="fundingPeriod" name="fundingPeriod">
+              <option value="" class="16-19"></option>
+              <option value="" class="noInput"></option>
+              <option value="no Input" class="noInput">No data</option>
+              <option value="16 to 19" class="16-19">Academies and Schools Year 2021-22</option>
+              <option value="16 to 19" class="16-19">Academies and Schools Year 2022-23</option>
+            </select>
+          </div>
 
     </div>
   </div>
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row continueBtn">
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-button-group">
       <button id="specification-link" class="govuk-button" data-module="govuk-button">
@@ -70,17 +91,8 @@ GOV.UK Prototype Kit
 </form>
 </fieldset>
 
-
-
-
-
-
-
-
-
-
-
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script type="text/javascript">
   var selectEl = document.querySelector('#funding-stream')
@@ -111,6 +123,67 @@ GOV.UK Prototype Kit
     }
 
   }
+</script>
+
+<script>
+  $(document).ready(function () {
+    var $cat = $('select[name=fundingStream]'),
+      $items = $('select[name=fundingPeriod]');
+
+    $cat.change(function () {
+
+      var $this = $(this).find(':selected'),
+        rel = $this.attr('rel');
+
+      // Hide all
+      $items.find("option").hide();
+      $set = $items.find('option.' + rel);
+      $set.show().first().prop('selected', true);
+
+    });
+  });
+
+    // Show period dropdown 
+
+  $(function () {
+    var hideBoxes = function () {
+      $(".fundingPeriod, .continueBtn").hide();
+    }
+
+    $("select[name='fundingStream']").change(function () {
+      hideBoxes();
+
+      var value = $(this).val();
+      if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)", "PE and sports premium (PSG)","Pupil number adjustment (PNA)", "14 to 16",
+      "Dance and drama awards (DADA)") {
+        $(".fundingPeriod").show();
+      }
+    })
+
+    hideBoxes();
+  });
+
+  // Show continue button 
+
+  $(function () {
+        var hideBoxes = function () {
+          $(".continueBtn").hide();
+        }
+
+
+        $("select[name='fundingPeriod']").change(function () {
+
+          var value = $(this).val();
+          if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)", "PE and sports premium (PSG)","Pupil number adjustment (PNA)", "14 to 16",
+      "Dance and drama awards (DADA)") {
+            $(".continueBtn").show();
+          }
+        })
+
+          hideBoxes();
+        });
+
+
 </script>
 
 {% endblock %}
