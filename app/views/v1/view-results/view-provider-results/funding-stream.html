@@ -143,7 +143,7 @@ GOV.UK Prototype Kit
     });
   });
 
-    // Show period dropdown 
+  // Show period dropdown 
 
   $(function () {
     var hideBoxes = function () {
@@ -154,8 +154,9 @@ GOV.UK Prototype Kit
       hideBoxes();
 
       var value = $(this).val();
-      if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)", "PE and sports premium (PSG)","Pupil number adjustment (PNA)", "14 to 16",
-      "Dance and drama awards (DADA)") {
+      if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
+        "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
+        "Dance and drama awards (DADA)") {
         $(".fundingPeriod").show();
       }
     })
@@ -166,24 +167,23 @@ GOV.UK Prototype Kit
   // Show continue button 
 
   $(function () {
-        var hideBoxes = function () {
-          $(".continueBtn").hide();
-        }
+    var hideBoxes = function () {
+      $(".continueBtn").hide();
+    }
 
 
-        $("select[name='fundingPeriod']").change(function () {
+    $("select[name='fundingPeriod']").change(function () {
 
-          var value = $(this).val();
-          if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)", "PE and sports premium (PSG)","Pupil number adjustment (PNA)", "14 to 16",
-      "Dance and drama awards (DADA)") {
-            $(".continueBtn").show();
-          }
-        })
+      var value = $(this).val();
+      if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
+        "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
+        "Dance and drama awards (DADA)") {
+        $(".continueBtn").show();
+      }
+    })
 
-          hideBoxes();
-        });
-
-
+    hideBoxes();
+  });
 </script>
 
 {% endblock %}
