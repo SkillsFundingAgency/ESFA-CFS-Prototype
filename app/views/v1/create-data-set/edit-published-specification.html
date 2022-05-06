@@ -109,38 +109,52 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
+
     <div class="govuk-grid-column-one-third position-sticky">
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-                    <h4 class="govuk-heading-s"> Search</h4>
-                </legend>
                 <div class="govuk-form-group filterSearch">
+                    <label
+                        class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                        for="mainContentSearch">Search</label>
+
+                    <a href=""
+                        class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+                       
+                        onclick="">
+
+                        Clear search</a>
+
                     <label class="govuk-label filterLabel" for="filter-by-type">
                         Search added funding lines or calculations
                     </label>
                     <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()"
                         id="searchSelected" autocomplete="off" name="searchSelected" type="text">
+
                 </div>
             </fieldset>
         </div>
 
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-                    <h4 class="govuk-heading-s"> Filter selection</h4>
-                </legend>
-                <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-2">
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input table-filter-jq" id="filter" name="filter" type="checkbox"
-                            value="">
-                        <label class="govuk-label govuk-checkboxes__label" for="filter">
-                            Show only selected
-                        </label>
+                <div class="govuk-form-group filterSearch">
+                    <label
+                        class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                        for="mainContentFilter">Filter selection</label>
+                    <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-2">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input table-filter-jq" id="filter" name="filter"
+                                type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-bottom-4" for="filter">
+                                Show only selected
+                            </label>
+                        </div>
                     </div>
+
                 </div>
             </fieldset>
         </div>
+
 
         <div class="govuk-button-group">
             <a href="edit-check-data-set" class="govuk-button">
@@ -160,23 +174,25 @@ GOV.UK Prototype Kit
                         Name
                         <br>
                     </th>
+                    <th scope="col" class="govuk-table__header">Status</th>
                     <th scope="col" class="govuk-table__header">Structure</th>
                     <th scope="col" class="govuk-table__header">ID</th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
+                <tr class="govuk-table__row" id="row1">
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
                                 <input checked class="govuk-checkboxes__input provider-checked table-input"
                                     id="filterCheckbox1" name="provider-approval" type="checkbox" value="">
                                 <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox1">
-                                    Area cost factor <strong class="govuk-tag govuk-tag--red">Obsolete</strong>
+                                    Area cost factor 
                                 </label>
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Obsolete</strong></td>
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">160</td>
                 </tr>
@@ -193,6 +209,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">198</td>
                 </tr>
@@ -201,11 +218,12 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small">
                             <p class="govuk-label govuk-checkboxes__label govuk-!-padding-left-6">
-                                Area cost allowance adjustment <strong class="govuk-tag govuk-tag--blue">Used in
-                                    calculation</strong>
+                                Area cost allowance adjustment 
                             </p>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Used in
+                        calculation</strong></td>
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">292</td>
                 </tr>
@@ -222,6 +240,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">290</td>
                 </tr>
@@ -238,6 +257,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">301</td>
                 </tr>
@@ -254,6 +274,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">173</td>
                 </tr>
@@ -270,6 +291,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">213</td>
                 </tr>
@@ -286,6 +308,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">362</td>
                 </tr>
@@ -302,6 +325,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">273</td>
                 </tr>
@@ -318,6 +342,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">166</td>
                 </tr>
@@ -334,6 +359,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">194</td>
                 </tr>
@@ -350,6 +376,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">201</td>
                 </tr>
@@ -366,6 +393,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">160</td>
                 </tr>
@@ -382,6 +410,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">119</td>
                 </tr>
@@ -398,6 +427,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">228</td>
                 </tr>
@@ -414,6 +444,7 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
+                    <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">195</td>
                 </tr>
