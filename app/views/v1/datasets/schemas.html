@@ -41,22 +41,9 @@ GOV.UK Prototype Kit
           <label class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
             for="mainContentSearch">Search</label>
 
-          <a href="#"
+          <a href=""
             class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
-            onclick="
-                  document.getElementById('showSchema').style.display = 'table-row',
-                  document.getElementById('showSchemaDetails').style.display = '',
-                  document.getElementById('showSchemaText').style.display = '',
-                  
-                  document.getElementById('showSchemaRow2').style.display = 'table-row',
-                  document.getElementById('showSchemaRow2Details').style.display = '',
-                  document.getElementById('showSchemaRow2Text').style.display = '',
-
-                  document.getElementById('showSchemaRow3').style.display = 'table-row',
-                  document.getElementById('showSchemaRow3Details').style.display = '',
-                  document.getElementById('showSchemaRow3Text').style.display = '',
-
-                  document.getElementById('mainContentSearch').value = ''">
+            onclick="">
 
             Clear search</a>
 
@@ -74,16 +61,7 @@ GOV.UK Prototype Kit
               for="filter-by-type">Selected filters</h2>
             <a href=""
               class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
-              onclick="
-                      $('input:checkbox').
-                      
-                      removeAttr('checked'); 
-                      
-                      toggleMe(), 
-                      
-                      countChecked();
-                      
-                      ">
+              onclick="">
               Clear filters</a>
 
             <div id="showHideText">
@@ -161,7 +139,7 @@ GOV.UK Prototype Kit
                       </div>
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="showHideChangeF2" name="filterBySchoolResultsFilter2"
-                          onclick="showMeF2('filterFundingStreamOption2'), updateStreamCount()" type="checkbox">
+                          onclick="showMeF2('filterFundingStreamOption2'), updateStreamCount()" type="checkbox" disabled>
                         <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF2">
                           General annual grant <span>(0)</span>
                         </label>
