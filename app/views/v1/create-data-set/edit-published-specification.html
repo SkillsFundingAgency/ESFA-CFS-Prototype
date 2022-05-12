@@ -112,7 +112,6 @@ GOV.UK Prototype Kit
 
     <div class="govuk-grid-column-one-third position-sticky">
         <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
                 <div class="govuk-form-group filterSearch">
                     <label
                         class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
@@ -124,18 +123,16 @@ GOV.UK Prototype Kit
 
                         Clear search</a>
 
-                    <label class="govuk-label filterLabel" for="filter-by-type">
+                    <label class="govuk-label filterLabel" for="searchSelected">
                         Search added funding lines or calculations
                     </label>
                     <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()"
                         id="searchSelected" autocomplete="off" name="searchSelected" type="text">
 
                 </div>
-            </fieldset>
         </div>
 
         <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
                 <div class="govuk-form-group filterSearch">
                     <label
                         class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
@@ -151,7 +148,6 @@ GOV.UK Prototype Kit
                     </div>
 
                 </div>
-            </fieldset>
         </div>
 
 
@@ -191,7 +187,14 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Obsolete</strong></td>
+                    <td class="govuk-table__cell">
+                        <strong class="govuk-tag govuk-tag--red">
+                            <span class="govuk-visually-hidden">
+                                Area cost factor
+                            </span>
+                            Obsolete
+                        </strong>
+                    </td>
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">160</td>
                 </tr>
@@ -221,8 +224,14 @@ GOV.UK Prototype Kit
                             </p>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Used in
-                            calculation</strong></td>
+                    <td class="govuk-table__cell">
+                        <strong class="govuk-tag govuk-tag--blue">
+                            <span class="govuk-visually-hidden">
+                                Area cost allowance adjustment
+                            </span>
+                            Used in calculation
+                        </strong>
+                    </td>
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">292</td>
                 </tr>

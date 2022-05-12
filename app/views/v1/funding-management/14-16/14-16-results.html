@@ -64,6 +64,9 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-one-third position">
         <div class="govuk-form-group filterbyContainer">
             <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                    Select an option to begin searching the page content
+                  </legend>
                 <div class="govuk-form-group filterSearch govuk-!-margin-bottom-0">
                     <label
                         class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
@@ -154,7 +157,6 @@ GOV.UK Prototype Kit
         <!-- // Filters -->
 
         <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
                 <div class="selected-filters-background">
                     <div class="govuk-form-group filterSearch">
                         <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
@@ -343,9 +345,11 @@ GOV.UK Prototype Kit
                         </div>
                     </div>
                 </div>
-            </fieldset>
 
             <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                    Options to filter the content on the page
+                  </legend>
                 <div class="govuk-form-group filterSearch">
                     <div class="filterContainer">
                         <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
@@ -367,6 +371,9 @@ GOV.UK Prototype Kit
                                     class="govuk-accordion__section-content"
                                     aria-labelledby="accordion-with-summary-sections-heading-1">
                                     <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                            Select an option to filter by provider type
+                                          </legend>
                                         <div class="govuk-form-group filterSearch">
                                             <label class="govuk-label filterLabel" for="searchFundingStream">
                                                 Search for Provider type
@@ -420,12 +427,15 @@ GOV.UK Prototype Kit
                                     class="govuk-accordion__section-content"
                                     aria-labelledby="accordion-with-summary-sections-heading-1">
                                     <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                            Select an option to filter by provider sub type
+                                          </legend>
                                         <div class="govuk-form-group filterSearch">
-                                            <label class="govuk-label filterLabel" for="searchFundingStream">
+                                            <label class="govuk-label filterLabel" for="searchProviderSubType">
                                                 Search for Provider sub type
                                             </label>
                                             <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
-                                                id="searchFundingStream" autocomplete="off" name="searchBox"
+                                                id="searchProviderSubType" autocomplete="off" name="searchBox"
                                                 type="text">
                                         </div>
 
@@ -474,6 +484,9 @@ GOV.UK Prototype Kit
                                     class="govuk-accordion__section-content"
                                     aria-labelledby="accordion-with-summary-sections-heading-1">
                                     <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                            Select an option to filter by status
+                                          </legend>
                                         <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
                                             id="filterBySchoolResults">
                                             <div class="govuk-checkboxes__item govuk-!-margin-top-2">
@@ -548,6 +561,9 @@ GOV.UK Prototype Kit
                                     class="govuk-accordion__section-content"
                                     aria-labelledby="accordion-with-summary-sections-heading-1">
                                     <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                            Select an option to filter by allocation type
+                                          </legend>
                                         <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
                                             id="filterBySchoolResults">
                                             <div class="govuk-checkboxes__item govuk-!-margin-top-2">
@@ -603,6 +619,9 @@ GOV.UK Prototype Kit
                                     class="govuk-accordion__section-content"
                                     aria-labelledby="accordion-with-summary-sections-heading-1">
                                     <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                            Select an option to filter by an open date
+                                          </legend>
                                         <div class="govuk-form-group filterSearch">
                                             <label class="govuk-label filterLabel" for="searchFundingPeriod">
                                                 Search for Open date
