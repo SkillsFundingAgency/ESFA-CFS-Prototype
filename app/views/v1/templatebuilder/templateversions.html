@@ -1,8 +1,8 @@
-{% extends "layout.html" %} 
+{% extends "layout.html" %}
 
-{% block pageTitle %} 
-GOV.UK Prototype Kit 
-{% endblock %} 
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
 
 {% block beforeContent %}
 
@@ -21,7 +21,7 @@ GOV.UK Prototype Kit
 
   </ol>
 </div>
-  
+
 {% endblock %}
 
 {% block content %}
@@ -51,35 +51,56 @@ GOV.UK Prototype Kit
 
 
     <div class="govuk-form-group filterbyContainer">
+
       <fieldset class="govuk-fieldset">
-        <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-          <h4 class="govuk-heading-s">Filter by status <span><i class="material-icons right-align">
-                keyboard_arrow_down</i></span>
-          </h4>
-          <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
-        </button>
-        <div id="filter-content" class="filter-content">
-          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="filter-by-published" name="filter-by-published"
-                autocomplete="off" type="checkbox" value="published">
-              <label class="govuk-label govuk-checkboxes__label" for="published">
-                Published <span>(1)</span>
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="filter-by-draft" name="filter-by-draft" autocomplete="off"
-                type="checkbox" value="draft">
-              <label class="govuk-label govuk-checkboxes__label" for="draft">
-                Draft <span>(4)</span>
-              </label>
+        <div class="govuk-form-group filterSearch">
+          <div class="filterContainer">
+            <div class="showOneSection">
+              <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+                <div class="govuk-accordion__section ">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                        id="accordion-with-summary-sections-heading-1">
+                        <span class="govuk-visually-hidden">Filter by</span>
+                        Status
+                      </span>
+                    </h2>
+                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                      id="accordion-with-summary-sections-summary-1">
+                      <span id="statusCount">0</span> selected
+                    </div>
+                  </div>
+                  <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content"
+                    aria-labelledby="accordion-with-summary-sections-heading-1">
+                    <fieldset class="govuk-fieldset">
+
+                      <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                        <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                          <input class="govuk-checkboxes__input" id="showHideChange" name="filterBySchoolResultsFilter1"
+                            onclick="updateStreamCount()" type="checkbox">
+                          <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
+                            Published <span>(1)</span>
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="showHideChangeF2"
+                            name="filterBySchoolResultsFilter2" onclick="updateStreamCount()" type="checkbox">
+                          <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF2">
+                            Draft <span>(4)</span>
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
       </fieldset>
     </div>
-
-    </fieldset>
   </div>
 
 
@@ -168,7 +189,14 @@ GOV.UK Prototype Kit
 </div>
 </div>
 
+<script>
+  // Counter for checkboxes in funding stream
 
+  var updateStreamCount = function () {
+    var x = $(".govuk-checkboxes__input:checked").length;
+    document.getElementById("statusCount").innerHTML = x;
+  };
+</script>
 
 
 
