@@ -7,26 +7,26 @@ GOV.UK Prototype Kit
 {% block beforeContent %}
 
 <div class="govuk-breadcrumbs govuk">
-<ol class="govuk-breadcrumbs__list">
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/start">
-      Home
-    </a>
-  </li>
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="manageData">
-      Manage data
-    </a>
-  </li>
-  
-</ol>
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Home
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manageData">
+        Manage data
+      </a>
+    </li>
+
+  </ol>
 </div>
 
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-9">
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Manage data source files</h1>
     <span class="govuk-caption-l">Upload new or updated data source files</span>
@@ -50,109 +50,217 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <div class="govuk-form-group filterbyContainer">
+        <div class="govuk-form-group filterSearch">
+          <label class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+            for="mainContentSearch">Search</label>
+
+          <!-- //Clear search  -->
+
+          <a href=""
+            class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+            onclick="
+                        document.getElementById('mainContentSearch').value = ''
+                        ">
+            Clear search</a>
+
+
+          <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch" autocomplete="off"
+            name="searchBox" type="text">
+        </div>
+    </div>
+
+    <div class="govuk-form-group filterbyContainer">
+        <div class="selected-filters-background">
+          <div class="govuk-form-group filterSearch">
+            <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+              for="filter-by-type">Selected filters</h2>
+            <a href=""
+              class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+              onclick="">
+              Clear filters</a>
+
+            <div id="showHideText">
+              <p class="govuk-body-s">No filters selected</p>
+            </div>
+
+            <div class="filtersSelected">
+              <div class="filter">
+                <div class="filter__content">
+                  <div class="filter__selected">
+
+                    <!-- // Funding Stream Tags -->
+
+                    <div class="hidden" id="fundingStreamText">
+                      <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                        Funding stream</h3>
+                    </div>
+                    <ul class="filter-tags">
+                      <li id="filterFundingStreamOption1" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span> PE
+                          and
+                          sports grant (1)</a>
+                      </li>
+                      <li id="filterFundingStreamOption2" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>
+                          General annual grant (1)</a>
+                      </li>
+                      <li id="filterFundingStreamOption3" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>
+                          16 to 19 (1)</a>
+                      </li>
+                      <li id="filterFundingStreamOption4" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>
+                          14 to 16 (1)</a>
+                      </li>
+                    </ul>
+
+                    <!-- // Funding Period Tags -->
+
+                    <div class="hidden" id="statusText">
+                      <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                        Data schema</h3>
+                    </div>
+                    <ul class="filter-tags">
+                      <li id="filterFundingStreamOption5" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this
+                            filter</span>PE and sports grant (1)</a>
+                      </li>
+                      <li id="filterFundingStreamOption6" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this
+                            filter</span>General annual grant (0)</a>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-          <h4 class="govuk-heading-s"> Search</h4>
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          Filter your page results.
         </legend>
         <div class="govuk-form-group filterSearch">
-          <label class="govuk-label filterLabel" for="filter-by-type">
-            Search
-          </label>
-          <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch" autocomplete="off"
-            name="search" type="text">
+          <div class="filterContainer">
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                      id="accordion-with-summary-sections-heading-1">
+                      <span class="govuk-visually-hidden">Filter by</span>
+                      Funding stream
+                    </span>
+                  </h2>
+                  <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                    id="accordion-with-summary-sections-summary-1">
+                    <span id="y">0</span> selected
+                  </div>
+                </div>
+                <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content"
+                  aria-labelledby="accordion-with-summary-sections-heading-1">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                      Search for a funding stream
+                    </legend>
+                    <div class="govuk-form-group filterSearch">
+                      <label class="govuk-label filterLabel" for="searchFundingStream">
+                        Search for funding stream
+                      </label>
+                      <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="searchFundingStream"
+                        autocomplete="off" name="searchBox" type="text">
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                      <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                        <input class="govuk-checkboxes__input" id="showHideChange" name="filterByGAG"
+                          onclick="showMe('filterFundingStreamOption1'), updateStreamCount()" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
+                          General annual grant <span>(1)</span>
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF2" name="filterByPNA"
+                          onclick="showMeF2('filterFundingStreamOption2'), updateStreamCount()" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF2">
+                          Academy Pupil Number Adjustment <span>(1)</span>
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF3" name="filterBy16to19"
+                          onclick="showMeF3('filterFundingStreamOption3'), updateStreamCount()" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF3">
+                          16 to 19 <span>(1)</span>
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF4" name="filterBy14to16"
+                          onclick="showMeF4('filterFundingStreamOption4'), updateStreamCount()" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF4">
+                          14 to 16 <span>(1)</span>
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+
+              <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                      id="accordion-with-summary-sections-heading-1">
+                      <span class="govuk-visually-hidden">Filter by</span>
+                      Data schema
+                    </span>
+                  </h2>
+                  <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                    id="accordion-with-summary-sections-summary-1">
+                    <span id="periodCount">0</span> selected
+                  </div>
+                </div>
+                <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content"
+                  aria-labelledby="accordion-with-summary-sections-heading-1">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                      Search for a data schema
+                    </legend>
+                    <div class="govuk-form-group filterSearch">
+                      <label class="govuk-label filterLabel" for="searchFundingPeriod">
+                        Search for data schema
+                      </label>
+                      <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="searchFundingPeriod"
+                        autocomplete="off" name="searchFundingPeriod" type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                      <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF5" name="filterByPESportsGrant"
+                          onclick="showMeF5('filterFundingStreamOption5'), updatePeriodCount()" type="checkbox"
+                          value="hmrc">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF5">
+                          PE and sports grant <span>(1)</span>
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF6" name="filterByGeneralAnnualGrant"
+                          onclick="showMeF6('filterFundingStreamOption6'), updatePeriodCount()" type="checkbox" disabled
+                          value="hmrc">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF6">
+                          General annual grant <span>(0)</span>
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </fieldset>
     </div>
-
-    <div class="govuk-form-group filterbyContainer">
-      <fieldset class="govuk-fieldset">
-        <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-          <h4 class="govuk-heading-s">Filter by funding stream <span><i id="arrowRotate"
-                class="material-icons right-align"> keyboard_arrow_down
-              </i></span>
-          </h4>
-          <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
-        </button>
-        <div id="filter-content" class="filter-content">
-          <div class="govuk-form-group filterSearch">
-            <label class="govuk-label filterLabel" for="filter-by-type">
-              Search
-            </label>
-            <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search" type="text">
-          </div>
-          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
-                value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                General annual grant <span>(1)</span>
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
-                value="employment-tribunal">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                Academy Pupil Number Adjustment<span>(1)</span>
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
-                value="employment-tribunal">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                16 to 19<span>(1)</span>
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
-                value="employment-tribunal">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                14 to 16<span>(1)</span>
-              </label>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-
-    <div class="govuk-form-group filterbyContainer">
-      <fieldset class="govuk-fieldset">
-        <button class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-          <h4 class="govuk-heading-s">Filter by data schema <span><i id="arrowRotate"
-                class="material-icons right-align"> keyboard_arrow_down
-              </i></span>
-          </h4>
-          <p class="govuk-body-s govuk-!-margin-bottom-0">0 Selected</p>
-        </button>
-        <div id="filter-content" class="filter-content">
-          <div class="govuk-form-group filterSearch">
-            <label class="govuk-label filterLabel" for="filter-by-type">
-              Search
-            </label>
-            <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search" type="text">
-          </div>
-          <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-1" name="organisation" type="checkbox"
-                value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                PE and sports grant <span>(1)</span>
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox"
-                value="employment-tribunal" disabled>
-              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                Genera annual grant <span>(0)</span>
-              </label>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-
-
-    <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
-      Clear filters</a>
   </div>
 
   <div class="govuk-grid-column-two-thirds">
@@ -166,17 +274,16 @@ GOV.UK Prototype Kit
       </thead>
 
       <tbody class="govuk-table__body" id="mainContentResults">
-
         <tr class="govuk-table__row" id="newDataSource">
           <th scope="row" class="govuk-table__header"><a href="updateDataset">{{ data['data-source-file-name'] }}</a>
-            <div class="govuk-!-margin-top-4">
+            <div class="govuk-!-margin-top-4" id="newDataSourceDetails">
               <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Data source details
                   </span>
                 </summary>
-                <div class="govuk-details__text">
+                <div class="govuk-details__text" id="newDataSourceDetailsText">
                   <p class="govuk-body-s"> <strong>Data schema:</strong> {{ data['data-schema'] }}</p>
                   <p class="govuk-body-s"><strong>Data schema description:</strong> {{ data['data-more-detail'] }}</p>
                   <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
@@ -192,25 +299,24 @@ GOV.UK Prototype Kit
           </th>
 
           <td class="govuk-table__cell">11 November 2019 <br> 10:54am</td>
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell" id="govuk-table__cell">
             <div>
               <p class="govuk-body">
                 <a class="govuk-link" target="_self" href="">{{ data['data-source-file-name'] }}.xlsx </a>
               </p>
             </div>
-          </td>
         </tr>
 
-        <tr class="govuk-table__row">
+        <tr class="govuk-table__row" id="DatasourceRow1">
           <th scope="row" class="govuk-table__header"><a href="updateDataset">1920 Factors</a>
-            <div class="govuk-!-margin-top-4">
+            <div class="govuk-!-margin-top-4" id="DatasourceRow1Details">
               <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Data source details
                   </span>
                 </summary>
-                <div class="govuk-details__text">
+                <div class="govuk-details__text" id="DatasourceRow1Text">
                   <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
                   <p class="govuk-body-s"><strong>Data schema description:</strong> Factors data for 1920 allocation
                     year</p>
@@ -226,7 +332,7 @@ GOV.UK Prototype Kit
           </th>
 
           <td class="govuk-table__cell">11 November 2019 <br> 10:54am</td>
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell" id="DatasourceRow1Download">
             <div>
               <p class="govuk-body">
                 <a class="govuk-link" target="_self" href="">1920Factors.xlsx </a>
@@ -235,138 +341,141 @@ GOV.UK Prototype Kit
           </td>
         </tr>
 
-        <th scope="row" class="govuk-table__header"><a href="updateDataset">Student Data 201920</a>
+        <tr class="govuk-table__row" id="DatasourceRow2">
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">Student Data 201920</a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow1Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow1Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> Student data for 2019 2020
+                    allocation
+                    year</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
 
-          <div class="govuk-!-margin-top-4">
-            <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Data source details
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
-                <p class="govuk-body-s"><strong>Data schema description:</strong> Student data for 2019 2020 allocation
-                  year</p>
-                <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                  <p class="govuk-body-s"><a class="govuk-link" href="datasethistory">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
 
-                <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
-                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
-                <p class="govuk-body-s"><a class="govuk-link" href="datasethistory">View all versions</a></p>
-              </div>
-            </details>
-          </div>
-        </th>
+          <td class="govuk-table__cell">10 November 2019 <br> 9:14am</td>
+          <td class="govuk-table__cell">
+            <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">StudentData201920.xlsx </a>
+              </p>
+            </div>
+          </td>
+        </tr>
 
-        <td class="govuk-table__cell">10 November 2019 <br> 9:14am</td>
-        <td class="govuk-table__cell">
-          <div>
-            <p class="govuk-body">
-              <a class="govuk-link" target="_self" href="">StudentData201920.xlsx </a>
-            </p>
-          </div>
-        </td>
+        <tr class="govuk-table__row" id="DatasourceRow3">
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">1920 Student Data</a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow3Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow3Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> Factors data for 1920 allocation
+                    year
+                  </p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 4</p>
+
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan TOWNSEND</p>
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                  <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
+
+          <td class="govuk-table__cell">8 November 2019 <br> 8:59am</td>
+          <td class="govuk-table__cell">
+            <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">1920StudentData.xlsx </a>
+              </p>
+            </div>
+          </td>
         </tr>
 
 
-        <th scope="row" class="govuk-table__header"><a href="updateDataset">1920 Student Data</a>
+        <tr class="govuk-table__row" id="DatasourceRow4">
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">Phase 1 QA</a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow4Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow4Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> Rates and baselines</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> Phase 1 QA data for the allocation
+                    year</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
 
-          <div class="govuk-!-margin-top-4">
-            <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Data source details
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
-                <p class="govuk-body-s"><strong>Data schema description:</strong> Factors data for 1920 allocation year
-                </p>
-                <p class="govuk-body-s"><strong>Data source version:</strong> 4</p>
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                  <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
 
-                <p class="govuk-body-s"><strong>Last updated by:</strong> Nathan TOWNSEND</p>
-                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
-                <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
-              </div>
-            </details>
-          </div>
-        </th>
-
-        <td class="govuk-table__cell">8 November 2019 <br> 8:59am</td>
-        <td class="govuk-table__cell">
-          <div>
-            <p class="govuk-body">
-              <a class="govuk-link" target="_self" href="">1920StudentData.xlsx </a>
-            </p>
-          </div>
-        </td>
+          <td class="govuk-table__cell">4 November 2019 <br> 11:06am</td>
+          <td class="govuk-table__cell">
+            <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">Phase1QA.xlsx </a>
+              </p>
+            </div>
+          </td>
         </tr>
 
-        <th scope="row" class="govuk-table__header"><a href="updateDataset">Phase 1 QA</a>
+        <tr class="govuk-table__row" id="DatasourceRow5">
+          <th scope="row" class="govuk-table__header"><a href="updateDataset">FPF Historic Data</a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow5Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow5Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Funding</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> FPF Historic Data for the allocation
+                    year</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
 
-          <div class="govuk-!-margin-top-4">
-            <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Data source details
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p class="govuk-body-s"> <strong>Data schema:</strong> Rates and baselines</p>
-                <p class="govuk-body-s"><strong>Data schema description:</strong> Phase 1 QA data for the allocation
-                  year</p>
-                <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                  <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
 
-                <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
-                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
-                <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
-              </div>
-            </details>
-          </div>
-        </th>
-
-        <td class="govuk-table__cell">4 November 2019 <br> 11:06am</td>
-        <td class="govuk-table__cell">
-          <div>
-            <p class="govuk-body">
-              <a class="govuk-link" target="_self" href="">Phase1QA.xlsx </a>
-            </p>
-          </div>
-        </td>
+          <td class="govuk-table__cell">1 November 2019 <br> 3:44pm</td>
+          <td class="govuk-table__cell">
+            <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">FPFHistoricData.xlsx </a>
+              </p>
+            </div>
+          </td>
         </tr>
 
-        <th scope="row" class="govuk-table__header"><a href="updateDataset">FPF Historic Data</a>
-
-          <div class="govuk-!-margin-top-4">
-            <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Data source details
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Funding</p>
-                <p class="govuk-body-s"><strong>Data schema description:</strong> FPF Historic Data for the allocation
-                  year</p>
-                <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
-
-                <p class="govuk-body-s"><strong>Last updated by:</strong> Robert SPARKS</p>
-                <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
-                <p class="govuk-body-s"><a class="govuk-link" href="">View all versions</a></p>
-              </div>
-            </details>
-          </div>
-        </th>
-
-        <td class="govuk-table__cell">1 November 2019 <br> 3:44pm</td>
-        <td class="govuk-table__cell">
-          <div>
-            <p class="govuk-body">
-              <a class="govuk-link" target="_self" href="">FPFHistoricData.xlsx </a>
-            </p>
-          </div>
-        </td>
-        </tr>
       </tbody>
     </table>
 
@@ -398,7 +507,6 @@ GOV.UK Prototype Kit
 </div>
 
 <script>
-
   window.onload = function () {
     let newDataSource = sessionStorage.getItem('new data source file')
     let tr = document.getElementById('newDataSource')
@@ -410,6 +518,170 @@ GOV.UK Prototype Kit
     }
   }
 
+  // Show me the first filter  
+
+  function showMe(box) {
+
+    var chboxs = document.getElementsByName("filterByGAG");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+  // Show me the second filter 
+
+
+  function showMeF2(box) {
+
+    var chboxs = document.getElementsByName("filterByPNA");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+  // Show me the third filter 
+
+  function showMeF3(box) {
+
+    var chboxs = document.getElementsByName("filterBy16to19");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+  function showMeF4(box) {
+
+    var chboxs = document.getElementsByName("filterBy14to16");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+  // Show me status
+
+  function showMeF5(box) {
+
+    var chboxs = document.getElementsByName("filterByPESportsGrant");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+  function showMeF6(box) {
+
+    var chboxs = document.getElementsByName("filterByGeneralAnnualGrant");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+
+  // Counter for checkboxes in funding stream
+
+  var updateStreamCount = function () {
+    var x = $(".govuk-checkboxes__input:checked").length;
+    document.getElementById("y").innerHTML = x;
+  };
+
+  // Counter for checkboxes in funding period 
+
+  var updatePeriodCount = function () {
+    var x = $(".govuk-checkboxes__input:checked").length;
+    document.getElementById("periodCount").innerHTML = x;
+  };
+
+  //Funding Stream 
+
+  document.getElementById('showHideChange').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('fundingStreamText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('fundingStreamText').style.display = "none";
+    }
+
+  };
+  document.getElementById('showHideChangeF2').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('fundingStreamText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('fundingStreamText').style.display = "none";
+    }
+  };
+  document.getElementById('showHideChangeF3').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('fundingStreamText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('fundingStreamText').style.display = "none";
+    }
+  };
+
+  document.getElementById('showHideChangeF4').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('fundingStreamText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('fundingStreamText').style.display = "none";
+    }
+  };
+
+  //Data schema 
+
+  document.getElementById('showHideChangeF5').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('statusText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('statusText').style.display = "none";
+    }
+  };
+
+  document.getElementById('showHideChangeF6').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('statusText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('statusText').style.display = "none";
+    }
+  };
 </script>
 
 

@@ -7,24 +7,24 @@ GOV.UK Prototype Kit
 {% block beforeContent %}
 
 <div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start">
-        Home
-      </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../../funding-management">
-        Funding management
-      </a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../view-funding.html">
-        Funding approvals
-      </a>
-    </li>
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start">
+                Home
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../funding-management">
+                Funding management
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../view-funding.html">
+                Funding approvals
+            </a>
+        </li>
 
-  </ol>
+    </ol>
 </div>
 
 {% endblock %}
@@ -34,16 +34,17 @@ GOV.UK Prototype Kit
 {% set funding_stream = "16 to 19" %}
 {% set funding_year = "2019 to 2020" %}
 
-<div class="govuk-error-summary govuk-visually-hidden" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+<div class="govuk-error-summary govuk-visually-hidden" aria-labelledby="error-summary-title" role="alert"
+    data-module="govuk-error-summary">
     <h2 class="govuk-error-summary__title" id="error-summary-title">
-      There is a problem
+        There is a problem
     </h2>
     <div class="govuk-error-summary__body">
-      <ul class="govuk-list govuk-error-summary__list">
-        <li>
-          <a href="#fundingApprovalsProviders">There are no selected providers to release</a>
-        </li>
-      </ul>
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#fundingApprovalsProviders">There are no selected providers to release</a>
+            </li>
+        </ul>
     </div>
 </div>
 
@@ -58,75 +59,85 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third position-sticky">
+    <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset" aria-describedby="search-conditional-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-                    <h4 class="govuk-heading-s">Search</h4>
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                    Select an option to search through the page
                 </legend>
-                <span id="search-conditional-hint" class="govuk-hint sidebar-search-span">
+                <div class="govuk-form-group filterSearch govuk-!-margin-bottom-0">
+                    <label
+                        class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                        for="mainContentSearch">Search</label>
+                    <!-- //Clear search  -->
+
+                    <a href=""
+                        class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+                        onclick="
+                          document.getElementById('mainContentSearch').value = ''
+                          ">
+                        Clear search</a>
+
+                    <br>
+
+                </div>
+
+                <span id="how-contacted-conditional-hint" class="govuk-hint sidebar-search-span govuk-!-margin-left-1">
                     Select one option.
                 </span>
 
-                <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible"
+                <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible govuk-!-margin-top-2"
                     data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="search-conditional" name="search-conditional"
-                            type="radio" value="provider-name" data-aria-controls="search-conditional-provider">
-                        <label class="govuk-label govuk-radios__label" for="search-conditional">
+                        <input class="govuk-radios__input" id="provider-name" name="radio-item" type="radio"
+                            data-aria-controls="provider-name-control">
+                        <label class="govuk-label govuk-radios__label" for="provider-name">
                             Provider name
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                        id="search-conditional-provider">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="provider-name-control">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="search-conditional-provider"
-                                name="search-conditional-provider" type="text" spellcheck="false">
+                            <input class="govuk-input sidebar-search-input" id="provider-name" type="tel"
+                                spellcheck="false">
                         </div>
                     </div>
 
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="search-conditional-2" name="search-conditional"
-                            type="radio" value="ukprn" data-aria-controls="search-conditional-ukprn">
-                        <label class="govuk-label govuk-radios__label" for="search-conditional-ukprn">
+                        <input class="govuk-radios__input" id="ukprn-name" name="radio-item" type="radio"
+                            data-aria-controls="ukprn-name-control">
+                        <label class="govuk-label govuk-radios__label" for="ukprn-name">
                             UKPRN
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                        id="search-conditional-ukprn">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="ukprn-name-control">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="search-conditional-ukprn"
-                                name="search-conditional-ukprn" type="number">
+                            <input class="govuk-input sidebar-search-input" id="ukprn-name" type="tel">
                         </div>
                     </div>
 
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="search-conditional-3" name="search-conditional"
-                            type="radio" value="text" data-aria-controls="search-conditional-upin">
-                        <label class="govuk-label govuk-radios__label" for="search-conditional-upin">
+                        <input class="govuk-radios__input" id="upin-name" name="radio-item" type="radio"
+                            data-aria-controls="upin-name-control">
+                        <label class="govuk-label govuk-radios__label" for="upin-name">
                             UPIN
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                        id="search-conditional-upin">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="upin-name-control">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="search-conditional-upin"
-                                name="search-conditional-upin" type="number">
+                            <input class="govuk-input sidebar-search-input" id="upin-name" type="tel">
                         </div>
                     </div>
 
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="search-conditional-4" name="search-conditional"
-                            type="radio" value="text" data-aria-controls="search-conditional-urn">
-                        <label class="govuk-label govuk-radios__label" for="search-conditional-urn">
+                        <input class="govuk-radios__input" id="urn-name" name="radio-item" type="radio"
+                            data-aria-controls="urn-name-control">
+                        <label class="govuk-label govuk-radios__label" for="urn-name">
                             URN
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                        id="search-conditional-urn">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="urn-name-control">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="search-conditional-urn"
-                                name="search-conditional-urn" type="number">
+                            <input class="govuk-input sidebar-search-input" id="urn-name" type="tel">
                         </div>
                     </div>
 
@@ -134,301 +145,647 @@ GOV.UK Prototype Kit
             </fieldset>
         </div>
 
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <button
-                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-                    <h4 class="govuk-heading-s">Filter by provider type <span><i
-                                class="material-icons right-align">keyboard_arrow_down</i></span></h4>
-                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="providerTypeSelected"></p>
-                </button>
-
-                <div id="filter-content" class="filter-content">
-                    <div class="govuk-form-group filterSearch">
-                        <label id="filter-by-provider-type" class="govuk-label filterLabel"
-                            for="filter-by-provider-type">
-                            Search
-                        </label>
-                        <input class="govuk-input filterSearchInput" id="filter-by-provider-type-search"
-                            name="filter-by-provider-type-search" autocomplete="off" type="text">
-                    </div>
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
-                                name="filter-by-provider-type" type="checkbox" value="all" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                All <span>(30)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
-                                name="filter-by-provider-type" type="checkbox" value="free schools"
-                                onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Free schools <span>(10)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
-                                name="filter-by-provider-type" type="checkbox" value="academies"
-                                onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Academies <span>(10)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
-                                name="filter-by-provider-type" type="checkbox" value="independent schools"
-                                onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                Independent schools <span>(10)</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-        </div>
+        <!-- // Filters -->
 
         <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <button
-                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-                    <h4 class="govuk-heading-s">Filter by provider sub type <span><i class="material-icons right-align">
-                                keyboard_arrow_down</i></span>
-                    </h4>
-                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="providerSubTypeSelected"></p>
-                </button>
-                <div id="filter-content" class="filter-content">
-                    <div class="govuk-form-group filterSearch">
-                        <label class="govuk-label filterLabel" for="filter-by-type">
-                            Search
-                        </label>
-                        <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search"
-                            type="text">
-                    </div>
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
-                                name="filter-by-provider-type" type="checkbox" value="all" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                All <span>(36)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-sub-type-2"
-                                name="filter-by-provider-sub-type" type="checkbox" value="free schools"
-                                onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-sub-type">
-                                Free schools <span> (7)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-sub-type-2"
-                                name="filter-by-provider-sub-type" type="checkbox" value="academy sponsor lef"
-                                onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-sub-type">
-                                Academy sponsor led <span> (11)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-sub-type-2"
-                                name="filter-by-provider-sub-type" type="checkbox" value="city technology college"
-                                onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-sub-type">
-                                City technology college<span> (3)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-sub-type-2"
-                                name="filter-by-provider-sub-type" type="checkbox" value="academy converter"
-                                onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-sub-type">
-                                Academy converter<span> (9)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-sub-type-2"
-                                name="filter-by-provider-sub-type" type="checkbox" value="academy sponsor led"
-                                onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-sub-type">
-                                Academy sponsor led<span> (6)</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-        </div>
+            <div class="selected-filters-background">
+                <div class="govuk-form-group filterSearch">
+                    <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                        for="filter-by-type">Selected filters</h2>
+                    <a href=""
+                        class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+                        onclick="">
+                        Clear filters</a>
 
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <button
-                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-                    <h4 class="govuk-heading-s">Filter by status <span><i class="material-icons right-align">
-                                keyboard_arrow_down</i></span>
-                    </h4>
-                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="filter-by-status"></p>
-                </button>
-                <div id="filter-content" class="filter-content">
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox-autoheight">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-provider-type-2"
-                                name="filter-by-provider-type" type="checkbox" value="all" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-provider-type">
-                                All <span>(18)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-approved" name="filter-by-status"
-                                autocomplete="off" type="checkbox" value="approved" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="approved">
-                                Approved <span>(4)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-updated" name="filter-by-status"
-                                autocomplete="off" type="checkbox" value="updated" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="updated">
-                                Updated <span>(4)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-with-errors" name="filter-by-status"
-                                autocomplete="off" type="checkbox" value="with-errors" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-with-errors">
-                                With errors <span>(1)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-without-errors" name="filter-by-status"
-                                autocomplete="off" type="checkbox" value="without-errors" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-without-errors">
-                                Without errors <span>(6)</span>
-                            </label>
-                        </div>
+                    <div id="showHideText">
+                        <p class="govuk-body-s">No filters selected</p>
                     </div>
-            </fieldset>
-        </div>
 
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <button
-                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-                    <h4 class="govuk-heading-s">Filter by allocation type <span><i class="material-icons right-align">
-                                keyboard_arrow_down</i></span>
-                    </h4>
-                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="filter-indicative">1 selected</p>
-                </button>
-                <div id="filter-content" class="filter-content sidebar-overflow-visible ">
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small">
-                                <div class="govuk-radios__item">
-                                    <input checked class="govuk-radios__input" onclick="countChecked()"
-                                        id="all-statements" name="statement-type" type="radio" value="all statements">
-                                    <label class="govuk-label govuk-radios__label" for="all-statements">
-                                        Show all allocation types
-                                    </label>
+                    <div class="filtersSelected">
+                        <div class="filter">
+                            <div class="filter__content">
+                                <div class="filter__selected">
+
+                                    <!-- // Provider type Tags -->
+
+                                    <div class="hidden" id="providerTypeText">
+                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                            Provider type</h3>
+                                    </div>
+                                    <ul class="filter-tags">
+                                        <li id="filterProviderTypeOption1" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                All (6)
+                                            </a>
+                                        </li>
+                                        <li id="filterProviderTypeOption2" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Free schools (10)
+                                            </a>
+                                        </li>
+                                        <li id="filterProviderTypeOption3" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Academies (10)
+                                            </a>
+                                        </li>
+                                        <li id="filterProviderTypeOption4" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Independent schools (10)
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- // Provider sub type Tags -->
+
+                                    <div class="hidden" id="providerSubTypeText">
+                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                            Provider sub type</h3>
+                                    </div>
+                                    <ul class="filter-tags">
+                                        <li id="filterProviderSubTypeOption1" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                All (36)
+                                            </a>
+                                        </li>
+                                        <li id="filterProviderSubTypeOption2" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Free schools (7)
+                                            </a>
+                                        </li>
+                                        <li id="filterProviderSubTypeOption3" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Academy sponsor led (11)
+                                            </a>
+                                        </li>
+                                        <li id="filterProviderSubTypeOption4" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                City technology college (3)
+                                            </a>
+                                        </li>
+                                        <li id="filterProviderSubTypeOption5" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Academy convertor (9)
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- // Status Tags -->
+
+                                    <div class="hidden" id="statusText">
+                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                            Status</h3>
+                                    </div>
+                                    <ul class="filter-tags">
+                                        <li id="filterStatusOption1" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                All (18)
+                                            </a>
+                                        </li>
+                                        <li id="filterStatusOption2" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Approved (4)
+                                            </a>
+                                        </li>
+                                        <li id="filterStatusOption3" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Updated (4)
+                                            </a>
+                                        </li>
+                                        <li id="filterStatusOption4" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                With errors (1)
+                                            </a>
+                                        </li>
+                                        <li id="filterStatusOption5" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Without errors (6)
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- // Allocation type Tags -->
+
+                                    <div class="hidden" id="AllocationTypeText">
+                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                            Allocation type</h3>
+                                    </div>
+                                    <ul class="filter-tags">
+                                        <li id="filterAllocationTypeOption1" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Show all allocation types
+                                            </a>
+                                        </li>
+                                        <li id="filterAllocationTypeOption2" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Hide indicative allocations (10)
+                                            </a>
+                                        </li>
+                                        <li id="filterAllocationTypeOption3" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                Only indicative allocations (6)
+                                            </a>
+                                        </li>
+                                    </ul>
+
+
+                                    <!-- // Open date Tags -->
+
+                                    <div class="hidden" id="openDateText">
+                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                            Open date</h3>
+                                    </div>
+                                    <ul class="filter-tags">
+                                        <li id="filterOpenDateOption1" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                All (60)
+                                            </a>
+                                        </li>
+                                        <li id="filterOpenDateOption2" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                August 2021 (10)
+                                            </a>
+                                        </li>
+                                        <li id="filterOpenDateOption3" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                September 2021 (10)
+                                            </a>
+                                        </li>
+                                        <li id="filterOpenDateOption4" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                October 2021 (10)
+                                            </a>
+                                        </li>
+                                        <li id="filterOpenDateOption5" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                November 2021 (10)
+                                            </a>
+                                        </li>
+                                        <li id="filterOpenDateOption6" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                December 2021 (10)
+                                            </a>
+                                        </li>
+                                        <li id="filterOpenDateOption7" class="hidden">
+                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
+                                                    this filter</span>
+                                                January 2022 (10)
+                                            </a>
+                                        </li>
+
+
+
+                                    </ul>
+
                                 </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" onclick="countChecked()" id="hide-indicative"
-                                        name="statement-type" type="radio" value="hide indicative">
-                                    <label class="govuk-label govuk-radios__label" for="hide-indicative">
-                                        Hide indicative allocations <span>(10)</span>
-                                    </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                    Options to filter the content on the page
+                </legend>
+                <div class="govuk-form-group filterSearch">
+                    <div class="filterContainer">
+                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+                            <div class="govuk-accordion__section ">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                            id="accordion-with-summary-sections-heading-1">
+                                            <span class="govuk-visually-hidden">Filter by</span>
+                                            Provider type
+                                        </span>
+                                    </h2>
+                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                        id="accordion-with-summary-sections-summary-1">
+                                        <span id="providerCount">0</span> selected
+                                    </div>
                                 </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" onclick="countChecked()" id="show-indicative"
-                                        name="statement-type" type="radio" value="show indicative">
-                                    <label class="govuk-label govuk-radios__label" for="show-indicative">
-                                        Only indicative allocations <span>(6)</span>
-                                    </label>
+                                <div id="accordion-with-summary-sections-content-1"
+                                    class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-with-summary-sections-heading-1">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                            Select an option to filter by provider type
+                                        </legend>
+                                        <div class="govuk-form-group filterSearch">
+                                            <label class="govuk-label filterLabel" for="searchFundingStream">
+                                                Search for Provider type
+                                            </label>
+                                            <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                id="searchFundingStream" autocomplete="off" name="searchBox"
+                                                type="text">
+                                        </div>
+
+                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                            id="filterBySchoolResults">
+                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                <input class="govuk-checkboxes__input" id="showHideChange"
+                                                    name="filterByAll"
+                                                    onclick="showMe('filterProviderTypeOption1'), updateProviderCount()"
+                                                    type="checkbox">
+                                                <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
+                                                    All <span>(6)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF2"
+                                                    name="filterByFreeSchools"
+                                                    onclick="showMeF2('filterProviderTypeOption2'), updateProviderCount()"
+                                                    type="checkbox">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF2">
+                                                    Free schools <span>(10)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF3"
+                                                    name="filterByAcademies"
+                                                    onclick="showMeF3('filterProviderTypeOption3'), updateProviderCount()"
+                                                    type="checkbox">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF3">
+                                                    Academies <span>(10)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF4"
+                                                    name="filterByIndependentSchools"
+                                                    onclick="showMeF4('filterProviderTypeOption4'), updateProviderCount()"
+                                                    type="checkbox">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF4">
+                                                    Independent schools <span>(10)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
                                 </div>
                             </div>
 
-                        </fieldset>
-                    </div>
+                            <div class="govuk-accordion__section ">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                            id="accordion-with-summary-sections-heading-1">
+                                            <span class="govuk-visually-hidden">Filter by</span>
+                                            Provider sub type
+                                        </span>
+                                    </h2>
+                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                        id="accordion-with-summary-sections-summary-1">
+                                        <span id="providerSubTypeCount">0</span> selected
+                                    </div>
+                                </div>
+                                <div id="accordion-with-summary-sections-content-1"
+                                    class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-with-summary-sections-heading-1">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                            Select an option to filter by provider sub type
+                                        </legend>
+                                        <div class="govuk-form-group filterSearch">
+                                            <label class="govuk-label filterLabel" for="searchProviderSubType">
+                                                Search for Provider sub type
+                                            </label>
+                                            <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                id="searchProviderSubType" autocomplete="off" name="searchBox"
+                                                type="text">
+                                        </div>
 
+                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                            id="filterBySchoolResults">
+                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF5"
+                                                    name="filterBySubTypeAll"
+                                                    onclick="showMeF5('filterProviderSubTypeOption1'), updateProviderSubTypeCount()"
+                                                    type="checkbox">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF5">
+                                                    All <span>(36)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF6"
+                                                    name="filterBySubTypeFreeSchools"
+                                                    onclick="showMeF6('filterProviderSubTypeOption2'), updateProviderSubTypeCount()"
+                                                    type="checkbox">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF6">
+                                                    Free schools <span>(7)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF7"
+                                                    name="filterBySubTypeAcademy"
+                                                    onclick="showMeF7('filterProviderSubTypeOption3'), updateProviderSubTypeCount()"
+                                                    type="checkbox">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF7">
+                                                    Academy sponsor led <span>(11)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF8"
+                                                    name="filterBySubTypeTechCollege"
+                                                    onclick="showMeF8('filterProviderSubTypeOption4'), updateProviderSubTypeCount()"
+                                                    type="checkbox">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF8">
+                                                    City technology college <span>(3)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF9"
+                                                    name="filterByAcademyConverter"
+                                                    onclick="showMeF9('filterProviderSubTypeOption5'), updateProviderSubTypeCount()"
+                                                    type="checkbox">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF9">
+                                                    Academy converter <span>(9)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <div class="govuk-accordion__section">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                            id="accordion-with-summary-sections-heading-1">
+                                            <span class="govuk-visually-hidden">Filter by</span>
+                                            Status
+                                        </span>
+                                    </h2>
+                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                        id="accordion-with-summary-sections-summary-1">
+                                        <span id="statusCount">0</span> selected
+                                    </div>
+                                </div>
+                                <div id="accordion-with-summary-sections-content-1"
+                                    class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-with-summary-sections-heading-1">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                            Select an option to filter by status
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                            id="filterBySchoolResults">
+                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF10"
+                                                    name="filterByStatusAll"
+                                                    onclick="showMeF10('filterStatusOption1'), updateStatusCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF10">
+                                                    All <span>(18)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF11"
+                                                    name="filterByStatusApproved"
+                                                    onclick="showMeF11('filterStatusOption2'), updateStatusCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF11">
+                                                    Approved <span>(4)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF12"
+                                                    name="filterByStatusUpdated"
+                                                    onclick="showMeF12('filterStatusOption3'), updateStatusCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF12">
+                                                    Updated <span>(4)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF13"
+                                                    name="filterByStatusWithErrors"
+                                                    onclick="showMeF13('filterStatusOption4'), updateStatusCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF13">
+                                                    With errors <span>(1)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF14"
+                                                    name="filterByStatusWithOutErrors"
+                                                    onclick="showMeF14('filterStatusOption5'), updateStatusCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF14">
+                                                    Without errors <span>(6)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="govuk-accordion__section">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                            id="accordion-with-summary-sections-heading-1">
+                                            <span class="govuk-visually-hidden">Filter by</span>
+                                            Allocation type
+                                        </span>
+                                    </h2>
+                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                        id="accordion-with-summary-sections-summary-1">
+                                        <span id="allocationCount">0</span> selected
+                                    </div>
+                                </div>
+                                <div id="accordion-with-summary-sections-content-1"
+                                    class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-with-summary-sections-heading-1">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                            Select an option to filter by allocation type
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                            id="filterBySchoolResults">
+                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF15"
+                                                    name="filterByAllAllocationType"
+                                                    onclick="showMeF15('filterAllocationTypeOption1'), updateAllocationTypeCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF15">
+                                                    Show all allocation types <span></span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF16"
+                                                    name="filterByHideIndicativeAllocations"
+                                                    onclick="showMeF16('filterAllocationTypeOption2'), updateAllocationTypeCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF16">
+                                                    Hide indicative allocations <span>(10)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF17"
+                                                    name="filterByOnlyIndicativeAllocations"
+                                                    onclick="showMeF17('filterAllocationTypeOption3'), updateAllocationTypeCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF17">
+                                                    Only indicative allocations <span>(6)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <div class="govuk-accordion__section">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                            id="accordion-with-summary-sections-heading-1">
+                                            <span class="govuk-visually-hidden">Filter by</span>
+                                            Open date
+                                        </span>
+                                    </h2>
+                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                        id="accordion-with-summary-sections-summary-1">
+                                        <span id="openDateCount">0</span> selected
+                                    </div>
+                                </div>
+                                <div id="accordion-with-summary-sections-content-1"
+                                    class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-with-summary-sections-heading-1">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                            Select an option to filter by open date
+                                        </legend>
+                                        <div class="govuk-form-group filterSearch">
+                                            <label class="govuk-label filterLabel" for="searchFundingPeriod">
+                                                Search for Open date
+                                            </label>
+                                            <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                id="searchFundingPeriod" autocomplete="off" name="searchFundingPeriod"
+                                                type="text">
+                                        </div>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                            id="filterBySchoolResults">
+                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF18"
+                                                    name="filterByOpenDateAll"
+                                                    onclick="showMeF18('filterOpenDateOption1'), updateOpenDateCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF18">
+                                                    All <span>(60)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF19"
+                                                    name="filterByAugust2021"
+                                                    onclick="showMeF19('filterOpenDateOption2'), updateOpenDateCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF19">
+                                                    August 2021 <span>(10)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF20"
+                                                    name="filterBySept2021"
+                                                    onclick="showMeF20('filterOpenDateOption3'), updateOpenDateCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF20">
+                                                    September 2021 <span>(10)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF21"
+                                                    name="filterByOct2021"
+                                                    onclick="showMeF21('filterOpenDateOption4'), updateOpenDateCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF21">
+                                                    October 2021 <span>(10)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF22"
+                                                    name="filterByNov2021"
+                                                    onclick="showMeF22('filterOpenDateOption5'), updateOpenDateCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF22">
+                                                    Novemeber 2021 <span>(10)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF23"
+                                                    name="filterByDec2021"
+                                                    onclick="showMeF23('filterOpenDateOption6'), updateOpenDateCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF23">
+                                                    December 2021 <span>(10)</span>
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="showHideChangeF24"
+                                                    name="filterByJan2022"
+                                                    onclick="showMeF24('filterOpenDateOption7'), updateOpenDateCount()"
+                                                    type="checkbox" value="hmrc">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                    for="showHideChangeF24">
+                                                    January 2022 <span>(10)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </fieldset>
         </div>
 
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <button
-                    class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand govuk-button">
-                    <h4 class="govuk-heading-s">Filter by open date <span><i
-                                class="material-icons right-align">keyboard_arrow_down</i></span></h4>
-                    <p class="govuk-body-s govuk-!-margin-bottom-0" id="open-month-selected"> </p>
-                </button>
 
-                <div id="filter-content" class="filter-content">
-                    <div class="govuk-form-group filterSearch">
-                        <label id="filter-by-open-date" class="govuk-label filterLabel" for="filter-by-open-date">
-                            Search
-                        </label>
-                        <input class="govuk-input filterSearchInput" id="filter-by-open-date-search"
-                            name="filter-by-open-date-search" autocomplete="off" type="text">
-                    </div>
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-open-date-2" name="filter-by-open-date"
-                                type="checkbox" value="all" onclick="selectAllCheckboxes(this)"
-                                onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                All <span>(60)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-open-date-january"
-                                name="filter-by-open-date" type="checkbox" value="january" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                August 2021 <span>(10)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-open-date-february"
-                                name="filter-by-open-date" type="checkbox" value="february" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                September 2021 <span>(10)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-open-date-march"
-                                name="filter-by-open-date" type="checkbox" value="march" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                October 2021 <span>(10)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-open-date-april"
-                                name="filter-by-open-date" type="checkbox" value="april" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                November 2021 <span>(10)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-open-date-may"
-                                name="filter-by-open-date" type="checkbox" value="may" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                December 2021 <span>(10)</span>
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="filter-by-open-date-june"
-                                name="filter-by-open-date" type="checkbox" value="june" onclick="countChecked()">
-                            <label class="govuk-label govuk-checkboxes__label" for="filter-by-open-date">
-                                January 2022 <span>(10)</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-        </div>
-
-        <button href="#" class="govuk-button govuk-button--secondary" onclick="$('input:checkbox').removeAttr('checked'); countChecked();">
-            Clear filters
-        </button>
     </div>
+
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
@@ -492,7 +849,8 @@ GOV.UK Prototype Kit
                                             College,
                                             Ramsey</a>
                                     </label>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100947365</p>
+                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100947365
+                                    </p>
                                 </div>
                             </div>
                         </td>
@@ -558,7 +916,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Abingdon and
                                                 Witney College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000395</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000395
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -582,7 +941,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Activate
                                                 Learning</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000386</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000386
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -604,7 +964,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Ada National
                                                 College for Digital Skills</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10002975</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10002975
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -627,7 +988,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Barking and
                                                 Dagenham College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000085</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000085
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -652,7 +1014,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet and
                                                 Southgate College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000953</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000953
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -674,7 +1037,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview-gag.html" class="govuk-link">Barnsley
                                                 College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000184</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000184
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -695,7 +1059,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Basingstoke
                                                 College of Technology</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10099364</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10099364
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -717,7 +1082,8 @@ GOV.UK Prototype Kit
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Bath College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10002398</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10002398
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -740,7 +1106,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Bedford
                                                 College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10002184</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10002184
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -762,7 +1129,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Birmingham
                                                 Metropolitan College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10097253</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10097253
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -784,7 +1152,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview-gag.html" class="govuk-link">Bishop
                                                 Auckland College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10039610</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10039610
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -808,7 +1177,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Blackburn
                                                 College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000072</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000072
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -830,7 +1200,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">East Durham
                                                 College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000061</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000061
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -852,7 +1223,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Hugh Baird
                                                 College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000028</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000028
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -874,7 +1246,8 @@ GOV.UK Prototype Kit
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Hull College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000087</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000087
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -896,7 +1269,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">John Leggott
                                                 Sixth Form College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000851</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000851
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -919,7 +1293,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Newbury
                                                 College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000294</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000294
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -943,7 +1318,8 @@ GOV.UK Prototype Kit
                                                 City
                                                 College Birmingham</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000052</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000052
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -967,7 +1343,8 @@ GOV.UK Prototype Kit
                                                 South Devon College
                                             </a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000075</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000075
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -988,7 +1365,8 @@ GOV.UK Prototype Kit
                                             <a href="provider-funding-overview.html" class="govuk-link">Tyne Coast
                                                 College</a>
                                         </label>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000018</p>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000018
+                                        </p>
                                     </div>
                                 </div>
                             </td>
@@ -1041,12 +1419,15 @@ GOV.UK Prototype Kit
 
                 <div class="right-align">
                     <!-- REFRESH FUNDING CTA -->
-                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="document.getElementById('refreshFundingModal').style.display='block'">
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+                        onclick="document.getElementById('refreshFundingModal').style.display='block'">
                         Refresh funding
                     </button>
 
                     <!-- APPROVE FUNDING CTA -->
-                    <a id="approveFunding" href="../funding-approval.html" class="govuk-button govuk-button--primary approve-release-funding-btn-jq" data-module="govuk-button">
+                    <a id="approveFunding" href="../funding-approval.html"
+                        class="govuk-button govuk-button--primary approve-release-funding-btn-jq"
+                        data-module="govuk-button">
                         Approve funding
                     </a>
                 </div>
@@ -1061,6 +1442,619 @@ GOV.UK Prototype Kit
 <!--Includes end -->
 
 <script>
+    // Show me the first filter  
+
+    function showMe(box) {
+
+        var chboxs = document.getElementsByName("filterByAll");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF2(box) {
+
+        var chboxs = document.getElementsByName("filterByFreeSchools");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF3(box) {
+
+        var chboxs = document.getElementsByName("filterByAcademies");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF4(box) {
+
+        var chboxs = document.getElementsByName("filterByIndependentSchools");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    // Provider type 
+
+    function showMeF5(box) {
+
+        var chboxs = document.getElementsByName("filterBySubTypeAll");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF6(box) {
+
+        var chboxs = document.getElementsByName("filterBySubTypeFreeSchools");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF7(box) {
+
+        var chboxs = document.getElementsByName("filterBySubTypeAcademy");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF8(box) {
+
+        var chboxs = document.getElementsByName("filterBySubTypeTechCollege");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF9(box) {
+
+        var chboxs = document.getElementsByName("filterByAcademyConverter");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+
+    // Status 
+
+
+    function showMeF10(box) {
+
+        var chboxs = document.getElementsByName("filterByStatusAll");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF11(box) {
+
+        var chboxs = document.getElementsByName("filterByStatusApproved");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF12(box) {
+
+        var chboxs = document.getElementsByName("filterByStatusUpdated");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF13(box) {
+
+        var chboxs = document.getElementsByName("filterByStatusWithErrors");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF14(box) {
+
+        var chboxs = document.getElementsByName("filterByStatusWithOutErrors");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    // Allocation type
+
+    function showMeF15(box) {
+
+        var chboxs = document.getElementsByName("filterByAllAllocationType");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF16(box) {
+
+        var chboxs = document.getElementsByName("filterByHideIndicativeAllocations");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF17(box) {
+
+        var chboxs = document.getElementsByName("filterByOnlyIndicativeAllocations");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    // Open Date
+
+    function showMeF18(box) {
+
+        var chboxs = document.getElementsByName("filterByOpenDateAll");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF19(box) {
+
+        var chboxs = document.getElementsByName("filterByAugust2021");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF20(box) {
+
+        var chboxs = document.getElementsByName("filterBySept2021");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF21(box) {
+
+        var chboxs = document.getElementsByName("filterByOct2021");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF22(box) {
+
+        var chboxs = document.getElementsByName("filterByNov2021");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF23(box) {
+
+        var chboxs = document.getElementsByName("filterByDec2021");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF24(box) {
+
+        var chboxs = document.getElementsByName("filterByJan2022");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    // Counter for checkboxes in Provider Type  
+
+    var updateProviderCount = function () {
+        var x = $(".govuk-checkboxes__input:checked").length;
+        document.getElementById("providerCount").innerHTML = x;
+    };
+
+    // Counter for checkboxes in Provider Sub Type  
+
+    var updateProviderSubTypeCount = function () {
+        var x = $(".govuk-checkboxes__input:checked").length;
+        document.getElementById("providerSubTypeCount").innerHTML = x;
+    };
+
+    // Counter for checkboxes in Status 
+
+    var updateStatusCount = function () {
+        var x = $(".govuk-checkboxes__input:checked").length;
+        document.getElementById("statusCount").innerHTML = x;
+    };
+
+    // Counter for Allocation type 
+
+    var updateAllocationTypeCount = function () {
+        var x = $(".govuk-checkboxes__input:checked").length;
+        document.getElementById("allocationCount").innerHTML = x;
+    };
+
+    // Counter for Open date
+
+    var updateOpenDateCount = function () {
+        var x = $(".govuk-checkboxes__input:checked").length;
+        document.getElementById("openDateCount").innerHTML = x;
+    };
+
+    //Show/hide for provider type 
+
+    document.getElementById('showHideChange').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('providerTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('providerTypeText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF2').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('providerTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('providerTypeText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF3').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('providerTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('providerTypeText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF4').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('providerTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('providerTypeText').style.display = "none";
+        }
+    };
+
+    //Show/hide for provider sub type 
+
+    document.getElementById('showHideChangeF5').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('providerSubTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('providerSubTypeText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF6').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('providerSubTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('providerSubTypeText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF7').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('providerSubTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('providerSubTypeText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF8').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('providerSubTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('providerSubTypeText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF9').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('providerSubTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('providerSubTypeText').style.display = "none";
+        }
+    };
+
+    // Status 
+
+    document.getElementById('showHideChangeF10').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('statusText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('statusText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF11').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('statusText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('statusText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF12').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('statusText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('statusText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF13').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('statusText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('statusText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF14').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('statusText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('statusText').style.display = "none";
+        }
+    };
+
+    // Allocation type  
+
+    document.getElementById('showHideChangeF15').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('AllocationTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('AllocationTypeText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF16').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('AllocationTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('AllocationTypeText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF17').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('AllocationTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('AllocationTypeText').style.display = "none";
+        }
+    };
+
+    // Open date
+
+    document.getElementById('showHideChangeF18').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openDateText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openDateText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF19').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openDateText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openDateText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF20').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openDateText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openDateText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF21').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openDateText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openDateText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF22').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openDateText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openDateText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF23').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openDateText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openDateText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF24').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openDateText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openDateText').style.display = "none";
+        }
+    };
+
+
+
+
+
 
     function myFunction() {
         // Declare variables
@@ -1197,19 +2191,7 @@ GOV.UK Prototype Kit
 
 
 
-    // Filter checkbox count
-    function countChecked() {
-        document.getElementById("providerTypeSelected").textContent = document.querySelectorAll(
-            'input[name="filter-by-provider-type"]:checked').length + " selected";
-        document.getElementById("providerSubTypeSelected").textContent = document.querySelectorAll(
-            'input[name="filter-by-provider-sub-type"]:checked').length + " selected";
-        document.getElementById("filter-by-status").textContent = document.querySelectorAll(
-            'input[name="filter-by-status"]:checked').length + " selected";
-        document.getElementById("filter-indicative").textContent = document.querySelectorAll(
-            'input[name="statement-type"]:checked').length + " selected";
-        document.getElementById("open-month-selected").textContent = document.querySelectorAll(
-            'input[name="filter-by-open-date"]:checked').length + " selected";
-    }
+
 
     function selectAllCheckboxes(elem) {
         let name = elem.name;
@@ -1236,8 +2218,6 @@ GOV.UK Prototype Kit
             hiddenCheckboxes();
         }
     }
-
-
 </script>
 
 
