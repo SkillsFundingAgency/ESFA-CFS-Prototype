@@ -7,6 +7,11 @@
 	padding-bottom: 0px;
 }
 
+.filterScroll {
+	overflow: scroll; 
+	height: calc(95vh);
+}
+
 .filterContainer .govuk-accordion__section--expanded .govuk-accordion__section-button {
 	padding-bottom: 0px;
 }
