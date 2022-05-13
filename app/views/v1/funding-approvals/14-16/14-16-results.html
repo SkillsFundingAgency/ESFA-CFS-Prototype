@@ -66,7 +66,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-visually-hidden">
                     Select an option to search through results
-                  </legend>
+                </legend>
                 <div class="govuk-form-group filterSearch govuk-!-margin-bottom-0">
                     <label
                         class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
@@ -91,62 +91,55 @@ GOV.UK Prototype Kit
                 <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible govuk-!-margin-top-2"
                     data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted"
-                            type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
-                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                        <input class="govuk-radios__input" id="provider-name" name="radio-item" type="radio"
+                            data-aria-controls="provider-name-control">
+                        <label class="govuk-label govuk-radios__label" for="provider-name">
                             Provider name
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                        id="conditional-how-contacted-conditional">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="provider-name-control">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="contact-by-email"
-                                name="contact-by-email" type="email" spellcheck="false">
+                            <input class="govuk-input sidebar-search-input" id="provider-name" type="tel"
+                                spellcheck="false">
                         </div>
                     </div>
 
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted"
-                            type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                        <input class="govuk-radios__input" id="ukprn-name" name="radio-item" type="radio"
+                            data-aria-controls="ukprn-name-control">
+                        <label class="govuk-label govuk-radios__label" for="ukprn-name">
                             UKPRN
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                        id="conditional-how-contacted-conditional-2">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="ukprn-name-control">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="contact-by-phone"
-                                name="contact-by-phone" type="tel">
+                            <input class="govuk-input sidebar-search-input" id="ukprn-name" type="tel">
                         </div>
                     </div>
 
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted"
-                            type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
-                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                        <input class="govuk-radios__input" id="upin-name" name="radio-item" type="radio"
+                            data-aria-controls="upin-name-control">
+                        <label class="govuk-label govuk-radios__label" for="upin-name">
                             UPIN
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                        id="conditional-how-contacted-conditional-3">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="upin-name-control">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="contact-by-text" name="contact-by-text"
-                                type="tel">
+                            <input class="govuk-input sidebar-search-input" id="upin-name" type="tel">
                         </div>
                     </div>
 
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="how-contacted-conditional-4" name="how-contacted"
-                            type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-4">
-                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
+                        <input class="govuk-radios__input" id="urn-name" name="radio-item" type="radio"
+                            data-aria-controls="urn-name-control">
+                        <label class="govuk-label govuk-radios__label" for="urn-name">
                             URN
                         </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                        id="conditional-how-contacted-conditional-4">
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="urn-name-control">
                         <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="contact-by-text" name="contact-by-text"
-                                type="tel">
+                            <input class="govuk-input sidebar-search-input" id="urn-name" type="tel">
                         </div>
                     </div>
 
@@ -160,7 +153,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-visually-hidden">
                     Filter your page results.
-                  </legend>
+                </legend>
                 <div class="selected-filters-background">
                     <div class="govuk-form-group filterSearch">
                         <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
@@ -354,7 +347,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-visually-hidden">
                     Select a provider type to filter by that provider type
-                  </legend>
+                </legend>
                 <div class="govuk-form-group filterSearch">
                     <div class="filterContainer">
                         <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
@@ -378,7 +371,7 @@ GOV.UK Prototype Kit
                                     <fieldset class="govuk-fieldset">
                                         <legend class="govuk-fieldset__legend govuk-visually-hidden">
                                             Search for a provider type
-                                          </legend>
+                                        </legend>
                                         <div class="govuk-form-group filterSearch">
                                             <label class="govuk-label filterLabel" for="searchFundingStream">
                                                 Search for Provider type
@@ -434,7 +427,7 @@ GOV.UK Prototype Kit
                                     <fieldset class="govuk-fieldset">
                                         <legend class="govuk-fieldset__legend govuk-visually-hidden">
                                             Search for a provider sub type
-                                          </legend>
+                                        </legend>
                                         <div class="govuk-form-group filterSearch">
                                             <label class="govuk-label filterLabel" for="searchProviderSubType">
                                                 Search for Provider sub type
@@ -491,7 +484,7 @@ GOV.UK Prototype Kit
                                     <fieldset class="govuk-fieldset">
                                         <legend class="govuk-fieldset__legend govuk-visually-hidden">
                                             Select an option to filter by status
-                                          </legend>
+                                        </legend>
                                         <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
                                             id="filterBySchoolResults">
                                             <div class="govuk-checkboxes__item govuk-!-margin-top-2">
@@ -568,7 +561,7 @@ GOV.UK Prototype Kit
                                     <fieldset class="govuk-fieldset">
                                         <legend class="govuk-fieldset__legend govuk-visually-hidden">
                                             Select an option to filter by allocation type
-                                          </legend>
+                                        </legend>
                                         <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
                                             id="filterBySchoolResults">
                                             <div class="govuk-checkboxes__item govuk-!-margin-top-2">
@@ -626,7 +619,7 @@ GOV.UK Prototype Kit
                                     <fieldset class="govuk-fieldset">
                                         <legend class="govuk-fieldset__legend govuk-visually-hidden">
                                             Select a date to filter by that date
-                                          </legend>
+                                        </legend>
                                         <div class="govuk-form-group filterSearch">
                                             <label class="govuk-label filterLabel" for="searchFundingPeriod">
                                                 Search for Open date
@@ -1595,7 +1588,7 @@ GOV.UK Prototype Kit
 
 
 
-    
+
     function selectAllCheckboxes(elem) {
         let name = elem.name;
         document.getElementsByName(name).checked = true;
