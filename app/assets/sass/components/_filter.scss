@@ -43,6 +43,12 @@
 	padding-top: 10px;
 }
 
+.filterContainer .showOneSection .govuk-accordion__controls {
+	padding-top: 10px;
+	display: none;
+}
+
+
 .filtersSelected .filter__tag:link, .filter__tag:visited {
 	color: #0b0c0c;
 }
