@@ -46,78 +46,80 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third position-sticky">
+        <div class="filterScroll">
 
 
-    <div class="govuk-grid-column-one-third">
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                    Select an option to begin searching content on the page
-                  </legend>
-                <div class="govuk-form-group filterSearch govuk-!-margin-bottom-0">
-                    <label
-                        class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                        for="mainContentSearch">Search</label>
-                    <!-- //Clear search  -->
+            
+            <div class="govuk-form-group filterbyContainer">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                        Select an option to begin searching content on the page
+                    </legend>
+                    <div class="govuk-form-group filterSearch govuk-!-margin-bottom-0">
+                        <label
+                            class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                            for="mainContentSearch">Search</label>
+                        <!-- //Clear search  -->
 
-                    <a href=""
-                        class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
-                        onclick="
+                        <a href=""
+                            class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+                            onclick="
                           document.getElementById('mainContentSearch').value = ''
                           ">
-                        Clear search</a>
+                            Clear search</a>
 
-                    <br>
+                        <br>
 
-                </div>
+                    </div>
 
 
 
-                <span id="how-contacted-conditional-hint"
-                    class="govuk-hint sidebar-search-span govuk-!-margin-left-1 govuk-!-margin-top-0">
-                    Select one option.
-                </span>
+                    <span id="how-contacted-conditional-hint"
+                        class="govuk-hint sidebar-search-span govuk-!-margin-left-1 govuk-!-margin-top-0">
+                        Select one option.
+                    </span>
 
-                <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible govuk-!-margin-top-2"
-                data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="provider-name" name="radio-item" type="radio"
-                        data-aria-controls="provider-name-control">
-                    <label class="govuk-label govuk-radios__label" for="provider-name">
-                        Provider name
-                    </label>
-                </div>
+                    <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible govuk-!-margin-top-2"
+                        data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="provider-name" name="radio-item" type="radio"
+                                data-aria-controls="provider-name-control">
+                            <label class="govuk-label govuk-radios__label" for="provider-name">
+                                Provider name
+                            </label>
+                        </div>
 
-                <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="ukprn-name" name="radio-item" type="radio"
-                        data-aria-controls="ukprn-name-control">
-                    <label class="govuk-label govuk-radios__label" for="ukprn-name">
-                        UKPRN
-                    </label>
-                </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="ukprn-name" name="radio-item" type="radio"
+                                data-aria-controls="ukprn-name-control">
+                            <label class="govuk-label govuk-radios__label" for="ukprn-name">
+                                UKPRN
+                            </label>
+                        </div>
 
-                <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="upin-name" name="radio-item" type="radio"
-                        data-aria-controls="upin-name-control">
-                    <label class="govuk-label govuk-radios__label" for="upin-name">
-                        UPIN
-                    </label>
-                </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="upin-name" name="radio-item" type="radio"
+                                data-aria-controls="upin-name-control">
+                            <label class="govuk-label govuk-radios__label" for="upin-name">
+                                UPIN
+                            </label>
+                        </div>
 
-                <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="urn-name" name="radio-item" type="radio"
-                        data-aria-controls="urn-name-control">
-                    <label class="govuk-label govuk-radios__label" for="urn-name">
-                        URN
-                    </label>
-                </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="urn-name" name="radio-item" type="radio"
+                                data-aria-controls="urn-name-control">
+                            <label class="govuk-label govuk-radios__label" for="urn-name">
+                                URN
+                            </label>
+                        </div>
 
+                    </div>
+
+                </fieldset>
             </div>
 
-            </fieldset>
-        </div>
-
-        <div class="govuk-form-group filterbyContainer">
+            <div class="govuk-form-group filterbyContainer">
                 <div class="selected-filters-background">
                     <div class="govuk-form-group filterSearch">
                         <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
@@ -145,17 +147,20 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterProviderTypeOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     Primary (6)</a>
                                             </li>
                                             <li id="filterProviderTypeOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
+                                                        class="govuk-visually-hidden">Remove
+                                                        this
                                                         filter</span>Academy (1)</a>
                                             </li>
                                             <li id="filterProviderTypeOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
+                                                        class="govuk-visually-hidden">Remove
+                                                        this
                                                         filter</span>Secondary (3)</a>
                                             </li>
                                         </ul>
@@ -169,24 +174,28 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterProviderSubTypeOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
-                                                   Further education (1)</a>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Further education (1)</a>
                                             </li>
                                             <li id="filterProviderSubTypeOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
+                                                        class="govuk-visually-hidden">Remove
+                                                        this
                                                         filter</span>
                                                     Free schools 16 to 19 (1)</a>
                                             </li>
                                             <li id="filterProviderSubTypeOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
+                                                        class="govuk-visually-hidden">Remove
+                                                        this
                                                         filter</span>
-                                                        Academy convertor (1)</a>
+                                                    Academy convertor (1)</a>
                                             </li>
                                             <li id="filterProviderSubTypeOption4" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
+                                                        class="govuk-visually-hidden">Remove
+                                                        this
                                                         filter</span>
                                                     Academy sponsor led (1)</a>
                                             </li>
@@ -201,13 +210,15 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterResultsStatusOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
+                                                        class="govuk-visually-hidden">Remove
+                                                        this
                                                         filter</span>
                                                     With exceptions (4)</a>
                                             </li>
                                             <li id="filterResultsStatusOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
+                                                        class="govuk-visually-hidden">Remove
+                                                        this
                                                         filter</span>
                                                     Without exceptions (2)</a>
                                             </li>
@@ -215,29 +226,21 @@ GOV.UK Prototype Kit
 
                                         <!-- // Allocation type Tags -->
 
-                                        <div class="hidden" id="alloctionTypeText">
+                                        <div class="hidden" id="AllocationTypeText">
                                             <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
                                                 Allocation type</h3>
                                         </div>
+
                                         <ul class="filter-tags">
                                             <li id="filterAllocationOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
-                                                    Show all allocation types</a>
-                                            </li>
-                                            <li id="filterAllocationOption2" class="hidden">
-                                                <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
-                                                        filter</span>
-                                                    Hide indicative allocations (10)</a>
-                                            </li>
-                                            <li id="filterAllocationOption3" class="hidden">
-                                                <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
-                                                        filter</span>
-                                                    Only indicative allocations (10)</a>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    <span class="allocationChanges"></span>
+                                                </a>
                                             </li>
                                         </ul>
+
                                     </div>
                                 </div>
                             </div>
@@ -246,12 +249,12 @@ GOV.UK Prototype Kit
                     </div>
                 </div>
 
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                    Options to filter your page results.
-                  </legend>
-                <div class="govuk-form-group filterSearch">
-                    <div class="filterContainer">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                        Options to filter your page results.
+                    </legend>
+                    <div class="govuk-form-group filterSearch">
+                        <div class="filterContainer">
                             <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
                                 <div class="govuk-accordion__section">
                                     <div class="govuk-accordion__section-header">
@@ -274,7 +277,7 @@ GOV.UK Prototype Kit
                                         <fieldset class="govuk-fieldset">
                                             <legend class="govuk-fieldset__legend govuk-visually-hidden">
                                                 Select an option to filter by provider type
-                                              </legend>
+                                            </legend>
                                             <div class="govuk-form-group filterSearch">
                                                 <label class="govuk-label filterLabel" for="searchFundingStream">
                                                     Search for provider type
@@ -342,7 +345,7 @@ GOV.UK Prototype Kit
                                         <fieldset class="govuk-fieldset">
                                             <legend class="govuk-fieldset__legend govuk-visually-hidden">
                                                 Select an option to filter by provider sub type
-                                              </legend>
+                                            </legend>
                                             <div class="govuk-form-group filterSearch">
                                                 <label class="govuk-label filterLabel" for="searchProviderSubType">
                                                     Search for provider sub type
@@ -420,7 +423,7 @@ GOV.UK Prototype Kit
                                         <fieldset class="govuk-fieldset">
                                             <legend class="govuk-fieldset__legend govuk-visually-hidden">
                                                 Select an option to filter by status
-                                              </legend>
+                                            </legend>
                                             <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
                                                 id="filterBySchoolResults">
                                                 <div class="govuk-checkboxes__item">
@@ -461,67 +464,64 @@ GOV.UK Prototype Kit
                                         </h2>
                                         <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
                                             id="accordion-with-summary-sections-summary-1">
-                                            <span id="allocationTypeCount">0</span> selected
+                                            <span id="allocationCount">0</span> selected
                                         </div>
                                     </div>
-
                                     <div id="accordion-with-summary-sections-content-1"
                                         class="govuk-accordion__section-content"
                                         aria-labelledby="accordion-with-summary-sections-heading-1">
                                         <fieldset class="govuk-fieldset">
                                             <legend class="govuk-fieldset__legend govuk-visually-hidden">
                                                 Select an option to filter by allocation type
-                                              </legend>
-                                            <div class="govuk-form-group filterSearch">
-                                                <label class="govuk-label filterLabel" for="searchFundingStream">
-                                                    Search for allocation type
-                                                </label>
-                                                <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
-                                                    id="searchFundingStream" autocomplete="off" name="searchBox"
-                                                    type="text">
+                                            </legend>
+                                            <div id="indicative-hint" class="govuk-hint">
+                                                Select one option
                                             </div>
+
 
                                             <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
                                                 id="filterBySchoolResults">
-                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF13"
-                                                        name="filterByAllocation1"
-                                                        onclick="showMeF14('filterAllocationOption1'), updateAllocationCount()"
-                                                        type="checkbox">
-                                                    <label class="govuk-label govuk-checkboxes__label"
-                                                        for="showHideChangeF13">
-                                                        Show all allocation types <span></span>
-                                                    </label>
-                                                </div>
-                                                <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF14"
-                                                        name="filterByAllocation2"
-                                                        onclick="showMeF15('filterAllocationOption2'), updateAllocationCount()"
-                                                        type="checkbox">
-                                                    <label class="govuk-label govuk-checkboxes__label"
-                                                        for="showHideChangeF14">
-                                                        Hide indicative allocations <span>(10)</span>
-                                                    </label>
-                                                </div>
-                                                <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF15"
-                                                        name="filterByAllocation3"
-                                                        onclick="showMeF16('filterAllocationOption3'), updateAllocationCount()"
-                                                        type="checkbox">
-                                                    <label class="govuk-label govuk-checkboxes__label"
-                                                        for="showHideChangeF15">
-                                                        Only indicative allocations <span>(10)</span>
-                                                    </label>
+                                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                                    <div class="govuk-checkboxes__item">
+
+                                                        <input class="govuk-checkboxes__input"
+                                                            name="allocationSelection"
+                                                            onclick="showMeF15('filterAllocationOption1'), updateAllocationCount()"
+                                                            value="Show indicative allocations" id="showHideChangeF15"
+                                                            type="checkbox">
+                                                        <label class="govuk-label govuk-checkboxes__label"
+                                                            for="showHideChangeF15">
+                                                            Show indicative allocations
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                        <input class="govuk-checkboxes__input"
+                                                            name="allocationSelection"
+                                                            onclick="showMeF15('filterAllocationOption1'), updateAllocationCount()"
+                                                            value="Show non-indicative allocations"
+                                                            id="showHideChangeF16" type="checkbox"
+                                                            data-behaviour="exclusive">
+                                                        <label class="govuk-label govuk-checkboxes__label"
+                                                            for="showHideChangeF16">
+                                                            Show non-indicative allocations
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </fieldset>
                                     </div>
                                 </div>
 
+
+
+
                             </div>
+                        </div>
                     </div>
-                </div>
-            </fieldset>
+                </fieldset>
+            </div>
         </div>
     </div>
 
@@ -770,6 +770,9 @@ GOV.UK Prototype Kit
         </nav>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
     <script>
         // Show me the first filter  
 
@@ -912,23 +915,11 @@ GOV.UK Prototype Kit
             document.getElementById(box).style.display = vis;
         }
 
+        // Allocation type
+
         function showMeF15(box) {
 
-            var chboxs = document.getElementsByName("filterByAllocation2");
-            var vis = "none";
-            for (var i = 0; i < chboxs.length; i++) {
-                if (chboxs[i].checked) {
-                    vis = "block";
-                    break;
-                }
-            }
-            document.getElementById(box).style.display = vis;
-        }
-
-
-        function showMeF16(box) {
-
-            var chboxs = document.getElementsByName("filterByAllocation3");
+            var chboxs = document.getElementsByName("allocationSelection");
             var vis = "none";
             for (var i = 0; i < chboxs.length; i++) {
                 if (chboxs[i].checked) {
@@ -963,12 +954,19 @@ GOV.UK Prototype Kit
             document.getElementById("resultsStatusCounter").innerHTML = x;
         };
 
-        // Counter for checkboxes in allocation type 
+        // Counter for Allocation type 
 
         var updateAllocationCount = function () {
             var x = $(".govuk-checkboxes__input:checked").length;
-            document.getElementById("allocationTypeCount").innerHTML = x;
+            document.getElementById("allocationCount").innerHTML = x;
         };
+
+        // Allocation type radio button
+
+        $("input:checkbox[name='allocationSelection']").click(function () {
+            $('span.allocationChanges').html(this.value);
+        })
+
 
 
         //Provider type 
@@ -1058,36 +1056,25 @@ GOV.UK Prototype Kit
 
         // AllocationType
 
-        document.getElementById('showHideChangeF12').onchange = function () {
+        document.getElementById('showHideChangeF15').onchange = function () {
             if ($('input[type=checkbox]:checked').length > 0) {
                 document.getElementById('showHideText').style.display = "none";
-                document.getElementById('alloctionTypeText').style.display = "block";
+                document.getElementById('AllocationTypeText').style.display = "block";
             } else {
                 document.getElementById('showHideText').style.display = "block";
-                document.getElementById('allocationTypeText').style.display = "none";
+                document.getElementById('AllocationTypeText').style.display = "none";
             }
         };
 
-        document.getElementById('showHideChangeF13').onchange = function () {
+        document.getElementById('showHideChangeF16').onchange = function () {
             if ($('input[type=checkbox]:checked').length > 0) {
                 document.getElementById('showHideText').style.display = "none";
-                document.getElementById('alloctionTypeText').style.display = "block";
+                document.getElementById('AllocationTypeText').style.display = "block";
             } else {
                 document.getElementById('showHideText').style.display = "block";
-                document.getElementById('alloctionTypeText').style.display = "none";
+                document.getElementById('AllocationTypeText').style.display = "none";
             }
         };
-
-        document.getElementById('showHideChangeF14').onchange = function () {
-            if ($('input[type=checkbox]:checked').length > 0) {
-                document.getElementById('showHideText').style.display = "none";
-                document.getElementById('alloctionTypeText').style.display = "block";
-            } else {
-                document.getElementById('showHideText').style.display = "block";
-                document.getElementById('alloctionTypeText').style.display = "none";
-            }
-        };
-
     </script>
 
 

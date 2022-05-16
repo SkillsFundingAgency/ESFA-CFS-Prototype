@@ -59,731 +59,755 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                    Select an option to search through the page
-                </legend>
-                <div class="govuk-form-group filterSearch govuk-!-margin-bottom-0">
-                    <label
-                        class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                        for="mainContentSearch">Search</label>
-                    <!-- //Clear search  -->
+    <div class="govuk-grid-column-one-third position-sticky">
+        <div class="filterScroll">
+            <div class="govuk-form-group filterbyContainer">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                        Select an option to search through the page
+                    </legend>
+                    <div class="govuk-form-group filterSearch govuk-!-margin-bottom-0">
+                        <label
+                            class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                            for="mainContentSearch">Search</label>
+                        <!-- //Clear search  -->
 
-                    <a href=""
-                        class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
-                        onclick="
+                        <a href=""
+                            class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+                            onclick="
                           document.getElementById('mainContentSearch').value = ''
                           ">
-                        Clear search</a>
+                            Clear search</a>
 
-                    <br>
+                        <br>
 
-                </div>
-
-                <span id="how-contacted-conditional-hint" class="govuk-hint sidebar-search-span govuk-!-margin-left-1">
-                    Select one option.
-                </span>
-
-                <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible govuk-!-margin-top-2"
-                    data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="provider-name" name="radio-item" type="radio"
-                            data-aria-controls="provider-name-control">
-                        <label class="govuk-label govuk-radios__label" for="provider-name">
-                            Provider name
-                        </label>
                     </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="provider-name-control">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="provider-name" type="tel"
-                                spellcheck="false">
+
+                    <span id="how-contacted-conditional-hint"
+                        class="govuk-hint sidebar-search-span govuk-!-margin-left-1">
+                        Select one option.
+                    </span>
+
+                    <div class="govuk-radios govuk-radios--small govuk-radios--conditional sidebar-overflow-visible govuk-!-margin-top-2"
+                        data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="provider-name" name="radio-item" type="radio"
+                                data-aria-controls="provider-name-control">
+                            <label class="govuk-label govuk-radios__label" for="provider-name">
+                                Provider name
+                            </label>
                         </div>
-                    </div>
-
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="ukprn-name" name="radio-item" type="radio"
-                            data-aria-controls="ukprn-name-control">
-                        <label class="govuk-label govuk-radios__label" for="ukprn-name">
-                            UKPRN
-                        </label>
-                    </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="ukprn-name-control">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="ukprn-name" type="tel">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="provider-name-control">
+                            <div class="govuk-form-group">
+                                <input class="govuk-input sidebar-search-input" id="provider-name" type="tel"
+                                    spellcheck="false">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="upin-name" name="radio-item" type="radio"
-                            data-aria-controls="upin-name-control">
-                        <label class="govuk-label govuk-radios__label" for="upin-name">
-                            UPIN
-                        </label>
-                    </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="upin-name-control">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="upin-name" type="tel">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="ukprn-name" name="radio-item" type="radio"
+                                data-aria-controls="ukprn-name-control">
+                            <label class="govuk-label govuk-radios__label" for="ukprn-name">
+                                UKPRN
+                            </label>
                         </div>
-                    </div>
-
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="urn-name" name="radio-item" type="radio"
-                            data-aria-controls="urn-name-control">
-                        <label class="govuk-label govuk-radios__label" for="urn-name">
-                            URN
-                        </label>
-                    </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="urn-name-control">
-                        <div class="govuk-form-group">
-                            <input class="govuk-input sidebar-search-input" id="urn-name" type="tel">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="ukprn-name-control">
+                            <div class="govuk-form-group">
+                                <input class="govuk-input sidebar-search-input" id="ukprn-name" type="tel">
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-            </fieldset>
-        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="upin-name" name="radio-item" type="radio"
+                                data-aria-controls="upin-name-control">
+                            <label class="govuk-label govuk-radios__label" for="upin-name">
+                                UPIN
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="upin-name-control">
+                            <div class="govuk-form-group">
+                                <input class="govuk-input sidebar-search-input" id="upin-name" type="tel">
+                            </div>
+                        </div>
 
-        <!-- // Filters -->
-
-        <div class="govuk-form-group filterbyContainer">
-            <div class="selected-filters-background">
-                <div class="govuk-form-group filterSearch">
-                    <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                        for="filter-by-type">Selected filters</h2>
-                    <a href=""
-                        class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
-                        onclick="">
-                        Clear filters</a>
-
-                    <div id="showHideText">
-                        <p class="govuk-body-s">No filters selected</p>
-                    </div>
-
-                    <div class="filtersSelected">
-                        <div class="filter">
-                            <div class="filter__content">
-                                <div class="filter__selected">
-
-                                    <!-- // Provider type Tags -->
-
-                                    <div class="hidden" id="providerTypeText">
-                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
-                                            Provider type</h3>
-                                    </div>
-                                    <ul class="filter-tags">
-                                        <li id="filterProviderTypeOption1" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                All (6)
-                                            </a>
-                                        </li>
-                                        <li id="filterProviderTypeOption2" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Free schools (10)
-                                            </a>
-                                        </li>
-                                        <li id="filterProviderTypeOption3" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Academies (10)
-                                            </a>
-                                        </li>
-                                        <li id="filterProviderTypeOption4" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Independent schools (10)
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                    <!-- // Provider sub type Tags -->
-
-                                    <div class="hidden" id="providerSubTypeText">
-                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
-                                            Provider sub type</h3>
-                                    </div>
-                                    <ul class="filter-tags">
-                                        <li id="filterProviderSubTypeOption1" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                All (36)
-                                            </a>
-                                        </li>
-                                        <li id="filterProviderSubTypeOption2" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Free schools (7)
-                                            </a>
-                                        </li>
-                                        <li id="filterProviderSubTypeOption3" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Academy sponsor led (11)
-                                            </a>
-                                        </li>
-                                        <li id="filterProviderSubTypeOption4" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                City technology college (3)
-                                            </a>
-                                        </li>
-                                        <li id="filterProviderSubTypeOption5" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Academy convertor (9)
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                    <!-- // Status Tags -->
-
-                                    <div class="hidden" id="statusText">
-                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
-                                            Status</h3>
-                                    </div>
-                                    <ul class="filter-tags">
-                                        <li id="filterStatusOption1" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                All (18)
-                                            </a>
-                                        </li>
-                                        <li id="filterStatusOption2" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Approved (4)
-                                            </a>
-                                        </li>
-                                        <li id="filterStatusOption3" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Updated (4)
-                                            </a>
-                                        </li>
-                                        <li id="filterStatusOption4" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                With errors (1)
-                                            </a>
-                                        </li>
-                                        <li id="filterStatusOption5" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Without errors (6)
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                    <!-- // Allocation type Tags -->
-
-                                    <div class="hidden" id="AllocationTypeText">
-                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
-                                            Allocation type</h3>
-                                    </div>
-                                    <ul class="filter-tags">
-                                        <li id="filterAllocationTypeOption1" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Show all allocation types
-                                            </a>
-                                        </li>
-                                        <li id="filterAllocationTypeOption2" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Hide indicative allocations (10)
-                                            </a>
-                                        </li>
-                                        <li id="filterAllocationTypeOption3" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                Only indicative allocations (6)
-                                            </a>
-                                        </li>
-                                    </ul>
-
-
-                                    <!-- // Open date Tags -->
-
-                                    <div class="hidden" id="openDateText">
-                                        <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
-                                            Open date</h3>
-                                    </div>
-                                    <ul class="filter-tags">
-                                        <li id="filterOpenDateOption1" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                All (60)
-                                            </a>
-                                        </li>
-                                        <li id="filterOpenDateOption2" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                August 2021 (10)
-                                            </a>
-                                        </li>
-                                        <li id="filterOpenDateOption3" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                September 2021 (10)
-                                            </a>
-                                        </li>
-                                        <li id="filterOpenDateOption4" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                October 2021 (10)
-                                            </a>
-                                        </li>
-                                        <li id="filterOpenDateOption5" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                November 2021 (10)
-                                            </a>
-                                        </li>
-                                        <li id="filterOpenDateOption6" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                December 2021 (10)
-                                            </a>
-                                        </li>
-                                        <li id="filterOpenDateOption7" class="hidden">
-                                            <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove
-                                                    this filter</span>
-                                                January 2022 (10)
-                                            </a>
-                                        </li>
-
-
-
-                                    </ul>
-
-                                </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="urn-name" name="radio-item" type="radio"
+                                data-aria-controls="urn-name-control">
+                            <label class="govuk-label govuk-radios__label" for="urn-name">
+                                URN
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="urn-name-control">
+                            <div class="govuk-form-group">
+                                <input class="govuk-input sidebar-search-input" id="urn-name" type="tel">
                             </div>
                         </div>
 
                     </div>
-                </div>
+                </fieldset>
             </div>
 
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                    Options to filter the content on the page
-                </legend>
-                <div class="govuk-form-group filterSearch">
-                    <div class="filterContainer">
-                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
-                            <div class="govuk-accordion__section ">
-                                <div class="govuk-accordion__section-header">
-                                    <h2 class="govuk-accordion__section-heading">
-                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
-                                            id="accordion-with-summary-sections-heading-1">
-                                            <span class="govuk-visually-hidden">Filter by</span>
-                                            Provider type
-                                        </span>
-                                    </h2>
-                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
-                                        id="accordion-with-summary-sections-summary-1">
-                                        <span id="providerCount">0</span> selected
-                                    </div>
-                                </div>
-                                <div id="accordion-with-summary-sections-content-1"
-                                    class="govuk-accordion__section-content"
-                                    aria-labelledby="accordion-with-summary-sections-heading-1">
-                                    <fieldset class="govuk-fieldset">
-                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                                            Select an option to filter by provider type
-                                        </legend>
-                                        <div class="govuk-form-group filterSearch">
-                                            <label class="govuk-label filterLabel" for="searchFundingStream">
-                                                Search for Provider type
-                                            </label>
-                                            <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
-                                                id="searchFundingStream" autocomplete="off" name="searchBox"
-                                                type="text">
+            <!-- // Filters -->
+
+            <div class="govuk-form-group filterbyContainer">
+                <div class="selected-filters-background">
+                    <div class="govuk-form-group filterSearch">
+                        <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                            for="filter-by-type">Selected filters</h2>
+                        <a href=""
+                            class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+                            onclick="">
+                            Clear filters</a>
+
+                        <div id="showHideText">
+                            <p class="govuk-body-s">No filters selected</p>
+                        </div>
+
+                        <div class="filtersSelected">
+                            <div class="filter">
+                                <div class="filter__content">
+                                    <div class="filter__selected">
+
+                                        <!-- // Provider type Tags -->
+
+                                        <div class="hidden" id="providerTypeText">
+                                            <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                Provider type</h3>
+                                        </div>
+                                        <ul class="filter-tags">
+                                            <li id="filterProviderTypeOption1" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    All (6)
+                                                </a>
+                                            </li>
+                                            <li id="filterProviderTypeOption2" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Free schools (10)
+                                                </a>
+                                            </li>
+                                            <li id="filterProviderTypeOption3" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Academies (10)
+                                                </a>
+                                            </li>
+                                            <li id="filterProviderTypeOption4" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Independent schools (10)
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- // Provider sub type Tags -->
+
+                                        <div class="hidden" id="providerSubTypeText">
+                                            <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                Provider sub type</h3>
+                                        </div>
+                                        <ul class="filter-tags">
+                                            <li id="filterProviderSubTypeOption1" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    All (36)
+                                                </a>
+                                            </li>
+                                            <li id="filterProviderSubTypeOption2" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Free schools (7)
+                                                </a>
+                                            </li>
+                                            <li id="filterProviderSubTypeOption3" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Academy sponsor led (11)
+                                                </a>
+                                            </li>
+                                            <li id="filterProviderSubTypeOption4" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    City technology college (3)
+                                                </a>
+                                            </li>
+                                            <li id="filterProviderSubTypeOption5" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Academy convertor (9)
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- // Status Tags -->
+
+                                        <div class="hidden" id="statusText">
+                                            <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                Status</h3>
+                                        </div>
+                                        <ul class="filter-tags">
+                                            <li id="filterStatusOption1" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    All (18)
+                                                </a>
+                                            </li>
+                                            <li id="filterStatusOption2" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Approved (4)
+                                                </a>
+                                            </li>
+                                            <li id="filterStatusOption3" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Updated (4)
+                                                </a>
+                                            </li>
+                                            <li id="filterStatusOption4" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    With errors (1)
+                                                </a>
+                                            </li>
+                                            <li id="filterStatusOption5" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Without errors (6)
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- // Allocation type Tags -->
+
+                                        <div class="hidden" id="AllocationTypeText">
+                                            <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                Allocation type</h3>
                                         </div>
 
-                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
-                                            id="filterBySchoolResults">
-                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                <input class="govuk-checkboxes__input" id="showHideChange"
-                                                    name="filterByAll"
-                                                    onclick="showMe('filterProviderTypeOption1'), updateProviderCount()"
-                                                    type="checkbox">
-                                                <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
-                                                    All <span>(6)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF2"
-                                                    name="filterByFreeSchools"
-                                                    onclick="showMeF2('filterProviderTypeOption2'), updateProviderCount()"
-                                                    type="checkbox">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF2">
-                                                    Free schools <span>(10)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF3"
-                                                    name="filterByAcademies"
-                                                    onclick="showMeF3('filterProviderTypeOption3'), updateProviderCount()"
-                                                    type="checkbox">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF3">
-                                                    Academies <span>(10)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF4"
-                                                    name="filterByIndependentSchools"
-                                                    onclick="showMeF4('filterProviderTypeOption4'), updateProviderCount()"
-                                                    type="checkbox">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF4">
-                                                    Independent schools <span>(10)</span>
-                                                </label>
-                                            </div>
+                                        <ul class="filter-tags">
+                                            <li id="filterAllocationOption1" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                    <span class="allocationChanges"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+
+                                        <!-- // Open date Tags -->
+
+                                        <div class="hidden" id="openDateText">
+                                            <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                Open date</h3>
                                         </div>
-                                    </fieldset>
+                                        <ul class="filter-tags">
+                                            <li id="filterOpenDateOption1" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    All (60)
+                                                </a>
+                                            </li>
+                                            <li id="filterOpenDateOption2" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    August 2021 (10)
+                                                </a>
+                                            </li>
+                                            <li id="filterOpenDateOption3" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    September 2021 (10)
+                                                </a>
+                                            </li>
+                                            <li id="filterOpenDateOption4" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    October 2021 (10)
+                                                </a>
+                                            </li>
+                                            <li id="filterOpenDateOption5" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    November 2021 (10)
+                                                </a>
+                                            </li>
+                                            <li id="filterOpenDateOption6" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    December 2021 (10)
+                                                </a>
+                                            </li>
+                                            <li id="filterOpenDateOption7" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    January 2022 (10)
+                                                </a>
+                                            </li>
+
+
+
+                                        </ul>
+
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="govuk-accordion__section ">
-                                <div class="govuk-accordion__section-header">
-                                    <h2 class="govuk-accordion__section-heading">
-                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
-                                            id="accordion-with-summary-sections-heading-1">
-                                            <span class="govuk-visually-hidden">Filter by</span>
-                                            Provider sub type
-                                        </span>
-                                    </h2>
-                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
-                                        id="accordion-with-summary-sections-summary-1">
-                                        <span id="providerSubTypeCount">0</span> selected
-                                    </div>
-                                </div>
-                                <div id="accordion-with-summary-sections-content-1"
-                                    class="govuk-accordion__section-content"
-                                    aria-labelledby="accordion-with-summary-sections-heading-1">
-                                    <fieldset class="govuk-fieldset">
-                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                                            Select an option to filter by provider sub type
-                                        </legend>
-                                        <div class="govuk-form-group filterSearch">
-                                            <label class="govuk-label filterLabel" for="searchProviderSubType">
-                                                Search for Provider sub type
-                                            </label>
-                                            <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
-                                                id="searchProviderSubType" autocomplete="off" name="searchBox"
-                                                type="text">
-                                        </div>
+                        </div>
+                    </div>
+                </div>
 
-                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
-                                            id="filterBySchoolResults">
-                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF5"
-                                                    name="filterBySubTypeAll"
-                                                    onclick="showMeF5('filterProviderSubTypeOption1'), updateProviderSubTypeCount()"
-                                                    type="checkbox">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF5">
-                                                    All <span>(36)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF6"
-                                                    name="filterBySubTypeFreeSchools"
-                                                    onclick="showMeF6('filterProviderSubTypeOption2'), updateProviderSubTypeCount()"
-                                                    type="checkbox">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF6">
-                                                    Free schools <span>(7)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF7"
-                                                    name="filterBySubTypeAcademy"
-                                                    onclick="showMeF7('filterProviderSubTypeOption3'), updateProviderSubTypeCount()"
-                                                    type="checkbox">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF7">
-                                                    Academy sponsor led <span>(11)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF8"
-                                                    name="filterBySubTypeTechCollege"
-                                                    onclick="showMeF8('filterProviderSubTypeOption4'), updateProviderSubTypeCount()"
-                                                    type="checkbox">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF8">
-                                                    City technology college <span>(3)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF9"
-                                                    name="filterByAcademyConverter"
-                                                    onclick="showMeF9('filterProviderSubTypeOption5'), updateProviderSubTypeCount()"
-                                                    type="checkbox">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF9">
-                                                    Academy converter <span>(9)</span>
-                                                </label>
-                                            </div>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                        Options to filter the content on the page
+                    </legend>
+                    <div class="govuk-form-group filterSearch">
+                        <div class="filterContainer">
+                            <div class="govuk-accordion" data-module="govuk-accordion"
+                                id="accordion-with-summary-sections">
+                                <div class="govuk-accordion__section ">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                Provider type
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="providerCount">0</span> selected
                                         </div>
-                                    </fieldset>
-                                </div>
-                            </div>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by provider type
+                                            </legend>
+                                            <div class="govuk-form-group filterSearch">
+                                                <label class="govuk-label filterLabel" for="searchFundingStream">
+                                                    Search for Provider type
+                                                </label>
+                                                <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                    id="searchFundingStream" autocomplete="off" name="searchBox"
+                                                    type="text">
+                                            </div>
 
-                            <div class="govuk-accordion__section">
-                                <div class="govuk-accordion__section-header">
-                                    <h2 class="govuk-accordion__section-heading">
-                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
-                                            id="accordion-with-summary-sections-heading-1">
-                                            <span class="govuk-visually-hidden">Filter by</span>
-                                            Status
-                                        </span>
-                                    </h2>
-                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
-                                        id="accordion-with-summary-sections-summary-1">
-                                        <span id="statusCount">0</span> selected
+                                            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                                id="filterBySchoolResults">
+                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                    <input class="govuk-checkboxes__input" id="showHideChange"
+                                                        name="filterByAll"
+                                                        onclick="showMe('filterProviderTypeOption1'), updateProviderCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChange">
+                                                        All <span>(6)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF2"
+                                                        name="filterByFreeSchools"
+                                                        onclick="showMeF2('filterProviderTypeOption2'), updateProviderCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF2">
+                                                        Free schools <span>(10)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF3"
+                                                        name="filterByAcademies"
+                                                        onclick="showMeF3('filterProviderTypeOption3'), updateProviderCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF3">
+                                                        Academies <span>(10)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF4"
+                                                        name="filterByIndependentSchools"
+                                                        onclick="showMeF4('filterProviderTypeOption4'), updateProviderCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF4">
+                                                        Independent schools <span>(10)</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
                                     </div>
                                 </div>
-                                <div id="accordion-with-summary-sections-content-1"
-                                    class="govuk-accordion__section-content"
-                                    aria-labelledby="accordion-with-summary-sections-heading-1">
-                                    <fieldset class="govuk-fieldset">
-                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                                            Select an option to filter by status
-                                        </legend>
-                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
-                                            id="filterBySchoolResults">
-                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF10"
-                                                    name="filterByStatusAll"
-                                                    onclick="showMeF10('filterStatusOption1'), updateStatusCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF10">
-                                                    All <span>(18)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF11"
-                                                    name="filterByStatusApproved"
-                                                    onclick="showMeF11('filterStatusOption2'), updateStatusCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF11">
-                                                    Approved <span>(4)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF12"
-                                                    name="filterByStatusUpdated"
-                                                    onclick="showMeF12('filterStatusOption3'), updateStatusCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF12">
-                                                    Updated <span>(4)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF13"
-                                                    name="filterByStatusWithErrors"
-                                                    onclick="showMeF13('filterStatusOption4'), updateStatusCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF13">
-                                                    With errors <span>(1)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF14"
-                                                    name="filterByStatusWithOutErrors"
-                                                    onclick="showMeF14('filterStatusOption5'), updateStatusCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF14">
-                                                    Without errors <span>(6)</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="govuk-accordion__section">
-                                <div class="govuk-accordion__section-header">
-                                    <h2 class="govuk-accordion__section-heading">
-                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
-                                            id="accordion-with-summary-sections-heading-1">
-                                            <span class="govuk-visually-hidden">Filter by</span>
-                                            Allocation type
-                                        </span>
-                                    </h2>
-                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
-                                        id="accordion-with-summary-sections-summary-1">
-                                        <span id="allocationCount">0</span> selected
-                                    </div>
-                                </div>
-                                <div id="accordion-with-summary-sections-content-1"
-                                    class="govuk-accordion__section-content"
-                                    aria-labelledby="accordion-with-summary-sections-heading-1">
-                                    <fieldset class="govuk-fieldset">
-                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                                            Select an option to filter by allocation type
-                                        </legend>
-                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
-                                            id="filterBySchoolResults">
-                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF15"
-                                                    name="filterByAllAllocationType"
-                                                    onclick="showMeF15('filterAllocationTypeOption1'), updateAllocationTypeCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF15">
-                                                    Show all allocation types <span></span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF16"
-                                                    name="filterByHideIndicativeAllocations"
-                                                    onclick="showMeF16('filterAllocationTypeOption2'), updateAllocationTypeCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF16">
-                                                    Hide indicative allocations <span>(10)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF17"
-                                                    name="filterByOnlyIndicativeAllocations"
-                                                    onclick="showMeF17('filterAllocationTypeOption3'), updateAllocationTypeCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF17">
-                                                    Only indicative allocations <span>(6)</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                            </div>
 
-                            <div class="govuk-accordion__section">
-                                <div class="govuk-accordion__section-header">
-                                    <h2 class="govuk-accordion__section-heading">
-                                        <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
-                                            id="accordion-with-summary-sections-heading-1">
-                                            <span class="govuk-visually-hidden">Filter by</span>
-                                            Open date
-                                        </span>
-                                    </h2>
-                                    <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
-                                        id="accordion-with-summary-sections-summary-1">
-                                        <span id="openDateCount">0</span> selected
+                                <div class="govuk-accordion__section ">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                Provider sub type
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="providerSubTypeCount">0</span> selected
+                                        </div>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by provider sub type
+                                            </legend>
+                                            <div class="govuk-form-group filterSearch">
+                                                <label class="govuk-label filterLabel" for="searchProviderSubType">
+                                                    Search for Provider sub type
+                                                </label>
+                                                <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                    id="searchProviderSubType" autocomplete="off" name="searchBox"
+                                                    type="text">
+                                            </div>
+
+                                            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                                id="filterBySchoolResults">
+                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF5"
+                                                        name="filterBySubTypeAll"
+                                                        onclick="showMeF5('filterProviderSubTypeOption1'), updateProviderSubTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF5">
+                                                        All <span>(36)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF6"
+                                                        name="filterBySubTypeFreeSchools"
+                                                        onclick="showMeF6('filterProviderSubTypeOption2'), updateProviderSubTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF6">
+                                                        Free schools <span>(7)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF7"
+                                                        name="filterBySubTypeAcademy"
+                                                        onclick="showMeF7('filterProviderSubTypeOption3'), updateProviderSubTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF7">
+                                                        Academy sponsor led <span>(11)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF8"
+                                                        name="filterBySubTypeTechCollege"
+                                                        onclick="showMeF8('filterProviderSubTypeOption4'), updateProviderSubTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF8">
+                                                        City technology college <span>(3)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF9"
+                                                        name="filterByAcademyConverter"
+                                                        onclick="showMeF9('filterProviderSubTypeOption5'), updateProviderSubTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF9">
+                                                        Academy converter <span>(9)</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
                                     </div>
                                 </div>
-                                <div id="accordion-with-summary-sections-content-1"
-                                    class="govuk-accordion__section-content"
-                                    aria-labelledby="accordion-with-summary-sections-heading-1">
-                                    <fieldset class="govuk-fieldset">
-                                        <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                                            Select an option to filter by open date
-                                        </legend>
-                                        <div class="govuk-form-group filterSearch">
-                                            <label class="govuk-label filterLabel" for="searchFundingPeriod">
-                                                Search for Open date
-                                            </label>
-                                            <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
-                                                id="searchFundingPeriod" autocomplete="off" name="searchFundingPeriod"
-                                                type="text">
+
+                                <div class="govuk-accordion__section">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                Status
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="statusCount">0</span> selected
                                         </div>
-                                        <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
-                                            id="filterBySchoolResults">
-                                            <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF18"
-                                                    name="filterByOpenDateAll"
-                                                    onclick="showMeF18('filterOpenDateOption1'), updateOpenDateCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF18">
-                                                    All <span>(60)</span>
-                                                </label>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by status
+                                            </legend>
+                                            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                                id="filterBySchoolResults">
+                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF10"
+                                                        name="filterByStatusAll"
+                                                        onclick="showMeF10('filterStatusOption1'), updateStatusCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF10">
+                                                        All <span>(18)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF11"
+                                                        name="filterByStatusApproved"
+                                                        onclick="showMeF11('filterStatusOption2'), updateStatusCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF11">
+                                                        Approved <span>(4)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF12"
+                                                        name="filterByStatusUpdated"
+                                                        onclick="showMeF12('filterStatusOption3'), updateStatusCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF12">
+                                                        Updated <span>(4)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF13"
+                                                        name="filterByStatusWithErrors"
+                                                        onclick="showMeF13('filterStatusOption4'), updateStatusCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF13">
+                                                        With errors <span>(1)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF14"
+                                                        name="filterByStatusWithOutErrors"
+                                                        onclick="showMeF14('filterStatusOption5'), updateStatusCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF14">
+                                                        Without errors <span>(6)</span>
+                                                    </label>
+                                                </div>
                                             </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF19"
-                                                    name="filterByAugust2021"
-                                                    onclick="showMeF19('filterOpenDateOption2'), updateOpenDateCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF19">
-                                                    August 2021 <span>(10)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF20"
-                                                    name="filterBySept2021"
-                                                    onclick="showMeF20('filterOpenDateOption3'), updateOpenDateCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF20">
-                                                    September 2021 <span>(10)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF21"
-                                                    name="filterByOct2021"
-                                                    onclick="showMeF21('filterOpenDateOption4'), updateOpenDateCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF21">
-                                                    October 2021 <span>(10)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF22"
-                                                    name="filterByNov2021"
-                                                    onclick="showMeF22('filterOpenDateOption5'), updateOpenDateCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF22">
-                                                    Novemeber 2021 <span>(10)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF23"
-                                                    name="filterByDec2021"
-                                                    onclick="showMeF23('filterOpenDateOption6'), updateOpenDateCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF23">
-                                                    December 2021 <span>(10)</span>
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="showHideChangeF24"
-                                                    name="filterByJan2022"
-                                                    onclick="showMeF24('filterOpenDateOption7'), updateOpenDateCount()"
-                                                    type="checkbox" value="hmrc">
-                                                <label class="govuk-label govuk-checkboxes__label"
-                                                    for="showHideChangeF24">
-                                                    January 2022 <span>(10)</span>
-                                                </label>
-                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="govuk-accordion__section">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                Allocation type
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="allocationCount">0</span> selected
                                         </div>
-                                    </fieldset>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by allocation type
+                                            </legend>
+                                            <div id="indicative-hint" class="govuk-hint">
+                                                Select one option
+                                            </div>
+
+
+                                            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                                id="filterBySchoolResults">
+                                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                                    <div class="govuk-checkboxes__item">
+
+                                                        <input class="govuk-checkboxes__input"
+                                                            name="allocationSelection"
+                                                            onclick="showMeF15('filterAllocationOption1'), updateAllocationCount()"
+                                                            value="Show indicative allocations" id="showHideChangeF15"
+                                                            type="checkbox">
+                                                        <label class="govuk-label govuk-checkboxes__label"
+                                                            for="showHideChangeF15">
+                                                            Show indicative allocations
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                        <input class="govuk-checkboxes__input"
+                                                            name="allocationSelection"
+                                                            onclick="showMeF15('filterAllocationOption1'), updateAllocationCount()"
+                                                            value="Show non-indicative allocations"
+                                                            id="showHideChangeF16" type="checkbox"
+                                                            data-behaviour="exclusive">
+                                                        <label class="govuk-label govuk-checkboxes__label"
+                                                            for="showHideChangeF16">
+                                                            Show non-indicative allocations
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <div class="govuk-accordion__section">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                Open date
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="openDateCount">0</span> selected
+                                        </div>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by open date
+                                            </legend>
+                                            <div class="govuk-form-group filterSearch">
+                                                <label class="govuk-label filterLabel" for="searchFundingPeriod">
+                                                    Search for Open date
+                                                </label>
+                                                <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                    id="searchFundingPeriod" autocomplete="off"
+                                                    name="searchFundingPeriod" type="text">
+                                            </div>
+                                            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                                id="filterBySchoolResults">
+                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF18"
+                                                        name="filterByOpenDateAll"
+                                                        onclick="showMeF18('filterOpenDateOption1'), updateOpenDateCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF18">
+                                                        All <span>(60)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF19"
+                                                        name="filterByAugust2021"
+                                                        onclick="showMeF19('filterOpenDateOption2'), updateOpenDateCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF19">
+                                                        August 2021 <span>(10)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF20"
+                                                        name="filterBySept2021"
+                                                        onclick="showMeF20('filterOpenDateOption3'), updateOpenDateCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF20">
+                                                        September 2021 <span>(10)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF21"
+                                                        name="filterByOct2021"
+                                                        onclick="showMeF21('filterOpenDateOption4'), updateOpenDateCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF21">
+                                                        October 2021 <span>(10)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF22"
+                                                        name="filterByNov2021"
+                                                        onclick="showMeF22('filterOpenDateOption5'), updateOpenDateCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF22">
+                                                        Novemeber 2021 <span>(10)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF23"
+                                                        name="filterByDec2021"
+                                                        onclick="showMeF23('filterOpenDateOption6'), updateOpenDateCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF23">
+                                                        December 2021 <span>(10)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF24"
+                                                        name="filterByJan2022"
+                                                        onclick="showMeF24('filterOpenDateOption7'), updateOpenDateCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF24">
+                                                        January 2022 <span>(10)</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </fieldset>
+                </fieldset>
+            </div>
+
         </div>
-
-
     </div>
 
     <div class="govuk-grid-column-two-thirds">
@@ -1436,6 +1460,8 @@ GOV.UK Prototype Kit
     </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
 <!--Includes -->
 {% include "components/refresh-funding-modal.html" %}
 
@@ -1636,33 +1662,7 @@ GOV.UK Prototype Kit
 
     function showMeF15(box) {
 
-        var chboxs = document.getElementsByName("filterByAllAllocationType");
-        var vis = "none";
-        for (var i = 0; i < chboxs.length; i++) {
-            if (chboxs[i].checked) {
-                vis = "block";
-                break;
-            }
-        }
-        document.getElementById(box).style.display = vis;
-    }
-
-    function showMeF16(box) {
-
-        var chboxs = document.getElementsByName("filterByHideIndicativeAllocations");
-        var vis = "none";
-        for (var i = 0; i < chboxs.length; i++) {
-            if (chboxs[i].checked) {
-                vis = "block";
-                break;
-            }
-        }
-        document.getElementById(box).style.display = vis;
-    }
-
-    function showMeF17(box) {
-
-        var chboxs = document.getElementsByName("filterByOnlyIndicativeAllocations");
+        var chboxs = document.getElementsByName("allocationSelection");
         var vis = "none";
         for (var i = 0; i < chboxs.length; i++) {
             if (chboxs[i].checked) {
@@ -1787,12 +1787,13 @@ GOV.UK Prototype Kit
         document.getElementById("statusCount").innerHTML = x;
     };
 
-    // Counter for Allocation type 
+    // Counter for checkboxes in Allocation 
 
-    var updateAllocationTypeCount = function () {
+    var updateAllocationCount = function () {
         var x = $(".govuk-checkboxes__input:checked").length;
         document.getElementById("allocationCount").innerHTML = x;
     };
+
 
     // Counter for Open date
 
@@ -1969,15 +1970,7 @@ GOV.UK Prototype Kit
         }
     };
 
-    document.getElementById('showHideChangeF17').onchange = function () {
-        if ($('input[type=checkbox]:checked').length > 0) {
-            document.getElementById('showHideText').style.display = "none";
-            document.getElementById('AllocationTypeText').style.display = "block";
-        } else {
-            document.getElementById('showHideText').style.display = "block";
-            document.getElementById('AllocationTypeText').style.display = "none";
-        }
-    };
+    
 
     // Open date
 
@@ -2051,7 +2044,11 @@ GOV.UK Prototype Kit
         }
     };
 
+    // Allocation type radio button
 
+    $("input:checkbox[name='allocationSelection']").click(function () {
+        $('span.allocationChanges').html(this.value);
+    })
 
 
 
