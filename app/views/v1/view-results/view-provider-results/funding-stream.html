@@ -34,12 +34,66 @@ GOV.UK Prototype Kit
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
-            Select funding stream
+            Select funding 
           </h1>
-          <span class="govuk-caption-l govuk-!-margin-bottom-6">Select the funding you wish to view providers
-            for</span>
+          <span class="govuk-caption-l govuk-!-margin-bottom-6">Select the 
+            funding stream, period and spec to view the provider results. 
+
+
+
+          </span>
         </legend>
+
         <form action="provider-results.html" method="get" no-validate data-validate='funding-stream'>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="fundingStream">
+              Funding stream
+            </label>
+            <select class="govuk-select" id="fundingStream" name="fundingStream">
+              <option value=""></option>
+              <option value="16 to 19">16 to 19</option>
+              <option value="General annual grant">General Annual Grant (GAG)</option>
+            </select>
+          </div>
+    
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="fundingPeriod">
+              Funding period
+            </label>
+            <select class="govuk-select" id="fundingPeriod" name="fundingPeriod">
+              <option value=""></option>
+              <option value="blank">2019 to 2020</option>
+              <option value="blank">2018 to 2019</option>
+            </select>
+          </div>
+    
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="specificaiotn">
+              Specification
+            </label>
+            <select class="govuk-select" id="specification" name="viewSpecificationSelection">
+              <option name="viewSpecificationSelection"></option>
+              <option name="viewSpecificationSelection" value="live data">03 Jun v1</option>
+              <option name="viewSpecificationSelection" value="no live data">{{ data['fundingStream'] }} (no live data)</option>
+            </select>
+          </div>
+    
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-button-group">
+                <button id="specification-link" class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+    
+        </form>
+      </fieldset>
+
+
+        <!-- <form action="provider-results.html" method="get" no-validate data-validate='funding-stream'>
           <label class="govuk-label" for="fundingStream">Select a funding stream</br>
             <input list="fundingstream" name="fundingStream" class="govuk-select govuk-!-margin-top-1" size="40"
               name="browser" id="browser"></label>
@@ -67,17 +121,7 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-</form>
-</fieldset>
-
-
-
-
-
-
-
-
-
+</form> -->
 
 
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
