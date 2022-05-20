@@ -7,6 +7,11 @@
 	padding-bottom: 0px;
 }
 
+.filterScroll {
+	overflow: scroll; 
+	height: calc(95vh);
+}
+
 .filterContainer .govuk-accordion__section--expanded .govuk-accordion__section-button {
 	padding-bottom: 0px;
 }
@@ -42,6 +47,12 @@
 .filterContainer .govuk-accordion__controls {
 	padding-top: 10px;
 }
+
+.filterContainer .showOneSection .govuk-accordion__controls {
+	padding-top: 10px;
+	display: none;
+}
+
 
 .filtersSelected .filter__tag:link, .filter__tag:visited {
 	color: #0b0c0c;

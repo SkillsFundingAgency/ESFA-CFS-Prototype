@@ -37,196 +37,417 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading">
-                    <h4 class="govuk-heading-s"> Search</h4>
-                </legend>
-                <div class="govuk-form-group filterSearch">
-                    <label class="govuk-label filterLabel" for="filter-by-type">
-                        Search
-                    </label>
-                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch"
-                        autocomplete="off" name="search" type="text">
-                </div>
-            </fieldset>
-        </div>
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-                    <h4 class="govuk-heading-s ">
-                        Filter by provider type <span><i class="material-icons right-align"> keyboard_arrow_down
-                            </i></span>
-                    </h4>
-                </legend>
-                <div id="filter-content" class="filter-content">
-                    <div class="govuk-form-group filterSearch">
-                        <label id="filterBySchool" class="govuk-label filterLabel" for="filter-by-type">
-                            Search
-                        </label>
-                        <input class="govuk-input filterSearchInput" id="address-line-1" name="address-line-1"
-                            autocomplete="off" type="text">
-                    </div>
 
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="primary">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Primary
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="academy">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Academy
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="secondary">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Secondary
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                type="checkbox" value="secondary">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                16 - 19
-                            </label>
-                        </div>
-                    </div>
+    <div class="govuk-grid-column-one-third position-sticky">
+        <div class="filterScroll">
+
+            <div class="govuk-form-group filterbyContainer">
+
+                <div class="govuk-form-group filterSearch">
+                    <label
+                        class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                        for="mainContentSearch">Search</label>
+
+                    <a href="#"
+                        class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+                        onclick="">
+
+                        Clear search</a>
+
+                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch"
+                        autocomplete="off" name="searchBox" type="text">
                 </div>
-        </div>
-        </fieldset>
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-                    <h4 class="govuk-heading-s">
-                        Filter by provider sub type <span><i class="material-icons right-align"> keyboard_arrow_down
-                            </i></span>
-                    </h4>
-                </legend>
-                <div id="filter-content" class="filter-content">
+            </div>
+
+            <div class="govuk-form-group filterbyContainer">
+                <div class="selected-filters-background">
                     <div class="govuk-form-group filterSearch">
-                        <label class="govuk-label filterLabel" for="filter-by-type">
-                            Search
-                        </label>
-                        <input class="govuk-input filterSearchInput" id="myInput" autocomplete="off" name="search"
-                            type="text">
-                    </div>
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
-                        <ul id="myList">
-                            <li>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                        type="checkbox" value="hmrc">
-                                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                        Sub type a
-                                    </label>
+                        <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                            for="filter-by-type">Selected filters</h2>
+                        <a href=""
+                            class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+                            onclick="">
+                            Clear filters</a>
+
+                        <div id="showHideText">
+                            <p class="govuk-body-s">No filters selected</p>
+                        </div>
+
+                        <div class="filtersSelected">
+                            <div class="filter">
+                                <div class="filter__content">
+                                    <div class="filter__selected">
+
+                                        <!-- // Provider type Tags -->
+
+                                        <div class="hidden" id="providerTypeText">
+                                            <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                Provider type</h3>
+                                        </div>
+                                        <ul class="filter-tags">
+                                            <li id="filterProviderTypeOption1" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                    Primary</a>
+                                            </li>
+                                            <li id="filterProviderTypeOption2" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this
+                                                        filter</span>Academy</a>
+                                            </li>
+                                            <li id="filterProviderTypeOption3" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this
+                                                        filter</span>Secondary</a>
+                                            </li>
+                                            <li id="filterProviderTypeOption4" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this
+                                                        filter</span>16 - 19</a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- // Provider sub type Tags -->
+
+                                        <div class="hidden" id="providerSubTypeText">
+                                            <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                Provider sub type</h3>
+                                        </div>
+                                        <ul class="filter-tags">
+                                            <li id="filterProviderSubTypeOption1" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                    Sub type a</a>
+                                            </li>
+                                            <li id="filterProviderSubTypeOption2" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this
+                                                        filter</span>
+                                                    Sub type b</a>
+                                            </li>
+                                            <li id="filterProviderSubTypeOption3" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this
+                                                        filter</span>Sub type c</a>
+                                            </li>
+                                            <li id="filterProviderSubTypeOption4" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this
+                                                        filter</span>
+                                                    Sub type d</a>
+                                            </li>
+                                            <li id="filterProviderSubTypeOption5" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this
+                                                        filter</span>
+                                                    Sub type e</a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- // Results status Tags -->
+
+                                        <div class="hidden" id="resultsStatusTypeText">
+                                            <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                Results status</h3>
+                                        </div>
+                                        <ul class="filter-tags">
+                                            <li id="filterResultsStatusOption1" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                    All</a>
+                                            </li>
+                                            <li id="filterResultsStatusOption2" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this
+                                                        filter</span>
+                                                    With exceptions</a>
+                                            </li>
+                                            <li id="filterResultsStatusOption3" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this
+                                                        filter</span>
+                                                    Without exceptions</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                        type="checkbox" value="employment-tribunal">
-                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                        Sub type b
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                        type="checkbox" value="employment-tribunal">
-                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                        Sub type c
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                        type="checkbox" value="employment-tribunal">
-                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                        Sub type d
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation"
-                                        type="checkbox" value="employment-tribunal">
-                                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                        Sub type e
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-        </div>
-        </fieldset>
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-                    <h4 class="govuk-heading-s">
-                        Filter by results status <span><i class="material-icons right-align"> keyboard_arrow_down
-                            </i></span>
-                    </h4>
-                </legend>
-                <div id="filter-content" class="filter-content">
-                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                autocomplete="off" type="checkbox" value="hmrc">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                All
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                autocomplete="off" type="checkbox" value="hmrc">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                With exceptions
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-1" name="organisation"
-                                autocomplete="off" type="checkbox" value="hmrc">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                Without exceptions
-                            </label>
+
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                        Options to filter your page results.
+                    </legend>
+                    <div class="govuk-form-group filterSearch">
+                        <div class="filterContainer">
+                            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                                <div class="govuk-accordion__section">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                Provider type
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="providerTypeCounter">0</span> selected
+                                        </div>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by provider type
+                                            </legend>
+                                            <div class="govuk-form-group filterSearch">
+                                                <label class="govuk-label filterLabel" for="searchFundingStream">
+                                                    Search for provider type
+                                                </label>
+                                                <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                    id="searchFundingStream" autocomplete="off" name="searchBox"
+                                                    type="text">
+                                            </div>
+
+                                            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                                id="filterBySchoolResults">
+                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                    <input class="govuk-checkboxes__input" id="showHideChange"
+                                                        name="filterByProviderType1"
+                                                        onclick="showMe('filterProviderTypeOption1'), updateProviderTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChange">
+                                                        Primary <span></span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF2"
+                                                        name="filterByProviderType2"
+                                                        onclick="showMeF2('filterProviderTypeOption2'), updateProviderTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF2">
+                                                        Academy <span></span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF3"
+                                                        name="filterByProviderType3"
+                                                        onclick="showMeF3('filterProviderTypeOption3'), updateProviderTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF3">
+                                                        Secondary <span></span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF4"
+                                                        name="filterByProviderType4"
+                                                        onclick="showMeF4('filterProviderTypeOption4'), updateProviderTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF4">
+                                                        16 - 19 <span></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <div class="govuk-accordion__section">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                Provider sub type
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="providerSubTypeCounter">0</span> selected
+                                        </div>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by provider sub type
+                                            </legend>
+                                            <div class="govuk-form-group filterSearch">
+                                                <label class="govuk-label filterLabel" for="searchProviderSubType">
+                                                    Search for provider sub type
+                                                </label>
+                                                <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                    id="searchProviderSubType" autocomplete="off" name="searchBox"
+                                                    type="text">
+                                            </div>
+
+                                            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                                id="filterBySchoolResults">
+                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF5"
+                                                        name="filterByProviderSubType1"
+                                                        onclick="showMeF5('filterProviderSubTypeOption1'), updateProviderSubTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF5">
+                                                        Sub type a <span></span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF6"
+                                                        name="filterByProviderSubType2"
+                                                        onclick="showMeF6('filterProviderSubTypeOption2'), updateProviderSubTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF6">
+                                                        Sub type b <span></span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF7"
+                                                        name="filterByProviderSubType3"
+                                                        onclick="showMeF7('filterProviderSubTypeOption3'), updateProviderSubTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF7">
+                                                        Sub type c <span></span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF8"
+                                                        name="filterByProviderSubType4"
+                                                        onclick="showMeF8('filterProviderSubTypeOption4'), updateProviderSubTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF8">
+                                                        Sub type d <span></span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF9"
+                                                        name="filterByProviderSubType5"
+                                                        onclick="showMeF9('filterProviderSubTypeOption5'), updateProviderSubTypeCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF9">
+                                                        Sub type e <span></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <div class="govuk-accordion__section">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                Results status
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="resultsStatusCounter">0</span> selected
+                                        </div>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by status
+                                            </legend>
+                                            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                                id="filterBySchoolResults">
+                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF10"
+                                                        name="filterByResultsStatus1"
+                                                        onclick="showMeF10('filterResultsStatusOption1'), updateResultsStatusCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF10">
+                                                        All <span></span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF11"
+                                                        name="filterByResultsStatus2"
+                                                        onclick="showMeF11('filterResultsStatusOption2'), updateResultsStatusCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF11">
+                                                        With exceptions <span></span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF12"
+                                                        name="filterByResultsStatus3"
+                                                        onclick="showMeF13('filterResultsStatusOption3'), updateResultsStatusCount()"
+                                                        type="checkbox">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF12">
+                                                        Without exceptions <span></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+
+                                <div class="govuk-accordion__section">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                Local authority (LA)
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="y">0</span> selected
+                                        </div>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <div class="govuk-form-group filterSearch">
+                                            <label class="govuk-label filterLabel" for="searchFundingStream">
+                                                Search for local authority
+                                            </label>
+                                            <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                                id="searchFundingStream" autocomplete="off" name="searchBox"
+                                                type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
+                </fieldset>
+            </div>
         </div>
-        </fieldset>
-        <div class="govuk-form-group filterbyContainer">
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m filterbyHeading filter-expand">
-                    <h4 class="govuk-heading-s">
-                        Filter by local authority (LA) <span><i class="material-icons right-align"> keyboard_arrow_down
-                            </i></span>
-                    </h4>
-                </legend>
-                <div id="filter-content" class="filter-content">
-                    <div class="govuk-form-group filterSearch govuk-!-margin-bottom-2">
-                        <label class="govuk-label filterLabel" for="filter-by-type">
-                            Search
-                        </label>
-                        <input class="govuk-input filterSearchInput" id="address-line-1" autocomplete="off"
-                            name="address-line-1" type="text">
-                    </div>
-                </div>
-        </div>
-        </fieldset>
-        <a href="#" class="govuk-link right-align" onclick="$('input:checkbox').removeAttr('checked');">
-            Clear filters</a>
     </div>
+
+
 
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default ">
@@ -472,7 +693,327 @@ GOV.UK Prototype Kit
         </nav>
     </div>
 
+    <script>
+        // Show me the first filter  
 
+        function showMe(box) {
+
+            var chboxs = document.getElementsByName("filterByProviderType1");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+        // Show me the second filter 
+
+
+        function showMeF2(box) {
+
+            var chboxs = document.getElementsByName("filterByProviderType2");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+        function showMeF3(box) {
+
+            var chboxs = document.getElementsByName("filterByProviderType3");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+        function showMeF4(box) {
+
+            var chboxs = document.getElementsByName("filterByProviderType4");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+        // Third filter
+
+        function showMeF5(box) {
+
+            var chboxs = document.getElementsByName("filterByProviderSubType1");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+        function showMeF6(box) {
+
+            var chboxs = document.getElementsByName("filterByProviderSubType2");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+        function showMeF7(box) {
+
+            var chboxs = document.getElementsByName("filterByProviderSubType3");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+        function showMeF8(box) {
+
+            var chboxs = document.getElementsByName("filterByProviderSubType4");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+
+        function showMeF9(box) {
+
+            var chboxs = document.getElementsByName("filterByProviderSubType5");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+
+        function showMeF10(box) {
+
+            var chboxs = document.getElementsByName("filterByProviderSubType5");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+        // Results status 
+
+        function showMeF11(box) {
+
+            var chboxs = document.getElementsByName("filterByResultsStatus1");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+        function showMeF12(box) {
+
+            var chboxs = document.getElementsByName("filterByResultsStatus2");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+
+        function showMeF13(box) {
+
+            var chboxs = document.getElementsByName("filterByResultsStatus3");
+            var vis = "none";
+            for (var i = 0; i < chboxs.length; i++) {
+                if (chboxs[i].checked) {
+                    vis = "block";
+                    break;
+                }
+            }
+            document.getElementById(box).style.display = vis;
+        }
+
+
+
+        // Counter for checkboxes in provider type 
+
+        var updateProviderTypeCount = function () {
+            var x = $(".govuk-checkboxes__input:checked").length;
+            document.getElementById("providerTypeCounter").innerHTML = x;
+        };
+
+        // Counter for checkboxes in provider sub type 
+
+        var updateProviderSubTypeCount = function () {
+            var x = $(".govuk-checkboxes__input:checked").length;
+            document.getElementById("providerSubTypeCounter").innerHTML = x;
+        };
+
+        // Counter for checkboxes in provider sub type 
+
+        var updateResultsStatusCount = function () {
+            var x = $(".govuk-checkboxes__input:checked").length;
+            document.getElementById("resultsStatusCounter").innerHTML = x;
+        };
+
+        //Provider type 
+
+        document.getElementById('showHideChange').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('providerTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('providerTypeText').style.display = "none";
+            }
+
+        };
+        document.getElementById('showHideChangeF2').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('providerTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('providerTypeText').style.display = "none";
+            }
+        };
+        document.getElementById('showHideChangeF3').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('providerTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('providerTypeText').style.display = "none";
+            }
+        };
+
+        document.getElementById('showHideChangeF4').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('providerTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('providerTypeText').style.display = "none";
+            }
+        };
+
+        // Provider sub type 
+
+        document.getElementById('showHideChangeF5').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('providerSubTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('providerSubTypeText').style.display = "none";
+            }
+        };
+
+        document.getElementById('showHideChangeF6').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('providerSubTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('providerSubTypeText').style.display = "none";
+            }
+        };
+
+        document.getElementById('showHideChangeF7').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('providerSubTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('providerSubTypeText').style.display = "none";
+            }
+        };
+
+        document.getElementById('showHideChangeF8').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('providerSubTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('providerSubTypeText').style.display = "none";
+            }
+        };
+
+        document.getElementById('showHideChangeF9').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('providerSubTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('providerSubTypeText').style.display = "none";
+            }
+        };
+
+        // Results status 
+
+
+        document.getElementById('showHideChangeF10').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('resultsStatusTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('resultsStatusTypeText').style.display = "none";
+            }
+        };
+
+        document.getElementById('showHideChangeF11').onchange = function () {
+            if ($('input[type=checkbox]:checked').length > 0) {
+                document.getElementById('showHideText').style.display = "none";
+                document.getElementById('resultsStatusTypeText').style.display = "block";
+            } else {
+                document.getElementById('showHideText').style.display = "block";
+                document.getElementById('resultsStatusTypeText').style.display = "none";
+            }
+        };
+    </script>
 
 
     {% endblock %}
