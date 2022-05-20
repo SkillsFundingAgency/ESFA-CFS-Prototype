@@ -1,7 +1,7 @@
-{% extends "layout.html" %} 
+{% extends "layout.html" %}
 
-{% block pageTitle %} 
-GOV.UK Prototype Kit 
+{% block pageTitle %}
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,13 +14,13 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">
+      <a class="govuk-breadcrumbs__link" href="/v1/view-results/viewResults">
         View results
       </a>
     </li>
 
   </ol>
-  
+
 </div>
 
 {% endblock %}
@@ -66,7 +66,7 @@ GOV.UK Prototype Kit
           </div>
     
           <div class="govuk-form-group">
-            <label class="govuk-label" for="specificaiotn">
+            <label class="govuk-label" for="specification">
               Specification
             </label>
             <select class="govuk-select" id="specification" name="viewSpecificationSelection">
@@ -89,39 +89,12 @@ GOV.UK Prototype Kit
         </form>
       </fieldset>
 
-
-        <!-- <form action="provider-results.html" method="get" no-validate data-validate='funding-stream'>
-          <label class="govuk-label" for="fundingStream">Select a funding stream</br>
-            <input list="fundingstream" name="fundingStream" class="govuk-select govuk-!-margin-top-1" size="40"
-              name="browser" id="browser"></label>
-          <datalist id="fundingstream">
-            <option value="General annual grant (GAG)">
-            <option value="Dedicated schools grant (DSG)">
-            <option value="PE and sports premium (PSG)">
-            <option value="Pupil number adjustment (PNA)">
-            <option value="16 to 19">
-            <option value="14 to 16">
-            <option value="Dance and drama awards (DADA)">
-          </datalist>
-
     </div>
   </div>
 </div>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-button-group">
-      <button id="specification-link" class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
-    </div>
-  </div>
-</div>
-
-</form> -->
-
 
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script type="text/javascript">
   var selectEl = document.querySelector('#funding-stream')
@@ -152,6 +125,67 @@ GOV.UK Prototype Kit
     }
 
   }
+</script>
+
+<script>
+  $(document).ready(function () {
+    var $cat = $('select[name=fundingStream]'),
+      $items = $('select[name=fundingPeriod]');
+
+    $cat.change(function () {
+
+      var $this = $(this).find(':selected'),
+        rel = $this.attr('rel');
+
+      // Hide all
+      $items.find("option").hide();
+      $set = $items.find('option.' + rel);
+      $set.show().first().prop('selected', true);
+
+    });
+  });
+
+  // Show period dropdown 
+
+  $(function () {
+    var hideBoxes = function () {
+      $(".fundingPeriod, .continueBtn").hide();
+    }
+
+    $("select[name='fundingStream']").change(function () {
+      hideBoxes();
+
+      var value = $(this).val();
+      if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
+        "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
+        "Dance and drama awards (DADA)") {
+        $(".fundingPeriod").show();
+      }
+    })
+
+    hideBoxes();
+  });
+
+  // Show continue button 
+
+  $(function () {
+    var hideBoxes = function () {
+      $(".continueBtn").hide();
+    }
+
+
+    $("select[name='fundingPeriod']").change(function () {
+
+      var value = $(this).val();
+      if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
+        "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
+        "Dance and drama awards (DADA)") {
+        $(".continueBtn").show();
+      }
+    })
+
+    hideBoxes();
+  });
 </script>
 
 {% endblock %}
