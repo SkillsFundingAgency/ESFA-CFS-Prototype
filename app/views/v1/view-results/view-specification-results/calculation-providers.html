@@ -50,7 +50,7 @@ GOV.UK Prototype Kit
         <div class="filterScroll">
 
 
-            
+
             <div class="govuk-form-group filterbyContainer">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-visually-hidden">
@@ -443,9 +443,8 @@ GOV.UK Prototype Kit
                                                         <input class="govuk-checkboxes__input"
                                                             name="resultsStatusSelection"
                                                             onclick="showMeF13('filterResultsStatusOption1'), updateResultsStatusCount()"
-                                                            value="Without exceptions (2)"
-                                                            id="showHideChangeF12" type="checkbox"
-                                                            data-behaviour="exclusive">
+                                                            value="Without exceptions (2)" id="showHideChangeF12"
+                                                            type="checkbox" data-behaviour="exclusive">
                                                         <label class="govuk-label govuk-checkboxes__label"
                                                             for="showHideChangeF12">
                                                             Without exceptions (2)
@@ -506,9 +505,8 @@ GOV.UK Prototype Kit
                                                         <input class="govuk-checkboxes__input"
                                                             name="allocationSelection"
                                                             onclick="showMeF15('filterAllocationOption1'), updateAllocationCount()"
-                                                            value="Non-indicative allocations"
-                                                            id="showHideChangeF16" type="checkbox"
-                                                            data-behaviour="exclusive">
+                                                            value="Non-indicative allocations" id="showHideChangeF16"
+                                                            type="checkbox" data-behaviour="exclusive">
                                                         <label class="govuk-label govuk-checkboxes__label"
                                                             for="showHideChangeF16">
                                                             Non-indicative allocations
@@ -941,8 +939,8 @@ GOV.UK Prototype Kit
             document.getElementById("providerSubTypeCounter").innerHTML = x;
         };
 
-         
-         
+
+
         // Counter for Allocation type 
 
         var updateAllocationCount = function () {
@@ -956,9 +954,9 @@ GOV.UK Prototype Kit
             $('span.allocationChanges').html(this.value);
         })
 
-         // Counter for reesults Status type 
+        // Counter for results Status type 
 
-            var updateResultsStatusCount = function () {
+        var updateResultsStatusCount = function () {
             var x = $(".govuk-checkboxes__input:checked").length;
             document.getElementById("resultsStatusCount").innerHTML = x;
         };
