@@ -153,20 +153,10 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterResultsStatusOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
-                                                    All</a>
-                                            </li>
-                                            <li id="filterResultsStatusOption2" class="hidden">
-                                                <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
-                                                        filter</span>
-                                                    With exceptions</a>
-                                            </li>
-                                            <li id="filterResultsStatusOption3" class="hidden">
-                                                <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this
-                                                        filter</span>
-                                                    Without exceptions</a>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    <span class="resultsStatusChanges"></span>
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -350,6 +340,7 @@ GOV.UK Prototype Kit
                                     </div>
                                 </div>
 
+
                                 <div class="govuk-accordion__section">
                                     <div class="govuk-accordion__section-header">
                                         <h2 class="govuk-accordion__section-heading">
@@ -362,9 +353,10 @@ GOV.UK Prototype Kit
                                         </h2>
                                         <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
                                             id="accordion-with-summary-sections-summary-1">
-                                            <span id="resultsStatusCounter">0</span> selected
+                                            <span id="resultsStatusCount">0</span> selected
                                         </div>
                                     </div>
+
                                     <div id="accordion-with-summary-sections-content-1"
                                         class="govuk-accordion__section-content"
                                         aria-labelledby="accordion-with-summary-sections-heading-1">
@@ -372,39 +364,41 @@ GOV.UK Prototype Kit
                                             <legend class="govuk-fieldset__legend govuk-visually-hidden">
                                                 Select an option to filter by status
                                             </legend>
+                                            <div id="indicative-hint" class="govuk-hint">
+                                                Select one option
+                                            </div>
+
+
                                             <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
                                                 id="filterBySchoolResults">
-                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF10"
-                                                        name="filterByResultsStatus1"
-                                                        onclick="showMeF10('filterResultsStatusOption1'), updateResultsStatusCount()"
-                                                        type="checkbox">
-                                                    <label class="govuk-label govuk-checkboxes__label"
-                                                        for="showHideChangeF10">
-                                                        All <span></span>
-                                                    </label>
-                                                </div>
-                                                <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF11"
-                                                        name="filterByResultsStatus2"
-                                                        onclick="showMeF11('filterResultsStatusOption2'), updateResultsStatusCount()"
-                                                        type="checkbox">
-                                                    <label class="govuk-label govuk-checkboxes__label"
-                                                        for="showHideChangeF11">
-                                                        With exceptions <span></span>
-                                                    </label>
-                                                </div>
-                                                <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF12"
-                                                        name="filterByResultsStatus3"
-                                                        onclick="showMeF13('filterResultsStatusOption3'), updateResultsStatusCount()"
-                                                        type="checkbox">
-                                                    <label class="govuk-label govuk-checkboxes__label"
-                                                        for="showHideChangeF12">
-                                                        Without exceptions <span></span>
-                                                    </label>
+                                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                                    <div class="govuk-checkboxes__item">
+
+                                                        <input class="govuk-checkboxes__input"
+                                                            name="resultsStatusSelection"
+                                                            onclick="showMeF11('filterResultsStatusOption1'), updateResultsStatusCount()"
+                                                            value="With exceptions (4)" id="showHideChangeF11"
+                                                            type="checkbox">
+                                                        <label class="govuk-label govuk-checkboxes__label"
+                                                            for="showHideChangeF11">
+                                                            With exceptions (4)
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                        <input class="govuk-checkboxes__input"
+                                                            name="resultsStatusSelection"
+                                                            onclick="showMeF13('filterResultsStatusOption1'), updateResultsStatusCount()"
+                                                            value="Without exceptions (2)" id="showHideChangeF12"
+                                                            type="checkbox" data-behaviour="exclusive">
+                                                        <label class="govuk-label govuk-checkboxes__label"
+                                                            for="showHideChangeF12">
+                                                            Without exceptions (2)
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </fieldset>
                                     </div>
                                 </div>
@@ -693,6 +687,8 @@ GOV.UK Prototype Kit
         </nav>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
     <script>
         // Show me the first filter  
 
@@ -820,24 +816,11 @@ GOV.UK Prototype Kit
         }
 
 
-        function showMeF10(box) {
-
-            var chboxs = document.getElementsByName("filterByProviderSubType5");
-            var vis = "none";
-            for (var i = 0; i < chboxs.length; i++) {
-                if (chboxs[i].checked) {
-                    vis = "block";
-                    break;
-                }
-            }
-            document.getElementById(box).style.display = vis;
-        }
-
         // Results status 
 
         function showMeF11(box) {
 
-            var chboxs = document.getElementsByName("filterByResultsStatus1");
+            var chboxs = document.getElementsByName("resultsStatusSelection");
             var vis = "none";
             for (var i = 0; i < chboxs.length; i++) {
                 if (chboxs[i].checked) {
@@ -850,7 +833,7 @@ GOV.UK Prototype Kit
 
         function showMeF12(box) {
 
-            var chboxs = document.getElementsByName("filterByResultsStatus2");
+            var chboxs = document.getElementsByName("resultsStatusSelection");
             var vis = "none";
             for (var i = 0; i < chboxs.length; i++) {
                 if (chboxs[i].checked) {
@@ -876,6 +859,12 @@ GOV.UK Prototype Kit
         }
 
 
+        // Results Status radio button
+
+        $("input:checkbox[name='resultsStatusSelection']").click(function () {
+            $('span.resultsStatusChanges').html(this.value);
+        })
+
 
         // Counter for checkboxes in provider type 
 
@@ -891,12 +880,13 @@ GOV.UK Prototype Kit
             document.getElementById("providerSubTypeCounter").innerHTML = x;
         };
 
-        // Counter for checkboxes in provider sub type 
+        // Counter for reesults Status type 
 
         var updateResultsStatusCount = function () {
             var x = $(".govuk-checkboxes__input:checked").length;
-            document.getElementById("resultsStatusCounter").innerHTML = x;
+            document.getElementById("resultsStatusCount").innerHTML = x;
         };
+
 
         //Provider type 
 
@@ -994,7 +984,7 @@ GOV.UK Prototype Kit
         // Results status 
 
 
-        document.getElementById('showHideChangeF10').onchange = function () {
+        document.getElementById('showHideChangeF11').onchange = function () {
             if ($('input[type=checkbox]:checked').length > 0) {
                 document.getElementById('showHideText').style.display = "none";
                 document.getElementById('resultsStatusTypeText').style.display = "block";
@@ -1004,7 +994,7 @@ GOV.UK Prototype Kit
             }
         };
 
-        document.getElementById('showHideChangeF11').onchange = function () {
+        document.getElementById('showHideChangeF12').onchange = function () {
             if ($('input[type=checkbox]:checked').length > 0) {
                 document.getElementById('showHideText').style.display = "none";
                 document.getElementById('resultsStatusTypeText').style.display = "block";
