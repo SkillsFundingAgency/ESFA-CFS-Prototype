@@ -288,6 +288,22 @@ GOV.UK Prototype Kit
                                             </li>
                                         </ul>
 
+                                        <!-- // Error status Tags -->
+
+                                        <div class="hidden" id="ErrorTypeText">
+                                            <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                Error status</h3>
+                                        </div>
+
+                                        <ul class="filter-tags">
+                                            <li id="filterErrorOption1" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                    <span class="errorChanges"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
                                         <!-- // Allocation type Tags -->
 
                                         <div class="hidden" id="AllocationTypeText">
@@ -636,6 +652,64 @@ GOV.UK Prototype Kit
                                                 class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
                                                 id="accordion-with-summary-sections-heading-1">
                                                 <span class="govuk-visually-hidden">Filter by</span>
+                                                Error status
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="errorCount">0</span> selected
+                                        </div>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by error status
+                                            </legend>
+                                            <div id="indicative-hint" class="govuk-hint">
+                                                Select one option
+                                            </div>
+
+
+                                            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                                id="filterBySchoolResults">
+                                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                                    <div class="govuk-checkboxes__item">
+
+                                                        <input class="govuk-checkboxes__input" name="errorSelection"
+                                                            onclick="showMeF145('filterErrorOption1'), updateErrorCount()"
+                                                            value="With errors (1)" id="showHideChangeF146"
+                                                            type="checkbox">
+                                                        <label class="govuk-label govuk-checkboxes__label"
+                                                            for="showHideChangeF146">
+                                                            With errors<span> (1)</span>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                        <input class="govuk-checkboxes__input" name="errorSelection"
+                                                            onclick="showMeF145('filterErrorOption1'), updateErrorCount()"
+                                                            value="Without errors (6)" id="showHideChangeF147"
+                                                            type="checkbox" data-behaviour="exclusive">
+                                                        <label class="govuk-label govuk-checkboxes__label"
+                                                            for="showHideChangeF147">
+                                                            Without errors<span> (6)</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="govuk-accordion__section">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
                                                 Allocation type
                                             </span>
                                         </h2>
@@ -676,9 +750,8 @@ GOV.UK Prototype Kit
                                                         <input class="govuk-checkboxes__input"
                                                             name="allocationSelection"
                                                             onclick="showMeF15('filterAllocationOption1'), updateAllocationCount()"
-                                                            value="Non-indicative allocations"
-                                                            id="showHideChangeF16" type="checkbox"
-                                                            data-behaviour="exclusive">
+                                                            value="Non-indicative allocations" id="showHideChangeF16"
+                                                            type="checkbox" data-behaviour="exclusive">
                                                         <label class="govuk-label govuk-checkboxes__label"
                                                             for="showHideChangeF16">
                                                             Non-indicative allocations
@@ -1688,6 +1761,22 @@ GOV.UK Prototype Kit
         document.getElementById(box).style.display = vis;
     }
 
+    // Error Status 
+
+    function showMeF145(box) {
+
+        var chboxs = document.getElementsByName("errorSelection");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+
     // Allocation type
 
     function showMeF15(box) {
@@ -1815,6 +1904,13 @@ GOV.UK Prototype Kit
     var updateStatusCount = function () {
         var x = $(".govuk-checkboxes__input:checked").length;
         document.getElementById("statusCount").innerHTML = x;
+    };
+
+    // Counter for checkboxes in Error 
+
+    var updateErrorCount = function () {
+        var x = $(".govuk-checkboxes__input:checked").length;
+        document.getElementById("errorCount").innerHTML = x;
     };
 
     // Counter for checkboxes in Allocation 
@@ -1983,6 +2079,28 @@ GOV.UK Prototype Kit
         }
     };
 
+    // Error status
+
+    document.getElementById('showHideChangeF146').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('ErrorTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('ErrorTypeText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF147').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('ErrorTypeText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('ErrorTypeText').style.display = "none";
+        }
+    };
+
     // Allocation type  
 
     document.getElementById('showHideChangeF15').onchange = function () {
@@ -2006,7 +2124,7 @@ GOV.UK Prototype Kit
     };
 
 
-    
+
     // Open date
 
     document.getElementById('showHideChangeF18').onchange = function () {
@@ -2079,7 +2197,11 @@ GOV.UK Prototype Kit
         }
     };
 
+    // Error radio button
 
+    $("input:checkbox[name='errorSelection']").click(function () {
+        $('span.errorChanges').html(this.value);
+    })
 
 
     function myFunction() {
