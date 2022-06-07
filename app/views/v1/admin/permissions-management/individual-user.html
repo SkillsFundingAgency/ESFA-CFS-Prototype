@@ -53,8 +53,13 @@ Permissions management
           </select>
         </div>
 
-        <button type="submit" class="govuk-button govuk-!-margin-right-1">Continue</button>
-        <a class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</a>
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button">Continue
+          </button>
+          <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+            Cancel
+          </a>
+        </div>
       </fieldset>
     </form>
   </div>
@@ -99,6 +104,38 @@ Permissions management
 
   }
 </script>
+
+<script>
+  function check() {
+
+    //Array with inputs that evaluate to true or false based on input
+
+    const inputs = [
+      Boolean(document.getElementById("user-select").value),
+      Boolean(document.getElementById("fundingStream").value),
+    ]
+
+    //starts the counter
+    let counter = 0
+
+    //increases counter by 1 for every true item in the array
+    for (var i = 0; i <= inputs.length; i++) {
+      if (inputs[i] === true) {
+        document.getElementById('notSaved').style.display = 'block'
+        counter++
+      }
+    }
+    if (counter === 0) {
+      history.back()
+    }
+
+  }
+</script>
+
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+  {% include "includes/modal-dialogue.html" %}
+</div>
 
 
 
