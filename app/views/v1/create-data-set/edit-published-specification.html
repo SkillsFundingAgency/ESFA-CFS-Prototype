@@ -112,42 +112,40 @@ GOV.UK Prototype Kit
 
     <div class="govuk-grid-column-one-third position-sticky">
         <div class="govuk-form-group filterbyContainer">
-                <div class="govuk-form-group filterSearch">
-                    <label
-                        class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                        for="mainContentSearch">Search</label>
+            <div class="govuk-form-group filterSearch">
+                <label class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                    for="mainContentSearch">Search</label>
 
-                    <a href=""
-                        class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
-                        onclick="">
+                <a href=""
+                    class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+                    onclick="">
 
-                        Clear search</a>
+                    Clear search</a>
 
-                    <label class="govuk-label filterLabel" for="searchSelected">
-                        Search added funding lines or calculations
-                    </label>
-                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()"
-                        id="searchSelected" autocomplete="off" name="searchSelected" type="text">
+                <label class="govuk-label filterLabel" for="searchSelected">
+                    Search added funding lines or calculations
+                </label>
+                <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()"
+                    id="searchSelected" autocomplete="off" name="searchSelected" type="text">
 
-                </div>
+            </div>
         </div>
 
         <div class="govuk-form-group filterbyContainer">
-                <div class="govuk-form-group filterSearch">
-                    <label
-                        class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                        for="mainContentFilter">Filter selection</label>
-                    <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-2">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input table-filter-jq" id="filter" name="filter"
-                                type="checkbox" value="">
-                            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-bottom-4" for="filter">
-                                Show only selected
-                            </label>
-                        </div>
+            <div class="govuk-form-group filterSearch">
+                <label class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                    for="mainContentFilter">Filter selection</label>
+                <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-2">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input table-filter-jq" id="filter" name="filter" type="checkbox"
+                            value="">
+                        <label class="govuk-label govuk-checkboxes__label govuk-!-margin-bottom-4" for="filter">
+                            Show only selected
+                        </label>
                     </div>
-
                 </div>
+
+            </div>
         </div>
 
 
@@ -218,10 +216,19 @@ GOV.UK Prototype Kit
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes govuk-checkboxes--small">
-                            <p class="govuk-label govuk-checkboxes__label govuk-!-padding-left-6">
-                                Area cost allowance adjustment
-                            </p>
+                        <p class="govuk-label govuk-checkboxes__label govuk-!-padding-left-6">
+                            Area cost allowance adjustment
+                        </p>
+                        <div class="govuk-checkboxes hidden">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox7"
+                                    name="provider-approval" type="checkbox" value="">
+                                <label class="govuk-label govuk-checkboxes__label govuk-!-padding-left-6"
+                                    for="filterCheckbox7">
+                                    Area cost allowance adjustment
+                                </label>
+
+                            </div>
                         </div>
                     </td>
                     <td class="govuk-table__cell">
