@@ -7,7 +7,10 @@
     font-size: 1rem;
     line-height: 1.25;
     margin-bottom: 1rem;
-    border: 5px solid #1d70b8;
+    padding-top:1em;
+    padding-bottom: 1em;
+    padding-left:1em;
+    border: 0px solid 	#00703c	;
     background-color: #ffffff
 }
 
@@ -38,7 +41,11 @@
 
 @media (min-width: 40.0625em) {
     .govuk-notification-banner {
-        margin-bottom: 1rem
+        margin-bottom: -0.2rem;
+        margin-top: 0rem;
+        margin-right:-2rem;
+        margin-left:-2rem
+       
     }
 }
 
@@ -210,6 +217,7 @@
 
 .govuk-notification-banner--success .govuk-notification-banner__link:link,.govuk-notification-banner--success .govuk-notification-banner__link:visited {
     color: #00703c
+    
 }
 
 .govuk-notification-banner--success .govuk-notification-banner__link:hover {
@@ -221,7 +229,7 @@
 }
 
 .govuk-notification-banner--success .govuk-notification-banner__link:focus {
-    color: #0b0c0c
+    color: #0b0c0c;
 }
 
 .govuk-notification-banner--attention {

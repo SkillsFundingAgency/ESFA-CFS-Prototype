@@ -14,5 +14,12 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
         res.redirect('view-specification-no-live-data')
     }
   });
+  router.get('/v1/fundingLineStructure-chosen-success', function (req, res) {
+
+    res.render('v1/fundingLineStructure-chosen-success', { 'name' : 'Foo' });
+
+  });
+
+
 
 module.exports = router
