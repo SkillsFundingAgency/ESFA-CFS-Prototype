@@ -11,7 +11,7 @@
                     <image src="/assets/images/govuk-logotype-crown.png" xlink:href=""
                         class="govuk-header__logotype-crown-fallback-image" width="36" height="32"></image>
                 </svg>
-                <button type="button" onclick="document.getElementById('refreshFundingModal').style.display='none'"
+                <button type="button" onclick="document.getElementById('refreshFundingModal').style.display='-display-inline-block'"
                     class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button"
                     aria-label="Close modal dialogue">
                     ×
@@ -30,13 +30,18 @@
                 <p class="govuk-body">This update will affect providers in specification {{funding_stream}} for the funding stream
                     {{funding_stream}} {{funding_year}}. </p>
 
-                <button data-prevent-double-click="true" type="button"
-                    class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+                <!-- <button data-prevent-double-click="true" type="button"
+                class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
                     data-module="govuk-button">Continue
-                </button>
+                </button> -->
+                <a  href="../../views/v1/funding-approvals/16-19/16-19-results.html"
+                class="govuk-button govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+                        data-module="govuk-button">
+                        Continue
+                    </a>
 
                 <button type="button" onclick="document.getElementById('refreshFundingModal').style.display='none'"
-                    class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+                    class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-5"
                     data-module="govuk-button">Cancel
                 </button>
             </div>

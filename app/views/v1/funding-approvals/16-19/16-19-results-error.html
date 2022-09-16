@@ -6,7 +6,7 @@ GOV.UK Prototype Kit
 
 {% block beforeContent %}
 
-<div class="govuk-breadcrumbs">
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
     <ol class="govuk-breadcrumbs__list">
         <li class="govuk-breadcrumbs__list-item">
             <a class="govuk-breadcrumbs__link" href="/start">
@@ -19,13 +19,12 @@ GOV.UK Prototype Kit
             </a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding">
-                Release management
+            <a class="govuk-breadcrumbs__link" href="../view-funding.html">
+                Funding approvals
             </a>
         </li>
 
     </ol>
-
 </div>
 
 {% endblock %}
@@ -48,14 +47,33 @@ GOV.UK Prototype Kit
         </ul>
     </div>
 </div>
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <p class="govuk-error-message" >Error trying to release  funding</p>
+        </li>
+        <li>
+          <p >Funding could not be released for some of the providers</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-9 ">
+<div>
+    
+  </div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Mainstream 2021 to 2022</h1>
-        <span class="govuk-caption-l">16-19 for Academies and Schools Year 2021-22</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Non-Learning Grant</h1>
+        <span class="govuk-caption-l">16 to 19 for academies and schools academic year 2019 to 2020</span>
     </div>
     <div class="govuk-grid-column-one-third">
-        {% include "v1/funding-management/16-19/release-funding-links--16-19.html" %}
+        {% include "components/funding-approvals-links.html" %}
     </div>
 </div>
 
@@ -65,7 +83,7 @@ GOV.UK Prototype Kit
             <div class="govuk-form-group filterbyContainer">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                        Select an option to begin searching the content on the page
+                        Select an option to search through the page
                     </legend>
                     <div class="govuk-form-group filterSearch govuk-!-margin-bottom-0">
                         <label
@@ -180,25 +198,29 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterProviderTypeOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     All (6)
                                                 </a>
                                             </li>
                                             <li id="filterProviderTypeOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     Free schools (10)
                                                 </a>
                                             </li>
                                             <li id="filterProviderTypeOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     Academies (10)
                                                 </a>
                                             </li>
                                             <li id="filterProviderTypeOption4" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     Independent schools (10)
                                                 </a>
                                             </li>
@@ -213,31 +235,36 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterProviderSubTypeOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     All (36)
                                                 </a>
                                             </li>
                                             <li id="filterProviderSubTypeOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     Free schools (7)
                                                 </a>
                                             </li>
                                             <li id="filterProviderSubTypeOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     Academy sponsor led (11)
                                                 </a>
                                             </li>
                                             <li id="filterProviderSubTypeOption4" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     City technology college (3)
                                                 </a>
                                             </li>
                                             <li id="filterProviderSubTypeOption5" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     Academy convertor (9)
                                                 </a>
                                             </li>
@@ -252,38 +279,23 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterStatusOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     All (18)
                                                 </a>
                                             </li>
                                             <li id="filterStatusOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
-                                                    Updated (5)
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Approved (4)
                                                 </a>
                                             </li>
                                             <li id="filterStatusOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
-                                                    Approved (8)
-                                                </a>
-                                            </li>
-                                            <li id="filterStatusOption4" class="hidden">
-                                                <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
-                                                    Released (8)
-                                                </a>
-                                            </li>
-                                            <li id="filterStatusOption5" class="hidden">
-                                                <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
-                                                    Ready for release statement (8)
-                                                </a>
-                                            </li>
-                                            <li id="filterStatusOption6" class="hidden">
-                                                <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
-                                                    Ready for release for payment / contract (8)
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
+                                                    Updated (4)
                                                 </a>
                                             </li>
                                         </ul>
@@ -330,43 +342,50 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterOpenDateOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     All (60)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     August 2021 (10)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     September 2021 (10)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption4" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     October 2021 (10)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption5" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     November 2021 (10)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption6" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     December 2021 (10)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption7" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                        class="govuk-visually-hidden">Remove
+                                                        this filter</span>
                                                     January 2022 (10)
                                                 </a>
                                             </li>
@@ -385,7 +404,7 @@ GOV.UK Prototype Kit
 
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                        Options to filter content on the page
+                        Options to filter the content on the page
                     </legend>
                     <div class="govuk-form-group filterSearch">
                         <div class="filterContainer">
@@ -593,52 +612,22 @@ GOV.UK Prototype Kit
                                                 </div>
                                                 <div class="govuk-checkboxes__item">
                                                     <input class="govuk-checkboxes__input" id="showHideChangeF11"
-                                                        name="filterByUpdated"
+                                                        name="filterByStatusApproved"
                                                         onclick="showMeF11('filterStatusOption2'), updateStatusCount()"
                                                         type="checkbox" value="hmrc">
                                                     <label class="govuk-label govuk-checkboxes__label"
                                                         for="showHideChangeF11">
-                                                        Updated <span>(4)</span>
+                                                        Approved <span>(4)</span>
                                                     </label>
                                                 </div>
                                                 <div class="govuk-checkboxes__item">
                                                     <input class="govuk-checkboxes__input" id="showHideChangeF12"
-                                                        name="filterByApproved"
+                                                        name="filterByStatusUpdated"
                                                         onclick="showMeF12('filterStatusOption3'), updateStatusCount()"
                                                         type="checkbox" value="hmrc">
                                                     <label class="govuk-label govuk-checkboxes__label"
                                                         for="showHideChangeF12">
-                                                        Approved <span>(8)</span>
-                                                    </label>
-                                                </div>
-                                                <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF13"
-                                                        name="filterByReleased"
-                                                        onclick="showMeF13('filterStatusOption4'), updateStatusCount()"
-                                                        type="checkbox" value="hmrc">
-                                                    <label class="govuk-label govuk-checkboxes__label"
-                                                        for="showHideChangeF13">
-                                                        Released <span>(8)</span>
-                                                    </label>
-                                                </div>
-                                                <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF14"
-                                                        name="filterByReleaseStatement"
-                                                        onclick="showMeF14('filterStatusOption5'), updateStatusCount()"
-                                                        type="checkbox" value="hmrc">
-                                                    <label class="govuk-label govuk-checkboxes__label"
-                                                        for="showHideChangeF14">
-                                                        Ready for release statement <span>(8)</span>
-                                                    </label>
-                                                </div>
-                                                <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF145"
-                                                        name="filterByReleasePayment"
-                                                        onclick="showMeF145('filterStatusOption6'), updateStatusCount()"
-                                                        type="checkbox" value="hmrc">
-                                                    <label class="govuk-label govuk-checkboxes__label"
-                                                        for="showHideChangeF145">
-                                                        Ready for release for payment / contract <span>(8)</span>
+                                                        Updated <span>(4)</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -677,23 +666,24 @@ GOV.UK Prototype Kit
                                                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                                                     <div class="govuk-checkboxes__item">
 
-                                                        <input class="govuk-checkboxes__input" name="errorSelection"
+                                                        <input class="govuk-checkboxes__input"
+                                                            name="errorSelection"
                                                             onclick="showMeF145('filterErrorOption1'), updateErrorCount()"
-                                                            value="With errors (1)" id="showHideChangeF146"
-                                                            type="checkbox">
+                                                            value="With errors (1)" id="showHideChangeF145" type="checkbox">
                                                         <label class="govuk-label govuk-checkboxes__label"
-                                                            for="showHideChangeF146">
+                                                            for="showHideChangeF145">
                                                             With errors<span> (1)</span>
                                                         </label>
                                                     </div>
 
                                                     <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                        <input class="govuk-checkboxes__input" name="errorSelection"
+                                                        <input class="govuk-checkboxes__input"
+                                                            name="errorSelection"
                                                             onclick="showMeF145('filterErrorOption1'), updateErrorCount()"
-                                                            value="Without errors (6)" id="showHideChangeF147"
+                                                            value="Without errors (6)" id="showHideChangeF146"
                                                             type="checkbox" data-behaviour="exclusive">
                                                         <label class="govuk-label govuk-checkboxes__label"
-                                                            for="showHideChangeF147">
+                                                            for="showHideChangeF146">
                                                             Without errors<span> (6)</span>
                                                         </label>
                                                     </div>
@@ -875,10 +865,9 @@ GOV.UK Prototype Kit
                     </div>
                 </fieldset>
             </div>
+
         </div>
-
     </div>
-
 
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
@@ -902,15 +891,15 @@ GOV.UK Prototype Kit
                                 </div>
                             </th>
                             <th scope="col" class="govuk-table__header">Status</th>
-                            <th scope="col" class="govuk-table__header">Released version</th>
-                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding
-                                total<br><span id="fundingTotal"></span> <br>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">
+                                Funding total
+                                <span id="fundingTotal"></span> <br>
                                 <p class="govuk-body-s govuk-!-margin-bottom-0">of filtered providers</p>
                             </th>
                             <th scope="col" style=" display:none">Provider type</th>
                         </tr>
                     </thead>
-                    <tbody class="govuk-table__body table-vertical-align"></tbody>
+                   
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
                             <div class="govuk-checkboxes govuk-checkboxes--small">
@@ -919,83 +908,20 @@ GOV.UK Prototype Kit
                                         name="provider-approval" type="checkbox" value="Academies">
                                     <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                         <a href="provider-funding-overview-abbeycollege.html" class="govuk-link">Abbey
-                                            College, Ramsey</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10035138</p>
+                                            College,
+                                            Ramsey</a>
+                                    </label>
+                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100947365
+                                    </p>
                                 </div>
                             </div>
                         </td>
-                        <td class="govuk-table__cell">
-                            Approved<br />
-                            v4.2
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v4.0<br />
-                            Payment v4.0
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell">Approved<br />v4.1</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
                             £479,370</td>
                         <td style="display: none">Academies</td>
                         <td style="display: none">Academy converter</td>
                         <td style="display: none">Cambridgeshire</td>
-                     </tr>
-                   <!-- <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Free Schools">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview-abbeygate.html" class="govuk-link">Abbeygate
-                                            Sixth
-                                            Form College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10083728</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Released<br />
-                            v3.0
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v1.0
-                            Payment v3.0
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £120,000</td>
-                        <td style="display: none">Free Schools</td>
-                        <td style="display: none">Free schools 16 to 19</td>
-                        <td style="display: none">Suffolk</td>
-                    </tr> -->
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Academies">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview-abbeygrange.html" class="govuk-link">
-                                            Abbey Grange Church of England Academy</a> <br>
-
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10034529</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Released<br />
-                            v3.0
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v3.0<br />
-                            Payment v1.0
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £1,645,999</td>
-                        <td style="display: none">Academies</td>
-                        <td style="display: none">Academy converter</td>
-                        <td style="display: none">Leeds</td>
                     </tr>
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
@@ -1006,598 +932,589 @@ GOV.UK Prototype Kit
                                     <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                         <a href="provider-funding-overview-academies.html" class="govuk-link">Abbeywood
                                             Community School</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10039896</p>
-                                    <strong class="govuk-tag govuk-tag--grey">
-                                        indicative
-                                    </strong>
+                                    </label>
+                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000023</p>
                                 </div>
                             </div>
                         </td>
-                        <td class="govuk-table__cell">
-                            Approved<br />
-                            v2.1
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v2.0<br />
-                            Payment v2.0
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell">Released <br />v11.10</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
                             £387,217</td>
                         <td style="display: none">Academies</td>
                         <td style="display: none">Academy sponsor led</td>
                         <td style="display: none">South Gloucestershire</td>
+
+
                     </tr>
-                   
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
+                            <div class="govuk-!-margin-left-4">
+                              <!-- <div class="govuk-checkboxes__item"> -->
+                                    <!--   <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="Academies"> -->
                                     <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview.html" class="govuk-link">Barking and
-                                            Dagenham College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000528</p>
-                                </div>
+                                        <a href="provider-funding-overview-abbeygrange.html" class="govuk-link">
+                                            Abbey Grange Church of England Academy</a>
+                                    </label>
+                                    <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10084983</p>
+                                 <!-- </div> -->
                             </div>
                         </td>
-                        <td class="govuk-table__cell">
-                            Approved<br />
-                            v0.2
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v0.2<br />
-                        </td>
+                        <td class="govuk-table__cell">Updated <br />v3.1</td>
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
-                            £17,309,515</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Barking and Dagenham</td>
+                            £1,645,999</td>
+                        <td style="display: none">Academies</td>
+                        <td style="display: none">Academy converter</td>
+                        <td style="display: none">Leeds</td>
                     </tr>
-
-
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet and
-                                            Southgate College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000533</p>
+                    
+                    <tbody class="govuk-table__body table-vertical-align">
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-!-margin-left-4">
+                                    <!-- <div class="govuk-checkboxes__item"> -->
+                                        <!-- <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Abingdon and
+                                                Witney College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000395
+                                        </p>
+                                    <!-- </div> -->
                                 </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Released<br />
-                            v1.1
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v1.0<br />
-                            Contract v1.1
-                        </td>
-                        <td id="providerValue" class="govuk-table__cell govuk-table__cell--numeric "></td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Barnet</td>
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £9,996,753</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Oxfordshire</td>
 
 
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview-gag.html" class="govuk-link">Barnsley
-                                            College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000536</p>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                    <div class="govuk-!-margin-left-4">
+                                        <!-- <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Activate
+                                                Learning</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000386
+                                        </p>
+                                    </div>
+                               
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £45,444,792</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Oxfordshire</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-!-margin-left-4">
+                                    <!-- <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Ada National
+                                                College for Digital Skills</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10002975
+                                        </p>
+                                    <!-- </div> -->
                                 </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Released<br />
-                            v2.1
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v0.5<br />
-                            Contract v2.1</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £26,000,320</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Barnet</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview.html" class="govuk-link">Basingstoke
-                                            College of Technology</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000560</p>
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £878,681</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Haringey</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item"> -->
+                                        <div class="govuk-!-margin-left-4">
+                                        <!-- <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Barking and
+                                                Dagenham College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000085
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £17,309,515</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Barking and Dagenham</td>
+
+
+                        </tr>
+
+
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item"> -->
+                                        <div class="govuk-!-margin-left-4">
+                                        <!-- <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Barnet and
+                                                Southgate College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000953
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £27,309,515</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Barnet</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item"> -->
+                                        <div class="govuk-!-margin-left-4">
+                                        <!-- <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Barnsley
+                                                College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000184
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £26,000,320</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Barnet</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item"> -->
+                                        <div class="govuk-!-margin-left-4">
+
+                                        <!-- <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Basingstoke
+                                                College of Technology</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10099364
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £6,147,399</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Hampshire</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item"> -->
+                                        <div class="govuk-!-margin-left-4">
+                                        <!-- <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Bath College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10002398
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £9,922,656</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Bath and North East Somerset</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item"> -->
+                                        <div class="govuk-!-margin-left-4">
+                                        <!-- <input class="govuk-checkboxes__input provider-checked" id="filter-by-provider"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Bedford
+                                                College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10002184
+                                        </p>
+                                    <!-- </div> -->
                                 </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved<br />
-                            v2.2
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v2.2<br />
-                            Contract v1.7</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £6,147,399</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Hampshire</td>
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £28,769,457</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Bedford</td>
 
-
-                    </tr>
-
-                 
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview.html" class="govuk-link">Birmingham
-                                            Metropolitan College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10006442</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved<br />
-                            v0.3
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved v0.3
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £24,653,156</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Birmingham</td>
-
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview-gag.html" class="govuk-link">Bishop
-                                            Auckland College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000720</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Released<br />
-                            v1.3
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved v1.3<br />
-                            Payment v1.3
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £3,539,243</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">County Durham</td>
-
-                    </tr>
-
-
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview.html" class="govuk-link">Blackburn
-                                            College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10000747</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Released<br />
-                            v4.1
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved v4.1<br />
-                            Contract v4.1
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £14,830,027</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Blackburn with Darwen</td>
-
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview.html" class="govuk-link">East Durham
-                                            College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10002111</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved<br />
-                            v4.4
-                        </td>
-                        <td class="govuk-table__cell">
-
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £8,838,468</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">County Durham</td>
-
-                    </tr>
-                   
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview.html" class="govuk-link">Newbury
-                                            College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10004596</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Released<br />
-                            v7.1
-                        </td>
-                        <td class="govuk-table__cell">
-                            Payment v7.1
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £3,701,430</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">West Berkshire</td>
-
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview-southcollege.html" class="govuk-link">South
-                                            and
-                                            City
-                                            College Birmingham</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10005967</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Released<br />
-                            v6.2
-                        </td>
-                        <td class="govuk-table__cell">
-                            Payment v6.2
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £26,707,629</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Birmingham</td>
-
-
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview.html" class="govuk-link">
-                                            South Devon College
-                                        </a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10005977</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved<br />
-                            v5.9
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v5.2
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £11,673,504</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Torbay</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                            name="provider-approval" type="checkbox" value="Colleges">
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                    <div class="govuk-!-margin-left-4">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Birmingham
+                                                Metropolitan College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10097253
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £24,653,156</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Birmingham</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                    <div class="govuk-!-margin-left-4">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview-gag.html" class="govuk-link">Bishop
+                                                Auckland College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10039610
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £3,539,243</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">County Durham</td>
+
+                        </tr>
+
+
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                            <div class="govuk-!-margin-left-4">        
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Blackburn
+                                                College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000072
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £14,830,027</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Blackburn with Darwen</td>
+
+                        </tr>
+                       
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                            <div class="govuk-!-margin-left-4">        
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Hugh Baird
+                                                College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000028
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £11,631,543</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Sefton</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                            <div class="govuk-!-margin-left-4">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Hull College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000087
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £9,481,287</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Kingston upon Hull, City of</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                            <div class="govuk-!-margin-left-4">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">John Leggott
+                                                Sixth Form College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000851
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £7,071,822</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">North Lincolnshire</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                            <div class="govuk-!-margin-left-4">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">Newbury
+                                                College</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000294
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £3,701,430</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">West Berkshire</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                            <div class="govuk-!-margin-left-4">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview-southcollege.html"
+                                                class="govuk-link">South and
+                                                City
+                                                College Birmingham</a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000052
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £26,707,629</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Birmingham</td>
+
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                            <div class="govuk-!-margin-left-4">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            <a href="provider-funding-overview.html" class="govuk-link">
+                                                South Devon College
+                                            </a>
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000075
+                                        </p>
+                                    </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £11,673,504</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">Torbay</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Colleges"> -->
+                                            <div class="govuk-!-margin-left-4">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             <a href="provider-funding-overview.html" class="govuk-link">Tyne Coast
                                                 College</a>
-                                        </label><br>
-                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10005999
+                                        </label>
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-3"><strong>UKPRN</strong>: 10000018
                                         </p>
                                     </div>
+                                <!-- </div> -->
+                            </td>
+                            <td class="govuk-table__cell">Draft <br />v5.7</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                £12,224,175</td>
+                            <td style="display: none">Colleges</td>
+                            <td style="display: none">Further education</td>
+                            <td style="display: none">South Tyneside</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-!-margin-left-4">
+                                <div class="govuk-form-group--error">
+                                    <label class="govuk-label" for="provider-approval">
+                                        <a href="provider-funding-overview-abbeygate.html" class="govuk-link">Abbeygate
+                                                Sixth
+                                                Form College</a>
+                                    </label>  
+                                        <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100355318</p>
+                                        <label class="govuk-label govuk-error-message" >
+                                        <p class="govuk-error-message govuk-body-s">
+                                            A funding line profile doesn't match allocation value
+                                          </p>                             
+                                        </label>
+    </div>
+                                   
                                 </div>
-                            </div>
-
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved v7.3
-                        </td>
-                        <td class="govuk-table__cell">
-                            Payment v7.1
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £12,224,175</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">South Tyneside</td>
-
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview.html" class="govuk-link">John Leggott
-                                            Sixth Form College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10003491</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved<br />
-                            v0.8
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v1.0</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £7,071,822</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">North Lincolnshire</td>
-
-
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">Activate
-                                Learning
-                            </a><br>
-                            <p class="govuk-body-s govuk-!-margin-left-6 govuk-!-margin-bottom-0">
-                                <strong>UKPRN</strong>: 10004927
-                            </p>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Updated<br />
-                            v2.1
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v2.0
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £45,444,792</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Oxfordshire</td>
-
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">Ada
-                                National
-                                College for Digital Skills
-                            </a>
-                            <br>
-                            <p class="govuk-body-s govuk-!-margin-left-6 govuk-!-margin-bottom-0">
-                                <strong>UKPRN</strong>: 10057981
-                            </p>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Updated<br />
-                            v2.2
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v1.9<br />
-                            Contract v1.9</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £878,681</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Haringey</td>
-
-
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">Bedford
-                                College</a>
-                            <br>
-                            <p class="govuk-body-s govuk-!-margin-left-6 govuk-!-margin-bottom-0">
-                                <strong>UKPRN</strong>: 10000610</p>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Updated<br />
-                            v3.3
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved v2.7
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £28,769,457</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Bedford</td>
-
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">Hull
-                                College</a>
-                            <br>
-                            <p class="govuk-body-s govuk-!-margin-left-6 govuk-!-margin-bottom-0">
-                                <strong>UKPRN</strong>: 10003200</p>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Updated<br />
-                            v5.1
-                        </td>
-                        <td class="govuk-table__cell">
-                            Payment v4.8
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £9,481,287</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">Kingston upon Hull, City of</td>
-
-                    </tr>
+                            </td>
+                            <td class="govuk-table__cell  error-message">
+                                Error 
+                            </td>
+                           
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                                £28,769,457</td>
+                            <td style="display: none">Free Schools</td>
+                            <td style="display: none">Free schools 16 to 19</td>
+                            <td style="display: none">Suffolk</td>
+                        </tr>
                     
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
-                            <div class="govuk-!-margin-left-1">
-                            <div class="govuk-form-group govuk-form-group--error">
-                                    <a href="provider-funding-overview-abbeygate.html" class="govuk-link">Abbeygate
-                                            Sixth
-                                            Form College</a>
-                                  
+                            <div class="govuk-!-margin-left-4">
+                            <div class="govuk-form-group--error">
+                                <label class="govuk-label" for="provider-approval">
+                                        <a href="provider-funding-overview.html" class="govuk-link">Alperton Academy</a>
+                                </label>
                                     <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100355318</p>
-                                    <br/>
-                                <div>
-                                    <p class="govuk-error-message">
-                                        <span class="govuk-visually-hidden">Error:</span> A funding line profile doen't match allocation value
-                                      </p>                             
-                                 </div>
-
-                             </div>  
-                            </div>
+                                    <label class="govuk-label govuk-error-message" >
+                                        <p class="govuk-error-message">
+                                           Provider not in scope of allocation.
+                                          </p>                             
+                                    </label>
+                                     </div>
+                             </div>
                         </td>
-                        <td class="govuk-table__cell">
-                            Error <br />
                         
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v4.0<br />
-                            Payment v4.0
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £28,769,457</td>
-                        <td style="display: none">Free Schools</td>
-                        <td style="display: none">Free schools 16 to 19</td>
-                        <td style="display: none">Suffolk</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-!-margin-left-1">
-                            <div class="govuk-form-group govuk-form-group--error ">
-                                    <a href="provider-funding-overview-abbeygate.html" class="govuk-link">Alperton
-                                            Academy</a>
-                                  
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100355318</p>
-                                    <br/>
-                                <div>
-                                    <p class="govuk-error-message">
-                                        <span class="govuk-visually-hidden">Error:</span> Provider not in scope of allocation.
-                                      </p>                             
-                                 </div>
+                        <td class="govuk-table__cell  error-message">Error </td>
+                       
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value govuk-!-margin-left-3" value="200">
+                            £24,653.156</td>
+                        <td style="display: none">Colleges</td>
+                        <td style="display: none">Further education</td>
+                        <td style="display: none">County Durham</td>
 
-                              </div> 
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Error <br />
-                        
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v4.0<br />
-                            Payment v4.0
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £24,653,156</td>
-                        <td style="display: none">Free Schools</td>
-                        <td style="display: none">Free schools 16 to 19</td>
-                        <td style="display: none">Suffolk</td>
                     </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-!-margin-left-1">
-                            <div class="govuk-form-group govuk-form-group--error ">
-                                    <a href="provider-funding-overview-abbeygate.html" class="govuk-link">East Durham College
-                                        </a>
-                                  
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100355318</p>
-                                    <br/>
-                                <div>
-                                    <p class="govuk-error-message">
-                                        <span class="govuk-visually-hidden">Error:</span> Provider not a member of any contracting group.
-                                      </p>                             
-                                 </div>
-
-                              </div> 
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Error <br />
-                        
-                        </td>
-                        <td class="govuk-table__cell">
-                            Statement v4.0<br />
-                            Payment v4.0
-                        </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £14,830,02</td>
-                        <td style="display: none">Free Schools</td>
-                        <td style="display: none">Free schools 16 to 19</td>
-                        <td style="display: none">Suffolk</td>
-                    </tr>
+                            <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">
+                                        <div class="govuk-!-margin-left-4">
+                                        <div class="govuk-form-group--error">
+                                            <label class="govuk-label" for="provider-approval">
+                                                    <a href="provider-funding-overview.html" class="govuk-link">East Durham
+                                                        College</a>
+                                            </label>
+                                                <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100355318</p>
+                                                <label class="govuk-label govuk-error-message" >
+                                                <p class="govuk-error-message">
+                                                    Provider not a member of any contracting group.
+                                                    </p>                             
+                                                </label>
+                                                </td>
+                               
+                                        
+                                    <td class="govuk-table__cell error-message">Error </td>
+                                
+                                    <td class="govuk-table__cell govuk-table__cell--numeric provider-value govuk-!-margin-left-3" value="200">
+                                        £14,830.02</td>
+                                    
+                            </tr>
                     </tbody>
                 </table>
 
@@ -1635,15 +1552,20 @@ GOV.UK Prototype Kit
                                 <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
                     </ul>
                 </nav>
+
                 <div class="right-align">
-                    <!-- <a id="approveFunding" href="../../funding-approvals/funding-approval.html" class="govuk-button govuk-button--primary"
+                    <!-- APPROVE FUNDING CTA -->
+                    <a id="approveFunding" href="../funding-approval.html"
+                        class="govuk-button govuk-button--primary approve-release-funding-btn-jq"
                         data-module="govuk-button">
                         Approve funding
-                    </a> -->
-                    <a href="channel-select--16-19.html" class="govuk-button approve-release-funding-btn-jq"
-                        data-module="govuk-button">
-                        Release funding
                     </a>
+                     <!-- REFRESH FUNDING CTA -->
+
+                     <button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+                     onclick="document.getElementById('refreshFundingModal').style.display='block'">
+                     Refresh funding
+                 </button>
                 </div>
             </div>
         </div>
@@ -1798,7 +1720,7 @@ GOV.UK Prototype Kit
 
     function showMeF11(box) {
 
-        var chboxs = document.getElementsByName("filterByUpdated");
+        var chboxs = document.getElementsByName("filterByStatusApproved");
         var vis = "none";
         for (var i = 0; i < chboxs.length; i++) {
             if (chboxs[i].checked) {
@@ -1811,33 +1733,7 @@ GOV.UK Prototype Kit
 
     function showMeF12(box) {
 
-        var chboxs = document.getElementsByName("filterByApproved");
-        var vis = "none";
-        for (var i = 0; i < chboxs.length; i++) {
-            if (chboxs[i].checked) {
-                vis = "block";
-                break;
-            }
-        }
-        document.getElementById(box).style.display = vis;
-    }
-
-    function showMeF13(box) {
-
-        var chboxs = document.getElementsByName("filterByReleased");
-        var vis = "none";
-        for (var i = 0; i < chboxs.length; i++) {
-            if (chboxs[i].checked) {
-                vis = "block";
-                break;
-            }
-        }
-        document.getElementById(box).style.display = vis;
-    }
-
-    function showMeF14(box) {
-
-        var chboxs = document.getElementsByName("filterByReleaseStatement");
+        var chboxs = document.getElementsByName("filterByStatusUpdated");
         var vis = "none";
         for (var i = 0; i < chboxs.length; i++) {
             if (chboxs[i].checked) {
@@ -1850,32 +1746,16 @@ GOV.UK Prototype Kit
 
     function showMeF145(box) {
 
-        var chboxs = document.getElementsByName("filterByReleasePayment");
-        var vis = "none";
-        for (var i = 0; i < chboxs.length; i++) {
-            if (chboxs[i].checked) {
-                vis = "block";
-                break;
-            }
+    var chboxs = document.getElementsByName("errorSelection");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+        if (chboxs[i].checked) {
+            vis = "block";
+            break;
         }
-        document.getElementById(box).style.display = vis;
     }
-
-    // Error Status 
-
-    function showMeF145(box) {
-
-        var chboxs = document.getElementsByName("errorSelection");
-        var vis = "none";
-        for (var i = 0; i < chboxs.length; i++) {
-            if (chboxs[i].checked) {
-                vis = "block";
-                break;
-            }
-        }
-        document.getElementById(box).style.display = vis;
+    document.getElementById(box).style.display = vis;
     }
-
 
     // Allocation type
 
@@ -2006,13 +1886,6 @@ GOV.UK Prototype Kit
         document.getElementById("statusCount").innerHTML = x;
     };
 
-    // Counter for checkboxes in Error 
-
-    var updateErrorCount = function () {
-        var x = $(".govuk-checkboxes__input:checked").length;
-        document.getElementById("errorCount").innerHTML = x;
-    };
-
     // Counter for checkboxes in Allocation 
 
     var updateAllocationCount = function () {
@@ -2020,11 +1893,14 @@ GOV.UK Prototype Kit
         document.getElementById("allocationCount").innerHTML = x;
     };
 
-    // Allocation type radio button
+    // Counter for checkboxes in Error 
 
-    $("input:checkbox[name='allocationSelection']").click(function () {
-        $('span.allocationChanges').html(this.value);
-    })
+    var updateErrorCount = function () {
+        var x = $(".govuk-checkboxes__input:checked").length;
+        document.getElementById("errorCount").innerHTML = x;
+    };
+
+
 
     // Counter for Open date
 
@@ -2159,29 +2035,9 @@ GOV.UK Prototype Kit
         }
     };
 
-    document.getElementById('showHideChangeF13').onchange = function () {
-        if ($('input[type=checkbox]:checked').length > 0) {
-            document.getElementById('showHideText').style.display = "none";
-            document.getElementById('statusText').style.display = "block";
-        } else {
-            document.getElementById('showHideText').style.display = "block";
-            document.getElementById('statusText').style.display = "none";
-        }
-    };
-
-    document.getElementById('showHideChangeF14').onchange = function () {
-        if ($('input[type=checkbox]:checked').length > 0) {
-            document.getElementById('showHideText').style.display = "none";
-            document.getElementById('statusText').style.display = "block";
-        } else {
-            document.getElementById('showHideText').style.display = "block";
-            document.getElementById('statusText').style.display = "none";
-        }
-    };
-
     // Error status
 
-    document.getElementById('showHideChangeF146').onchange = function () {
+    document.getElementById('showHideChangeF145').onchange = function () {
         if ($('input[type=checkbox]:checked').length > 0) {
             document.getElementById('showHideText').style.display = "none";
             document.getElementById('ErrorTypeText').style.display = "block";
@@ -2191,7 +2047,7 @@ GOV.UK Prototype Kit
         }
     };
 
-    document.getElementById('showHideChangeF147').onchange = function () {
+    document.getElementById('showHideChangeF146').onchange = function () {
         if ($('input[type=checkbox]:checked').length > 0) {
             document.getElementById('showHideText').style.display = "none";
             document.getElementById('ErrorTypeText').style.display = "block";
@@ -2297,11 +2153,19 @@ GOV.UK Prototype Kit
         }
     };
 
+    // Allocation type radio button
+
+    $("input:checkbox[name='allocationSelection']").click(function () {
+        $('span.allocationChanges').html(this.value);
+    })
+
     // Error radio button
 
-    $("input:checkbox[name='errorSelection']").click(function () {
+        $("input:checkbox[name='errorSelection']").click(function () {
         $('span.errorChanges').html(this.value);
     })
+
+
 
 
     function myFunction() {
@@ -2440,7 +2304,7 @@ GOV.UK Prototype Kit
 
 
 
-
+    
     function selectAllCheckboxes(elem) {
         let name = elem.name;
         document.getElementsByName(name).checked = true;
@@ -2468,10 +2332,5 @@ GOV.UK Prototype Kit
     }
 </script>
 
-<style>
-    .filterbyCheckbox {
-        max-height: none;
-    }
-</style>
 
 {% endblock %}
