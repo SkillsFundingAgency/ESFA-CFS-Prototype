@@ -19,16 +19,18 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="../view-funding.html">
-        Funding approvals 
+    <a class="govuk-breadcrumbs__link" href="#">
+        Release management
       </a>
     </li>
       <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="16-19-results.html">
-        16 - 19 
+    <a class="govuk-breadcrumbs__link" href="#">
+        16 to 19 Mainstream 2021 to 2022
       </a>
     </li>
-
+    <li class="govuk-breadcrumbs__list-item">
+          Provider funding overview
+        </li>
   </ol>
   
 </div>
@@ -49,33 +51,33 @@ GOV.UK Prototype Kit
 
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__value">
                     UKPRN
                 </dt>
-                <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__key">
                     10035138
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__value">
                     Specification
                 </dt>
-                <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__key">
                     {{ data['spec-name'] }}
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__value">
                     Latest status </dt>
-                <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__key">
                     Version 2.0 (Released)
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__value">
                     Funding total
                 </dt>
-                <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__key">
                     £479,370 </dd>
             </div>
         </dl>
@@ -98,12 +100,7 @@ GOV.UK Prototype Kit
             <ul class="govuk-tabs__list">
                 <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                     <a class="govuk-tabs__tab" href="#funding-stream-history">
-                        Funding stream history
-                    </a>
-                </li>
-                <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#calculations">
-                        Calculations
+                        Funding Line structure
                     </a>
                 </li>
                 <li class="govuk-tabs__list-item">
@@ -112,8 +109,14 @@ GOV.UK Prototype Kit
                     </a>
                 </li>
                 <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#calculations">
+                        Calculations
+                    </a>
+                </li>
+                
+                <li class="govuk-tabs__list-item">
                     <a class="govuk-tabs__tab" href="#providerFunding">
-                        Provider funding
+                        Provider Data
                     </a>
                 </li>
             </ul>
@@ -252,7 +255,6 @@ GOV.UK Prototype Kit
                                 SPARKS</td>
                             <td class="govuk-table__cell">£359,370</td>
                             <td class="govuk-table__cell ">
-
                             </td>
                         </tr>
                     </tbody>
@@ -484,50 +486,60 @@ GOV.UK Prototype Kit
                                         <tr class="govuk-table__row">
                                             <th scope="row" class="govuk-table__header">
                                                 <a href="profiling/funding-line-profile-abbey-college.html">
-                                                    Further Education Programme Funding (1619-001)
+                                                    Programme Funding (1619-001)
                                                 </a>
                                             </th>
-                                            <td class="govuk-table__cell">Rule based pattern </td>
-                                            <td class="govuk-table__cell">£25,192,629</td>
+                                            <td class="govuk-table__cell">16-19 Tution Fund</td>
+                                            <td class="govuk-table__cell">£0.00</td>
                                         </tr>
                                         <tr class="govuk-table__row">
                                             <th scope="row" class="govuk-table__header">
-                                                <a href="profiling/funding-line-profile-abbey-college.html">
-                                                    Further Education Industry Placements Funding (1619-001)
-                                                </a>
-                                            </th>
-                                            <td class="govuk-table__cell">Rule based pattern</td>
-                                            <td class="govuk-table__cell">£20,786,636</td>
-                                        </tr>
-                                        <tr class="govuk-table__row">
-                                            <th scope="row" class="govuk-table__header">
-                                                <a href="profiling/funding-line-profile-abbey-college.html">
-                                                    Further Education High Needs Element 2 Student Funding
-                                                </a>
-                                            </th>
-                                            <td class="govuk-table__cell">Rule based pattern</td>
-                                            <td class="govuk-table__cell">£12,267,728</td>
-                                        </tr>
-                                        <tr class="govuk-table__row">
-                                            <th scope="row" class="govuk-table__header">
-                                                <a href="profiling/funding-line-profile-abbey-college.html">
-                                                    Further Education High Needs Element 3 Student Funding (1619-001)
-                                                </a>
-                                            </th>
-                                            <td class="govuk-table__cell">Rule based pattern</td>
-                                            <td class="govuk-table__cell">£0</td>
-                                            </td>
-                                        </tr>
-                                        <tr class="govuk-table__row">
-                                            <th scope="row" class="govuk-table__header">
-                                                <a href="profiling/funding-line-profile-abbey-college.html">
-                                                    Further Education High Needs Element 4 Student Funding (1619-001)
-                                                </a>
+                                                <!-- <a href="profiling/funding-line-profile-abbey-college.html"> -->
+                                                    Advanced Maths Premium Funding(1619-008)
+                                                <!-- </a> -->
                                             </th>
                                             <td class="govuk-table__cell"></td>
                                             <td class="govuk-table__cell">Excluded</td>
-                                            <td class="govuk-table__cell"><a class="govuk-link right-align" href=""></a>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">
+                                                <!-- <a href="profiling/funding-line-profile-abbey-college.html"> -->
+                                                    Alternative completions-creative sector(1619-021)
+                                                <!-- </a> -->
+                                            </th>
+                                            <td class="govuk-table__cell"></td>
+                                            <td class="govuk-table__cell">Excluded</td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">
+                                                <!-- <a href="profiling/funding-line-profile-abbey-college.html"> -->
+                                                    Alternative completions-Sporting Excellence(1619-011)
+                                                <!-- </a> -->
+                                            </th>
+                                            <td class="govuk-table__cell"></td>
+                                            <td class="govuk-table__cell">Excluded</td>
                                             </td>
+                                        </tr>
+                                        <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">
+                                                 Disadvantage Accommodation costs(1619-012)
+                                                
+                                            </th>
+                                            <td class="govuk-table__cell"></td>
+                                            <td class="govuk-table__cell">Excluded</td>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <th scope="row" class="govuk-table__header">
+                                                    <a href="profiling/funding-line-profile-abbey-college.html">
+                                                        Discretionary bursary fund total(1619-002)
+                                                    </a>
+                                                </th>
+                                               
+                                                <td class="govuk-table__cell">16-19 Bursary Funds</td>
+                                                <td class="govuk-table__cell">£10,027.72</td>
+                                                </tr>   
+                                            <!-- <td class="govuk-table__cell"><a class="govuk-link right-align" href=""></a>
+                                            </td> -->
                                         </tr>
                                     </tbody>
                                 </table>
@@ -606,11 +618,24 @@ GOV.UK Prototype Kit
                                 </tr>
                             </tbody>
                         </table>
+                       
                     </div>
                 </div>
             </section>
         </div>
-
+        <div class="govuk-grid-row ">
+            <div class="govuk-grid-column-two-thirds">
+                <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-5"
+                    data-module="app-back-to-top">
+                    <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+                            xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg>Back to top
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

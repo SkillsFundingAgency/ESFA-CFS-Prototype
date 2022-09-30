@@ -69,7 +69,7 @@ GOV.UK Prototype Kit
             <label class="govuk-label" for="specification">
              Specification:
             </label>
-            <select class="govuk-select" id="specification" name="viewSpecificationSelection"  >
+            <select class="govuk-select" id="specification" name="viewSpecificationSelection">
               <option name="viewSpecificationSelection">Please select Specification</option>
               <option name="viewSpecificationSelection" value="live data">03 Jun v1</option>
               <option name="viewSpecificationSelection" value="no live data">{{ data['fundingStream'] }} (no live data)</option>
@@ -93,10 +93,10 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
+<!-- <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   var selectEl = document.querySelector('#funding-stream')
   accessibleAutocomplete.enhanceSelectElement({
     autoselect: true,
@@ -115,13 +115,15 @@ GOV.UK Prototype Kit
     document.querySelector('.submitted__last-location').innerHTML = params.get('funding-stream')
   }
 
-</script>
+</script> -->
 <script>
 // funding dropdown select code
 $('#fundingStream').change(function()
 {
   $('#fundingPeriod1').prop('disabled', $(this).val().trim() == '');
 }).change();
+
+
 $('#fundingPeriod1').change(function()
 {
   $('#specification').prop('disabled', $(this).val().trim() == '');
@@ -135,80 +137,88 @@ $('#fundingPeriod1').change(function()
       "presence": {
         "message": "^Select a funding stream"
       }
-    }
-  }
-  
-</script>
-
-<script type="application/json" id="funding-stream">
-  {
-    "fundingStream": {
+    },
+   
+    "fundingPeriod1": {
       "presence": {
-        "message": "^Select a funding stream"
+        "message": "^Select a funding Period"
+      }
+    },
+  
+    "specification": {
+      "presence": {
+        "message": "^Select a specification"
       }
     }
   }
   
 </script>
+ <script>
+//   $(document).ready(function () {
+//     var $cat = $('select[name=fundingStream]'),
+//       $items = $('select[name=fundingPeriod]');
+
+//     $cat.change(function () {
+
+//       var $this = $(this).find(':selected'),
+//         rel = $this.attr('rel');
+
+//       // Hide all
+//       $items.find("option").hide();
+//       $set = $items.find('option.' + rel);
+//       $set.show().first().prop('selected', true);
+
+//     });
+//   });
+
+//   // Show period dropdown 
+
+//   $(function () {
+//     var hideBoxes = function () {
+//       $(".fundingPeriod1, .continueBtn").hide();
+//     }
+
+//     $("select[name='fundingStream']").change(function () {
+//       hideBoxes();
+
+//       var value = $(this).val();
+//       if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
+//         "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
+//         "Dance and drama awards (DADA)") {
+//         $(".fundingPeriod").show();
+//       }
+//     })
+
+//     hideBoxes();
+//   });
+
+//   // Show continue button 
+
+//   $(function () {
+//     var hideBoxes = function () {
+//       $(".continueBtn").hide();
+//     }
+
+
+//     $("select[name='fundingPeriod1']").change(function () {
+
+//       var value = $(this).val();
+//       if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
+//         "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
+//         "Dance and drama awards (DADA)") {
+//         $(".continueBtn").show();
+//       }
+//     })
+
+//     hideBoxes();
+//   });
+// </script> 
+
+
 <script>
-  $(document).ready(function () {
-    var $cat = $('select[name=fundingStream]'),
-      $items = $('select[name=fundingPeriod]');
-
-    $cat.change(function () {
-
-      var $this = $(this).find(':selected'),
-        rel = $this.attr('rel');
-
-      // Hide all
-      $items.find("option").hide();
-      $set = $items.find('option.' + rel);
-      $set.show().first().prop('selected', true);
-
-    });
-  });
-
-  // Show period dropdown 
-
-  $(function () {
-    var hideBoxes = function () {
-      $(".fundingPeriod, .continueBtn").hide();
-    }
-
-    $("select[name='fundingStream']").change(function () {
-      hideBoxes();
-
-      var value = $(this).val();
-      if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
-        "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
-        "Dance and drama awards (DADA)") {
-        $(".fundingPeriod").show();
-      }
-    })
-
-    hideBoxes();
-  });
-
-  // Show continue button 
-
-  $(function () {
-    var hideBoxes = function () {
-      $(".continueBtn").hide();
-    }
-
-
-    $("select[name='fundingPeriod']").change(function () {
-
-      var value = $(this).val();
-      if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
-        "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
-        "Dance and drama awards (DADA)") {
-        $(".continueBtn").show();
-      }
-    })
-
-    hideBoxes();
-  });
+  function newDataSource() {
+    sessionStorage.setItem('new data source file', 'true');
+  }
 </script>
 
 {% endblock %}

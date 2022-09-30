@@ -32,9 +32,14 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
 
   });
 
-  router.get('v1/funding-approvals/16-19/16-19-results-error', function (req, res) {
+  // router.get('v1/funding-approvals/16-19/16-19-results-error', function (req, res) {
 
-    res.render('v1/funding-approvals/16-19/16-19-results-error', { 'name' : 'Foo' });
+  //   res.render('v1/funding-approvals/16-19/16-19-results-error', { 'name' : 'Foo' });
 
-  });
+  // });
+  // router.get('/v1/funding-approvals/16-19/16-19-results', function (req, res) {
+
+  //   res.render('/v1/funding-approvals/16-19/16-19-results', { 'name' : 'Foo' });
+
+  // });
 module.exports = router

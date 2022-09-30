@@ -42,6 +42,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/sortable-table";
 
 
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .display-inline {
@@ -199,9 +200,33 @@ transform: translateY(15px);
 	}
   }
 
+  .govuk-details__text {
+	padding-top:10px;
+	padding-bottom:0px;
+  }
+  .button{
+	background-color:	#1d70b8;
+	height:40px;
+  }
+ .app-button
+{
+	background-color:#b1b4b6;
+	padding-right:50px;
+	box-shadow:#b1b4b6;
 
-
-
+}
+.app-style
+{
+	padding-bottom:50px;
+}
+.app-font
+{
+	font-weight: bold;
+}
+.app-summary
+{
+	padding-bottom: 0px;
+}
 .maths-icon {
 	transform: translateY(-45px);
 
