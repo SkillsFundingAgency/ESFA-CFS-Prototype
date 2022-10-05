@@ -90,13 +90,20 @@ $govuk-assets-path: '/govuk/assets/';
 .input-search {
 	max-width: 80%;
 	margin: auto;
+	color:black;
 }
-
+ .link{
+	color:blue;
+}
+.search{
+	max-width:35%;
+	
+}
 // Position sticky - content that sticks to the viewport as you scroll
 .position-sticky {
 	position: sticky;
 	top: 1rem;
-	z-index: 1020;
+	z-index:0;
 }
 
 .right-align {
@@ -206,12 +213,25 @@ transform: translateY(15px);
   }
   .button{
 	background-color:	#1d70b8;
+	
+	height:40px;
+  }
+  .button:hover{
+	background-color:	#1d70b8;
+	
 	height:40px;
   }
  .app-button
 {
 	background-color:#b1b4b6;
 	padding-right:50px;
+	box-shadow:#b1b4b6;
+
+}
+.app-button:hover
+{
+	background-color:#b1b4b6;
+	
 	box-shadow:#b1b4b6;
 
 }
@@ -226,6 +246,12 @@ transform: translateY(15px);
 .app-summary
 {
 	padding-bottom: 0px;
+}
+.field-style{
+	padding-right:90px;
+}
+.font-style{
+	font-weight:bold;
 }
 .maths-icon {
 	transform: translateY(-45px);

@@ -137,82 +137,70 @@ $('#fundingPeriod1').change(function()
       "presence": {
         "message": "^Select a funding stream"
       }
-    },
-   
-    "fundingPeriod1": {
-      "presence": {
-        "message": "^Select a funding Period"
-      }
-    },
-  
-    "specification": {
-      "presence": {
-        "message": "^Select a specification"
-      }
     }
   }
   
 </script>
  <script>
-//   $(document).ready(function () {
-//     var $cat = $('select[name=fundingStream]'),
-//       $items = $('select[name=fundingPeriod]');
+  $(document).ready(function () {
+    var $cat = $('select[name=fundingStream]'),
+      $items = $('select[name=fundingPeriod]');
 
-//     $cat.change(function () {
+    $cat.change(function () {
 
-//       var $this = $(this).find(':selected'),
-//         rel = $this.attr('rel');
+      var $this = $(this).find(':selected'),
+        rel = $this.attr('rel');
 
-//       // Hide all
-//       $items.find("option").hide();
-//       $set = $items.find('option.' + rel);
-//       $set.show().first().prop('selected', true);
+      // Hide all
+      $items.find("option").hide();
+      $set = $items.find('option.' + rel);
+      $set.show().first().prop('selected', true);
 
-//     });
-//   });
+    });
+  });
 
-//   // Show period dropdown 
+  // Show period dropdown 
 
-//   $(function () {
-//     var hideBoxes = function () {
-//       $(".fundingPeriod1, .continueBtn").hide();
-//     }
+  $(function () {
+    var hideBoxes = function () {
+      $(".fundingPeriod1, .continueBtn").hide();
+    }
 
-//     $("select[name='fundingStream']").change(function () {
-//       hideBoxes();
+    $("select[name='fundingStream']").change(function () {
+      hideBoxes();
 
-//       var value = $(this).val();
-//       if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
-//         "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
-//         "Dance and drama awards (DADA)") {
-//         $(".fundingPeriod").show();
-//       }
-//     })
+      var value = $(this).val();
+      if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
+        "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
+        "Dance and drama awards (DADA)") {
+        $(".fundingPeriod").show();
+      }
+    })
 
-//     hideBoxes();
-//   });
+    hideBoxes();
+  });
 
-//   // Show continue button 
+  // Show continue button 
 
-//   $(function () {
-//     var hideBoxes = function () {
-//       $(".continueBtn").hide();
-//     }
+  $(function () {
+    var hideBoxes = function () {
+      $(".continueBtn").hide();
+    }
 
 
-//     $("select[name='fundingPeriod1']").change(function () {
+    $("select[name='fundingPeriod1']").change(function () {
 
-//       var value = $(this).val();
-//       if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
-//         "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
-//         "Dance and drama awards (DADA)") {
-//         $(".continueBtn").show();
-//       }
-//     })
+      var value = $(this).val();
+      if (value == "16 to 19", "General annual grant (GAG", "Dedicated schools grant (DSG)",
+        "PE and sports premium (PSG)", "Pupil number adjustment (PNA)", "14 to 16",
+        "Dance and drama awards (DADA)") {
+        $(".continueBtn").show();
+      }
+    })
 
-//     hideBoxes();
-//   });
-// </script> 
+    hideBoxes();
+  });
+</script> 
 
 
 <script>
