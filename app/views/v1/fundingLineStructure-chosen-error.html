@@ -24,7 +24,7 @@ GOV.UK Prototype Kit
       </li>
       <li class="govuk-breadcrumbs__list-item">
         <a class="govuk-breadcrumbs__link" style="text-decoration: none;">
-        16 to 19 academic year 2019 to 2020
+        16 to 19 academic year 2021 to 2022
       </a>
       </li>
     </ol>
@@ -70,12 +70,23 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-7">
         </div>
     <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-9">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19</h1>
-      <span class="govuk-caption-l">16 to 19 academic year 2019 to 2020</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 test</h1>
+      <span class="govuk-caption-l">16 to 19 academic year 2021 to 2022</span>
       <p class="govuk-body govuk-!-margin-top-2">
         <strong class="govuk-tag">Draft</strong>
         <!-- <strong class="govuk-tag">Chosen for funding</strong> -->
       </p>
+      <details class="govuk-details govuk-!-margin-bottom-5" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            
+        What is 16 to 19 {{ fundingStream }}?
+      </span>
+        </summary>
+        <div class="govuk-details__text">
+          {{ data['spec-detail'] }}
+        </div>
+      </details>
     </div>
 
     <!-- Specification links-->
@@ -85,19 +96,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-margin-top-3">
       <div class="govuk-grid-column-full">
 
-        <details class="govuk-details govuk-!-margin-bottom-5" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              
-          What is {{ fundingStream }}?
-        </span>
-          </summary>
-          <div class="govuk-details__text">
-            {{ data['spec-detail'] }}
-          </div>
-        </details>
-
-        <div class="govuk-tabs" data-module="govuk-tabs">
+              <div class="govuk-tabs" data-module="govuk-tabs">
           <h2 class="govuk-tabs__title">
         Contents
       </h2>
@@ -117,11 +116,11 @@ GOV.UK Prototype Kit
             Data sets
           </a>
             </li>
-            <li class="govuk-tabs__list-item">
+            <!-- <li class="govuk-tabs__list-item">
               <a class="govuk-tabs__tab" href="#variation-management">
             Variations
           </a>
-            </li>
+            </li> -->
           </ul>
           <section class="govuk-tabs__panel" id="past-day">
             <div class="govuk-grid-row">
