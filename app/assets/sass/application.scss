@@ -99,6 +99,10 @@ $govuk-assets-path: '/govuk/assets/';
 	max-width:35%;
 	
 }
+.color
+{
+	color:#1d70b8;	
+}
 // Position sticky - content that sticks to the viewport as you scroll
 .position-sticky {
 	position: sticky;
@@ -123,8 +127,24 @@ ul {
 i {
 	vertical-align: sub;
 }
-
-
+.content{
+	display :none;
+	overflow:hidden;
+}
+.accordion-btn
+{
+	position: relative;
+}
+.accordion-btn::before{
+	position:absolute;
+	content: "+";
+	right:120px;
+	top:15px;
+}
+.accordion-btn[area-expanded="true"]::after
+{
+	content: "-";
+}
 // Main wrapper width
 
 .govuk-width-container {
@@ -213,6 +233,7 @@ transform: translateY(15px);
   }
   .button{
 	background-color:	#1d70b8;
+	font-weight: bold;
 	
 	height:40px;
   }
@@ -226,14 +247,32 @@ transform: translateY(15px);
 	background-color:#b1b4b6;
 	padding-right:50px;
 	box-shadow:#b1b4b6;
+	font-weight: bold;
+	
 
 }
+// Accordion changes
+
+
+
+
+
+
+
+//end
 .app-button:hover
 {
 	background-color:#b1b4b6;
 	
 	box-shadow:#b1b4b6;
 
+}
+.app_cell
+{
+	padding-bottom:0px;
+}
+.app-template{
+	padding-right:138px;
 }
 .app-style
 {
@@ -272,7 +311,23 @@ transform: translateY(-40px) translateX(-27px);
     position: absolute;
     left: -9999px;
 }
-
+.error{
+	color:	#d4351c;
+}
+.header-position{
+	padding-left:130px;
+	text-align: left;
+}
+.app-space{
+	padding-left:50px;
+}
+.link-position{
+	padding-left:1000px;
+	
+}
+.app-font{
+	font-weight: bold ;
+}
 .visually-hidden {
 	position: absolute;
 	clip: rect(0 0 0 0);

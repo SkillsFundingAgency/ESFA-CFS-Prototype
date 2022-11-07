@@ -61,7 +61,7 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third position-sticky">
-        <div class="filterScroll">
+     
             <div class="govuk-form-group filterbyContainer">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-visually-hidden">
@@ -151,7 +151,7 @@ GOV.UK Prototype Kit
             </div>
 
             <!-- // Filters -->
-
+            <div class="filterScroll">
             <div class="govuk-form-group filterbyContainer">
                 <div class="selected-filters-background">
                     <div class="govuk-form-group filterSearch">
@@ -889,7 +889,7 @@ GOV.UK Prototype Kit
                         <tr class="govuk-table__row">
                             <th scope="col" class="govuk-table__header govuk-!-width-one-half">
                                 Provider name<br>
-                                <span class="govuk-!-margin-right-2"> <span id="checkbox-checked"></span> / <span
+                                <span class="govuk-!-margin-right-2"> <span id="checkbox-checked">0</span> / <span
                                         id="checkbox-count"></span> </span>
                                 <div class="govuk-checkboxes govuk-checkboxes--small">
                                     <div class="govuk-checkboxes__item">
@@ -902,9 +902,9 @@ GOV.UK Prototype Kit
                                 </div>
                             </th>
                             <th scope="col" class="govuk-table__header">Status</th>
-                            <th scope="col" class="govuk-table__header">Released version</th>
-                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Funding
-                                total<br><span id="fundingTotal"></span> <br>
+                            <th scope="col" class="govuk-table__header app-space">Released version</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric app-space">Funding
+                                total<br><span id="fundingTotal">£6,424,000,304.42</span> <br>
                                 <p class="govuk-body-s govuk-!-margin-bottom-0">of filtered providers</p>
                             </th>
                             <th scope="col" style=" display:none">Provider type</th>
@@ -929,11 +929,11 @@ GOV.UK Prototype Kit
                             Approved<br />
                             v4.2
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v4.0<br />
                             Payment v4.0
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £479,370</td>
                         <td style="display: none">Academies</td>
                         <td style="display: none">Academy converter</td>
@@ -987,11 +987,11 @@ GOV.UK Prototype Kit
                             Released<br />
                             v3.0
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v3.0<br />
                             Payment v1.0
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £1,645,999</td>
                         <td style="display: none">Academies</td>
                         <td style="display: none">Academy converter</td>
@@ -1018,11 +1018,11 @@ GOV.UK Prototype Kit
                             Approved<br />
                             v2.1
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v2.0<br />
                             Payment v2.0
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £387,217</td>
                         <td style="display: none">Academies</td>
                         <td style="display: none">Academy sponsor led</td>
@@ -1047,10 +1047,10 @@ GOV.UK Prototype Kit
                             Approved<br />
                             v0.2
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v0.2<br />
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £17,309,515</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1058,7 +1058,7 @@ GOV.UK Prototype Kit
                     </tr>
 
 
-                    <tr class="govuk-table__row">
+                    <!-- <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
                             <div class="govuk-checkboxes govuk-checkboxes--small">
                                 <div class="govuk-checkboxes__item">
@@ -1086,7 +1086,7 @@ GOV.UK Prototype Kit
                         <td style="display: none">Barnet</td>
 
 
-                    </tr>
+                    </tr> -->
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
                             <div class="govuk-checkboxes govuk-checkboxes--small">
@@ -1105,10 +1105,10 @@ GOV.UK Prototype Kit
                             Released<br />
                             v2.1
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v0.5<br />
                             Contract v2.1</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £26,000,320</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1132,10 +1132,10 @@ GOV.UK Prototype Kit
                             Approved<br />
                             v2.2
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v2.2<br />
                             Contract v1.7</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £6,147,399</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1163,10 +1163,10 @@ GOV.UK Prototype Kit
                             Approved<br />
                             v0.3
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Approved v0.3
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £24,653,156</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1191,11 +1191,11 @@ GOV.UK Prototype Kit
                             Released<br />
                             v1.3
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Approved v1.3<br />
                             Payment v1.3
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £3,539,243</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1222,44 +1222,18 @@ GOV.UK Prototype Kit
                             Released<br />
                             v4.1
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Approved v4.1<br />
                             Contract v4.1
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £14,830,027</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
                         <td style="display: none">Blackburn with Darwen</td>
 
                     </tr>
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                                        name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview.html" class="govuk-link">East Durham
-                                            College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10002111</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="govuk-table__cell">
-                            Approved<br />
-                            v4.4
-                        </td>
-                        <td class="govuk-table__cell">
-
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-                            £8,838,468</td>
-                        <td style="display: none">Colleges</td>
-                        <td style="display: none">Further education</td>
-                        <td style="display: none">County Durham</td>
-
-                    </tr>
+                   
                    
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
@@ -1279,10 +1253,10 @@ GOV.UK Prototype Kit
                             Released<br />
                             v7.1
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Payment v7.1
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £3,701,430</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1309,10 +1283,10 @@ GOV.UK Prototype Kit
                             Released<br />
                             v6.2
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Payment v6.2
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £26,707,629</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1339,10 +1313,10 @@ GOV.UK Prototype Kit
                             Approved<br />
                             v5.9
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v5.2
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £11,673,504</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1369,10 +1343,10 @@ GOV.UK Prototype Kit
                         <td class="govuk-table__cell">
                             Approved v7.3
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Payment v7.1
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £12,224,175</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1381,25 +1355,25 @@ GOV.UK Prototype Kit
                     </tr>
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                            <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
                                         name="provider-approval" type="checkbox" value="Colleges">
-                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                                        <a href="provider-funding-overview.html" class="govuk-link">John Leggott
-                                            Sixth Form College</a>
-                                    </label><br>
-                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10003491</p>
-                                </div>
-                            </div>
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval"> -->
+                                        <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">John Leggott
+                                             College</a>
+                                <br>
+                                    <p class="govuk-body-s  govuk-!-margin-left-6 govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10003491</p>
+                                <!-- </div>
+                            </div> -->
                         </td>
                         <td class="govuk-table__cell">
-                            Approved<br />
+                            Draft 
                             v0.8
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v1.0</td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £7,071,822</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1420,17 +1394,17 @@ GOV.UK Prototype Kit
                             Updated<br />
                             v2.1
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v2.0
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £45,444,792</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
                         <td style="display: none">Oxfordshire</td>
 
                     </tr>
-                    <tr class="govuk-table__row">
+                    <!-- <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
                             <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">Ada
                                 National
@@ -1455,7 +1429,7 @@ GOV.UK Prototype Kit
                         <td style="display: none">Haringey</td>
 
 
-                    </tr>
+                    </tr> -->
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
                             <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">Bedford
@@ -1468,10 +1442,10 @@ GOV.UK Prototype Kit
                             Updated<br />
                             v3.3
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Approved v2.7
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £28,769,457</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1490,10 +1464,10 @@ GOV.UK Prototype Kit
                             Updated<br />
                             v5.1
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Payment v4.8
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £9,481,287</td>
                         <td style="display: none">Colleges</td>
                         <td style="display: none">Further education</td>
@@ -1504,31 +1478,30 @@ GOV.UK Prototype Kit
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
                             <div class="govuk-!-margin-left-1">
-                            <div class="govuk-form-group govuk-form-group--error">
+                            <div class="govuk-form-group--error">
                                     <a href="provider-funding-overview-abbeygate.html" class="govuk-link">Abbeygate
                                             Sixth
                                             Form College</a>
-                                  
+                                            <label class="govuk-label" for="provider-approval">
                                     <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100355318</p>
-                                    <br/>
-                                <div>
+                                    </label>
+                                    <label class="govuk-label govuk-error-message" >
                                     <p class="govuk-error-message">
-                                        <span class="govuk-visually-hidden">Error:</span> A funding line profile doen't match allocation value
-                                      </p>                             
-                                 </div>
+                                        <span class="govuk-body-s govuk-error-message govuk-!-margin-bottom-0"> A funding line profile doen't match allocation value
+                                        </span></p>                             
+                                </label>
 
-                             </div>  
-                            </div>
+                                </div>
                         </td>
-                        <td class="govuk-table__cell">
-                            Error <br />
+                        <td class="govuk-table__cell error">
+                            Error 
                         
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v4.0<br />
                             Payment v4.0
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £28,769,457</td>
                         <td style="display: none">Free Schools</td>
                         <td style="display: none">Free schools 16 to 19</td>
@@ -1537,12 +1510,12 @@ GOV.UK Prototype Kit
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
                             <div class="govuk-!-margin-left-1">
-                            <div class="govuk-form-group govuk-form-group--error ">
+                            <div class="govuk-form-group--error ">
                                     <a href="provider-funding-overview-abbeygate.html" class="govuk-link">Alperton
                                             Academy</a>
                                   
                                     <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100355318</p>
-                                    <br/>
+                                  
                                 <div>
                                     <p class="govuk-error-message">
                                         <span class="govuk-visually-hidden">Error:</span> Provider not in scope of allocation.
@@ -1552,15 +1525,14 @@ GOV.UK Prototype Kit
                               </div> 
                             </div>
                         </td>
-                        <td class="govuk-table__cell">
-                            Error <br />
-                        
+                        <td class="govuk-table__cell error">
+                            Error 
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v4.0<br />
                             Payment v4.0
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £24,653,156</td>
                         <td style="display: none">Free Schools</td>
                         <td style="display: none">Free schools 16 to 19</td>
@@ -1569,13 +1541,12 @@ GOV.UK Prototype Kit
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
                             <div class="govuk-!-margin-left-1">
-                            <div class="govuk-form-group govuk-form-group--error ">
+                            <div class="govuk-form-group--error ">
                                     <a href="provider-funding-overview-abbeygate.html" class="govuk-link">East Durham College
                                         </a>
                                   
                                     <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 100355318</p>
-                                    <br/>
-                                <div>
+                                                                <div>
                                     <p class="govuk-error-message">
                                         <span class="govuk-visually-hidden">Error:</span> Provider not a member of any contracting group.
                                       </p>                             
@@ -1584,15 +1555,15 @@ GOV.UK Prototype Kit
                               </div> 
                             </div>
                         </td>
-                        <td class="govuk-table__cell">
-                            Error <br />
+                        <td class="govuk-table__cell error">
+                            Error 
                         
                         </td>
-                        <td class="govuk-table__cell">
+                        <td class="govuk-table__cell app-space">
                             Statement v4.0<br />
                             Payment v4.0
                         </td>
-                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £14,830,02</td>
                         <td style="display: none">Free Schools</td>
                         <td style="display: none">Free schools 16 to 19</td>
@@ -1601,19 +1572,7 @@ GOV.UK Prototype Kit
                     </tbody>
                 </table>
 
-                <div class="govuk-grid-row ">
-                    <div class="govuk-grid-column-two-thirds">
-                        <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-5"
-                            data-module="app-back-to-top">
-                            <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
-                                <svg role="presentation" focusable="false" class="app-back-to-top__icon"
-                                    xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
-                                    <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
-                                </svg>Back to top
-                            </a>
-                        </div>
-                    </div>
-                </div>
+               
 
                 <nav class="govuk-!-margin-top-5 govuk-!-margin-bottom-9" role="navigation" aria-label="Pagination">
                     <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
@@ -1645,7 +1604,21 @@ GOV.UK Prototype Kit
                         Release funding
                     </a>
                 </div>
+                <div class="govuk-grid-row ">
+                    <div class="govuk-grid-column-two-thirds">
+                        <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-5"
+                            data-module="app-back-to-top">
+                            <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+                                <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+                                    xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                                    <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                                </svg>Back to top
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
         </div>
     </div>
 </div>
