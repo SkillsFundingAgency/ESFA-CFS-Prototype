@@ -17,17 +17,21 @@ GOV.UK Prototype Kit
     <a class="govuk-breadcrumbs__link" href="../../funding-management">
         Funding management 
       </a>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">
+            Release management
+          </a>
+        </li>
     </li>
-    <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="../view-funding.html">
-        Funding approvals 
-      </a>
-    </li>
+   
       <li class="govuk-breadcrumbs__list-item">
     <a class="govuk-breadcrumbs__link" href="16-19-results.html">
         16 - 19 
       </a>
     </li>
+    <li class="govuk-breadcrumbs__list-item">
+        Provider funding overview
+      </li>
 
   </ol>
   
@@ -49,32 +53,32 @@ GOV.UK Prototype Kit
 
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    UKPRN
+                <dt class="govuk-summary-list__value">
+                                        UKPRN
                 </dt>
-                <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__key">
                     10034529
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__value">
                     Specification
                 </dt>
-                <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__key">
                     {{ data['spec-name'] }}
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__value">
                     Latest status </dt>
-                <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__key">
                     Version 0.2 (Updated)</dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__value">
                     Funding total
                 </dt>
-                <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__key">
                     £1,645,999 </dd>
             </div>
         </dl>
@@ -97,18 +101,19 @@ GOV.UK Prototype Kit
                     </a>
                 </li>
                 <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#calculations">
-                        Calculations
-                    </a>
-                </li>
-                <li class="govuk-tabs__list-item">
                     <a class="govuk-tabs__tab" href="#profiling">
                         Profiling
                     </a>
                 </li>
                 <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#calculations">
+                        Calculations
+                    </a>
+                </li>
+               
+                <li class="govuk-tabs__list-item">
                     <a class="govuk-tabs__tab" href="#providerFunding">
-                        Provider funding
+                        Provider Data
                     </a>
                 </li>
             </ul>
@@ -399,7 +404,7 @@ GOV.UK Prototype Kit
                                         </tr>
                                         <tr class="govuk-table__row">
                                             <th scope="row" class="govuk-table__header">
-                                                <a class="govuk-link right-align" href="./profiling/funding-line-profile-abbeygrange2.html">Academies Advanced Maths Premium Funding (1619-001)</a>
+                                                Academies Advanced Maths Premium Funding (1619-001)
                                             </th>
                                             <td class="govuk-table__cell">National pattern</td>
                                             <td class="govuk-table__cell">£7,800</td>
@@ -407,7 +412,7 @@ GOV.UK Prototype Kit
 
                                         <tr class="govuk-table__row">
                                             <th scope="row" class="govuk-table__header">
-                                                <a class="govuk-link" href="./profiling/funding-line-profile-abbeygrange.html">Further Education High Needs Element 3 Student Funding (1619-001)</a>
+                                                Further Education High Needs Element 3 Student Funding (1619-001)
                                             </th>
                                             <td class="govuk-table__cell">Custom</td>
                                             <td class="govuk-table__cell">£0</td>
@@ -490,7 +495,19 @@ GOV.UK Prototype Kit
                 </div>
             </section>
         </div>
-
+        <div class="govuk-grid-row ">
+            <div class="govuk-grid-column-two-thirds">
+                <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-5"
+                    data-module="app-back-to-top">
+                    <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+                            xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg>Back to top
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -38,7 +38,7 @@ GOV.UK Prototype Kit
       <label class="govuk-label" for="sort">
       Funding stream
     </label>
-      <select class="govuk-select" name="fundingStream" id="fundingStream">
+      <select class="govuk-select field-style" name="fundingStream" id="fundingStream">
         <option></option>
         <option value="16-19/16-19-results">16 to 19</option>
         <option value="14-16/14-16-results">14 to 16</option>
@@ -84,12 +84,18 @@ GOV.UK Prototype Kit
 
     <div id="specificationDetails" class="govuk-form-group govuk-visually-hidden">
       <label class="govuk-label" for="sort">
-    Specification
+   Selected Specification
   </label>
-      <p id="specification" class="govuk-body"></p>
+      <p id="specification" class="govuk-body font-style"></p>
     </div>
-
-    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </button>
+      <a class="govuk-link" href="javascript:void(0);">
+        Cancel</a>
+    </div>
+   
+   
 
     <script type="application/json" id="funding-stream">
       {

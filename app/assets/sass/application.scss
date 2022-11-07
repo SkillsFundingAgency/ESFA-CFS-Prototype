@@ -42,6 +42,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/sortable-table";
 
 
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .display-inline {
@@ -89,13 +90,24 @@ $govuk-assets-path: '/govuk/assets/';
 .input-search {
 	max-width: 80%;
 	margin: auto;
+	color:black;
 }
-
+ .link{
+	color:blue;
+}
+.search{
+	max-width:35%;
+	
+}
+.color
+{
+	color:#1d70b8;	
+}
 // Position sticky - content that sticks to the viewport as you scroll
 .position-sticky {
 	position: sticky;
 	top: 1rem;
-	z-index: 1020;
+	z-index:0;
 }
 
 .right-align {
@@ -115,8 +127,24 @@ ul {
 i {
 	vertical-align: sub;
 }
-
-
+.content{
+	display :none;
+	overflow:hidden;
+}
+.accordion-btn
+{
+	position: relative;
+}
+.accordion-btn::before{
+	position:absolute;
+	content: "+";
+	right:120px;
+	top:15px;
+}
+.accordion-btn[area-expanded="true"]::after
+{
+	content: "-";
+}
 // Main wrapper width
 
 .govuk-width-container {
@@ -199,9 +227,71 @@ transform: translateY(15px);
 	}
   }
 
+  .govuk-details__text {
+	padding-top:10px;
+	padding-bottom:0px;
+  }
+  .button{
+	background-color:	#1d70b8;
+	font-weight: bold;
+	
+	height:40px;
+  }
+  .button:hover{
+	background-color:	#1d70b8;
+	
+	height:40px;
+  }
+ .app-button
+{
+	background-color:#b1b4b6;
+	padding-right:50px;
+	box-shadow:#b1b4b6;
+	font-weight: bold;
+	
+
+}
+// Accordion changes
 
 
 
+
+
+
+
+//end
+.app-button:hover
+{
+	background-color:#b1b4b6;
+	
+	box-shadow:#b1b4b6;
+
+}
+.app_cell
+{
+	padding-bottom:0px;
+}
+.app-template{
+	padding-right:138px;
+}
+.app-style
+{
+	padding-bottom:50px;
+}
+.app-font
+{
+	font-weight: bold;
+}
+.app-summary
+{
+	padding-bottom: 0px;
+}
+.field-style{
+	padding-right:90px;
+}
+.font-style{
+	font-weight:bold;
+}
 .maths-icon {
 	transform: translateY(-45px);
 
@@ -221,7 +311,23 @@ transform: translateY(-40px) translateX(-27px);
     position: absolute;
     left: -9999px;
 }
-
+.error{
+	color:	#d4351c;
+}
+.header-position{
+	padding-left:130px;
+	text-align: left;
+}
+.app-space{
+	padding-left:50px;
+}
+.link-position{
+	padding-left:1000px;
+	
+}
+.app-font{
+	font-weight: bold ;
+}
 .visually-hidden {
 	position: absolute;
 	clip: rect(0 0 0 0);

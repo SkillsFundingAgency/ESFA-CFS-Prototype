@@ -14,5 +14,32 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
         res.redirect('view-specification-no-live-data')
     }
   });
+  router.get('/v1/fundingLineStructure-chosen-success', function (req, res) {
 
+    res.render('v1/fundingLineStructure-chosen-success', { 'name' : 'Foo' });
+
+  });
+
+  router.get('/v1/fundingLineStructure-chosen-error', function (req, res) {
+
+    res.render('v1/fundingLineStructure-chosen-error', { 'name' : 'Foo' });
+
+  });
+
+  router.get('v1/funding-management/16-19-results-v2-success', function (req, res) {
+
+    res.render('v1/funding-management/16-19-results-v2-success', { 'name' : 'Foo' });
+
+  });
+
+  // router.get('v1/funding-approvals/16-19/16-19-results-error', function (req, res) {
+
+  //   res.render('v1/funding-approvals/16-19/16-19-results-error', { 'name' : 'Foo' });
+
+  // });
+  // router.get('/v1/funding-approvals/16-19/16-19-results', function (req, res) {
+
+  //   res.render('/v1/funding-approvals/16-19/16-19-results', { 'name' : 'Foo' });
+
+  // });
 module.exports = router

@@ -6,7 +6,7 @@ GOV.UK Prototype Kit
 
 {% block beforeContent %}
 
-<div class="govuk-breadcrumbs govuk-!-margin-bottom-5">
+<div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
         <li class="govuk-breadcrumbs__list-item">
             <a class="govuk-breadcrumbs__link" href="/start">
@@ -19,12 +19,13 @@ GOV.UK Prototype Kit
             </a>
         </li>
         <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="../view-funding.html">
-                Funding approvals
+            <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding">
+                Release management
             </a>
         </li>
 
     </ol>
+
 </div>
 
 {% endblock %}
@@ -47,24 +48,36 @@ GOV.UK Prototype Kit
         </ul>
     </div>
 </div>
-
-<div class="govuk-grid-row govuk-!-margin-bottom-9">
+<div class="govuk-notification-banner--success " role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+      <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner " id="govuk-notification-banner">
+        Funding released for selected providers
+      </h2>
+     </div>
+    </div>
+    </div>
+    <br />
+<div class="govuk-grid-row govuk-!-margin-bottom-9 ">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Non-Learning Grant</h1>
-        <span class="govuk-caption-l">16 to 19 for academies and schools academic year 2019 to 2020</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Mainstream 2021 to 2022</h1>
+        <span class="govuk-caption-l">16-19 for Academies and Schools Year 2021-22</span>
     </div>
     <div class="govuk-grid-column-one-third">
-        {% include "components/funding-approvals-links.html" %}
+        {% include "v1/funding-management/16-19/release-funding-links--16-19.html" %}
     </div>
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third position-sticky">
-        <!--  -->
+        <div class="govuk-grid-column-one-third position-sticky">
+        <div class="filterScroll">
             <div class="govuk-form-group filterbyContainer">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                        Select an option to search through the page
+                        Select an option to begin searching the content on the page
                     </legend>
                     <div class="govuk-form-group filterSearch govuk-!-margin-bottom-0">
                         <label
@@ -148,9 +161,9 @@ GOV.UK Prototype Kit
                     </div>
                 </fieldset>
             </div>
-        
+
             <!-- // Filters -->
-            <div class="filterScroll">
+
             <div class="govuk-form-group filterbyContainer">
                 <div class="selected-filters-background">
                     <div class="govuk-form-group filterSearch">
@@ -179,29 +192,25 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterProviderTypeOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     All (6)
                                                 </a>
                                             </li>
                                             <li id="filterProviderTypeOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     Free schools (10)
                                                 </a>
                                             </li>
                                             <li id="filterProviderTypeOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     Academies (10)
                                                 </a>
                                             </li>
                                             <li id="filterProviderTypeOption4" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     Independent schools (10)
                                                 </a>
                                             </li>
@@ -216,36 +225,31 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterProviderSubTypeOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     All (36)
                                                 </a>
                                             </li>
                                             <li id="filterProviderSubTypeOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     Free schools (7)
                                                 </a>
                                             </li>
                                             <li id="filterProviderSubTypeOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     Academy sponsor led (11)
                                                 </a>
                                             </li>
                                             <li id="filterProviderSubTypeOption4" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     City technology college (3)
                                                 </a>
                                             </li>
                                             <li id="filterProviderSubTypeOption5" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     Academy convertor (9)
                                                 </a>
                                             </li>
@@ -260,23 +264,38 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterStatusOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     All (18)
                                                 </a>
                                             </li>
                                             <li id="filterStatusOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
-                                                    Approved (4)
+                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                    Updated (5)
                                                 </a>
                                             </li>
                                             <li id="filterStatusOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
-                                                    Updated (4)
+                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                    Approved (8)
+                                                </a>
+                                            </li>
+                                            <li id="filterStatusOption4" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                    Released (8)
+                                                </a>
+                                            </li>
+                                            <li id="filterStatusOption5" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                    Ready for release statement (8)
+                                                </a>
+                                            </li>
+                                            <li id="filterStatusOption6" class="hidden">
+                                                <a class="filter__tag" href=""><span
+                                                        class="govuk-visually-hidden">Remove this filter</span>
+                                                    Ready for release for payment / contract (8)
                                                 </a>
                                             </li>
                                         </ul>
@@ -323,50 +342,43 @@ GOV.UK Prototype Kit
                                         <ul class="filter-tags">
                                             <li id="filterOpenDateOption1" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     All (60)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption2" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     August 2021 (10)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption3" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     September 2021 (10)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption4" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     October 2021 (10)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption5" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     November 2021 (10)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption6" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     December 2021 (10)
                                                 </a>
                                             </li>
                                             <li id="filterOpenDateOption7" class="hidden">
                                                 <a class="filter__tag" href=""><span
-                                                        class="govuk-visually-hidden">Remove
-                                                        this filter</span>
+                                                        class="govuk-visually-hidden">Remove this filter</span>
                                                     January 2022 (10)
                                                 </a>
                                             </li>
@@ -385,7 +397,7 @@ GOV.UK Prototype Kit
 
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-visually-hidden">
-                        Options to filter the content on the page
+                        Options to filter content on the page
                     </legend>
                     <div class="govuk-form-group filterSearch">
                         <div class="filterContainer">
@@ -593,22 +605,52 @@ GOV.UK Prototype Kit
                                                 </div>
                                                 <div class="govuk-checkboxes__item">
                                                     <input class="govuk-checkboxes__input" id="showHideChangeF11"
-                                                        name="filterByStatusApproved"
+                                                        name="filterByUpdated"
                                                         onclick="showMeF11('filterStatusOption2'), updateStatusCount()"
                                                         type="checkbox" value="hmrc">
                                                     <label class="govuk-label govuk-checkboxes__label"
                                                         for="showHideChangeF11">
-                                                        Approved <span>(4)</span>
+                                                        Updated <span>(4)</span>
                                                     </label>
                                                 </div>
                                                 <div class="govuk-checkboxes__item">
                                                     <input class="govuk-checkboxes__input" id="showHideChangeF12"
-                                                        name="filterByStatusUpdated"
+                                                        name="filterByApproved"
                                                         onclick="showMeF12('filterStatusOption3'), updateStatusCount()"
                                                         type="checkbox" value="hmrc">
                                                     <label class="govuk-label govuk-checkboxes__label"
                                                         for="showHideChangeF12">
-                                                        Updated <span>(4)</span>
+                                                        Approved <span>(8)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF13"
+                                                        name="filterByReleased"
+                                                        onclick="showMeF13('filterStatusOption4'), updateStatusCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF13">
+                                                        Released <span>(8)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF14"
+                                                        name="filterByReleaseStatement"
+                                                        onclick="showMeF14('filterStatusOption5'), updateStatusCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF14">
+                                                        Ready for release statement <span>(8)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF145"
+                                                        name="filterByReleasePayment"
+                                                        onclick="showMeF145('filterStatusOption6'), updateStatusCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF145">
+                                                        Ready for release for payment / contract <span>(8)</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -647,24 +689,23 @@ GOV.UK Prototype Kit
                                                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                                                     <div class="govuk-checkboxes__item">
 
-                                                        <input class="govuk-checkboxes__input"
-                                                            name="errorSelection"
+                                                        <input class="govuk-checkboxes__input" name="errorSelection"
                                                             onclick="showMeF145('filterErrorOption1'), updateErrorCount()"
-                                                            value="With errors (1)" id="showHideChangeF145" type="checkbox">
+                                                            value="With errors (1)" id="showHideChangeF146"
+                                                            type="checkbox">
                                                         <label class="govuk-label govuk-checkboxes__label"
-                                                            for="showHideChangeF145">
+                                                            for="showHideChangeF146">
                                                             With errors<span> (1)</span>
                                                         </label>
                                                     </div>
 
                                                     <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                        <input class="govuk-checkboxes__input"
-                                                            name="errorSelection"
+                                                        <input class="govuk-checkboxes__input" name="errorSelection"
                                                             onclick="showMeF145('filterErrorOption1'), updateErrorCount()"
-                                                            value="Without errors (6)" id="showHideChangeF146"
+                                                            value="Without errors (6)" id="showHideChangeF147"
                                                             type="checkbox" data-behaviour="exclusive">
                                                         <label class="govuk-label govuk-checkboxes__label"
-                                                            for="showHideChangeF146">
+                                                            for="showHideChangeF147">
                                                             Without errors<span> (6)</span>
                                                         </label>
                                                     </div>
@@ -846,9 +887,10 @@ GOV.UK Prototype Kit
                     </div>
                 </fieldset>
             </div>
-
         </div>
+
     </div>
+
 
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
@@ -1203,7 +1245,33 @@ GOV.UK Prototype Kit
                         <td style="display: none">Blackburn with Darwen</td>
 
                     </tr>
-                   
+                    <!-- <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="Colleges">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                        <a href="provider-funding-overview.html" class="govuk-link">East Durham
+                                            College</a>
+                                    </label><br>
+                                    <p class="govuk-body-s govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10002111</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            Approved<br />
+                            v4.4
+                        </td>
+                        <td class="govuk-table__cell">
+
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
+                            £8,838,468</td>
+                        <td style="display: none">Colleges</td>
+                        <td style="display: none">Further education</td>
+                        <td style="display: none">County Durham</td>
+
+                    </tr> -->
                    
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
@@ -1331,7 +1399,7 @@ GOV.UK Prototype Kit
                                         name="provider-approval" type="checkbox" value="Colleges">
                                     <label class="govuk-label govuk-checkboxes__label" for="provider-approval"> -->
                                         <a href="provider-funding-overview.html" class="govuk-link govuk-!-margin-left-6">John Leggott
-                                             College</a>
+                                            College</a>
                                 <br>
                                     <p class="govuk-body-s  govuk-!-margin-left-6 govuk-!-margin-bottom-0"><strong>UKPRN</strong>: 10003491</p>
                                 <!-- </div>
@@ -1468,8 +1536,8 @@ GOV.UK Prototype Kit
                         
                         </td>
                         <td class="govuk-table__cell app-space">
-                            <!-- Statement v4.0<br />
-                            Payment v4.0 -->
+                            Statement v4.0<br />
+                            Payment v4.0
                         </td>
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £28,769,457</td>
@@ -1499,8 +1567,8 @@ GOV.UK Prototype Kit
                             Error 
                         </td>
                         <td class="govuk-table__cell app-space">
-                            <!-- Statement v4.0<br />
-                            Payment v4.0 -->
+                            Statement v4.0<br />
+                            Payment v4.0
                         </td>
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £24,653,156</td>
@@ -1530,8 +1598,8 @@ GOV.UK Prototype Kit
                         
                         </td>
                         <td class="govuk-table__cell app-space">
-                            <!-- Statement v4.0<br />
-                            Payment v4.0 -->
+                            Statement v4.0<br />
+                            Payment v4.0
                         </td>
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value header-position" value="200">
                             £14,830,02</td>
@@ -1542,8 +1610,7 @@ GOV.UK Prototype Kit
                     </tbody>
                 </table>
 
-
-                
+              
 
                 <nav class="govuk-!-margin-top-5 govuk-!-margin-bottom-9" role="navigation" aria-label="Pagination">
                     <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
@@ -1565,38 +1632,32 @@ GOV.UK Prototype Kit
                                 <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
                     </ul>
                 </nav>
-
                 <div class="right-align">
-                    <!-- APPROVE FUNDING CTA -->
-                    <a id="approveFunding" href="../funding-approval.html"
-                        class="govuk-button govuk-button--primary approve-release-funding-btn-jq"
-                        data-module="govuk-button" disabled>
+                    <!-- <a id="approveFunding" href="../../funding-approvals/funding-approval.html" class="govuk-button govuk-button--primary"
+                        data-module="govuk-button">
                         Approve funding
+                    </a> -->
+                    <a href="channel-select--16-19.html" class="govuk-button approve-release-funding-btn-jq"
+                        data-module="govuk-button">
+                        Release funding
                     </a>
-                     <!-- REFRESH FUNDING CTA -->
-
-                     <button class="govuk-button govuk-button--secondary" data-module="govuk-button"
-                     onclick="document.getElementById('refreshFundingModal').style.display='block'">
-                     Refresh funding
-                 </button>
                 </div>
-            </div>
-        </div>
-        <div class="govuk-grid-row ">
-            <div class="govuk-grid-column-two-thirds">
-                <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-5"
-                    data-module="app-back-to-top">
-                    <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
-                        <svg role="presentation" focusable="false" class="app-back-to-top__icon"
-                            xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
-                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
-                        </svg>Back to top
-                    </a>
+                <div class="govuk-grid-row ">
+                    <div class="govuk-grid-column-two-thirds">
+                        <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-5"
+                            data-module="app-back-to-top">
+                            <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+                                <svg role="presentation" focusable="false" class="app-back-to-top__icon"
+                                    xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                                    <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                                </svg>Back to top
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -1747,7 +1808,7 @@ GOV.UK Prototype Kit
 
     function showMeF11(box) {
 
-        var chboxs = document.getElementsByName("filterByStatusApproved");
+        var chboxs = document.getElementsByName("filterByUpdated");
         var vis = "none";
         for (var i = 0; i < chboxs.length; i++) {
             if (chboxs[i].checked) {
@@ -1760,7 +1821,33 @@ GOV.UK Prototype Kit
 
     function showMeF12(box) {
 
-        var chboxs = document.getElementsByName("filterByStatusUpdated");
+        var chboxs = document.getElementsByName("filterByApproved");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF13(box) {
+
+        var chboxs = document.getElementsByName("filterByReleased");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+
+    function showMeF14(box) {
+
+        var chboxs = document.getElementsByName("filterByReleaseStatement");
         var vis = "none";
         for (var i = 0; i < chboxs.length; i++) {
             if (chboxs[i].checked) {
@@ -1773,16 +1860,32 @@ GOV.UK Prototype Kit
 
     function showMeF145(box) {
 
-    var chboxs = document.getElementsByName("errorSelection");
-    var vis = "none";
-    for (var i = 0; i < chboxs.length; i++) {
-        if (chboxs[i].checked) {
-            vis = "block";
-            break;
+        var chboxs = document.getElementsByName("filterByReleasePayment");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
         }
+        document.getElementById(box).style.display = vis;
     }
-    document.getElementById(box).style.display = vis;
+
+    // Error Status 
+
+    function showMeF145(box) {
+
+        var chboxs = document.getElementsByName("errorSelection");
+        var vis = "none";
+        for (var i = 0; i < chboxs.length; i++) {
+            if (chboxs[i].checked) {
+                vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
     }
+
 
     // Allocation type
 
@@ -1913,13 +2016,6 @@ GOV.UK Prototype Kit
         document.getElementById("statusCount").innerHTML = x;
     };
 
-    // Counter for checkboxes in Allocation 
-
-    var updateAllocationCount = function () {
-        var x = $(".govuk-checkboxes__input:checked").length;
-        document.getElementById("allocationCount").innerHTML = x;
-    };
-
     // Counter for checkboxes in Error 
 
     var updateErrorCount = function () {
@@ -1927,7 +2023,18 @@ GOV.UK Prototype Kit
         document.getElementById("errorCount").innerHTML = x;
     };
 
+    // Counter for checkboxes in Allocation 
 
+    var updateAllocationCount = function () {
+        var x = $(".govuk-checkboxes__input:checked").length;
+        document.getElementById("allocationCount").innerHTML = x;
+    };
+
+    // Allocation type radio button
+
+    $("input:checkbox[name='allocationSelection']").click(function () {
+        $('span.allocationChanges').html(this.value);
+    })
 
     // Counter for Open date
 
@@ -2062,9 +2169,29 @@ GOV.UK Prototype Kit
         }
     };
 
+    document.getElementById('showHideChangeF13').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('statusText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('statusText').style.display = "none";
+        }
+    };
+
+    document.getElementById('showHideChangeF14').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('statusText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('statusText').style.display = "none";
+        }
+    };
+
     // Error status
 
-    document.getElementById('showHideChangeF145').onchange = function () {
+    document.getElementById('showHideChangeF146').onchange = function () {
         if ($('input[type=checkbox]:checked').length > 0) {
             document.getElementById('showHideText').style.display = "none";
             document.getElementById('ErrorTypeText').style.display = "block";
@@ -2074,7 +2201,7 @@ GOV.UK Prototype Kit
         }
     };
 
-    document.getElementById('showHideChangeF146').onchange = function () {
+    document.getElementById('showHideChangeF147').onchange = function () {
         if ($('input[type=checkbox]:checked').length > 0) {
             document.getElementById('showHideText').style.display = "none";
             document.getElementById('ErrorTypeText').style.display = "block";
@@ -2180,19 +2307,11 @@ GOV.UK Prototype Kit
         }
     };
 
-    // Allocation type radio button
-
-    $("input:checkbox[name='allocationSelection']").click(function () {
-        $('span.allocationChanges').html(this.value);
-    })
-
     // Error radio button
 
-        $("input:checkbox[name='errorSelection']").click(function () {
+    $("input:checkbox[name='errorSelection']").click(function () {
         $('span.errorChanges').html(this.value);
     })
-
-
 
 
     function myFunction() {
@@ -2331,7 +2450,7 @@ GOV.UK Prototype Kit
 
 
 
-    
+
     function selectAllCheckboxes(elem) {
         let name = elem.name;
         document.getElementsByName(name).checked = true;
@@ -2359,5 +2478,10 @@ GOV.UK Prototype Kit
     }
 </script>
 
+<style>
+    .filterbyCheckbox {
+        max-height: none;
+    }
+</style>
 
 {% endblock %}
