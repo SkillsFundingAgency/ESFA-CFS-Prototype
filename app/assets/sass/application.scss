@@ -280,7 +280,7 @@ transform: translateY(15px);
 	font-family: "GDS Transport", arial, sans-serif;
 	    font-weight: bold;
 	    font-size: 18px;
-	    font-size: 1.22rem;
+	    font-size: 1.52rem;
 	    line-height: 1.11111;
 	    margin-top: 0;
 	    margin-bottom: 0;
@@ -296,9 +296,10 @@ transform: translateY(15px);
 .accordion-item-header.active::after
 {
 	content:"-";
-	font-size:2rem;
+	font-size:3rem;
 	position:absolute;
 	right:1rem;
+	
 }
 .accordion-item-body{
 	max-height: 0;
@@ -374,7 +375,7 @@ transform: translateY(-40px) translateX(-27px);
 	padding-left:50px;
 }
 .link-position{
-	padding-left:1000px;
+	padding-left:950px;
 	
 }
 .app-font{
