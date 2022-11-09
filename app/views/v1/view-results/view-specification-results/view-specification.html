@@ -304,19 +304,25 @@
                                               </div>
                                             </div>
                                           </div><br />
-                                    
-                                          <a href="" class="govuk-link link-position">Open All</a>
-                                          <br />
+                                   
+                                          <!--open all-->
+                                           <div class="accordion-option">
+                                            <a class="toggle-accordion active" accordion-id="#accordion"></a>
+                                            <br />
+                                          </div> 
+                                        
+                                          <!--x-->
                                           <hr></hr>
                                       <div class="accordion accordion-style">
+                                        
                                         <div class="accordion-item">
                                           <div class="accordion-item-header">
                                             Profiling Level Reports
                                           </div>
+                                        </a>
                                           <div class="accordion-item-body">
                                             <div class="accordion-item-body-content">
                                               <!--x-->
-                                            
                                                 <h1 class="govuk-heading-s govuk-!-margin-bottom-3">All versions profiling level reports
                                                 </h1>
                                                   <div class="attachment__thumbnail">
@@ -372,7 +378,7 @@
                                             </div>
                                             </div>
                                           </div>
-                                      
+                                    
   <!--second group--><hr></hr>
                                 <div class="accordion accordion-style">
                                   <div class="accordion-item">
@@ -701,12 +707,14 @@
                     .innerHTML = params.get('funding-stream')
                 }
               </script>
+              <!-- Accordion function -->
   <script>
     const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
     accordionItemHeaders.forEach(accordionItemHeader =>{
       accordionItemHeader.addEventListener("click",event =>{
         accordionItemHeader.classList.toggle("active");
         const accordionItemBody = accordionItemHeader.nextElementSibling;
+        console.log("here's it" + accordionItemBody);
         if(accordionItemHeader.classList.contains("active")){
           accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "Px";
         }
@@ -716,5 +724,38 @@
       });
       
     });
+
   </script>
+
+   
+  <script>
+  const toggleaccordion = document.querySelector(".toggle-accordion");
+  const accordionItemHeaders1 = document.querySelectorAll(".accordion-item-header");
+   
+  
+  toggleaccordion.addEventListener("click",event =>{
+    // console.log(toggleaccordion);
+    // console.log(accordionItemHeaders1);
+    accordionItemHeaders1.forEach(accordionItemHeader =>{
+      const accordionItemBody = accordionItemHeader.nextElementSibling;
+    //   console.log(accordionItemBody);
+    // console.log("clicked");
+    if(toggleaccordion.classList.contains("active")){
+      accordionItemHeader.classList.toggle("active");        
+      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "Px";
+    }
+              else{
+          accordionItemBody.style.maxHeight = 0;
+          accordionItemHeader.classList.toggle("active");
+        }      
+        
+      }); 
+      toggleaccordion.classList.toggle("active");
+  });
+
+   </script>
+    
+  
+    
+    
               {% endblock %}

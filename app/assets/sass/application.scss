@@ -311,8 +311,27 @@ transform: translateY(15px);
 	padding:1rem;
 	line-height: 1.5rem;
 }
+.accordion-control{
+	text-align:right;
+}
 
-//end
+.accordion-option .toggle-accordion
+{
+	float:right;
+	padding-right:160px;
+	color:#1d70b8;
+	
+}
+.accordion-option .toggle-accordion.active::before
+{
+	content:"Open All"
+}
+.accordion-option .toggle-accordion::before{
+	content:"Close All";
+}
+
+
+//Accordion end
 .app-button:hover
 {
 	background-color:#b1b4b6;
