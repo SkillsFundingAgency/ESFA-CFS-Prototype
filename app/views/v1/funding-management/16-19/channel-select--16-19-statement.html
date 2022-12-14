@@ -35,22 +35,38 @@ GOV.UK Prototype Kit
     </a>
   </li>
   <li class="govuk-breadcrumbs__list-item">
-   
-     Purpose of release
-    </a>
+    
+    Purpose of release
+  
   </li>
 </ol>
 
 </div>
-<br/>
+
 <!-- {% endblock %}
 
 {% block content %} -->
 
 <div class="govuk-grid-row govuk-!-margin-bottom-4">
-  <div class="govuk-grid-column-three-quarters">
+  
+  <div class="govuk-grid-column-full">
+    
     <div class="govuk-form-group">
-      <form action="funding-release--16-19" id="createSpec" method="post" novalidate data-validate='release-channels'>
+      <div class="govuk-notification-banner app-banner-position" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__heading">
+          
+          <h2 class="govuk-notification-banner__title app-notificaton-statement-width"id="govuk-notification-banner-title">
+            <p class="font-bold govuk-notification-banner__title  app-banner-title">Permissions</p>
+            
+            <p class="govuk-notification-banner app-banner font-bold">
+              You do not have permission to release this allocation for payment or contract.            
+              <a  href="/v1/my-user-permissions2/index.html" class="font-bold"> View your user permissions</a>.
+             </p>
+          </h2>  
+        </div>
+       
+      </div>
+      <form action="funding-release--16-19-scenario1" id="createSpec" method="post" novalidate data-validate='release-channels'>
       <fieldset class="govuk-fieldset" aria-describedby="select-all-that-apply">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           
@@ -60,16 +76,18 @@ GOV.UK Prototype Kit
         </legend>
         <div id="select-all-that-apply" class="govuk-hint">
           Select all that apply
-        </div><br/>
+        </div>
+        <br/>
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="statement" name="release-channel" type="checkbox" value="carcasses">
             <label class="govuk-label govuk-checkboxes__label" for="statement">
               Statement
             </label>
-          </div><br/>
+          </div>
+          <br/>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="payment" name="release-channel" type="checkbox" value="mines">
+            <input class="govuk-checkboxes__input" id="payment" name="release-channel" type="checkbox" value="mines" disabled>
             <label class="govuk-label govuk-checkboxes__label" for="payment">
              Payment or contract
             </label>
@@ -82,12 +100,13 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <button data-prevent-double-click="true"
+    <button 
         class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
         Continue
       </button>
     </form>
-    <a href="../16-19/16-19-results-v3.html" class="govuk-link app-link-spacing">
+    
+    <a href="../16-19/16-19-results-v4.html" class="govuk-link app-link-spacing">
       Cancel
     </a>
   </div>

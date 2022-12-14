@@ -48,20 +48,38 @@ GOV.UK Prototype Kit
     </a>
   </li>
 </ol>
+
 </div>
-<br/>
+
+
+
+
 <!-- {% endblock %}
 
 {% block content %} -->
 
 <div class="govuk-grid-row  govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm release funding </h1>
-    <span class="govuk-caption-l govuk-!-margin-bottom-1">Check the information below carefully before releasing the
-      funding
-    </span>
+    <div class="govuk-notification-banner app-banner-position" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__heading">
+    
+    <h2 class="govuk-notification-banner__title app-notificaton-width" id="govuk-notification-banner-title">
+      <p class="font-bold govuk-notification-banner__title app-banner-title">Permissions</p>
+      <p class="govuk-notification-banner app-banner font-bold">
+        You do not have permission to release statement.            
+        <a  href="/v1/my-user-permissions1/index.html" class="font-bold"> View your user permissions</a>.
+       </p>
+    </h2>  
+  </div>
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-2"style="padding-top:15px;">Confirm release funding for payments or contract</h1>
+  <span class="govuk-caption-l govuk-!-margin-bottom-1">Check the information below carefully before releasing the
+    funding
+  </span>
+</div>
+   
   </div>
 </div>
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -79,7 +97,6 @@ GOV.UK Prototype Kit
   </div>
   
 </div>
-
 <div class="govuk-grid-row govuk-!-margin-bottom-3">
   <div class="govuk-grid-column-three-quarters">
     <div class="govuk-warning-text">
@@ -100,38 +117,6 @@ GOV.UK Prototype Kit
     </div>
   </div>
 </div>
-
-<!--
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Number of providers selected
-        </dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half">
-          106
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="funding-resultsv2.html">
-            Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Funding period
-        </dt>
-        <dd class="govuk-summary-list__value govuk-!-width-one-half">
-          2019 to 2020
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
--->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -161,13 +146,12 @@ GOV.UK Prototype Kit
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Release purposes</th>
           <td class="govuk-table__cell">
-              <p>Statement</p>
               <p>Payment</p>
               <p>Contract</p>
+              
             </ul>
           </td>
           <td class="govuk-table__cell govuk-table__cell--numeric">
-              <p>11</p>
               <p>3</p>
               <p>60</p>
           </td>
@@ -175,13 +159,12 @@ GOV.UK Prototype Kit
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Funding per release purpose</th>
           <td class="govuk-table__cell">
-              <p>Statement</p>
-              <p>Payment</p>
-              <p>Contract</p>
+            <p>Payment</p>
+            <p>Contract</p>
+              
             </ul>
           </td>
           <td class="govuk-table__cell govuk-table__cell--numeric">
-              <p>£11,000</p>
               <p>£1,830</p>
               <p>£29,000</p>
           </td>
@@ -206,10 +189,8 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-9">
-  <div class="govuk-grid-column-three-quarters">
-   
-  </div>
+<div class="govuk-grid-row govuk-!-margin-bottom-8">
+  
 </div>
 
 
@@ -220,13 +201,9 @@ GOV.UK Prototype Kit
         Confirm release
       </button></a>
 
-    <a href="/v1/funding-management/16-19/channel-select--16-19" button class="govuk-button govuk-button--secondary"
-      data-module="govuk-button">
-      Change Selection
-    </a>
-    <a href="/v1/funding-management/16-19/16-19-results-v3.html" class="govuk-link app-link-spacing">
-      Cancel
-    </a>
+      <a href="/v1/funding-management/16-19/16-19-results-v1.html" class="govuk-link app-link-spacing">
+        Cancel
+      </a>
   </div>
 </div>
 

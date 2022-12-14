@@ -77,7 +77,7 @@ Permissions management
                 
                 <div class="govuk-checkboxes govuk-checkboxes--small">
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-approve-all-calculations"
+                        <input class="govuk-checkboxes__input checked" id="can-approve-all-calculations"
                             name="can-approve-all-calculations" type="checkbox" value="Can approve all calculations"
                             aria-describedby="can-approve-all-calculations-hint">
                         <label checked class="govuk-label govuk-checkboxes__label" for="can-approve-all-calculations">
@@ -212,7 +212,7 @@ Permissions management
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-release-funding" name="can-release-funding"
+                        <input  class="govuk-checkboxes__input" id="can-release-funding" name="can-release-funding"
                             type="checkbox" value="Can release funding" aria-describedby="can-release-funding-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-release-funding">
                             Can release funding
@@ -221,7 +221,11 @@ Permissions management
                             Can release funding allocation values to downstream services for a specification for the
                             funding stream that has been chosen for funding
                         </div>
+                      
+                    
+                    
                     </div>
+
                 </div>
             </fieldset>
 
@@ -356,7 +360,7 @@ Permissions management
                         </div>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="can-edit-templates" name="can-edit-templates"
+                        <input class="govuk-checkboxes__input checked" id="can-edit-templates" name="can-edit-templates"
                             type="checkbox" value="Can edit templates" aria-describedby="can-edit-templates-hint">
                         <label class="govuk-label govuk-checkboxes__label" for="can-edit-templates">
                             Can edit templates
@@ -372,11 +376,13 @@ Permissions management
         </div>
     </div>
 </div>
-
+<!--  -->
     <div class="govuk-grid-columns-two-thirds">
-        <button class="govuk-button govuk-!-margin-right-1" onclick="notificationBanner()" data-module="govuk-button">
-            Apply permissions
-        </button>
+        <a href="../../../v1/my-user-permissions1" class="govuk-button approve-release-funding-btn-jq"
+                        data-module="govuk-button"> Apply permissions</a>
+        <!-- <button class="govuk-button govuk-!-margin-right-1" onclick="notificationBanner()" data-module="govuk-button">
+           
+        </button> -->
         <a class="govuk-button govuk-button--warning govuk-!-margin-right-1" href="#"
             onclick="document.getElementById('removeUser').style.display='block'">
             Remove user permissions</a>

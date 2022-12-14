@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Permissions management
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="#" class="govuk-back-link" onclick="goBack()">Back</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">My user permissions</h1>
+    <p class="govuk-body">View my user permissions for a funding stream.</p>
+  </div>
+</div>
+
+<div class="govuk-warning-text govuk-!-margin-top-6">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    You have read only access for all funding streams </strong>
+</div>
+</fieldset>
+
+
+<!--
+<div class="govuk-grid-row govuk-!-margin-top-5">
+  <div class="govuk-grid-column-two-thirds">
+    <button type="submit" class="govuk-button govuk-!-margin-right-1">Continue</button>
+    <button class="govuk-button govuk-button--secondary" onclick="goBack()">Cancel</button>
+  </div>
+</div>
+</form>-->
+
+{% endblock %}

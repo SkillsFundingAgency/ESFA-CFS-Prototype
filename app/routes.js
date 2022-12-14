@@ -31,6 +31,69 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
     res.render('v1/funding-management/16-19-results-v2-success', { 'name' : 'Foo' });
 
   });
+  router.get('v1/funding-management/fundingLineStructure-gag-chosen', function (req, res) {
+
+    res.render('v1/funding-management/fundingLineStructure-gag-chosen', { 'name' : 'Foo' });
+
+  }); 
+  router.get('/v1/funding-management/16-19/16-19-results-v4', function (req, res) {
+
+    res.render('v1/funding-management/16-19/16-19-results-v4', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/funding-management/16-19/16-19-results-v5', function (req, res) {
+
+    res.render('v1/funding-management/16-19/16-19-results-v5', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/funding-management/16-19/16-19-results-v6', function (req, res) {
+
+    res.render('v1/funding-management/16-19/16-19-results-v6', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/funding-management/16-19/16-19-results-v1', function (req, res) {
+
+    res.render('v1/funding-management/16-19/16-19-results-v1', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/my-user-permissions1', function (req, res) {
+
+    res.render('v1/my-user-permissions1', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/my-user-permissions2', function (req, res) {
+
+    res.render('v1/my-user-permissions2', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/my-user-permissions1/individual-funding-stream1', function (req, res) {
+
+    res.render('v1/my-user-permissions1/individual-funding-stream1', { 'name' : 'Foo' });
+
+  });
+
+  router.get('/v1/funding-management/16-19/channel-select--16-19-payment', function (req, res) {
+
+    res.render('v1/funding-management/16-19/channel-select--16-19-payment', { 'name' : 'Foo' });
+
+  });
+
+  router.get('/v1/funding-management/16-19/channel-select--16-19-statement', function (req, res) {
+
+    res.render('v1/funding-management/16-19/channel-select--16-19-statement', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/funding-management/16-19/funding-release--16-19-scenario1', function (req, res) {
+
+    res.render('v1/funding-management/16-19/funding-release--16-19-scenario1', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/funding-management/16-19/funding-release--16-19-scenario2', function (req, res) {
+
+    res.render('v1/funding-management/16-19/funding-release--16-19-scenario2', { 'name' : 'Foo' });
+
+  });
+
 
   // router.get('v1/funding-approvals/16-19/16-19-results-error', function (req, res) {
 
