@@ -29,7 +29,7 @@ GOV.UK Prototype Kit
     <li class="govuk-breadcrumbs__list-item">
     <a
       class="govuk-breadcrumbs__link"
-      href="/v1/funding-management/16-19/16-19-results.html"
+      href="/v1/funding-management/16-19/16-19-results-v1.html"
     >
       16 to 19 results
     </a>
@@ -63,7 +63,7 @@ GOV.UK Prototype Kit
           </h2>  
         </div>
       </div>
-      <form action="funding-release--16-19-scenario2" id="createSpec" method="post" novalidate data-validate='release-channels'>
+      <form action="funding-release--16-19-payment" id="createSpec" method="post" novalidate data-validate='release-channels'>
       <fieldset class="govuk-fieldset" aria-describedby="select-all-that-apply">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           
@@ -78,14 +78,15 @@ GOV.UK Prototype Kit
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="statement" name="release-channel" type="checkbox" value="carcasses" disabled>
-            <label class="govuk-label govuk-checkboxes__label" for="statement">
+            <label class="govuk-label govuk-checkboxes__label app-checkbox-disabled" for="statement">
               Statement
             </label>
           </div>
           <br/>
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="payment" name="release-channel" type="checkbox" value="mines">
-            <label class="govuk-label govuk-checkboxes__label" for="payment">
+            <label class="govuk-label govuk-checkboxes__label" 
+             for="payment">
              Payment or contract
             </label>
           </div>

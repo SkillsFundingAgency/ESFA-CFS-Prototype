@@ -93,7 +93,16 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
     res.render('v1/funding-management/16-19/funding-release--16-19-scenario2', { 'name' : 'Foo' });
 
   });
+  router.get('/v1/funding-management/16-19/funding-release--16-19-statement', function (req, res) {
 
+    res.render('v1/funding-management/16-19/funding-release--16-19-statement', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/funding-management/16-19/funding-release--16-19-payment', function (req, res) {
+
+    res.render('v1/funding-management/16-19/funding-release--16-19-payment', { 'name' : 'Foo' });
+
+  });
 
   // router.get('v1/funding-approvals/16-19/16-19-results-error', function (req, res) {
 
