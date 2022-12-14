@@ -162,8 +162,12 @@ i {
 	vertical-align: inherit;
 }
 
-
-	
+.app-header{
+	padding-left:150px;
+}
+.app-space{
+	padding-left:140px;
+}	
 
 // Loading spinner
 
@@ -253,7 +257,7 @@ transform: translateY(15px);
 	
 
 }
-// NEW Accordion changes
+//  Accordion changes '+' Format
 
 .accordion{
 	width:90%;
@@ -329,7 +333,6 @@ transform: translateY(15px);
 .accordion-option .toggle-accordion::before{
 	content:"Close All";
 }
-
 
 //Accordion end
 .app-button:hover
@@ -421,15 +424,64 @@ transform: translateY(-40px) translateX(-27px);
 	}
 
   }
-
-
-
 .sort-by-selector {
     width: 95% !important;
     margin-left: 10px;
 	margin-top: 12px;
 }
-
+//user permission banner
+.app-banner-space{
+	padding-left:30px;
+	padding-top:0px;
+	padding-bottom: 10px;
+}
+.app-banner{
+	margin-right:0rem;
+	margin-left: 0rem;
+	margin-bottom: 0rem;
+	margin-top:8px;
+	padding-bottom: 30px;
+	font-size: 1.125rem;
+}
+.app-banner-breadcrumb{
+padding-top:0px ;
+}
+.app-permission-description
+{
+	padding-left:140px;
+}
+.app-permissions{
+	padding-left:10px;
+}
+.app-16-19view{
+	display:none;
+}
+.app-link-spacing{
+	padding-left:10px;
+	display: inline-block;
+	text-align: center;
+	padding-top:10px;
+}
+.app-banner-position{
+	padding-left:35px;
+}
+.app-banner-title{
+	padding-left:20px;
+}
+.app-notificaton-width
+{
+	width:174%;
+}
+.app-notificaton-statement-width
+{
+	width:133%;
+}
+.app-refresh-padding{
+	padding-left:0px;
+}
+.app-refresh-padding-result{
+	padding-left:410px;
+}
 // old permissions banner
 
 .new-permissions-banner {

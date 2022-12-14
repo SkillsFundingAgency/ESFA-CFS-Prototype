@@ -40,7 +40,12 @@ GOV.UK Prototype Kit
     </label>
       <select class="govuk-select field-style" name="fundingStream" id="fundingStream">
         <option></option>
-        <option value="16-19/16-19-results-v2">16 to 19</option>
+        <option value="16-19/16-19-results-v2">16-19/No Permissions</option>
+        <option value="16-19/16-19-results-v3">16-19/Has permissions for both</option>
+        <option value="16-19/16-19-results-v4">16-19/Option1-Only Statements</option>
+        <option value="16-19/16-19-results-v1">16-19/Option1-Only Payments and Contracts</option>
+        <option value="16-19/16-19-results-v5">16-19/Option2-Only Statements</option>
+        <option value="16-19/16-19-results-v6">16-19/Option2-Only Payments and Contracts</option>
         <option value="14-16/14-16-results">14 to 16</option>
         <option value="gag/gag-results">General Annual Grant (GAG)</option>
         <option value="pna/pna-results">Academy Pupil Number Adjustment (PNA)</option>
@@ -52,10 +57,11 @@ GOV.UK Prototype Kit
       <label class="govuk-label" for="sort">
     Funding period
   </label>
-      <select class="govuk-select" id="fundingPeriod" name="fundingPeriod" onchange="getFundingStream()">
+      <select class="govuk-select" style="padding-right:20px;"id="fundingPeriod" name="fundingPeriod" onchange="getFundingStream()">
         <option></option>
         <option value="2019 to 2020">2019 to 2020</option>
         <option value="2020 to 2021">2020 to 2021</option>
+        <option value="2021 to 2022">2021 to 2022</option>
         <option value="Academies and Schools Academic Year 2019 to 2020">Academies and Schools Academic Year 2019 to 2020
     </option>
         <option value="Academic year 2019 to 2020">Academic year 2019 to 2020</option>
