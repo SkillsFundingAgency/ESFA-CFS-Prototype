@@ -474,7 +474,7 @@ padding-top:0px ;
 }
 .app-notificaton-statement-width
 {
-	width:133%;
+	width:153%;
 }
 .app-refresh-padding{
 	padding-left:0px;
@@ -487,10 +487,13 @@ padding-top:0px ;
 }
 .app-child-release
 {
-	padding-left:30px;
+	padding-left:65px;
 }
 // old permissions banner
-
+.app-permission-header-space
+{
+	padding-left:22px;
+}
 .new-permissions-banner {
 	font-family: "GDS Transport", Arial, sans-serif;
 	font-weight: 800;
