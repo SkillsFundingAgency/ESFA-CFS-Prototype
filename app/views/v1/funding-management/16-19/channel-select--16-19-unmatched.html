@@ -116,18 +116,18 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <button 
-        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button"onclick="hideNotification()">
+        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" id="submit">
         Continue
       </button>
     </form>
     
-    <a href="../16-19/16-19-results-v4.html" class="govuk-link app-link-spacing">
+    <a href="/v1/funding-management/16-19/16-19-results-unmatched.html" class="govuk-link app-link-spacing">
       Cancel
     </a>
   </div>
 </div>
 
-<script type="application/json" id="release-channels">
+<!-- <script type="application/json" id="release-channels">
   { 		  	
         "release-channel": {
         "presence": {
@@ -148,5 +148,22 @@ GOV.UK Prototype Kit
    }
  }
  
+ </script> -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+ <script>
+   $(function() {
+     var button = $('#submit');
+     button.attr('disabled','disabled');
+     $('#statement').change(function(e){
+  if(this.checked)
+  {
+   button.removeAttr('disabled');
+  }
+  else{
+   button.attr('disabled','disabled');
+  }
+     });
+   });
  </script>
 {% endblock %}
