@@ -100,7 +100,7 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <button data-prevent-double-click="true"
-        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button"onclick="hideNotification()">
+        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button"id="submit">
         Continue
       </button>
     </form>
@@ -110,7 +110,7 @@ GOV.UK Prototype Kit
     </a>
   </div>
 </div>
-
+<!-- 
 <script type="application/json" id="release-channels">
   { 		  	
         "release-channel": {
@@ -133,6 +133,23 @@ GOV.UK Prototype Kit
    }
  }
  
+ </script> -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+ <script>
+   $(function() {
+     var button = $('#submit');
+     button.attr('disabled','disabled');
+     $('#payment').change(function(e){
+  if(this.checked)
+  {
+   button.removeAttr('disabled');
+  }
+  else{
+   button.attr('disabled','disabled');
+  }
+     });
+   });
  </script>
 
 {% endblock %}

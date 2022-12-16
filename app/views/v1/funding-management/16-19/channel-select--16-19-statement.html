@@ -103,7 +103,7 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <button 
-        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button"onclick="hideNotification()">
+        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" id="submit">
         Continue
       </button>
     </form>
@@ -114,26 +114,24 @@ GOV.UK Prototype Kit
   </div>
 </div>
 
-<script type="application/json" id="release-channels">
-  { 		  	
-        "release-channel": {
-        "presence": {
-        "message": "^Select the channels you wish to release to"
-      }
-    }
-  }
-</script>
+ <!-- script for enabling and disabling Continue button -->
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
 <script>
-  function hideNotification(){ 
-   var x = document.getElementById("notification-banner");
-   if(x.style.display === "none"){
-     x.style.display = "block";
-   }
-   else
-   {
-     x.style.display = "none";
-   }
+  $(function() {
+    var button = $('#submit');
+    button.attr('disabled','disabled');
+    $('#statement').change(function(e){
+ if(this.checked)
+ {
+  button.removeAttr('disabled');
  }
- 
- </script>
+ else{
+  button.attr('disabled','disabled');
+ }
+    });
+  });
+</script>
+
 {% endblock %}
