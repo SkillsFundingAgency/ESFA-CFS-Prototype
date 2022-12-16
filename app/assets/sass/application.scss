@@ -464,6 +464,8 @@ padding-top:0px ;
 }
 .app-banner-position{
 	padding-left:35px;
+	padding-bottom: 0px;
+	padding-top:20px;
 }
 .app-banner-title{
 	padding-left:20px;
@@ -474,7 +476,7 @@ padding-top:0px ;
 }
 .app-notificaton-statement-width
 {
-	width:153%;
+	width:155%;
 }
 .app-refresh-padding{
 	padding-left:0px;
@@ -488,6 +490,14 @@ padding-top:0px ;
 .app-child-release
 {
 	padding-left:65px;
+}
+//error message
+.app-summary-title
+{
+	padding-top:10px;
+}
+.error-summary-position{
+margin-bottom: 20px;
 }
 // old permissions banner
 .app-permission-header-space
