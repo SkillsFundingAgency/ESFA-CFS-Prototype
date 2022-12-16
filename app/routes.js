@@ -56,6 +56,16 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
     res.render('v1/funding-management/16-19/16-19-results-v1', { 'name' : 'Foo' });
 
   });
+  router.get('/v1/funding-management/16-19/16-19-results-unmatched', function (req, res) {
+
+    res.render('v1/funding-management/16-19/16-19-results-unmatched', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/funding-management/16-19/16-19-results-option2-unmatched', function (req, res) {
+
+    res.render('v1/funding-management/16-19/16-19-results-option2-unmatched', { 'name' : 'Foo' });
+
+  });
   router.get('/v1/my-user-permissions1', function (req, res) {
 
     res.render('v1/my-user-permissions1', { 'name' : 'Foo' });
@@ -75,6 +85,11 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
   router.get('/v1/funding-management/16-19/channel-select--16-19-payment', function (req, res) {
 
     res.render('v1/funding-management/16-19/channel-select--16-19-payment', { 'name' : 'Foo' });
+
+  });
+  router.get('/v1/funding-management/16-19/channel-select--16-19-unmatched', function (req, res) {
+
+    res.render('v1/funding-management/16-19/channel-select--16-19-unmatched', { 'name' : 'Foo' });
 
   });
 
@@ -103,6 +118,12 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
     res.render('v1/funding-management/16-19/funding-release--16-19-payment', { 'name' : 'Foo' });
 
   });
+  router.get('/v1/funding-management/16-19/funding-release--16-19-statement-unmatched', function (req, res) {
+
+    res.render('v1/funding-management/16-19/funding-release--16-19-statement-unmatched', { 'name' : 'Foo' });
+
+  });
+  
 
   // router.get('v1/funding-approvals/16-19/16-19-results-error', function (req, res) {
 

@@ -51,7 +51,7 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-column-full">
     
     <div class="govuk-form-group">
-      <div class="govuk-notification-banner app-banner-position"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner app-banner-position"role="region" id="notification-banner" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__heading">
           
           <h2 class="govuk-notification-banner__title app-notificaton-width" id="govuk-notification-banner-title">
@@ -63,6 +63,7 @@ GOV.UK Prototype Kit
           </h2>  
         </div>
       </div>
+      <br/>
       <form action="funding-release--16-19-payment" id="createSpec" method="post" novalidate data-validate='release-channels'>
       <fieldset class="govuk-fieldset" aria-describedby="select-all-that-apply">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -99,7 +100,7 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <button data-prevent-double-click="true"
-        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button"onclick="hideNotification()">
         Continue
       </button>
     </form>
@@ -118,6 +119,20 @@ GOV.UK Prototype Kit
       }
     }
   }
-</script>
+
+</script> 
+<script>
+  function hideNotification(){ 
+   var x = document.getElementById("notification-banner");
+   if(x.style.display === "none"){
+     x.style.display = "block";
+   }
+   else
+   {
+     x.style.display = "none";
+   }
+ }
+ 
+ </script>
 
 {% endblock %}
