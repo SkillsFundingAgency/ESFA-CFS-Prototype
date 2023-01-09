@@ -357,6 +357,13 @@ transform: translateY(15px);
 {
 	font-weight: bold;
 }
+.app-button-style
+{
+	background-color:#dee0e2;
+	margin-left:10px;
+	margin-right:10px;
+}
+
 .app-summary
 {
 	padding-bottom: 0px;
@@ -453,6 +460,16 @@ padding-top:0px ;
 .app-permissions{
 	padding-left:10px;
 }
+.app-profile-permissions
+{
+	padding-left:40px;
+}
+.app-specification-permission{
+	padding-left:115px;
+}
+.app-calculation-permission{
+	padding-left:50px;
+}
 .app-16-19view{
 	display:none;
 }
@@ -498,6 +515,10 @@ padding-top:0px ;
 }
 .error-summary-position{
 margin-bottom: 20px;
+}
+.app-checkbox-style
+{
+	padding-left: 30px;;
 }
 // old permissions banner
 .app-permission-header-space

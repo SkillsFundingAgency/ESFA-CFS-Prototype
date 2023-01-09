@@ -124,13 +124,13 @@ Permissions management
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header app-permission-header-space">Can approve calculations</th>
-          <td class="govuk-table__cell permissionsIcon app-permissions"style="padding-left:50px;"><span class="govuk-visually-hidden">Yes</span><span
+          <td class="govuk-table__cell permissionsIcon app-permissions app-calculation-permission"><span class="govuk-visually-hidden">Yes</span><span
               class="material-icons">check</span></td>
           <td class="govuk-table__cell app-permission-description">Can approve calculations last edited by another user</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header app-permission-header-space">Can edit calculations</th>
-          <td class="govuk-table__cell permissionsIcon app-permissions"style="padding-left:50px;"><span class="govuk-visually-hidden">Yes</span><span
+          <td class="govuk-table__cell permissionsIcon app-permissions app-calculation-permission"><span class="govuk-visually-hidden">Yes</span><span
               class="material-icons">check</span></td>
           <td class="govuk-table__cell app-permission-description">Can edit calculations within a specification for the funding stream
           </td>
@@ -216,7 +216,7 @@ Permissions management
        
         <tr class="govuk-table__row">
                     
-            <th scope="row" class="govuk-table__header"><span style='font-size:16px;'>&#9698;</span>&nbsp;&nbsp;Can release funding</th>
+            <th scope="row" class="govuk-table__header app-permission-header-space">Can release funding</th>
             <td class="govuk-table__cell permissionsIcon app-permissions"><span class="govuk-visually-hidden">No</span>
              </td>
             <td class="govuk-table__cell app-permission-description">Can release funding allocation values to downstream services for a specification for the funding stream that has been chosen for funding</td>
@@ -243,7 +243,7 @@ Permissions management
           <th scope="col" class="govuk-table__header app-permission-header-space">
             Permission
           </th>
-          <th scope="col" class="govuk-table__header"style="padding-left:60px;">
+          <th scope="col" class="govuk-table__header"style="padding-left:90px;">
             My permissions
           </th>
           <th scope="col" class="govuk-table__header govuk-!-width-one-half app-permission-description">
@@ -254,28 +254,28 @@ Permissions management
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header app-permission-header-space">Can apply custom profile pattern</th>
-          <td class="govuk-table__cell permissionsIcon app-permissions"><span class="govuk-visually-hidden">No</span><span
+          <td class="govuk-table__cell permissionsIcon app-permissions app-profile-permissions"><span class="govuk-visually-hidden">No</span><span
               class="material-icons">check</span></td>
           <td class="govuk-table__cell app-permission-description">Can apply custom profile patterns for funding lines within the funding
             stream</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header app-permission-header-space">Can assign profile pattern</th>
-          <td class="govuk-table__cell permissionsIcon app-permissions"><span class="govuk-visually-hidden">No</span><span
+          <td class="govuk-table__cell permissionsIcon app-permissions app-profile-permissions"><span class="govuk-visually-hidden">No</span><span
               class="material-icons">check</span></td>
           <td class="govuk-table__cell app-permission-description">Can assign profile patterns for funding lines within the funding
             stream</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header app-permission-header-space">Can create profile pattern</th>
-          <td class="govuk-table__cell permissionsIcon app-permissions"><span class="govuk-visually-hidden">No</span><span
+          <td class="govuk-table__cell permissionsIcon app-permissions app-profile-permissions"><span class="govuk-visually-hidden">No</span><span
               class="material-icons">check</span></td>
           <td class="govuk-table__cell app-permission-description">Can create profile patterns for funding lines within the funding
             stream</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header app-permission-header-space">Can edit profile pattern</th>
-          <td class="govuk-table__cell permissionsIcon app-permissions"><span class="govuk-visually-hidden">Yes</span><span
+          <td class="govuk-table__cell permissionsIcon app-permissions app-profile-permissions"><span class="govuk-visually-hidden">Yes</span><span
               class="material-icons">check</span></td>
           <td class="govuk-table__cell app-permission-description">Can edit profile patterns for funding lines within the funding stream
           </td>
@@ -291,7 +291,7 @@ Permissions management
           <th scope="col" class="govuk-table__header app-permission-header-space">
             Permission
           </th>
-          <th scope="col" class="govuk-table__header app-permissions">
+          <th scope="col" class="govuk-table__header"style="padding-left:155px;">
             My permissions
           </th>
           <th scope="col" class="govuk-table__header govuk-!-width-one-half app-permission-description">
@@ -302,13 +302,13 @@ Permissions management
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header app-permission-header-space">Can approve specifications</th>
-          <td class="govuk-table__cell permissionsIcon app-permissions"><span class="govuk-visually-hidden">No</span><span
+          <td class="govuk-table__cell permissionsIcon app-permissions app-specification-permission"><span class="govuk-visually-hidden">No</span><span
               class="material-icons">check</span></td>
           <td class="govuk-table__cell app-permission-description">Can approve a specification for the funding stream</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header app-permission-header-space">Can create specifications</th>
-          <td class="govuk-table__cell permissionsIcon app-permissions"><span class="govuk-visually-hidden">Yes</span><span
+          <td class="govuk-table__cell permissionsIcon app-permissions app-specification-permission"><span class="govuk-visually-hidden">Yes</span><span
               class="material-icons">check</span></td>
           <td class="govuk-table__cell app-permission-description">Can create a specification for the funding stream</td>
         </tr>
@@ -328,7 +328,7 @@ Permissions management
           <th scope="col" class="govuk-table__header app-permission-header-space">
             Permission
           </th>
-          <th scope="col" class="govuk-table__header app-permissions"style="padding-left:160px">
+          <th scope="col" class="govuk-table__header"style="padding-left:190px">
             My permissions
           </th>
           <th scope="col" class="govuk-table__header govuk-!-width-one-half app-permission-description">
