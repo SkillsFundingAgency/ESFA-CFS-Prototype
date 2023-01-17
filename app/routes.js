@@ -25,7 +25,11 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
     res.render('v1/fundingLineStructure-chosen-error', { 'name' : 'Foo' });
 
   });
+  router.get('/v1/fundingLineStructure-gag-chosen', function (req, res) {
 
+    res.render('v1/fundingLineStructure-gag-chosen', { 'name' : 'Foo' });
+
+  });
   router.get('v1/funding-management/16-19-results-v2-success', function (req, res) {
 
     res.render('v1/funding-management/16-19-results-v2-success', { 'name' : 'Foo' });
