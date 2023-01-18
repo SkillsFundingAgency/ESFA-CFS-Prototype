@@ -178,13 +178,22 @@ GOV.UK Prototype Kit
     </table>
   </div>
 </div>
-
+<div class="govuk-grid-row govuk-!-margin-bottom-8">
+</div>
+<div class="govuk-checkboxes govuk-checkboxes--small">
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="confirm-checkbox" 
+  type="checkbox"  aria-describedby="acknowledge-text" >
+  <label class="govuk-label govuk-checkboxes__label app-font" >I acknowledge that I'm releasing funding for payments or contract only. </label></input>
+</div>
+</div>
+ 
 <div class="govuk-grid-row govuk-!-margin-bottom-8">
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <a href="/v1/funding-management/16-19/confirm-release-in-progress--16-19"><button data-prevent-double-click="true"
-        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        class="govuk-button govuk-!-margin-right-1"id="confirm" data-module="govuk-button">
         Confirm release
       </button></a>
 
@@ -193,5 +202,21 @@ GOV.UK Prototype Kit
       </a>
   </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
+ <script>
+   $(function() {
+     var button = $('#confirm');
+     button.attr('disabled','disabled');
+     $('#confirm-checkbox').change(function(e){
+  if(this.checked)
+  {
+   button.removeAttr('disabled');
+  }
+  else{
+   button.attr('disabled','disabled');
+  }
+     });
+   });
+ </script>
 {% endblock %}
