@@ -124,8 +124,10 @@ GOV.UK Prototype Kit
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                             id="provider-name-control">
                             <div class="govuk-form-group">
-                                <input class="govuk-input sidebar-search-input" id="provider-name" type="tel"
-                                    spellcheck="false">
+                                <!-- <input class="govuk-input sidebar-search-input" id="provider-name" type="tel"
+                                    spellcheck="false"> -->
+                                    <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()"
+                                    id="searchSelected" autocomplete="off" name="searchSelected" type="text">
                             </div>
                         </div>
 
@@ -909,7 +911,8 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                <table class="govuk-table" id="fundingApprovalsProviders">
+                <table class="govuk-table" id="dataSetItems">
+                    <!-- fundingApprovalsProviders"> -->
                     <caption class="govuk-table__caption"></caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
@@ -2488,6 +2491,28 @@ document.getElementById(box).style.display = vis;
         e.which = e.which || e.keyCode;
         if (e.which == 13) {
             hiddenCheckboxes();
+        }
+    }
+
+    function searchSelected() {
+        // Declare variables
+        var input, filter, table, tr, td, p, i, txtValue;
+        input = document.getElementById("searchSelected");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("dataSetItems");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
         }
     }
 </script>
