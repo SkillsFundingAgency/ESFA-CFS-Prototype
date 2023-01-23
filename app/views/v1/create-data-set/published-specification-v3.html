@@ -99,7 +99,9 @@ GOV.UK Prototype Kit
 
                     Clear search</a>
 
-               
+                    <label class="govuk-label filterLabel" for="searchSelected">
+                        Search for funding lines or calculations
+                    </label>
                 <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()"
                     id="searchSelected" autocomplete="off" name="searchSelected" type="text">
 
@@ -549,15 +551,15 @@ GOV.UK Prototype Kit
     
     //Show/hide for provider type 
 
-    // document.getElementById('showHideChange').onchange = function () {
-    //     if ($('input[type=checkbox]:checked').length > 0) {
-    //         document.getElementById('showHideText').style.display = "none";
-    //         document.getElementById('FilterText').style.display = "block";
-    //     } else {
-    //         document.getElementById('showHideText').style.display = "block";
-    //         document.getElementById('FilterText').style.display = "none";
-    //     }
-    // };
+    document.getElementById('showHideChange').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('FilterText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('FilterText').style.display = "none";
+        }
+    };
 
     document.getElementById('showHideChangeF2').onchange = function () {
         if ($('input[type=checkbox]:checked').length > 0) {
