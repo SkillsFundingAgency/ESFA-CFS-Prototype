@@ -46,7 +46,7 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
     <form action="published-specification-v3" method="post" class="form" novalidate data-validate="create-data-set">
       <fieldset class="govuk-fieldset">
-          <h1 class="govuk-heading-xl">Data set details</h1>
+          <h1 class="govuk-heading-xl">Create data set</h1>
 
         <div class="govuk-form-group">
           <!-- <label class="govuk-label" for="address-line-1">
@@ -116,6 +116,9 @@ GOV.UK Prototype Kit
       </fieldset>
 
       <button class="govuk-button" data-module="govuk-button" onclick="newDataset()">Continue</button>
+      <button id="patternLink" class="govuk-button" data-module="govuk-button" onclick="check()">
+        Cancel
+    </button>
 
     </form>
 
