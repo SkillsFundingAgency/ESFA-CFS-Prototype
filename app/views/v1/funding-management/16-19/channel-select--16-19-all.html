@@ -35,36 +35,22 @@ GOV.UK Prototype Kit
     </a>
   </li>
   <li class="govuk-breadcrumbs__list-item">
-    
-    Purpose of release
-  
+   
+     Purpose of release
+    </a>
   </li>
 </ol>
 
 </div>
-
+<br/>
 <!-- {% endblock %}
 
 {% block content %} -->
 
 <div class="govuk-grid-row govuk-!-margin-bottom-4">
-  <div class="govuk-grid-column-full">
-    
+  <div class="govuk-grid-column-three-quarters">
     <div class="govuk-form-group">
-      <div class="govuk-notification-banner app-banner-position"role="region" id="notification-banner" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__heading">
-          
-          <h2 class="govuk-notification-banner__title app-notificaton-width" id="govuk-notification-banner-title">
-            <p class="font-bold govuk-notification-banner__title app-banner-title">Permissions</p>
-            <p class="govuk-notification-banner app-banner font-bold">
-              You do not have permission to release for statement.            
-              <a  href="/v1/my-user-permissions1/index.html" class="font-bold"> View your user permissions</a>.
-             </p>
-          </h2>  
-        </div>
-      </div>
-      <br/>
-      <form action="funding-release--16-19-payment" id="createSpec" method="post" novalidate data-validate='release-channels'>
+      <form action="funding-release--16-19-all" id="createSpec" method="post" novalidate data-validate='release-channels'>
       <fieldset class="govuk-fieldset" aria-describedby="select-all-that-apply">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           
@@ -74,20 +60,17 @@ GOV.UK Prototype Kit
         </legend>
         <div id="select-all-that-apply" class="govuk-hint">
           Select all that apply
-        </div>
-        <br/>
+        </div><br/>
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="statement" name="release-channel" type="checkbox" value="carcasses" disabled>
-            <label class="govuk-label govuk-checkboxes__label app-checkbox-disabled" for="statement">
+            <input class="govuk-checkboxes__input" id="statement" name="release-channel" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label"  for="statement">
               Statement
             </label>
-          </div>
-          <br/>
+          </div><br/>
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="payment" name="release-channel" type="checkbox" value="mines">
-            <label class="govuk-label govuk-checkboxes__label" 
-             for="payment">
+            <label class="govuk-label govuk-checkboxes__label" for="payment">
              Payment or contract
             </label>
           </div>
@@ -100,18 +83,17 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <button data-prevent-double-click="true"
-        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button"id="submit">
+        class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" id="submit">
         Continue
       </button>
     </form>
-  
     <a href="../16-19/16-19-results-v1.html" class="govuk-link app-link-spacing">
       Cancel
     </a>
   </div>
 </div>
-<!-- 
-<script type="application/json" id="release-channels">
+
+<!-- <script type="application/json" id="release-channels">
   { 		  	
         "release-channel": {
         "presence": {
@@ -119,28 +101,14 @@ GOV.UK Prototype Kit
       }
     }
   }
-
-</script> 
-<script>
-  function hideNotification(){ 
-   var x = document.getElementById("notification-banner");
-   if(x.style.display === "none"){
-     x.style.display = "block";
-   }
-   else
-   {
-     x.style.display = "none";
-   }
- }
- 
- </script> -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-
+</script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!-- 
  <script>
    $(function() {
      var button = $('#submit');
      button.attr('disabled','disabled');
-     $('#payment').change(function(e){
+     $('#statement').change(function(e){
   if(this.checked)
   {
    button.removeAttr('disabled');
@@ -151,5 +119,19 @@ GOV.UK Prototype Kit
      });
    });
  </script>
-
+ <script>
+  $(function() {
+    var button = $('#submit');
+    button.attr('disabled','disabled');
+    $('#payment').change(function(e){
+ if(this.checked)
+ {
+  button.removeAttr('disabled');
+ }
+ else{
+  button.attr('disabled','disabled');
+ }
+    });
+  });
+</script> -->
 {% endblock %}

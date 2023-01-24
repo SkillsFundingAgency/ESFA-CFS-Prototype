@@ -86,9 +86,9 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
 
   });
 
-  router.get('/v1/funding-management/16-19/channel-select--16-19-payment', function (req, res) {
+  router.get('/v1/funding-management/16-19/channel-select--16-19-all', function (req, res) {
 
-    res.render('v1/funding-management/16-19/channel-select--16-19-payment', { 'name' : 'Foo' });
+    res.render('v1/funding-management/16-19/channel-select--16-19-all', { 'name' : 'Foo' });
 
   });
   router.get('/v1/funding-management/16-19/channel-select--16-19-unmatched', function (req, res) {
@@ -117,9 +117,9 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
     res.render('v1/funding-management/16-19/funding-release--16-19-statement', { 'name' : 'Foo' });
 
   });
-  router.get('/v1/funding-management/16-19/funding-release--16-19-payment', function (req, res) {
+  router.get('/v1/funding-management/16-19/funding-release--16-19-all', function (req, res) {
 
-    res.render('v1/funding-management/16-19/funding-release--16-19-payment', { 'name' : 'Foo' });
+    res.render('v1/funding-management/16-19/funding-release--16-19-all', { 'name' : 'Foo' });
 
   });
   router.get('/v1/funding-management/16-19/funding-release--16-19-conflict', function (req, res) {
