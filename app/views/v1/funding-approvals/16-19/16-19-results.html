@@ -1598,16 +1598,17 @@ GOV.UK Prototype Kit
                     </ul>
                 </nav>
                 <div class="right-align">
-                    <!-- APPROVE FUNDING CTA -->
+                    <!-- REFRESH FUNDING CTA -->
                     <a id="approveFunding" href="../funding-approval.html"
-                        class="govuk-button govuk-button--primary approve-release-funding-btn-jq"
-                        data-module="govuk-button" >
-                        Approve funding
-                    </a>
-                    <a href="channel-select--16-19-payment.html" class="govuk-button approve-release-funding-btn-jq"
-                        data-module="govuk-button">
-                        Release funding
-                    </a>
+                    class="govuk-button govuk-button--primary approve-release-funding-btn-jq"
+                    data-module="govuk-button">
+                    Approve funding
+                </a> 
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+                        onclick="document.getElementById('refreshFundingModal').style.display='block'">
+                        Refresh funding
+                    </button>
+                   
                 </div>
                 <div class="govuk-grid-row ">
                     <div class="govuk-grid-column-two-thirds">
