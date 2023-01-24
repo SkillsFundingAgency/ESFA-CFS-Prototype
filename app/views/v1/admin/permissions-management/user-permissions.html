@@ -222,57 +222,26 @@ Permissions management
                             Can release funding allocation values to downstream services for a 
                             specification for the funding stream that has been chosen for funding
                         </div>
-                        <div class="govuk-checkboxes__item">                              
+                                            <div class="govuk-checkboxes__item">                              
                                                <input class="govuk-checkboxes__input" id="can-choose-funding" 
-                                                type="checkbox" value="Can refresh funding" aria-describedby="can-refresh-funding-hint"name="level-3"> 
+                                                type="checkbox" value="Can refresh funding" aria-describedby="can-refresh-funding-hint"name="level-2"> 
                                                 <label class=" govuk-label govuk-checkboxes__label app-font">Can release allocations for statement</label></input>
                                                 <div id="can-release-funding-hint" class="govuk-hint govuk-checkboxes__hint">
                                                     Can release funding allocation values to the service that manages statements for providers
                                                 </div>
                                             </div>                  
-                            <div class="govuk-checkboxes__item">
-                               <input  class="govuk-checkboxes__input" id="can-choose-funding" 
-                                    type="checkbox" value="Can refresh funding" aria-describedby="can-refresh-funding-hint" name="level-3"> 
-                                <label class=" govuk-label govuk-checkboxes__label app-font" >Can release allocations for payment or contract</label></input>
-                                     <div id="can-release-funding-hint" class="govuk-hint govuk-checkboxes__hint">
-                                        Can release funding allocation values to the services that manage contracts or payments for providers
-                                     </div>
-                            </div> 
+                                            <div class="govuk-checkboxes__item">
+                                            <input  class="govuk-checkboxes__input" id="can-choose-funding" 
+                                                    type="checkbox" value="Can refresh funding" aria-describedby="can-refresh-funding-hint" name="level-3"> 
+                                                <label class=" govuk-label govuk-checkboxes__label app-font" >Can release allocations for payment or contract</label></input>
+                                                    <div id="can-release-funding-hint" class="govuk-hint govuk-checkboxes__hint">
+                                                        Can release funding allocation values to the services that manage contracts or payments for providers
+                                                    </div>
+                                            </div> 
                        
                 </div>  
             </div>                               
-                        <!-- <input  class="govuk-checkboxes__input" id="can-release-funding" name="can-release-funding"
-                            type="checkbox" value="Can release funding" aria-describedby="can-release-funding-hint">
-                        <label class="govuk-label govuk-checkboxes__label app-font" for="can-release-funding">
-                            Can release funding
-                        </label>
-                        <div id="can-release-funding-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can release funding allocation values to downstream services for a specification for the
-                            funding stream that has been chosen for funding
-                        </div>
-                    </div>
-                    <div class="app-checkbox-style">
-                    <div class="govuk-checkboxes__item"> -->
-                        <!-- <input  class="govuk-checkboxes__input" id="can-release-child1" name="can-release-funding"
-                            type="checkbox" value="Can release funding" aria-describedby="can-release-funding-hint">
-                        <label class="govuk-label govuk-checkboxes__label app-font" for="can-release-funding">
-                            Can release allocations for statement
-                        </label>
-                        <div id="can-release-funding-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can release funding allocation values to the service that creates statements for providers.
-                        </div>
-                    </div>
-                    <div class="govuk-checkboxes__item"  id="can-release-funding">
-                        <input  class="govuk-checkboxes__input" id="can-release-child1" name="can-release-funding"
-                            type="checkbox" value="Can release funding" aria-describedby="can-release-funding-hint">
-                        <label class="govuk-label govuk-checkboxes__label app-font" for="can-release-funding">
-                            Can release allocations for payment or contract
-                        </label>
-                        <div id="can-release-funding-hint" class="govuk-hint govuk-checkboxes__hint">
-                            Can release funding allocation values to the services that create contracts or make payments.
-                        </div>
-                    </div> -->
-                    
+                       
                     </div>
                 </div>
                 </div>
@@ -559,12 +528,35 @@ Permissions management
     $(this).parent().find('input[name^=level]').prop('checked', this.checked);
 
     // if (!this.checked) {
-    //     var level = this.name.substring(this.name.length - 1);
-    //     for (var i = level - 1; i > 0; i--) {
-    //         $('input[name="level-' + i + '"]').prop('checked', false);
+    //     var level = this.name.substring(this.name.length-3);
+    //     for (var i = level - 1 ; i > 0; i--) {
+    //        $('input[name="level-' + i + '"]').prop('checked', false);
     //     }
+       
     // }
+ 
 });
+
+// if (!this.checked) {
+//         var uncheckparent = false;
+//         var level = this.name.substring(this.name.length - 1);
+//         console.log("level",level);
+//         for (var i = 1; i > level; i++) {
+//             if (!$('input[name="level-"]'+ i).prop('checked')){
+//                     uncheckparent = true;
+//                     console.log("uncheck flag" + uncheckparent);
+
+//             } else {
+//                 uncheckparent = false;
+//             }
+//             }
+//         if (uncheckparent)
+//             {
+//                 $('input[name="level-1"]').prop('checked', false);
+//             }
+    
+    
+// }
 </script>
 
 {% endblock %}

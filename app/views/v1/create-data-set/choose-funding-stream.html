@@ -23,11 +23,11 @@ GOV.UK Prototype Kit
             General annual grant
           </a>
         </li>
-        <li class="govuk-breadcrumbs__list-item">
+        <!-- <li class="govuk-breadcrumbs__list-item">
           <a class="govuk-breadcrumbs__link" href="../create-data-set">
             Data set type
           </a>
-        </li>
+        </li> -->
 
       </ol>
   
@@ -45,13 +45,13 @@ GOV.UK Prototype Kit
                 <fieldset class="govuk-fieldset" role="group" aria-describedby="funding-stream-and-period-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
                         <h1 class="govuk-fieldset__heading">
-                            Which funding stream and period?
+                           Create data set
                         </h1>
                     </legend>
 
-                    <p class="govuk-!-margin-bottom-6">
+                    <!-- <p class="govuk-!-margin-bottom-6">
                         Funding stream and funding period options are limited to show only funding streams where data sharing config has been enabled and where released data exists.
-                    </p>
+                    </p> -->
 
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="dataset-fundingStreams">
@@ -87,10 +87,10 @@ GOV.UK Prototype Kit
                     <dl id="showSpecification" class="govuk-visually-hidden govuk-summary-list govuk-summary-list__row--no-border govuk-!-margin-top-5 ">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Specification
+                               Specification  
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                Specification name
+                                {{ data['dataset-fundingStream']}}
                             </dd>
                         </div>
                     </dl>
