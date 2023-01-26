@@ -469,36 +469,38 @@ GOV.UK Prototype Kit
             
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-thirds">
-                <form action="/v1/fundingLineStructure.html#release-timetable" method="post" class="form" novalidate data-validate="variation">
+                <form action="/v1/fundingLineStructure-gag-chosen#variation-management" method="post" class="form" novalidate data-validate="variation">
                   <div class="govuk-form-group">
                       
                     <table class="govuk-table" id="fundingApprovalsProviders">
-                      <caption class="govuk-table__caption"><h2 class="govuk-heading-s">Bulk Actions</h2>
-                        <select class="govuk-select funding-line-dropdown-js" id="future-installment" name="sort"
-                                       aria-label="funding line 3" disabled>
-                                       <option value="">Select Future Installments</option>
-                                       <option value="may2020-1">May 2020 instalment 1</option>
-                                       <option value="may2020-2">May 2020 instalment 2</option>
-                                   </select></caption>
                       <thead class="govuk-table__head">
-                          <tr class="govuk-table__row">
-                              <th scope="col" class="govuk-table__header app-banner-title "style="width:20%;">Select All
-                                 <br>
-                                  
-                                  <div class="govuk-checkboxes govuk-checkboxes--small app-banner-title">
-                                      <div class="govuk-checkboxes__item">
-                                          <input class="govuk-checkboxes__input" id="select-all" type="checkbox"
-                                              value="select-all">
-                                          <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                          </label>
-                                      </div>
-                                  </div>
-                              </th>
-                              <th scope="col" class="govuk-table__header app-permissions">Funding line</th>
-                              <th scope="col" class="govuk-table__header">Currently set instalment</th>
-                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Future instalment<br>
-                              </th>
-                            
+                        <tr class="govuk-table__row">
+                      <caption class="govuk-table__caption"><h2 class="govuk-heading-s">Bulk Actions</h2>
+                       
+                                  </caption>
+                    
+                              <th scope="col" class="govuk-table__header app-banner-title "style="width:20%;">
+                          
+                                  <select class="govuk-select funding-line-dropdown-js"name="sort" id="a" onchange="change();"
+                                  aria-label="funding line 3"  name="tolerance[]" class="tol" disabled>
+                                    <option >Select Future Installments</option>
+                                    <option value="1">August 2022 instalment 1</option>
+                                    <option value="2">September 2022 instalment 1</option>
+                                    <option value="3">October 2022 instalment 1</option>
+                                    <option value="4">November 2022 instalment 1</option>
+                                    <option value="5">December 2022 instalment 1</option>
+                                    <option value="6">January 2023 instalment 1</option>
+                                    <option value="7">Febraury 2023 instalment 1</option>
+                                    <option value="8">March 2023 instalment 1</option>
+                              </select>                                                                
+              <input type="checkbox" class=" allergies" id="allergies" name="allergen[]" value="Pollen">Select All<br/></input>
+                            </th>
+                           
+                              <th scope="col" class="govuk-table__header "style="padding-top:45px;">Funding line</th>
+                              <th scope="col" class="govuk-table__header"style="padding-top:45px;">Currently set instalment</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric"style="padding-top:45px;">Future instalments<br>
+                              
+                            </th>
                           </tr>
                       </thead>
                       <tbody class="govuk-table__body table-vertical-align"></tbody>
@@ -522,11 +524,17 @@ GOV.UK Prototype Kit
                               </td>
                               <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                                 <div class="govuk-form-group">
-                                   <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                                   <select class="govuk-select funding-line-dropdown-js" id="b" name="sort"
                                                   aria-label="funding line 3">
                                                   <option value="">Select</option>
-                                                  <option value="may2020-1">May 2020 instalment 1</option>
-                                                  <option value="may2020-2">May 2020 instalment 2</option>
+                                                  <option value="1">August 2022 instalment 1</option>
+                                                  <option value="2">September 2022 instalment 1</option>
+                                                  <option value="3">October 2022 instalment 1</option>
+                                                  <option value="4">November 2022 instalment 1</option>
+                                                  <option value="5">December 2022 instalment 1</option>
+                                                  <option value="6">January 2023 instalment 1</option>
+                                                  <option value="7">Febraury 2023 instalment 1</option>
+                                                  <option value="8">March 2023 instalment 1</option>
                                               </select> 
                                 </div>  
                               </td>
@@ -552,11 +560,17 @@ GOV.UK Prototype Kit
                             </td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                               <div class="govuk-form-group">
-                                 <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                                 <select class="govuk-select funding-line-dropdown-js" id="c" name="sort"
                                                 aria-label="funding line 3">
                                                 <option value="">Select</option>
-                                                <option value="may2020-1">May 2020 instalment 1</option>
-                                                <option value="may2020-2">May 2020 instalment 2</option>
+                                                <option value="1">August 2022 instalment 1</option>
+                                                <option value="2">September 2022 instalment 1</option>
+                                                <option value="3">October 2022 instalment 1</option>
+                                                <option value="4">November 2022 instalment 1</option>
+                                                <option value="5">December 2022 instalment 1</option>
+                                                <option value="6">January 2023 instalment 1</option>
+                                                <option value="7">Febraury 2023 instalment 1</option>
+                                                <option value="8">March 2023 instalment 1</option>
                                             </select> 
                               </div>  
                             </td>
@@ -580,13 +594,20 @@ GOV.UK Prototype Kit
                           <td class="govuk-table__cell">
                               Initial allocation
                           </td>
+                          <!-- id="fundingline3" -->
                           <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                             <div class="govuk-form-group">
-                               <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                               <select class="govuk-select funding-line-dropdown-js"  id="d" name="sort"
                                               aria-label="funding line 3">
                                               <option value="">Select</option>
-                                              <option value="may2020-1">May 2020 instalment 1</option>
-                                              <option value="may2020-2">May 2020 instalment 2</option>
+                                              <option value="1">August 2022 instalment 1</option>
+                                    <option value="2">September 2022 instalment 1</option>
+                                    <option value="3">October 2022 instalment 1</option>
+                                    <option value="4">November 2022 instalment 1</option>
+                                    <option value="5">December 2022 instalment 1</option>
+                                    <option value="6">January 2023 instalment 1</option>
+                                    <option value="7">Febraury 2023 instalment 1</option>
+                                    <option value="8">March 2023 instalment 1</option>
                                           </select> 
                             </div>  
                           </td>
@@ -612,11 +633,17 @@ GOV.UK Prototype Kit
                         </td>
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                           <div class="govuk-form-group">
-                             <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                             <select class="govuk-select funding-line-dropdown-js" id="e" name="sort"
                                             aria-label="funding line 3">
                                             <option value="">Select</option>
-                                            <option value="may2020-1">May 2020 instalment 1</option>
-                                            <option value="may2020-2">May 2020 instalment 2</option>
+                                            <option value="1">August 2022 instalment 1</option>
+                                            <option value="2">September 2022 instalment 1</option>
+                                            <option value="3">October 2022 instalment 1</option>
+                                            <option value="4">November 2022 instalment 1</option>
+                                            <option value="5">December 2022 instalment 1</option>
+                                            <option value="6">January 2023 instalment 1</option>
+                                            <option value="7">Febraury 2023 instalment 1</option>
+                                            <option value="8">March 2023 instalment 1</option>
                                         </select> 
                           </div>  
                         </td>
@@ -642,11 +669,17 @@ GOV.UK Prototype Kit
                       </td>
                       <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                         <div class="govuk-form-group">
-                           <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                           <select class="govuk-select funding-line-dropdown-js" id="f" name="sort"
                                           aria-label="funding line 3">
                                           <option value="">Select</option>
-                                          <option value="may2020-1">May 2020 instalment 1</option>
-                                          <option value="may2020-2">May 2020 instalment 2</option>
+                                          <option value="1">August 2022 instalment 1</option>
+                                    <option value="2">September 2022 instalment 1</option>
+                                    <option value="3">October 2022 instalment 1</option>
+                                    <option value="4">November 2022 instalment 1</option>
+                                    <option value="5">December 2022 instalment 1</option>
+                                    <option value="6">January 2023 instalment 1</option>
+                                    <option value="7">Febraury 2023 instalment 1</option>
+                                    <option value="8">March 2023 instalment 1</option>
                                       </select> 
                         </div>  
                       </td>
@@ -672,11 +705,17 @@ GOV.UK Prototype Kit
                     </td>
                     <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                       <div class="govuk-form-group">
-                         <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                         <select class="govuk-select funding-line-dropdown-js" id="g" name="sort"
                                         aria-label="funding line 3">
                                         <option value="">Select</option>
-                                        <option value="may2020-1">May 2020 instalment 1</option>
-                                        <option value="may2020-2">May 2020 instalment 2</option>
+                                        <option value="1">August 2022 instalment 1</option>
+                                    <option value="2">September 2022 instalment 1</option>
+                                    <option value="3">October 2022 instalment 1</option>
+                                    <option value="4">November 2022 instalment 1</option>
+                                    <option value="5">December 2022 instalment 1</option>
+                                    <option value="6">January 2023 instalment 1</option>
+                                    <option value="7">Febraury 2023 instalment 1</option>
+                                    <option value="8">March 2023 instalment 1</option>
                                     </select> 
                       </div>  
                     </td>
@@ -702,11 +741,17 @@ GOV.UK Prototype Kit
                   </td>
                   <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                     <div class="govuk-form-group">
-                       <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                       <select class="govuk-select funding-line-dropdown-js" id="h" name="sort"
                                       aria-label="funding line 3">
                                       <option value="">Select</option>
-                                      <option value="may2020-1">May 2020 instalment 1</option>
-                                      <option value="may2020-2">May 2020 instalment 2</option>
+                                      <option value="1">August 2022 instalment 1</option>
+                                      <option value="2">September 2022 instalment 1</option>
+                                      <option value="3">October 2022 instalment 1</option>
+                                      <option value="4">November 2022 instalment 1</option>
+                                      <option value="5">December 2022 instalment 1</option>
+                                      <option value="6">January 2023 instalment 1</option>
+                                      <option value="7">Febraury 2023 instalment 1</option>
+                                      <option value="8">March 2023 instalment 1</option>
                                   </select> 
                     </div>  
                   </td>
@@ -732,11 +777,17 @@ GOV.UK Prototype Kit
                 </td>
                 <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                   <div class="govuk-form-group">
-                     <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                     <select class="govuk-select funding-line-dropdown-js" id="i" name="sort"
                                     aria-label="funding line 3">
                                     <option value="">Select</option>
-                                    <option value="may2020-1">May 2020 instalment 1</option>
-                                    <option value="may2020-2">May 2020 instalment 2</option>
+                                    <option value="1">August 2022 instalment 1</option>
+                                    <option value="2">September 2022 instalment 1</option>
+                                    <option value="3">October 2022 instalment 1</option>
+                                    <option value="4">November 2022 instalment 1</option>
+                                    <option value="5">December 2022 instalment 1</option>
+                                    <option value="6">January 2023 instalment 1</option>
+                                    <option value="7">Febraury 2023 instalment 1</option>
+                                    <option value="8">March 2023 instalment 1</option>
                                 </select> 
                   </div>  
                 </td>
@@ -762,11 +813,17 @@ GOV.UK Prototype Kit
               </td>
               <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                 <div class="govuk-form-group">
-                   <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                   <select class="govuk-select funding-line-dropdown-js" id="j" name="sort"
                                   aria-label="funding line 3">
                                   <option value="">Select</option>
-                                  <option value="may2020-1">May 2020 instalment 1</option>
-                                  <option value="may2020-2">May 2020 instalment 2</option>
+                                  <option value="1">August 2022 instalment 1</option>
+                                    <option value="2">September 2022 instalment 1</option>
+                                    <option value="3">October 2022 instalment 1</option>
+                                    <option value="4">November 2022 instalment 1</option>
+                                    <option value="5">December 2022 instalment 1</option>
+                                    <option value="6">January 2023 instalment 1</option>
+                                    <option value="7">Febraury 2023 instalment 1</option>
+                                    <option value="8">March 2023 instalment 1</option>
                               </select> 
                 </div>  
               </td>
@@ -792,128 +849,39 @@ GOV.UK Prototype Kit
             </td>
             <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
               <div class="govuk-form-group">
-                 <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                 <select class="govuk-select funding-line-dropdown-js" id="k" name="sort"
                                 aria-label="funding line 3">
                                 <option value="">Select</option>
-                                <option value="may2020-1">May 2020 instalment 1</option>
-                                <option value="may2020-2">May 2020 instalment 2</option>
+                                <option value="1">August 2022 instalment 1</option>
+                                    <option value="2">September 2022 instalment 1</option>
+                                    <option value="3">October 2022 instalment 1</option>
+                                    <option value="4">November 2022 instalment 1</option>
+                                    <option value="5">December 2022 instalment 1</option>
+                                    <option value="6">January 2023 instalment 1</option>
+                                    <option value="7">Febraury 2023 instalment 1</option>
+                                    <option value="8">March 2023 instalment 1</option>
                             </select> 
               </div>  
             </td>
            
         </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-              <div class="govuk-checkboxes govuk-checkboxes--small app-profile-permissions">
-                  <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                          name="provider-approval" type="checkbox" value="Academies">
-                      <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                          
-                      </label><br>
-                    
-              </div>
-          </td>
-          <td class="govuk-table__cell">
-          SBS Pupil Led Factors (GAG-001)
-        </td>
-          <td class="govuk-table__cell">
-              Initial allocation
-          </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-            <div class="govuk-form-group">
-               <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
-                              aria-label="funding line 3">
-                              <option value="">Select</option>
-                              <option value="may2020-1">May 2020 instalment 1</option>
-                              <option value="may2020-2">May 2020 instalment 2</option>
-                          </select> 
-            </div>  
-          </td>
-         
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">
-            <div class="govuk-checkboxes govuk-checkboxes--small app-profile-permissions">
-                <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                        name="provider-approval" type="checkbox" value="Academies">
-                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                        
-                    </label><br>
-                  
-            </div>
-        </td>
-        <td class="govuk-table__cell">
-        Start up Grant Part A(GAG-008)
-      </td>
-        <td class="govuk-table__cell">
-            Initial allocation
-        </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-          <div class="govuk-form-group">
-             <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
-                            aria-label="funding line 3">
-                            <option value="">Select</option>
-                            <option value="may2020-1">May 2020 instalment 1</option>
-                            <option value="may2020-2">May 2020 instalment 2</option>
-                        </select> 
-          </div>  
-        </td>
-       
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-          <div class="govuk-checkboxes govuk-checkboxes--small app-profile-permissions">
-              <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
-                      name="provider-approval" type="checkbox" value="Academies">
-                  <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
-                      
-                  </label><br>
-                
-          </div>
-      </td>
-      <td class="govuk-table__cell">
-       Start up Grant Part B(GAG-009)
-    </td>
-      <td class="govuk-table__cell">
-          Initial allocation
-      </td>
-      <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
-        <div class="govuk-form-group">
-           <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
-                          aria-label="funding line 3">
-                          <option value="">Select</option>
-                          <option value="may2020-1">May 2020 instalment 1</option>
-                          <option value="may2020-2">May 2020 instalment 2</option>
-                      </select> 
-        </div>  
-      </td>
-     
-  </tr>
+        
                         </tbody>
                      </table>
                   </div>
                 </div>
               </div>
-              <!-- <div class="govuk-grid-column-two-thirds">
-                <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-full">
-                       
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+              
               <div class="govuk-button-group">
-                <button class="govuk-button gag-variation-management-save-button-js" data-module="govuk-button" disabled>
+                <button class="govuk-button gag-variation-management-save-button-js"  data-module="govuk-button" id="btn" value="click me" disabled>
             Save Changes
         </button>
 
-                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Back
+        </button> -->
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Cancel
         </button>
               </div>
 
@@ -1111,9 +1079,26 @@ GOV.UK Prototype Kit
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-  $('.future-installment').attr('disabled', 'disabled');
+  $('.tol').attr('disabled', 'disabled');
 
-  var $checkBox = $('.funding-line');
+  var $checkBox = $('.allergies');
+
+  $checkBox.on('change', function(e) {
+    //get the previous element to us, which is the select
+    var $select = $(this).prev();
+    
+    if (this.checked) {
+      $select.removeAttr('disabled');
+    } else {
+      $select.attr('disabled', 'disabled');
+    }
+  });
+
+});
+$(document).ready(function() {
+  $('.b1').attr('disabled', 'disabled');
+
+  var $checkBox = $('.tol');
 
   $checkBox.on('change', function(e) {
     //get the previous element to us, which is the select
@@ -1128,4 +1113,59 @@ $(document).ready(function() {
 
 });
 </script>
+<script>
+  document.getElementById('allergies').onclick = function() {
+  var checkboxes = document.getElementsByName('provider-approval');
+  for (var checkbox of checkboxes) {
+    checkbox.checked = this.checked;
+  }
+}
+function change() {
+  for(i=0;i<=8;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+}
+
+  // else if (document.getElementById('a').value == '2')
+  // {
+  //   document.getElementById("b").value = '2';
+  //   document.getElementById("c").value = '2';
+  //   document.getElementById("d").value = '2';
+  //   document.getElementById("e").value = '2';
+  //   document.getElementById("f").value = '2';
+  //   document.getElementById("g").value = '2';
+  //   document.getElementById("h").value = '2';
+  //   document.getElementById("i").value = '2';
+  //   document.getElementById("j").value = '2';
+  //   document.getElementById("k").value = '2';
+
+  // }
+  
+};
+
+
+</script>
+
+  <script>
+        document.querySelector('#btn').addEventListener('click', (e) => {
+    e.target.disabled = true
+        });
+        document.querySelector('#a').addEventListener('click', (e) => {
+    e.target.disabled = true
+        });
+    </script>
+
   {% endblock%}
