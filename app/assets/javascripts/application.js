@@ -332,6 +332,10 @@ $('.table-filter-jq').on("click", function(e) { // Look for the 'Show only selec
     console.log("checkbox is not checked");
     $('.no-items-selected-jq').addClass('hide-me');
     $('.govuk-table__row').show();
+    if($('.table-filter-jq').attr('checked',false))
+    {
+      $('.table-input').attr('checked',false);
+    }
   }// end else
 
 });
