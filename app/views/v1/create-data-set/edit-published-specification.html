@@ -177,8 +177,8 @@ GOV.UK Prototype Kit
                                             <div class="govuk-checkboxes govuk-checkboxes--small  filterbyCheckbox"
                                                 >
                                                 <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF5"
-                                                        name="filterByStatus1"
+                                                    <input class="govuk-checkboxes__input option2" id="showHideChangeF5"
+                                                        name="filterByStatus1" onclick="show()"
                                                      
                                                         type="checkbox">
                                                         <label class="govuk-label govuk-checkboxes__label"
@@ -189,8 +189,8 @@ GOV.UK Prototype Kit
                                                 </div>
                                                 <br/>
                                                 <div class="govuk-checkboxes__item govuk-!-margin-top-2">
-                                                    <input class="govuk-checkboxes__input" id="showHideChangeF6"
-                                                        name="filterByStatus2"
+                                                    <input class="govuk-checkboxes__input option3" id="showHideChangeF6"
+                                                        name="filterByStatus2" onclick="show1()" 
                                                         
                                                         type="checkbox">
                                                         <label class="govuk-label govuk-checkboxes__label"
@@ -235,7 +235,7 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox1"
+                                <input class="govuk-checkboxes__input provider-checked1 table-input1" id="filterCheckbox1"
                                     name="provider-approval" type="checkbox" value="">
                                 <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox1">
                                     Area cost factor
@@ -275,7 +275,7 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox3"
+                                <input class="govuk-checkboxes__input provider-checked4 table-input4" id="filterCheckbox3"
                                     name="provider-approval" type="checkbox" value="">
                                 <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox3">
                                     Area cost allowance adjustment
@@ -311,8 +311,8 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox5"
-                                    name="provider-approval" type="checkbox" value="">
+                                <input class="govuk-checkboxes__input provider-checked3 table-input3" id="filterCheckbox5"
+                                  name="provider-approval" type="checkbox" value="">
                                 <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox5">
                                     Programme Funding With Area Cost Allowance Applied
                                 </label>
@@ -541,7 +541,52 @@ GOV.UK Prototype Kit
 <!--Includes end -->
 <!--test-->
 <script>
-  
+//show selected
+
+    //show Obsolete filter
+  function show(){
+    if ( $('.option2').is(":checked") ) { // If the checkbox is checked already...
+    console.log("checkbox is checked");
+    $('.provider-checked1').show('table-input1');
+
+   $('.provider-checked').parent().parent().parent().parent().hide();
+   $('.provider-checked3').parent().parent().parent().parent().hide();
+   $('.provider-checked4').parent().parent().parent().parent().hide();
+
+  }
+  else  if($('.option2').attr('checked',false))
+  {
+    $('.provider-checked1').show('table-input1');
+
+    $('.provider-checked').parent().parent().parent().parent().show('table-input');
+    $('.provider-checked3').parent().parent().parent().parent().show('table-input3');
+    $('.provider-checked4').parent().parent().parent().parent().show('table-input4');
+
+  }
+  }
+
+  //show used in filter
+
+  function show1(){
+    if ( $('.option3').is(":checked") ) { // If the checkbox is checked already...
+    console.log("checkbox is checked");
+    $('.provider-checked3').show('table-input3');
+
+   $('.provider-checked').parent().parent().parent().parent().hide();
+   $('.provider-checked1').parent().parent().parent().parent().hide();
+   $('.provider-checked4').parent().parent().parent().parent().hide();
+
+  }
+  else  if($('.option3').attr('checked',false))
+  {
+    $('.provider-checked3').show('table-input3');
+    $('.provider-checked').parent().parent().parent().parent().show('table-input');
+    $('.provider-checked1').parent().parent().parent().parent().show('table-input1');
+    $('.provider-checked4').parent().parent().parent().parent().show('table-input4');
+
+  }
+  }
+
 
     function searchSelected() {
         // Declare variables
