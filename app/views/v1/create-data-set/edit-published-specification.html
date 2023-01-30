@@ -30,12 +30,11 @@ GOV.UK Prototype Kit
 
 {% endblock %}
 
-
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">Edit funding lines and calculations</h1>
+        <h1 class="govuk-heading-xl">Check funding lines and calculations</h1>
     </div>
 </div>
 
@@ -60,43 +59,28 @@ GOV.UK Prototype Kit
         </details>
     </div>
 </div>
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <dl class="govuk-summary-list govuk-summary-list__row--no-border">
-            <!-- <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    16 to 19 reference specification
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-third">
-                    Description
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Released data from 16 to 19 specification.
-                </dd>
-            </div> -->
-            <div class="govuk-summary-list__row">
+        <dl class="govuk-summary-list ">
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
                 <dt class="govuk-summary-list__key">
                     Funding stream
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['dataset-fundingStream']}}
+                    16 to 19
+                    <!-- {{ data['dataset-fundingStream']}} -->
                 </dd>
             </div>
-            <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
                 <dt class="govuk-summary-list__key">
                     Funding period
                 </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['dataset-fundingPeriod']}}
+                <dd class="govuk-summary-list__value govuk-summary-list__row--no-border">
+                 2019 to 2020
+                    <!-- {{ data['dataset-fundingPeriod']}} -->
                 </dd>
             </div>
-            <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
                 <dt class="govuk-summary-list__key">
                     Reference specification
                 </dt>
@@ -109,11 +93,12 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-
     <div class="govuk-grid-column-one-third position-sticky">
+     
         <div class="govuk-form-group filterbyContainer">
             <div class="govuk-form-group filterSearch">
-                <label class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                <label
+                    class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
                     for="mainContentSearch">Search</label>
 
                 <a href=""
@@ -122,42 +107,115 @@ GOV.UK Prototype Kit
 
                     Clear search</a>
 
-                <label class="govuk-label filterLabel" for="searchSelected">
-                    Search added funding lines or calculations
-                </label>
+                    <label class="govuk-label filterLabel text-color" for="searchSelected">
+                        Search for added funding lines or calculations
+                    </label>
                 <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()"
                     id="searchSelected" autocomplete="off" name="searchSelected" type="text">
 
             </div>
-        </div>
-
-        <div class="govuk-form-group filterbyContainer">
-            <div class="govuk-form-group filterSearch">
-                <label class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                    for="mainContentFilter">Filter selection</label>
-                <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-2">
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input table-filter-jq" id="filter" name="filter" type="checkbox"
-                            value="">
-                        <label class="govuk-label govuk-checkboxes__label govuk-!-margin-bottom-4" for="filter">
-                            Show only selected
-                        </label>
+    </div>
+   
+          <div class="govuk-form-group filterbyContainer">
+                
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                        Options to filter content on the page
+                    </legend>
+                    <div class="govuk-form-group">
+                        <div class="filterContainer">
+                            <div class="govuk-accordion__section-header">
+                                <h2 class="govuk-accordion__section-heading">
+                                    <span
+                                        class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                        >
+                                        <span class="govuk-visually-hidden">Filter by</span>
+                                        <div class="app-permissions">Filter selection </div> 
+                                        
+                                    </span>
+                                </h2>
+                            </div>
+                            <div >
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                        Select an option to filter 
+                                    </legend>
+                                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox">
+                                        <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                            <input class="govuk-checkboxes__input option1" id="showHideChangeF1"
+                                                name="filterByName1" 
+                                             
+                                                type="checkbox">
+                                                <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF1"
+                                                for="showHideChangeF1">
+                                                Show only selected
+                                            </label>
+                                            
+                                        </div>
+                                                                              
+                                    </div>
+                                </fieldset>
+                            </div> 
+                       </div>
                     </div>
-                </div>
-
+                            <div class="govuk-form-group">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                <div class="app-permissions">Status</div>
+                                            </span>
+                                        </h2>
+                                    </div>
+                                    <div >
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by status
+                                            </legend>
+                                            <div class="govuk-checkboxes govuk-checkboxes--small  filterbyCheckbox"
+                                                >
+                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF5"
+                                                        name="filterByStatus1"
+                                                     
+                                                        type="checkbox">
+                                                        <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF5">
+                                                        Obsolete
+                                                    </label>
+                                                    
+                                                </div>
+                                                <br/>
+                                                <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                    <input class="govuk-checkboxes__input" id="showHideChangeF6"
+                                                        name="filterByStatus2"
+                                                        
+                                                        type="checkbox">
+                                                        <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF6">
+                                                        Used in calculation
+                                                    </label>
+                                                    
+                                                </div>
+                                              
+                                            </div>
+                                        </fieldset>
+                       
+                            </div>
+                        </div>
+                    
+                </fieldset>
             </div>
-        </div>
-
-
-        <div class="govuk-button-group">
-            <a href="edit-check-data-set" class="govuk-button">
+            <a href="check-data-set" class="govuk-button govuk-!-margin-right-1">
                 Continue to summary
             </a>
-            <a class="govuk-link" href="javascript:void(0);" onclick="check()">
-                Cancel
-            </a>
-        </div>
+           
+        <!-- </div> -->
+
     </div>
+    
     <div class="govuk-grid-column-two-thirds">
         <table class="govuk-table table-vertical-align" id="dataSetItems">
             </caption>
@@ -168,17 +226,17 @@ GOV.UK Prototype Kit
                         <br>
                     </th>
                     <th scope="col" class="govuk-table__header">Status</th>
-                    <th scope="col" class="govuk-table__header">Structure</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Structure</th>
                     <th scope="col" class="govuk-table__header">ID</th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
-                <tr class="govuk-table__row" id="row1">
+                <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
-                                <input checked class="govuk-checkboxes__input provider-checked table-input"
-                                    id="filterCheckbox1" name="provider-approval" type="checkbox" value="">
+                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox1"
+                                    name="provider-approval" type="checkbox" value="">
                                 <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox1">
                                     Area cost factor
                                 </label>
@@ -186,13 +244,11 @@ GOV.UK Prototype Kit
                         </div>
                     </td>
                     <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--red">
-                            <span class="govuk-visually-hidden">
-                                Area cost factor
-                            </span>
-                            Obsolete
-                        </strong>
+                        <strong class="govuk-tag govuk-tag--red"style="align:center">
+                       obsolete
+                      </strong>
                     </td>
+
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">160</td>
                 </tr>
@@ -201,44 +257,34 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
-                                <input checked class="govuk-checkboxes__input provider-checked table-input"
-                                    id="filterCheckbox2" name="provider-approval" type="checkbox" value="">
+                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox2"
+                                    name="provider-approval" type="checkbox" value="">
                                 <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox2">
                                     Area cost allowance
                                 </label>
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">198</td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">
-                        <p class="govuk-label govuk-checkboxes__label govuk-!-padding-left-6">
-                            Area cost allowance adjustment
-                        </p>
-                        <div class="govuk-checkboxes hidden">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox7"
+                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox3"
                                     name="provider-approval" type="checkbox" value="">
-                                <label class="govuk-label govuk-checkboxes__label govuk-!-padding-left-6"
-                                    for="filterCheckbox7">
+                                <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox3">
                                     Area cost allowance adjustment
                                 </label>
-
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--blue">
-                            <span class="govuk-visually-hidden">
-                                Area cost allowance adjustment
-                            </span>
-                            Used in calculation
-                        </strong>
-                    </td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">292</td>
                 </tr>
@@ -247,15 +293,16 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
-                                <input checked class="govuk-checkboxes__input provider-checked table-input"
-                                    id="filterCheckbox4" name="provider-approval" type="checkbox" value="">
+                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox4"
+                                    name="provider-approval" type="checkbox" value="">
                                 <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox4">
                                     Programme Funding Without Area Cost Allowance Applied
                                 </label>
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">290</td>
                 </tr>
@@ -264,15 +311,18 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
-                                <input checked class="govuk-checkboxes__input provider-checked table-input"
-                                    id="filterCheckbox5" name="provider-approval" type="checkbox" value="">
+                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox5"
+                                    name="provider-approval" type="checkbox" value="">
                                 <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox5">
                                     Programme Funding With Area Cost Allowance Applied
                                 </label>
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--red"style="align:center">
+                        Used In <br/>calculation
+                      </strong></td>
+
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">301</td>
                 </tr>
@@ -281,15 +331,16 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
-                                <input checked class="govuk-checkboxes__input provider-checked table-input"
-                                    id="filterCheckbox6" name="provider-approval" type="checkbox" value="">
+                                <input class="govuk-checkboxes__input provider-checked table-input" id="filterCheckbox6"
+                                    name="provider-approval" type="checkbox" value="">
                                 <label class="govuk-label govuk-checkboxes__label" for="filterCheckbox6">
                                     Funding Basis
                                 </label>
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">173</td>
                 </tr>
@@ -306,7 +357,8 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">213</td>
                 </tr>
@@ -323,7 +375,8 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">362</td>
                 </tr>
@@ -340,7 +393,8 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">273</td>
                 </tr>
@@ -357,7 +411,8 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">166</td>
                 </tr>
@@ -374,7 +429,8 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">194</td>
                 </tr>
@@ -391,7 +447,8 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Funding line</td>
                     <td class="govuk-table__cell">201</td>
                 </tr>
@@ -408,7 +465,8 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">160</td>
                 </tr>
@@ -425,7 +483,8 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">119</td>
                 </tr>
@@ -442,7 +501,8 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">228</td>
                 </tr>
@@ -459,65 +519,29 @@ GOV.UK Prototype Kit
                             </div>
                         </div>
                     </td>
-                    <td class="govuk-table__cell"><span class="govuk-visually-hidden">No status</span></td>
+                    <td class="govuk-table__cell"></td>
+
                     <td class="govuk-table__cell">Calculation</td>
                     <td class="govuk-table__cell">195</td>
                 </tr>
-
             </tbody>
         </table>
-
+     
         <p class="no-items-selected-jq hide-me">You have zero items selected.</p>
-
+       
     </div>
 </div>
-
-{% include "includes/edit-modal.html" %}
-
-
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<!--Includes -->
+{% include "components/refresh-funding-modal.html" %}
+
+<!--Includes end -->
+<!--test-->
 <script>
-    window.onload = function () {
-        document.getElementById("filter").click();
-    }
-
-    function addToDataSet(createDataSetItem) {
-        let name = document.getElementById("funding-stream").value
-        let table = document.getElementById("dataSetItems")
-        let row = table.insertRow(1)
-        row.className = "govuk-table__row"
-        var cell1 = row.insertCell(0)
-        cell1.className = "govuk-table__header"
-        cell1.innerHTML = name
-        var cell2 = row.insertCell(1)
-        cell2.className = "govuk-table__cell"
-        cell2.innerHTML = "Funding line"
-        var cell3 = row.insertCell(2)
-        cell3.className = "govuk-table__cell"
-        cell3.innerHTML = Math.floor(Math.random() * 101)
-        var cell4 = row.insertCell(3)
-        cell4.className = "govuk-table__cell"
-        cell4.innerHTML = "<a class='govuk-link' href='#'' id='deleteRow'>Remove row</a>"
-    }
-
-    var selectEl = document.querySelector('#funding-stream')
-    accessibleAutocomplete.enhanceSelectElement({
-        autoselect: true,
-        confirmOnBlur: true,
-        defaultValue: "",
-        minLength: 2,
-        selectElement: selectEl
-    })
-
-    var queryStringParameters = window.location.search
-    var previouslySubmitted = queryStringParameters.length > 0
-    if (previouslySubmitted) {
-        var submittedEl = document.querySelector('.submitted')
-        submittedEl.classList.remove('submitted--hidden')
-        var params = new URLSearchParams(document.location.search.split('?')[1])
-        document.querySelector('.submitted__last-location').innerHTML = params.get('funding-stream')
-    }
+  
 
     function searchSelected() {
         // Declare variables
@@ -540,38 +564,15 @@ GOV.UK Prototype Kit
             }
         }
     }
+
+
+
+
 </script>
-
-<script>
-    function check() {
-
-        //Array with inputs that evaluate to true or false based on input
-
-        const inputs = [
-            // Boolean(document.getElementById("filter").value),
-        ]
-
-        //starts the counter
-        let counter = 0
-
-        //increases counter by 1 for every true item in the array
-        for (var i = 0; i <= inputs.length; i++) {
-            if (inputs[i] === true) {
-                document.getElementById('notSaved').style.display = 'block'
-                counter++
-            }
-        }
-        if (counter === 0) {
-            history.back()
-        }
-
+<style>
+    .filterbyCheckbox {
+        max-height: none;
     }
-</script>
-
-
-<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
-    {% include "includes/modal-dialogue.html" %}
-</div>
-
+</style>
 
 {% endblock %}
