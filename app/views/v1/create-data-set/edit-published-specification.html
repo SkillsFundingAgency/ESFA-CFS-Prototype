@@ -527,7 +527,7 @@ GOV.UK Prototype Kit
             </tbody>
         </table>
      
-        <p class="no-items-selected-jq hide-me">You have zero items selected.</p>
+        <p class="govuk-label  provider-checked6 table-input6 hide-me">You have zero items selected.</p>
        
     </div>
 </div>
@@ -543,6 +543,42 @@ GOV.UK Prototype Kit
 <script>
 //show selected
 
+$('.option1').on("click", function(e) {
+    inputNotSelected = $("input:checkbox:not(:checked)");
+    input = document.getElementById("filterCheckbox1");
+   
+    console.log("checked");
+    $('.provider-checked6').removeClass('hide-me');
+    $('.provider-checked1').parent().parent().parent().parent().hide();
+    $('.provider-checked').parent().parent().parent().parent().hide();
+    $('.provider-checked3').parent().parent().parent().parent().hide();
+    $('.provider-checked4').parent().parent().parent().parent().hide();
+
+     if ( $('.option1').is(":checked") ) { // If the checkbox is checked already...
+    console.log("checkbox is checked");
+
+    // Check if any items in the <table> are currently checked...
+    if ( $('.table-input1').is(":checked") ) { // ...if any item within the <table> IS checked...
+      console.log('something is checked')
+      $('.provider-checked6').addClass('hide-me');
+       // ...Then hide the 'you have no items selected' message
+       $('.provider-checked1').parent().parent().parent().parent().show('table-input1'); 
+
+    } // end if
+
+   
+  } else { // Otherwise show all items in the <table> and hide the 'no items selected' message.
+    console.log("checkbox is not checked");
+    $('.provider-checked6').addClass('hide-me');
+    
+    $('.govuk-table__row').show();
+    if($('.option1').attr('checked',false))
+    {
+      $('.table-input').attr('checked',false);
+      $('.table-input1').attr('checked',false);
+    }
+}
+});
     //show Obsolete filter
   function show(){
     if ( $('.option2').is(":checked") ) { // If the checkbox is checked already...
@@ -587,7 +623,7 @@ GOV.UK Prototype Kit
   }
   }
 
-
+//search 
     function searchSelected() {
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
