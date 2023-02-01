@@ -67,6 +67,7 @@ GOV.UK Prototype Kit
         {% include "v1/funding-management/16-19/release-funding-links--16-19.html" %}
     </div>
 </div>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third position-sticky">
      
@@ -113,7 +114,6 @@ GOV.UK Prototype Kit
                                     spellcheck="false"> -->
                                     <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" onkeyup="searchSelected()"
                                     id="searchSelected" autocomplete="off" name="searchSelected" type="text">
-            
                             </div>
                         </div>
 
@@ -299,7 +299,70 @@ GOV.UK Prototype Kit
                                                 </a>
                                             </li> -->
                                         </ul>
+                                            <!-- //LA -->
+                                            <div class="hidden" id="openLaText">
+                                                <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                                                    Local authority</h3>
+                                            </div>
+                                                <ul class="filter-tags">
+                                                    <li id="filterLaOption1" class="hidden">
+                                                        <a class="filter__tag" href=""><span
+                                                                class="govuk-visually-hidden">Remove this filter</span>
+                                                                All (20)
+                                                        </a>
+                                                    </li>
+                                                    <li id="filterLaOption2" class="hidden">
+                                                        <a class="filter__tag" href=""><span
+                                                                class="govuk-visually-hidden">Remove this filter</span>
+                                                           Barking (1)
+                                                        </a>
+                                                    </li>
+                                                    <li id="filterLaOption3" class="hidden">
+                                                        <a class="filter__tag" href=""><span
+                                                                class="govuk-visually-hidden">Remove this filter</span>
+                                                                Barnsley (2)
+                                                        </a>
+                                                    </li>
+                                                    <li id="filterLaOption4" class="hidden">
+                                                        <a class="filter__tag" href=""><span
+                                                                class="govuk-visually-hidden">Remove this filter</span>
+                                                                Birmingham (2)
+                                                        </a>
+                                                    </li>
+                                                    <li id="filterLaOption5" class="hidden">
+                                                        <a class="filter__tag" href=""><span
+                                                                class="govuk-visually-hidden">Remove this filter</span>
+                                                                Cambridgeshire (2)
+                                                        </a>
+                                                    </li>
+                                                    <li id="filterLaOption6" class="hidden">
+                                                        <a class="filter__tag" href=""><span
+                                                                class="govuk-visually-hidden">Remove this filter</span>
+                                                                Hampshire (3)
+                                                        </a>
+                                                    </li>
+                                                    <li id="filterLaOption7" class="hidden">
+                                                        <a class="filter__tag" href=""><span
+                                                                class="govuk-visually-hidden">Remove this filter</span>
+                                                                Hertfordshire (3)
+                                                        </a>
+                                                    </li>
+                                                    <li id="filterLaOption8" class="hidden">
+                                                        <a class="filter__tag" href=""><span
+                                                                class="govuk-visually-hidden">Remove this filter</span>
+                                                                Leeds (2)
+                                                        </a>
+                                                    </li>
+                                                    <li id="filterLaOption9" class="hidden">
+                                                        <a class="filter__tag" href=""><span
+                                                                class="govuk-visually-hidden">Remove this filter</span>
+                                                                South Gloucestershire (5)
+                                                        </a>
+                                                    </li>
 
+
+
+                                                </ul>
 
                                         <!-- // Error status Tags -->
 
@@ -344,7 +407,7 @@ GOV.UK Prototype Kit
                                                 </a>
                                             </li>
                                         </ul>
-
+                                   
 
                                         <!-- // Open date Tags -->
 
@@ -662,6 +725,133 @@ GOV.UK Prototype Kit
                                     </fieldset>
                                 </div>
                                 </div>
+              <!-- //LA -->
+                                <div class="govuk-accordion__section">
+                                    <div class="govuk-accordion__section-header">
+                                        <h2 class="govuk-accordion__section-heading">
+                                            <span
+                                                class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                                                id="accordion-with-summary-sections-heading-1">
+                                                <span class="govuk-visually-hidden">Filter by</span>
+                                                Local authority
+                                            </span>
+                                        </h2>
+                                        <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                                            id="accordion-with-summary-sections-summary-1">
+                                            <span id="openLaCount">0</span> selected
+                                        </div>
+                                    </div>
+                                    <div id="accordion-with-summary-sections-content-1"
+                                        class="govuk-accordion__section-content"
+                                        aria-labelledby="accordion-with-summary-sections-heading-1">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                                                Select an option to filter by LA
+                                            </legend>
+                                            <label class="govuk-label filterLabel" for="searchProviderSubType">
+                                                Search for Local authority
+                                            </label>
+                                            <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2"
+                                            id="searchProviderSubType" autocomplete="off" name="searchBox"
+                                            type="text">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox"
+                                                id="filterBySchoolResults">
+                                                <!-- <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                                                    <input class="govuk-checkboxes__input LaCount " id="showHideChangeF01"
+                                                        name="filterByLaAll9"
+                                                        onclick="showMeF01('filterLaOption1'), updateOpenLaCount()"
+                                                        type="checkbox" value="hmrc">
+                                                  
+                                                </div> -->
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input LaCount" id="showHideChangeF02"
+                                                        name="filterByLaAll"
+                                                        onclick="showMeF02('filterLaOption2'), updateOpenLaCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF02">
+                                                       Barking <span>(1)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input LaCount" id="showHideChangeF03"
+                                                        name="filterByLaAll1"
+                                                        onclick="showMeF03('filterLaOption3'),updateOpenLaCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF03">
+                                                       Barnsley <span>(2)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input LaCount" id="showHideChangeF04"
+                                                        name="filterByLaAll2"
+                                                        onclick="showMeF04('filterLaOption4'), updateOpenLaCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF04">
+                                                       Birmingham <span>(2)</span>
+                                                    </label>
+                                                </div>
+                                                
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input LaCount" id="showHideChangeF05"
+                                                        name="filterByLaAll3"
+                                                        onclick="showMeF05('filterLaOption5'), updateOpenLaCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF05">
+                                                       Cambridgeshire <span>(2)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input LaCount" id="showHideChangeF06"
+                                                        name="filterByLaAll4"
+                                                        onclick="showMeF06('filterLaOption6'), updateOpenLaCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF06">
+                                                       Hampshire<span>(3)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input LaCount" id="showHideChangeF07"
+                                                        name="filterByLaAll5"
+                                                        onclick="showMeF07('filterLaOption7'),updateOpenLaCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF07">
+                                                        Hertfordshire<span>(3)</span>
+                                                    </label>
+                                                </div>
+                                                
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input LaCount" id="showHideChangeF08"
+                                                        name="filterByLaAll6"
+                                                        onclick="showMeF08('filterLaOption8'),updateOpenLaCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF08">
+                                                        Leeds <span>(2)</span>
+                                                    </label>
+                                                </div>
+                                               
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input LaCount" id="showHideChangeF09"
+                                                        name="filterByLaAll7"
+                                                        onclick="showMeF09('filterLaOption9'),updateOpenLaCount()"
+                                                        type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label"
+                                                        for="showHideChangeF09">
+                                                        South Gloucestershire <span>(5)</span>
+                                                    </label>
+                                                </div>
+                                                
+
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
                                 <div class="govuk-accordion__section">
                                     <div class="govuk-accordion__section-header">
                                         <h2 class="govuk-accordion__section-heading">
@@ -677,6 +867,7 @@ GOV.UK Prototype Kit
                                             <span id="errorCount">0</span> selected
                                         </div>
                                     </div>
+                                    
                                     <div id="accordion-with-summary-sections-content-1"
                                         class="govuk-accordion__section-content"
                                         aria-labelledby="accordion-with-summary-sections-heading-1">
@@ -780,7 +971,7 @@ GOV.UK Prototype Kit
                                         </fieldset>
                                     </div>
                                 </div>
-
+                                
                                 <div class="govuk-accordion__section">
                                     <div class="govuk-accordion__section-header">
                                         <h2 class="govuk-accordion__section-heading">
@@ -897,7 +1088,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                <table class="govuk-table"  id="dataSetItems">
+                <table class="govuk-table" id="dataSetItems">
                     <caption class="govuk-table__caption"></caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
@@ -1847,7 +2038,105 @@ GOV.UK Prototype Kit
         }
         document.getElementById(box).style.display = vis;
     }
+//LA
+function showMeF02(box) {
 
+var chboxs = document.getElementsByName("filterByLaAll");
+var vis = "none";
+for (var i = 0; i < chboxs.length; i++) {
+    if (chboxs[i].checked) {
+        vis = "block";
+        break;
+    }
+}
+document.getElementById(box).style.display = vis;
+}
+
+function showMeF03(box) {
+
+var chboxs = document.getElementsByName("filterByLaAll1");
+var vis = "none";
+for (var i = 0; i < chboxs.length; i++) {
+    if (chboxs[i].checked) {
+        vis = "block";
+        break;
+    }
+}
+document.getElementById(box).style.display = vis;
+}
+function showMeF04(box) {
+
+var chboxs = document.getElementsByName("filterByLaAll2");
+var vis = "none";
+for (var i = 0; i < chboxs.length; i++) {
+    if (chboxs[i].checked) {
+        vis = "block";
+        break;
+    }
+}
+document.getElementById(box).style.display = vis;
+}
+function showMeF05(box) {
+
+var chboxs = document.getElementsByName("filterByLaAll3");
+var vis = "none";
+for (var i = 0; i < chboxs.length; i++) {
+    if (chboxs[i].checked) {
+        vis = "block";
+        break;
+    }
+}
+document.getElementById(box).style.display = vis;
+}
+function showMeF06(box) {
+
+var chboxs = document.getElementsByName("filterByLaAll4");
+var vis = "none";
+for (var i = 0; i < chboxs.length; i++) {
+    if (chboxs[i].checked) {
+        vis = "block";
+        break;
+    }
+}
+document.getElementById(box).style.display = vis;
+}
+function showMeF07(box) {
+
+var chboxs = document.getElementsByName("filterByLaAll5");
+var vis = "none";
+for (var i = 0; i < chboxs.length; i++) {
+    if (chboxs[i].checked) {
+        vis = "block";
+        break;
+    }
+}
+document.getElementById(box).style.display = vis;
+}
+function showMeF08(box) {
+
+var chboxs = document.getElementsByName("filterByLaAll6");
+var vis = "none";
+for (var i = 0; i < chboxs.length; i++) {
+    if (chboxs[i].checked) {
+        vis = "block";
+        break;
+    }
+}
+document.getElementById(box).style.display = vis;
+}
+function showMeF09(box) {
+
+var chboxs = document.getElementsByName("filterByLaAll7");
+var vis = "none";
+for (var i = 0; i < chboxs.length; i++) {
+    if (chboxs[i].checked) {
+        vis = "block";
+        break;
+    }
+}
+document.getElementById(box).style.display = vis;
+}
+//End
     // Error Status 
 
     function showMeF141(box) {
@@ -2044,6 +2333,12 @@ document.getElementById(box).style.display = vis;
         var x = $(".dateCount:checked").length;
         document.getElementById("openDateCount").innerHTML = x;
     };
+    // Counter for LA
+
+    var updateOpenLaCount = function () {
+        var x = $(".LaCount:checked").length;
+        document.getElementById("openLaCount").innerHTML = x;
+    };
 
     //Show/hide for provider type 
 
@@ -2190,7 +2485,79 @@ document.getElementById(box).style.display = vis;
             document.getElementById('statusText').style.display = "none";
         }
     };
-
+    //LA filter
+    document.getElementById('showHideChangeF02').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openLaText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openLaText').style.display = "none";
+        }
+    };
+    document.getElementById('showHideChangeF03').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openLaText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openLaText').style.display = "none";
+        }
+    };
+    document.getElementById('showHideChangeF04').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openLaText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openLaText').style.display = "none";
+        }
+    };
+    document.getElementById('showHideChangeF05').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openLaText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openLaText').style.display = "none";
+        }
+    };
+    document.getElementById('showHideChangeF06').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openLaText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openLaText').style.display = "none";
+        }
+    };
+    document.getElementById('showHideChangeF07').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openLaText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openLaText').style.display = "none";
+        }
+    };
+    document.getElementById('showHideChangeF08').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openLaText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openLaText').style.display = "none";
+        }
+    };
+    document.getElementById('showHideChangeF09').onchange = function () {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            document.getElementById('showHideText').style.display = "none";
+            document.getElementById('openLaText').style.display = "block";
+        } else {
+            document.getElementById('showHideText').style.display = "block";
+            document.getElementById('openLaText').style.display = "none";
+        }
+    };
     // Error status
 
     document.getElementById('showHideChangeF146').onchange = function () {
