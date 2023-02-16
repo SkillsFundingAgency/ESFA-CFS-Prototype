@@ -511,6 +511,7 @@ GOV.UK Prototype Kit
                             
                           </select>  
                           </div>
+                          <br/>
                           <tbody class="govuk-table__body table-vertical-align">       
                                                  
                       <tr class="govuk-table__row">
@@ -1145,8 +1146,10 @@ document.getElementById('btn').onclick = function() {
          		if(checkboxes[i].type=='checkbox')
              checkboxes[i].checked=false;
          	}
+           document.querySelector('#a').disabled = true;
+       
   }     
-  
+ 
     // Add values to dropdown
 function change() 
 {
@@ -1583,9 +1586,7 @@ function change()
     
    
         });
-        document.querySelector('#a').addEventListener('click', (e) => {
-    e.target.disabled = true;
-        });
+    
         
        
     </script>
