@@ -50,7 +50,7 @@ GOV.UK Prototype Kit
                     <p class="font-bold govuk-notification-banner__title  app-banner-title "> Success</p>
                     
                     <p class="govuk-notification-banner app-banner font-bold">
-                      Variation set
+                      Variation pointer set
                      </p>
                   </h2>  
                 </div>
@@ -492,24 +492,30 @@ GOV.UK Prototype Kit
               <div class="govuk-grid-column-one-thirds">
                 <form action="/v1/fundingLineStructure-gag-chosen#variation-management" method="post" class="form" novalidate data-validate="variation">
                   <div class="govuk-form-group">
-                      
                     <table class="govuk-table" id="fundingApprovalsProviders">
                       <caption class="govuk-table__caption"><h2 class="govuk-heading-s app-banner-title"style="padding-left:28px;">Bulk actions</h2>
                       
                           <div style="padding-left:28px;">                  
                           <select class="govuk-select funding-line-dropdown-js"name="sort" id="a" onchange="change();"
                           aria-label="funding line 3"  name="dropdown[]" class="dropdown" disabled="disabled" >
-                            <option value="" selected Disabled >Select future installments</option>
-                            <option value="1" Disabled>August 2022 instalment 1</option>
-                            <option value="2" Disabled>September 2022 instalment 1</option>
-                            <option value="3" Disabled>October 2022 instalment 1</option>
-                            <option value="4" Disabled>November 2022 instalment 1</option>
-                            <option value="5" Disabled>December 2022 instalment 1</option>
+                            <option value="0" selected Disabled >Select future instalments</option>
                             <option value="6">January 2023 instalment 1</option>
-                            <option value="7">Febraury 2023 instalment 1</option>
+                            <option value="7">February 2023 instalment 1</option>
                             <option value="8">March 2023 instalment 1</option>
-                            
+                            <option value="9">April 2023 instalment 1</option>
+                            <option value="10">May 2023 instalment 1</option>
+                            <option value="11">June 2023 instalment 1</option>
+                            <option value="12">July 2023 instalment 1</option>
+                                              <option value="13">August 2023 instalment 1</option>
                           </select>  
+                          </div>
+                          <br/>
+                          <div class="govuk-warning-text govuk-visually-hidden" id="warning">
+                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                            <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">Warning</span>
+                              You must select a different instalment.
+                            </strong>
                           </div>
                           <tbody class="govuk-table__body table-vertical-align">       
                                                  
@@ -517,16 +523,13 @@ GOV.UK Prototype Kit
                         <th class="govuk-table__header">
                         
                          <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align" >
-                            
-                           
-                            
+                       
                               <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input select-all" id="select"
                                         name="provider-approval" type="checkbox" onclick="enableDropdown(this)">
                                         
                                     <label class="govuk-label govuk-checkboxes__label font-bold" for="provider-approval">Select all
                                     </label><br>
-                            
                           </div>
                         </th>
                       
@@ -545,7 +548,7 @@ GOV.UK Prototype Kit
                               <td class="govuk-table__cell">
                                   <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align" >
                                       <div class="govuk-checkboxes__item">
-                                          <input class="govuk-checkboxes__input provider-checked" id="funding-line"
+                                          <input class="govuk-checkboxes__input provider-checked checks"  id="provider-approval"
                                               name="provider-approval" type="checkbox" value="Academies">
                                           <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                               
@@ -557,21 +560,21 @@ GOV.UK Prototype Kit
                                Allocation protection(GAG-012)
                             </td>
                               <td class="govuk-table__cell">
-                                  Initial allocation
+                                January 2023 instalment 1
                               </td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                              <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
                                 <div class="govuk-form-group">
-                                   <select class="govuk-select funding-line-dropdown-js" id="b" name="sort"
+                                   <select class="govuk-select funding-line-dropdown-js dropdown1" id="b" name="sort"
                                                   aria-label="funding line 3">
-                                                  <option value="" selected Disabled >Select future installments</option>
-                                                  <option value="1" Disabled>August 2022 instalment 1</option>
-                                                  <option value="2" Disabled>September 2022 instalment 1</option>
-                                                  <option value="3" Disabled>October 2022 instalment 1</option>
-                                                  <option value="4" Disabled>November 2022 instalment 1</option>
-                                                  <option value="5" Disabled>December 2022 instalment 1</option>
-                                                  <option value="6">January 2023 instalment 1</option>
-                                                  <option value="7">Febraury 2023 instalment 1</option>
+                                                  <option value="" selected Disabled >Select future instalments</option>
+                                                  <!-- <option value="6">January 2023 instalment 1</option> -->
+                                                  <option value="7">February 2023 instalment 1</option>
                                                   <option value="8">March 2023 instalment 1</option>
+                                                  <option value="9">April 2023 instalment 1</option>
+                                                  <option value="10">May 2023 instalment 1</option>
+                                                  <option value="11">June 2023 instalment 1</option>
+                                                  <option value="12">July 2023 instalment 1</option>
+                                                  <option value="13">August 2023 instalment 1</option>
                                               </select> 
                                 </div>  
                               </td>
@@ -581,7 +584,7 @@ GOV.UK Prototype Kit
                             <td class="govuk-table__cell">
                                 <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
                                     <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                        <input class="govuk-checkboxes__input provider-checked checks1" id="provider-approval"
                                             name="provider-approval" type="checkbox" value="Academies">
                                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                             
@@ -591,33 +594,43 @@ GOV.UK Prototype Kit
                             </td>
                             <td class="govuk-table__cell">
                              De-Delegated funding retained by the LA (GAG-014)
+                             <div class=" govuk-form-group--error govuk-visually-hidden"  id="warning1">
+                                              
+                              <strong class="govuk-error-message">
+                                <span class="govuk-error-message govuk-warning-text__assistive">Warning</span>
+                               Select a different instalment.
+                              </strong>
+                            </div>
                           </td>
                             <td class="govuk-table__cell">
-                                Initial allocation
+                              February 2023 instalment 1
                             </td>
                             <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                               <div class="govuk-form-group">
-                                 <select class="govuk-select funding-line-dropdown-js" id="c" name="sort"
-                                                aria-label="funding line 3">
-                                                <option value="" selected Disabled >Select future installments</option>
-                                                <option value="1" Disabled>August 2022 instalment 1</option>
-                                                <option value="2" Disabled>September 2022 instalment 1</option>
-                                                <option value="3" Disabled>October 2022 instalment 1</option>
-                                                <option value="4" Disabled>November 2022 instalment 1</option>
-                                                <option value="5" Disabled>December 2022 instalment 1</option>
-                                                <option value="6">January 2023 instalment 1</option>
-                                                <option value="7">Febraury 2023 instalment 1</option>
+                                 <select class="govuk-select funding-line-dropdown-js dropdown2" id="c" name="sort"
+                                                aria-label="funding line 3"style="width:100%;">
+                                                <option value="" selected Disabled >Select future instalments</option>
+                                                <!-- <option value="7" >February 2023 instalment 1</option> -->
                                                 <option value="8">March 2023 instalment 1</option>
+                                                <option value="9">April 2023 instalment 1</option>
+                                                <option value="10">May 2023 instalment 1</option>
+                                                <option value="11">June 2023 instalment 1</option>
+                                                <option value="12">July 2023 instalment 1</option>
+                                                <option value="13">August 2023 instalment 1</option>
                                             </select> 
+                                            <!-- <p id="event-name-error govuk-visually-hidden" class="govuk-error-message">
+                                               Select future instalment
+                                            </p> -->
+                                           
                               </div>  
+                            
                             </td>
-                           
                          </tr>
                          <tr class="govuk-table__row">
                           <td class="govuk-table__cell">
                               <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
                                   <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                      <input class="govuk-checkboxes__input provider-checked checks2" id="provider-approval"
                                           name="provider-approval" type="checkbox" value="Academies">
                                       <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                           
@@ -629,22 +642,22 @@ GOV.UK Prototype Kit
                            Hospital Provision (GAG-010)
                         </td>
                           <td class="govuk-table__cell">
-                              Initial allocation
+                            January 2023 instalment 1
                           </td>
                           <!-- id="fundingline3" -->
                           <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                             <div class="govuk-form-group">
-                               <select class="govuk-select funding-line-dropdown-js"  id="d" name="sort"
+                               <select class="govuk-select funding-line-dropdown-js dropdown3"  id="d" name="sort"
                                               aria-label="funding line 3">
-                                              <option value="" selected Disabled >Select future installments</option>
-                                              <option value="1" Disabled>August 2022 instalment 1</option>
-                                              <option value="2" Disabled>September 2022 instalment 1</option>
-                                              <option value="3" Disabled>October 2022 instalment 1</option>
-                                              <option value="4" Disabled>November 2022 instalment 1</option>
-                                              <option value="5" Disabled>December 2022 instalment 1</option>
-                                              <option value="6" >January 2023 instalment 1</option>
-                                              <option value="7">Febraury 2023 instalment 1</option>
+                                              <option value="" selected Disabled >Select future instalments</option>
+                                              <!-- <option value="6">January 2023 instalment 1</option> -->
+                                              <option value="7">February 2023 instalment 1</option>
                                               <option value="8">March 2023 instalment 1</option>
+                                              <option value="9">April 2023 instalment 1</option>
+                                              <option value="10">May 2023 instalment 1</option>
+                                              <option value="11">June 2023 instalment 1</option>
+                                              <option value="12">July 2023 instalment 1</option>
+                                              <option value="13">August 2023 instalment 1</option>
                                           </select> 
                             </div>  
                           </td>
@@ -654,7 +667,7 @@ GOV.UK Prototype Kit
                         <td class="govuk-table__cell">
                             <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
                                 <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                    <input class="govuk-checkboxes__input provider-checked checks3" id="provider-approval"
                                         name="provider-approval" type="checkbox" value="Academies">
                                     <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                         
@@ -666,21 +679,21 @@ GOV.UK Prototype Kit
                          Minimum funding Guarantee (GAG-005)
                       </td>
                         <td class="govuk-table__cell">
-                            Initial allocation
+                          January 2023 instalment 1
                         </td>
                         <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                           <div class="govuk-form-group">
-                             <select class="govuk-select funding-line-dropdown-js" id="e" name="sort"
+                             <select class="govuk-select funding-line-dropdown-js dropdown4" id="e" name="sort"
                                             aria-label="funding line 3">
-                                            <option value="" selected Disabled >Select future installments</option>
-                                            <option value="1" Disabled>August 2022 instalment 1</option>
-                                            <option value="2" Disabled>September 2022 instalment 1</option>
-                                            <option value="3" Disabled>October 2022 instalment 1</option>
-                                            <option value="4" Disabled>November 2022 instalment 1</option>
-                                            <option value="5" Disabled>December 2022 instalment 1</option>
-                                            <option value="6">January 2023 instalment 1</option>
-                                            <option value="7">Febraury 2023 instalment 1</option>
+                                            <option value="" selected Disabled >Select future instalments</option>
+                                            <!-- <option value="6">January 2023 instalment 1</option> -->
+                                            <option value="7">February 2023 instalment 1</option>
                                             <option value="8">March 2023 instalment 1</option>
+                                            <option value="9">April 2023 instalment 1</option>
+                                            <option value="10">May 2023 instalment 1</option>
+                                            <option value="11">June 2023 instalment 1</option>
+                                            <option value="12">July 2023 instalment 1</option>
+                                            <option value="13">August 2023 instalment 1</option>
                                         </select> 
                           </div>  
                         </td>
@@ -690,7 +703,7 @@ GOV.UK Prototype Kit
                       <td class="govuk-table__cell">
                           <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
                               <div class="govuk-checkboxes__item">
-                                  <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                  <input class="govuk-checkboxes__input provider-checked checks4" id="provider-approval"
                                       name="provider-approval" type="checkbox" value="Academies">
                                   <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                       
@@ -702,21 +715,21 @@ GOV.UK Prototype Kit
                        PFI Funding (GAG-002)
                     </td>
                       <td class="govuk-table__cell">
-                          Initial allocation
+                        January 2023 instalment 1
                       </td>
                       <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                         <div class="govuk-form-group">
-                           <select class="govuk-select funding-line-dropdown-js" id="f" name="sort"
+                           <select class="govuk-select funding-line-dropdown-js dropdown5" id="f" name="sort"
                                           aria-label="funding line 3">
-                                          <option value="" selected Disabled >Select future installments</option>
-                                          <option value="1" Disabled>August 2022 instalment 1</option>
-                                          <option value="2" Disabled>September 2022 instalment 1</option>
-                                          <option value="3" Disabled>October 2022 instalment 1</option>
-                                          <option value="4"Disabled>November 2022 instalment 1</option>
-                                          <option value="5"Disabled>December 2022 instalment 1</option>
-                                          <option value="6">January 2023 instalment 1</option>
-                                          <option value="7">Febraury 2023 instalment 1</option>
+                                          <option value="" selected Disabled >Select future instalments</option>
+                                          <!-- <option value="6">January 2023 instalment 1</option> -->
+                                          <option value="7">February 2023 instalment 1</option>
                                           <option value="8">March 2023 instalment 1</option>
+                                          <option value="9">April 2023 instalment 1</option>
+                                          <option value="10">May 2023 instalment 1</option>
+                                          <option value="11">June 2023 instalment 1</option>
+                                              <option value="12">July 2023 instalment 1</option>
+                                              <option value="13">August 2023 instalment 1</option>
               
                                       </select> 
                         </div>  
@@ -727,7 +740,7 @@ GOV.UK Prototype Kit
                     <td class="govuk-table__cell">
                         <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
                             <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                                <input class="govuk-checkboxes__input provider-checked checks5" id="provider-approval"
                                     name="provider-approval" type="checkbox" value="Academies">
                                 <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                     
@@ -739,21 +752,21 @@ GOV.UK Prototype Kit
                      Post Opening Grant - Leadership Diseconomies (GAG-007)
                   </td>
                     <td class="govuk-table__cell">
-                        Initial allocation
+                      January 2023 instalment 1
                     </td>
                     <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                       <div class="govuk-form-group">
-                         <select class="govuk-select funding-line-dropdown-js" id="g" name="sort"
+                         <select class="govuk-select funding-line-dropdown-js dropdown6" id="g" name="sort"
                                         aria-label="funding line 3">
-                                        <option value="" selected Disabled >Select future installments</option>
-                                        <option value="1"Disabled>August 2022 instalment 1</option>
-                                        <option value="2"Disabled>September 2022 instalment 1</option>
-                                        <option value="3"Disabled>October 2022 instalment 1</option>
-                                        <option value="4"Disabled>November 2022 instalment 1</option>
-                                        <option value="5"Disabled>December 2022 instalment 1</option>
-                                        <option value="6">January 2023 instalment 1</option>
-                                        <option value="7">Febraury 2023 instalment 1</option>
+                                        <option value="" selected Disabled >Select future instalments</option>
+                                        <!-- <option value="6">January 2023 instalment 1</option> -->
+                                        <option value="7">February 2023 instalment 1</option>
                                         <option value="8">March 2023 instalment 1</option>
+                                        <option value="9">April 2023 instalment 1</option>
+                                        <option value="10">May 2023 instalment 1</option>
+                                        <option value="11">June 2023 instalment 1</option>
+                                              <option value="12">July 2023 instalment 1</option>
+                                              <option value="13">August 2023 instalment 1</option>
                                     </select> 
                       </div>  
                     </td>
@@ -763,7 +776,7 @@ GOV.UK Prototype Kit
                   <td class="govuk-table__cell">
                       <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
                           <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                              <input class="govuk-checkboxes__input provider-checked checks6" id="provider-approval"
                                   name="provider-approval" type="checkbox" value="Academies">
                               <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                   
@@ -775,21 +788,21 @@ GOV.UK Prototype Kit
                    Post Opening Grant - Per Pupil Resources (GAG-006)
                 </td>
                   <td class="govuk-table__cell">
-                      Initial allocation
+                    January 2023 instalment 1
                   </td>
                   <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                     <div class="govuk-form-group">
-                       <select class="govuk-select funding-line-dropdown-js" id="h" name="sort"
+                       <select class="govuk-select funding-line-dropdown-js dropdown7" id="h" name="sort"
                                       aria-label="funding line 3">
-                                      <option value="" selected Disabled >Select future installments</option>
-                                      <option value="1"Disabled>August 2022 instalment 1</option>
-                                      <option value="2"Disabled>September 2022 instalment 1</option>
-                                      <option value="3"Disabled>October 2022 instalment 1</option>
-                                      <option value="4"Disabled>November 2022 instalment 1</option>
-                                      <option value="5"Disabled>December 2022 instalment 1</option>
-                                      <option value="6">January 2023 instalment 1</option>
-                                      <option value="7">Febraury 2023 instalment 1</option>
+                                      <option value="" selected Disabled >Select future instalments</option>
+                                      <!-- <option value="6">January 2023 instalment 1</option> -->
+                                      <option value="7">February 2023 instalment 1</option>
                                       <option value="8">March 2023 instalment 1</option>
+                                      <option value="9">April 2023 instalment 1</option>
+                                      <option value="10">May 2023 instalment 1</option>
+                                      <option value="11">June 2023 instalment 1</option>
+                                      <option value="12">July 2023 instalment 1</option>
+                                      <option value="13">August 2023 instalment 1</option>
                                   </select> 
                     </div>  
                   </td>
@@ -799,7 +812,7 @@ GOV.UK Prototype Kit
                 <td class="govuk-table__cell">
                     <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                            <input class="govuk-checkboxes__input provider-checked checks7" id="provider-approval"
                                 name="provider-approval" type="checkbox" value="Academies">
                             <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                                 
@@ -811,21 +824,22 @@ GOV.UK Prototype Kit
                  Pre-16 High Needs funding (GAG-011)
               </td>
                 <td class="govuk-table__cell">
-                    Initial allocation
+                  January 2023 instalment 1
                 </td>
                 <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                   <div class="govuk-form-group">
-                     <select class="govuk-select funding-line-dropdown-js" id="i" name="sort"
+                     <select class="govuk-select funding-line-dropdown-js dropdown8" id="i" name="sort"
                                     aria-label="funding line 3">
-                                    <option value="" selected Disabled >Select future installments</option>
+                                    <option value="" selected Disabled >Select future instalments</option>
                                     <option value="1"Disabled>August 2022 instalment 1</option>
-                                                  <option value="2"Disabled>September 2022 instalment 1</option>
-                                                  <option value="3"Disabled>October 2022 instalment 1</option>
-                                                  <option value="4"Disabled>November 2022 instalment 1</option>
-                                                  <option value="5"Disabled>December 2022 instalment 1</option>
-                                                  <option value="6">January 2023 instalment 1</option>
-                                                  <option value="7">Febraury 2023 instalment 1</option>
+                                    <!-- <option value="6">January 2023 instalment 1</option> -->
+                                                  <option value="7">February 2023 instalment 1</option>
                                                   <option value="8">March 2023 instalment 1</option>
+                                                  <option value="9">April 2023 instalment 1</option>
+                                                  <option value="10">May 2023 instalment 1</option>
+                                                  <option value="11">June 2023 instalment 1</option>
+                                              <option value="12">July 2023 instalment 1</option>
+                                              <option value="13">August 2023 instalment 1</option>
                                 </select> 
                   </div>  
                 </td>
@@ -835,7 +849,7 @@ GOV.UK Prototype Kit
               <td class="govuk-table__cell">
                   <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
                       <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                          <input class="govuk-checkboxes__input provider-checked checks8" id="provider-approval"
                               name="provider-approval" type="checkbox" value="Academies">
                           <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                               
@@ -847,21 +861,22 @@ GOV.UK Prototype Kit
                SBS Exceptional Factors (GAG-004)
             </td>
               <td class="govuk-table__cell">
-                  Initial allocation
+                January 2023 instalment 1
               </td>
               <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
                 <div class="govuk-form-group">
-                   <select class="govuk-select funding-line-dropdown-js" id="j" name="sort"
+                   <select class="govuk-select funding-line-dropdown-js dropdown9" id="j" name="sort"
                                   aria-label="funding line 3">
-                                  <option value="" selected Disabled >Select future installments</option>
+                                  <option value="" selected Disabled >Select future instalments</option>
                                   <option value="1"Disabled>August 2022 instalment 1</option>
-                                                  <option value="2"Disabled>September 2022 instalment 1</option>
-                                                  <option value="3"Disabled>October 2022 instalment 1</option>
-                                                  <option value="4"Disabled>November 2022 instalment 1</option>
-                                                  <option value="5"Disabled>December 2022 instalment 1</option>
-                                                  <option value="6">January 2023 instalment 1</option>
-                                                  <option value="7">Febraury 2023 instalment 1</option>
+                                  <!-- <option value="6">January 2023 instalment 1</option> -->
+                                                  <option value="7">February 2023 instalment 1</option>
                                                   <option value="8">March 2023 instalment 1</option>
+                                                  <option value="9">April 2023 instalment 1</option>
+                                                  <option value="10">May 2023 instalment 1</option>
+                                                  <option value="11">June 2023 instalment 1</option>
+                                              <option value="12">July 2023 instalment 1</option>
+                                              <option value="13">August 2023 instalment 1</option>
       
                               </select> 
                 </div>  
@@ -872,7 +887,7 @@ GOV.UK Prototype Kit
             <td class="govuk-table__cell">
                 <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input provider-checked" id="provider-approval"
+                        <input class="govuk-checkboxes__input provider-checked checks9" id="provider-approval"
                             name="provider-approval" type="checkbox" value="Academies">
                         <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
                             
@@ -884,21 +899,22 @@ GOV.UK Prototype Kit
              SBS Other Factors (GAG-003)
           </td>
             <td class="govuk-table__cell">
-                Initial allocation
+              January 2023 instalment 1
             </td>
             <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
               <div class="govuk-form-group">
-                 <select class="govuk-select funding-line-dropdown-js" id="k" name="sort"
+                 <select class="govuk-select funding-line-dropdown-js dropdown10" id="k" name="sort"
                                 aria-label="funding line 3">
-                                <option value="" selected Disabled >Select future installments</option>
+                                <option value="" selected Disabled >Select future instalments</option>
                                 <option value="1"Disabled>August 2022 instalment 1</option>
-                                                  <option value="2"Disabled>September 2022 instalment 1</option>
-                                                  <option value="3"Disabled>October 2022 instalment 1</option>
-                                                  <option value="4"Disabled>November 2022 instalment 1</option>
-                                                  <option value="5"Disabled>December 2022 instalment 1</option>
-                                                  <option value="6">January 2023 instalment 1</option>
-                                                  <option value="7">Febraury 2023 instalment 1</option>
+                                                 <!-- <option value="6">January 2023 instalment 1</option>  -->
+                                                  <option value="7">February 2023 instalment 1</option>
                                                   <option value="8">March 2023 instalment 1</option>
+                                                  <option value="9">April 2023 instalment 1</option>
+                                                  <option value="10">May 2023 instalment 1</option>
+                                                  <option value="11">June 2023 instalment 1</option>
+                                              <option value="12">July 2023 instalment 1</option>
+                                              <option value="13">August 2023 instalment 1</option>
                             </select> 
               </div>  
             </td>
@@ -912,7 +928,7 @@ GOV.UK Prototype Kit
               </div>
               
               <div class="govuk-button-group">
-                <button class="govuk-button gag-variation-management-save-button-js" class="btn" onclick="notificationBanner()"  data-module="govuk-button" id="btn" value="click me" disabled>
+                <button class="govuk-button gag-variation-management-save-button-js" class="btn"   data-module="govuk-button" id="btn" value="click me" disabled>
             Save changes
         </button>
 
@@ -1116,10 +1132,9 @@ GOV.UK Prototype Kit
   </script>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <script>
-
-
 $(document).ready(function() {
   $('.b1').attr('disabled', 'disabled');
 
@@ -1137,25 +1152,42 @@ $(document).ready(function() {
   });
 
 });
+
 // Save button onclick uncheck all checkboxes
-document.getElementById('btn').onclick = function() {
-  var checkboxes = document.getElementsByName('provider-approval');
-  for(var i=0; i<checkboxes.length; i++){
-         		if(checkboxes[i].type=='checkbox')
-             checkboxes[i].checked=false;
-         	}
-  }     
-  
+        document.getElementById('btn').onclick = function() {
+          var checkboxes = document.getElementsByName('provider-approval');
+          for(var i=0; i<checkboxes.length; i++){
+                    if(checkboxes[i].type=='checkbox')
+                    checkboxes[i].checked=false;
+                  }
+                  document.querySelector('#a').disabled = true;
+                  document.querySelector('#a').value = '0'
+              
+          }     
+        
     // Add values to dropdown
 function change() 
 {
- 
-  for(i=6;i<=8;i++)
+  if( document.getElementById('a').value == 6)
+    {
+          document.getElementById('warning').classList.remove('govuk-visually-hidden')
+    }
+ else
+ document.getElementById('warning').classList.add('govuk-visually-hidden')
+
+  for(i=7;i<=13;i++)
 {
+
   if (document.getElementById('a').value == i)
   {
     document.getElementById("b").value = i;
-    document.getElementById("c").value = i;
+     if( document.getElementById('a').value == 7)
+    {
+          document.getElementById('warning1').classList.remove('govuk-visually-hidden')
+    }
+    
+     document.getElementById("c").value = i;
+    
     document.getElementById("d").value = i;
     document.getElementById("e").value = i;
     document.getElementById("f").value = i;
@@ -1166,31 +1198,30 @@ function change()
     document.getElementById("k").value = i;
 
   }
+  // else if(document.getElementById('b').value == 6)
+  // {
+  //   for(i=6;i<=8;i++)
+  // {
+  // if (document.getElementById('a').value == i)
+  // {
+  //   document.getElementById("b").value = 6;
+  //   document.getElementById("c").value = i;
+  //   document.getElementById("d").value = i;
+  //   document.getElementById("e").value = i;
+  //   document.getElementById("f").value = i;
+  //   document.getElementById("g").value = i;
+  //   document.getElementById("h").value = i;
+  //   document.getElementById("i").value = i;
+  //   document.getElementById("j").value = i;
+  //   document.getElementById("k").value = i;
+
+  // }
+  // }
+  // }
  
-    else if(document.getElementById('b').value == 6)
+    else if(document.getElementById('b').value == 7)
   {
-    for(i=6;i<=8;i++)
-  {
-  if (document.getElementById('a').value == i)
-  {
-    document.getElementById("b").value = 6;
-    document.getElementById("c").value = i;
-    document.getElementById("d").value = i;
-    document.getElementById("e").value = i;
-    document.getElementById("f").value = i;
-    document.getElementById("g").value = i;
-    document.getElementById("h").value = i;
-    document.getElementById("i").value = i;
-    document.getElementById("j").value = i;
-    document.getElementById("k").value = i;
-
-  }
-  }
-  }
-
-  else if(document.getElementById('b').value == 7)
-  {
-    for(i=6;i<=8;i++)
+    for(i=6;i<=13;i++)
   {
   if (document.getElementById('a').value == i)
   {
@@ -1208,9 +1239,10 @@ function change()
   }
   }
   }
+ 
   else if(document.getElementById('b').value == 8)
   {
-    for(i=6;i<=8;i++)
+    for(i=6;i<=13;i++)
   {
   if (document.getElementById('a').value == i)
   {
@@ -1228,14 +1260,14 @@ function change()
   }
   }
   }
-  // else if(document.getElementById('b').value == 4)
+  // else if(document.getElementById('c').value == 6)
   // {
-  //   for(i=1;i<=8;i++)
+  //   for(i=6;i<=8;i++)
   // {
   // if (document.getElementById('a').value == i)
   // {
-  //   document.getElementById("b").value = j;
-  //   document.getElementById("c").value = i;
+  //   document.getElementById("c").value = 6;
+  //   document.getElementById("b").value = i;
   //   document.getElementById("d").value = i;
   //   document.getElementById("e").value = i;
   //   document.getElementById("f").value = i;
@@ -1244,152 +1276,642 @@ function change()
   //   document.getElementById("i").value = i;
   //   document.getElementById("j").value = i;
   //   document.getElementById("k").value = i;
-
-  // }
-  // }
-  // }
-  // else if(document.getElementById('f').value == j)
-  // {
-  //   for(i=0;i<=10;i++)
-  // {
-  // if (document.getElementById('a').value == i)
-  // {
-  //   document.getElementById("f").value = j;
-  //   document.getElementById("b").value = i;
-  //   document.getElementById("c").value = i;
-  //   document.getElementById("d").value = i;
-  //   document.getElementById("e").value = i;
-  //   document.getElementById("g").value = i;
-  //   document.getElementById("h").value = i;
-  //   document.getElementById("i").value = i;
-  //   document.getElementById("j").value = i;
-  //   document.getElementById("k").value = i;
-
-  // }
-  // }
-  // }
-  // else if(document.getElementById('g').value == j)
-  // {
-  //   for(i=0;i<=10;i++)
-  // {
-  // if (document.getElementById('a').value == i)
-  // {
-  //   document.getElementById("g").value = j;
-  //   document.getElementById("b").value = i;
-  //   document.getElementById("c").value = i;
-  //   document.getElementById("d").value = i;
-  //   document.getElementById("e").value = i;
-  //   document.getElementById("f").value = i;
-  //   document.getElementById("h").value = i;
-  //   document.getElementById("i").value = i;
-  //   document.getElementById("j").value = i;
-  //   document.getElementById("k").value = i;
-
-  // }
-  // }
-  // }
-  // else if(document.getElementById('h').value == j)
-  // {
-  //   for(i=0;i<=10;i++)
-  // {
-  // if (document.getElementById('a').value == i)
-  // {
-  //   document.getElementById("h").value = j;
-  //   document.getElementById("b").value = i;
-  //   document.getElementById("c").value = i;
-  //   document.getElementById("d").value = i;
-  //   document.getElementById("e").value = i;
-  //   document.getElementById("f").value = i;
-  //   document.getElementById("g").value = i;
-  //   document.getElementById("i").value = i;
-  //   document.getElementById("j").value = i;
-  //   document.getElementById("k").value = i;
-
-  // }
-  // }
-  // }
-  // else if(document.getElementById('i').value == j)
-  // {
-  //   for(i=0;i<=10;i++)
-  // {
-  // if (document.getElementById('a').value == i)
-  // {
-  //   document.getElementById("i").value = j;
-  //   document.getElementById("b").value = i;
-  //   document.getElementById("c").value = i;
-  //   document.getElementById("d").value = i;
-  //   document.getElementById("e").value = i;
-  //   document.getElementById("f").value = i;
-  //   document.getElementById("g").value = i;
-  //   document.getElementById("h").value = i;
-  //   document.getElementById("j").value = i;
-  //   document.getElementById("k").value = i;
-
-  // }
-  // }
-  // }
-  // else if(document.getElementById('j').value == j)
-  // {
-  //   for(i=0;i<=10;i++)
-  // {
-  // if (document.getElementById('a').value == i)
-  // {
-  //   document.getElementById("j").value = j;
-  //   document.getElementById("b").value = i;
-  //   document.getElementById("c").value = i;
-  //   document.getElementById("d").value = i;
-  //   document.getElementById("e").value = i;
-  //   document.getElementById("f").value = i;
-  //   document.getElementById("g").value = i;
-  //   document.getElementById("h").value = i;
-  //   document.getElementById("i").value = i;
-  //   document.getElementById("k").value = i;
-
-  // }
-  // }
-  // }
-  // else if(document.getElementById('k').value == j)
-  // {
-  //   for(i=0;i<=10;i++)
-  // {
-  // if (document.getElementById('a').value == i)
-  // {
-  //   document.getElementById("k").value = j;
-  //   document.getElementById("b").value = i;
-  //   document.getElementById("c").value = i;
-  //   document.getElementById("d").value = i;
-  //   document.getElementById("e").value = i;
-  //   document.getElementById("f").value = i;
-  //   document.getElementById("g").value = i;
-  //   document.getElementById("h").value = i;
-  //   document.getElementById("i").value = i;
-  //   document.getElementById("j").value = i;
 
   // }
   // }
   // }
   
+  // else if(document.getElementById('c').value == 7)
+  // {
+  //   for(i=6;i<=13;i++)
+  // {
+  // if (document.getElementById('a').value == i)
+  // {
+  //   document.getElementById("c").value = 7;
+  //   document.getElementById("b").value = i;
+  //   document.getElementById("d").value = i;
+  //   document.getElementById("e").value = i;
+  //   document.getElementById("f").value = i;
+  //   document.getElementById("g").value = i;
+  //   document.getElementById("h").value = i;
+  //   document.getElementById("i").value = i;
+  //   document.getElementById("j").value = i;
+  //   document.getElementById("k").value = i;
+
+  // }
+  // }
+  // }
+  else if(document.getElementById('c').value == 8)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("c").value = 8;
+    document.getElementById("b").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  // else if(document.getElementById('d').value == 6)
+  // {
+  //   for(i=6;i<=8;i++)
+  // {
+  // if (document.getElementById('a').value == i)
+  // {
+  //   document.getElementById("d").value = 6;
+  //   document.getElementById("b").value = i;
+  //   document.getElementById("d").value = i;
+  //   document.getElementById("e").value = i;
+  //   document.getElementById("f").value = i;
+  //   document.getElementById("g").value = i;
+  //   document.getElementById("h").value = i;
+  //   document.getElementById("i").value = i;
+  //   document.getElementById("j").value = i;
+  //   document.getElementById("k").value = i;
+
+  // }
+  // }
+  // }
+  else if(document.getElementById('d').value == 7)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("d").value = 7;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  else if(document.getElementById('d').value == 8)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("d").value = 8;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  // else if(document.getElementById('e').value == 6)
+  // {
+  //   for(i=6;i<=8;i++)
+  // {
+  // if (document.getElementById('a').value == i)
+  // {
+  //   document.getElementById("e").value = 6;
+  //   document.getElementById("b").value = i;
+  //   document.getElementById("c").value = i;
+  //   document.getElementById("d").value = i;
+  //   document.getElementById("f").value = i;
+  //   document.getElementById("g").value = i;
+  //   document.getElementById("h").value = i;
+  //   document.getElementById("i").value = i;
+  //   document.getElementById("j").value = i;
+  //   document.getElementById("k").value = i;
+
+  // }
+  // }
+  // }
+  else if(document.getElementById('e').value == 7)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("e").value = 7;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  else if(document.getElementById('e').value == 8)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("e").value = 8;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  // else if(document.getElementById('f').value == 6)
+  // {
+  //   for(i=6;i<=8;i++)
+  // {
+  // if (document.getElementById('a').value == i)
+  // {
+  //   document.getElementById("f").value = 6;
+  //   document.getElementById("b").value = i;
+  //   document.getElementById("c").value = i;
+  //   document.getElementById("d").value = i;
+  //   document.getElementById("e").value = i;
+  //   document.getElementById("g").value = i;
+  //   document.getElementById("h").value = i;
+  //   document.getElementById("i").value = i;
+  //   document.getElementById("j").value = i;
+  //   document.getElementById("k").value = i;
+
+  // }
+  // }
+  // }
+  else if(document.getElementById('f').value == 7)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("f").value = 7;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  else if(document.getElementById('f').value == 8)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("f").value = 8;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  // else if(document.getElementById('g').value == 6)
+  // {
+  //   for(i=6;i<=8;i++)
+  // {
+  // if (document.getElementById('a').value == i)
+  // {
+  //   document.getElementById("g").value = 6;
+  //   document.getElementById("b").value = i;
+  //   document.getElementById("c").value = i;
+  //   document.getElementById("d").value = i;
+  //   document.getElementById("e").value = i;
+  //   document.getElementById("f").value = i;
+  //   document.getElementById("h").value = i;
+  //   document.getElementById("i").value = i;
+  //   document.getElementById("j").value = i;
+  //   document.getElementById("k").value = i;
+
+  // }
+  // }
+  // }
+  else if(document.getElementById('g').value == 7)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("g").value = 7;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  else if(document.getElementById('g').value == 8)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("g").value = 8;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  // else if(document.getElementById('h').value == 6)
+  // {
+  //   for(i=6;i<=8;i++)
+  // {
+  // if (document.getElementById('a').value == i)
+  // {
+  //   document.getElementById("h").value = 6;
+  //   document.getElementById("b").value = i;
+  //   document.getElementById("c").value = i;
+  //   document.getElementById("d").value = i;
+  //   document.getElementById("e").value = i;
+  //   document.getElementById("f").value = i;
+  //   document.getElementById("g").value = i;
+  //   document.getElementById("i").value = i;
+  //   document.getElementById("j").value = i;
+  //   document.getElementById("k").value = i;
+
+  // }
+  // }
+  // }
+  else if(document.getElementById('h').value == 7)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("h").value = 7;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  else if(document.getElementById('h').value == 8)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("h").value = 8;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  // else if(document.getElementById('i').value == 6)
+  // {
+  //   for(i=6;i<=8;i++)
+  // {
+  // if (document.getElementById('a').value == i)
+  // {
+  //   document.getElementById("i").value = 6;
+  //   document.getElementById("b").value = i;
+  //   document.getElementById("c").value = i;
+  //   document.getElementById("d").value = i;
+  //   document.getElementById("e").value = i;
+  //   document.getElementById("f").value = i;
+  //   document.getElementById("g").value = i;
+  //   document.getElementById("h").value = i;
+  //   document.getElementById("j").value = i;
+  //   document.getElementById("k").value = i;
+
+  // }
+  // }
+  // }
+  else if(document.getElementById('i').value == 7)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("i").value = 7;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  else if(document.getElementById('i').value == 8)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("i").value = 8;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  // else if(document.getElementById('j').value == 6)
+  // {
+  //   for(i=6;i<=8;i++)
+  // {
+  // if (document.getElementById('a').value == i)
+  // {
+  //   document.getElementById("j").value = 6;
+  //   document.getElementById("b").value = i;
+  //   document.getElementById("c").value = i;
+  //   document.getElementById("d").value = i;
+  //   document.getElementById("e").value = i;
+  //   document.getElementById("f").value = i;
+  //   document.getElementById("g").value = i;
+  //   document.getElementById("h").value = i;
+  //   document.getElementById("i").value = i;
+  //   document.getElementById("k").value = i;
+
+  // }
+  // }
+  // }
+  else if(document.getElementById('j').value == 7)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("j").value = 7;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  else if(document.getElementById('j').value == 8)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("j").value = 8;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  // else if(document.getElementById('k').value == 6)
+  // {
+  //   for(i=6;i<=8;i++)
+  // {
+  // if (document.getElementById('a').value == i)
+  // {
+  //   document.getElementById("k").value = 6;
+  //   document.getElementById("b").value = i;
+  //   document.getElementById("c").value = i;
+  //   document.getElementById("d").value = i;
+  //   document.getElementById("e").value = i;
+  //   document.getElementById("f").value = i;
+  //   document.getElementById("g").value = i;
+  //   document.getElementById("h").value = i;
+  //   document.getElementById("i").value = i;
+  //   document.getElementById("j").value = i;
+
+  // }
+  // }
+  // }
+  else if(document.getElementById('k').value == 7)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("k").value = 7;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+
+  }
+  }
+  }
+  else if(document.getElementById('k').value == 8)
+  {
+    for(i=6;i<=13;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("k").value = 8;
+    document.getElementById("b").value = i;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+
+  }
+  }
+  }
+  
 }
 }
 
 </script>
+
 <!-- disable dropdown and button -->
   <script>
         document.querySelector('#btn').addEventListener('click', (e) => {
     e.target.disabled = true;
  
         document.getElementById('notification-banner').classList.remove('govuk-visually-hidden')
-       
-    
    
         });
-        document.querySelector('#a').addEventListener('click', (e) => {
-    e.target.disabled = true;
-        });
-        
-       
-    </script>
+  
 
+
+    </script>
+<!-- //ununcheck checkbox on  dropdown value selection -->
+    <script>
+  $('.checks1').on('click', function ()
+   {
+    document.getElementById('warning1').classList.add('govuk-visually-hidden');
+           
+   });
+
+    $(".dropdown1").on('change', function () {
+        var val = $(this).val();
+        if (val === "6" || val === "7" ||val === "8") {
+            $('.checks').prop('checked', false);
+            return;
+        }
+        $('.checks').prop('checked', true);
+    });
+    $(".dropdown2").on('change', function () {
+        var val = $(this).val();
+        if ( val === "8"|| val === "9") {
+          document.getElementById('warning1').classList.add('govuk-visually-hidden')
+            $('.checks1').prop('checked', false);
+
+            return;
+        }
+        $('.checks1').prop('checked', true);
+    });
+    $(".dropdown3").on('change', function () {
+        var val = $(this).val();
+        if (val === "6" ||val === "7" || val === "8") {
+            $('.checks2').prop('checked', false);
+            return;
+        }
+        $('.checks1').prop('checked', true);
+    });
+    $(".dropdown4").on('change', function () {
+        var val = $(this).val();
+        if (val === "6" ||val === "7" || val === "8") {
+            $('.checks3').prop('checked', false);
+            return;
+        }
+        $('.checks1').prop('checked', true);
+    });
+    $(".dropdown5").on('change', function () {
+        var val = $(this).val();
+        if (val === "6" ||val === "7" || val === "8") {
+            $('.checks4').prop('checked', false);
+            return;
+        }
+        $('.checks1').prop('checked', true);
+    });
+    $(".dropdown6").on('change', function () {
+        var val = $(this).val();
+        if (val === "6" ||val === "7" || val === "8") {
+            $('.checks5').prop('checked', false);
+            return;
+        }
+        $('.checks1').prop('checked', true);
+    });
+    $(".dropdown7").on('change', function () {
+        var val = $(this).val();
+        if (val === "6" ||val === "7" || val === "8") {
+            $('.checks6').prop('checked', false);
+            return;
+        }
+        $('.checks1').prop('checked', true);
+    });
+    $(".dropdown8").on('change', function () {
+        var val = $(this).val();
+        if (val === "6" ||val === "7" || val === "8") {
+            $('.checks7').prop('checked', false);
+            return;
+        }
+        $('.checks1').prop('checked', true);
+    });
+    $(".dropdown9").on('change', function () {
+        var val = $(this).val();
+        if (val === "6" ||val === "7" || val === "8") {
+            $('.checks8').prop('checked', false);
+            return;
+        }
+        $('.checks1').prop('checked', true);
+    });
+    $(".dropdown10").on('change', function () {
+        var val = $(this).val();
+        if (val === "6" ||val === "7" || val === "8") {
+            $('.checks9').prop('checked', false);
+            return;
+        }
+        $('.checks1').prop('checked', true);
+    });
+    </script>
+    
+<!-- //Enable the drop down on select All and select all check boxes -->
     <script>
       function enableDropdown(select)
             {
@@ -1408,6 +1930,7 @@ function change()
 
             }
     </script>
+
  <style>
   input.select-all {
     width: 24px;
