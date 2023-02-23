@@ -58,16 +58,18 @@ GOV.UK Prototype Kit
     </h2>
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
-        <li>
-           <p class="govuk-error-message" >Error trying to refresh funding profile</p>
+        <li class=" govuk-error-summary__list">
+           <p class=" govuk-error-summary__list error">Funding could not be refreshed because of calculation id errors:</p>
 
-           <p >Calculation id 35 and 89 are not children of funding line ILP-001.</p>
-        
-            <p >Calculation id 90 and 43 are the same.</p>
-          
-            <p >For funding line ILP-001 calculation for id 24 is not on the template version applied to the specification.</p>
-          
-            <p >For funding line ILP-001 calculation for id 75 is not on the template version applied to the specification.</p>
+           <div class=" bullet-padding error">
+                <ul class="govuk-list govuk-list--bullet error">
+                    <li >calculation id 90 is not cash type</li>
+                    <li >calculation id 35 and 89 are not children of funding line ILP-001</li>
+                    <li >calculation id 75 is not on the template version applied to the specification  funding line ILP-001</li>
+                </ul>
+            </div> 
+           <h6 class="govuk-heading-s error font-regular "><a  href="https://dfe.service-now.com/now/nav/ui/classic/params/target/%2fincident.do"rel="noreferrer noopener" target="_blank" title="Opens in a new tab" style="font-weight: 100;">Submit a new incident form in ServiceNow to report this issue (opens in new tab)</a>. 
+            You must include which errors have occured in the description field of your incident form</h4>
         </li>
      </ul>
     </div>
