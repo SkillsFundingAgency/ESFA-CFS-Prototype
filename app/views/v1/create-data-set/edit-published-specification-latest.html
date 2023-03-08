@@ -119,10 +119,11 @@ GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-form-group filterbyContainer">
-                <div class="govuk-form-group filterSearch">
-                                        <label
+                <div class="govuk-form-group">
+                     <label
                         class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                        for="mainContentFilter">Filter selection</label>
+                        for="mainContentFilter">Filter selection
+                    </label>
                     <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-2">
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input table-filter-jq" id="filter" name="filter"
@@ -130,10 +131,29 @@ GOV.UK Prototype Kit
                             <label class="govuk-label govuk-checkboxes__label govuk-!-margin-bottom-4" for="filter">
                                 Show only selected
                             </label>
+                           
                         </div>
+                   
                     </div>
-
-                </div>
+                 </div>  
+                 <div class="govuk-form-group">
+                    <label
+                       class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+                       for="mainContentFilter1">Status
+                   </label>
+                   <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-2">
+                       <div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input table-filter-jq" id="filter" name="filter"
+                               type="checkbox" value="">
+                           <label class="govuk-label govuk-checkboxes__label govuk-!-margin-bottom-4" for="filter">
+                              Used in calculation
+                           </label>
+                          
+                       </div>
+                  
+                   </div>
+                </div>            
+                     
         </div>
 
         <a href="check-data-set" class="govuk-button">
