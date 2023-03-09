@@ -137,7 +137,7 @@ GOV.UK Prototype Kit
             </li>
             <li class="govuk-tabs__list-item">
               <a class="govuk-tabs__tab" href="#variation-management">
-            Variations
+            Set a variation
           </a>
             </li>
           </ul>
@@ -472,20 +472,32 @@ GOV.UK Prototype Kit
                   <div class="govuk-notification-banner__heading app-notification-message">
                     
                     <h2 class="govuk-notification-banner__title app-notification-message "id="govuk-notification-banner-title">
-                      <p class="font-bold govuk-notification-banner__title  app-banner-title "> Success</p>
-                      
+                      <p class="font-bold govuk-notification-banner__title  app-banner-title ">Success</p>
                       <p class="govuk-notification-banner app-banner font-bold">
                         Variation pointer set
-                       </p>
+                      </p>
                     </h2>  
                   </div>
-                 
                 </div>
            <br/>
           
              
-                <h2 class="govuk-heading-l"style="padding-left:12px;">Variations</h2>
-                <p class="govuk-body"style="padding-left:12px;">Choose the instalment for the variation to start in.</p>
+                <h2 class="govuk-heading-l"style="padding-left:12px;">Set a Variation</h2>
+                <h2 class="govuk-heading-s"style="padding-left:12px;">Choose instalment for the variation to start in</h2>
+                <p class="govuk-body"style="padding-left:12px;">You can select:</p>
+                <ul class="govuk-list govuk-list--bullet"style="padding-left:42px;">
+                  <li class="govuk-body">a future instalment for individual funding lines</li>
+                  <li class="govuk-body">a future instalment for all funding lines</li>
+                 
+                </ul>
+                <h3 class="govuk-heading-s"style="padding-left:12px;">Select an instalment for individual funding lines</h3>
+                <p class="govuk-body"style="padding-left:12px;">Select an option from the future instalment drop-down next to the relevant funding line.</p>
+                <p class="govuk-body"style="padding-left:12px;">If you do not select a future instalment for a funding line, the currently set instalment will remain the same.</p>
+                <h3 class="govuk-heading-s"style="padding-left:12px;">Select an instalment for all funding lines</h3>
+                <p class="govuk-body"style="padding-left:12px;">You must check the select all box before you select a future instalment. </p>
+                <span class="govuk-caption-m"style="padding-left:12px;">Select a future instalment for all funding lines </span><br/>
+
+
               </div>
             </div>
            
@@ -494,12 +506,12 @@ GOV.UK Prototype Kit
                 <form action="/v1/fundingLineStructure-gag-chosen#variation-management" method="post" class="form" novalidate data-validate="variation">
                   <div class="govuk-form-group">
                     <table class="govuk-table" id="fundingApprovalsProviders">
-                      <caption class="govuk-table__caption"><h2 class="govuk-heading-s app-banner-title"style="padding-left:28px;">Bulk actions</h2>
+                      <!-- <caption class="govuk-table__caption"><h2 class="govuk-heading-s app-banner-title"style="padding-left:28px;">Bulk actions</h2> -->
                       
                           <div style="padding-left:28px;">                  
                           <select class="govuk-select funding-line-dropdown-js"name="sort" id="a" onchange="change();"
                           aria-label="funding line 3"  name="dropdown[]" class="dropdown" disabled="disabled" >
-                            <option value="0" selected Disabled >Select future instalments</option>
+                            <option value="0" selected Disabled >Future instalment</option>
                             <option value="1">September 2022 instalment 1</option>
                             <option value="2">October 2022 instalment 1</option>
                             <option value="3">November 2022 instalment 1</option>
@@ -522,8 +534,8 @@ GOV.UK Prototype Kit
                             <strong class="govuk-warning-text__text">
                               <span class="govuk-warning-text__assistive"style="padding-left:28px;">Warning</span>
                               
-                            The future instalment cannot be selected for all because it is already set or is before the currently set instalment for funding lines.
-                            Select different future instalment to change the current instalment -     Content need to be updated
+                            You cannot select this instalment for all funding lines because it's already set, or is earlier than the currently set instalment for some funding lines.<br/><br/>
+                            You can select a different instalment for all funding lines or individual funding. If you do not select a future instalment for a funding line, the currently set instalment will stay the same. 
                           </div>
                           <!-- <div class="govuk-warning-text govuk-visually-hidden" id="warning6">
                             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -536,21 +548,21 @@ GOV.UK Prototype Kit
                           <tbody class="govuk-table__body table-vertical-align">       
                                                  
                       <tr class="govuk-table__row">
-                        <th class="govuk-table__header">
+                        <th class="govuk-table__header" style="width:15%;">
                         
-                         <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align" >
+                         <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align " >
                        
                               <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input select-all" id="select"
+                                    <input class="govuk-checkboxes__input select-all " id="select"
                                         name="provider-approval" type="checkbox" onclick="enableDropdown(this)">
                                         
-                                    <label class="govuk-label govuk-checkboxes__label font-bold" for="provider-approval">Select all
+                                    <label class="govuk-label govuk-checkboxes__label  font-bold" for="provider-approval">Select all
                                     </label><br>
                           </div>
                         </th>
                       
                         <th class="govuk-table__header"style="padding-top:18px;">
-                          Funding line
+                          Funding lines
                       </th>
                       <th class="govuk-table__header"style="padding-top:18px;">
                         Currently set instalment
@@ -978,7 +990,7 @@ GOV.UK Prototype Kit
               </div>
               
               <div class="govuk-button-group">
-                <button class="govuk-button gag-variation-management-save-button-js" class="btn"   data-module="govuk-button" id="btn" value="click me" >
+                <button class="govuk-button gag-variation-management-save-button-js" class="btn" style="margin-left:-2rem;"   data-module="govuk-button" id="btn" value="click me" >
             Save changes
         </button>
 
