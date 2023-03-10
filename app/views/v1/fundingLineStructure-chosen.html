@@ -89,7 +89,7 @@ GOV.UK Prototype Kit
             </li>
             <li class="govuk-tabs__list-item">
               <a class="govuk-tabs__tab" href="#variation-management">
-            Variations
+            Set a variation
           </a>
             </li>
           </ul>
@@ -420,29 +420,46 @@ GOV.UK Prototype Kit
           <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="variation-management">
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds">
-                <h2 class="govuk-heading-l">Variations</h2>
-                <p class="govuk-body">Set the instalment from which a variation should take effect.</p>
+                                 <div class="govuk-notification-banner  govuk-visually-hidden   govuk-notification-banner--success "style="margin-left:-1rem;width:140%;" id="notification-banner"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__heading app-notification-message">
+                      
+                      <h2 class="govuk-notification-banner__title app-notification-message "id="govuk-notification-banner-title">
+                        <p class="font-bold govuk-notification-banner__title  app-banner-title ">Success</p>
+                        <p class="govuk-notification-banner app-banner font-bold">
+                          Variation set
+                        </p>
+                      </h2>  
+                    </div>
+                  
+              
               </div>
             </div>
 
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds">
-                <form action="/v1/fundingLineStructure.html#release-timetable" method="post" class="form" novalidate data-validate="variation">
-                  <div class="govuk-form-group">
-                    <table class="govuk-table">
-                      <caption class="govuk-table__caption">Instalment variation</caption>
-                      <thead class="govuk-table__head">
+                <form action="fundingLineStructure-chosen.html" method="post" class="form" novalidate data-validate="variation">
+                 
+                   
+                      <h2 class="govuk-heading-l"style="padding-left:12px;">Set a variation</h2>
+                      <p class="govuk-body"style="padding-left:12px;">Choose instalment for the variation to start in.</p>
+                      <p class="govuk-body"style="padding-left:12px;">Select an option from the future instalment drop-down next to the funding line. </p>
+                      <p class="govuk-body"style="padding-left:12px;width:150%;">If you do not select a future instalment for a funding line, the currently set instalment will stay the same. </p>
+                      <div class="govuk-form-group"style="padding-left:12px;">
+                      <table class="govuk-table">
+                      <thead class="govuk-table__head" >
                         <tr class="govuk-table__row">
-                          <th scope="col" class="govuk-table__header app-custom-class">Funding line</th>
+                          <th scope="col" class="govuk-table__header app-custom-class">Funding lines</th>
                           <th scope="col" class="govuk-table__header app-custom-class">Currently set instalment</th>
                           <th scope="col" class="govuk-table__header app-custom-class">Future instalment</th>
                         </tr>
                       </thead>
+                      <caption class="govuk-table__caption"><h2 class="govuk-heading-M">Funding lines</h2>
+                        <br/>
                       <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                           <th scope="row" class="govuk-table__header">
-                                    Funding line 1<br/>
-                            <span class="govuk-body-s">GAG-001</span>
+                            16 to 19 Tuition Fund 
+                            (1619-008)
                           </th>
                           <td class="govuk-table__cell">
                                       Initial allocation <br>
@@ -461,7 +478,7 @@ GOV.UK Prototype Kit
                             </div>
                           </td>
                         </tr>
-                        <tr class="govuk-table__row">
+                        <!-- <tr class="govuk-table__row">
                           <th scope="row" class="govuk-table__header">
                                     Funding line 2<br/>
                             <span class="govuk-body-s">GAG-002</span>
@@ -482,8 +499,8 @@ GOV.UK Prototype Kit
                               </select>
                             </div>
                           </td>
-                        </tr>
-                        <tr class="govuk-table__row">
+                        </tr> -->
+                        <!-- <tr class="govuk-table__row">
                           <th scope="row" class="govuk-table__header">
                                     Funding line 3<br/>
                             <span class="govuk-body-s">GAG-003</span>
@@ -495,7 +512,7 @@ GOV.UK Prototype Kit
                           <td class="govuk-table__cell">
                             <div class="govuk-form-group">
                               <p class="govuk-body-s">No further instalments in funding period</p>
-                              <!-- <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
+                              <select class="govuk-select funding-line-dropdown-js" id="fundingline3" name="sort"
                                               aria-label="funding line 3">
                                               <option value=""></option>
                                               <option value="may2020-1">May 2020 instalment 1</option>
@@ -503,19 +520,19 @@ GOV.UK Prototype Kit
                                               <option value="june2020-1">June 2020 instalment 1</option>
                                               <option value="june2020-2">June 2020 instalment 2</option>
                                           </select> -->
-                            </div>
+                            <!-- </div>
                           </td>
-                        </tr>
+                        </tr>  -->
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
 
-              <div class="govuk-button-group">
-                <button class="govuk-button gag-variation-management-save-button-js" data-module="govuk-button" disabled>
-            Save
-        </button>
+              <div class="govuk-button-group"style="padding-left:12px;">
+                <button class="govuk-button gag-variation-management-save-button-js" class="btn"   data-module="govuk-button" id="btn" value="click me" >
+                  Save changes
+              </button>
 
                 <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Reset future instalments
@@ -711,6 +728,14 @@ GOV.UK Prototype Kit
         .querySelector('.submitted__last-location')
         .innerHTML = params.get('additional-calcs')
     }
+  
   </script>
+<script>
+    document.getElementById('btn').onclick = function() {
+          
+          document.getElementById('notification-banner').classList.remove('govuk-visually-hidden');
+         
 
+  }     
+</script>
   {% endblock%}
