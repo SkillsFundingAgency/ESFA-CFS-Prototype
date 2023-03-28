@@ -1,0 +1,286 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/start">
+                Home
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="manageData">
+                Manage data
+            </a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="manageDatasets.html">
+                Manage data source files
+            </a>
+        </li>
+
+    </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <div class="govuk-notification-banner app-banner-position" id="notification-banner"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+              <div class="govuk-notification-banner__heading">
+                
+                <h2 class="govuk-notification-banner__title "id="govuk-notification-banner-title"style="width:120%;">
+                  <p class="font-bold govuk-notification-banner__title  app-banner-title">Permissions</p>
+                  
+                  <p class="govuk-notification-banner app-banner font-bold">
+                    You do not have permission to perform the following action: CanUploadDataSourceFiles.            
+                    <a  href="/v1/my-user-permissions/index.html" class="font-bold"> View my user permissions</a>.
+                   </p>
+                </h2>  
+              </div>
+             
+            </div>
+            <br/>
+<form action="/v1/datasets/manageDatasets" method="post" class="form">
+            <fieldset class="govuk-fieldset">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update Lump sum for 2020 to 2021 (version 1)</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row" style="padding-left:20px;">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Last updated by</dt>
+                <dd class="govuk-summary-list__value"> Nathan Townsend, <span>21 November 12:24pm</span>
+                </dd>
+            </div>
+            <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Core provider data version to upload against
+                </dt>
+                <dd class="govuk-summary-list__value"> 21 August 2021 - Initial providers
+                </dd>
+            </div> -->
+
+        </dl>
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-2">
+
+        <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <label class="govuk-label" for="select-update-type">
+                    Select update type
+                </label>
+            </legend>
+            <div class="govuk-radios"name="radio">
+                <div class="govuk-radios__item">
+                    <input onchange="input4ValueChanged()" class="govuk-radios__input" id="updateTypeMerge" name="updateType"
+                        onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.remove('govuk-visually-hidden')"
+                        type="radio" value="merge/merge-in-progress" aria-label="update-type-merge">
+                    <label class="govuk-label govuk-radios__label" for="updateTypeMerge">
+                        Merge existing version
+                    </label>
+                    <div id="merge" class="govuk-hint govuk-radios__hint">
+                        Combine a new data source with the existing file
+                    </div>
+                </div>
+                <div class="govuk-radios__item govuk-!-margin-bottom-7">
+                    <input onchange="input4ValueChanged()" class="govuk-radios__input" id="updateTypeReplace"
+                        onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.add('govuk-visually-hidden')"
+                        name="updateType" type="radio" value="/v1/datasets/manageDatasets"
+                        aria-label="update-type-replace">
+                    <label class="govuk-label govuk-radios__label" for="updateTypeReplace">
+                        Create new version
+                    </label>
+                    <div id="create-new" class="govuk-hint govuk-radios__hint">
+                        Replace the existing data source with a new file
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="govuk-form-group govuk-visually-hidden" id="emptyCells">
+            <fieldset class="govuk-fieldset" aria-label="sign-in-hint">
+
+                <label class="govuk-label" for="emptyCellQuestion">
+                    Do you want to treat empty cells as values when updating providers?
+                </label>
+                <div class="govuk-radios govuk-!-margin-top-4">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="emptyCellQuestion" name="emptyCell" type="radio"
+                            value="government-gateway" aria-describedby="sign-in-item-hint" onchange="getEmptyCell()">
+                        <label class="govuk-label govuk-radios__label" for="emptyCellQuestion">
+                            Yes </label>
+                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                            Allow an empty cell to replace an existing previous value
+
+                        </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sign-in-2" name="emptyCell" type="radio"
+                            value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                            No </label>
+                        <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                            Ignore any empty cells in the file upload
+
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+                Select data source file
+            </label>
+            <input onchange="input4ValueChanged()" class="govuk-file-upload" id="file-upload-1" name="file-upload" type="file">
+        </div>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="file-description">
+                Description
+            </label>
+            <span id="description-detail" class="govuk-hint">
+            </span>
+            <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="file-description" name="description" rows="5"
+                aria-label="description-detail">{{ data['data-more-detail'] }}</textarea>
+        </div>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+                Change note
+            </label>
+            <span id="change-note" class="govuk-hint">
+            </span>
+            <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="more-detail" name="change-note-data" rows="5"
+                aria-describedby="change-note"></textarea>
+        </div>
+
+        <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button" disabled>
+                Save
+            </button>
+            <!-- <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+                Cancel
+            </a> -->
+            <button class="govuk-button govuk-button--secondary">
+                Cancel
+            </button>
+        </div>
+
+        </fieldset>
+    </div>
+    </form>
+</div>
+</div>
+
+<script>
+    function updateTypeCheck() {
+        console.log("updateTypeCheck ran")
+        var updateType = document.getElementsByName('updateType');
+        for (var i = 0, length = updateType.length; i < length; i++) {
+            if (updateType[i].checked) {
+                // do whatever you want with the checked radio
+                document.getElementById('updateDataset').action = updateType[i].value;
+                // only one radio can be logically checked, don't check the rest
+                break;
+            }
+        }
+    }
+
+    function getEmptyCell() {
+        var coreProviderData = document.getElementById("coreProviderData").value;
+        console.log(coreProviderData)
+        sessionStorage.setItem('provider data changed', coreProviderData);
+
+    }
+    var radios = document.getElementById('updateTypeMerge');
+    radios.disabled = true;
+    var radios = document.getElementById('updateTypeReplace');
+    radios.disabled = true;
+</script>
+
+<script type="application/json" id="update-data-source">
+    {
+
+        "updateType": {
+            "presence": {
+                "message": "^Select update type"
+            }
+        },
+
+
+        "file-upload": {
+            "presence": {
+                "message": "^Select a data source file"
+            }
+        },
+
+        "description": {
+            "presence": {
+                "message": "^Enter a description"
+            }
+        },
+
+
+        "change-note-data": {
+            "presence": {
+                "message": "^Enter a change note"
+            }
+        }
+
+    }
+</script>
+<!--  "emptyCell": {
+            "presence": {
+                "message": "^Select how empty cells are treated"
+            }
+        }, -->
+
+        <script>
+            let inputWasChanged = false
+        
+            function check() {
+        
+                let counter = 0
+        
+                if (inputWasChanged === true) {
+                    document.getElementById('notSaved').style.display = 'block'
+                    counter++
+                }
+                if (counter === 0) {
+                    history.back()
+                }
+        
+            }
+        
+        
+            function input4ValueChanged() {
+                if (document.getElementById("notSaved").value != "")
+        
+                {
+                    inputWasChanged = true;
+                }
+            }
+        </script>
+
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+    {% include "includes/modal-dialogue.html" %}
+</div>
+
+{% endblock %}
