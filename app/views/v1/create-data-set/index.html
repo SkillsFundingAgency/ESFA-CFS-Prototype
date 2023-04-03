@@ -36,17 +36,17 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
         <form action=" " onsubmit="patternChoice();" method="post" name="dataSourceTypeForm" class="form" novalidate
             data-validate='dataSourceType'>
-            <div id="chooseDataSourceForm" class="govuk-form-group">
+            <div id="chooseDataSourceForm" class="govuk-form-group" id="radio1">
                 <fieldset class="govuk-fieldset" aria-describedby="data-source-type-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
                             Which data set type?
                         </h1>
                     </legend>
-                    <div class="govuk-radios">
+                    <div class="govuk-radios" >
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="CFSdataset" name="data-source-type" type="radio"
-                                value="create-data-set/choose-funding-stream"
+                                value="choose-funding-stream"
                                 aria-describedby="published-specification-hint">
                             <label class="govuk-label govuk-radios__label" for="sign-in">
                                 Released data
@@ -57,7 +57,7 @@ GOV.UK Prototype Kit
                         </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="CFSdataset-2" name="data-source-type" type="radio"
-                                value="createDataset" aria-describedby="data-source-hint">
+                                value="../datasets/createDatasets" aria-describedby="data-source-hint">
                             <label class="govuk-label govuk-radios__label" for="sign-in-2">
                                 Uploaded data
                             </label>
@@ -67,7 +67,7 @@ GOV.UK Prototype Kit
                         </div>
                        
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="CFSdataset" name="data-source-type" type="radio"
+                            <input class="govuk-radios__input" id="CFSdataset-3" name="data-source-type" type="radio"
                                 value="choose-fds-funding-stream"
                                 aria-describedby="published-specification-hint">
                             <label class="govuk-label govuk-radios__label" for="sign-in">
@@ -84,7 +84,7 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-button-group">
-    <button id="patternLink" class="govuk-button" data-module="govuk-button">
+    <button  class="govuk-button"id="btn" data-module="govuk-button" >
         Continue
     </button>
     <button id="patternLink" class="govuk-button" data-module="govuk-button" onclick="history.back()">
@@ -92,6 +92,49 @@ GOV.UK Prototype Kit
     </button>
     </form>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+    $(function() {
+      var button = $('#btn');
+      button.attr('disabled','disabled');
+      $('#CFSdataset').change(function(e){
+   if(this.checked)
+   {
+    button.removeAttr('disabled');
+   }
+   else{
+    button.attr('disabled','disabled');
+   }
+      });
+    });
+    $(function() {
+      var button = $('#btn');
+      button.attr('disabled','disabled');
+      $('#CFSdataset-2').change(function(e){
+   if(this.checked)
+   {
+    button.removeAttr('disabled');
+   }
+   else{
+    button.attr('disabled','disabled');
+   }
+      });
+    });
+    $(function() {
+      var button = $('#btn');
+      button.attr('disabled','disabled');
+      $('#CFSdataset-3').change(function(e){
+   if(this.checked)
+   {
+    button.removeAttr('disabled');
+   }
+   else{
+    button.attr('disabled','disabled');
+   }
+      });
+    });
+  </script>
+  
 
 <script>
     function patternChoice() {
@@ -137,7 +180,10 @@ GOV.UK Prototype Kit
 
     }
 </script> -->
-
+<script>
+  
+  
+</script>
 
 <div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
     {% include "includes/modal-dialogue.html" %}
