@@ -33,9 +33,23 @@ GOV.UK Prototype Kit
 {% block content %}
 
 <div class="govuk-grid-row">
-  
+  <div >
+    <div class="govuk-notification-banner--success"id="notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+        <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner " id="govuk-notification-banner">
+          16-19 Factors dataset added successfully
+        </h2>
+       </div>
+      </div>
+      </div>
+      <br />
+</div>
   <div class="govuk-grid-column-full">    
-    <form action="../fundingLineStructure-chosen2#past-month"  method="post" class="form" novalidate data-validate="create-data-set" id="myForm">
+    <form action="../fundingLineStructure-chosen2"  method="post" class="form" novalidate data-validate="create-data-set" id="myForm">
       <fieldset class="govuk-fieldset">
       <h1 class="govuk-heading-xl">16 to 19 Mainstream 2023 to 2024</h1>
           <h2 class="govuk-heading-m">Create dataset</h2>
@@ -85,17 +99,35 @@ GOV.UK Prototype Kit
             aria-label="more-detail-hint"></textarea>
         </div>
 
-      
+        <!-- <div class="govuk-form-group govuk-visually-hidden" id="providerdata">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h2 class="govuk-heading-m">
+              Set as provider data
+            </h2>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changed-name">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                No
+              </label>
+            </div>
+          </div>
+        </div> -->
       </fieldset>
 
       <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" disabled="true">Save</button>
 
      
-      
+     
     </form>
-    <form action="choose-fds-funding-stream1"  method="post" class="form">
-
     <div class="govuk-button-group">
     <button href="choose-fds-funding-stream1.html" class="govuk-button govuk-button--secondary" onclick='reset()' id="save-add"  disabled="true">
       Save and add another
@@ -103,9 +135,9 @@ GOV.UK Prototype Kit
     <a class="govuk-link govuk-button govuk-button--warning" href="../fundingLineStructure-chosen1#past-month" onclick="check()">
       Cancel</a>
       </div>
-      </form>
+    </div>
   </div>
-</div>
+
 </div>
 
 <script>
