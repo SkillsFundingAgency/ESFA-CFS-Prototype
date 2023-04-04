@@ -1,0 +1,204 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Home
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="specifications">
+       View Specifications
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../fundingLineStructure-chosen1#past-month">
+       16 to 19 Mainstream 2023 to 2024
+      </a>
+    </li>
+    
+  </ol>
+  
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-full">    
+    <form action="../fundingLineStructure-chosen1#past-month"  method="post" class="form" novalidate data-validate="create-data-set" id="myForm">
+      <fieldset class="govuk-fieldset">
+      <h1 class="govuk-heading-xl">16 to 19 Mainstream 2023 to 2024</h1>
+          <h2 class="govuk-heading-m">Create dataset<br/><br/>
+            
+                <strong>
+                  Check funding lines/calculations before creating data set
+                </strong>
+              </h2>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort"style="color:black;">
+            Select data schema
+          </label>
+          <p class="govuk-caption-s">Please select data schema</p><br/>
+
+          <select class="govuk-select" id="providerdataYes" name="data-schema" aria-label="select-data-schema"
+            onchange="enable()"style="width:40%;">
+            <option></option>
+            <option value="draft">16-19 Dance and Drama Award</option>
+            <option value="draft">Dance and Drama Award</option>
+            <option value="draft">Dance and Drama Award Reconcilation</option>
+            <!-- <option value="draft">16-19 Business Case</option>
+            <option value="draft">16-19 Students</option> -->
+            <!-- <option value="draft">APT New ISB</option>
+            <option value="draft">APT Proforma</option> -->
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Data set name
+          </label>
+          <span id="event-name-hint" class="govuk-hint">
+            Use a descriptive unique name other users can understand <br/>
+          </span>
+          <input class="govuk-input" id="address-line-1" name="dataset-name" type="text"style="width:40%;">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Description
+          </label>
+          <span id="event-name-hint" class="govuk-hint">
+            Please provide a description for the dataset <br/>
+          </span>
+          <textarea class="govuk-textarea" id="more-detail" name="description" rows="8"
+            aria-label="more-detail-hint"></textarea>
+        </div>
+
+      
+      </fieldset>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" disabled="true">Save</button>
+      <button href="choose-fds-funding-stream.html" class="govuk-button govuk-button--secondary" onclick='reset()' id="save-add"  disabled="true">
+        Save and add another
+      </button>
+      <a class="govuk-link govuk-button govuk-button--warning" href="../fundingLineStructure-chosen1#past-month" onclick="check()">
+        Cancel</a>
+     
+      
+    </form>
+    
+   
+      
+  </div>
+</div>
+</div>
+
+<script>
+ 
+  // function newDataset() {
+  //   sessionStorage.setItem('new data', 'true');
+  // }
+function enable()
+{
+  if(document.getElementById("providerdataYes").value!="")
+  {
+  document.getElementById("btn").disabled=false;
+  document.getElementById("save-add").disabled=false;
+  }
+  else
+  {
+  document.getElementById("btn").disabled=true;
+  document.getElementById("save-add").disabled=true;
+  }
+}
+  function showproviderdata() {
+    var str = document.getElementById("providerdataYes").value;
+    var n = str.includes("FDZ");
+    console.log(n)
+    if (n === false) {
+      document.getElementById("providerdata").classList.remove("govuk-visually-hidden")
+    }
+    else {
+      document.getElementById("providerdata").classList.add("govuk-visually-hidden")
+    }
+  }
+
+</script>
+
+<script type="application/json" id="create-data-set">
+  {
+      "data-schema": {
+          "presence": {
+              "message": "^Select a data schema"
+          }
+      },
+
+      "dataset-name": {
+          "presence": {
+              "message": "^Enter a data set  name"
+          }
+      },
+
+      "description": {
+          "presence": {
+              "message": "^Enter a description"
+          }
+      }
+  }
+</script>
+<script>
+  document.getElementById("save-add").onclick = function() {
+    $(document).ready(function(){
+    $(window).scrollTop(0);
+    
+});
+document.getElementById('notification-banner').classList.remove('govuk-visually-hidden');
+
+}     
+</script>
+<script>
+  function check() {
+
+      //Array with inputs that evaluate to true or false based on input
+
+      const inputs = [
+          Boolean(document.getElementById("providerdataYes").value),
+          Boolean(document.getElementById("address-line-1").value),
+          Boolean(document.getElementById("more-detail").value),
+      ]
+
+      //starts the counter
+      let counter = 0
+
+      //increases counter by 1 for every true item in the array
+      for (var i = 0; i <= inputs.length; i++) {
+          if (inputs[i] === true) {
+              document.getElementById('notSaved').style.display = 'block'
+              counter++
+          }
+      }
+      if (counter === 0) {
+          history.back()
+      }
+
+  }
+
+
+</script>
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+  {% include "includes/modal-dialogue.html" %}
+</div>
+
+{% endblock %}
