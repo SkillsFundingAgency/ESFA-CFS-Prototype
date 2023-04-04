@@ -64,7 +64,7 @@ GOV.UK Prototype Kit
              <div class="">
                   <!-- <ul class="govuk-list govuk-list--bullet font-bold error"> -->
                     <p class=" govuk-error-summary__list "> calculation id 90 is not cash type.</p>
-                  <p class=" govuk-error-summary__list ">   calculation id 35 and 89 are not children of funding line ILP-001.</p>
+                  <!-- <p class=" govuk-error-summary__list ">   calculation id 35 and 89 are not children of funding line ILP-001.</p> -->
                       <!-- <li >calculation id 75 is not on the template version applied to the specification  funding line ILP-001</li> -->
                   </ul>
               </div> 
@@ -72,11 +72,33 @@ GOV.UK Prototype Kit
               You must include which errors have occured in the description field of your incident form</h4> -->
           </li>
        </ul>
-      
+
     </div>
 
 <div>
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body font-bold ">
+            <ul class="govuk-list govuk-error-summary__list font-bold">
+              <li class=" govuk-error-summary__list font-bold">
+                 <p class=" govuk-error-summary__list error font-bold">Error trying to refresh funding</p>
+      
+                 <div class="">
+                      <!-- <ul class="govuk-list govuk-list--bullet font-bold error"> -->
+                        <!-- <p class=" govuk-error-summary__list "> calculation id 90 is not cash type.</p> -->
+                      <p class=" govuk-error-summary__list ">   calculation id 35 and 89 are not children of funding line ILP-001.</p>
+                          <!-- <li >calculation id 75 is not on the template version applied to the specification  funding line ILP-001</li> -->
+                      </ul>
+                  </div> 
+                 <!-- <h6 class="govuk-heading-s error font-bold"><a href="https://dfe.service-now.com/now/nav/ui/classic/params/target/%2fincident.do"rel="noreferrer noopener" target="_blank" title="Opens in a new tab" style="font-weight: 700;">Submit a new incident form in ServiceNow to report this issue (opens in new tab)</a>. 
+                  You must include which errors have occured in the description field of your incident form</h4> -->
+              </li>
+           </ul>
+        </div>
     
+    <div>
   </div>
 
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
@@ -778,10 +800,10 @@ GOV.UK Prototype Kit
                                                         name="allocationSelection"
                                                         onclick="showMeF15('filterAllocationOption1'), updateAllocationCount()"
                                                         value="Indicative allocations" id="showHideChangeF15"
-                                                        type="checkbox"disabled>
+                                                        type="checkbox">
                                                     <label class="govuk-label govuk-checkboxes__label"
                                                         for="showHideChangeF15" >
-                                                        Indicative allocations(0) 
+                                                        Indicative allocations(1) 
                                                     </label>
                                                     </div>
 
