@@ -30,32 +30,32 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
-
+<div class="govuk-form-group">
+    <div class="govuk-notification-banner app-banner-position" id="notification-banner"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__heading">
+        
+        <h2 class="govuk-notification-banner__title "id="govuk-notification-banner-title"style="width:120%;">
+          <p class="font-bold govuk-notification-banner__title  app-banner-title">Permissions</p>
+          
+          <p class="govuk-notification-banner app-banner font-bold">
+            You do not have permission to perform the following action: CanUploadDataSourceFiles.            
+            <a  href="/v1/my-user-permissions/index.html" class="font-bold"> View my user permissions</a>.
+           </p>
+        </h2>  
+      </div>
+     
+    </div>
+    </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <div class="govuk-form-group">
-            <div class="govuk-notification-banner app-banner-position" id="notification-banner"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-              <div class="govuk-notification-banner__heading">
-                
-                <h2 class="govuk-notification-banner__title "id="govuk-notification-banner-title"style="width:120%;">
-                  <p class="font-bold govuk-notification-banner__title  app-banner-title">Permissions</p>
-                  
-                  <p class="govuk-notification-banner app-banner font-bold">
-                    You do not have permission to perform the following action: CanUploadDataSourceFiles.            
-                    <a  href="/v1/my-user-permissions/index.html" class="font-bold"> View my user permissions</a>.
-                   </p>
-                </h2>  
-              </div>
-             
-            </div>
-            <br/>
-<form action="/v1/datasets/manageDatasets" method="post" class="form">
+        <form action="/v1/datasets/manageDatasets" method="post" class="form" id="updateDataset" novalidate
+            data-validate='update-data-source'>
             <fieldset class="govuk-fieldset">
                 <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Update Lump sum for 2020 to 2021 (version 1)</h1>
     </div>
 </div>
 
-<div class="govuk-grid-row" style="padding-left:20px;">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
 
         <dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -83,7 +83,7 @@ GOV.UK Prototype Kit
                     Select update type
                 </label>
             </legend>
-            <div class="govuk-radios"name="radio">
+            <div class="govuk-radios">
                 <div class="govuk-radios__item">
                     <input onchange="input4ValueChanged()" class="govuk-radios__input" id="updateTypeMerge" name="updateType"
                         onclick="updateTypeCheck(); document.getElementById('emptyCells').classList.remove('govuk-visually-hidden')"
@@ -170,20 +170,21 @@ GOV.UK Prototype Kit
                 aria-describedby="change-note"></textarea>
         </div>
 
-        <div class="govuk-button-group">
-            <button class="govuk-button" data-module="govuk-button" disabled>
-                Save
-            </button>
+       
             <!-- <a class="govuk-link" href="javascript:void(0);" onclick="check()">
                 Cancel
             </a> -->
-            <button class="govuk-button govuk-button--secondary">
-                Cancel
-            </button>
-        </div>
-
+        
         </fieldset>
-    </div>
+    </form>
+    <form action="/v1/datasets/manageDatasets" method="post" class="form" id="updateDataset" >
+        <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button"disabled >
+                Save
+            </button>
+    <button class="govuk-button govuk-button--secondary">
+        Cancel
+    </button>
     </form>
 </div>
 </div>
@@ -208,12 +209,6 @@ GOV.UK Prototype Kit
         sessionStorage.setItem('provider data changed', coreProviderData);
 
     }
-    // var radios = document.getElementById('updateTypeMerge');
-    // radios.disabled = true;
-    // var radios = document.getElementById('updateTypeReplace');
-    // radios.disabled = true;
-    // var radios = document.getElementById('file-upload-1');
-    // radios.disabled = true;
 </script>
 
 <script type="application/json" id="update-data-source">
