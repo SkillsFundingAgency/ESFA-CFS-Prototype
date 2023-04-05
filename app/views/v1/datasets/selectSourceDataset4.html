@@ -45,10 +45,10 @@ GOV.UK Prototype Kit
     </div>
   </div>
 
-  <form action="dataRelationships-1619-2324" method="post" class="form" id="updateDataset" >
+  <form action="dataRelationships1-fds" method="post" class="form" id="updateDataset" >
     <div class="govuk-form-group">
       <div class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-        <h4 class="govuk-heading-s">Select data source file for Business Case</h4>
+        <h4 class="govuk-heading-s">Select data source file for FDS data</h4>
         <span id="how-contacted-conditional-hint" class="govuk-hint">
         Select one option
       </span>
@@ -58,21 +58,19 @@ GOV.UK Prototype Kit
             <input class="govuk-radios__input" id="how-contacted-conditional" name="data-source" type="radio"
             value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional"/>
             <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
-            1619 Business Case 2324 <br/>
-            <span class="govuk-hint">
-                <strong>Description:</strong> BusinessCase 23/24
-            </span>
+            1619 FDS data 1234 <br/>
+           
             </label>
           </div>
 
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-          id="conditional-how-contacted-conditional" style="height:220px;">
+          id="conditional-how-contacted-conditional"style="height:220px;">
             <h4 class="govuk-heading-s">Select data source version</h4>
             <div class="govuk-radios govuk-radios--small">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name" name="data-version" type="radio" value="month"/>
+                <input class="govuk-radios__input" id="changed-name" name="data-version" type="radio" value="month"checked />
                 <label class="govuk-label govuk-radios__label" for="changed-name">
-                1619Business Case 2324(version 2)
+                1619 FDS data1234(version 1)
                 <div class="govuk-!-margin-top-1">
                     <details class="govuk-details  summary-margin-removal" data-module="govuk-details">
                       <summary class="govuk-details__summary ">
@@ -81,34 +79,6 @@ GOV.UK Prototype Kit
                       </span>
                       </summary>
                       <div class="govuk-details__text summary-margin-removal">
-                        <p class="govuk-body-s">
-                          <strong>Version notes:</strong> New data
-                      </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated:</strong> 13th march 2023
-                        10:54am
-                      </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated by:</strong> Nathan Townsend
-                      </p>
-                      </div>
-                    </details>
-                  </div>
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name" name="data-version" type="radio" value="month"/>
-                <label class="govuk-label govuk-radios__label" for="changed-name">
-                  1619Business Case 2324(version 1)
-                <div class="govuk-!-margin-top-1">
-                    <details class="govuk-details summary-margin-removal" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                       details
-                      </span>
-                      </summary>
-                      <div class="govuk-details__text">
                         <p class="govuk-body-s">
                           <strong>Version notes:</strong> 
                       </p>
@@ -120,37 +90,63 @@ GOV.UK Prototype Kit
                           <strong>Last updated by:</strong> Nathan Townsend
                       </p>
                       </div>
-                      </details>
                     </details>
                   </div>
                 </label>
-              </div>
-
+              </input>
               
-                </label>
               </div>
+              <div class="govuk-radios govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name" name="data-version" type="radio" value="month"/>
+                  <label class="govuk-label govuk-radios__label" for="changed-name">
+                  1619 FDS data1234(version 2)
+                  <div class="govuk-!-margin-top-1">
+                      <details class="govuk-details  summary-margin-removal" data-module="govuk-details">
+                        <summary class="govuk-details__summary ">
+                          <span class="govuk-details__summary-text">
+                           details
+                        </span>
+                        </summary>
+                        <div class="govuk-details__text summary-margin-removal">
+                          <p class="govuk-body-s">
+                            <strong>Version notes:</strong> 
+                        </p>
+                          <p class="govuk-body-s">
+                            <strong>Last updated:</strong> 13th feb 2023
+                          10:54am
+                        </p>
+                          <p class="govuk-body-s">
+                            <strong>Last updated by:</strong> Nathan Townsend
+                        </p>
+                        </div>
+                      </details>
+                    </div>
+                  </label>
+                </input>
+                
+                </div>
+              
+                  </div>
             </div>
           </div>
-        
+          <!-- <p class="govuk-body govuk-!-margin-top-5">
+            <a href="selectSourceDatasetexpanded.html" class="govuk-link">View all versions</a>
+          </p> -->
+        </div>
       </div>
-      </div>
-      <!-- <div>
-        <p class="govuk-body govuk-!-margin-top-5">
-          <a href="selectSourceDatasetexpanded.html" class="govuk-link">View all versions</a>
-        </p>
-      </div> -->
-      <div class="govuk-grid-row govuk-!-margin-bottom-5">
+    </fieldset>
+  </div>
+    <div class="govuk-grid-row govuk-!-margin-bottom-5">
         <button class="govuk-button" data-module="govuk-button">
         Save
-      </button>
-        <a href="dataRelationshipsDSGSIT.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Cancel
+        </button>
+      
+      </form>
+      <a  href ="dataRelationships1-1619-2324 "class="govuk-button govuk-button--secondary" data-module="govuk-button" >
+      Cancel
       </a>
-      </div>
-
     </div>
-  </fieldset>
-</form>
 
 <script type="application/json" id="select-data-source">
   {
