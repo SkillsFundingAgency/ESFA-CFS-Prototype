@@ -35,29 +35,28 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   
   <div class="govuk-grid-column-full">    
-    <form action="../fundingLineStructure-chosen2#past-month"  method="post" class="form" novalidate data-validate="create-data-set" id="myForm">
+    <form action="../fundingLineStructure-chosen1#past-month"  method="post" class="form" novalidate data-validate="create-data-set" id="myForm">
       <fieldset class="govuk-fieldset">
       <h1 class="govuk-heading-xl">16 to 19 Mainstream 2023 to 2024</h1>
-          <h2 class="govuk-heading-m">Create dataset</h2>
-            <div class="govuk-warning-text">
-                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                <strong class="govuk-warning-text__text">
-                  <span class="govuk-warning-text__assistive">Warning</span>
+          <h2 class="govuk-heading-m">Create dataset<br/><br/>
+            
+                <strong>
                   Check funding lines/calculations before creating data set
                 </strong>
-              </div>
+              </h2>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="sort">
-            Select the FDS data schema
+          <label class="govuk-label" for="sort"style="color:black;">
+            Select data schema
           </label>
+          <p class="govuk-caption-s">Please select data schema</p><br/>
 
           <select class="govuk-select" id="providerdataYes" name="data-schema" aria-label="select-data-schema"
             onchange="enable()"style="width:40%;">
             <option></option>
-            <option value="draft">16-19 Factors</option>
-            <!-- <option value="draft">16-19 Formula Adjustments</option>
-            <option value="draft">16-19 Non Formula Funding</option>
-            <option value="draft">16-19 Business Case</option>
+            <option value="draft">16-19 Dance and Drama Award</option>
+            <option value="draft">Dance and Drama Award</option>
+            <option value="draft">Dance and Drama Award Reconcilation</option>
+            <!-- <option value="draft">16-19 Business Case</option>
             <option value="draft">16-19 Students</option> -->
             <!-- <option value="draft">APT New ISB</option>
             <option value="draft">APT Proforma</option> -->
@@ -90,20 +89,18 @@ GOV.UK Prototype Kit
 
       <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" disabled="true">Save</button>
-
-     
-      
     </form>
-    <form action="choose-fds-funding-stream1"  method="post" class="form">
+    <form action="../"  method="post" class="form">
 
-    <div class="govuk-button-group">
-    <button href="choose-fds-funding-stream1.html" class="govuk-button govuk-button--secondary" onclick='reset()' id="save-add"  disabled="true">
-      Save and add another
-    </button>
-    <a class="govuk-link govuk-button govuk-button--warning" href="../create-data-set" onclick="check()">
-      Cancel</a>
-      </div>
-      </form>
+      <div class="govuk-button-group">
+      <button href="" class="govuk-button govuk-button--secondary" onclick='reset()' id="save-add"  disabled="true">
+        Save and add another
+      </button>
+      <a class="govuk-link govuk-button govuk-button--warning" href="../create-data-set" onclick="check()">
+        Cancel</a>
+        </div>
+        </form>
+      
   </div>
 </div>
 </div>
