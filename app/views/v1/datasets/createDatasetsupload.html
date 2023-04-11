@@ -89,16 +89,17 @@ GOV.UK Prototype Kit
 
       <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" disabled="true">Save</button>
-      <button href="choose-fds-funding-stream.html" class="govuk-button govuk-button--secondary" onclick='reset()' id="save-add"  disabled="true">
+    </form>
+    <form action="choose-fds-funding-stream"  method="post" class="form">
+
+      <div class="govuk-button-group">
+      <button  class="govuk-button govuk-button--secondary" onclick='reset()' id="save-add"  disabled="true">
         Save and add another
       </button>
-      <a class="govuk-link govuk-button govuk-button--warning" href="../fundingLineStructure-chosen1#past-month" onclick="check()">
+      <a class="govuk-link govuk-button govuk-button--warning" href="../create-data-set" onclick="check()">
         Cancel</a>
-     
-      
-    </form>
-    
-   
+        </div>
+        </form>
       
   </div>
 </div>

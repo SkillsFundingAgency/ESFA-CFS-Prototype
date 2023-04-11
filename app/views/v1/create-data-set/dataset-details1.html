@@ -44,20 +44,20 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="fundingLineStructure-chosen1#past-month" method="post" class="form" novalidate data-validate="create-data-set">
+    <form action="../fundingLineStructure-chosen1#past-month" method="post" class="form" novalidate data-validate="create-data-set">
       <fieldset class="govuk-fieldset">
           <h1 class="govuk-heading-xl">Create data set</h1>
 
         <div class="govuk-form-group">
-          <!-- <label class="govuk-label" for="address-line-1">
+          <label class="govuk-label" for="address-line-1">
             Data set name
           </label>
           <span id="event-name-hint" class="govuk-hint">
             Use a descriptive unique name other users can understand
           </span>
-          <input class="govuk-input" id="address-line-1" name="dataset-name" type="text"> -->
+          <input class="govuk-input" id="address-line-1" name="dataset-name" type="text"> 
 
-          {% from "govuk/components/input/macro.njk" import govukInput %}
+          <!-- {% from "govuk/components/input/macro.njk" import govukInput %}
 
           {{ govukInput({
             label: {
@@ -70,16 +70,16 @@ GOV.UK Prototype Kit
             id: "dataset-name",
             name: "dataset-name",
             value: data['dataset-name']
-          }) }}
+          }) }} -->
         </div>
 
         <div class="govuk-form-group">
-          <!-- <label class="govuk-label" for="more-detail">
+          <label class="govuk-label" for="more-detail">
             Description
-          </label> -->
-          <!-- <textarea class="govuk-textarea" id="more-detail" name="dataset-description" rows="8"
-            aria-label="more-detail-hint"></textarea> -->
-            {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="dataset-description" rows="8"
+            aria-label="more-detail-hint"></textarea>
+            <!-- {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
             {{ govukTextarea({
               name: "dataset-description",
@@ -89,7 +89,7 @@ GOV.UK Prototype Kit
                 classes: "govuk-label"
               },
               value: data['dataset-description']
-            }) }}
+            }) }} -->
         </div>
 
         <div class="govuk-form-group govuk-visually-hidden" id="providerdata">
@@ -114,16 +114,20 @@ GOV.UK Prototype Kit
           </div>
         </div>
       </fieldset>
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" onclick="newDataset()">Continue</button>
+      </form>
+      <form action="../create-data-set" method="post" >
 
-      <button class="govuk-button" data-module="govuk-button" onclick="newDataset()">Continue</button>
-      <button id="patternLink" class="govuk-button" data-module="govuk-button" onclick="check()">
+      <div class="govuk-button-group">
+        <button class="govuk-button"  data-module="govuk-button" >
         Cancel
-    </button>
-
-    </form>
-
+        </button>
+      </div>
+       </form>
+    </div>
   </div>
-</div>
+  </div>
 
 <script>
 
