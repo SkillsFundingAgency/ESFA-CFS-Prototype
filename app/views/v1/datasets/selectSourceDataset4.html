@@ -59,7 +59,7 @@ GOV.UK Prototype Kit
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="how-contacted-conditional" name="data-source" type="radio"
-            value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional"/>
+            value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional" checked/>
             <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
             1619 FDS data 1234 <br/>
             <h4 class="govuk-heading-s">Description: <label class="govuk-label govuk-radios__label">1619 FDS data1234</label>
@@ -67,8 +67,9 @@ GOV.UK Prototype Kit
             </label>
           </div>
 
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-          id="conditional-how-contacted-conditional"style="height:220px;">
+          <div class="govuk-radios__conditional "
+         style="height:220px;">
+         <!-- id="conditional-how-contacted-conditional" govuk-radios__conditional--hidden -->
             <h4 class="govuk-heading-s">Select data source version</h4>
             <div class="govuk-radios govuk-radios--small">
               <div class="govuk-radios__item">
