@@ -55,10 +55,12 @@ GOV.UK Prototype Kit
 <br/>
 <br/>
 <br/>
+
+
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="how-contacted-conditional" name="data-source" type="radio"
-            value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional"/>
+            <input class="govuk-radios__input" id="how-contacted-conditional" name="data-source1" type="radio"
+            value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional"checked/>
             <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
             1619 Business Case 2324 <br/>
             <span class="govuk-hint">
@@ -67,8 +69,8 @@ GOV.UK Prototype Kit
             </label>
           </div>
 
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-          id="conditional-how-contacted-conditional" style="height:220px;">
+          <div class="govuk-radios__conditional"
+          id="" style="height:220px;">
             <h4 class="govuk-heading-s">Select data source version</h4>
             <div class="govuk-radios govuk-radios--small">
               <div class="govuk-radios__item">
@@ -96,6 +98,7 @@ GOV.UK Prototype Kit
                       </div>
                     </details>
                   </div>
+                  
                 </label>
               </div>
 
@@ -127,15 +130,45 @@ GOV.UK Prototype Kit
                   </div>
                 </label>
               </div>
+              </div>
 
               
                 </label>
               </div>
             </div>
+         
+
+          
+
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios1">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-contacted-conditional" name="data-source1" type="radio"
+            value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional"/>
+            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+            1619 Business Case 2223 <br/>
+            <span class="govuk-hint">
+                <strong>Description:</strong> BusinessCase 22/23
+            </span>
+            </label>
           </div>
-        
-      </div>
-      </div>
+                </label>
+              </div>
+            </div>
+         
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios1">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional" name="data-source1" type="radio"
+                value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional"/>
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                1619 BusinessCaseData-2021 <br/>
+                <span class="govuk-hint">
+                    <strong>Description:</strong> 
+                </span>
+                </label>
+              </div>
+                    </label>
+                  </div>
+                </div>
       <!-- <div>
         <p class="govuk-body govuk-!-margin-top-5">
           <a href="selectSourceDatasetexpanded.html" class="govuk-link">View all versions</a>
@@ -154,7 +187,7 @@ GOV.UK Prototype Kit
   </fieldset>
 </form>
 
-<script type="application/json" id="select-data-source">
+<!-- <script type="application/json" id="select-data-source">
   {
     "data-source": {
       "conditionallyRequired": {
@@ -166,7 +199,7 @@ GOV.UK Prototype Kit
       }
     }
   }
-</script>
+</script> -->
 
 
 {% endblock %}
