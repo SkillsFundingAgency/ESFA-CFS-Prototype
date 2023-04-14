@@ -52,7 +52,7 @@ GOV.UK Prototype Kit
           </label>
 
           <select class="govuk-select" id="providerdataYes" name="data-schema" aria-label="select-data-schema"
-            onchange="enable()"style="width:40%;">
+            style="width:40%;">
             <option></option>
             <option value="draft">16-19 Factors</option>
             <!-- <option value="draft">16-19 Formula Adjustments</option>
@@ -74,7 +74,7 @@ GOV.UK Prototype Kit
           <input class="govuk-input" id="address-line-1" name="dataset-name" type="text"style="width:40%;">
         </div>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group"id ="enable"onchange="enable()">
           <label class="govuk-label" for="more-detail">
             Description
           </label>
@@ -82,7 +82,7 @@ GOV.UK Prototype Kit
             Please provide a description for the dataset <br/>
           </span>
           <textarea class="govuk-textarea" id="more-detail" name="description" rows="8"
-            aria-label="more-detail-hint"></textarea>
+            aria-label="more-detail-hint" ></textarea>
         </div>
 
       
@@ -115,7 +115,7 @@ GOV.UK Prototype Kit
   // }
 function enable()
 {
-  if(document.getElementById("providerdataYes").value!="")
+  if(document.getElementById("enable").value!="")
   {
   document.getElementById("btn").disabled=false;
   document.getElementById("save-add").disabled=false;
