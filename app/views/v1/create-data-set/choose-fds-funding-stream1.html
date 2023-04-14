@@ -49,7 +49,7 @@ GOV.UK Prototype Kit
       <br />
 </div>
   <div class="govuk-grid-column-full">    
-    <form action="../fundingLineStructure-chosen2"  method="post" class="form" novalidate data-validate="create-data-set" id="myForm">
+    <form action="../fundingLineStructure-chosen2#past-month"  method="post" class="form" novalidate data-validate="create-data-set" id="myForm">
       <fieldset class="govuk-fieldset">
       <h1 class="govuk-heading-xl">16 to 19 Mainstream 2023 to 2024</h1>
           <h2 class="govuk-heading-m">Create dataset</h2>
@@ -66,7 +66,7 @@ GOV.UK Prototype Kit
           </label>
 
           <select class="govuk-select" id="providerdataYes" name="data-schema" aria-label="select-data-schema"
-            onchange="enable()"style="width:40%;">
+           style="width:40%;">
             <option></option>
             <option value="draft">16-19 Factors</option>
             <!-- <option value="draft">16-19 Formula Adjustments</option>
@@ -78,7 +78,7 @@ GOV.UK Prototype Kit
           </select>
         </div>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group"id ="enable">
           <label class="govuk-label" for="address-line-1">
             Data set name
           </label>
@@ -88,7 +88,7 @@ GOV.UK Prototype Kit
           <input class="govuk-input" id="address-line-1" name="dataset-name" type="text"style="width:40%;">
         </div>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group"onchange="enable()">
           <label class="govuk-label" for="more-detail">
             Description
           </label>
