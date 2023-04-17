@@ -45,8 +45,9 @@ GOV.UK Prototype Kit
     </div>
   </div>
 
+
   <form action="dataRelationships-1619-2324" method="post" class="form" id="updateDataset" >
-    <div class="govuk-form-group">
+        <div class="govuk-form-group">
       <div class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
         <h4 class="govuk-heading-s">Select data source file for cc</h4>
         <span id="how-contacted-conditional-hint" class="govuk-hint">
@@ -56,21 +57,53 @@ GOV.UK Prototype Kit
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="how-contacted-conditional" name="data-source" type="radio"
-            value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional"/>
+            value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional" checked/>
             <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
             cc <br/>
            
             </label>
           </div>
 
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-          id="conditional-how-contacted-conditional"style="height:220px;">
+          <div class="govuk-radios__conditional"style="height:220px;">
+            <!-- govuk-radios__conditional--hidden"
+            id="conditional-how-contacted-conditional -->
             <h4 class="govuk-heading-s">Select data source version</h4>
             <div class="govuk-radios govuk-radios--small">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name" name="data-version" type="radio" value="month"/>
+                <input class="govuk-radios__input" id="changed-name" name="data-version" type="radio" value="month" checked/>
                 <label class="govuk-label govuk-radios__label" for="changed-name">
                 cc(version 1)
+                <div class="govuk-!-margin-top-1">
+                    <details class="govuk-details  summary-margin-removal" data-module="govuk-details">
+                      <summary class="govuk-details__summary ">
+                        <span class="govuk-details__summary-text">
+                         Details
+                      </span>
+                      </summary>
+                      <div class="govuk-details__text summary-margin-removal">
+                        <p class="govuk-body-s">
+                          <strong>Version notes:</strong> 
+                      </p>
+                        <p class="govuk-body-s">
+                          <strong>Last updated:</strong> 13th feb 2023
+                        10:54am
+                      </p>
+                        <p class="govuk-body-s">
+                          <strong>Last updated by:</strong> Nathan Townsend
+                      </p>
+                      </div>
+                    </details>
+                  </div>
+                </label>
+              </input>
+              
+              </div>
+            </div>
+            <div class="govuk-radios govuk-radios--small">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name1" name="data-version"  onclick="enable()"type="radio" value="month"/>
+                <label class="govuk-label govuk-radios__label" for="changed-name">
+                cc(version 2)
                 <div class="govuk-!-margin-top-1">
                     <details class="govuk-details  summary-margin-removal" data-module="govuk-details">
                       <summary class="govuk-details__summary ">
@@ -105,11 +138,10 @@ GOV.UK Prototype Kit
       </div>
 
       <div class="govuk-grid-row govuk-!-margin-bottom-5">
-        <button class="govuk-button" data-module="govuk-button">
+        <button class="govuk-button" data-module="govuk-button"id="btn"disabled="true">
         Save
       </button>
-        <a href="dataRelationships-1619-2324.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Cancel
+      <a href="dataRelationships-1619-2324.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">        Cancel
       </a>
       </div>
 
@@ -131,5 +163,19 @@ GOV.UK Prototype Kit
   }
 </script>
 
+<script>
+  function enable()
+{
+ if(document.getElementById("changed-name1").value!="")
+ {
+ document.getElementById("btn").disabled=false;
 
+ }
+ else
+ {
+ document.getElementById("btn").disabled=true;
+
+ }
+}
+</script>
 {% endblock %}

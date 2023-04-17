@@ -71,9 +71,9 @@ GOV.UK Prototype Kit
             <h4 class="govuk-heading-s">Select data source version</h4>
             <div class="govuk-radios govuk-radios--small">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name" name="data-version" type="radio" value="month" />
+                <input class="govuk-radios__input" id="changed-name"onclick="enable()" name="data-version" type="radio" value="month" />
                 <label class="govuk-label govuk-radios__label" for="changed-name">
-                1619 FDS data1234(version 2)
+                1619 FDS data1234(version 1)
                 <div class="govuk-!-margin-top-1">
                     <details class="govuk-details  summary-margin-removal" data-module="govuk-details">
                       <summary class="govuk-details__summary ">
@@ -101,9 +101,9 @@ GOV.UK Prototype Kit
               </div>
               <div class="govuk-radios govuk-radios--small">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="changed-name" name="data-version" type="radio" value="month" />
+                  <input class="govuk-radios__input" onclick="enable()" id="changed-name" name="data-version" type="radio" value="month" />
                   <label class="govuk-label govuk-radios__label" for="changed-name">
-                  1619 FDS data1234(version 1)
+                  1619 FDS data1234(version 2)
                   <div class="govuk-!-margin-top-1">
                       <details class="govuk-details  summary-margin-removal" data-module="govuk-details">
                         <summary class="govuk-details__summary ">
@@ -139,7 +139,7 @@ GOV.UK Prototype Kit
     </fieldset>
   
     <div class="govuk-grid-row govuk-!-margin-bottom-5">
-        <button class="govuk-button" data-module="govuk-button" id="btn">
+        <button class="govuk-button" data-module="govuk-button" id="btn"disabled="true">
         Save
         </button>
       
@@ -162,6 +162,20 @@ GOV.UK Prototype Kit
     }
   }
 </script>
+<script>
+  function enable()
+{
+ if(document.getElementById("changed-name").value!="")
+ {
+ document.getElementById("btn").disabled=false;
 
+ }
+ else
+ {
+ document.getElementById("btn").disabled=true;
+
+ }
+}
+</script>
 
 {% endblock %}
