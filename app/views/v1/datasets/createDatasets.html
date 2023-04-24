@@ -44,9 +44,9 @@ GOV.UK Prototype Kit
         <div class="govuk-form-group govuk-!-margin-top-3">
           <label class="govuk-label" for="funding-stream">
             Funding stream
-          </label>
+          </label><br/>
           <span id="funding-stream-selection" class="govuk-hint">
-            Select a funding stream you have permissions for</span>
+            Select a funding stream you have permissions for</span><br/>
           <select class="govuk-select" id="funding-stream" name="fundingStream">
             <option></option>
             <option value="16 to 19">16 to 19</option>
@@ -57,7 +57,7 @@ GOV.UK Prototype Kit
         </div>
 
   </div>
-  <div class="govuk-grid-column-full">
+  <!-- <div class="govuk-grid-column-full">
 
     <dl class="govuk-summary-list govuk-summary-list--no-border">
       <div class="govuk-summary-list__row">
@@ -69,13 +69,13 @@ GOV.UK Prototype Kit
       </div>
 
     </dl>
-  </div>
+  </div> -->
 
   <div class="govuk-grid-column-two-thirds">
 
     <div class="govuk-form-group">
       <label class="govuk-label" for="data-schema">
-        Select data schema
+       Data schema
       </label>
       <select class="govuk-select" id="data-schema" name="data-schema">
         <option value="draft"></option>
@@ -90,7 +90,7 @@ GOV.UK Prototype Kit
 
     <div class="govuk-form-group">
       <label class="govuk-label" for="address-line-1">
-        Data set source file name
+        Dataset source file name
       </label>
       <span id="file-name" class="govuk-hint">
         Use a descriptive unique name other users can understand
@@ -120,7 +120,7 @@ GOV.UK Prototype Kit
       <button class="govuk-button" data-module="govuk-button" onclick="newDataSource()">
         Create data source
       </button>
-      <a class="govuk-link" href="javascript:void(0);" onclick="check()">
+      <button class="govuk-button govuk-button--secondary" onclick="check()">
         Cancel</a>
     </div>
     </form>
