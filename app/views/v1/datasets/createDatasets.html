@@ -79,12 +79,11 @@ GOV.UK Prototype Kit
       </label>
       <select class="govuk-select" id="data-schema" name="data-schema">
         <option value="draft"></option>
-        <option value="draft">APT Adjusted Factors</option>
-        <option value="draft">APT Final Baselines</option>
-        <option value="draft">APT Inputs and Adjustments</option>
-        <option value="draft">APT Local Factors</option>
-        <option value="draft">APT New ISB</option>
-        <option value="draft">APT Proforma</option>
+        <option value="draft">1619 students</option>
+        <option value="draft">1619 nonformulafunding</option>
+        <option value="draft">1619 factors</option>
+        <option value="draft">1619 businesscase</option>
+       
       </select>
     </div>
 
@@ -117,17 +116,18 @@ GOV.UK Prototype Kit
     </fieldset>
 
     <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" onclick="newDataSource()">
+      <button class="govuk-button" data-module="govuk-button" >
+        <!-- onclick="newDataSource()" onclick="check()"-->
         Create data source
       </button>
-      <button class="govuk-button govuk-button--secondary" onclick="check()">
+      <button class="govuk-button govuk-button--secondary" >
         Cancel</a>
     </div>
     </form>
   </div>
 </div>
 
-<script type="application/json" id="upload-data-source">
+<!-- <script type="application/json" id="upload-data-source">
   {
     "fundingStream": {
       "presence": {
@@ -159,7 +159,7 @@ GOV.UK Prototype Kit
     }
 
   }
-</script>
+</script> -->
 
 <script>
   function newDataSource() {
