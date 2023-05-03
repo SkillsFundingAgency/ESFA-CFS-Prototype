@@ -89,6 +89,10 @@ GOV.UK Prototype Kit
                         <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>
                           General annual grant (1)</a>
                       </li>
+                      <li id="filterFundingStreamOption3" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>
+                          16-19 (1)</a>
+                      </li>
                     </ul>
 
                     <!-- // Funding Period Tags -->
@@ -98,13 +102,17 @@ GOV.UK Prototype Kit
                         Funding period</h3>
                     </div>
                     <ul class="filter-tags">
+                      <li id="filterFundingStreamOption6" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this
+                            filter</span>Financial year 2022 to 2023 (1)</a>
+                      </li>
                       <li id="filterFundingStreamOption4" class="hidden">
                         <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this
-                            filter</span>Financial year 2020 to 2021 (1)</a>
+                            filter</span>Financial year 2021 to 2022 (1)</a>
                       </li>
                       <li id="filterFundingStreamOption5" class="hidden">
                         <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this
-                            filter</span>Academic year 2019 to 2020 (1)</a>
+                            filter</span>Academic year 2020 to 2021 (1)</a>
                       </li>
                     </ul>
 
@@ -161,9 +169,16 @@ GOV.UK Prototype Kit
                       </div>
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="showHideChangeF2" name="filterBySchoolResultsFilter2"
-                          onclick="showMeF2('filterFundingStreamOption2'), updateStreamCount()" type="checkbox" disabled>
+                          onclick="showMeF2('filterFundingStreamOption2'), updateStreamCount()" type="checkbox" >
                         <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF2">
                           General annual grant <span>(1)</span>
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF3" name="filterBySchoolResultsFilter3"
+                          onclick="showMeF3('filterFundingStreamOption3'), updateStreamCount()" type="checkbox" >
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF2">
+                         16-19 <span>(1)</span>
                         </label>
                       </div>
                     </div>
@@ -210,9 +225,25 @@ GOV.UK Prototype Kit
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="showHideChangeF5" name="filterByAcademicYear2019"
                           onclick="showMeF5('filterFundingStreamOption5'), updatePeriodCount()" type="checkbox" 
-                          value="hmrc" disabled>
+                          value="hmrc" >
                         <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF5">
                           Academic year 2019 to 2020 <span>(1)</span>
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF5" name="filterByAcademicYear2019"
+                          onclick="showMeF5('filterFundingStreamOption5'), updatePeriodCount()" type="checkbox" 
+                          value="hmrc" >
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF5">
+                          Academic year 2020 to 2021 <span>(1)</span>
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF5" name="filterByAcademicYear2019"
+                          onclick="showMeF5('filterFundingStreamOption5'), updatePeriodCount()" type="checkbox" 
+                          value="hmrc" >
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF5">
+                          Academic year 2021 to 2022 <span>(1)</span>
                         </label>
                       </div>
                     </div>
