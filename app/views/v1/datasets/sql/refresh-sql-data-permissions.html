@@ -16,19 +16,15 @@ GOV.UK Prototype Kit
         Manage data
       </a>
     </li>
-      <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="refresh-sql-v2">
-        Funding stream, period and specification
-      </a>
-    </li>
+     
   </ol>
 </div>
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-notification-banner govuk-!-padding-2 govuk-!-margin-bottom-9" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
+    <div class="govuk-notification-banner govuk-!-padding-2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <!-- <div class="govuk-notification-banner__header">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-three-quarters">
                     <h2 class="govuk-notification-banner__tag govuk-tag govuk-tag--blue govuk-!-margin-0 govuk-!-margin-right-2" id="govuk-notification-banner-title">
@@ -42,7 +38,7 @@ GOV.UK Prototype Kit
                     <a class="govuk-notification-banner__link right-align" href="#">Read more</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="govuk-notification-banner__content">
             <ul class="govuk-list govuk-list--bullet">
                 <li>Can push CFS data into SQL for QA</li>
@@ -54,8 +50,9 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-margin-bottom-5">
         <div class="govuk-grid-column-full">
             <h1 class="govuk-heading-l">
-            Available SQL data for specification 2
+            Export data to SQL
           </h1>
+          
         </div>
     </div>
 
@@ -63,7 +60,7 @@ GOV.UK Prototype Kit
         <div class="govuk-grid-column-two-thirds">
             <form action="/v1/datasets/sql/loading-spinner-full">
                 <h2 class="govuk-heading-l">Latest calculation results</h2>
-                <p class="govuk-body">Short explanation about what the data contains.</p>
+                <p class="govuk-body">Includes funding line,template calculation and additional calculation values for providers from the latest specification calculation run.</p>
                 <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
                     <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text">
@@ -91,7 +88,7 @@ GOV.UK Prototype Kit
                         </dl>
                     </div>
                 </details>
-                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                <button class="govuk-button" data-module="govuk-button">
                 Refresh SQL data
                 </button>
             </form>
@@ -102,11 +99,37 @@ GOV.UK Prototype Kit
         <div class="govuk-grid-column-two-thirds">
             <form action="/v1/datasets/sql/loading-spinner-full">
                 <h2 class="govuk-heading-l">Current state allocation results</h2>
-                <p class="govuk-body">Short explanation about what the data contains.</p>
-                <div class="govuk-inset-text">
-                This specification has not been chosen for funding therefore you are unable to create the SQL data.           
-                </div>
-
+                <p class="govuk-body">Includes funding line, template calculation and profile values for draft, approved, updated and released provider allocations.</p>
+                <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                        Additional details
+                    </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <dl class="govuk-summary-list govuk-summary-list--no-border">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                Last SQL refresh
+                            </dt>
+                                <dd class="govuk-summary-list__value">
+                                8 October 2020 10:13am
+                            </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                Last funding data change
+                            </dt>
+                                <dd class="govuk-summary-list__value">
+                                11 October 2020 10:00am
+                            </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </details>
+                <button class="govuk-button" data-module="govuk-button">
+                Refresh SQL data
+                </button>
             </form>
         </div>
     </div>
@@ -115,11 +138,37 @@ GOV.UK Prototype Kit
         <div class="govuk-grid-column-two-thirds">
             <form action="/v1/datasets/sql/loading-spinner-full">
                 <h2 class="govuk-heading-l">Latest released state allocation results</h2>
-                <p class="govuk-body">Short explanation about what the data contains.</p>
-                <div class="govuk-inset-text">
-                This specification has not been chosen for funding therefore you are unable to create the SQL data.           
-                </div>
-                
+                <p class="govuk-body">Includes the funding line, template calculation and profile values for the latest released version of the provider allocations.</p>
+                <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                        Additional details
+                    </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <dl class="govuk-summary-list govuk-summary-list--no-border">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                Last SQL refresh
+                            </dt>
+                                <dd class="govuk-summary-list__value">
+                                8 October 2020 10:13am
+                            </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                Last funding data change
+                            </dt>
+                                <dd class="govuk-summary-list__value">
+                                11 October 2020 10:00am
+                            </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </details>
+                <button class="govuk-button" data-module="govuk-button">
+                Refresh SQL data
+                </button>
             </form>
         </div>
     </div>
