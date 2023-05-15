@@ -73,36 +73,37 @@ GOV.UK Prototype Kit
           <input class="govuk-input" id="address-line-1" name="dataset-name" type="text"style="width:40%;">
         </div>
 
-        <div class="govuk-form-group"id ="enable"onchange="enable()">
+        <div class="govuk-form-group">
           <label class="govuk-label" for="more-detail">
             Description
           </label>
           <span id="event-name-hint" class="govuk-hint">
             Please provide a description for the dataset <br/>
           </span>
-          <textarea class="govuk-textarea" id="more-detail" name="description" rows="8"
-            aria-label="more-detail-hint" ></textarea>
+          <textarea class="govuk-textarea" id ="textarea" name="description" rows="8"
+            aria-label="more-detail-hint" onKeyUp="if(this.value.length > 0) document.getElementById('btn').disabled = false ;document.getElementById('save-add').disabled = false;" ></textarea>
         </div>
 
       
       </fieldset>
 
       <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" disabled="true">Save</button>
+      <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" disabled >Save</button>
 
      
-      
     </form>
+   
     <form action="choose-fds-funding-stream1"  method="post" class="form">
 
     <div class="govuk-button-group">
-    <button href="choose-fds-funding-stream1.html" class="govuk-button govuk-button--secondary" onclick='reset()' id="save-add"  disabled="true">
+    <button href="choose-fds-funding-stream1.html" class="govuk-button govuk-button--secondary"  id="save-add"  disabled>
       Save and add another
     </button>
     <a class="govuk-link govuk-button govuk-button--warning" href="../fundingLineStructure-chosen1#past-month" onclick="check()">
       Cancel</a>
       </div>
       </form>
+    
   </div>
 </div>
 </div>
@@ -112,19 +113,17 @@ GOV.UK Prototype Kit
   // function newDataset() {
   //   sessionStorage.setItem('new data', 'true');
   // }
-function enable()
-{
-  if(document.getElementById("enable").value!="")
-  {
-  document.getElementById("btn").disabled=false;
-  document.getElementById("save-add").disabled=false;
-  }
-  else
-  {
-  document.getElementById("btn").disabled=true;
-  document.getElementById("save-add").disabled=true;
-  }
-}
+// 
+$('#textarea').on('keypress keyup keydown', function () { 
+  if ($('#textarea').val() == "" ) { 
+    $('#btn').prop('disabled', true); 
+    $('#save-add').prop('disabled', true)
+  } 
+  else {   
+    $('#btn').prop('disabled', false); 
+    $('#save-add').prop('disabled', false); 
+  } 
+});
   function showproviderdata() {
     var str = document.getElementById("providerdataYes").value;
     var n = str.includes("FDZ");
@@ -135,10 +134,12 @@ function enable()
     else {
       document.getElementById("providerdata").classList.add("govuk-visually-hidden")
     }
+
+   
   }
 
 </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="application/json" id="create-data-set">
   {
       "data-schema": {

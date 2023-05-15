@@ -87,56 +87,39 @@ GOV.UK Prototype Kit
           <input class="govuk-input" id="address-line-1" name="dataset-name" type="text"style="width:40%;">
         </div>
 
-        <div class="govuk-form-group"onchange="enable()">
+        <div class="govuk-form-group">
           <label class="govuk-label" for="more-detail">
             Description
           </label>
           <span id="event-name-hint" class="govuk-hint">
             Please provide a description for the dataset <br/>
           </span>
-          <textarea class="govuk-textarea" id="more-detail" name="description" rows="8"
-            aria-label="more-detail-hint"></textarea>
+          <textarea class="govuk-textarea" id ="textarea" name="description" rows="8"
+            aria-label="more-detail-hint" onKeyUp="if(this.value.length > 0) document.getElementById('btn').disabled = false ;document.getElementById('save-add').disabled = false;" ></textarea>
         </div>
 
-        <!-- <div class="govuk-form-group govuk-visually-hidden" id="providerdata">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h2 class="govuk-heading-m">
-              Set as provider data
-            </h2>
-          </legend>
-          <div class="govuk-radios govuk-radios--inline">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="changed-name">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                No
-              </label>
-            </div>
-          </div>
-        </div> -->
+      
       </fieldset>
 
       <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" disabled="true">Save</button>
+      <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" disabled >Save</button>
 
-     
      
     </form>
+   
+    <form action="choose-fds-funding-stream1"  method="post" class="form">
+
     <div class="govuk-button-group">
-    <button href="choose-fds-funding-stream1.html" class="govuk-button govuk-button--secondary" onclick='reset()' id="save-add"  disabled="true">
+    <button href="choose-fds-funding-stream1.html" class="govuk-button govuk-button--secondary"  id="save-add"  disabled>
       Save and add another
     </button>
-    <a class="govuk-link govuk-button govuk-button--warning" href="../fundingLineStructure-chosen2#past-month" onclick="check()">
+    <a class="govuk-link govuk-button govuk-button--warning" href="../fundingLineStructure-chosen1#past-month" onclick="check()">
       Cancel</a>
       </div>
-    </div>
+      </form>
+    
   </div>
-
+</div>
 </div>
 
 <script>
@@ -144,19 +127,17 @@ GOV.UK Prototype Kit
   // function newDataset() {
   //   sessionStorage.setItem('new data', 'true');
   // }
-function enable()
-{
-  if(document.getElementById("providerdataYes").value!="")
-  {
-  document.getElementById("btn").disabled=false;
-  document.getElementById("save-add").disabled=false;
-  }
-  else
-  {
-  document.getElementById("btn").disabled=true;
-  document.getElementById("save-add").disabled=true;
-  }
-}
+// 
+$('#textarea').on('keypress keyup keydown', function () { 
+  if ($('#textarea').val() == "" ) { 
+    $('#btn').prop('disabled', true); 
+    $('#save-add').prop('disabled', true)
+  } 
+  else {   
+    $('#btn').prop('disabled', false); 
+    $('#save-add').prop('disabled', false); 
+  } 
+});
   function showproviderdata() {
     var str = document.getElementById("providerdataYes").value;
     var n = str.includes("FDZ");
@@ -192,6 +173,8 @@ function enable()
       }
   }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
   document.getElementById("save-add").onclick = function() {
     $(document).ready(function(){
