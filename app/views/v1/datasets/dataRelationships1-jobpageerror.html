@@ -1,0 +1,210 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Home
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manageData">
+        Manage data
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      <a class="govuk-breadcrumbs__link" href="datasetRelationships.html">
+        Map data sources to data sets for a specification
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      <a class="govuk-breadcrumbs__link" href="dataRelationships1-fds">
+        16 to 19 Mainstream 2022 to 2023
+      </a>
+    </li>
+    
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+ <div class="govuk-grid-row govuk-!-margin-bottom-5">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Mainstream 2022 to 2023</h1>
+          <span class="govuk-caption-l">Academies and Schools Year 2022-23</span>
+        </div>
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+     <div>
+     <br/><br/>
+        <div class="job-notification-banner " style="width:100%;" id="success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <div class="govuk-notification-banner__header ">
+              
+            <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
+              <strong class="govuk-tag govuk-tag--orange">
+               ATTENTION 
+              </strong> <strong id="test">Job in progress: Mapping FDS-Data-error dataset: Mapping dataset xxxx with relationship yyyy 
+               <span id="dots">.</span>
+                 </strong> <a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction()" id="myBtn">Read more</a>
+              <br/><br/><br/>
+              <span id="more">Job initiated by Robert Sparks on  24 March 2023 11:10 AM<br/><br/>
+                <strong>Last update:</strong>  24 March 2023 11:10 AM
+             </span>
+  
+            </h2>
+           
+           </div>
+          </div>
+          </div>
+          <br />
+          <div class="job-notification-banner govuk-visually-hidden " style="width:100%;" id="success1" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <div class="govuk-notification-banner__header ">
+                
+              <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
+                <strong class="govuk-tag govuk-tag--orange">
+                 <strong >ATTENTION </strong>
+                </strong> <strong >Job in progress: Calculating calculations: Mapping dataset xxxx with relationship yyyy <span id="dots2">.</span> 
+                </strong> <a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction2()" id="myBtn2">Read more</a>
+                <br/><br/>
+                <span id="more2">Job initiated by Robert Sparks on  24 March 2023 11:10 AM<br/><br/>
+                  <strong>Last update:</strong>  24 March 2023 11:10 AM
+               </span>
+    
+              </h2>
+             
+             </div>
+            </div>
+            </div>
+            <br />
+            <div class="govuk-visually-hidden  govuk-error-summary" style="width:100%;" id="success2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+              <div class="govuk-notification-banner__header">
+                <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
+                   <strong class="govuk-tag govuk-tag--red"style="float:left;">
+                    FAILED
+                  </strong> <strong class="govuk-grid-column-three-quarters">Job failed: Creating calculations:Mapping dataset xxxx with relationship yyyy .
+                  <span id="dots1">.</span> </strong> 
+                  <a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction1()" id="myBtn1">Read more</a>
+                  <br/><br/>
+                  <span id="more1" ><strong> Calculation run failed </strong><br/><br/>
+                  Job initiated by Robert Sparks on  24 March 2023 11:57 AM <br/><br/>
+                  Job ID: 41cc8ea5-4606-4978-b5c3-406dfc8ad550 <br/><br/>
+                    <strong>Completed :</strong>  24 March 2023 11:57 AM </span>
+                </h2>
+               </div>
+              </div>
+              </div>
+           </div> 
+           <form>
+          
+                     
+          </form>
+          <a  href ="dataRelationships1-error-page"class="govuk-button govuk-button--secondary" data-module="govuk-button" >
+          Back
+          </a>
+        </div>  
+  <script>
+    setTimeout(function(){
+        document.getElementById('success').style.display = 'none';
+        document.getElementById('map').style.display = 'none';
+        document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
+
+      }, 3000);
+
+
+      
+    </script>
+
+      <script>
+      setTimeout(function(){
+        document.getElementById('success1').classList.remove('govuk-visually-hidden').style.display = 'none';
+        document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
+      },3000);
+      // location.href = 'app/views/v1/datasets/dataRelationships1-fds.html';
+           
+     
+
+      </script>
+   <script>
+    setTimeout(function(){
+     
+      document.getElementById('success2').classList.remove('govuk-visually-hidden').style.display = 'block';
+    },3000);
+    
+    setTimeout(function(){
+
+        window.location.href = "dataRelationships1-error-page";
+       
+      },8000);  
+    </script>
+      
+      <script>
+            // document.getElementById('success1').classList.remove('govuk-visually-hidden');
+     // document.getElementById('success1').classList.remove('govuk-visually-hidden').style.display = 'block';
+  function myFunction() 
+  {
+
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+function myFunction1() 
+  {
+
+  var dots1 = document.getElementById("dots1");
+  var moreText1 = document.getElementById("more1");
+  var btnText1 = document.getElementById("myBtn1");
+
+  if (dots1.style.display === "none") {
+    dots1.style.display = "inline";
+    btnText1.innerHTML = "Read more"; 
+    moreText1.style.display = "none";
+  } else {
+    dots1.style.display = "none";
+    btnText1.innerHTML = "Read less"; 
+    moreText1.style.display = "inline";
+  }
+}
+function myFunction2() 
+  {
+
+  var dots2 = document.getElementById("dots2");
+  var moreText2 = document.getElementById("more2");
+  var btnText2 = document.getElementById("myBtn2");
+
+  if (dots2.style.display === "none") {
+    dots2.style.display = "inline";
+    btnText2.innerHTML = "Read more"; 
+    moreText2.style.display = "none";
+  } else {
+    dots2.style.display = "none";
+    btnText2.innerHTML = "Read less"; 
+    moreText2.style.display = "inline";
+  }
+}
+</script>
+
+
+  
+
+</script>
+{% endblock %}

@@ -1,0 +1,591 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Home
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manageData">
+        Manage data
+      </a>
+    </li>
+
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">View FDS data source files</h1>
+    <span class="govuk-caption-l">View updated FDS data source files</span>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <!-- <div class="govuk-grid-column-two-thirds">
+    <a href="" class="govuk-button govuk-button--primary button-createSpecification"
+      data-module="govuk-button">
+      View updated FDS data source files
+    </a>
+  </div> -->
+  <div class="govuk-grid-column-one-third">
+    <br>
+    <div class="pagination__summary"></div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third position-sticky">
+    <div class="filterScroll">
+    <div class="govuk-form-group filterbyContainer">
+        <div class="govuk-form-group filterSearch">
+          <label class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+            for="mainContentSearch">Search</label>
+
+          <!-- //Clear search  -->
+
+          <a href=""
+            class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+            onclick="
+                        document.getElementById('mainContentSearch').value = ''
+                        ">
+            Clear search</a>
+
+
+          <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="mainContentSearch" autocomplete="off"
+            name="searchBox" type="text">
+        </div>
+    </div>
+
+    <div class="govuk-form-group filterbyContainer">
+        <div class="selected-filters-background">
+          <div class="govuk-form-group filterSearch">
+            <h2 class="govuk-heading-s govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+              for="filter-by-type">Selected filters</h2>
+            <a href=""
+              class="govuk-link govuk-!-display-inline-block govuk-!-margin-top-2 govuk-!-margin-bottom-2 right-align"
+              onclick="">
+              Clear filters</a>
+
+            <div id="showHideText">
+              <p class="govuk-body-s">No filters selected</p>
+            </div>
+
+            <div class="filtersSelected">
+              <div class="filter">
+                <div class="filter__content">
+                  <div class="filter__selected">
+
+                    <!-- // Funding Stream Tags -->
+
+                    <div class="hidden" id="fundingStreamText">
+                      <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                        Funding stream</h3>
+                    </div>
+                    <ul class="filter-tags">
+                      <!-- <li id="filterFundingStreamOption1" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span> PE
+                          and
+                          sports grant (1)</a>
+                      </li> -->
+                      <!-- <li id="filterFundingStreamOption2" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>
+                          General annual grant (1)</a>
+                      </li> -->
+                      <li id="filterFundingStreamOption3" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>
+                          16 to 19 (1)</a>
+                      </li>
+                      <!-- <li id="filterFundingStreamOption4" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>
+                          14 to 16 (1)</a>
+                      </li> -->
+                    </ul>
+
+                    <!-- // Funding Period Tags -->
+
+                    <div class="hidden" id="statusText">
+                      <h3 class="govuk-hint govuk-body govuk-!-font-size-16 govuk-!-margin-0">
+                        Data schema</h3>
+                    </div>
+                    <ul class="filter-tags">
+                      <li id="filterFundingStreamOption5" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this
+                            filter</span>16-19 Factors (3)</a>
+                      </li>
+                      <!-- <li id="filterFundingStreamOption6" class="hidden">
+                        <a class="filter__tag" href=""><span class="govuk-visually-hidden">Remove this
+                            filter</span>General annual grant (0)</a>
+                      </li> -->
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-visually-hidden">
+          Filter your page results.
+        </legend>
+        <div class="govuk-form-group filterSearch">
+          <div class="filterContainer">
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                      id="accordion-with-summary-sections-heading-1">
+                      <span class="govuk-visually-hidden">Filter by</span>
+                      Funding stream
+                    </span>
+                  </h2>
+                  <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                    id="accordion-with-summary-sections-summary-1">
+                    <span id="y">0</span> selected
+                  </div>
+                </div>
+                <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content"
+                  aria-labelledby="accordion-with-summary-sections-heading-1">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                      Search for a funding stream
+                    </legend>
+                    <div class="govuk-form-group filterSearch">
+                      <label class="govuk-label filterLabel" for="searchFundingStream">
+                        Search for funding stream
+                      </label>
+                      <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="searchFundingStream"
+                        autocomplete="off" name="searchBox" type="text">
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                      <!-- <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                        <input class="govuk-checkboxes__input" id="showHideChange" name="filterByGAG"
+                          onclick="showMe('filterFundingStreamOption1'), updateStreamCount()" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChange">
+                          General annual grant <span>(1)</span>
+                        </label>
+                      </div> -->
+                      <!-- <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF2" name="filterByPNA"
+                          onclick="showMeF2('filterFundingStreamOption2'), updateStreamCount()" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF2">
+                          Academy Pupil Number Adjustment <span>(1)</span>
+                        </label>
+                      </div> -->
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input checkbox2" id="showHideChangeF3" name="filterBy16to19"
+                          onclick="showMeF3('filterFundingStreamOption3'), updateStreamCount()" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF3">
+                          16 to 19 <span>(1)</span>
+                        </label>
+                      </div>
+                      <!-- <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF4" name="filterBy14to16"
+                          onclick="showMeF4('filterFundingStreamOption4'), updateStreamCount()" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF4">
+                          14 to 16 <span>(1)</span>
+                        </label>
+                      </div> -->
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+
+              <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button govuk-body govuk-!-font-size-19"
+                      id="accordion-with-summary-sections-heading-1">
+                      <span class="govuk-visually-hidden">Filter by</span>
+                      Data schema
+                    </span>
+                  </h2>
+                  <div class="govuk-accordion__section-summary govuk-body govuk-body-s"
+                    id="accordion-with-summary-sections-summary-1">
+                    <span id="periodCount1">0</span> selected
+                  </div>
+                </div>
+                <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content"
+                  aria-labelledby="accordion-with-summary-sections-heading-1">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                      Search for a data schema
+                    </legend>
+                    <div class="govuk-form-group filterSearch">
+                      <label class="govuk-label filterLabel" for="searchFundingPeriod">
+                        Search for data schema
+                      </label>
+                      <input class="govuk-input filterSearchInput govuk-!-margin-bottom-2" id="searchFundingPeriod"
+                        autocomplete="off" name="searchFundingPeriod" type="text">
+                    </div>
+                    <div class="govuk-checkboxes govuk-checkboxes--small filterbyCheckbox" id="filterBySchoolResults">
+                      <div class="govuk-checkboxes__item govuk-!-margin-top-2">
+                        <input class="govuk-checkboxes__input checkbox1" id="showHideChangeF5" name="filterByPESportsGrant"
+                          onclick="showMeF5('filterFundingStreamOption5'), updatePeriodCount()" type="checkbox"
+                          value="hmrc">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF5">
+                         16-19 Factors <span>(3)</span>
+                        </label>
+                      </div>
+                      <!-- <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="showHideChangeF6" name="filterByGeneralAnnualGrant"
+                          onclick="showMeF6('filterFundingStreamOption6'), updatePeriodCount()" type="checkbox" disabled
+                          value="hmrc">
+                        <label class="govuk-label govuk-checkboxes__label" for="showHideChangeF6">
+                          General annual grant <span>(0)</span>
+                        </label>
+                      </div> -->
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Data source</th>
+          <th scope="col" class="govuk-table__header">Last updated</th>
+          <!-- <th scope="col" class="govuk-table__header">Download</th> -->
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body" id="mainContentResults">
+     
+        <tr class="govuk-table__row" id="DatasourceRow1">
+          <th scope="row" class="govuk-table__header"><a href="" >FDS Automation_TestCase9 </a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow1Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow1Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Students</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> Automation_TestCase6
+                    year</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 2</p>
+
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Vishakha KAMBLE</p>
+
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong>Create new version for Test 6</p>
+                  <p class="govuk-body"><a class="govuk-link" href="datasetfdshistory">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
+
+          <td class="govuk-table__cell">19 April 2023 1:30PM</td>
+          <td class="govuk-table__cell" id="DatasourceRow1Download">
+            <!-- <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">1920Factors.xlsx </a>
+              </p>
+            </div> -->
+          </td>
+        </tr>
+        <tr class="govuk-table__row" id="DatasourceRow1">
+          <th scope="row" class="govuk-table__header"><a href="" >FDS 102601</a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow1Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow1Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> Factors data for 1920 allocation
+                    year</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
+
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Vishakha KAMBLE</p>
+
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                  <p class="govuk-body"><a class="govuk-link" href="datasetfdshistory.html">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
+
+          <td class="govuk-table__cell">19 April 2023  11:45am</td>
+          <td class="govuk-table__cell" id="DatasourceRow1Download">
+            <!-- <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">1920Factors.xlsx </a>
+              </p>
+            </div> -->
+          </td>
+        </tr>
+        <tr class="govuk-table__row" id="DatasourceRow1">
+          <th scope="row" class="govuk-table__header"><a href="" >FDS DS_Factor2</a>
+            <div class="govuk-!-margin-top-4" id="DatasourceRow1Details">
+              <details class="govuk-details govuk-!-margin-top-0" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Data source details
+                  </span>
+                </summary>
+                <div class="govuk-details__text" id="DatasourceRow1Text">
+                  <p class="govuk-body-s"> <strong>Data schema:</strong> 16-19 Factors</p>
+                  <p class="govuk-body-s"><strong>Data schema description:</strong> Factors data for 1920 allocation
+                    year</p>
+                  <p class="govuk-body-s"><strong>Data source version:</strong> 3</p>
+
+                  <p class="govuk-body-s"><strong>Last updated by:</strong> Vishakha KAMBLE</p>
+
+                  <p class="govuk-body-s"><strong>Change note for this version:</strong> New data</p>
+                  <p class="govuk-body"><a class="govuk-link" href="datasetfdshistory">View all versions</a></p>
+                </div>
+              </details>
+            </div>
+          </th>
+
+          <td class="govuk-table__cell">13 April 2023  10:54am</td>
+          <td class="govuk-table__cell" id="DatasourceRow1Download">
+            <!-- <div>
+              <p class="govuk-body">
+                <a class="govuk-link" target="_self" href="">1920Factors.xlsx </a>
+              </p>
+            </div> -->
+          </td>
+        </tr>
+
+       
+      </tbody>
+    </table>
+
+   
+
+    <nav role="navigation" aria-label="Pagination">
+      <div class="pagination__summary">Showing 1 - 3 of 10 results</div>
+      <ul class="pagination">
+        <!-- <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
+              aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li> -->
+        <li class="pagination__item"><a class="pagination__link  current" href="#0" aria-current="true"
+          aria-label="Page 1, current page">1</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 3">3</a></li>
+        <!-- <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li> -->
+        <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span
+              aria-hidden="true" role="presentation">&raquo;</span></a></li>
+      </ul>
+    </nav>
+    <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+          width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>Back to top
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.onload = function () {
+    let newDataSource = sessionStorage.getItem('new data source file')
+    let tr = document.getElementById('newDataSource')
+    console.log(newDataSource)
+    if (newDataSource === 'true') {
+      tr.style.display = " ";
+    } else {
+      tr.style.display = "none";
+    }
+  }
+
+  // Show me the first filter  
+
+  function showMe(box) {
+
+    var chboxs = document.getElementsByName("filterByGAG");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+  // Show me the second filter 
+
+
+  function showMeF2(box) {
+
+    var chboxs = document.getElementsByName("filterByPNA");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+  // Show me the third filter 
+
+  function showMeF3(box) {
+
+    var chboxs = document.getElementsByName("filterBy16to19");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+  function showMeF4(box) {
+
+    var chboxs = document.getElementsByName("filterBy14to16");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+  // Show me status
+
+  function showMeF5(box) {
+
+    var chboxs = document.getElementsByName("filterByPESportsGrant");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+  function showMeF6(box) {
+
+    var chboxs = document.getElementsByName("filterByGeneralAnnualGrant");
+    var vis = "none";
+    for (var i = 0; i < chboxs.length; i++) {
+      if (chboxs[i].checked) {
+        vis = "block";
+        break;
+      }
+    }
+    document.getElementById(box).style.display = vis;
+  }
+
+
+  // Counter for checkboxes in funding stream
+
+  var updateStreamCount = function () {
+    var x = $(".checkbox2:checked").length;
+    document.getElementById("y").innerHTML = x;
+  };
+
+  // Counter for checkboxes in funding period 
+
+  var updatePeriodCount = function () {
+    var x = $(".checkbox1:checked").length;
+    document.getElementById("periodCount1").innerHTML = x;
+  };
+
+  //Funding Stream 
+
+  document.getElementById('showHideChange').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('fundingStreamText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('fundingStreamText').style.display = "none";
+    }
+
+  };
+  document.getElementById('showHideChangeF2').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('fundingStreamText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('fundingStreamText').style.display = "none";
+    }
+  };
+  document.getElementById('showHideChangeF3').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('fundingStreamText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('fundingStreamText').style.display = "none";
+    }
+  };
+
+  document.getElementById('showHideChangeF4').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('fundingStreamText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('fundingStreamText').style.display = "none";
+    }
+  };
+
+  //Data schema 
+
+  document.getElementById('showHideChangeF5').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('statusText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('statusText').style.display = "none";
+    }
+  };
+
+  document.getElementById('showHideChangeF6').onchange = function () {
+    if ($('input[type=checkbox]:checked').length > 0) {
+      document.getElementById('showHideText').style.display = "none";
+      document.getElementById('statusText').style.display = "block";
+    } else {
+      document.getElementById('showHideText').style.display = "block";
+      document.getElementById('statusText').style.display = "none";
+    }
+  };
+</script>
+
+
+{% endblock %}
