@@ -40,19 +40,21 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
         16 to 19 Mainstream 2022 to 2023
-      <span class="govuk-caption-l">Academies and Schools Year 2022-23</span>
+      <span class="govuk-caption-l">Academies aschool year 2022 to 2023</span>
       </h1>
     </div>
  
   </div>
-  <!-- dataRelationships1-map-fds -->
-  <form action="dataRelationships1-jobpage1" method="post" class="form" id="updateDataset" >
+  <!-- dataRelationships2-map-fds -->
+  <form action="dataRelationships1-jobpage2" method="post" class="form" id="updateDataset" >
     <div class="govuk-form-group">
       <div class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-        <h4 class="govuk-heading-s">Select data source file for FDS data</h4>
+        <h4 class="govuk-heading-s">Select data source file for FDS-data</h4>
         <span id="how-contacted-conditional-hint" class="govuk-hint">
         Select one option
       </span>
+     
+
   
     <br/> <br/>
         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -60,22 +62,21 @@ GOV.UK Prototype Kit
             <input class="govuk-radios__input" id="how-contacted-conditional" name="data-source" type="radio"
             value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional" />
             <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
-            <!-- 1619 FDS data 1234 <br/> -->
-            16-19 Students 2223
-            <h4 class="govuk-heading-s">Description: <label class="govuk-label govuk-radios__label">16-19 Students 2223</label>
+              16-19 Students 2223 <br/>
+            <h4 class="govuk-heading-s">Description: <label class="govuk-label govuk-radios__label">1619 FDS Data</label>
           </h4>
             </label>
           </div>
 
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"id="conditional-how-contacted-conditional"
+          <div class="govuk-radios__conditional "
          style="height:220px;">
          <!-- id="conditional-how-contacted-conditional" govuk-radios__conditional--hidden -->
             <h4 class="govuk-heading-s">Select data source version</h4>
             <div class="govuk-radios govuk-radios--small">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name"onclick="enable()" name="data-version" type="radio" value="month" />
+                <input class="govuk-radios__input"  id="changed-name" name="data-version" type="radio" value="month" checked/>
                 <label class="govuk-label govuk-radios__label" for="changed-name">
-                  <!-- 1619-AS-2223_2023-03-09_1 -->16-19 Students 2223 (version 1)
+                  16-19 Students 2223 (version 1)
                 <div class="govuk-!-margin-top-1">
                     <details class="govuk-details  summary-margin-removal" data-module="govuk-details">
                       <summary class="govuk-details__summary ">
@@ -85,10 +86,10 @@ GOV.UK Prototype Kit
                       </summary>
                       <div class="govuk-details__text summary-margin-removal">
                         <p class="govuk-body-s">
-                          <strong>Version notes:</strong> 1 
+                          <strong>Version notes:</strong> 1
                       </p>
                         <p class="govuk-body-s">
-                          <strong>Last updated:</strong>  24 March 2023 
+                          <strong>Last updated:</strong> 13th February 2023
                         10:54am
                       </p>
                         <p class="govuk-body-s">
@@ -103,7 +104,7 @@ GOV.UK Prototype Kit
               </div>
               <div class="govuk-radios govuk-radios--small">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" onclick="enable()" id="changed-name" name="data-version" type="radio" value="month" />
+                  <input class="govuk-radios__input" id="changed-name1" name="data-version"onclick="enable()" type="radio" value="month" />
                   <label class="govuk-label govuk-radios__label" for="changed-name">
                     16-19 Students 2223 (version 2)
                   <div class="govuk-!-margin-top-1">
@@ -118,8 +119,8 @@ GOV.UK Prototype Kit
                             <strong>Version notes:</strong> 2
                         </p>
                           <p class="govuk-body-s">
-                            <strong>Last updated:</strong>  24 March 2023 
-                          10:54am
+                            <strong>Last updated:</strong> 13th February 2023
+                          11:54am
                         </p>
                           <p class="govuk-body-s">
                             <strong>Last updated by:</strong> Robert Sparks
@@ -141,7 +142,7 @@ GOV.UK Prototype Kit
     </fieldset>
   
     <div class="govuk-grid-row govuk-!-margin-bottom-5">
-        <button class="govuk-button" data-module="govuk-button" id="btn"disabled="true">
+        <button class="govuk-button" data-module="govuk-button" id="btn" disabled="true">
         Save
         </button>
       
@@ -167,16 +168,16 @@ GOV.UK Prototype Kit
 <script>
   function enable()
 {
- if(document.getElementById("changed-name").value!="")
- {
- document.getElementById("btn").disabled=false;
-
- }
- else
- {
- document.getElementById("btn").disabled=true;
-
- }
+  if(document.getElementById("changed-name1").value!="")
+  {
+  document.getElementById("btn").disabled=false;
+ 
+  }
+  else
+  {
+  document.getElementById("btn").disabled=true;
+ 
+  }
 }
 </script>
 
