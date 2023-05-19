@@ -39,17 +39,17 @@
     <div class="govuk-grid-column-full">
      <div>
      <br/><br/>
-        <div class="job-notification-banner govuk-visually-hidden " style="width:100%;" id="success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="job-notification-banner" style="width:100%;" id="success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
           <div class="govuk-notification-banner__header">
             <div class="govuk-notification-banner__header ">
               
             <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
               <strong class="govuk-tag govuk-tag--orange">
                ATTENTION 
-              </strong> <strong id="test">Job in progress: Mapping FDS-Data-test dataset: Mapping dataset xxxx with relationship yyyy 
-               <span id="dots">.</span>
-                 </strong> <a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction()" id="myBtn">Read more</a>
-              <br/><br/><br/>
+              </strong> <strong id="test">Job in progress: Mapping FDS-Data-test dataset: Mapping dataset e353cc00 2bb3 4869 9eaa 6faa1dc32 with 
+              </strong> <a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction()" id="myBtn">Read more</a><strong>relationship b1201071 a039 4557 8e28 4a9f34c80
+               <span id="dots">.</span></strong>
+           <br/><br/><br/>
               <span id="more">Job initiated by Robert Sparks on 24 March 2023  11:10 AM<br/><br/>
                 <strong>Last update:</strong> 24 March 2023 11:57 AM 11:10 AM
              </span>
@@ -60,15 +60,15 @@
           </div>
           </div>
           <br />
-          <div class="job-notification-banner govuk-visually-hidden " style="width:100%;" id="success1" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="job-notification-banner govuk-visually-hidden" style="width:100%;" id="success1" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
             <div class="govuk-notification-banner__header">
               <div class="govuk-notification-banner__header ">
                 
               <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
                 <strong class="govuk-tag govuk-tag--orange">
                  <strong >ATTENTION </strong>
-                </strong> <strong >Job in progress: Calculating calculations: Mapping dataset xxxx with relationship yyyy <span id="dots2">.</span> 
-                </strong> <a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction2()" id="myBtn2">Read more</a>
+                </strong> <strong >Job in progress: Calculating calculations: Mapping dataset e353cc00 2bb3 4869 9eaa 6faa1dc32 with  
+                </strong> <a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction2()" id="myBtn2">Read more</a><strong>relationship b1201071 a039 4557 8e28 4a9f34c80<span id="dots2">.</span> </strong>
                 <br/><br/>
                 <span id="more2">Job initiated by Robert Sparks on 24 March 2023 11:57 AM AM<br/><br/>
                   <strong>Last update:</strong> 24 March 2023 11:57 AM 11:10 AM
@@ -362,17 +362,17 @@
 
       <script>
       setTimeout(function(){
-        document.getElementById('success1').classList.add('govuk-visually-hidden').style.display = 'none';
+        document.getElementById('success1').classList.remove('govuk-visually-hidden').style.display = '';
         document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
       },3000);
       setTimeout(function(){
-        document.getElementById('success1').classList.add('govuk-visually-hidden').style.display = 'hidden';
-      },3000);
+        document.getElementById('success1').classList.add('govuk-visually-hidden').style.display = 'block';
+      },7000);
       </script>
    
       <script>
       setTimeout(function(){
-      //  document.getElementById('success2').classList.remove('govuk-visually-hidden').style.display = 'none';
+       document.getElementById('success2').classList.remove('govuk-visually-hidden').style.display = 'none';
         document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
       }, 8000);
       </script>
