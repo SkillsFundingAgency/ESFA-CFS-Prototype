@@ -29,20 +29,17 @@
 
 {% endblock %}
 
-{% block content %}
-
- 
-     
-      <div class="govuk-grid-row govuk-!-margin-bottom-5">
-        <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Mainstream 2022 to 2023</h1>
-          <span class="govuk-caption-l">Academies and Schools Year 2022-23</span>
-        </div>
+{% block content %}    
+<div class="govuk-grid-row govuk-!-margin-bottom-2 govuk-!-margin-top-1">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Mainstream 2022 to 2023</h1>
+    <span class="govuk-caption-l">Academies and Schools Year 2022-23</span>
+  </div>
        
-        <div class="govuk-grid-row govuk-!-margin-bottom-5">
+        <!-- <div class="govuk-grid-row govuk-!-margin-bottom-2"> -->
           <div class="govuk-grid-column-full">
         <div>
-          <br/><br/>
+         <br/>
           <div class="job-notification-banner" style="width:100%;" id="success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
             <div class="govuk-notification-banner__header">
               <div class="govuk-notification-banner__header ">
@@ -63,8 +60,8 @@
              </div>
             </div>
             </div>
-            <br />
-            <div class="job-notification-banner govuk-visually-hidden " style="width:100%;" id="success1" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+           
+            <div class="job-notification-banner govuk-visually-hidden " style="width:100%;margin-top:2px;" id="success1" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
               <div class="govuk-notification-banner__header">
                 <div class="govuk-notification-banner__header ">
                   
@@ -83,8 +80,7 @@
                </div>
               </div>
               </div>
-              <br />
-             </div> 
+               </div> 
              
                 <div class="govuk-visually-hidden  job-success-notification-banner" style="width:100%;" id="success2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
                   <div class="govuk-notification-banner__header">
@@ -103,7 +99,7 @@
                   </div>
                   </div>
       
-    <div class="govuk-grid-column-full">
+    <!-- <div class="govuk-grid-column-full"> -->
       <a href="../../v1/create-data-set/index.html" class="govuk-button govuk-button--primary button-createSpecification"
       data-module="govuk-button">
       Add new data set
@@ -357,6 +353,8 @@ FDS data
       </svg>Back to top
   </a>
   </div>
+  </div>
+  
 <script>
     setTimeout(function(){
         document.getElementById('success').style.display = 'none';
