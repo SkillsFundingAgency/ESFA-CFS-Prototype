@@ -81,22 +81,23 @@ GOV.UK Prototype Kit
             Please provide a description for the dataset <br/>
           </span>
           <textarea class="govuk-textarea" id ="textarea" name="description" rows="8"
-            aria-label="more-detail-hint" onKeyUp="if(this.value.length > 0) document.getElementById('btn').disabled = false ;document.getElementById('save-add').disabled = false;" ></textarea>
+            aria-label="more-detail-hint" onKeyUp="if(this.value.length > 0) " ></textarea>
+            <!-- document.getElementById('btn').disabled = false ;document.getElementById('save-add').disabled = false;" -->
         </div>
 
       
       </fieldset>
 
       <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" disabled >Save</button>
+      <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" >Save</button>
 
      
     </form>
    
-    <form action="choose-fds-funding-stream1"  method="post" class="form">
+    <form action="choose-fds-funding-stream1"  method="post">
 
     <div class="govuk-button-group">
-    <button href="choose-fds-funding-stream1.html" class="govuk-button govuk-button--secondary"  id="save-add"  disabled>
+    <button href="choose-fds-funding-stream1.html" data-module="govuk-button" class="govuk-button govuk-button--secondary"  id="save-add" >
       Save and add another
     </button>
     <a class="govuk-link govuk-button govuk-button--secondary" href="../fundingLineStructure-chosen1#past-month" onclick="check()">
@@ -114,16 +115,16 @@ GOV.UK Prototype Kit
   //   sessionStorage.setItem('new data', 'true');
   // }
 // 
-$('#textarea').on('keypress keyup keydown', function () { 
-  if ($('#textarea').val() == "" ) { 
-    $('#btn').prop('disabled', true); 
-    $('#save-add').prop('disabled', true)
-  } 
-  else {   
-    $('#btn').prop('disabled', false); 
-    $('#save-add').prop('disabled', false); 
-  } 
-});
+// $('#textarea').on('keypress keyup keydown', function () { 
+//   if ($('#textarea').val() == "" ) { 
+//     $('#btn').prop('disabled', true); 
+//     $('#save-add').prop('disabled', true)
+//   } 
+//   else {   
+//     $('#btn').prop('disabled', false); 
+//     $('#save-add').prop('disabled', false); 
+//   } 
+// });
   function showproviderdata() {
     var str = document.getElementById("providerdataYes").value;
     var n = str.includes("FDZ");
@@ -140,6 +141,7 @@ $('#textarea').on('keypress keyup keydown', function () {
 
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script type="application/json" id="create-data-set">
   {
       "data-schema": {
@@ -161,9 +163,11 @@ $('#textarea').on('keypress keyup keydown', function () {
       }
   }
 </script>
+
 <script>
   document.getElementById("save-add").onclick = function() {
     $(document).ready(function(){
+      location.href="choose-fds-funding-stream1.html";
     $(window).scrollTop(0);
     
 });
