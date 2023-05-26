@@ -49,7 +49,7 @@ GOV.UK Prototype Kit
       <br />
 </div>
   <div class="govuk-grid-column-full">    
-    <form action="../fundingLineStructure-chosen2#past-month"  method="post" class="form" novalidate data-validate="create-data-set" id="myForm">
+    <form novalidate data-validate="create-data-set" id="myForm">
       <fieldset class="govuk-fieldset">
       <h1 class="govuk-heading-xl">16 to 19 Mainstream 2022 to 2023</h1>
           <h2 class="govuk-heading-m">Create dataset</h2>
@@ -101,22 +101,16 @@ GOV.UK Prototype Kit
       
       </fieldset>
 
-      <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month">Save</button>
-
      
-    </form>
-   
-    <form action="choose-fds-funding-stream1"  method="post">
-
-    <div class="govuk-button-group">
-    <button href="choose-fds-funding-stream1.html"   id="btn" data-module="govuk-button" class="govuk-button govuk-button--secondary" >
-      Save and add another
-    </button>
-    <a class="govuk-link govuk-button govuk-button--secondary" href="../fundingLineStructure-chosen2#past-month" onclick="check()">
-      Cancel</a>
-      </div>
-      </form>
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" onclick="javascript: form.action = '../fundingLineStructure-chosen2#past-month';"value="btn" id="btn">Save</button>
+  
+      <button  data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="javascript: form.action = 'choose-fds-funding-stream1'" id="save-add" >
+        Save and add another
+      </button></form>
+      <a class="govuk-link govuk-button govuk-button--secondary" href="../fundingLineStructure-chosen1#past-month" >
+        Cancel</a>
+        </div>
     
   </div>
 </div>
@@ -124,20 +118,7 @@ GOV.UK Prototype Kit
 
 <script>
  
-  // function newDataset() {
-  //   sessionStorage.setItem('new data', 'true');
-  // }
-// 
-$('#textarea').on('keypress keyup keydown', function () { 
-  if ($('#textarea').val() == "" ) { 
-    $('#btn').prop('disabled', true); 
-    $('#save-add').prop('disabled', true)
-  } 
-  else {   
-    $('#btn').prop('disabled', false); 
-    $('#save-add').prop('disabled', false); 
-  } 
-});
+ 
   function showproviderdata() {
     var str = document.getElementById("providerdataYes").value;
     var n = str.includes("FDZ");
@@ -175,16 +156,6 @@ $('#textarea').on('keypress keyup keydown', function () {
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script>
-  document.getElementById("save-add").onclick = function() {
-    $(document).ready(function(){
-    $(window).scrollTop(0);
-    
-});
-document.getElementById('notification-banner').classList.remove('govuk-visually-hidden');
-
-}     
-</script>
 <script>
   function check() {
 

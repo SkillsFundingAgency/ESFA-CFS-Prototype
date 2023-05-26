@@ -33,9 +33,21 @@ GOV.UK Prototype Kit
 {% block content %}
 
 <div class="govuk-grid-row">
-  
+  <div class="govuk-notification-banner--success govuk-visually-hidden"id="notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+      <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner " id="govuk-notification-banner">
+        FDS-Data-test dataset added successfully
+      </h2>
+     </div>
+    </div>
+    </div>
+    <br />
   <div class="govuk-grid-column-full">    
-    <form action="../fundingLineStructure-chosen2#past-month"  method="post" class="form" novalidate data-validate="create-data-set" id="myForm">
+    <form  novalidate data-validate="create-data-set" id="myForm">
       <fieldset class="govuk-fieldset">
       <h1 class="govuk-heading-xl">16 to 19 Mainstream 2022 to 2023</h1>
           <h2 class="govuk-heading-m">Create dataset</h2>
@@ -89,42 +101,21 @@ GOV.UK Prototype Kit
       </fieldset>
 
       <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" id="btn" href="../fundingLineStructure-chosen2#past-month" >Save</button>
+      <button class="govuk-button" data-module="govuk-button" onclick="javascript: form.action = '../fundingLineStructure-chosen2#past-month';"value="btn" id="btn">Save</button>
 
-     
-    </form>
-   
-    <form action="choose-fds-funding-stream1"  method="post">
-
-    <div class="govuk-button-group">
-    <button href="choose-fds-funding-stream1.html" data-module="govuk-button" class="govuk-button govuk-button--secondary"  id="save-add" >
+    <button  data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="javascript: form.action = 'choose-fds-funding-stream1'" id="save-add" >
       Save and add another
-    </button>
-    <a class="govuk-link govuk-button govuk-button--secondary" href="../fundingLineStructure-chosen1#past-month" onclick="check()">
+    </button></form>
+    <a class="govuk-link govuk-button govuk-button--secondary" href="../fundingLineStructure-chosen1#past-month" >
       Cancel</a>
       </div>
-      </form>
-    
+        
   </div>
 </div>
 </div>
 
 <script>
- 
-  // function newDataset() {
-  //   sessionStorage.setItem('new data', 'true');
-  // }
-// 
-// $('#textarea').on('keypress keyup keydown', function () { 
-//   if ($('#textarea').val() == "" ) { 
-//     $('#btn').prop('disabled', true); 
-//     $('#save-add').prop('disabled', true)
-//   } 
-//   else {   
-//     $('#btn').prop('disabled', false); 
-//     $('#save-add').prop('disabled', false); 
-//   } 
-// });
+
   function showproviderdata() {
     var str = document.getElementById("providerdataYes").value;
     var n = str.includes("FDZ");
@@ -165,17 +156,6 @@ GOV.UK Prototype Kit
 </script>
 
 <script>
-  document.getElementById("save-add").onclick = function() {
-    $(document).ready(function(){
-      location.href="choose-fds-funding-stream1.html";
-    $(window).scrollTop(0);
-    
-});
-document.getElementById('notification-banner').classList.remove('govuk-visually-hidden');
-
-}     
-</script>
-<script>
   function check() {
 
       //Array with inputs that evaluate to true or false based on input
@@ -192,16 +172,15 @@ document.getElementById('notification-banner').classList.remove('govuk-visually-
       //increases counter by 1 for every true item in the array
       for (var i = 0; i <= inputs.length; i++) {
           if (inputs[i] === true) {
-              document.getElementById('notSaved').style.display = 'block'
+            //  document.getElementById('notSaved').style.display = 'block'
               counter++
           }
       }
-      if (counter === 0) {
-          history.back()
-      }
+      // if (counter === 0) {
+      //     history.back()
+      // }
 
   }
-
 
 </script>
 
@@ -210,3 +189,4 @@ document.getElementById('notification-banner').classList.remove('govuk-visually-
 </div>
 
 {% endblock %}
+
