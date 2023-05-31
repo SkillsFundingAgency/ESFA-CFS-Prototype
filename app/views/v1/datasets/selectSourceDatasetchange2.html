@@ -39,10 +39,7 @@ GOV.UK Prototype Kit
 
   <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">
-        16 to 19 Mainstream 2022 to 2023
-      <span class="govuk-caption-l">Academies aschool year 2022 to 2023</span>
-      </h1>
+
       <div class="job-notification-banner" style="width:100%;" id="success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__header">
           <div class="govuk-notification-banner__header ">
@@ -89,9 +86,12 @@ GOV.UK Prototype Kit
            </div> 
       
   <div class="govuk-visually-hidden" id="hide">
-     
+      <h1 class="govuk-heading-xl">
+        16 to 19 Mainstream 2022 to 2023
+      <span class="govuk-caption-l">Academies aschool year 2022 to 2023</span>
+      </h1>
     
-  <form action="dataRelationships1-fds" method="post" class="form" id="updateDataset" >
+  <form action="dataRelationships1-map-fdschange" method="post" class="form" id="updateDataset" >
     <div class="govuk-form-group">
       <div class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
         <h4 class="govuk-heading-s">Select data source file for FDS-data</h4>
@@ -119,7 +119,7 @@ GOV.UK Prototype Kit
             <h4 class="govuk-heading-s">Select data source version</h4>
             <div class="govuk-radios govuk-radios--small">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input"  id="changed-name" name="data-version" type="radio" onclick="enable()" value="month" />
+                <input class="govuk-radios__input"  id="changed-name" name="data-version" type="radio" value="month" />
                 <label class="govuk-label govuk-radios__label" for="changed-name">
                   1619-AS-2223_2023-03-09_1
                 <div class="govuk-!-margin-top-1">
@@ -150,7 +150,7 @@ GOV.UK Prototype Kit
               </div>
               <div class="govuk-radios govuk-radios--small">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="changed-name1" name="data-version" type="radio" value="month" checked />
+                  <input class="govuk-radios__input" id="changed-name1" name="data-version"onclick="enable()" type="radio" value="month" checked/>
                   <label class="govuk-label govuk-radios__label" for="changed-name">
                     1619-AS-2223_2023-03-09_2
                   <div class="govuk-!-margin-top-1">
@@ -194,7 +194,7 @@ GOV.UK Prototype Kit
         </button>
       
       </form>
-      <a  href ="dataRelationships1-fds-test.html"class="govuk-button govuk-button--secondary" data-module="govuk-button" >
+      <a  href ="dataRelationships2-map-fds-success.html"class="govuk-button govuk-button--secondary" data-module="govuk-button" >
       Cancel
       </a>
     </div>
@@ -231,7 +231,7 @@ GOV.UK Prototype Kit
 // //back button
 function back()
 {
-  location.href="dataRelationships1-fds";
+  location.href="dataRelationships2-map-fds";
 }
 </script>
 <script>
