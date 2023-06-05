@@ -264,7 +264,7 @@
       </td>
         <td class="govuk-table__cell">1619-AS-2223_2023-03-09_1</td>
         <td class="govuk-table__cell">
-          <a href="../datasets/selectSourceDataset6.html" class="govuk-link">Change</a>
+          <a href="../datasets/selectSourceDatasetchange1-success.html" class="govuk-link">Change</a>
         </td>
       </tr>
        <!-- //fds-map -->
@@ -301,7 +301,7 @@
       </td>
         <td class="govuk-table__cell">1619-AS-2223_2023-03-09_1 </td>
         <td class="govuk-table__cell">
-          <a href="../datasets/selectSourceDatasetchange1.html" class="govuk-link">Change</a>
+          <a href="../datasets/selectSourceDatasetchange1-success.html" class="govuk-link">Change</a>
         </td>
       </tr>
      
@@ -338,7 +338,7 @@ FDS data
 </td>
   <td class="govuk-table__cell">No data sources mapped</td>
   <td class="govuk-table__cell">
-    <a href="" class="govuk-link">Map</a>
+    <a href="../datasets/selectSourceDatasetchange1.html" class="govuk-link">Map</a>
   </td>
 </tr>
 
@@ -354,39 +354,40 @@ FDS data
   </a>
   </div>
   </div>
-  
-<script>
+  <script>
     setTimeout(function(){
         document.getElementById('success').style.display = 'none';
-        document.getElementById('map').style.display = 'none';
+       // document.getElementById('map').style.display = 'none';
+     //   document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
+
       }, 3000);
-    </script>
-<script>
-  
-      // setTimeout(function(){
-      //   document.getElementById('map').style.display = 'block';
-       
-      // },3000);
-</script>
-      <script>
-       
-      setTimeout(function(){
-        document.getElementById('success1').classList.remove('govuk-visually-hidden').style.display = 'none';
-      },3000);
      
+      
+    </script>
+
+      <script>
       setTimeout(function(){
-        document.getElementById('success1').classList.add('govuk-visually-hidden').style.display = 'hidden';
+        document.getElementById('success1').classList.remove('govuk-visually-hidden').style.display = '';
+      //  document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
+      },3000);
+      setTimeout(function(){
+        document.getElementById('success1').classList.add('govuk-visually-hidden').style.display = 'block';
       },7000);
       
-      setTimeout(function(){
+       setTimeout(function(){
+        document.getElementById('map').style.display = 'none';
        
-        document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
-      },3000);
-      </script>
-   
+       }, 7000);
+
+</script>
       <script>
+        setTimeout(function(){
+          document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
+            
+      }, 8000);
       setTimeout(function(){
-        document.getElementById('success2').classList.remove('govuk-visually-hidden').style.display = 'none';
+       document.getElementById('success2').classList.remove('govuk-visually-hidden').style.display = 'none';
+      
        
       }, 8000);
       </script>
