@@ -31,40 +31,49 @@
 
 {% block content %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-2 govuk-!-margin-top-1">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Mainstream 2022 to 2023</h1>
-    <span class="govuk-caption-l">Academies and Schools Year 2022-23</span>
-  </div>
+ 
+     
+      <div class="govuk-grid-row govuk-!-margin-bottom-5">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Mainstream 2022 to 2023</h1>
+          <span class="govuk-caption-l">Academies and Schools Year 2022-23</span>
+        </div>
+       
         <!-- <div class="govuk-grid-row govuk-!-margin-bottom-5"> -->
           <div class="govuk-grid-column-full">
-        <div>
-          <br/>
-                <div class="job-success-notification-banner" style="width:100%;" id="success2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-                  <div class="govuk-notification-banner__header">
-                    <div class="govuk-notification-banner__header">
-                      <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
-                       <strong class="govuk-tag govuk-tag--green"style="float:left;">
-                        SUCCESS
-                      </strong> <strong class="govuk-grid-column-three-quarters">Job completed successfully: Refreshing funding data: 1619-AS-2223_2023-03-09_2 mapped successfully for FDS-Data
-                      <span id="dots1">.</span> </strong> <a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction1()" id="myBtn1">Read more</a>
-                      <br/><br/><br/>
-                      <span id="more1" >Job initiated by Robert Sparks on 13 February 2023 11:57 AM <br/><br/>
-                        <strong>Completed :</strong> 13 February 2023 11:57 AM </span>
-                    </h2>
-                   </div>
-                  </div>
-                  </div>
        
+          <br/>
+              <div class="govuk-error-summary" style="width:100%;" id="success2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                  <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
+                     <strong class="govuk-tag govuk-tag--red"style="float:left;">
+                      FAILED
+                    </strong> <strong class="govuk-grid-column-three-quarters">Job failed: Creating calculations:Mapping dataset e353cc00 2bb3 4869 9eaa 6faa1dc32 with relationship b1201071 a039 4557 8e28 4a9f34c80
+                    <span id="dots1">.</span> </strong> 
+                    <a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction1()" id="myBtn1">Read more</a>
+                    <br/><br/><br/>
+                    <span id="more1" ><strong> Calculation run failed </strong><br/><br/>
+                    Job initiated by Robert Sparks on  24 March 2023 11:57 AM <br/><br/>
+                    Job ID: 41cc8ea5-4606-4978-b5c3-406dfc8ad550 <br/><br/>
+                      <strong>Completed :</strong>  24 March 2023 11:57 AM </span>
+                  </h2>
+                 </div>
+                </div>
+                </div> 
+      
+    <!-- <div class="govuk-grid-column-full"> -->
       <a href="../../v1/create-data-set/index.html" class="govuk-button govuk-button--primary button-createSpecification"
       data-module="govuk-button">
       Add new data set
     </a>
-    <ul class=" right-align"style="float:right;">
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="/v1/fundingLineStructure-chosen1">Manage specification</a>
-      </li>
-    </ul>
+   
+        <ul class=" right-align"style="float:right;">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v1/fundingLineStructure-chosen1">Manage specification</a>
+          </li>
+        </ul>
+     
     </div>
     <div class="govuk-grid-column-one-third">
       <br/>
@@ -187,7 +196,7 @@
         </td>
       </tr>
       <!-- //FDS -->
-      <tr class="govuk-table__row"id="map">
+      <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">
         FDS-Data-test
           <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
@@ -205,7 +214,7 @@
                 test
               </p>
               <p class="govuk-body">
-                <strong>Last mapped:</strong>  24 March 2023 10:54am
+                <strong>Last mapped:</strong> 13th February 2023 10:54am
             </p>
               <p class="govuk-body">
                 <strong>Last mapped by:</strong> system
@@ -216,16 +225,14 @@
         <td class="govuk-table__cell">
       FDS data
       </td>
-        <td class="govuk-table__cell">1619-AS-2223_2023-03-09_2</td>
+        <td class="govuk-table__cell">1619-AS-2223_2023-03-09_1</td>
         <td class="govuk-table__cell">
           <a href="../datasets/selectSourceDataset6.html" class="govuk-link">Change</a>
         </td>
       </tr>
-
-      
        <!-- //fds-map -->
        
-              <tr class="govuk-table__row " >
+              <tr class="govuk-table__row " id="change">
         <th scope="row" class="govuk-table__header">
         FDS-Data
           <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
@@ -243,7 +250,7 @@
                 test
               </p>
               <p class="govuk-body" id="last-mapped">
-                <strong>Last mapped:</strong>  Completed :  24 March 2023 11:11 AM
+                <strong>Last mapped:</strong>  Completed : 13 February 2023 11:11 AM
             </p>
            
               <p class="govuk-body">
@@ -255,12 +262,46 @@
         <td class="govuk-table__cell">
       FDS data
       </td>
-        <td class="govuk-table__cell">1619-AS-2223_2023-03-09_2</td>
+        <td class="govuk-table__cell">No data sources mapped</td>
         <td class="govuk-table__cell">
-          <a href="../datasets/selectSourceDatasetchange2.html" class="govuk-link">Change</a>
+          <a href="../datasets/selectSourceDataset-map.html" class="govuk-link">Map</a>
         </td>
       </tr>
-    
+   
+<tr class="govuk-table__row "id="map">
+  <th scope="row" class="govuk-table__header">
+    FDS-Data-error
+    <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+        Data set details
+      </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          <strong>Data Schema:</strong>16-19 Students
+      </p>
+        <p class="govuk-body">
+          <strong>Description:</strong>
+          test
+        </p>
+        <p class="govuk-body">
+          <strong>Last mapped:</strong> 
+      </p>
+        <p class="govuk-body">
+          <strong>Last mapped by:</strong> system
+      </p>
+      </div>
+    </details>
+  </th>
+  <td class="govuk-table__cell">
+FDS data
+</td>
+  <td class="govuk-table__cell">No data sources mapped</td>
+  <td class="govuk-table__cell">
+    <a href="selectSourceDataset-map-error.html" class="govuk-link">Map</a>
+  </td>
+</tr>
     </tbody>
   </table>
 
@@ -272,37 +313,8 @@
       </svg>Back to top
   </a>
   </div>
-  <script>
-    setTimeout(function(){
-        document.getElementById('success').style.display = 'none';
-        document.getElementById('map').style.display = 'none';
-        document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
-
-      }, 3000);
-
-
-      
-    </script>
 
       <script>
-      setTimeout(function(){
-        document.getElementById('success1').classList.remove('govuk-visually-hidden').style.display = 'none';
-        document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
-      },3000);
-      setTimeout(function(){
-        document.getElementById('success1').classList.add('govuk-visually-hidden').style.display = 'hidden';
-      },7000);
-      </script>
-   
-      <script>
-      setTimeout(function(){
-        document.getElementById('success2').classList.remove('govuk-visually-hidden').style.display = 'none';
-        document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
-      }, 8000);
-      </script>
-      <script>
-            // document.getElementById('success1').classList.remove('govuk-visually-hidden');
-     // document.getElementById('success1').classList.remove('govuk-visually-hidden').style.display = 'block';
      function myFunction() 
   {
 
@@ -356,6 +368,7 @@ function myFunction2()
 }
 </script>
 
+  
 
 </script>
 {% endblock %}
