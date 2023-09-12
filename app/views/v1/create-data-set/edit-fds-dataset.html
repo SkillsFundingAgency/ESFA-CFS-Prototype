@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Home
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="specifications">
+       View Specifications
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../fundingLineStructure-chosen1#past-month">
+       16 to 19 Mainstream 2022 to 2023
+      </a>
+    </li>
+    
+  </ol>
+  
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">    
+    <form  novalidate data-validate="create-data-set" id="myForm">
+      <fieldset class="govuk-fieldset">
+      <h1 class="govuk-heading-xl">16 to 19 Mainstream 2022 to 2023</h1>
+          <h2 class="govuk-heading-m">Edit dataset</h2>
+              
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Dataset name
+          </label>
+          <label class="govuk-label font-bold" for="address-line-1">
+            FDS-Data
+          </label>
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Data Schema name
+          </label>
+          <label class="govuk-label font-bold" for="address-line-1">
+            16-19 Students
+          </label>
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Data schema version
+          </label>
+          <!-- <label class="govuk-label font-bold" for="address-line-1">
+           V1.4
+          </label> -->
+          <select class="govuk-select" id="option" onchange="change();" >
+          <option value="1" selected>1.3</option>
+           <option value="2">1.4</option>
+           </select> 
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details" id="v1">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Dataschema v1.3 details
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           Last updated:
+           <br/>
+           Last updated by:
+           <br/>
+           Change notes:
+           <br/>
+           <textarea class="govuk-textarea" id ="textarea" name="description"rows="2" cols="3"
+         aria-label="more-detail-hint" >Field changes</textarea>
+          </div>
+          </details>
+          <details class="govuk-details govuk-visually-hidden" data-module="govuk-details" id="v2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Dataschema v1.4 details
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              Last updated:
+              <br/>
+              Last updated by:
+              <br/>
+              Change notes:
+              <br/>
+              <textarea class="govuk-textarea" id ="textarea" name="description" rows="2"
+            aria-label="more-detail-hint" >Field changes</textarea>
+             </div>
+        </details>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Description
+          </label>
+          <span id="event-name-hint" class="govuk-hint">
+            Please provide a description for the dataset <br/>
+          </span>
+          <textarea class="govuk-textarea" id ="textarea" name="description" rows="8"
+            aria-label="more-detail-hint" onKeyUp="if(this.value.length > 0) " ></textarea>
+            <!-- document.getElementById('btn').disabled = false ;document.getElementById('save-add').disabled = false;" -->
+        </div>
+
+      
+      </fieldset>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" onclick="javascript: form.action = '../fundingLineStructure-newschema-success#past-month';"value="btn" id="btn">Save</button>
+
+       <a class="govuk-link govuk-button govuk-button--secondary" href="../fundingLineStructure-newschema#past-month" >
+      Cancel</a>
+      </div>
+        
+  </div>
+</div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  function change(){
+  if(document.getElementById('option').value="2")
+  {
+  document.getElementById('v1').style.display='none';
+  document.getElementById('v2').classList.remove('govuk-visually-hidden');
+  }
+  else
+  document.getElementById('v1').style.display='block';
+}
+  </script>
+<!-- 
+<script type="application/json" id="create-data-set">
+  {
+      "data-schema": {
+          "presence": {
+              "message": "^Select a data schema"
+          }
+      },
+
+      "dataset-name": {
+          "presence": {
+              "message": "^Enter a data set  name"
+          }
+      },
+
+      "description": {
+          "presence": {
+              "message": "^Enter a description"
+          }
+      }
+  }
+</script> -->
+
+
+
+{% endblock %}
+
