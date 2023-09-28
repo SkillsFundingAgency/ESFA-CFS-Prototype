@@ -1,0 +1,1393 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- VARIABLES -->
+  {% set fundingStream = "gag" %}
+  <!-- END VARIABLES -->
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/start">
+          Home
+      </a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="specifications">
+        View Specifications
+      </a>
+      </li>
+      <!-- <li class="govuk-breadcrumbs__list-item">
+        Academies General Annual Grant 2022 to 2023
+      </li> -->
+    </ol>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+  <!-- VARIABLES -->
+  {% set successNotificationHeading = "Variations successfully saved" %}
+  {% set successNotificationContent = "Future instalments have been updated." %}
+  {% set fundingApprovalsLink  = "/gag/gag-results" %}
+  <!-- END VARIABLES -->
+
+  <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
+ 
+  <div class="govuk-grid-row">
+    
+      
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-9">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Mainstream 2022 to 2023</h1>
+      <span class="govuk-caption-l">16-19 for Academies and Schools Year 2022-23</span>
+      <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-9">
+        <strong class="govuk-tag">Chosen for funding</strong>
+      </p>
+      <p class="govuk-body govuk-!-margin-top-2">
+        <strong class="govuk-tag">UPDATED</strong>
+        <strong class="govuk-tag govuk-tag--green">In year opener enabled</strong>
+      </p>
+      <details class="govuk-details govuk-!-margin-bottom-5" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is 16 to 19 Mainstream 2022 to 2023
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          test
+        </div>
+      </details>
+    </div>
+  
+    
+    <!-- Specification links-->
+    {% include "components/updated-specification-links.html" %}
+    <!-- End specification links-->
+  </div>
+    <div class="govuk-grid-row govuk-!-margin-top-3">
+      <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row govuk-!-margin-bottom-5">
+          <div class="govuk-grid-column-one-half">
+     
+          </div>
+      </div>
+
+          <div class="govuk-tabs" data-module="govuk-tabs">
+          <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#past-day">
+            Funding line structure
+          </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-week">
+            Additional calculations
+          </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-month">
+            Data sets
+          </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#variation-management">
+            Set a variation
+          </a>
+            </li>
+          </ul>
+          <section class="govuk-tabs__panel" id="past-day">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-l">Funding line structure</h2>
+                <div class="govuk-form-group search-container">
+                  <label class="govuk-label" for="event-name">
+                Search by calculation
+              </label>
+                  <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </div>
+              </div>
+            </div>
+
+            <table class="govuk-table govuk-!-width-full">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Structure</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-half">Name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-half">Calculation type</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">1</th>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="editTemplateCalculationv2.html">Total Funding
+                  Allocation</a>
+                  </td>
+                  <td class="govuk-table__cell">Currency</td>
+                  <td class="govuk-table__cell">Draft</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">2</th>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="editTemplateCalculationv2.html">Programme
+                  Funding
+                </a>
+                  </td>
+                  <td class="govuk-table__cell">Currency</td>
+                  <td class="govuk-table__cell">Draft</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"></th>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="editTemplateCalculationv2.html">Student
+                  Financial Support Funding
+                </a>
+                  </td>
+                  <td class="govuk-table__cell">Currency</td>
+                  <td class="govuk-table__cell">Draft</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"></th>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="">High Needs Element 2 Student Funding</a>
+                  </td>
+                  <td class="govuk-table__cell">Currency</td>
+                  <td class="govuk-table__cell">Draft</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"></th>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="">Industry Placements Funding</a>
+                  </td>
+                  <td class="govuk-table__cell">Currency</td>
+                  <td class="govuk-table__cell">Draft</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">3</th>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="">Industry Placements Capacity and Delivery
+                  Funding</a>
+                  </td>
+                  <td class="govuk-table__cell">Currency</td>
+                  <td class="govuk-table__cell">Draft</td>
+                </tr>
+              </tbody>
+            </table>
+            <nav class="govuk-!-margin-top-9" role="navigation" aria-label="Pagination">
+              <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+              <ul class="pagination">
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Previous page">
+                    <span
+                  aria-hidden="true" role="presentation">&laquo;</span> Previous</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Page 1">1</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Page 2">2</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link current" href="#0" aria-current="true"
+                aria-label="Page 3, current page">3</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Page 4">4</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Page 5">5</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Next page">Next <span
+                  aria-hidden="true" role="presentation">&raquo;</span></a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+
+          <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-l">Additional calculations</h2>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <ul class="govuk-list govuk-list--spaced">
+                  <li>
+                    <a class="govuk-link" href="createAdditionalCalculation">Create additional calculation</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <form action="" method="get">
+                  <label class="govuk-label" for="additional-calcs">Search additional calculations
+                <div class="autocomplete-wrapper govuk-!-margin-bottom-5">
+                      <select name="additional-calcs" class="govuk-select" id="additional-calcs">
+                        <option value="">Select additional calculations </option>
+                        <option value="fundingStream: GAG">General annual grant (GAG)</option>
+                        <option value="fundingStream: DSG">Dedicated schools grant (DSG)</option>
+                        <option value="fundingStream: PES">PE and sports premium</option>
+                        <option value="fundingStream: PNA">Pupil number adjustment (PNA)</option>
+                        <option value="fundingStream: PNA">16 to 19</option>
+                        <option value="fundingStream: PNA">14 to 16</option>
+                      </select>
+                    </div>
+                  </label>
+                </form>
+              </div>
+              <div class="govuk-grid-column-one-third"></div>
+            </div>
+
+            <table class="govuk-table" data-module="gov-sortable-table">
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+
+                  <th scope="col" class="govuk-table__header" id="1" aria-sort="none">
+                    <button type="button" data-index="1">Additional calculation name</button>
+
+                  </th>
+
+                  <th scope="col" class="govuk-table__header"  id="2" aria-sort="none">
+                    <button type="button" data-index="2">Status</button>
+                  </th>
+
+                  <th scope="col" class="govuk-table__header" id="3" aria-sort="none">
+                    <button type="button" data-index="3">Value type</button>
+                  </th>
+
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric" id="4" aria-sort="none">
+                    <button type="button" data-index="4">Last edited date</button>
+                  </th>
+
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">Block 3</td>
+
+                  <td class="govuk-table__cell">Approved</td>
+
+                  <td class="govuk-table__cell">Currency</td>
+
+                  <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="04/10/2021 10:26am">25 December
+                        2020 10:26am
+                    </td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">Block 1</td>
+
+                  <td class="govuk-table__cell">Draft</td>
+
+                  <td class="govuk-table__cell">Percentage</td>
+
+                  <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="04/10/2021 10:26pm">4 November
+                        2020 10:26am
+                    </td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    <a href="edit-additional-calculation">
+                      {{ data['additionalCalc-name'] }}</a>
+                  </th>
+                  <td class="govuk-table__cell" id="status"></td>
+                  <td class="govuk-table__cell">{{ data['value-type'] }}</td>
+                  <td class="govuk-table__cell" id="editedDate"></td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+            No additional calculations available. <a href="createAdditionalCalculation">Create a calculation</a>
+              </strong>
+            </div>
+            <nav class="govuk-!-margin-top-9" role="navigation" aria-label="Pagination">
+              <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+              <ul class="pagination">
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Previous page">
+                    <span
+                  aria-hidden="true" role="presentation">&laquo;</span> Previous</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Page 1">1</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Page 2">2</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link current" href="#0" aria-current="true"
+                aria-label="Page 3, current page">3</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Page 4">4</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Page 5">5</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#0" aria-label="Next page">Next <span
+                  aria-hidden="true" role="presentation">&raquo;</span></a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+
+          <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+            <div class="govuk-grid-row">
+               <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-l">Datasets</h2>
+                <h2 class="govuk-heading-m">Data sets with corresponding data schemas</h2>
+              </div>
+              <br/>
+              <div class="govuk-grid-column-one-third">
+                <ul class="govuk-list govuk-list--spaced">
+                  <li>
+                    <a class="govuk-link" data-module="govuk-button" href="datasets/dataRelationships1-1619-2324">Map data
+                  source file to data set</a>
+                  <li>
+                    <a class="govuk-link" href="create-data-set/index2.html">Create data set</a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+           
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-heading-l">FDS data</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Data set</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Data schema</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Version</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Action</th>
+                 
+  
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+               
+               
+                <tr class="govuk-table__row">
+                 
+                  <th scope="row" class="govuk-table__header">
+                    <p class="font-bold">FDS-Data</p>
+                    <div class="govuk-!-margin-top-2">
+                      <details class="govuk-details govuk-!-padding-top-0" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            Data set description
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          new schema version added
+                        </div>
+                      </details>
+                    </div>
+                  </th>
+                  <td class="govuk-table__cell">16-19 Students</td>
+                  <td class="govuk-table__cell">V3
+                  <details class="govuk-details govuk-!-padding-top-3" data-module="govuk-details" id="v1">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Data schema V3 details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                     Last updated: 13th April,2023
+                     <br/>
+                     Last updated by: Peter, Smith
+                     <br/>
+                     Change notes:Field changes
+                     <!-- <br/>
+                     <textarea class="govuk-textarea" id ="textarea" name="description"rows="2" cols="3"
+                   aria-label="more-detail-hint" >Field changes</textarea> -->
+                    </div>
+                    </details></td>
+
+                  <td class="govuk-table__cell"> 
+                  <a class="font-bold" href="edit-fds-dataset1.html">Edit dataset</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-heading-l">Released data</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Data set</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Data schema</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                 
+                  <th scope="row" class="govuk-table__header">
+                    <p class="font-bold">Base Data1</p>
+                    <div class="govuk-!-margin-top-2">
+                      <details class="govuk-details govuk-!-padding-top-0" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            Data set description
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                         Test
+                        </div>
+                      </details>
+                    </div>
+                  </th>
+                  <td class="govuk-table__cell">Mainstream2223</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+
+                  </tr>
+              </tbody>
+            </table>
+
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-heading-l">Uploaded data</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Data set</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Data schema</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Copy data to provider</th> 
+                  
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                 
+                  <th scope="row" class="govuk-table__header">
+                    <p class="font-bold">Base Data1</p>
+                    <div class="govuk-!-margin-top-2">
+                      <details class="govuk-details govuk-!-padding-top-0" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            Data set description
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                         Test
+                        </div>
+                      </details>
+                    </div>
+                  </th>
+                  <td class="govuk-table__cell">Mainstream2223</td>
+                  <td class="govuk-table__cell"></td>
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-form-group">
+                      <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                          <input checked class="govuk-radios__input" id="indicative-allocation-yes"
+                            name="indicative-allocation-apt-1718-funding-floor-baseline-data-set" type="radio"
+                            value="yes">
+                          <label class="govuk-label govuk-radios__label" for="indicative-allocation-yes">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="indicative-allocation-no"
+                            name="indicative-allocation-apt-1718-funding-floor-baseline-data-set" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="indicative-allocation-no">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                  </td>
+  
+                  </tr>
+              </tbody>
+            </table>
+            <!-- <button class="govuk-button" data-module="govuk-button"onclick="display()">
+              Save 
+            </button> -->
+          </section>
+         
+          <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="variation-management">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-notification-banner  govuk-visually-hidden app-banner-position  govuk-notification-banner--success "style="margin-left:-1rem;width:140%;" id="notification-banner"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                  <div class="govuk-notification-banner__heading app-notification-message">
+                    
+                    <h2 class="govuk-notification-banner__title app-notification-message "id="govuk-notification-banner-title">
+                      <p class="font-bold govuk-notification-banner__title  app-banner-title ">Success</p>
+                      <p class="govuk-notification-banner app-banner font-bold">
+                        Variations set
+                      </p>
+                    </h2>  
+                  </div>
+                </div>
+               <br/>
+          
+             
+                <h2 class="govuk-heading-l"style="padding-left:12px;">Set a variation</h2>
+                <p class="govuk-body"style="padding-left:12px;">Choose instalment for the variation to start in.</p>
+                <p class="govuk-body"style="padding-left:12px;">You can select future instalments for:</p>
+                <ul class="govuk-list govuk-list--bullet"style="padding-left:42px;">
+                  <li class="govuk-body">individual funding lines</li>
+                  <li class="govuk-body">all funding lines</li>
+                  </ul>
+                 <details class="govuk-details" style="padding-left:12px;" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                     Select an instalment for individual funding lines
+                    </span>
+                  </summary>
+                  
+                  <div class="govuk-details__text">
+                 
+                    <p class="govuk-body"style="padding-left:12px;">Select an option from the future instalment drop-down next to the funding line.</p>
+                    <p class="govuk-body"style="padding-left:12px;width:150%;">If you do not select a future instalment for a funding line, the currently set instalment will stay the same.</p>
+                  
+                  </div>
+                </details>
+                <details class="govuk-details" style="padding-left:12px;" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                     Select an instalment for all funding lines
+                    </span>
+                  </summary>
+                  
+                  <div class="govuk-details__text">
+                   
+                    <p class="govuk-body"style="padding-left:12px;width:150%;">You must check the select all box before you select a future instalment for all funding lines. </p>
+                   
+                  
+                  </div>
+                </details>
+               
+                <span class="govuk-caption-m"style="padding-left:12px;">Select a future instalment for all funding lines </span><br/>
+              </div>
+            </div>
+           
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-thirds">
+                <form action="/v1/fundingLineStructure-chosen1#variation-management" method="post" class="form" novalidate data-validate="variation">
+                  <div class="govuk-form-group">
+                    <table class="govuk-table" id="fundingApprovalsProviders">
+                      <!-- <caption class="govuk-table__caption"><h2 class="govuk-heading-s app-banner-title"style="padding-left:28px;">Bulk actions</h2> -->
+                      
+                          <div style="padding-left:28px;">                  
+                          <select class="govuk-select funding-line-dropdown-js"name="sort" id="a" onchange="change();"
+                          aria-label="funding line 3"  name="dropdown[]" class="dropdown" disabled="disabled" >
+                            <option value="0" selected Disabled >Future instalment</option>
+                            <option value="1">September 2022 instalment 1</option>
+                            <option value="2">October 2022 instalment 1</option>
+                            <option value="3">November 2022 instalment 1</option>
+                            <option value="4">December 2022 instalment 1</option>
+                            <option value="5">January 2023 instalment 1</option>
+                            <option value="6">February 2023 instalment 1</option>
+                            <option value="7">March 2023 instalment 1</option>
+                            <!-- <options value="14">March 2023 instalment 2</options> -->
+                            <option value="8">April 2023 instalment 1</option>
+                            <option value="9">May 2023 instalment 1</option>
+                            <option value="10">June 2023 instalment 1</option>
+                            <option value="11">July 2023 instalment 1</option>
+                            <option value="12">August 2023 instalment 1</option>
+                          </select>  
+                          </div><br/>
+                                              
+<!--  -->
+                          
+                          <div class="govuk-warning-text govuk-visually-hidden" id="warning">
+                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                            <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive"style="padding-left:28px;">Warning</span>
+                              
+                              You cannot select this instalment for all funding lines because it's already set, or is earlier than the currently set instalment for some funding lines. You can select a different instalment for all or individual funding lines.
+                          </div>
+                                                     
+                          <caption class="govuk-table__caption"><h2 class="govuk-heading-M app-banner-title"style="padding-left:28px;">Funding lines</h2>
+                          <tbody class="govuk-table__body table-vertical-align">       
+                                                 
+                      <tr class="govuk-table__row">
+                        <th class="govuk-table__header" style="width:15%;">
+                        
+                         <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align " >
+                       
+                              <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input select-all " id="select"
+                                        name="provider-approval" type="checkbox" onclick="enableDropdown(this)">
+                                        
+                                    <label class="govuk-label govuk-checkboxes__label  font-bold" for="provider-approval">Select all
+                                    </label><br>
+                          </div>
+                        </th>
+                      
+                        <th class="govuk-table__header"style="padding-top:18px;">
+                          Funding lines
+                      </th>
+                      <th class="govuk-table__header"style="padding-top:18px;">
+                        Currently set instalment
+                    </th>
+                    <th class="govuk-table__header" style="padding-top:18px;padding-left:28px;">
+                      Future instalment
+                  </th>
+                </tbody>   
+                    </tr>
+                          <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                  <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align" >
+                                      <div class="govuk-checkboxes__item">
+                                          <input class="govuk-checkboxes__input provider-checked checks"  id="provider-approval"
+                                              name="provider-approval" type="checkbox" value="Academies">
+                                          <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                              
+                                          </label><br>
+                                        
+                                  </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                               Allocation protection(GAG-012)
+                            </td>
+                              <td class="govuk-table__cell">
+                                February 2023 instalment 1
+                              </td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric provider-value" value="200">
+                                <div class="govuk-form-group">
+                                   <select class="govuk-select funding-line-dropdown-js dropdown1" id="b" name="sort1"
+                                                  aria-label="funding line 3"style="width:130%;">
+                                                  <option value="" selected Disabled ></option>
+                                                  <!-- <option value="1">November 2022 </option>
+                                                  <option value="2">December 2022 </option>
+                                                  <option value="3">January 2023 </option> -->
+                                                  <option value="">February 2023 instalment 1</option>
+                                                  <option value="7">March 2023 instalment 1</option>
+                                                  <option value="8">April 2023 instalment 1</option>
+                                                  <option value="9">May 2023 instalment 1</option>
+                                                  <option value="10">June 2023 instalment 1</option>
+                                                  <option value="11">July 2023 instalment 1</option>
+                                                  <option value="12">August 2023 instalment 1</option>
+                                              </select> 
+                                </div>  
+                              </td>
+                             
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input provider-checked checks1" id="provider-approval"
+                                            name="provider-approval" type="checkbox" value="Academies">
+                                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                            
+                                        </label><br>
+                                      
+                                </div>
+                            </td>
+                            <td class="govuk-table__cell">
+                             De-Delegated funding retained by the LA (GAG-014)
+                        
+                          
+                          </td>
+                            <td class="govuk-table__cell">
+                              February 2023 instalment 1
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                              <div class="govuk-form-group">
+                                 <select class="govuk-select funding-line-dropdown-js dropdown2" id="c" name="sort"
+                                                aria-label="funding line 3"style="width:130%;">
+                                                <option value="" selected Disabled ></option>
+                                                <!-- <option value="1">November 2022 </option>
+                                                <option value="2">December 2022 </option>
+                                                <option value="3">January 2023 </option> -->
+                                                <option value=" " >February 2023 instalment 1</option>
+                                                  <option value="7">March 2023 instalment 1</option>
+                                                  <option value="8">April 2023 instalment 1</option>
+                                                  <option value="9">May 2023 instalment 1</option>
+                                                  <option value="10">June 2023 instalment 1</option>
+                                                  <option value="11">July 2023 instalment 1</option>
+                                                  <option value="12">August 2023 instalment 1</option>
+                                            </select> 
+                                            <!-- <p id="event-name-error govuk-visually-hidden" class="govuk-error-message">
+                                               Select future instalment
+                                            </p> -->
+                              </div>  
+                            
+                            </td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                              <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
+                                  <div class="govuk-checkboxes__item">
+                                      <input class="govuk-checkboxes__input provider-checked checks2" id="provider-approval"
+                                          name="provider-approval" type="checkbox" value="Academies">
+                                      <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                          
+                                      </label><br>
+                                    
+                              </div>
+                          </td>
+                          <td class="govuk-table__cell">
+                           Hospital Provision (GAG-010)
+                        </td>
+                          <td class="govuk-table__cell">
+                            March 2023 instalment 1
+                          </td>
+                          <!-- id="fundingline3" -->
+                          <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                            <div class="govuk-form-group">
+                               <select class="govuk-select funding-line-dropdown-js dropdown3"  id="d" name="sort"
+                                              aria-label="funding line 3"style="width:130%;">
+                                              <option value="0" selected Disabled ></option>
+                                              <!-- <option value="1">November 2022 </option>
+                            <option value="2">December 2022 </option>
+                            <option value="3">January 2023 </option>
+                            <option value="4">February 2023 </option> -->
+                            <option value="">March 2023 instalment 1</option>
+                            <options value="14">March 2023 instalment 2</options>
+                            <option value="8">April 2023 instalment 1</option>
+                            <option value="9">May 2023 instalment 1</option>
+                            <option value="10">June 2023 instalment 1</option>
+                            <option value="11">July 2023 instalment 1</option>
+                            <option value="12">August 2023 instalment 1</option>
+                                          </select> 
+                            </div>  
+                          </td>
+                         
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input provider-checked checks3" id="provider-approval"
+                                        name="provider-approval" type="checkbox" value="Academies">
+                                    <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                        
+                                    </label><br>
+                                  
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">
+                         Minimum funding Guarantee (GAG-005)
+                      </td>
+                        <td class="govuk-table__cell">
+                          January 2023 instalment 1
+                        </td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                          <div class="govuk-form-group">
+                             <select class="govuk-select funding-line-dropdown-js dropdown4" id="e" name="sort"
+                                            aria-label="funding line 3"style="width:130%;">
+                                            <option value="" selected Disabled ></option>
+                                            <!-- <option value="1">November 2022 </option>
+                                            <option value="2">December 2022 </option> -->
+                                            <option value="">January 2023 instalment 1</option>
+                            <option value="6">February 2023 instalment 1</option>
+                            <option value="7">March 2023 instalment 1</option>
+                            <option value="8">April 2023 instalment 1</option>
+                            <option value="9">May 2023 instalment 1</option>
+                            <option value="10">June 2023 instalment 1</option>
+                            <option value="11">July 2023 instalment 1</option>
+                            <option value="12">August 2023 instalment 1</option>
+                                        </select> 
+                          </div>  
+                        </td>
+                       
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                          <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input provider-checked checks4" id="provider-approval"
+                                      name="provider-approval" type="checkbox" value="Academies">
+                                  <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                      
+                                  </label><br>
+                                
+                          </div>
+                      </td>
+                      <td class="govuk-table__cell">
+                       PFI Funding (GAG-002)
+                    </td>
+                      <td class="govuk-table__cell">
+                        January 2023 instalment 1
+                      </td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                        <div class="govuk-form-group">
+                           <select class="govuk-select funding-line-dropdown-js dropdown5" id="f" name="sort"
+                                          aria-label="funding line 3"style="width:130%;">
+                                          <option value="0" selected Disabled ></option>
+                                          <!-- <option value="1">November 2022 </option>
+                            <option value="2">December 2022 </option> -->
+                            <option value="">January 2023 instalment 1</option>
+                            <option value="6">February 2023 instalment 1</option>
+                            <option value="7">March 2023 instalment 1</option>
+                            <option value="8">April 2023 instalment 1</option>
+                            <option value="9">May 2023 instalment 1</option>
+                            <option value="10">June 2023 instalment 1</option>
+                            <option value="11">July 2023 instalment 1</option>
+                            <option value="12">August 2023 instalment 1</option>
+                                      </select> 
+                        </div>  
+                      </td>
+                     
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input provider-checked checks5" id="provider-approval"
+                                    name="provider-approval" type="checkbox" value="Academies">
+                                <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                    
+                                </label><br>
+                              
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                     Post Opening Grant - Leadership Diseconomies (GAG-007)
+                  </td>
+                    <td class="govuk-table__cell">
+                      January 2023 instalment 1
+                    </td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                      <div class="govuk-form-group">
+                         <select class="govuk-select funding-line-dropdown-js dropdown6" id="g" name="sort"
+                                        aria-label="funding line 3"style="width:130%;">
+                                        <option value="" selected Disabled ></option>
+                                        <!-- <option value="1">November 2022 </option>
+                            <option value="2">December 2022 </option> -->
+                            <option value="">January 2023 instalment 1</option>
+                            <option value="6">February 2023 instalment 1</option>
+                            <option value="7">March 2023 instalment 1</option>
+                            <option value="8">April 2023 instalment 1</option>
+                            <option value="9">May 2023 instalment 1</option>
+                            <option value="10">June 2023 instalment 1</option>
+                            <option value="11">July 2023 instalment 1</option>
+                            <option value="12">August 2023 instalment 1</option>
+                                    </select> 
+                      </div>  
+                    </td>
+                   
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                      <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input provider-checked checks6" id="provider-approval"
+                                  name="provider-approval" type="checkbox" value="Academies">
+                              <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                  
+                              </label><br>
+                            
+                      </div>
+                  </td>
+                  <td class="govuk-table__cell">
+                   Post Opening Grant - Per Pupil Resources (GAG-006)
+                   <!-- <div class=" govuk-form-group--error govuk-visually-hidden"  id="warning2">
+                                              
+                    <strong class="govuk-error-message">
+                      <span class="govuk-error-message govuk-warning-text__assistive">Warning</span>
+                      The future instalment must be later than the currently set instalment
+                    </strong>
+                  </div>
+                  <div class=" govuk-form-group--error govuk-visually-hidden"  id="warning5">
+                                              
+                    <strong class="govuk-error-message">
+                      <span class="govuk-error-message govuk-warning-text__assistive">Warning</span>
+                      The future instalment must be later than the currently set instalment
+                    </strong>
+                  </div> -->
+                </td>
+                  <td class="govuk-table__cell">
+                   Initial allocation
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                    <div class="govuk-form-group">
+                       <select class="govuk-select funding-line-dropdown-js dropdown7 " id="h" name="sort"
+                                      aria-label="funding line 3"style="width:130%;">
+                                      <option value="" selected Disabled ></option>
+                                      <option value="1">September 2022 instalment 1</option>
+                            <option value="2">October 2022 instalment 1</option>
+                            <option value="3">November 2022 instalment 1</option>
+                            <option value="4">December 2022 instalment 1</option>
+                            <option value="5">January 2023 instalment 1</option>
+                            <option value="6">February 2023 instalment 1</option>
+                            <option value="7">March 2023 instalment 1</option>
+                            <option value="8">April 2023 instalment 1</option>
+                            <option value="9">May 2023 instalment 1</option>
+                            <option value="10">June 2023 instalment 1</option>
+                            <option value="11">July 2023 instalment 1</option>
+                            <option value="12">August 2023 instalment 1</option>
+                                  </select> 
+                    </div>  
+                  </td>
+                 
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input provider-checked checks7" id="provider-approval"
+                                name="provider-approval" type="checkbox" value="Academies">
+                            <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                                
+                            </label><br>
+                          
+                    </div>
+                </td>
+                <td class="govuk-table__cell">
+                 Pre-16 High Needs funding (GAG-011)
+              </td>
+                <td class="govuk-table__cell">
+                  Initial allocation
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                  <div class="govuk-form-group">
+                     <select class="govuk-select funding-line-dropdown-js dropdown8" id="i" name="sort"
+                                    aria-label="funding line 3">
+                                    <option value="" selected Disabled ></option>
+                                    <option value="1">September 2022 instalment 1</option>
+                            <option value="2">October 2022 instalment 1</option>
+                            <option value="3">November 2022 instalment 1</option>
+                            <option value="4">December 2022 instalment 1</option>
+                            <option value="5">January 2023 instalment 1</option>
+                            <option value="6">February 2023 instalment 1</option>
+                            <option value="7">March 2023 instalment 1</option>
+                            <option value="8">April 2023 instalment 1</option>
+                            <option value="9">May 2023 instalment 1</option>
+                            <option value="10">June 2023 instalment 1</option>
+                            <option value="11">July 2023 instalment 1</option>
+                            <option value="12">August 2023 instalment 1</option>
+                                </select> 
+                  </div>  
+                </td>
+               
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
+                      <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input provider-checked checks8" id="provider-approval"
+                              name="provider-approval" type="checkbox" value="Academies">
+                          <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                              
+                          </label><br>
+                        
+                  </div>
+              </td>
+              <td class="govuk-table__cell">
+               SBS Exceptional Factors (GAG-004)
+            </td>
+              <td class="govuk-table__cell">
+               Initial allocation
+              </td>
+              <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+                <div class="govuk-form-group">
+                   <select class="govuk-select funding-line-dropdown-js dropdown9" id="j" name="sort"
+                                  aria-label="funding line 3">
+                                  <option value="" selected Disabled ></option>
+                                  <option value="1">September 2022 instalment 1</option>
+                                  <option value="2">October 2022 instalment 1</option>
+                                  <option value="3">November 2022 instalment 1</option>
+                                  <option value="4">December 2022 instalment 1</option>
+                                  <option value="5">January 2023 instalment 1</option>
+                                  <option value="6">February 2023 instalment 1</option>
+                                  <option value="7">March 2023 instalment 1</option>
+                                  <option value="8">April 2023 instalment 1</option>
+                                  <option value="9">May 2023 instalment 1</option>
+                                  <option value="10">June 2023 instalment 1</option>
+                                  <option value="11">July 2023 instalment 1</option>
+                                  <option value="12">August 2023 instalment 1</option>
+      
+                              </select> 
+                </div>  
+              </td>
+             
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small checkbox-align">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input provider-checked checks9" id="provider-approval"
+                            name="provider-approval" type="checkbox" value="Academies">
+                        <label class="govuk-label govuk-checkboxes__label" for="provider-approval">
+                            
+                        </label><br>
+                      
+                </div>
+            </td>
+            <td class="govuk-table__cell">
+             SBS Other Factors (GAG-003)
+          </td>
+            <td class="govuk-table__cell">
+              Initial allocation
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric provider-value " value="200">
+              <div class="govuk-form-group">
+                 <select class="govuk-select funding-line-dropdown-js dropdown10" id="k" name="sort"
+                                aria-label="funding line 3">
+                                <option value="" selected Disabled ></option>
+                                <option value="1">September 2022 instalment 1</option>
+                            <option value="2">October 2022 instalment 1</option>
+                            <option value="3">November 2022 instalment 1</option>
+                            <option value="4">December 2022 instalment 1</option>
+                            <option value="5">January 2023 instalment 1</option>
+                            <option value="6">February 2023 instalment 1</option>
+                            <option value="7">March 2023 instalment 1</option>
+                            <option value="8">April 2023 instalment 1</option>
+                            <option value="9">May 2023 instalment 1</option>
+                            <option value="10">June 2023 instalment 1</option>
+                            <option value="11">July 2023 instalment 1</option>
+                            <option value="12">August 2023 instalment 1</option>
+                            </select> 
+              </div>  
+            </td>
+           
+        </tr>
+        
+                        </tbody>
+                     </table>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="govuk-button-group">
+                <button class="govuk-button gag-variation-management-save-button-js" class="btn" style="margin-left:-2rem;"   data-module="govuk-button" id="btn" value="click me" >
+            Save changes
+        </button>
+
+                <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Back
+        </button> -->
+        <button class="govuk-button govuk-button--secondary"  onclick='UnSelectAll()' data-module="govuk-button">
+          Reset future instalments
+        </button>
+              </div>
+
+            </form>
+
+            <script type="application/json" id="variations">
+              {
+                "no yet required": {
+                  "presence": {
+                    "message": "^Select future installment"
+                  }
+                }
+              }
+            </script>
+
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-modal-dialogue" id="fundingConfirmation" data-module="govuk-modal-dialogue">
+      <div class="govuk-modal-dialogue__wrapper">
+        <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
+      aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
+          <div class="govuk-modal-dialogue__header">
+            <svg role="presentation" focusable="false" class="govuk-modal-dialogue__crown"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 97" height="30" width="36">
+              <path fill="currentColor" fill-rule="evenodd"
+            d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
+              <image src="/assets/images/govuk-logotype-crown.png" xlink:href=""
+            class="govuk-header__logotype-crown-fallback-image" width="36" height="32"></image>
+            </svg>
+            <button type="button" onclick="document.getElementById('fundingConfirmation').style.display='none'"
+          class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" aria-label="Close modal dialogue">
+          ×
+        </button>
+          </div>
+          <div class="govuk-modal-dialogue__content">
+            <p class="govuk-body">You are choosing specification [specification name] for funding purposes.</p>
+            <p class="govuk-body">This specification will be applied as the funding model for the [funding stream name]
+          funding stream for [funding period name].</p>
+            <p class="govuk-body">Once confirmed this action cannot be reversed no other specification can be chosen for
+          funding.</p>
+            <p class="govuk-body">Please ensure this is the specification you wish to choose for funding before confirming.
+        </p>
+            <button class="govuk-button govuk-!-margin-right-1 govuk-button--warning" data-module="govuk-button">
+          Confirm selection
+        </button>
+            <button type="button" onclick="document.getElementById('fundingConfirmation').style.display='none'"
+          class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+          data-module="govuk-button">Close
+        </button>
+          </div>
+        </dialog>
+      </div>
+      <div class="govuk-modal-dialogue__backdrop"></div>
+    </div>
+
+    <div class="govuk-modal-dialogue" id="approveConfirmation" data-module="govuk-modal-dialogue">
+      <div class="govuk-modal-dialogue__wrapper">
+        <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
+      aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
+          <div class="govuk-modal-dialogue__header">
+            <svg role="presentation" focusable="false" class="govuk-modal-dialogue__crown"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 97" height="30" width="36">
+              <path fill="currentColor" fill-rule="evenodd"
+            d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
+              <image src="/assets/images/govuk-logotype-crown.png" xlink:href=""
+            class="govuk-header__logotype-crown-fallback-image" width="36" height="32"></image>
+            </svg>
+            <button type="button" onclick="document.getElementById('approveConfirmation').style.display='none'"
+          class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" aria-label="Close modal dialogue">
+          ×
+        </button>
+          </div>
+          <div class="govuk-modal-dialogue__content">
+            <p class="govuk-body">Are you sure you want to approve all template and additional calculations for
+          {{ data['spec-name'] }}?
+        </p>
+          </br>
+          <form action="approve-calculations-other" method="post" novalidate>
+
+            <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" data-module="govuk-button">
+            Confirm approve
+          </button>
+
+            <button type="button" onclick="document.getElementById('approveConfirmation').style.display='none'"
+            class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+            data-module="govuk-button">Cancel
+          </button>
+          </form>
+
+        </div>
+      </dialog>
+    </div>
+    <div class="govuk-modal-dialogue__backdrop"></div>
+  </div>
+
+  <div class="govuk-modal-dialogue" id="refreshProviderData" data-module="govuk-modal-dialogue">
+    <div class="govuk-modal-dialogue__wrapper">
+      <dialog id="timeout" class="govuk-modal-dialogue__box govuk-modal-description" aria-labelledby="timeout-title"
+      aria-describedby="timeout-description" aria-modal="true" role="alertdialog" tabindex="0" open="">
+        <div class="govuk-modal-dialogue__header">
+          <svg role="presentation" focusable="false" class="govuk-modal-dialogue__crown"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 97" height="30" width="36">
+            <path fill="currentColor" fill-rule="evenodd"
+            d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
+            <image src="/assets/images/govuk-logotype-crown.png" xlink:href=""
+            class="govuk-header__logotype-crown-fallback-image" width="36" height="32"></image>
+          </svg>
+          <button type="button" onclick="document.getElementById('refreshProviderData').style.display='none'"
+          class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" aria-label="Close modal dialogue">
+          ×
+        </button>
+        </div>
+
+        <div class="govuk-modal-dialogue__content">
+          <p class="govuk-body">You are about to refresh the provider funding for the DSG SIT specification.</p>
+
+          <p class="govuk-body">Please ensure this is the specification you wish to get latest provider data for before
+          confirming.
+        </p>
+
+          <form action="refresh-provider-data" method="post" novalidate>
+            <button class="govuk-button govuk-!-margin-right-1 govuk-button--warning" data-module="govuk-button">
+            Refresh provider funding
+          </button>
+            <button type="button" onclick="document.getElementById('refreshProviderData').style.display='none'"
+            class="govuk-button govuk-button--secondary govuk-modal-dialogue__continue govuk-!-margin-bottom-0"
+            data-module="govuk-button">Close
+          </button>
+          </form>
+        </div>
+      </dialog>
+    </div>
+    <div class="govuk-modal-dialogue__backdrop"></div>
+  </div>
+
+  <script src="/public/javascripts/sortable-table.js">
+    window.onload = function () {
+      let newDataSource = sessionStorage.getItem('new data')
+      let tr = document.getElementById('newDataset')
+      console.log(newDataSource)
+      if (newDataSource === 'true') {
+        tr.style.display = " ";
+      } else {
+        tr.style.display = "none";
+      }
+    }
+    window.scrollTo({top: 0});
+        window.onload = function () {
+      let newDataSource = sessionStorage.getItem('CFS data')
+      let tr = document.getElementById('cfsData')
+      console.log(newDataSource)
+      if (newDataSource === 'true') {
+        tr.style.display = " ";
+      } else {
+        tr.style.display = "none";
+      }
+    }
+
+    var selectEl = document.querySelector('#template-calcs')
+    accessibleAutocomplete.enhanceSelectElement({autoselect: true, confirmOnBlur: true, defaultValue: "", minLength: 2, selectElement: selectEl})
+
+    var queryStringParameters = window.location.search
+    var previouslySubmitted = queryStringParameters.length > 0
+    if (previouslySubmitted) {
+      var submittedEl = document.querySelector('.submitted')
+      submittedEl
+        .classList
+        .remove('submitted--hidden')
+      var params = new URLSearchParams(document.location.search.split('?')[1])
+      document
+        .querySelector('.submitted__last-location')
+        .innerHTML = params.get('template-calcs')
+    }
+
+    var selectEl = document.querySelector('#additional-calcs')
+    accessibleAutocomplete.enhanceSelectElement({autoselect: true, confirmOnBlur: true, defaultValue: "", minLength: 2, selectElement: selectEl})
+
+    var queryStringParameters = window.location.search
+    var previouslySubmitted = queryStringParameters.length > 0
+    if (previouslySubmitted) {
+      var submittedEl = document.querySelector('.submitted')
+      submittedEl
+        .classList
+        .remove('submitted--hidden')
+      var params = new URLSearchParams(document.location.search.split('?')[1])
+      document
+        .querySelector('.submitted__last-location')
+        .innerHTML = params.get('additional-calcs')
+    }
+  </script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+
+// Save button onclick uncheck all checkboxes
+        document.getElementById('btn').onclick = function() {
+          var checkboxes = document.getElementsByName('provider-approval');
+          for(var i=0; i<checkboxes.length; i++){
+                    if(checkboxes[i].type=='checkbox')
+                    checkboxes[i].checked=false;
+                  }
+                  document.querySelector('#a').disabled = true;
+                  document.querySelector('#a').value = '0'
+                  document.getElementById('notification-banner').classList.remove('govuk-visually-hidden');
+                  document.getElementById('warning').classList.add('govuk-visually-hidden');
+
+          }     
+        
+    // Add values to dropdown
+function change() 
+{
+  if(( document.getElementById('a').value == 1)  || (document.getElementById('a').value == 2 )|| 
+  (document.getElementById('a').value == 3 )|| (document.getElementById('a').value == 4 )|| 
+  (document.getElementById('a').value == 5 )|| (document.getElementById('a').value == 6 )|| 
+  (document.getElementById('a').value == 7 ))
+    {
+          document.getElementById('warning').classList.remove('govuk-visually-hidden');
+         
+    }
+ else
+ document.getElementById('warning').classList.add('govuk-visually-hidden')
+
+  for(i=1;i<=14;i++)
+{
+ 
+  
+  if (document.getElementById('a').value == i)
+  {
+   
+      document.getElementById("b").value = i;
+      
+    document.getElementById("c").value = i;    
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  else if((document.getElementById('b').value == 7) )
+  {
+    for(i=1;i<=14;i++)
+  {
+  if (document.getElementById('a').value == i)
+  {
+    document.getElementById("b").value = 7;
+    document.getElementById("c").value = i;
+    document.getElementById("d").value = i;
+    document.getElementById("e").value = i;
+    document.getElementById("f").value = i;
+    document.getElementById("g").value = i;
+    document.getElementById("h").value = i;
+    document.getElementById("i").value = i;
+    document.getElementById("j").value = i;
+    document.getElementById("k").value = i;
+
+  }
+  }
+  }
+  
+  
+  
+}
+}
+
+</script>
+
+    
+<!-- //Enable the drop down on select All and select all check boxes -->
+    <script>
+      function enableDropdown(select)
+            {
+            var dropdown = document.getElementById("a");
+            dropdown.disabled = select.checked ?false :true ;
+            if(!dropdown.disabled)
+            {
+              dropdown.focus();
+            }
+            
+              var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+              for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i] != select)
+                        checkboxes[i].checked = select.checked;
+                }
+                document.getElementById('notification-banner').classList.add('govuk-visually-hidden');
+            }
+    </script>
+<script>
+  function display()
+  {
+    location.href="create-data-set/edit-fds-dataset";
+  }
+  
+</script>
+ <style>
+  input.select-all {
+    width: 24px;
+    height: 24px;
+   box-sizing:content-box;
+   border-color: black;
+     
+  }
+ </style>
+  {% endblock%}
