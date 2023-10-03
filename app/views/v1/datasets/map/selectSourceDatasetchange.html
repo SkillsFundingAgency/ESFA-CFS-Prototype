@@ -1,0 +1,264 @@
+{% extends "layout.html" %}
+{% block pageTitle %} 
+GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Home
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="manageData">
+        Manage data
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="datasetRelationships">
+        Map data source files 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="dataRelationships1-1619-2324">
+        16 to 19 Mainstream 2022 to 2023
+      </a>
+    </li>
+
+  </ol>
+  
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        16 to 19 Mainstream 2022 to 2023
+      <span class="govuk-caption-l">Academies aschool year 2022 to 2023</span>
+      </h1>
+<div id="notification">
+      <div class="job-notification-banner" style="width:100%;" id="success" value="1" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <div class="govuk-notification-banner__header ">
+            
+          <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
+            <strong class="govuk-tag govuk-tag--orange">
+             <strong >ATTENTION </strong>
+            </strong> <strong id="test">Mapping in progress: Mapping dataset e353cc00 2bb3 4869 9eaa 6faa1dc32 to b1201071 a039 4557 8e28 4a9f34c80
+            </strong> 
+            <!-- id="more"<a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction()" id="myBtn">Read more</a> -->
+            <strong>
+             <span id="dots">.</span>
+            </strong>
+         <br/><br/><br/>
+            <span >Mapping initiated by Robert Sparks on  24 March 2023 11:10 am<br/><br/>
+              <strong>Last update:</strong>  24 March 2023 11:10 am
+           </span>
+          </h2>
+         </div>
+        </div>
+        
+        </div>
+       
+        <div class="job-notification-banner govuk-visually-hidden " style="width:100%;margin-top:2px;" id="success1" value="2" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <div class="govuk-notification-banner__header ">
+              
+            <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
+              <strong class="govuk-tag govuk-tag--orange">
+               <strong >ATTENTION </strong>
+              </strong> <strong >Creating calculations: Mapping dataset e353cc00 2bb3 4869 9eaa 6faa1dc32 to b1201071 a039 4557 8e28 4a9f34c80
+              </strong> 
+              <!-- id="more2" <a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction2()" id="myBtn2">Read more</a> -->
+              <strong><span id="dots2">.</span> </strong>
+              <br/><br/>                     
+              <span>Mapping initiated by Robert Sparks on  24 March 2023 11:10 am<br/><br/>
+                <strong>Last update:</strong>  24 March 2023 11:10 am
+             </span>
+  
+            </h2>
+           
+           </div>
+          </div>
+          </div>
+          <button class="govuk-button " data-module="govuk-button" id="back" onclick = "back()">
+            Back
+            </button>
+          <div class="job-success-notification-banner govuk-visually-hidden" style="width:100%;" id="success2" value="3"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
+                 <strong class="govuk-tag govuk-tag--green"style="float:left;">
+                  SUCCESS
+                </strong> <strong class="govuk-grid-column-three-quarters">Mapping completed successfully:Refreshing funding data e353cc00 2bb3 4869 9eaa 6faa1dc32  mapped to  b1201071 a039 4557 8e28 4a9f34c80
+                <span id="dots1">.</span> </strong> 
+                <!-- id="more1"<a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction1()" id="myBtn1">Read more</a> -->
+                <br/><br/><br/>
+                <span>Mapping initiated by Robert Sparks on 13 February 2023 11:57 am <br/><br/>
+                  <strong>Last update:</strong> 13 February 2023 11:57 am </span>
+              </h2>
+             </div>
+            </div>
+            </div>
+          </div>  
+          <button class="govuk-button govuk-visually-hidden" data-module="govuk-button" id="back1" onclick = "back1()">
+            Back
+            </button>
+           </div> 
+  
+<script type="application/json" id="select-data-source">
+  {
+    "data-source": {
+      "conditionallyRequired": {
+        "dependentOn": {
+          "name": "data-version",
+          "value": "APT adjusted"
+        },
+        "message": "^Please enter a phone number"
+      }
+    }
+  }
+</script>
+<script>
+  function enable()
+{
+  if(document.getElementById("changed-name1").value!="")
+  {
+  document.getElementById("btn").disabled=false;
+ 
+  }
+  else
+  {
+  document.getElementById("btn").disabled=true;
+ 
+  }
+}
+
+// //back button
+function back()
+{
+ 
+    location.href="dataRelationships1-map";
+ 
+}
+
+function back1()
+{
+ 
+    location.href="dataRelationship-map-completed";
+ 
+}
+</script>
+<script>
+
+  setTimeout(function(){
+      document.getElementById('success').style.display = 'none';
+      document.getElementById('back1').classList.add('govuk-visually-hidden').style.display = 'none';
+
+          }, 3000);
+    
+  </script>
+
+    <script>
+
+    setTimeout(function(){
+      document.getElementById('success1').classList.remove('govuk-visually-hidden').style.display = 'none';
+
+         },3000);
+    setTimeout(function(){
+      document.getElementById('success1').classList.add('govuk-visually-hidden').style.display = 'hidden';
+
+    },7000);
+    setTimeout(function(){
+      document.getElementById('back').style.display = 'none';
+    },7000);
+    setTimeout(function(){
+
+      document.getElementById('success2').classList.remove('govuk-visually-hidden').style.display = 'none';
+         },7000);
+         setTimeout(function(){
+      document.getElementById('back1').classList.remove('govuk-visually-hidden').style.display = 'none';
+    },7000);
+    setTimeout(function(){
+
+      document.getElementById('success2').classList.add('govuk-visually-hidden').style.display = 'hidden';
+    },9000);
+    setTimeout(function(){
+      document.getElementById('back1').style.display = 'none';
+    },9000);
+    setTimeout(function(){
+
+      document.getElementById('hide').classList.remove('govuk-visually-hidden').style.display = 'block';
+    },12000);
+    // setTimeout(function(){
+    //   location.href="selectSourceDatasetchange-success.html";
+    // },9000);
+
+    setTimeout(function(){
+  location.href="dataRelationship-map-completed";
+     },9000);
+     
+ 
+            
+  function myFunction() 
+  {
+
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+function myFunction1() 
+  {
+
+  var dots1 = document.getElementById("dots1");
+  var moreText1 = document.getElementById("more1");
+  var btnText1 = document.getElementById("myBtn1");
+
+  if (dots1.style.display === "none") {
+    dots1.style.display = "inline";
+    btnText1.innerHTML = "Read more"; 
+    moreText1.style.display = "none";
+  } else {
+    dots1.style.display = "none";
+    btnText1.innerHTML = "Read less"; 
+    moreText1.style.display = "inline";
+  }
+}
+function myFunction2() 
+  {
+
+  var dots2 = document.getElementById("dots2");
+  var moreText2 = document.getElementById("more2");
+  var btnText2 = document.getElementById("myBtn2");
+
+  if (dots2.style.display === "none") {
+    dots2.style.display = "inline";
+    btnText2.innerHTML = "Read more"; 
+    moreText2.style.display = "none";
+  } else {
+    dots2.style.display = "none";
+    btnText2.innerHTML = "Read less"; 
+    moreText2.style.display = "inline";
+  }
+}
+    </script>
+ 
+   
+{% endblock %}
