@@ -1,0 +1,442 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ GOV.UK Prototype Kit 
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs govuk">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Home
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manageData">
+        Manage data
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      <a class="govuk-breadcrumbs__link" href="datasetRelationships-updated.html">
+        Map data sources to data sets for a specification
+      </a>
+    </li>
+    
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}    
+<div class="govuk-grid-row govuk-!-margin-bottom-2 govuk-!-margin-top-1">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">16 to 19 Mainstream 2022 to 2023</h1>
+    <span class="govuk-caption-l">Academies and Schools Year 2022-23</span>
+  </div>
+       
+        <!-- <div class="govuk-grid-row govuk-!-margin-bottom-2"> -->
+          <div class="govuk-grid-column-full">
+        <div>
+         <br/>
+       
+    <!-- <div class="govuk-grid-column-full"> -->
+      <a href="../../v1/create-data-set/index.html" class="govuk-button govuk-button--primary button-createSpecification"
+      data-module="govuk-button">
+      Add new data set
+    </a>
+   
+        <ul class=" right-align"style="float:right;">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/v1/fundingLineStructure-chosen1">Manage specification</a>
+          </li>
+        </ul>
+     
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <br/>
+      <div class="pagination__summary"></div>
+    </div>
+  </div>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+        Data set
+      </th>
+        <th scope="col" class="govuk-table__header">Data Set Type</th>
+        <th scope="col" class="govuk-table__header">Mapped data source</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header">Action</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+         BusinessCase
+          <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+              Data set details
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">
+                <strong>Data Schema:</strong>16-19 Business Case
+            </p>
+              <p class="govuk-body">
+                <strong>Description:</strong>
+                This dataset covers business case data for 16-19 providers
+              </p>
+              <p class="govuk-body">
+                <strong>Last mapped:</strong> 20 February 2023 2:18 PM
+            </p>
+              <p class="govuk-body">
+                <strong>Last mapped by:</strong> Nathan Townsend
+            </p>
+            </div>
+          </details>
+        </th>
+        <td class="govuk-table__cell">
+       Uploaded data
+      </td>
+        <td class="govuk-table__cell">1619 BusinessCase 2324(version 1)</td>
+        <td class="govuk-table__cell">Completed</td>
+        <td class="govuk-table__cell">
+          <a href="../datasets/selectSourceDataset11.html" class="govuk-link">Change</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+         Factors
+          <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+              Data set details
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">
+                <strong>Data Schema:</strong>16-19 Factors
+            </p>
+              <p class="govuk-body">
+                <strong>Description:</strong>
+                This dataset covers all the factors for 16-19 providers
+              </p>
+              <p class="govuk-body">
+                <strong>Last mapped:</strong> 20 February 2023 2:19 PM
+            </p>
+              <p class="govuk-body">
+                <strong>Last mapped by:</strong> Nathan Townsend
+            </p>
+            </div>
+          </details>
+        </th>
+        <td class="govuk-table__cell">
+       Uploaded data
+      </td>
+        <td class="govuk-table__cell">1619 Factors 2223(version 1)</td>
+        <td class="govuk-table__cell">Completed</td>
+        <td class="govuk-table__cell">
+          <a href="../datasets/selectSourceDataset12.html" class="govuk-link">Change</a>
+        </td>
+        </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+        cc
+          <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+              Data set details
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">
+                <strong>Referenced specification:</strong>16-19 Mainstream 2023 to 2024
+            </p>
+              <p class="govuk-body">
+                <strong>Description:</strong>
+                test
+              </p>
+              <p class="govuk-body">
+                <strong>Last mapped:</strong> 20 February 2023 2:19 PM
+            </p>
+              <p class="govuk-body">
+                <strong>Last mapped by:</strong> system
+            </p>
+            </div>
+          </details>
+        </th>
+        <td class="govuk-table__cell">
+       Released data
+      </td>
+        <td class="govuk-table__cell">1619 Factors 2324(version 2)</td>
+        <td class="govuk-table__cell">Completed</td>
+        <td class="govuk-table__cell">
+          <a href="../datasets/selectSourceDataset13.html" class="govuk-link">Change</a>
+        </td>
+      </tr>
+      <!-- //FDS -->
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+        FDS-Data-test
+          <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+              Data set details
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">
+                <strong>Data Schema:</strong>16-19 Students
+            </p>
+              <p class="govuk-body">
+                <strong>Description:</strong>
+                test
+              </p>
+              <p class="govuk-body">
+                <strong>Last mapped:</strong>  24 March 2023 10:54am
+            </p>
+              <p class="govuk-body">
+                <strong>Last mapped by:</strong> system
+            </p>
+            </div>
+          </details>
+        </th>
+        <td class="govuk-table__cell">
+      FDS data
+      </td>
+        <td class="govuk-table__cell">1619-AS-2223_2023-03-09_1 (version 1)</td>
+        <td class="govuk-table__cell">Completed</td>
+        <td class="govuk-table__cell">
+          <a href="../datasets/selectSourceDatasetchange1-success.html" class="govuk-link">Change</a>
+        </td>
+        
+      </tr>
+       <!-- //fds-map -->
+       
+              <tr class="govuk-table__row govuk-visually-hidden" id="change">
+        <th scope="row" class="govuk-table__header">
+        FDS-Data
+          <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+              Data set details
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">
+                <strong>Data Schema:</strong>16-19 Students 
+            </p>
+              <p class="govuk-body">
+                <strong>Description:</strong>
+                test
+              </p>
+              <p class="govuk-body" id="last-mapped">
+                <strong>Last mapped:</strong>  Completed :  24 March 2023 11:11 AM
+            </p>
+           
+              <p class="govuk-body">
+                <strong>Last mapped by:</strong> system
+            </p>
+            </div>
+          </details>
+        </th>
+        <td class="govuk-table__cell">
+      FDS data
+      </td>
+        <td class="govuk-table__cell">1619-AS-2223_2023-03-09_1 (version 1)</td>
+        <td class="govuk-table__cell">Completed</td>
+
+        <td class="govuk-table__cell">
+          <a href="selectSourceDatasetchange-success.html" class="govuk-link">Change</a>
+        </td>
+       
+      </tr>
+     
+
+      
+        <tr class="govuk-table__row " id="map">
+  <th scope="row" class="govuk-table__header">
+  FDS-Data
+    <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+        Data set details
+      </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          <strong>Data Schema:</strong>16-19 Students
+      </p>
+        <p class="govuk-body">
+          <strong>Description:</strong>
+          test
+        </p>
+        <p class="govuk-body">
+          <strong>Last mapped:</strong> 
+      </p>
+        <p class="govuk-body">
+          <strong>Last mapped by:</strong> system
+      </p>
+      </div>
+    </details>
+  </th>
+  <td class="govuk-table__cell">
+FDS data
+</td>
+  <td class="govuk-table__cell">No data sources mapped</td>
+  <td class="govuk-table__cell">Not Started</td>
+
+  <td class="govuk-table__cell">
+    <a href="selectSourceDatasetchange.html" class="govuk-link">Map</a>
+  </td>
+  
+</tr>
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header">
+  FDS-Data-error
+    <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-2" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+        Data set details
+      </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          <strong>Data Schema:</strong>16-19 Students
+      </p>
+        <p class="govuk-body">
+          <strong>Description:</strong>
+          test
+        </p>
+        <p class="govuk-body">
+          <strong>Last mapped:</strong> 
+      </p>
+        <p class="govuk-body">
+          <strong>Last mapped by:</strong> system
+      </p>
+      </div>
+    </details>
+  </th>
+  <td class="govuk-table__cell">
+FDS data
+</td>
+  <td class="govuk-table__cell">No data sources mapped</td>
+
+  <td class="govuk-table__cell">Completed</td>
+
+  <td class="govuk-table__cell">
+    <a href="selectSourceDataset-error.html" class="govuk-link">Map</a>
+  </td>
+</tr>
+    </tbody>
+  </table>
+
+  <div class="app-back-to-top app-back-to-top--fixed govuk-!-margin-top-9" data-module="app-back-to-top">
+    <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+      <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+      width="13" height="17" viewBox="0 0 13 17">
+        <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+      </svg>Back to top
+  </a>
+  </div>
+  </div>
+  <script>
+    setTimeout(function(){
+        document.getElementById('success').style.display = 'none';
+       // document.getElementById('map').style.display = 'none';
+     //   document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
+
+      }, 3000);
+     
+      
+    </script>
+
+      <script>
+      setTimeout(function(){
+        document.getElementById('success1').classList.remove('govuk-visually-hidden').style.display = '';
+      //  document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
+      },3000);
+      setTimeout(function(){
+        document.getElementById('success1').classList.add('govuk-visually-hidden').style.display = 'block';
+      },7000);
+      
+       setTimeout(function(){
+        document.getElementById('map').style.display = 'none';
+       
+       }, 7000);
+
+</script>
+      <script>
+        setTimeout(function(){
+          document.getElementById('change').classList.remove('govuk-visually-hidden').style.display = 'block';
+            
+      }, 8000);
+      setTimeout(function(){
+       document.getElementById('success2').classList.remove('govuk-visually-hidden').style.display = 'none';
+      
+       
+      }, 8000);
+      </script>
+      <script>
+           
+     function myFunction() 
+  {
+
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+function myFunction1() 
+  {
+
+  var dots1 = document.getElementById("dots1");
+  var moreText1 = document.getElementById("more1");
+  var btnText1 = document.getElementById("myBtn1");
+
+  if (dots1.style.display === "none") {
+    dots1.style.display = "inline";
+    btnText1.innerHTML = "Read more"; 
+    moreText1.style.display = "none";
+  } else {
+    dots1.style.display = "none";
+    btnText1.innerHTML = "Read less"; 
+    moreText1.style.display = "inline";
+  }
+}
+function myFunction2() 
+  {
+
+  var dots2 = document.getElementById("dots2");
+  var moreText2 = document.getElementById("more2");
+  var btnText2 = document.getElementById("myBtn2");
+
+  if (dots2.style.display === "none") {
+    dots2.style.display = "inline";
+    btnText2.innerHTML = "Read more"; 
+    moreText2.style.display = "none";
+  } else {
+    dots2.style.display = "none";
+    btnText2.innerHTML = "Read less"; 
+    moreText2.style.display = "inline";
+  }
+}
+</script>
+
+  
+
+</script>
+{% endblock %}

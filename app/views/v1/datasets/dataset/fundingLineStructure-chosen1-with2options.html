@@ -346,7 +346,17 @@ GOV.UK Prototype Kit
 
           <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
             <div class="govuk-grid-row">
-              
+              <div class="govuk-notification-banner  app-banner-position  govuk-notification-banner--success "style="width:90%;" id="notification-banner"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__heading app-notification-message">
+                  
+                  <h2 class="govuk-notification-banner__title app-notification-message "id="govuk-notification-banner-title">
+                    <p class="font-bold govuk-notification-banner__title  app-banner-title ">Success</p>
+                    <p class="govuk-notification-banner app-banner">
+                      FDS-Data has been successfully updated to V3 of the 16-19 Students data schema
+                    </p>
+                  </h2>  
+                </div>
+              </div>
               <div class="govuk-grid-column-two-thirds">
                 <h2 class="govuk-heading-l">Data sets</h2>
                 <h2 class="govuk-heading-m">Data sets with corresponding data schemas</h2>
@@ -398,7 +408,7 @@ GOV.UK Prototype Kit
                     </div>
                   </th>
                   <td class="govuk-table__cell">16-19 Students</td>
-                  <td class="govuk-table__cell">V2  <strong class="govuk-tag govuk-tag govuk-tag--blue">
+                  <td class="govuk-table__cell">V2  <strong class="govuk-tag govuk-tag--red">
                     New version available
                   </strong>
                   <details class="govuk-details govuk-!-padding-top-3" data-module="govuk-details" id="v1">
@@ -425,7 +435,7 @@ GOV.UK Prototype Kit
                     </details></td>
 
                   <td class="govuk-table__cell"> 
-                  <a class="font-bold" href="edit-fds-dataset.html">Edit data set</a>
+                  <a class="font-bold" href="edit-fds-dataset-with2options.html">Edit data set</a>
                   </td>
                 </tr>
               </tbody>
