@@ -36,20 +36,16 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-full">    
     <form  novalidate data-validate="create-data-set" id="myForm">
       <fieldset class="govuk-fieldset">
-      <h1 class="govuk-heading-xl">16 to 19 Mainstream 2022 to 2023</h1>
+      <h1 class="govuk-heading-xl">16 to 19 Mainstream 2022 to 2023
+      <span class="govuk-caption-l">16 to 19 academic year 2022 to 2023</span></h1>
+
           <h2 class="govuk-heading-l">Edit data set</h2>
-          <div class="govuk-warning-text">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text">
-              <span class="govuk-warning-text__assistive">Warning</span>
-             Update data schema versions and add relevant details
-            </strong>
-          </div>
+          
               
 
         <div class="govuk-form-group">
           <label class="govuk-label font-bold" for="address-line-1">
-            Name of data set
+            Name of the data set
           </label>
           <label class="govuk-label" for="address-line-1">
             FDS-Data
@@ -57,7 +53,7 @@ GOV.UK Prototype Kit
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label font-bold" for="address-line-1">
-            Name of data schema
+            Name of the data schema
           </label>
           <label class="govuk-label" for="address-line-1">
             16-19 Students
@@ -65,8 +61,12 @@ GOV.UK Prototype Kit
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label font-bold" for="address-line-1">
-           Latest data schema version
-          </label>
+            New data schema version
+           </label>
+            <label class="govuk-label" for="address-line-1">
+            V3
+           </label>
+          <br/>
           <!-- <label class="govuk-label font-bold" for="address-line-1">
            V1.4
           </label> -->
@@ -75,11 +75,30 @@ GOV.UK Prototype Kit
             <option value="1" selected >V2</option>
            <option value="3">V3</option>
            </select>  -->
-            <label class="govuk-label" for="address-line-1">
+            <!-- <label class="govuk-label" for="address-line-1">
              V3
-            </label>
-        
-        <details class="govuk-details govuk-!-padding-top-1" data-module="govuk-details" id="v1">
+            </label> -->
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Data schema version</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Last updated</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Updated by</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Change notes</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell font-bold">V3</td>
+                  <td class="govuk-table__cell">13th April,2023</td>
+                  <td class="govuk-table__cell">Peter, Smith</td>
+                  <td class="govuk-table__cell">Field updated</td>
+          
+                </tr>
+              
+              </tbody>
+            </table>
+        <!-- <details class="govuk-details govuk-!-padding-top-1" data-module="govuk-details" id="v1">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
              V3 details
@@ -94,12 +113,12 @@ GOV.UK Prototype Kit
             <strong>Last updated by:</strong> Peter, Smith</p>
            
            <p class="govuk-body">
-            <strong>Change notes:</strong>Field changes</p>
+            <strong>Change notes:</strong>Field changes</p> -->
            <!-- <br/>
            <textarea class="govuk-textarea" id ="textarea" name="description"rows="2" cols="3"
          aria-label="more-detail-hint" >Field changes</textarea> -->
-          </div>
-          </details>
+          <!-- </div>
+          </details> -->
         </div>
 
         
@@ -110,7 +129,7 @@ GOV.UK Prototype Kit
           <span id="event-name-hint" class="govuk-hint">
            Add more details on why you are making this update <br/>
           </span>
-          <textarea class="govuk-textarea" id ="textarea" name="description" rows="8"
+          <textarea class="govuk-textarea"style="margin-top:15px;" id ="textarea" name="description" rows="8"
             aria-label="more-detail-hint" onKeyUp="if(this.value.length > 0) " ></textarea>
             <!-- document.getElementById('btn').disabled = false ;document.getElementById('save-add').disabled = false;" -->
         </div>

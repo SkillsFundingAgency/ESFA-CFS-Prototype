@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-grid-row">
+  <a  href="fundingLineStructure-newschema#past-month" class="govuk-back-link">Back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+  <form  novalidate data-validate="create-data-set" id="myForm">
+    <fieldset class="govuk-fieldset">
+    <h1 class="govuk-heading-xl">16 to 19 Mainstream 2022 to 2023
+    <span class="govuk-caption-l">16 to 19 academic year 2022 to 2023</span></h1>
+    <h2 class="govuk-heading-l">Data schema details</h2>
+      </fieldset>
+      </form>
+     
+  <div class="govuk-form-group">
+    <label class="govuk-label font-bold" for="address-line-1">
+      Name of the data schema
+    </label>
+    <label class="govuk-label" for="address-line-1">
+      16-19 Students
+    </label>
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label font-bold" for="address-line-1">
+     Description
+    </label>
+    <label class="govuk-label" for="address-line-1">
+      FDS-Data
+    </label>
+  </div>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Data schema version</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Last updated</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Updated by</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Change notes</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell font-bold">V3</td>
+        <td class="govuk-table__cell">13th April,2023</td>
+        <td class="govuk-table__cell">Peter, Smith</td>
+        <td class="govuk-table__cell">Field updated</td>
+
+      </tr>
+    
+    </tbody>
+  </table>
+</div>      
+   </div>        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- <script type="application/json" id="create-data-set">
+  {
+      
+
+      "description": {
+          "presence": {
+              "message": "^Enter a description"
+          }
+      }
+  }
+</script> -->
+
+
+{% endblock %}
+
