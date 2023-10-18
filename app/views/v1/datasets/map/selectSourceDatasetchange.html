@@ -57,7 +57,7 @@ GOV.UK Prototype Kit
             <strong>
              <span id="dots">.</span>
             </strong>
-         <br/><br/><br/>
+         <br/><br/>
             <span >Mapping initiated by Robert Sparks on  24 March 2023 11:10 am<br/><br/>
               <strong>Last update:</strong>  24 March 2023 11:10 am
            </span>
@@ -91,23 +91,30 @@ GOV.UK Prototype Kit
           <button class="govuk-button " data-module="govuk-button" id="back" onclick = "back()">
             Back
             </button>
-          <div class="job-success-notification-banner govuk-visually-hidden" style="width:100%;" id="success2" value="3"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-            <div class="govuk-notification-banner__header">
-              <div class="govuk-notification-banner__header">
-                <h2 class="govuk-notification-banner border-color " id="govuk-notification-banner">
-                 <strong class="govuk-tag govuk-tag--green"style="float:left;">
-                  SUCCESS
-                </strong> <strong class="govuk-grid-column-three-quarters">Mapping completed successfully:Refreshing funding data e353cc00 2bb3 4869 9eaa 6faa1dc32  mapped to  b1201071 a039 4557 8e28 4a9f34c80
-                <span id="dots1">.</span> </strong> 
+          <!-- <div class="job-success-notification-banner govuk-visually-hidden" style="width:100%;" id="success2" value="3"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header"> -->
+              <!-- <div class="govuk-notification-banner__header"> -->
+                <!-- <div class="govuk-grid-row"> -->
+                  <div class="govuk-notification-banner govuk-notification-banner--success govuk-visually-hidden "style="width:100%;" id="success2" value="3"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="notification-banner"role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__heading app-notification-message">
+                      
+                      <h2 class="govuk-notification-banner__title app-notification-message "id="govuk-notification-banner-title">
+                        <p class="font-bold govuk-notification-banner__title  app-banner-title ">Success</p>
+                        <p class="govuk-notification-banner app-banner font-bold">
+                          Mapping completed successfully:Refreshing funding data e353cc00 2bb3 4869 9eaa 6faa1dc32  mapped to  b1201071 a039 4557 8e28 4a9f34c80
+                <span id="dots1">.</span> 
                 <!-- id="more1"<a class="right-align  govuk-link govuk-link--no-visited-state" href="javascript:void(0)" onclick="myFunction1()" id="myBtn1">Read more</a> -->
-                <br/><br/><br/>
-                <span>Mapping initiated by Robert Sparks on 13 February 2023 11:57 am <br/><br/>
+                <br/><br/>
+                <span style="font-weight: lighter;">Mapping initiated by Robert Sparks on 13 February 2023 11:57 am <br/><br/>
                   <strong>Last update:</strong> 13 February 2023 11:57 am </span>
-              </h2>
+                        
+                      </h2>  
+                    </div>
+                  </div>
+                </div>
+             
              </div>
             </div>
-            </div>
-          </div>  
           <button class="govuk-button govuk-visually-hidden" data-module="govuk-button" id="back1" onclick = "back1()">
             Back
             </button>
@@ -196,7 +203,7 @@ function back1()
     setTimeout(function(){
 
       document.getElementById('hide').classList.remove('govuk-visually-hidden').style.display = 'block';
-    },12000);
+    },9000);
     // setTimeout(function(){
     //   location.href="selectSourceDatasetchange-success.html";
     // },9000);
