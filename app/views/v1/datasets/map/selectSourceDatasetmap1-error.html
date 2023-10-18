@@ -37,41 +37,45 @@ GOV.UK Prototype Kit
 {% block content %}
 
   <div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-error-summary govuk-visually-hidden" data-module="govuk-error-summary" id="notification">
-      <div role="alert">
-        <h2 class="govuk-error-summary__title">
-          There is a problem
-        </h2>
-        <div class="govuk-error-summary__body">
-          <ul class="govuk-list govuk-error-summary__list">
-           <p> An error was encountered whilst trying to save changes:</p>
-                       <p class="govuk-error-message"> Datasource mapping failed for FDS Funding Data Api for Snapshot ID-'207'
-           </p> <br/>
-            Please check and try again
-          </ul>
-        </div>
-      </div>
-    </div>
+    
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
         16 to 19 Mainstream 2022 to 2023
       <span class="govuk-caption-l">Academies and Schools Year 2022-23</span>
       </h1>
+      <!-- <div class="govuk-error-summary govuk-visually-hidden" data-module="govuk-error-summary" id="notification">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+             <p> An error was encountered whilst trying to save changes</p>
+                         <a class="govuk-link govuk-error-message"> Datasource mapping failed for FDS Funding Data Api for Snapshot ID-'207'
+                         </a> 
+              Please check and try again
+            </ul>
+          </div>
+        </div>
+      </div> -->
     </div>
  
   </div>
   <!-- dataRelationships1-map-fds -->
-  <form action="dataRelationships-map-error" method="post" class="form" id="updateDataset" >
+  <form action="selectSourceDatasetmap2-error" method="post" class="form" id="updateDataset" >
     <div class="govuk-form-group">
       <div class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-        <h4 class="govuk-heading-s">Select data source file for FDS data</h4>
-        <span id="how-contacted-conditional-hint" class="govuk-hint">
+        <!-- <h4 class="govuk-heading-s">Select data source file for FDS data</h4> -->
+        <!-- <span id="how-contacted-conditional-hint" class="govuk-hint">
           Select one option
-         </span>
+         </span> -->
+         <h1 class="govuk-heading-l">FDS-Data-error
+          <span class="govuk-caption-m">Map data source file</span></h1>
+  
         </div>    <br/>    
-         <div class="govuk-radios__item">
+        <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changed-name" name="data-version" type="radio" value="month" />
-          <label class="govuk-label govuk-radios__label  summary-margin-removal" for="changed-name">
+          <label class="govuk-label govuk-radios__label  summary-margin-removal" for="changed-name"><strong>Name:</strong>
             <!-- 1619-AS-2223_2023-03-09_1 -->1619 StudentsData-2022
             <h4 class="govuk-heading-s">Description: <label class="govuk-label govuk-radios__label">16-19 Students 2223</label>
             </h4>       
@@ -80,7 +84,7 @@ GOV.UK Prototype Kit
         </div>
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changed-name" name="data-version" type="radio" value="month" />
-          <label class="govuk-label govuk-radios__label  summary-margin-removal" for="changed-name">
+          <label class="govuk-label govuk-radios__label  summary-margin-removal" for="changed-name"><strong>Name:</strong>
             <!-- 1619-AS-2223_2023-03-09_1 -->1619 StudentsData-2022 V Test
             <h4 class="govuk-heading-s">Description: <label class="govuk-label govuk-radios__label">16-19 Students 2223</label>
             </h4>
@@ -91,7 +95,7 @@ GOV.UK Prototype Kit
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="how-contacted-conditional" name="data-source" type="radio"
               value="APT adjusted" data-aria-controls="conditional-how-contacted-conditional" />
-              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional"><strong>Name:</strong>
               <!-- 1619 FDS data 1234 <br/> -->
               1619-AS-2223_2023-03-09_1
               <h4 class="govuk-heading-s">Description: <label class="govuk-label govuk-radios__label">16-19 Students 2223</label>
@@ -104,39 +108,40 @@ GOV.UK Prototype Kit
               <h4 class="govuk-heading-s">Select data source version</h4>
               <div class="govuk-radios govuk-radios--small">
                 <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name"onclick="enable()" name="data-version" type="radio" value="month" />
-                <label class="govuk-label govuk-radios__label" for="changed-name">
-                  <!-- 1619-AS-2223_2023-03-09_1 -->1619-AS-2223_2023-03-09_1 (Version 1)
-                <div class="govuk-!-margin-top-1">
-                    <details class="govuk-details  summary-margin-removal" data-module="govuk-details">
-                      <summary class="govuk-details__summary ">
-                        <span class="govuk-details__summary-text">
-                         Details
-                      </span>
-                      </summary>
-                      <div class="govuk-details__text summary-margin-removal">
-                        <p class="govuk-body-s">
-                          <strong>Version notes:</strong> 1 
-                      </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated:</strong>  24 March 2023 
-                        10:54am
-                      </p>
-                        <p class="govuk-body-s">
-                          <strong>Last updated by:</strong> Robert Sparks
-                      </p>
-                      </div>
-                    </details>
-                  </div>
-                </label>
-              </div>
-          </div>
-      </div>
-          
-            </fieldset>
+                  <input class="govuk-radios__input" id="changed-name"onclick="enable()" name="data-version" type="radio" value="month" />
+                  <label class="govuk-label govuk-radios__label  summary-margin-removal" for="changed-name"><strong>Name:</strong>
+                    <!-- 1619-AS-2223_2023-03-09_1 -->1619-AS-2223_2023-03-09_1 (Version 1)
+                  <div class="govuk-!-margin-top-1">
+                      <details class="govuk-details  summary-margin-removal" data-module="govuk-details">
+                        <summary class="govuk-details__summary ">
+                          <span class="govuk-details__summary-text">
+                           Details
+                        </span>
+                        </summary>
+                        <div class="govuk-details__text summary-margin-removal">
+                          <p class="govuk-body-s">
+                            <strong>Change notes:</strong> Uploaded
+                        </p>
+                          <p class="govuk-body-s">
+                            <strong>Last updated:</strong>  24 March 2023 
+                          10:54am
+                        </p>
+                          <p class="govuk-body-s">
+                            <strong>Last updated by:</strong> Robert Sparks
+                        </p>
+                        </div>
+                      </details>
+                    </div>
+                  </label>
+                </div>
+            </div>
+        </div>
+       </div>
+       </div>
+        
   
     <div class="govuk-grid-row govuk-!-margin-bottom-5">
-        <button class="govuk-button" data-module="govuk-button" id="btn"disabled="true">
+        <button class="govuk-button" data-module="govuk-button" id="btn" disabled="true" onclick = "back()">
         Save
         </button>
       
@@ -144,8 +149,10 @@ GOV.UK Prototype Kit
       <a  href ="dataRelationship-error"class="govuk-button govuk-button--secondary" data-module="govuk-button" >
       Cancel
       </a>
+      <!-- dataRelationships-map-error -->
     </div>
   </div>
+
 <script type="application/json" id="select-data-source">
   {
     "data-source": {
@@ -159,14 +166,16 @@ GOV.UK Prototype Kit
     }
   }
 </script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+
 <script>
   function enable()
 {
-  document.getElementById("notification").classList.remove("govuk-visually-hidden").style.dispaly="block";
 
  if(document.getElementById("changed-name").value!="")
  {
  document.getElementById("btn").disabled=false;
+//  document.getElementById("notification").classList.remove("govuk-visually-hidden").style.dispaly="block";
 
  }
  else
@@ -174,7 +183,11 @@ GOV.UK Prototype Kit
  document.getElementById("btn").disabled=true;
 
  }
+
+}
+function back()
+{
+  location.href="selectSourceDatasetmap2-error";
 }
 </script>
-
 {% endblock %}
