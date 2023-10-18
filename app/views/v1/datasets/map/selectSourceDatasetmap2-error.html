@@ -13,17 +13,17 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="../manageData">
+    <a class="govuk-breadcrumbs__link" href="manageData">
         Manage data
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../datasetRelationships">
+      <a class="govuk-breadcrumbs__link" href="datasetRelationships">
         Map data source files 
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="dataRelationship-error">
+      <a class="govuk-breadcrumbs__link" href="dataRelationships1-1619-2324">
         16 to 19 Mainstream 2022 to 2023
       </a>
     </li>
@@ -37,34 +37,39 @@ GOV.UK Prototype Kit
 {% block content %}
 
   <div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-error-summary govuk-visually-hidden" data-module="govuk-error-summary" id="notification">
-      <div role="alert">
-        <h2 class="govuk-error-summary__title">
-          There is a problem
-        </h2>
-        <div class="govuk-error-summary__body">
-          <ul class="govuk-list govuk-error-summary__list">
-           <p> An error was encountered whilst trying to save changes:</p>
-                       <p class="govuk-error-message"> Datasource mapping failed for FDS Funding Data Api for Snapshot ID-'207'
-           </p> <br/>
-            Please check and try again
-          </ul>
-        </div>
-      </div>
-    </div>
+    
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
         16 to 19 Mainstream 2022 to 2023
       <span class="govuk-caption-l">Academies and Schools Year 2022-23</span>
       </h1>
+      <div class="govuk-error-summary" data-module="govuk-error-summary" id="notification">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+             <p> An error was encountered whilst trying to save changes</p>
+                         <a class="govuk-link govuk-error-message"> Datasource mapping failed for FDS Funding Data Api for Snapshot ID-'207'
+                         </a> 
+              Please check and try again
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
  
   </div>
   <!-- dataRelationships1-map-fds -->
-  <form action="dataRelationships-map-error" method="post" class="form" id="updateDataset" >
+  <form action="" method="post" class="form" id="updateDataset" >
     <div class="govuk-form-group">
       <div class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-        <h1 class="govuk-heading-l">FDS-Data-error
+        <!-- <h4 class="govuk-heading-s">Select data source file for FDS data</h4> -->
+        <!-- <span id="how-contacted-conditional-hint" class="govuk-hint">
+          Select one option
+         </span> -->
+         <h1 class="govuk-heading-l">FDS-Data-error
           <span class="govuk-caption-m">Map data source file</span></h1>
   
         </div>    <br/>    
@@ -134,8 +139,9 @@ GOV.UK Prototype Kit
        </div>
        </div>
         
+  
     <div class="govuk-grid-row govuk-!-margin-bottom-5">
-        <button class="govuk-button" data-module="govuk-button" id="btn"disabled="true">
+        <button class="govuk-button" data-module="govuk-button" id="btn" disabled="true" onsubmit="display()">
         Save
         </button>
       
@@ -143,8 +149,10 @@ GOV.UK Prototype Kit
       <a  href ="dataRelationship-error"class="govuk-button govuk-button--secondary" data-module="govuk-button" >
       Cancel
       </a>
+      <!-- dataRelationships-map-error -->
     </div>
   </div>
+
 <script type="application/json" id="select-data-source">
   {
     "data-source": {
@@ -158,6 +166,9 @@ GOV.UK Prototype Kit
     }
   }
 </script>
+  <script src="/public/javascripts/validate.min.map"></script>
+
+
 <script>
   function enable()
 {
@@ -165,6 +176,7 @@ GOV.UK Prototype Kit
  if(document.getElementById("changed-name").value!="")
  {
  document.getElementById("btn").disabled=false;
+//  document.getElementById("notification").classList.remove("govuk-visually-hidden").style.dispaly="block";
 
  }
  else
@@ -172,7 +184,8 @@ GOV.UK Prototype Kit
  document.getElementById("btn").disabled=true;
 
  }
-}
-</script>
 
+}
+
+</script>
 {% endblock %}
