@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Home
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="../../funding-management/funding-management">
+        Funding management 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="../view-funding">
+        Funding approvals 
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/16-19/16-19-results-with-la">
+          16 to 19 Mainstream 2022 to 2023
+      </a>
+    </li>
+
+  </ol>
+  
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm reprofile</h1>
+    <span class="govuk-caption-l govuk-!-margin-bottom-1">Check the information below carefully before reprofiling 
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <table class="govuk-table govuk-!-margin-bottom-4">
+      <!-- <caption class="govuk-table__caption govuk-!-margin-6">Funding reprofile </caption> -->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Title</th>
+          <th scope="col" class="govuk-table__header">Summary</th>
+          <!-- <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th> -->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Specification selected</th>
+          <td class="govuk-table__cell">
+            <p class="govuk-body">16 to 19 Mainstream 2022 to 2023</p>
+          </td>
+         
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Funding period</th>
+          <td class="govuk-table__cell">Academies and school year 2022 to 2023</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Number of eligible providers</th>
+          <td class="govuk-table__cell">120</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Eligible providers Selected</th>
+          <td class="govuk-table__cell"><a href="">Export all as csv</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="upload-batch-reprofile-release"style="padding-left:680px;"> Change selection</a>
+    <br/>
+  </div>
+  
+</div>
+
+<div class="govuk-grid-row">
+
+        </fieldset>
+      </div>
+
+      <button onclick="redirect();" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        Confirm
+      </button>
+
+      <a href="/v1/funding-approvals/16-19/16-19-results-with-la" button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Cancel
+      </a>
+    </form>
+  </div>
+</div>
+<script>
+  function redirect()
+  {
+    location.href="/v1/funding-approvals/16-19/16-19-reprofile-result"
+  }
+</script>
+
+{% endblock %}

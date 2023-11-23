@@ -60,6 +60,11 @@ router.post('/v1/view-results/view-specification-results/select-specification', 
     res.render('v1/funding-management/16-19/16-19-results-v1', { 'name' : 'Foo' });
 
   });
+  router.get('/v1/funding-approvals/batch/upload-batch-reprofile-release', function (req, res) {
+
+    res.render('v1/funding-approvals/batch/upload-batch-reprofile-release', { 'name' : 'Foo' });
+
+  });
   router.get('/v1/funding-management/16-19/16-19-results-conflict', function (req, res) {
 
     res.render('v1/funding-management/16-19/16-19-results-conflict', { 'name' : 'Foo' });
