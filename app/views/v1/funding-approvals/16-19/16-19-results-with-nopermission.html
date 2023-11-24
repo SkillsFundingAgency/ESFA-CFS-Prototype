@@ -26,13 +26,25 @@ GOV.UK Prototype Kit
 
     </ol>
 </div>
-
+<div class="govuk-notification-banner app-banner-position govuk-!-margin-bottom-4 govuk-!-margin-top-0 "role="region" id="notification-banner" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__heading">
+      
+      <h2 class="govuk-notification-banner__title" style="width:105%"id="govuk-notification-banner-title">
+        <p class="font-bold govuk-notification-banner__title app-banner-title">Permissions</p>
+        <p class="govuk-notification-banner app-banner font-bold">
+            You do not have permissions to perform the following action:  Can refresh funding, Can approve funding.           
+          <a  href="/v1/my-user-permissions.html" class="font-bold"> View your user permissions</a>.
+         </p>
+      </h2>  
+    </div>
+  </div>
 {% endblock %}
 
 {% block content %}
 
 {% set funding_stream = "16 to 19" %}
 {% set funding_year = "2021 to 2022" %}
+
 
 <div class="govuk-error-summary govuk-visually-hidden" aria-labelledby="error-summary-title" role="alert"
     data-module="govuk-error-summary">
@@ -53,17 +65,10 @@ GOV.UK Prototype Kit
         <span class="govuk-caption-l">16-19 for Academies and Schools Year 2022-23</span>
     </div>
     <div class="govuk-grid-column-one-third">
-        <p class="govuk-!-margin-bottom-0 app-font">Actions:</p>
-<ul class="govuk-list">
-    <li><a href="../batch/upload-batch-reprofile-release" class="govuk-link">Reprofile a batch of providers</a></li>
-    <li><a href="../batch/upload-batch-approve-release" class="govuk-link">Approve a batch of providers</a></li>
-    <li><a href="../batch/upload-batch-approve-release" class="govuk-link">Refresh funding</a></li>
-    <p class="govuk-!-margin-bottom-4 govuk-caption-m">Last refresh 29 March 2023 11:43AM</p>
-</ul>
-
 <p class="govuk-!-margin-bottom-0 app-font">Navigate to:</p>
 <ul class="govuk-list">
-    <li><a href="../../funding-approvals/16-19/16-19-results" class="govuk-link">Release management</a></li>
+    <li><a href="" class="govuk-link">Release management</a></li>
+    <!-- ../../funding-approvals/16-19/16-19-results -->
     <li><a class="govuk-link" href="/v1/fundingLineStructure-gag">Manage specification</a></li>
     <li><a class="govuk-link" href="/v1/view-results/view-specification-results/view-specification#downloadable-reports">Specification reports</a></li>
 </ul>
