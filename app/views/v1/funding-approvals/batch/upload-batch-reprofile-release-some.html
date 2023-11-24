@@ -39,7 +39,7 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group">
-            <form action="" method="post" id="batchProviders" novalidate>
+            <form action="batch-reprofile-some" method="post" id="batchProviders" novalidate>
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                         <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
@@ -84,22 +84,15 @@ GOV.UK Prototype Kit
             <label class="govuk-label" for="file-upload"><strong>
                     Upload a xlsx file</strong>
             </label>
-            <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
+            <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file" onchange="enableButton()">
         </div>
-        <a href="batch-reprofile-some.html" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+        <button  id="reprofile" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" disabled>
             Reprofile
-        </a>
+        </button>
         <a href="javascript:history.back()" class="govuk-link govuk-button govuk-button--secondary">
             Cancel
         </a>
-        <!-- <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" onclick="release()"
-            data-module="govuk-button">
-            Release funding
-        </button> -->
-        <!-- <button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" onclick="processHold()"
-            data-module="govuk-button">
-            Process hold status
-        </button>-->
+        
         </fieldset>
         </form>
     </div>
@@ -123,6 +116,13 @@ GOV.UK Prototype Kit
     function processHold() {
         document.getElementById('batchProviders').action = 'process-hold-in-progress'
     }
+    function enableButton() {
+            var fileInput = document.getElementById('file-upload');
+            var uploadButton = document.getElementById('reprofile');
+
+            // Enable the button if a file is selected
+            uploadButton.disabled = false;
+        }
 </script>
 
 {% endblock %}
