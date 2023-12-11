@@ -19,7 +19,7 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/v1/funding-management/view-funding">
+      <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/view-funding">
         Funding approvals
       </a>
     </li>
@@ -35,73 +35,88 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+            <div class="govuk-error-summary" data-module="govuk-error-summary">
+                <div role="alert">
+                <h2 class="govuk-error-summary__title">
+                    There is a problem
+                </h2>
+                <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                        <a href="">None of the  providers in this batch are eligible for reprofiling. This is either because
+                        the providers have not been released only for statements,
+                            the details of the providers are not in an open state or
+                            the open date is not within the same year as the allocation funding year.</a>
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+  <div class="govuk-form-group">
+    <form action="upload-batch-reprofile-release-ineligible" method="post" id="batchProviders" novalidate>
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
+                   Reprofile a batch of providers
+                </h1>
+            </legend>
 
+        
+            <h2 class="govuk-heading-m">
+                16 to 19 Mainstream 2022 to 2023
+             </h2>
+             <p>Reprofile provider allocation by uploading the data on the first sheet of a .xlsx file. When you upload, remember the following:
+
+
+             </p>
+            <ul class="govuk-list govuk-list--bullet">
+              
+                <li>the file should have only one UKPRN column</li>
+                <!-- <li>the providers already approved or released will not be shown in the provider count summaries -->
+                </li>
+            </ul>
+</div>
+</div>
+</div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group">
-            <form action="batch-reprofile-ineligible" method="post" id="batchProviders" novalidate>
+            <label class="govuk-label" for="file-upload"><strong>
+  <div class="govuk-form-group govuk-form-group--error">
+    <label class="govuk-label" for="file-upload"><strong>
+        Upload a .xlsx file</strong>
+</label>
+<span class="govuk-caption-m">Please check for the below errors</span>
+    <p id="full-name-input-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> None of the  providers in this batch are eligible for reprofiling
+    </p>
+    <div class="govuk-form-group">
+       
+        <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file" onchange="enableButton()">
+    </div>  </div>
+
+        <div class="govuk-form-group">
+            <form action="" method="post" id="batchProviders" novalidate>
                 <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
-                           Reprofile a batch of providers
-                        </h1>
-                    </legend>
-
-                    <!-- <dl class="govuk-summary-list govuk-summary-list--no-border">
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                <h2 class="govuk-heading-s govuk-!-margin-bottom-1" for="specification">Specification
-                                    selected
-                                </h2>
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                <p id="specification" class="govuk-body"></p>
-                            </dd>
-                        </div>
-                    </dl> -->
-                    <!--
-                    <h2 class="govuk-heading-s govuk-!-margin-bottom-1" for="specification">Specification</h2>
-                    <p id="specification" class="govuk-body"></p>-->
-                    <h2 class="govuk-heading-m">
-                        16 to 19 Mainstream 2022 to 2023
-                     </h2>
-                     <p>Reprofile provider data by uploading the data on the first sheet of a .xlsx file. When you upload, remember the following:
-
-
-                     </p>
-                    <ul class="govuk-list govuk-list--bullet">
-                      
-                        <li>the file should have only one UKPRN column</li>
-                        <li>the providers already approved or released will not be shown in the provider count summaries
-                        </li>
-                    </ul>
+            
         </div>
     </div>
 </div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-form-group">
-            <label class="govuk-label" for="file-upload"><strong>
-                    Upload a .xlsx file</strong>
-            </label>
-            <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file" onchange="enableButton()">
-        </div>
+        
        
         <button  id="reprofile" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" disabled>
             Reprofile
         </button>
-        <a href="javascript:history.back()" class="govuk-link govuk-button govuk-button--secondary">
+        <a href="../16-19/16-19-results-with-ineligible-la" class="govuk-link govuk-button govuk-button--secondary">
             Cancel
         </a>
-        <!-- <button class="govuk-button govuk-button--warning govuk-!-margin-right-1" onclick="release()"
-            data-module="govuk-button">
-            Release funding
-        </button> -->
-        <!-- <button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" onclick="processHold()"
-            data-module="govuk-button">
-            Process hold status
-        </button>-->
+    
         </fieldset>
         </form>
     </div>

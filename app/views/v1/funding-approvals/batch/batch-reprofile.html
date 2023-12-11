@@ -28,7 +28,11 @@ GOV.UK Prototype Kit
           16 to 19 Mainstream 2022 to 2023
       </a>
     </li>
-
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="upload-batch-reprofile-release">
+         Reprofile a batch of providers
+      </a>
+    </li>
   </ol>
   
 </div>
@@ -37,60 +41,57 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row  govuk-!-margin-bottom-5">
+<div class="govuk-grid-row  govuk-!-margin-bottom-6">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Confirm reprofile</h1>
-    <span class="govuk-caption-l govuk-!-margin-bottom-1">Check all the information carefully before confirming the reprofile.
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Confirm reprofile</h1>
+    <span class="govuk-caption-l govuk-!-margin-bottom-2">Check all the information carefully before confirming the reprofile.
   </div>
 </div>
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <table class="govuk-table govuk-!-margin-bottom-4">
-      <!-- <caption class="govuk-table__caption govuk-!-margin-6">Funding reprofile </caption> -->
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Title</th>
-          <th scope="col" class="govuk-table__header">Summary</th>
-          <!-- <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th> -->
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Specification selected</th>
-          <td class="govuk-table__cell">
-            <p class="govuk-body">16 to 19 Mainstream 2022 to 2023</p>
-          </td>
-         
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Funding period</th>
-          <td class="govuk-table__cell">Academies and school year 2022 to 2023</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Number of eligible providers</th>
-          <td class="govuk-table__cell">120</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Eligible providers selected</th>
-          <td class="govuk-table__cell"><a href="">Export all as csv</a></td>
-        </tr>
-      </tbody>
-      
-    </table>
     
-    <div class="govuk-width-container">
-      <main class="govuk-main-wrapper">
-            <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l"></h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Specification selected
+        </dt>
+        <dd class="govuk-summary-list__value">
+          16 to 19 Mainstream 2022 to 2023
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Funding period
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Academies and school year 2022 to 2023
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Number of eligible providers
+        </dt>
+        <dd class="govuk-summary-list__value">
+          120
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligibility status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="#" class="govuk-link">Export all as CSV</a>
+        </dd>
+      </div>
+    </dl>
+   
+          <div class="govuk-!-margin-bottom-6">
+            <a class="font-bold" href="upload-batch-reprofile-release ">Discard changes and upload another file</a>
           </div>
-          <div class="govuk-grid-column-one-third">
-            <a  href="upload-batch-reprofile-release ">Discard changes and upload another file</a>
-          </div>
-        </div>
-      </main>
-    </div>
+       
+      
   </div>
   
 </div>

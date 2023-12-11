@@ -24,7 +24,7 @@ GOV.UK Prototype Kit
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/16-19/16-19-results-with-la">
+        <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/16-19/16-19-results-with-ineligible-la">
             16 to 19 Mainstream 2022 to 2023
         </a>
       </li>
@@ -37,9 +37,9 @@ GOV.UK Prototype Kit
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group">
-            <form action="batch-reprofile" method="post" id="batchProviders" novalidate>
+            <form action="upload-batch-reprofile-release-ineligible" method="post" id="batchProviders" novalidate>
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
@@ -47,6 +47,7 @@ GOV.UK Prototype Kit
                         </h1>
                     </legend>
 
+                
                     <h2 class="govuk-heading-m">
                         16 to 19 Mainstream 2022 to 2023
                      </h2>
@@ -72,13 +73,13 @@ GOV.UK Prototype Kit
             </label>
             <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file" onchange="enableButton()">
         </div>
-        <button  id="reprofile" onclick="approve()" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" disabled>
+        <button  id="reprofile"onclick="approve()" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" disabled>
             Reprofile
         </button>
         <a href="javascript:history.back()" class="govuk-link govuk-button govuk-button--secondary">
             Cancel
         </a>
-     
+        
         </fieldset>
         </form>
     </div>
@@ -86,7 +87,7 @@ GOV.UK Prototype Kit
 
 <script>
     function approve() {
-        document.getElementById('batchProviders').action = 'batch-reprofile-in-progress'
+        document.getElementById('batchProviders').action = 'batch-reprofile-ineligible-progress'
 
     }
 
@@ -102,7 +103,6 @@ GOV.UK Prototype Kit
     function processHold() {
         document.getElementById('batchProviders').action = 'process-hold-in-progress'
     }
-
     function enableButton() {
             var fileInput = document.getElementById('file-upload');
             var uploadButton = document.getElementById('reprofile');
