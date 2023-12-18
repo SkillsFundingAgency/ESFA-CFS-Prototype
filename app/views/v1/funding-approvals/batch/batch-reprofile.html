@@ -25,7 +25,7 @@ GOV.UK Prototype Kit
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="/v1/funding-approvals/16-19/16-19-results-with-la">
-          16 to 19 Mainstream 2022 to 2023
+          16 to 19 Mainstream 2023 to 2024
       </a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
@@ -58,7 +58,7 @@ GOV.UK Prototype Kit
           Specification selected
         </dt>
         <dd class="govuk-summary-list__value">
-          16 to 19 Mainstream 2022 to 2023
+          16 to 19 Mainstream 2023 to 2024
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -66,7 +66,7 @@ GOV.UK Prototype Kit
           Funding period
         </dt>
         <dd class="govuk-summary-list__value">
-          Academies and school year 2022 to 2023
+          Academies and school year 2023 to 2024
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -74,7 +74,7 @@ GOV.UK Prototype Kit
           Number of eligible providers
         </dt>
         <dd class="govuk-summary-list__value">
-          120
+          4
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -82,39 +82,43 @@ GOV.UK Prototype Kit
           Eligibility status
         </dt>
         <dd class="govuk-summary-list__value">
-          <a href="#" class="govuk-link">Export all as CSV</a>
+          <a href="Eligibility status.csv" class="govuk-link">Export all as CSV</a>
         </dd>
       </div>
     </dl>
    
-          <div class="govuk-!-margin-bottom-6">
+          <div class="govuk-!-margin-bottom-4">
             <a class="font-bold" href="upload-batch-reprofile-release ">Discard changes and upload another file</a>
           </div>
        
-      
+          <div class="govuk-warning-text govuk-!-margin-bottom-6">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              Reprofiling an allocation for a provider will set the profile to start from the profile period that contains the provider open date using the appropriate reprofiling strategy for the circumstances of the provider
+            </strong>
+          </div>
   </div>
   
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-4 ">
+          </div>
 
-        </fieldset>
+          <button onclick="redirect();" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+            Confirm
+          </button>
+
+          <a href="/v1/funding-approvals/16-19/16-19-results-with-la" button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </a>
+        </form>
       </div>
-
-      <button onclick="redirect();" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
-        Confirm
-      </button>
-
-      <a href="/v1/funding-approvals/16-19/16-19-results-with-la" button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Cancel
-      </a>
-    </form>
-  </div>
 </div>
 <script>
   function redirect()
   {
-    location.href="/v1/funding-approvals/16-19/16-19-reprofile-result"
+    location.href="batch-reprofile-job-notification"
   }
 </script>
 
