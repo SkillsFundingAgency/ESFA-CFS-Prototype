@@ -27,7 +27,20 @@ GOV.UK Prototype Kit
 </div>
 {% endblock %}
 {% block content %}
-
+<div class="govuk-error-summary" data-module="govuk-error-summary" id="error-message">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#nationality">Existing calculations are affected by the fields removed in the latest data schema version. Please revisit the calculation template,rectify the errors and update the data set again</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">    
      <form  novalidate data-validate="create-data-set" id="myForm">
@@ -101,16 +114,90 @@ GOV.UK Prototype Kit
         </tbody>
       </table>
     </div>
+<!-- 
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
           You can proceed with the schema upgrade even if there are removed fields in the latest version of the data schema
         </strong>
-      </div>
+      </div> -->
       </fieldset>
+      <!-- Calculation details-->
+      <div class="govuk-form-group govuk-form-group--error govuk-!-padding-top-4" id="calculation">
+        <fieldset class="govuk-fieldset" aria-describedby="nationality-hint nationality-error">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">
+              Calculations affected by the latest data schema version
+            </h3>
+          </legend>
+          <div id="nationality-hint" class="govuk-hint">
+            You can view the calculations affected by the latest version of the data schema.
+          </div>
+          <p id="nationality-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Please revisit the calculation template,recify the errors and update the data set again
+          </p>
+          <table class="govuk-table govuk-table--small-text-until-tablet" id="nationality">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Calculation name</th>
+                <th scope="col" class="govuk-table__header">Field name</th>
+                <th scope="col" class="govuk-table__header">Calculation type</th>
+                <th scope="col" class="govuk-table__header">Type</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">  <a href="edit-additional-calculation.html" class="govuk-link" rel="noreferrer noopener" target="_blank">CareStandards_EligibleStudents_Value (opens in new tab)</a></th>
+                <td class="govuk-table__cell">BCCofCompR14S05TLevelBand8</td>
+                <td class="govuk-table__cell">Template</td>
+                <td class="govuk-table__cell">Number</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header"><a href="edit-additional-calculation-currency.html" class="govuk-link" rel="noreferrer noopener" target="_blank">CareStandards_Rate (opens in new tab)</a></th>
+                <td class="govuk-table__cell">BCCofCompR14S05TLevelBand7</td>
+                <td class="govuk-table__cell">Template</td>
+                <td class="govuk-table__cell">Currency</td>
+              </tr>
+            </tbody>
+          </table>
+          <!--pagination-->
+          <!-- <nav class="govuk-!-margin-top-4" role="navigation" aria-label="Pagination">
+            <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+            <ul class="pagination">
+              <li class="pagination__item">
+                <a class="pagination__link" href="#0" aria-label="Previous page">
+                  <span
+                aria-hidden="true" role="presentation">&laquo;</span> Previous</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#0" aria-label="Page 1">1</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#0" aria-label="Page 2">2</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link current" href="#0" aria-current="true"
+              aria-label="Page 3, current page">3</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#0" aria-label="Page 4">4</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#0" aria-label="Page 5">5</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#0" aria-label="Next page">Next <span
+                aria-hidden="true" role="presentation">&raquo;</span></a>
+              </li>
+            </ul>
+          </nav> -->
+        </fieldset>
+      </div>
       <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" onclick="javascript: form.action = 'edit-fds-success-spinner.html';"value="btn" id="btn">Save</button>
+      <button class="govuk-button" data-module="govuk-button" value="btn" id="btn" disabled>Save</button>
+      <button class="govuk-button govuk-button--secondary" onclick="javascript: form.action = 'edit-fds-dataset-calculations.html';">
+       Refresh</button>
       <a class="govuk-link govuk-button govuk-button--secondary" href="fundingLineStructure-chosen#past-month" >
       Cancel</a>
       </div>
