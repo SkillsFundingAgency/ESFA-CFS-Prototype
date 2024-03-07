@@ -1,0 +1,206 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">
+        Home
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">
+        View specifications
+      </a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">
+        16 to 19 academic year 2022 to 2023
+      </a>
+    </li>
+
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <span class="govuk-caption-l">Calculation name</span>
+      <input class="govuk-input" id="example" name="example" type="text" aria-describedby="example-hint" value="CareStandards_Rate">
+    </div>
+    <form action="">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-grid-row govuk-!-margin-top-0">
+          <div class="govuk-grid-column-full">
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Calculation status
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2">
+                    APPROVED
+                  </strong>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Value type
+                </dt>
+                <dd class="govuk-summary-list__value">
+
+                  <div class="govuk-form-group">
+                    <select onchange="input4ValueChanged()" class="govuk-select" id="sort" name="sort"
+                      aria-label="value type">
+                      <option value="views">Currency</option>
+                    </select>
+                  </div>
+
+                </dd>
+              </div>
+            </dl>
+
+          </div>
+        </div>
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-s" for="more-detail">
+            Calculation script
+          </h3>
+
+          {% include "includes/full-screen.html" %}
+
+          <textarea onchange="input4ValueChanged()" class="govuk-textarea" id="more-detail" name="more-detail" rows="20"
+            aria-label="calculation script"> 1. Return 0
+        </textarea>
+          <h4 class="govuk-heading-s" for="more-detail">
+            UKPRN<br/>
+            <span id="event-name-hint" class="govuk-hint">
+              Optional: Enter a UKPRN to view calculation results for this provider
+            </span></h4>
+          <input onchange="input4ValueChanged()" class="govuk-input govuk-input--width-10" id="width-5" name="width-5"
+            type="text" aria-label="enter UKPRN">
+
+        </div>
+        <button data-prevent-double-click="true" onclick="buildOuput()" class="govuk-button" data-module="govuk-button">
+          Build calculation
+        </button>
+        <p class="govuk-body"><a href="view-results/view-specification-results/calculation-providers">View calculation
+            results</a></p>
+
+        <div class="govuk-inset-text" id="buildResult" style="display: none;">
+          <h5 class="govuk-heading-s">Build output</h5>
+          <p class="govuk-body">Code compiled successfully </p>
+          <p class="govuk-body">Provider: <strong>Abbeygate Sixth Form College
+            </strong></p>
+          <p class="govuk-body">Provider result: <strong>£10,836</strong></p>
+
+        </div>
+
+        <div class="govuk-grid-row govuk-!-margin-top-9">
+          <div class="govuk-grid-column-full">
+            <div class="govuk-button-group">
+              <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+
+    </form>
+    <button class="govuk-button " id="btn-approve" data-module="govuk-button">
+      Approve
+    </button>
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+     Cancel
+    </button>
+     
+    <!-- <a class="govuk-button govuk-button--warning" href="delete-additional-calculation" data-module="govuk-button">
+      Delete calculation
+    </a> -->
+    <!-- <a class="govuk-button-secondary" href="javascript:void(0);" onclick="check()">
+      Cancel
+    </a> -->
+  </div>
+</div>
+</div>
+
+<p class="govuk-body" id="lastSaved">Last saved 25 March 2020 2:57 PM</p>
+<a href="calculation-version-history.html">
+  <p class="govuk-body">View calculation history</p>
+</a>
+</div>
+</div>
+
+<script>
+  function buildOuput() {
+    document.getElementById('buildResult').style.display = "block"
+  }
+
+  window.onload = function additionalCalc() {
+    var status = sessionStorage.getItem("status");
+    var dateTime = sessionStorage.getItem("date");
+    document.getElementById('calc-status').innerHTML = status;
+    document.getElementById('editedDate').innerHTML = "Last saved " + dateTime;
+  }
+
+  function saveCalc() {
+    document.getElementById('saveMessage').style.display = 'block';
+    window.scrollTo(0, 0);
+    var Timeoptions = {
+      hour: '2-digit',
+      minute: '2-digit'
+    };
+    var time = new Date().toLocaleTimeString('en-GB', Timeoptions)
+    var ampm = time >= 12 ? 'pm' : 'am';
+    var date = new Date()
+    var dateOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('saveTime').innerHTML = dateFormat + ' ' + time + ampm
+    document.getElementById('lastSaved').innerHTML = 'Last saved ' + dateFormat + ' ' + time + ampm
+  }
+</script>
+
+<script>
+  let inputWasChanged = false
+
+  function check() {
+
+    let counter = 0
+
+    if (inputWasChanged === true) {
+      document.getElementById('notSaved').style.display = 'block'
+      counter++
+    }
+    if (counter === 0) {
+      history.back()
+    }
+
+  }
+
+
+  function input4ValueChanged() {
+    if (document.getElementById("notSaved").value != "")
+
+    {
+      inputWasChanged = true;
+    }
+  }
+</script>
+
+<div class="govuk-modal-dialogue" id="notSaved" data-module="govuk-modal-dialogue">
+  {% include "includes/modal-dialogue.html" %}
+</div>
+
+{% endblock %}

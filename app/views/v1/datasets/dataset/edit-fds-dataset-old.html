@@ -34,8 +34,7 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">    
-     
-    <form  action= "edit-fds-dataset-spinner" novalidate data-validate="create-data-set" id="myForm">
+    <form  novalidate data-validate="create-data-set" id="myForm">
       <fieldset class="govuk-fieldset">
         <h1 class="govuk-heading-xl">16 to 19 
           <span class="govuk-caption-l">16 to 19 academic year 2022 to 2023</span></h1>
@@ -104,7 +103,45 @@ GOV.UK Prototype Kit
     
     </tbody>
   </table>
- 
+        <!-- <details class="govuk-details govuk-!-padding-top-1" data-module="govuk-details" id="v1">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+             V3 details
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">
+              <strong> Last updated:</strong>
+              13th April,2023
+          </p>                  
+           <p class="govuk-body">
+            <strong>Last updated by:</strong> Peter, Smith</p>
+           
+           <p class="govuk-body">
+            <strong>Change notes:</strong>Field changes</p> -->
+           <!-- <br/>
+           <textarea class="govuk-textarea" id ="textarea" name="description"rows="2" cols="3"
+         aria-label="more-detail-hint" >Field changes</textarea> -->
+          <!-- </div>
+          </details> -->
+        <!-- </div> -->
+        
+          <!-- <details class="govuk-details govuk-visually-hidden" data-module="govuk-details" id="v2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Dataschema v2 details
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              Last updated:
+              <br/>
+              Last updated by:
+              <br/>
+              Change notes:Field changes
+              <br/>
+             
+             </div>
+        </details> -->
         <br/>
         <div class="govuk-form-group">
           <label class="govuk-label font-bold" for="more-detail">
@@ -123,22 +160,31 @@ GOV.UK Prototype Kit
       </fieldset>
 
       <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" onclick="spinner()" value="btn" id="btn">Save</button>
+      <button class="govuk-button" data-module="govuk-button" onclick="javascript: form.action = 'edit-fds-success-spinner';"value="btn" id="btn">Save</button>
 <!-- form.action = '../fundingLineStructure-newschema-success#past-month';" -->
        <a class="govuk-link govuk-button govuk-button--secondary" href="fundingLineStructure-chosen#past-month" >
       Cancel</a>
       </div>
-        </form>
+        
   </div>
 </div>
 </div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- <script>
-  function error()
+
+<!-- <script type="application/json" id="create-data-set">
   {
-   location.href = "edit-fds-dataset-error";
+      
+
+      "description": {
+          "presence": {
+              "message": "^Enter a description"
+          }
+      }
   }
 </script> -->
+
 
 {% endblock %}
 
