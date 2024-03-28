@@ -37,20 +37,22 @@ GOV.UK Prototype Kit
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-full">
         <div class="govuk-form-group">
             <form action="batch-reprofile" method="post" id="batchProviders" novalidate>
                 <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                         <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
                            Reprofile a batch of providers
                         </h1>
                     </legend>
-
+                    <p class="govuk-body">Reprofile will generate profile for the providers based on the open date for the new openrs/converters. The strategy for distribution
+                        will be the flat distribution strategy similar to converters.
+                    </p>
                     <h2 class="govuk-heading-m">
                         16 to 19 Mainstream 2023 to 2024
                      </h2>
-                     <p>Reprofile provider allocation by uploading the data on the first sheet of a .xlsx file. When you upload, remember the following:
+                     <p class="govuk-body">Reprofile provider allocation by uploading the data on the first sheet of a .xlsx file. When you upload, remember the following:
 
 
                      </p>
@@ -65,12 +67,19 @@ GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
         <div class="govuk-form-group">
             <label class="govuk-label" for="file-upload"><strong>
                     Upload a .xlsx file</strong>
             </label>
             <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file" onchange="enableButton()">
+        </div>
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              The live calculations change made after refresh will not have any impact on reprofile on demand. If you need those calculations to be in effect with reprofile on demand. Please do a refresh before reprofile on demand.
+            </strong>
         </div>
         <button  id="reprofile" onclick="approve()" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button" disabled>
             Reprofile
