@@ -82,8 +82,12 @@ GOV.UK Prototype Kit
       <table class="govuk-table ">
         <caption class="govuk-table__caption govuk-table__caption--m ">Fields removed between the current and latest version of the data schema
           <p class="govuk-body govuk-!-padding-top-2" for="address-line-1">
-            You can view the fields that have been removed in the latest version of the data schema.
-            </p></caption>        <thead class="govuk-table__head">
+            <!-- You can view the fields that have been removed in the latest version of the data schema. -->
+            You can view the fields in the latest version of the data schema that differ from those in the current, selected version.
+          </p>
+        </caption>  
+            
+        <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header govuk-!-width-one-third ">Field name</th>
             <th scope="col" class="govuk-table__header padding-left">Field type</th>
@@ -105,8 +109,9 @@ GOV.UK Prototype Kit
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-          You can proceed with the schema upgrade even if there are removed fields in the latest version of the data schema but you'll have to fix the calculations
-          which are affected by the removed fields.
+          <!-- You can proceed with the schema upgrade even if there are removed fields in the latest version of the data schema but you'll have to fix the calculations
+          which are affected by the removed fields. -->
+          If the fields in the latest version of the data schema differ from those in the current, selected version, you can still update the schema. But you will have to fix the calculations that have been affected by the fields removed earlier.
         </strong>
       </div>
       </fieldset>
